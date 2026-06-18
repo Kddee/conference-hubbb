@@ -1,7 +1,9 @@
 import { Card } from "@/components/ui/card";
 import ConferenceSections from "@/components/layout/ConferenceSections";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MapPin, CheckCircle2, Globe, BookOpen, Star, Trophy, Award, Search, Book } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, CheckCircle2, Globe, BookOpen, Star, Trophy, Award, Search, Book, User } from "lucide-react";
+import { useState } from "react";
+import speakerImg from "@/assets/WhatsApp Image 2026-06-17 at 7.59.19 PM (1).jpeg";
 
 const conferenceData = {
   id: "ICAITS-26",
@@ -43,10 +45,33 @@ const conferenceData = {
     { date: "04 June 2026", label: "Acceptance", desc: "Notification of acceptance" },
     { date: "12 June 2026", label: "Final", desc: "Camera-ready submission" },
     { date: "21 June 2026", label: "Conference Date", desc: "Main event" }
+  ],
+  speakers: [
+    {
+      name: "Prof El Namaki",
+      org: "Honorary Dean of the Elite Innovation College Cambridge and Dean of The Artificial Intelligence Technology Framework (ait-ai.org) (Canada)",
+      country: "Canada",
+      img: speakerImg,
+      bio: [
+        "Prof El Namaki is a graduate of the universities of Brussels (Ph. D, 1977), Erasmus (MA, 1967) and MIT (Executive Program, 1982). Prof El Namaki teaches and consults on strategic thinking, entrepreneurship and international business. He is past founder and Dean of the Maastricht School of Management (MSM), Maastricht, The Netherlands (1984-2002). He is now honorary Dean of the Elite Innovation College Cambridge and Dean of The Artificial Intelligence Technology Framework (ait-ai.org) (Canada). Prof El Namaki has developed and introduced management degree programs (MBA, EMBA, DBA and Ph. D) at institutions in the Netherlands, China, Egypt, Brazil, Poland, Kazakhstan, Syria, Singapore, Malaysia and Indonesia, among others.",
+        "Prof El Namaki taught globally at as recognized institutions as MSM (Maastricht), Kellogg (Chicago), Jiao Tong University (Shanghai), Beijing University (Beijing), AIT (Bangkok), Helsinki School of Economics (Helsinki), Sheffield University (Sheffield) and several others.",
+        "Prof El Namaki assumed executive positions within Philips (Eindhoven), McKinsey (London and Dar es Salaam) and Time Inc. (Amsterdam). Prof El Namaki consulted and delivered executive seminars World-wide and his clients included key MNC’s as well as landmark national corporations as China Pacific Insurance Corporation CPIC (Shanghai), and Abraaj (United Arab Emirates). Prof El Namaki did long and short term consultancy missions for the European Union (EU), The World Bank and The Netherlands government. Countries covered by these missions included, among others China, Thailand and Kazakhstan."
+      ],
+      publications: [
+        "Prof El Namaki published 10 books and more than 100 articles. Some of his articles on Vision and more recently, Artificial Intelligence, are teaching material in MBA and DBA programs worldwide. Prof El Namaki’s books include “Strategy and Entrepreneurship in Arab Countries” (Macmillan, 2008) and “Strategic thinking for turbulent times” (Macmillan, 2014).",
+        "His latest book publications include “Strategic thinking in the age of artificial intelligence “ (2022) and Macmillan’s “ Neo Strategic Management, Conceptual and Operational Foundations of tomorrow’s strategic thinking” (Sept 2023).",
+        "Prof El Namaki’s articles include prize winning as “Does the thinking of yesterday’s management gurus imperil today’s companies?”, and trend setting as “How Companies are Applying AI to the Business Strategy Formulation”, “Systems approach to artificial intelligence “ and “Could artificiall neurons have plasticity of their own”."
+      ],
+      awards: [
+        "Prof El Namaki received several government awards including a distinction award from the Government of Malaysia (2016) and the “China Friendship Award” from the Government of the People Republic of China (2018) as well as the honorary shield of the University of Alexandria (2024)."
+      ]
+    }
   ]
 };
 
 const Icaits26 = () => {
+  const [activeTab, setActiveTab] = useState<"bio" | "publications" | "awards">("bio");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="bg-background">
       {/* ENTERPRISE HERO */}
@@ -121,6 +146,138 @@ const Icaits26 = () => {
             </Card>
           </div>
         </div>
+      </section>
+
+      {/* KEYNOTE SPEAKERS */}
+      <section className="container py-24 border-t border-border/50">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Keynote Speakers</h2>
+          <p className="text-lg text-muted-foreground">The visionaries and academic leaders presenting at ICAITS-26.</p>
+        </div>
+        
+        <div className="flex justify-center">
+          {conferenceData.speakers.map((s, idx) => (
+            <div 
+              key={idx} 
+              className="group flex flex-col items-center text-center max-w-sm cursor-pointer"
+              onClick={() => setIsModalOpen(true)}
+            >
+              <div className="relative h-40 w-40 mb-6">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+                {s.img ? (
+                  <img src={s.img} alt={s.name} className="relative h-full w-full object-cover rounded-full border-4 border-background shadow-lg z-10" loading="lazy" />
+                ) : (
+                  <div className="relative h-full w-full rounded-full border-4 border-background shadow-lg z-10 bg-muted flex items-center justify-center">
+                    <User className="h-12 w-12 text-muted-foreground" />
+                  </div>
+                )}
+              </div>
+              <h4 className="font-bold text-primary text-lg leading-tight mb-1">{s.name}</h4>
+              <p className="text-sm text-muted-foreground mb-2 line-clamp-3">{s.org}</p>
+              {s.country && <p className="text-xs font-semibold uppercase tracking-wider text-accent">{s.country}</p>}
+            </div>
+          ))}
+        </div>
+
+        {/* KEYNOTE DETAILS MODAL */}
+        {isModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in">
+            {conferenceData.speakers.map((speaker, sIdx) => (
+              <div 
+                key={sIdx} 
+                className="bg-card border border-white/10 rounded-[2rem] max-w-3xl w-full max-h-[85vh] overflow-y-auto p-8 relative shadow-2xl animate-fade-up text-left"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button 
+                  onClick={() => setIsModalOpen(false)}
+                  className="absolute top-6 right-6 text-muted-foreground hover:text-white transition-colors h-10 w-10 rounded-full hover:bg-white/5 flex items-center justify-center text-2xl font-bold z-20"
+                >
+                  &times;
+                </button>
+
+                <div className="flex flex-col md:flex-row gap-8 items-start mb-8 relative z-10 border-b border-border/50 pb-8">
+                  <div className="relative h-36 w-36 shrink-0 mx-auto md:mx-0">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent blur-md"></div>
+                    <img src={speaker.img} alt={speaker.name} className="relative h-full w-full object-cover rounded-full border-4 border-background z-10" />
+                  </div>
+                  <div className="text-center md:text-left">
+                    <h3 className="text-3xl font-serif font-bold text-white mb-2">{speaker.name}</h3>
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent font-bold text-xs tracking-wider uppercase mb-3 border border-accent/20">
+                      <Globe className="h-3.5 w-3.5" /> {speaker.country}
+                    </div>
+                    <p className="text-muted-foreground text-sm leading-relaxed font-medium">{speaker.org}</p>
+                  </div>
+                </div>
+
+                <div className="bg-card/40 rounded-2xl p-2 shadow-inner">
+                  {/* Tab buttons */}
+                  <div className="flex border-b border-border/50 pb-3 mb-6 gap-2 overflow-x-auto">
+                    <button
+                      onClick={() => setActiveTab("bio")}
+                      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 shrink-0 ${
+                        activeTab === "bio"
+                          ? "bg-accent text-white shadow-md shadow-accent/20"
+                          : "text-muted-foreground hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      <User className="h-4 w-4" /> Biography
+                    </button>
+                    <button
+                      onClick={() => setActiveTab("publications")}
+                      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 shrink-0 ${
+                        activeTab === "publications"
+                          ? "bg-accent text-white shadow-md shadow-accent/20"
+                          : "text-muted-foreground hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      <BookOpen className="h-4 w-4" /> Publications
+                    </button>
+                    <button
+                      onClick={() => setActiveTab("awards")}
+                      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 shrink-0 ${
+                        activeTab === "awards"
+                          ? "bg-accent text-white shadow-md shadow-accent/20"
+                          : "text-muted-foreground hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      <Trophy className="h-4 w-4" /> Awards & Honours
+                    </button>
+                  </div>
+
+                  {/* Tab content */}
+                  <div className="min-h-[200px] text-muted-foreground text-sm leading-relaxed p-2">
+                    {activeTab === "bio" && (
+                      <div className="space-y-4 animate-fade-in">
+                        {speaker.bio.map((p, i) => (
+                          <p key={i}>{p}</p>
+                        ))}
+                      </div>
+                    )}
+
+                    {activeTab === "publications" && (
+                      <div className="space-y-4 animate-fade-in">
+                        {speaker.publications.map((p, i) => (
+                          <p key={i}>{p}</p>
+                        ))}
+                      </div>
+                    )}
+
+                    {activeTab === "awards" && (
+                      <div className="space-y-4 animate-fade-in">
+                        {speaker.awards.map((p, i) => (
+                          <div key={i} className="flex gap-4 items-start bg-accent/5 border border-accent/20 rounded-2xl p-5">
+                            <Award className="h-6 w-6 text-accent shrink-0 mt-0.5" />
+                            <p>{p}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* PUBLICATION & AWARDS */}
