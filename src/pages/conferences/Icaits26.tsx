@@ -8,7 +8,7 @@ import speakerImg from "@/assets/WhatsApp Image 2026-06-17 at 7.59.19 PM (1).jpe
 const conferenceData = {
   id: "ICAITS-26",
   title: "International Conference on Artificial Intelligence & Intelligent Technology Systems",
-  date: "21 June 2026",
+  date: "5 July 2026",
   location: "Virtual Mode",
   registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSfN58Q2gYRO9ynO518Mai3mlWflPZ5F7i0acBtYo75ynxlIeA/viewform?usp=publish-editor",
   about: [
@@ -41,10 +41,10 @@ const conferenceData = {
     { title: "Cybersecurity", desc: "Secure systems and digital protection." }
   ],
   timeline: [
-    { date: "27 May 2026", label: "Submission", desc: "Deadline for paper submission" },
-    { date: "04 June 2026", label: "Acceptance", desc: "Notification of acceptance" },
-    { date: "12 June 2026", label: "Final", desc: "Camera-ready submission" },
-    { date: "21 June 2026", label: "Conference Date", desc: "Main event" }
+    { date: "10 June 2026", label: "Submission", desc: "Deadline for paper submission" },
+    { date: "18 June 2026", label: "Acceptance", desc: "Notification of acceptance" },
+    { date: "26 June 2026", label: "Final", desc: "Camera-ready submission" },
+    { date: "5 July 2026", label: "Conference Date", desc: "Main event" }
   ],
   speakers: [
     {

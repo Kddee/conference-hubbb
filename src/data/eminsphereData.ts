@@ -123,7 +123,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   "icaits-26": {
     id: "icaits-26",
     title: "International Conference on Artificial Intelligence & Intelligent Technology Systems (ICAITS-26)",
-    date: "21 June 2026",
+    date: "5 July 2026",
     location: "Global Participation",
     description: "A prestigious platform for discussing cutting-edge innovations in engineering systems and computing paradigms. It provides an interdisciplinary forum for sharing research findings and practical experiences. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
@@ -136,9 +136,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Cloud & Edge Computing"
     ],
     milestones: [
-      { name: "Paper Submission", date: "27 May 2026" },
-      { name: "Final Acceptance", date: "4 June 2026" },
-      { name: "Registration Deadline", date: "12 June 2026" }
+      { name: "Paper Submission", date: "10 June 2026" },
+      { name: "Final Acceptance", date: "18 June 2026" },
+      { name: "Registration Deadline", date: "26 June 2026" }
     ]
   },
   "icates-26": {
