@@ -6,7 +6,7 @@ import { ArrowRight, Calendar, MapPin, CheckCircle2, User, Globe, BookOpen, Star
 const conferenceData = {
   id: "ICATES-26",
   title: "International Conference on Artificial Intelligence, Technology & Engineering Systems",
-  date: "28 June 2026",
+  date: "12 July 2026",
   location: "Hybrid Mode",
   registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeVxWk6j8SbsuQ5uaRxmp8dVpdPoDIn0gZV-H2VZvCGW42bBA/viewform?usp=header",
   about: [
@@ -30,10 +30,10 @@ const conferenceData = {
   ],
   delegates: [],
   timeline: [
-    { date: "12 June 2026", label: "Paper Submission", desc: "Deadline for paper submission" },
-    { date: "19 June 2026", label: "Acceptance", desc: "Notification of acceptance" },
-    { date: "25 June 2026", label: "Final Submission", desc: "Camera-ready submission" },
-    { date: "28 June 2026", label: "Conference Date", desc: "Main event" }
+    { date: "26 June 2026", label: "Paper Submission", desc: "Deadline for paper submission" },
+    { date: "3 July 2026", label: "Acceptance", desc: "Notification of acceptance" },
+    { date: "9 July 2026", label: "Final Submission", desc: "Camera-ready submission" },
+    { date: "12 July 2026", label: "Conference Date", desc: "Main event" }
   ]
 };
 

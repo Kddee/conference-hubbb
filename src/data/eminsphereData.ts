@@ -73,7 +73,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   "icmref-26": {
     id: "icmref-26",
     title: "International Conference on Multidisciplinary Research & Emerging Frontiers in AI, Software Systems & Emerging Technologies (ICMREF-26)",
-    date: "5 July 2026",
+    date: "19 July 2026",
     location: "Hybrid Mode | Nairobi, Kenya",
     collaboration: "IMFC KENYA",
     description: "ICMREF-26 is an international academic forum dedicated to advancing multidisciplinary research across emerging domains in Artificial Intelligence, Software Systems, and Advanced Technologies. The conference aims to provide a structured platform for researchers, academicians, and industry professionals to present original contributions, exchange technical insights, and explore collaborative opportunities.",
@@ -86,9 +86,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Sustainable & Smart Systems (Green tech, smart infrastructure)"
     ],
     milestones: [
-      { name: "Paper Submission", date: "15 June 2026" },
-      { name: "Acceptance Notification", date: "22 June 2026" },
-      { name: "Final Submission", date: "28 June 2026" }
+      { name: "Paper Submission", date: "29 June 2026" },
+      { name: "Acceptance Notification", date: "6 July 2026" },
+      { name: "Final Submission", date: "12 July 2026" }
     ],
     speakers: [
       { name: "Dr. Ayoub Regragui", designation: "Technical Program Committee", university: "Mohammed V University, Morocco", image: "https://static.wixstatic.com/media/30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif" },
@@ -144,7 +144,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   "icates-26": {
     id: "icates-26",
     title: "ICATES-26",
-    date: "28 June 2026",
+    date: "12 July 2026",
     location: "Hybrid Mode",
     description: "A premier platform exploring advancements in AI, engineering technologies, and intelligent systems. It focuses on the integration of AI with robotics, automation, and smart infrastructure. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
@@ -156,9 +156,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Cloud & Edge Computing"
     ],
     milestones: [
-      { name: "Paper Submission", date: "12 June 2026" },
-      { name: "Acceptance Notification", date: "19 June 2026" },
-      { name: "Final Submission", date: "25 June 2026" }
+      { name: "Paper Submission", date: "26 June 2026" },
+      { name: "Acceptance Notification", date: "3 July 2026" },
+      { name: "Final Submission", date: "9 July 2026" }
     ]
   }
 };
