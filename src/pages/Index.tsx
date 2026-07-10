@@ -175,9 +175,9 @@ const recentConferencesData = [
 const rotations = [-3, 2, -1.5, 3, -2, 1, -2.5, 2.5, -1, 3, -3, 1.5, -2, 2];
 
 const upcoming = [
-  { title: "ICAITS-26: AI & Intelligent Technology Systems", city: "Virtual Mode", date: "19 July, 2 Aug & 16 Aug 2026", topic: "AI & Tech", link: "/icaits-26", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" },
-  { title: "ICATES-26: AI, Technology & Engineering Systems", city: "Hybrid Mode", date: "12 July 2026", topic: "AI & Engineering", link: "/icates-26", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" },
-  { title: "ICMREF-26: Multidisciplinary Research & AI", city: "Nairobi, Kenya", date: "19 July 2026", topic: "Technology & AI", link: "/icmref-26", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" },
+  { title: "ICAITS-26: AI & Intelligent Technology Systems", city: "Virtual Mode", date: "19 July 2026", topic: "AI & Tech", link: "/icaits-26", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" },
+  { title: "ICATES-26: AI, Technology & Engineering Systems", city: "Hybrid Mode", date: "2 August 2026", topic: "AI & Engineering", link: "/icates-26", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" },
+  { title: "ICMREF-26: Multidisciplinary Research & AI", city: "Nairobi, Kenya", date: "16 August 2026", topic: "Technology & AI", link: "/icmref-26", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" },
 ];
 
 const CONFERENCE_DATE = new Date("2026-07-05T09:00:00+05:30");
@@ -313,7 +313,7 @@ const Index = () => {
               
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2 text-white/80 text-sm font-medium bg-white/5 px-4 py-2 rounded-lg border border-white/10">
-                  <Calendar className="w-4 h-4 text-accent" /> 19 July, 2 Aug & 16 Aug 2026
+                  <Calendar className="w-4 h-4 text-accent" /> 19 July 2026
                 </div>
                 <div className="flex items-center gap-2 text-white/80 text-sm font-medium bg-white/5 px-4 py-2 rounded-lg border border-white/10">
                   <Globe className="w-4 h-4 text-accent" /> Virtual Mode

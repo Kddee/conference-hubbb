@@ -9,7 +9,7 @@ const conferences = [
     title: "ICAITS-26: International Conference on Artificial Intelligence & Intelligent Technology Systems",
     city: "Virtual Mode",
     country: "Global",
-    date: "19 July, 2 Aug & 16 Aug 2026",
+    date: "19 July 2026",
     topic: "AI & Technology",
     link: "/icaits-26",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
@@ -18,7 +18,7 @@ const conferences = [
     title: "ICATES-26: International Conference on Artificial Intelligence, Technology & Engineering Systems",
     city: "Hybrid Mode",
     country: "Global",
-    date: "12 July 2026",
+    date: "2 August 2026",
     topic: "AI & Engineering",
     link: "/icates-26",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
@@ -27,7 +27,7 @@ const conferences = [
     title: "ICMREF-26: International Conference on Multidisciplinary Research & Emerging Frontiers in AI",
     city: "Nairobi",
     country: "Kenya",
-    date: "19 July 2026",
+    date: "16 August 2026",
     topic: "Technology & AI",
     link: "/icmref-26",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop"
