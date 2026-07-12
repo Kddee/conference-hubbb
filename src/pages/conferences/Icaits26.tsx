@@ -46,27 +46,7 @@ const conferenceData = {
     { date: "10 July 2026", label: "Final", desc: "Camera-ready submission" },
     { date: "19 July 2026", label: "Conference Date", desc: "Main event" }
   ],
-  speakers: [
-    {
-      name: "Prof El Namaki",
-      org: "Honorary Dean of the Elite Innovation College Cambridge and Dean of The Artificial Intelligence Technology Framework (ait-ai.org) (Canada)",
-      country: "Canada",
-      img: speakerImg,
-      bio: [
-        "Prof El Namaki is a graduate of the universities of Brussels (Ph. D, 1977), Erasmus (MA, 1967) and MIT (Executive Program, 1982). Prof El Namaki teaches and consults on strategic thinking, entrepreneurship and international business. He is past founder and Dean of the Maastricht School of Management (MSM), Maastricht, The Netherlands (1984-2002). He is now honorary Dean of the Elite Innovation College Cambridge and Dean of The Artificial Intelligence Technology Framework (ait-ai.org) (Canada). Prof El Namaki has developed and introduced management degree programs (MBA, EMBA, DBA and Ph. D) at institutions in the Netherlands, China, Egypt, Brazil, Poland, Kazakhstan, Syria, Singapore, Malaysia and Indonesia, among others.",
-        "Prof El Namaki taught globally at as recognized institutions as MSM (Maastricht), Kellogg (Chicago), Jiao Tong University (Shanghai), Beijing University (Beijing), AIT (Bangkok), Helsinki School of Economics (Helsinki), Sheffield University (Sheffield) and several others.",
-        "Prof El Namaki assumed executive positions within Philips (Eindhoven), McKinsey (London and Dar es Salaam) and Time Inc. (Amsterdam). Prof El Namaki consulted and delivered executive seminars World-wide and his clients included key MNC’s as well as landmark national corporations as China Pacific Insurance Corporation CPIC (Shanghai), and Abraaj (United Arab Emirates). Prof El Namaki did long and short term consultancy missions for the European Union (EU), The World Bank and The Netherlands government. Countries covered by these missions included, among others China, Thailand and Kazakhstan."
-      ],
-      publications: [
-        "Prof El Namaki published 10 books and more than 100 articles. Some of his articles on Vision and more recently, Artificial Intelligence, are teaching material in MBA and DBA programs worldwide. Prof El Namaki’s books include “Strategy and Entrepreneurship in Arab Countries” (Macmillan, 2008) and “Strategic thinking for turbulent times” (Macmillan, 2014).",
-        "His latest book publications include “Strategic thinking in the age of artificial intelligence “ (2022) and Macmillan’s “ Neo Strategic Management, Conceptual and Operational Foundations of tomorrow’s strategic thinking” (Sept 2023).",
-        "Prof El Namaki’s articles include prize winning as “Does the thinking of yesterday’s management gurus imperil today’s companies?”, and trend setting as “How Companies are Applying AI to the Business Strategy Formulation”, “Systems approach to artificial intelligence “ and “Could artificiall neurons have plasticity of their own”."
-      ],
-      awards: [
-        "Prof El Namaki received several government awards including a distinction award from the Government of Malaysia (2016) and the “China Friendship Award” from the Government of the People Republic of China (2018) as well as the honorary shield of the University of Alexandria (2024)."
-      ]
-    }
-  ]
+  speakers: []
 };
 
 const Icaits26 = () => {
@@ -155,29 +135,44 @@ const Icaits26 = () => {
           <p className="text-lg text-muted-foreground">The visionaries and academic leaders presenting at ICAITS-26.</p>
         </div>
         
-        <div className="flex justify-center">
-          {conferenceData.speakers.map((s, idx) => (
-            <div 
-              key={idx} 
-              className="group flex flex-col items-center text-center max-w-sm cursor-pointer"
-              onClick={() => setIsModalOpen(true)}
-            >
-              <div className="relative h-40 w-40 mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
-                {s.img ? (
-                  <img src={s.img} alt={s.name} className="relative h-full w-full object-cover rounded-full border-4 border-background shadow-lg z-10" loading="lazy" />
-                ) : (
-                  <div className="relative h-full w-full rounded-full border-4 border-background shadow-lg z-10 bg-muted flex items-center justify-center">
-                    <User className="h-12 w-12 text-muted-foreground" />
-                  </div>
-                )}
+        {conferenceData.speakers.length > 0 ? (
+          <div className="flex justify-center">
+            {conferenceData.speakers.map((s, idx) => (
+              <div 
+                key={idx} 
+                className="group flex flex-col items-center text-center max-w-sm cursor-pointer"
+                onClick={() => setIsModalOpen(true)}
+              >
+                <div className="relative h-40 w-40 mb-6">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+                  {s.img ? (
+                    <img src={s.img} alt={s.name} className="relative h-full w-full object-cover rounded-full border-4 border-background shadow-lg z-10" loading="lazy" />
+                  ) : (
+                    <div className="relative h-full w-full rounded-full border-4 border-background shadow-lg z-10 bg-muted flex items-center justify-center">
+                      <User className="h-12 w-12 text-muted-foreground" />
+                    </div>
+                  )}
+                </div>
+                <h4 className="font-bold text-primary text-lg leading-tight mb-1">{s.name}</h4>
+                <p className="text-sm text-muted-foreground mb-2 line-clamp-3">{s.org}</p>
+                {s.country && <p className="text-xs font-semibold uppercase tracking-wider text-accent">{s.country}</p>}
               </div>
-              <h4 className="font-bold text-primary text-lg leading-tight mb-1">{s.name}</h4>
-              <p className="text-sm text-muted-foreground mb-2 line-clamp-3">{s.org}</p>
-              {s.country && <p className="text-xs font-semibold uppercase tracking-wider text-accent">{s.country}</p>}
+            ))}
+          </div>
+        ) : (
+          <div className="flex justify-center py-8">
+            <div className="bg-card border border-white/5 rounded-2xl p-8 max-w-2xl text-center shadow-lg w-full">
+              <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-accent/10 text-accent mb-6">
+                <User className="h-8 w-8" />
+              </div>
+              <h4 className="text-2xl font-serif font-bold text-white mb-3">Keynote Speakers</h4>
+              <p className="text-muted-foreground text-lg">
+                Our lineup of distinguished keynote speakers is currently being finalized. 
+                Please check back soon for exciting announcements!
+              </p>
             </div>
-          ))}
-        </div>
+          </div>
+        )}
 
         {/* KEYNOTE DETAILS MODAL */}
         {isModalOpen && (
