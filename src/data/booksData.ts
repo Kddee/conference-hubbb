@@ -139,13 +139,13 @@ export const publishedBooks: Book[] = [
   },
   {
     id: "ai-for-a-sustainable-future",
-    title: "AI for a sustainable future",
+    title: "AI for a Sustainable Future",
     subtitle: "",
     authors: "Dr. Latika Desai, Dr. Deepali Rajendra Sale",
-    isbn: "978-8199462410",
+    isbn: "978-8199631045",
     date: "December 2025",
-    link: "https://a.co/d/4Yv6v1E",
-    image: "https://static.wixstatic.com/media/30814e_18805fdbd2b14115b80a423f66ed8d1d~mv2.jpg",
+    link: "https://a.co/d/4UtADsg",
+    image: "https://static.wixstatic.com/media/30814e_12125d969605430f9e7e06f3731a8ff1~mv2.png",
     description: "This book is published by Eminsphere™ and authored by Dr. Latika Desai and Dr. Deepali Rajendra Sale.\n\nDr. Latika Desai is currently working as Dean, Universal Human Values (UHV), at Dr. D. Y. Patil College of Engineering, Akurdi, and as an Associate Professor in the Department of Artificial Intelligence and Data Science at DYP College of Engineering, Akurdi. She has previously served as Associate Professor and Head of the Department of Artificial Intelligence and Data Science at Dr. D. Y. Patil College of Engineering and Innovation, Varale, Pune. Earlier, she worked as Associate Professor and Head of the Department of Information Technology at Dr. D. Y. Patil Institute of Technology, Pimpri.\nShe completed her Ph.D. in 2019 from Savitribai Phule Pune University (SPPU) under the guidance of Dr. Suresh Mali. Dr. Desai has been associated with academia since 2001 and possesses a total of 27 years of teaching experience. She has published 45 research papers in reputed journals and conferences, including Web of Science, Springer (Scopus-indexed), international and national journals, and conferences. She has authored two books published by RK Publisher, holds six published patents listed in the Patent Office Journal, and has received two copyrights from the Government of India. She has earned two NPTEL certifications and has received research funding from AICTE, New Delhi. She also organized a national conference titled “Emerging Trends and Applications in Machine Learning”, sponsored by AICTE, New Delhi. Dr. Desai is an approved postgraduate teacher of SPPU and has served as a Technical Session Chair for several national and international conferences, as well as a reviewer for peer-reviewed journals and book chapters.\n\nDr. Deepali Rajendra Sale, Ph.D. (Electronics and Telecommunication Engineering), College of Engineering Pune (COEP), is an Assistant Professor in the Department of Artificial Intelligence and Data Science. She has over 21 years of teaching experience and one year of industrial experience. She has published more than 25 research papers in reputed international and national journals and conferences. She also serves as a reviewer for various IEEE conferences and international journals. Her areas of expertise include Digital Image Processing, Object-Oriented Programming, and related domains. She is a member of professional bodies such as IETE, ISTE, and CSI.\n\nAI for Environmental Sustainability presents a comprehensive and forward-looking exploration of how intelligent computational systems can be leveraged to address some of the most pressing environmental challenges of our time. The book systematically examines the role of artificial intelligence across critical domains, including climate change analysis, renewable energy systems, water resource management, sustainable agriculture, biodiversity conservation, and smart cities. By integrating strong theoretical foundations with real-world applications, it demonstrates how data-driven intelligence can enhance environmental monitoring, prediction, and decision-making while supporting global sustainability goals.\n\nBeyond technical innovation, the book places strong emphasis on ethical responsibility, governance frameworks, and long-term societal impact. It critically examines challenges such as data bias, transparency, energy-efficient AI, and policy alignment, offering practical insights into how AI can be deployed responsibly and inclusively. Designed for researchers, practitioners, policymakers, and students, this book serves as both a foundational reference and a strategic guide for harnessing artificial intelligence as a transformative tool in building resilient, equitable, and environmentally sustainable futures."
   },
   {
@@ -153,10 +153,10 @@ export const publishedBooks: Book[] = [
     title: "Modernization of legacy systems over cloud",
     subtitle: "",
     authors: "Mr. Mrugendra R Madalagi, Mr. Manoj Shrishail Bahirgonde",
-    isbn: "978-8199631083",
-    date: "December 2025",
-    link: "https://a.co/d/h4ZlqZ6",
-    image: "https://static.wixstatic.com/media/30814e_164b4c718b57422f8723228a7b3dbd39~mv2.jpg",
+    isbn: "978-81-998717-6-2",
+    date: "March 2025",
+    link: "https://a.co/d/03MieTo5",
+    image: bookImg1,
     description: "Modernizing Legacy Systems for the Cloud explores the challenges, strategies, and practical approaches involved in transforming traditional enterprise systems into scalable and efficient cloud-based environments. As organizations continue to adapt to rapidly evolving technological demands, legacy systems often become barriers to agility, innovation, and operational efficiency. This book provides a structured understanding of why modernization is essential and explains the business, technical, and operational factors that drive cloud transformation initiatives.\n\nThe book presents a comprehensive roadmap covering assessment methodologies, cloud architecture planning, migration strategies, data modernization, security considerations, DevSecOps practices, financial optimization, and long-term governance models. Through a step-by-step approach, readers gain insights into designing resilient cloud ecosystems while minimizing risks and ensuring business continuity. It serves as a valuable resource for students, researchers, IT professionals, architects, and decision-makers seeking to understand and implement effective legacy system modernization strategies."
   },
   {
@@ -164,10 +164,10 @@ export const publishedBooks: Book[] = [
     title: "Analytics in the AI Era",
     subtitle: "",
     authors: "Prajakta Prakash Talathi, Ankur Jain, Mayur Khandelwal, Prof. Deepak K. Sharma",
-    isbn: "978-8199631038",
-    date: "January 2026",
-    link: "https://a.co/d/h4ZlqZ6",
-    image: "https://static.wixstatic.com/media/30814e_a29f56e9c4034878a846c4f09d2ad132~mv2.jpg",
+    isbn: "978-81-685414-6-7",
+    date: "November 2024",
+    link: "https://a.co/d/0730890m",
+    image: bookImg2,
     description: "About the Book\nThis book offers a comprehensive and industry-focused exploration of Analytics, Artificial Intelligence, and Data-Driven Decision-Making in the modern digital era. It covers the complete journey from the foundations of data analytics and data engineering to advanced topics such as machine learning, deep learning, predictive analytics, visualization, governance, and emerging AI technologies. The book is designed for students, professionals, researchers, and business leaders who want to understand how AI and analytics are transforming industries and strategic decision-making worldwide.\n\nIn addition to technical concepts, the book emphasizes practical implementation, responsible AI practices, and real-world applications across industries. The appendices further provide valuable resources, including analytics playbooks, glossary terms, frameworks, and a roadmap for building AI-ready organizations.\n\nThe book’s ISBN has been officially approved and registered through the Rashtriya Rajbhasha Research and Analysis Network Association (RRRNA) under the Ministry of Education, recognizing its academic and professional contribution in the field of Artificial Intelligence and Analytics.\n\nAbout the Authors\n\nPrajakta Prakash Talathi\nPrajakta Prakash Talathi is a Data Strategy and Performance Measurement Expert currently working in the education finance sector in the United States. She specializes in enterprise analytics, forecasting, business intelligence, marketing analytics, and AI-driven decision-making. With strong expertise in cloud analytics platforms and analytics modernization, she helps organizations transform complex data into strategic business insights and governance-focused solutions.\n\nAnkur Jain\nAnkur Jain is an experienced credit risk and analytics professional in the banking and financial services industry in the United States. His expertise includes portfolio analytics, underwriting strategy, forecasting, and risk governance. With strong technical skills in SAS, SQL, Tableau, and Excel, he combines analytical expertise with strategic business insight to improve decision-making and business performance.\n\nMayur Khandelwal\nMayur Khandelwal is Vice President at EXL Service, where he leads Data and AI initiatives for the insurance sector. With extensive experience in AI transformation, data modernization, and platform architecture, he has helped major organizations build AI-ready ecosystems and implement scalable analytics strategies in regulated industries.\n\nProf. Deepak K. Sharma\nProf. Deepak K. Sharma is a distinguished academician and globally recognized expert in Artificial Intelligence and Data Science. Currently serving as the Head of the Department of Electronics and Telecommunication Engineering at NESGI, India, he is known for his contributions to AI research, academic innovation, and global collaborations. He has represented India at several international conferences and is also an accomplished author and mentor in the field of AI and education."
   },
   {
@@ -175,10 +175,10 @@ export const publishedBooks: Book[] = [
     title: "IT IN THE ENERGY SECTOR",
     subtitle: "",
     authors: "Mr. Vilas Shewale",
-    isbn: "978-8199871755",
-    date: "February 2026",
-    link: "https://a.co/d/e27N2Vl",
-    image: "https://static.wixstatic.com/media/30814e_91eb7058d8444a9582bc09a656865d1d~mv2.jpg",
+    isbn: "978-81-685414-2-9",
+    date: "December 2022",
+    link: "https://a.co/d/08xpdvHD",
+    image: bookImg4,
     description: "IT in the Energy Sector is a practical and comprehensive guide to the evolving role of information technology in the energy industry. Published by EMINSPHERE™ and with ISBN approved by the Raja Rammohun Roy National Agency for ISBN, Department of Higher Education, Ministry of Education, the book addresses the complex IT challenges faced by energy organizations today. It covers critical areas such as endpoint management, mobile device security, cloud integration, cybersecurity for critical infrastructure, IT governance, application lifecycle management, collaboration tools, and future-ready IT strategies. Designed for IT professionals, managers, and students, this book blends strategic insights with actionable, real-world guidance to help organizations implement secure, efficient, and scalable IT operations in a highly regulated sector.\n\nThe author, Vilas Shewale, is a Houston-based enterprise IT leader with over 20 years of experience managing large-scale technology infrastructure across some of the world’s most demanding and regulated industries. Currently a Lead Specialist at Energy Transfer, he oversees enterprise-wide endpoint management, mobile device security, and IT infrastructure across more than 11,000 devices spanning corporate and field operations. Born in Nashik, India, Vilas holds a Bachelor of Science in Computer Science from KTHM College and a Master of Science from Modern College, Pune. He has worked with global financial and energy organizations including Morgan Stanley, JP Morgan Chase, ConocoPhillips, and TD Ameritrade, gaining a broad and practical perspective on enterprise IT. Recognized as a cybersecurity expert for critical infrastructure, this is his second book, bringing together hands-on practitioner knowledge and insights that are not fully captured in any existing publication."
   },
   {
@@ -186,10 +186,10 @@ export const publishedBooks: Book[] = [
     title: "Secure Cloud AI & ML for Financial and Pension Systems",
     subtitle: "",
     authors: "Mr. Satish Kabade",
-    isbn: "978-8199631014",
-    date: "February 2026",
-    link: "https://a.co/d/hF7G3Y1",
-    image: "https://static.wixstatic.com/media/30814e_9c34d85ed06742518e388d7f2ccafb08~mv2.jpg",
+    isbn: "978-81-685414-3-6",
+    date: "October 2022",
+    link: "https://a.co/d/0bsCpJmF",
+    image: bookImg3,
     description: "About the Book :\nSecure Cloud AI & ML for Financial and Pension Systems is a practical, problem-solving handbook crafted for professionals working at the intersection of finance, technology, and governance. It addresses the real-world complexities of pension and financial systems, including long-term data management, regulatory compliance, and high-stakes decision-making. The book provides a structured approach to transforming complex financial challenges into scalable AI and machine learning solutions, with a strong focus on security, reliability, and transparency.\n\nThrough detailed architectures, design patterns, and real-world case studies, this book demonstrates how to build secure, compliant, and production-ready AI systems using modern cloud platforms. It explores critical areas such as data governance, model explainability, MLOps, fraud detection, and financial forecasting—ensuring systems are not only intelligent but also auditable and trustworthy. This publication is officially ISBN approved by the Raja Rammohun Roy National Agency for ISBN, Ministry of Education, Government of India, reinforcing its authenticity and academic credibility.\n\nAbout the Author:\nSatish Kabade is a technology architect with over 15 years of experience designing and delivering intelligent, cloud-native enterprise solutions across the financial and healthcare domains. His work sits at the intersection of AI, machine learning, cloud infrastructure, and enterprise modernization, translating complex regulatory and operational challenges into scalable, secure, and data-driven platforms.\n\nSatish specializes in Microsoft .NET, Azure, and AWS, with deep expertise in low-code architectures and microservices-based systems. He has led end-to-end implementations of pension and financial platforms, including integrated AWS solutions where he has driven measurable improvements in operational accuracy and processing efficiency. The practical patterns, reference blueprints, and governance frameworks in this book reflect more than a decade of hands-on experience building production systems in regulated environments."
   }
 ];
