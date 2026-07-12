@@ -21,6 +21,7 @@ import Registration from "./pages/Registration";
 import ApplyReviewer from "./pages/ApplyReviewer";
 import ApplyAdvisory from "./pages/ApplyAdvisory";
 import Books from "./pages/Books";
+import BookDetails from "./pages/BookDetails";
 import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import Privacy from "./pages/Privacy";
@@ -70,6 +71,7 @@ const App = () => {
             <Route path="/apply-reviewer" element={<ApplyReviewer />} />
             <Route path="/apply-advisory" element={<ApplyAdvisory />} />
             <Route path="/books" element={<Books />} />
+            <Route path="/books/:id" element={<BookDetails />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/privacy" element={<Privacy />} />
