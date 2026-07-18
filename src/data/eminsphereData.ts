@@ -123,7 +123,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   "icaits-26": {
     id: "icaits-26",
     title: "International Conference on Artificial Intelligence & Intelligent Technology Systems (ICAITS-26)",
-    date: "5 July 2026",
+    date: "26 July 2026",
     location: "Global Participation",
     description: "A prestigious platform for discussing cutting-edge innovations in engineering systems and computing paradigms. It provides an interdisciplinary forum for sharing research findings and practical experiences. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
