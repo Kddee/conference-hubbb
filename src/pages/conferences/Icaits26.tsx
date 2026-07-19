@@ -46,12 +46,47 @@ const conferenceData = {
     { date: "10 July 2026", label: "Final", desc: "Camera-ready submission" },
     { date: "26 July 2026", label: "Conference Date", desc: "Main event" }
   ],
-  speakers: []
+  speakers: [
+    {
+      name: "PROF. CIGDEM DEMIR",
+      org: "AHBV University, Ankara",
+      country: "TURKEY",
+      img: "/icaits26/prof.Cigdem-demir.jpeg",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Dr. Madeleine Pickles",
+      org: "Associate Professor, Liverpool John Moores University",
+      country: "England",
+      img: "/icaits26/dr.madeline-pickles.jpeg",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Dr. Ghazal Abdolbaghi",
+      org: "Shahid Beheshti University, Tehran",
+      country: "Iran",
+      img: "/icaits26/Dr.Ghazal-Abdolbaghi.jpeg",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Dr. Nikola Ilić",
+      org: "Assistant Professor, University of Belgrade Faculty of Law",
+      country: "Serbia",
+      img: "/icaits26/dr.nikola-ilic.jpeg",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    }
+  ]
 };
 
 const Icaits26 = () => {
-  const [activeTab, setActiveTab] = useState<"bio" | "publications" | "awards">("bio");
-  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="bg-background">
       {/* ENTERPRISE HERO */}
@@ -136,17 +171,16 @@ const Icaits26 = () => {
         </div>
         
         {conferenceData.speakers.length > 0 ? (
-          <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
             {conferenceData.speakers.map((s, idx) => (
               <div 
                 key={idx} 
-                className="group flex flex-col items-center text-center max-w-sm cursor-pointer"
-                onClick={() => setIsModalOpen(true)}
+                className="group flex flex-col items-center text-center max-w-sm"
               >
                 <div className="relative h-40 w-40 mb-6">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
                   {s.img ? (
-                    <img src={s.img} alt={s.name} className="relative h-full w-full object-cover rounded-full border-4 border-background shadow-lg z-10" loading="lazy" />
+                    <img src={s.img} alt={s.name} className="relative h-full w-full object-cover rounded-full border-4 border-background shadow-lg z-10" style={s.name.includes("Nikola") ? { objectPosition: "center 15%" } : undefined} loading="lazy" />
                   ) : (
                     <div className="relative h-full w-full rounded-full border-4 border-background shadow-lg z-10 bg-muted flex items-center justify-center">
                       <User className="h-12 w-12 text-muted-foreground" />
@@ -174,105 +208,7 @@ const Icaits26 = () => {
           </div>
         )}
 
-        {/* KEYNOTE DETAILS MODAL */}
-        {isModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in">
-            {conferenceData.speakers.map((speaker, sIdx) => (
-              <div 
-                key={sIdx} 
-                className="bg-card border border-white/10 rounded-[2rem] max-w-3xl w-full max-h-[85vh] overflow-y-auto p-8 relative shadow-2xl animate-fade-up text-left"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button 
-                  onClick={() => setIsModalOpen(false)}
-                  className="absolute top-6 right-6 text-muted-foreground hover:text-white transition-colors h-10 w-10 rounded-full hover:bg-white/5 flex items-center justify-center text-2xl font-bold z-20"
-                >
-                  &times;
-                </button>
 
-                <div className="flex flex-col md:flex-row gap-8 items-start mb-8 relative z-10 border-b border-border/50 pb-8">
-                  <div className="relative h-36 w-36 shrink-0 mx-auto md:mx-0">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent blur-md"></div>
-                    <img src={speaker.img} alt={speaker.name} className="relative h-full w-full object-cover rounded-full border-4 border-background z-10" />
-                  </div>
-                  <div className="text-center md:text-left">
-                    <h3 className="text-3xl font-serif font-bold text-white mb-2">{speaker.name}</h3>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent font-bold text-xs tracking-wider uppercase mb-3 border border-accent/20">
-                      <Globe className="h-3.5 w-3.5" /> {speaker.country}
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed font-medium">{speaker.org}</p>
-                  </div>
-                </div>
-
-                <div className="bg-card/40 rounded-2xl p-2 shadow-inner">
-                  {/* Tab buttons */}
-                  <div className="flex border-b border-border/50 pb-3 mb-6 gap-2 overflow-x-auto">
-                    <button
-                      onClick={() => setActiveTab("bio")}
-                      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 shrink-0 ${
-                        activeTab === "bio"
-                          ? "bg-accent text-white shadow-md shadow-accent/20"
-                          : "text-muted-foreground hover:text-white hover:bg-white/5"
-                      }`}
-                    >
-                      <User className="h-4 w-4" /> Biography
-                    </button>
-                    <button
-                      onClick={() => setActiveTab("publications")}
-                      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 shrink-0 ${
-                        activeTab === "publications"
-                          ? "bg-accent text-white shadow-md shadow-accent/20"
-                          : "text-muted-foreground hover:text-white hover:bg-white/5"
-                      }`}
-                    >
-                      <BookOpen className="h-4 w-4" /> Publications
-                    </button>
-                    <button
-                      onClick={() => setActiveTab("awards")}
-                      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 shrink-0 ${
-                        activeTab === "awards"
-                          ? "bg-accent text-white shadow-md shadow-accent/20"
-                          : "text-muted-foreground hover:text-white hover:bg-white/5"
-                      }`}
-                    >
-                      <Trophy className="h-4 w-4" /> Awards & Honours
-                    </button>
-                  </div>
-
-                  {/* Tab content */}
-                  <div className="min-h-[200px] text-muted-foreground text-sm leading-relaxed p-2">
-                    {activeTab === "bio" && (
-                      <div className="space-y-4 animate-fade-in">
-                        {speaker.bio.map((p, i) => (
-                          <p key={i}>{p}</p>
-                        ))}
-                      </div>
-                    )}
-
-                    {activeTab === "publications" && (
-                      <div className="space-y-4 animate-fade-in">
-                        {speaker.publications.map((p, i) => (
-                          <p key={i}>{p}</p>
-                        ))}
-                      </div>
-                    )}
-
-                    {activeTab === "awards" && (
-                      <div className="space-y-4 animate-fade-in">
-                        {speaker.awards.map((p, i) => (
-                          <div key={i} className="flex gap-4 items-start bg-accent/5 border border-accent/20 rounded-2xl p-5">
-                            <Award className="h-6 w-6 text-accent shrink-0 mt-0.5" />
-                            <p>{p}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
       </section>
 
       {/* PUBLICATION & AWARDS */}
