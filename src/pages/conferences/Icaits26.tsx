@@ -82,6 +82,24 @@ const conferenceData = {
       bio: ["Biography coming soon..."],
       publications: ["Publications coming soon..."],
       awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Roksolana Trach",
+      org: "Independent Crypto Analyst and International Financial Market Analyst",
+      country: "USA",
+      img: "/icaits26/roksolana-trach.png",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    },
+    {
+      name: "DR. Rahul Azmeera",
+      org: "Independent Researcher, Univeristy Of The Cumberlands",
+      country: "USA",
+      img: "/icaits26/rahul-azmeera.png",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
     }
   ]
 };
