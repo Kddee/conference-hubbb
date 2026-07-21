@@ -100,6 +100,15 @@ const conferenceData = {
       bio: ["Biography coming soon..."],
       publications: ["Publications coming soon..."],
       awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Abhiram Sanjay Patil",
+      org: "AI Engineer, Expense Anywhere",
+      country: "USA",
+      img: "/icaits26/abhiram-sanjay-patil.png",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
     }
   ]
 };
@@ -189,11 +198,11 @@ const Icaits26 = () => {
         </div>
         
         {conferenceData.speakers.length > 0 ? (
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-items-center">
             {conferenceData.speakers.map((s, idx) => (
               <div 
                 key={idx} 
-                className="group flex flex-col items-center text-center max-w-sm"
+                className="group flex flex-col items-center text-center w-full max-w-sm"
               >
                 <div className="relative h-40 w-40 mb-6">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
@@ -206,8 +215,8 @@ const Icaits26 = () => {
                   )}
                 </div>
                 <h4 className="font-bold text-primary text-lg leading-tight mb-1">{s.name}</h4>
-                <p className="text-sm text-muted-foreground mb-2 line-clamp-3">{s.org}</p>
-                {s.country && <p className="text-xs font-semibold uppercase tracking-wider text-accent">{s.country}</p>}
+                <p className="text-sm text-muted-foreground mb-4 flex-grow">{s.org}</p>
+                {s.country && <p className="text-xs font-semibold uppercase tracking-wider text-accent mt-auto">{s.country}</p>}
               </div>
             ))}
           </div>
