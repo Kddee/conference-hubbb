@@ -109,6 +109,15 @@ const conferenceData = {
       bio: ["Biography coming soon..."],
       publications: ["Publications coming soon..."],
       awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Sourav Saha",
+      org: "Assistant Vice President & Senior Software Engineer, U.S. Bank",
+      country: "USA",
+      img: "/icaits26/sourav-saha.png",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
     }
   ]
 };
