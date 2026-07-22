@@ -41,9 +41,9 @@ const conferenceData = {
     { title: "Cybersecurity", desc: "Secure systems and digital protection." }
   ],
   timeline: [
-    { date: "24 June 2026", label: "Submission", desc: "Deadline for paper submission" },
-    { date: "2 July 2026", label: "Acceptance", desc: "Notification of acceptance" },
-    { date: "10 July 2026", label: "Final", desc: "Camera-ready submission" },
+    { date: "23 July 2026", label: "Submission", desc: "Deadline for paper submission" },
+    { date: "24 July 2026", label: "Acceptance", desc: "Notification of acceptance" },
+    { date: "25 July 2026", label: "Final", desc: "Camera-ready submission" },
     { date: "26 July 2026", label: "Conference Date", desc: "Main event" }
   ],
   speakers: [
@@ -103,7 +103,7 @@ const conferenceData = {
     },
     {
       name: "Abhiram Sanjay Patil",
-      org: "AI Engineer, Expense Anywhere",
+      org: "AI Engineer",
       country: "USA",
       img: "/icaits26/abhiram-sanjay-patil.png",
       bio: ["Biography coming soon..."],
@@ -115,6 +115,15 @@ const conferenceData = {
       org: "Assistant Vice President & Senior Software Engineer, U.S. Bank",
       country: "USA",
       img: "/icaits26/sourav-saha.png",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Dr. Jacinthe Rihan",
+      org: "Professor, Ain Shams University, Cairo",
+      country: "Egypt",
+      img: "/icaits26/dr.jacinthe-rihan.png",
       bio: ["Biography coming soon..."],
       publications: ["Publications coming soon..."],
       awards: ["Awards coming soon..."]
@@ -310,7 +319,7 @@ const Icaits26 = () => {
                 {conferenceData.timeline.map((item, idx) => (
                   <div key={idx} className="flex gap-6 items-start relative">
                     {idx !== conferenceData.timeline.length - 1 && (
-                      <div className="absolute left-6 top-10 bottom-[-24px] w-px bg-primary-foreground/20"></div>
+                      <div className="absolute left-6 top-10 bottom-[-24px] w-px bg-white/20"></div>
                     )}
                     <div className="h-12 w-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0 border border-accent/30 z-10">
                       <Calendar className="h-5 w-5 text-accent" />
@@ -318,7 +327,7 @@ const Icaits26 = () => {
                     <div className="pt-2">
                       <div className="text-xl font-bold text-accent">{item.date}</div>
                       <h4 className="font-semibold text-white mt-1">{item.label}</h4>
-                      <p className="text-sm text-primary-foreground/70">{item.desc}</p>
+                      <p className="text-sm text-white/70">{item.desc}</p>
                     </div>
                   </div>
                 ))}
