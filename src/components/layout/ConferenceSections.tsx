@@ -125,9 +125,9 @@ export const ConferenceSections = ({
               {importantDates.map((item, idx) => (
                 <Card key={idx} className="p-8 border-l-4 border-accent relative overflow-hidden bg-card text-center flex flex-col items-center hover:-translate-y-1 transition-all">
                   <Calendar className="h-10 w-10 text-accent mb-4" />
-                  <h4 className="text-lg font-bold text-muted-foreground mb-2">{item.label}</h4>
-                  <p className="text-3xl font-serif font-bold text-primary mb-2">{item.date}</p>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  <h4 className="text-lg font-bold text-white/80 mb-2">{item.label}</h4>
+                  <p className="text-3xl font-serif font-bold text-white mb-2">{item.date}</p>
+                  <p className="text-sm text-white/60">{item.desc}</p>
                 </Card>
               ))}
             </div>
