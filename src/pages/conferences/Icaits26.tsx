@@ -127,6 +127,42 @@ const conferenceData = {
       bio: ["Biography coming soon..."],
       publications: ["Publications coming soon..."],
       awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Hastimal Jangid",
+      org: "University of Missouri–Kansas City",
+      country: "USA",
+      img: "/icaits26/hastimal-jangid.jpg",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Shamal Chandrakant Bhole",
+      org: "Technical Leader, Crypto Risk & Compliance Infrastructure",
+      country: "USA",
+      img: "/icaits26/shamal-chandrakant-bhole.png",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Harsh Jangid",
+      org: "Director of Engineering & Products",
+      country: "USA",
+      img: "/icaits26/harsh-jangid.png",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Abrar Ahmed Syed",
+      org: "Advisor Application Designer, Gainwell Technologies",
+      country: "USA",
+      img: "/icaits26/abrar-ahmed-syed.png",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
     }
   ]
 };
