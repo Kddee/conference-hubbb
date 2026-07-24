@@ -132,7 +132,7 @@ const conferenceData = {
       name: "Hastimal Jangid",
       org: "University of Missouri–Kansas City",
       country: "USA",
-      img: "/icaits26/hastimal-jangid.jpg",
+      img: "/icaits26/hastimal-jangid.png",
       bio: ["Biography coming soon..."],
       publications: ["Publications coming soon..."],
       awards: ["Awards coming soon..."]
