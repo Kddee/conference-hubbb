@@ -163,6 +163,15 @@ const conferenceData = {
       bio: ["Biography coming soon..."],
       publications: ["Publications coming soon..."],
       awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Hassan Mohammad Karimi",
+      org: "Researcher, Amirkabir University of Technology",
+      country: "Iran",
+      img: "/icaits26/hassan-mohammad-karimi.png",
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
     }
   ]
 };
