@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MapPin, CheckCircle2, Globe, BookOpen, Star, Trophy, Award, Search, Book, User } from "lucide-react";
 import { useState } from "react";
 import speakerImg from "@/assets/WhatsApp Image 2026-06-17 at 7.59.19 PM (1).jpeg";
+import deepakSinghImg from "@/assets/WhatsApp Image 2026-07-25 at 10.08.48 AM.jpeg";
+import advisoryImg1 from "@/assets/image copy 13.png";
+import advisoryImg2 from "@/assets/image copy 14.png";
 
 const conferenceData = {
   id: "ICAITS-26",
@@ -45,6 +48,26 @@ const conferenceData = {
     { date: "24 July 2026", label: "Acceptance", desc: "Notification of acceptance" },
     { date: "25 July 2026", label: "Final", desc: "Camera-ready submission" },
     { date: "26 July 2026", label: "Conference Date", desc: "Main event" }
+  ],
+  advisoryBoard: [
+    {
+      name: "Dr. Walida Ounruean",
+      org: "Uttaradit Rajabhat University",
+      country: "Thailand",
+      img: advisoryImg1,
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Ezinne Esther Arisa",
+      org: "",
+      country: "South Africa",
+      img: advisoryImg2,
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    }
   ],
   speakers: [
     {
@@ -172,6 +195,15 @@ const conferenceData = {
       bio: ["Biography coming soon..."],
       publications: ["Publications coming soon..."],
       awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Deepak Singh",
+      org: "Principal Solution Architect, Healthcare Technology (Health IT)",
+      country: "USA",
+      img: deepakSinghImg,
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
     }
   ]
 };
@@ -251,6 +283,39 @@ const Icaits26 = () => {
             </Card>
           </div>
         </div>
+      </section>
+
+      {/* ADVISORY BOARD MEMBERS */}
+      <section className="container py-24 border-t border-border/50">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Advisory Board Members</h2>
+          <p className="text-lg text-muted-foreground">The distinguished advisors guiding ICAITS-26.</p>
+        </div>
+        
+        {conferenceData.advisoryBoard && conferenceData.advisoryBoard.length > 0 ? (
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            {conferenceData.advisoryBoard.map((s, idx) => (
+              <div 
+                key={idx} 
+                className="group flex flex-col items-center text-center w-full max-w-sm"
+              >
+                <div className="relative h-40 w-40 mb-6">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+                  {s.img ? (
+                    <img src={s.img} alt={s.name} className="relative h-full w-full object-cover rounded-full border-4 border-background shadow-lg z-10" loading="lazy" />
+                  ) : (
+                    <div className="relative h-full w-full rounded-full border-4 border-background shadow-lg z-10 bg-muted flex items-center justify-center">
+                      <User className="h-12 w-12 text-muted-foreground" />
+                    </div>
+                  )}
+                </div>
+                <h4 className="font-bold text-primary text-lg leading-tight mb-1">{s.name}</h4>
+                <p className="text-sm text-muted-foreground mb-4 flex-grow">{s.org}</p>
+                {s.country && <p className="text-xs font-semibold uppercase tracking-wider text-accent mt-auto">{s.country}</p>}
+              </div>
+            ))}
+          </div>
+        ) : null}
       </section>
 
       {/* KEYNOTE SPEAKERS */}
