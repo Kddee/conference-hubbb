@@ -7,6 +7,7 @@ import speakerImg from "@/assets/WhatsApp Image 2026-06-17 at 7.59.19 PM (1).jpe
 import deepakSinghImg from "@/assets/WhatsApp Image 2026-07-25 at 10.08.48 AM.jpeg";
 import advisoryImg1 from "@/assets/image copy 13.png";
 import advisoryImg2 from "@/assets/image copy 14.png";
+import talebHammadImg from "@/assets/image copy 15.png";
 
 const conferenceData = {
   id: "ICAITS-26",
@@ -201,6 +202,15 @@ const conferenceData = {
       org: "Principal Solution Architect, Healthcare Technology (Health IT)",
       country: "USA",
       img: deepakSinghImg,
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Taleb Hammad",
+      org: "DBA / executive director",
+      country: "USA",
+      img: talebHammadImg,
       bio: ["Biography coming soon..."],
       publications: ["Publications coming soon..."],
       awards: ["Awards coming soon..."]
