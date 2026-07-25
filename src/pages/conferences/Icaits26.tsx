@@ -61,7 +61,7 @@ const conferenceData = {
     },
     {
       name: "Ezinne Esther Arisa",
-      org: "",
+      org: "Candy Rainbow Creations",
       country: "South Africa",
       img: advisoryImg2,
       bio: ["Biography coming soon..."],
