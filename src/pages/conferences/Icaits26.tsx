@@ -8,6 +8,8 @@ import deepakSinghImg from "@/assets/WhatsApp Image 2026-07-25 at 10.08.48 AM.jp
 import advisoryImg1 from "@/assets/image copy 13.png";
 import advisoryImg2 from "@/assets/image copy 14.png";
 import talebHammadImg from "@/assets/image copy 15.png";
+import judgeImg1 from "@/assets/image copy 16.png";
+import judgeImg2 from "@/assets/image copy 17.png";
 
 const conferenceData = {
   id: "ICAITS-26",
@@ -65,6 +67,26 @@ const conferenceData = {
       org: "Candy Rainbow Creations",
       country: "South Africa",
       img: advisoryImg2,
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    }
+  ],
+  judges: [
+    {
+      name: "Sourav Sarkar",
+      org: "Senior Worldwide Specialist Solutions Architect",
+      country: "USA",
+      img: judgeImg1,
+      bio: ["Biography coming soon..."],
+      publications: ["Publications coming soon..."],
+      awards: ["Awards coming soon..."]
+    },
+    {
+      name: "Sravanthi Kondoju",
+      org: "Data Platform Lead",
+      country: "USA",
+      img: judgeImg2,
       bio: ["Biography coming soon..."],
       publications: ["Publications coming soon..."],
       awards: ["Awards coming soon..."]
@@ -327,6 +349,39 @@ const Icaits26 = () => {
           </div>
         ) : null}
       </section>
+
+      {/* JUDGES */}
+      {conferenceData.judges && conferenceData.judges.length > 0 && (
+        <section className="container py-24 border-t border-border/50">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Judges</h2>
+            <p className="text-lg text-muted-foreground">The distinguished judges evaluating submissions for ICAITS-26.</p>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            {conferenceData.judges.map((s, idx) => (
+              <div 
+                key={idx} 
+                className="group flex flex-col items-center text-center w-full max-w-sm"
+              >
+                <div className="relative h-40 w-40 mb-6">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+                  {s.img ? (
+                    <img src={s.img} alt={s.name} className="relative h-full w-full object-cover rounded-full border-4 border-background shadow-lg z-10" loading="lazy" />
+                  ) : (
+                    <div className="relative h-full w-full rounded-full border-4 border-background shadow-lg z-10 bg-muted flex items-center justify-center">
+                      <User className="h-12 w-12 text-muted-foreground" />
+                    </div>
+                  )}
+                </div>
+                <h4 className="font-bold text-primary text-lg leading-tight mb-1">{s.name}</h4>
+                <p className="text-sm text-muted-foreground mb-4 flex-grow">{s.org}</p>
+                {s.country && <p className="text-xs font-semibold uppercase tracking-wider text-accent mt-auto">{s.country}</p>}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* KEYNOTE SPEAKERS */}
       <section className="container py-24 border-t border-border/50">
