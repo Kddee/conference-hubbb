@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import ConferenceSections from "@/components/layout/ConferenceSections";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MapPin, CheckCircle2, Globe, BookOpen, Star, Trophy, Award, Search, Book, User } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, CheckCircle2, Globe, BookOpen, Star, Trophy, Award, Search, Book, User, Crown, Lightbulb, Zap, Heart, Medal } from "lucide-react";
 import { useState } from "react";
 import speakerImg from "@/assets/WhatsApp Image 2026-06-17 at 7.59.19 PM (1).jpeg";
 import deepakSinghImg from "@/assets/WhatsApp Image 2026-07-25 at 10.08.48 AM.jpeg";
@@ -429,6 +429,49 @@ const Icaits26 = () => {
         )}
 
 
+      </section>
+
+      {/* KEYNOTE AWARDS */}
+      <section className="relative py-24 border-t border-border/50 overflow-hidden">
+        {/* Subtle background effects */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div className="container relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent font-medium text-sm mb-6 border border-accent/20 shadow-sm backdrop-blur-md">
+              <Star className="h-4 w-4" /> Excellence Recognized
+            </div>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Keynote Awards</h2>
+            <p className="text-lg text-muted-foreground">Celebrating outstanding contributions, innovation, and impact among our distinguished keynote speakers.</p>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+            {[
+              { title: "Best Keynote Speaker Award", icon: Crown, iconColor: "text-amber-400", glow: "bg-amber-400", bg: "from-amber-400/20 to-amber-400/5", border: "border-amber-400/20" },
+              { title: "Most Innovative Talk Award", icon: Lightbulb, iconColor: "text-blue-400", glow: "bg-blue-400", bg: "from-blue-400/20 to-blue-400/5", border: "border-blue-400/20" },
+              { title: "Most Impactful Presentation Award", icon: Zap, iconColor: "text-purple-400", glow: "bg-purple-400", bg: "from-purple-400/20 to-purple-400/5", border: "border-purple-400/20" },
+              { title: "Audience Choice Keynote Award", icon: Heart, iconColor: "text-rose-400", glow: "bg-rose-400", bg: "from-rose-400/20 to-rose-400/5", border: "border-rose-400/20" },
+              { title: "Outstanding Speaker Excellence Award", icon: Medal, iconColor: "text-emerald-400", glow: "bg-emerald-400", bg: "from-emerald-400/20 to-emerald-400/5", border: "border-emerald-400/20" }
+            ].map((award, idx) => (
+              <div 
+                key={idx} 
+                className="group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-2xl bg-gradient-to-b from-white/10 to-transparent hover:from-white/20 hover:to-white/5 p-[1px] transition-all duration-500"
+              >
+                <Card className="relative h-full p-8 bg-card/90 backdrop-blur-xl border-0 flex flex-col items-center text-center justify-center rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative mb-6">
+                    <div className={`absolute inset-0 ${award.glow} blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 rounded-full`}></div>
+                    <div className={`relative h-16 w-16 rounded-full bg-gradient-to-br ${award.bg} border ${award.border} flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-inner`}>
+                      <award.icon className={`h-8 w-8 ${award.iconColor} drop-shadow-md group-hover:text-white transition-colors duration-300`} />
+                    </div>
+                  </div>
+                  <h4 className="font-bold text-lg text-foreground transition-colors duration-300 relative z-10">{award.title}</h4>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* PUBLICATION & AWARDS */}
