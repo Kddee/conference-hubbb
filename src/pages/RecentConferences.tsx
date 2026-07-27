@@ -7,6 +7,7 @@ import ConferenceSections from "@/components/layout/ConferenceSections";
 import { Link } from "react-router-dom";
 
 const recent2026 = [
+  { id: "icaits-26", title: "ICAITS-26", date: "26 July 2026", type: "Virtual Mode" },
   { id: "iccemb-26", title: "ICCEMB-26", date: "31 May 2026", type: "Online Mode" },
   { id: "icqadts-2026", title: "ICQADTS-2026", date: "12 April 2026", type: "Hybrid Event" },
   { id: "icaidss-26", title: "ICAIDSS-26", date: "29 March 2026", type: "Hybrid Event" },
@@ -98,7 +99,7 @@ const ConferenceGrid = ({ title, data }: { title: string, data: any[] }) => (
           </div>
           
           <Button asChild variant="outline" className="w-full relative z-10 glass border-white/10 hover:bg-primary/10 hover:border-primary/30 hover:text-white group/btn h-14 rounded-xl font-bold">
-            <Link to={["icaids-2024", "iccemb-26"].includes(c.id) ? `/${c.id}` : `/recent-conferences/${c.id}`}>
+            <Link to={["icaids-2024", "iccemb-26", "icaits-26"].includes(c.id) ? `/${c.id}` : `/recent-conferences/${c.id}`}>
               View Memories & Photos <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
           </Button>

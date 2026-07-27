@@ -246,7 +246,7 @@ export const ConferenceSections = ({
           <div className="container max-w-6xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 uppercase tracking-wider">
-                Glimpses of Our Conferences
+                Glimpses of {conferenceName}
               </h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

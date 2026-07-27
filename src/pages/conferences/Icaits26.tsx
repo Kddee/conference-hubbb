@@ -10,6 +10,22 @@ import advisoryImg2 from "@/assets/image copy 14.png";
 import talebHammadImg from "@/assets/image copy 15.png";
 import judgeImg1 from "@/assets/image copy 16.png";
 import judgeImg2 from "@/assets/image copy 17.png";
+import glimpse1 from "@/assets/Screenshot 2026-07-26 185654.png";
+import glimpse2 from "@/assets/Screenshot 2026-07-26 192304.png";
+import glimpse3 from "@/assets/Screenshot 2026-07-26 192410.png";
+import glimpse4 from "@/assets/Screenshot 2026-07-26 194531.png";
+import glimpse5 from "@/assets/Screenshot 2026-07-26 200802.png";
+import glimpse6 from "@/assets/Screenshot 2026-07-26 201646.png";
+import glimpse7 from "@/assets/Screenshot 2026-07-26 203543.png";
+import glimpse8 from "@/assets/Screenshot 2026-07-26 175052.png";
+import glimpse9 from "@/assets/Screenshot 2026-07-26 175522.png";
+import glimpse10 from "@/assets/Screenshot 2026-07-26 181210.png";
+import glimpse11 from "@/assets/Screenshot 2026-07-26 183214.png";
+import glimpse12 from "@/assets/Screenshot 2026-07-26 183500.png";
+import glimpse13 from "@/assets/Screenshot 2026-07-26 171929.png";
+import glimpse14 from "@/assets/Screenshot 2026-07-26 173127.png";
+import glimpse15 from "@/assets/Screenshot 2026-07-26 174930.png";
+import glimpse16 from "@/assets/Screenshot 2026-07-26 114953.png";
 
 const conferenceData = {
   id: "ICAITS-26",
@@ -21,6 +37,7 @@ const conferenceData = {
     "A premier global platform focusing on AI-driven intelligent systems, modern software architectures, and emerging digital technologies transforming industries worldwide.",
     "ICAITS-26 aims to bring together researchers, engineers, developers, and academicians to explore advancements in Artificial Intelligence, intelligent systems, and software technologies. The conference encourages innovation in automation, digital transformation, and scalable system design."
   ],
+  glimpses: [glimpse1, glimpse2, glimpse3, glimpse4, glimpse5, glimpse6, glimpse7, glimpse8, glimpse9, glimpse10, glimpse11, glimpse12, glimpse13, glimpse14, glimpse15, glimpse16],
   callForPapers: "Researchers and professionals are invited to submit original contributions in AI, software systems, and emerging technologies.",
   objectives: [
     { title: "AI Innovation", desc: "Advancing intelligent algorithms and automation." },
@@ -250,7 +267,7 @@ const Icaits26 = () => {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-accent/20 to-accent/40 text-accent font-medium text-sm mb-8 backdrop-blur-md border border-accent/30">
               <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span></span>
-              {conferenceData.id} • Upcoming Conference
+              {conferenceData.id} • Completed Conference
             </div>
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight mb-6">
               {conferenceData.title}
