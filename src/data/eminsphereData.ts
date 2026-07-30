@@ -164,6 +164,25 @@ export const upcomingConferences: Record<string, ConferenceData> = {
 };
 
 export const proceedings: Record<string, ProceedingData> = {
+  "icaits-26": {
+    id: "icaits-26",
+    title: "Proceeding ICAITS-26",
+    date: "2026",
+    description: "Official proceedings and presentations from the International Conference on Artificial Intelligence & Intelligent Technology Systems (ICAITS-26).",
+    videos: [
+      "https://youtu.be/W0fjUwSOBJE",
+      "https://youtu.be/Taf51th6xXk",
+      "https://youtu.be/ZKErROWtHKI",
+      "https://youtu.be/-Vca3iW3g8g",
+      "https://youtu.be/H5OqtMlefKw",
+      "https://youtu.be/Uu5lF5DKfc8",
+      "https://youtu.be/ycau7w9AD3o",
+      "https://youtu.be/WUYocAXmnAk",
+      "https://youtu.be/PIJdSaoq76o",
+      "https://youtu.be/TUGkMH1Jig4",
+      "https://youtu.be/6Dd60RlN6kA"
+    ]
+  },
   "iccemb-26": {
     id: "iccemb-26",
     title: "Proceeding ICCEMB-26",
