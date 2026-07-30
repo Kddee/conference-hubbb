@@ -9,7 +9,7 @@ const conferences = [
     title: "ICATES-26: International Conference on Artificial Intelligence, Technology & Engineering Systems",
     city: "Hybrid Mode",
     country: "Global",
-    date: "2 August 2026",
+    date: "15 August 2026",
     topic: "AI & Engineering",
     link: "/icates-26",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"

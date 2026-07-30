@@ -144,7 +144,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   "icates-26": {
     id: "icates-26",
     title: "ICATES-26",
-    date: "12 July 2026",
+    date: "15 August 2026",
     location: "Hybrid Mode",
     description: "A premier platform exploring advancements in AI, engineering technologies, and intelligent systems. It focuses on the integration of AI with robotics, automation, and smart infrastructure. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
@@ -156,9 +156,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Cloud & Edge Computing"
     ],
     milestones: [
-      { name: "Paper Submission", date: "26 June 2026" },
-      { name: "Acceptance Notification", date: "3 July 2026" },
-      { name: "Final Submission", date: "9 July 2026" }
+      { name: "Paper Submission", date: "30 July 2026" },
+      { name: "Acceptance Notification", date: "6 August 2026" },
+      { name: "Final Submission", date: "12 August 2026" }
     ]
   }
 };
