@@ -488,6 +488,45 @@ const Icaits26 = () => {
               </div>
             ))}
           </div>
+
+          <div className="max-w-4xl mx-auto mt-20 bg-card/50 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12 shadow-lg text-left">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-8 flex items-center gap-3 justify-center md:justify-start">
+              <CheckCircle2 className="h-8 w-8 text-accent shrink-0" />
+              Award Evaluation & Selection Process
+            </h3>
+            <div className="space-y-8 text-muted-foreground leading-relaxed">
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="md:w-1/4 shrink-0">
+                  <h4 className="text-white font-bold text-lg">Evaluation Criteria</h4>
+                </div>
+                <div className="md:w-3/4">
+                  <p>Awards are meticulously evaluated based on a combination of academic rigor, originality of research, clarity of presentation, and the overall impact of the findings on the respective field. The organizing committee and session chairs review each presentation and full paper submission to ensure high standards of excellence are met.</p>
+                </div>
+              </div>
+              
+              <div className="w-full h-px bg-white/5"></div>
+              
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="md:w-1/4 shrink-0">
+                  <h4 className="text-white font-bold text-lg">Selection Process</h4>
+                </div>
+                <div className="md:w-3/4">
+                  <p>Winners are selected through a multi-tier evaluation process. Initially, session chairs nominate outstanding presentations. These nominations are then reviewed by a dedicated Awards Committee comprising senior academic board members. For audience-driven awards (such as the Audience Choice Keynote Award), live polling and feedback scores collected during the sessions play a decisive role.</p>
+                </div>
+              </div>
+              
+              <div className="w-full h-px bg-white/5"></div>
+              
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="md:w-1/4 shrink-0">
+                  <h4 className="text-white font-bold text-lg">Award Presentation</h4>
+                </div>
+                <div className="md:w-3/4">
+                  <p>The awards will be formally presented during the prestigious Valedictory and Award Ceremony at the conclusion of the conference. Winners will receive an official certificate of excellence, a physical trophy (for in-person attendees), and widespread recognition across our academic networks and post-conference publications.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

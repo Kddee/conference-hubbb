@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import ConferenceSections from "@/components/layout/ConferenceSections";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MapPin, CheckCircle2, Globe, BookOpen, Star, Trophy, Award, Search, Book, User, Crown, Lightbulb, Zap, Heart, Medal } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, CheckCircle2, Globe, BookOpen, Star, Trophy, Award, Search, Book, User, Crown, Lightbulb, Zap, Heart, Medal, Database, Cpu, Network, Shield, Settings, Microscope } from "lucide-react";
 import { useState } from "react";
 import speakerImg from "@/assets/WhatsApp Image 2026-06-17 at 7.59.19 PM (1).jpeg";
 import deepakSinghImg from "@/assets/WhatsApp Image 2026-07-25 at 10.08.48 AM.jpeg";
@@ -58,12 +58,12 @@ const conferenceData = {
     "Innovation Award"
   ],
   tracks: [
-    { title: "Foundation Models & LLMs", desc: "Architectures, pre-training, fine-tuning, and evaluation." },
-    { title: "Agentic Intelligence", desc: "Autonomous agents, multi-agent collaboration, and planning." },
-    { title: "AI Orchestration & Systems", desc: "Agent frameworks, deployment, scaling, and efficiency." },
-    { title: "AI Governance & Ethics", desc: "AI safety, alignment, regulation, and policy frameworks." },
-    { title: "AI Engineering", desc: "DevOps for AI, ML pipelines, testing, and monitoring." },
-    { title: "Applied AI Research", desc: "Agentic AI in healthcare, finance, software engineering, etc." }
+    { title: "Foundation Models & LLMs", desc: "Architectures, pre-training, fine-tuning, and evaluation.", icon: Database },
+    { title: "Agentic Intelligence", desc: "Autonomous agents, multi-agent collaboration, and planning.", icon: Cpu },
+    { title: "AI Orchestration & Systems", desc: "Agent frameworks, deployment, scaling, and efficiency.", icon: Network },
+    { title: "AI Governance & Ethics", desc: "AI safety, alignment, regulation, and policy frameworks.", icon: Shield },
+    { title: "AI Engineering", desc: "DevOps for AI, ML pipelines, testing, and monitoring.", icon: Settings },
+    { title: "Applied AI Research", desc: "Agentic AI in healthcare, finance, software engineering, etc.", icon: Microscope }
   ],
   timeline: [
     { date: "30 July 2026", label: "Paper Submission", desc: "Deadline for paper submission" },
@@ -71,7 +71,28 @@ const conferenceData = {
     { date: "12 August 2026", label: "Final Submission", desc: "Camera-ready submission" },
     { date: "15 August 2026", label: "Conference Date", desc: "Main event" }
   ],
-  advisoryBoard: [],
+  advisoryBoard: [
+    {
+      name: "Dr. Walida Ounruean",
+      role: "Conference General Chair",
+      org: "Uttaradit Rajabhat University",
+      country: "Thailand",
+      img: advisoryImg1,
+      bio: ["Dr. Walida Ounruean is a distinguished academic and researcher known for her impactful contributions to education and technology. Serving as a crucial bridge between innovative educational methodologies and modern AI applications, her work is internationally recognized."],
+      publications: ["Selected Publications coming soon..."],
+      awards: ["Excellence in Research Award"]
+    },
+    {
+      name: "Ezinne Esther Arisa",
+      role: "Conference Co-Chair",
+      org: "Candy Rainbow Creations",
+      country: "South Africa",
+      img: advisoryImg2,
+      bio: ["Ezinne Esther Arisa is an industry leader and visionary in digital transformation. Her strategic insights have guided numerous organizations through complex technological shifts, cementing her status as a prominent figure in global innovation."],
+      publications: ["Selected Publications coming soon..."],
+      awards: ["Industry Leadership Award"]
+    }
+  ],
   judges: [],
   speakers: [],
   sessionChairs: []
@@ -109,6 +130,19 @@ const Aiforge26 = () => {
                 Register Now <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
+
+            <div className="mt-16 pt-8 border-t border-border/50 max-w-2xl">
+              <p className="text-sm text-muted-foreground font-medium uppercase tracking-[0.2em] mb-6">Organized & Published By</p>
+              <div className="flex flex-wrap items-center gap-8">
+                <div className="h-24 px-8 bg-card/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
+                  <img src="/eminsphere-logo.png" alt="Eminsphere" className="h-12 w-12 object-contain rounded-full" />
+                  <span className="ml-4 font-bold text-foreground tracking-tight text-2xl">Eminsphere</span>
+                </div>
+                <div className="h-24 px-10 bg-white rounded-2xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
+                  <img src="https://static.wixstatic.com/media/30814e_1cce99ce2356404eb0b67f75ecbafe63~mv2.png" alt="IGI Global" className="h-14 object-contain" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -125,11 +159,29 @@ const Aiforge26 = () => {
               {conferenceData.about.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
+              
+              <div className="mt-6 flex items-start gap-4 p-5 bg-accent/5 rounded-xl border border-accent/10">
+                <Globe className="h-6 w-6 text-accent shrink-0 mt-1" />
+                <p className="text-foreground text-base">
+                  <strong className="text-primary font-semibold block mb-1">A Truly Global Gathering</strong> 
+                  Join researchers, innovators, and thought leaders presenting from across the globe—including participants from the USA, Thailand, UK, Turkey, South Africa, and many more countries!
+                </p>
+              </div>
             </div>
 
             <div className="mt-12 p-8 bg-accent/5 rounded-2xl border border-accent/20">
               <h3 className="text-2xl font-bold text-primary mb-4">Call for Papers</h3>
-              <p className="text-muted-foreground text-lg">{conferenceData.callForPapers}</p>
+              <p className="text-muted-foreground text-lg mb-6">{conferenceData.callForPapers}</p>
+              
+              <div className="pt-6 border-t border-accent/10">
+                <div className="flex items-start gap-3">
+                  <User className="h-5 w-5 text-accent shrink-0 mt-1" />
+                  <p className="text-foreground text-base leading-relaxed">
+                    <strong className="font-semibold text-primary">Who Should Attend: </strong>
+                    Students, industry professionals, researchers, and academic professionals are highly encouraged to present their original ideas. This is an unparalleled opportunity to connect with international peers, foster collaborations, and even share and present your ongoing or completed PhD thesis work on a global stage.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -179,6 +231,7 @@ const Aiforge26 = () => {
                   )}
                 </div>
                 <h4 className="font-bold text-primary text-lg leading-tight mb-1">{s.name}</h4>
+                {s.role && <p className="text-sm font-semibold text-accent mb-1">{s.role}</p>}
                 <p className="text-sm text-muted-foreground mb-4 flex-grow">{s.org}</p>
                 {s.country && <p className="text-xs font-semibold uppercase tracking-wider text-accent mt-auto">{s.country}</p>}
               </div>
@@ -353,15 +406,18 @@ const Aiforge26 = () => {
             <div>
               <h2 className="text-3xl font-serif font-bold mb-8 text-white">Conference Tracks</h2>
               <div className="grid sm:grid-cols-1 gap-4">
-                {conferenceData.tracks.map((track, idx) => (
-                  <div key={idx} className="bg-primary/10 border border-primary/30 rounded-lg p-5 flex items-start gap-4 hover:bg-primary/20 transition-colors">
-                    <BookOpen className="h-6 w-6 text-primary shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-bold text-lg mb-1 text-white">{track.title}</h4>
-                      <p className="text-sm text-white/60">{track.desc}</p>
+                {conferenceData.tracks.map((track, idx) => {
+                  const Icon = track.icon || BookOpen;
+                  return (
+                    <div key={idx} className="bg-primary/10 border border-primary/30 rounded-lg p-5 flex items-start gap-4 hover:bg-primary/20 transition-colors">
+                      <Icon className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-bold text-lg mb-1 text-white">{track.title}</h4>
+                        <p className="text-sm text-white/60">{track.desc}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 

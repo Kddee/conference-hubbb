@@ -1,4 +1,4 @@
-import { BookOpen, Edit3, Send, Link2, Search, Globe2, Lightbulb, Users, Target, CheckCircle2, Calendar, Globe } from "lucide-react";
+import { BookOpen, Edit3, Send, Link2, Search, Globe2, Lightbulb, Users, Target, CheckCircle2, Calendar, Globe, Image, History } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 interface ConferenceSectionsProps {
@@ -188,10 +188,10 @@ export const ConferenceSections = ({
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-white uppercase tracking-wider">
-                Session Chair (if there)
+                Session Chairs
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12">
               {sessionChairs.map((s, idx) => (
                 <div key={idx} className="group flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-accent/30 transition-all hover:-translate-y-1">
                   <div className="relative h-28 w-28 mb-5">
@@ -237,6 +237,26 @@ export const ConferenceSections = ({
               </div>
             ))}
           </div>
+
+          {/* PREVIOUS CONFERENCES CTA - ONLY SHOW FOR UPCOMING CONFERENCES WITHOUT GLIMPSES */}
+          {(!glimpses || glimpses.length === 0) && (
+            <div className="mt-16 bg-accent/10 border border-accent/20 rounded-3xl p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="max-w-2xl">
+                <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary mb-4">Discover Our Legacy of Excellence</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Explore the impact and success of our previous international conferences. View glimpses, testimonials, and past proceedings to see the high standards of authenticity and academic excellence we uphold.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 shrink-0 w-full md:w-auto">
+                <a href="/recent-conferences" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-white font-bold text-base hover:bg-accent/90 transition-colors shadow-lg whitespace-nowrap">
+                  <Image className="h-5 w-5" /> View Past Glimpses
+                </a>
+                <a href="/icaits-26" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-card text-foreground font-bold text-base hover:bg-muted transition-colors border border-border whitespace-nowrap">
+                  <History className="h-5 w-5" /> ICAITS-26 (Completed)
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
