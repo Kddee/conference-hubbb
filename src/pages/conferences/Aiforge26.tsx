@@ -30,7 +30,7 @@ import glimpse16 from "@/assets/Screenshot 2026-07-26 114953.png";
 const conferenceData = {
   id: "AIFORGE 2026",
   title: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering",
-  date: "15 August 2026",
+  date: "16 August 2026",
   location: "Hybrid Mode",
   registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSfcwM0NErFjc5N3waZ_8H7aFkgAgK0cNnfa-n2JGzCg2soBEw/viewform?usp=publish-editor",
   about: [
@@ -69,7 +69,7 @@ const conferenceData = {
     { date: "30 July 2026", label: "Paper Submission", desc: "Deadline for paper submission" },
     { date: "6 August 2026", label: "Acceptance", desc: "Notification of acceptance" },
     { date: "12 August 2026", label: "Final Submission", desc: "Camera-ready submission" },
-    { date: "15 August 2026", label: "Conference Date", desc: "Main event" }
+    { date: "16 August 2026", label: "Conference Date", desc: "Main event" }
   ],
   advisoryBoard: [
     {
