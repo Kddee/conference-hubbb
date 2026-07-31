@@ -28,22 +28,22 @@ import glimpse15 from "@/assets/Screenshot 2026-07-26 174930.png";
 import glimpse16 from "@/assets/Screenshot 2026-07-26 114953.png";
 
 const conferenceData = {
-  id: "ICATES-26",
-  title: "International Conference on Artificial Intelligence, Technology & Engineering Systems",
+  id: "AIFORGE 2026",
+  title: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering",
   date: "15 August 2026",
   location: "Hybrid Mode",
   registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeVxWk6j8SbsuQ5uaRxmp8dVpdPoDIn0gZV-H2VZvCGW42bBA/viewform?usp=header",
   about: [
-    "A premier international platform bringing together researchers, engineers, academicians, and industry professionals to explore cutting-edge advancements in Artificial Intelligence, engineering technologies, and intelligent systems driving the future of innovation.",
-    "ICATES-26 focuses on the integration of Artificial Intelligence with engineering systems and modern technologies. The conference promotes interdisciplinary research and practical innovations across domains such as robotics, automation, smart infrastructure, cybersecurity, and digital transformation."
+    "A premier international platform bringing together researchers, engineers, academicians, and industry professionals to explore cutting-edge advancements in Agentic Intelligence, foundation models, and the orchestration of complex AI systems driving the future of innovation.",
+    "AIFORGE 2026 focuses on the foundational research, orchestration, governance, and engineering of agentic AI. The conference promotes interdisciplinary research and practical innovations across domains such as multi-agent systems, AI alignment, robust AI engineering, and AI policy."
   ],
   glimpses: [],
-  callForPapers: "Researchers and professionals are invited to submit original contributions in AI, engineering systems, robotics, and emerging technologies.",
+  callForPapers: "Researchers and professionals are invited to submit original contributions in agentic AI, foundation models, AI orchestration, governance, and AI engineering.",
   objectives: [
-    { title: "AI Innovation", desc: "Advancing intelligent algorithms and automation." },
-    { title: "Engineering Excellence", desc: "Improving smart infrastructure and systems." },
-    { title: "Global Collaboration", desc: "Connecting researchers worldwide." },
-    { title: "Future Technologies", desc: "Exploring next-gen engineering solutions." }
+    { title: "Agentic AI Innovation", desc: "Advancing autonomous and multi-agent systems." },
+    { title: "AI Orchestration", desc: "Developing frameworks for managing complex AI workflows." },
+    { title: "AI Governance", desc: "Formulating policies for safe, aligned, and ethical AI." },
+    { title: "AI Engineering", desc: "Building robust, scalable, and secure AI foundations." }
   ],
   publication: [
     { title: "ISBN Proceedings", desc: "All accepted papers will be published with ISBN recognition." },
@@ -58,12 +58,12 @@ const conferenceData = {
     "Innovation Award"
   ],
   tracks: [
-    { title: "Artificial Intelligence & Machine Learning", desc: "Deep learning, NLP, intelligent systems." },
-    { title: "Robotics & Automation", desc: "Industrial robotics, automation, and control systems." },
-    { title: "IoT & Smart Systems", desc: "Smart cities, IoT architectures, and sensor networks." },
-    { title: "Data Science & Engineering", desc: "Big data analytics, data mining, and engineering applications." },
-    { title: "Cybersecurity & Blockchain", desc: "Secure systems, cryptography, and digital protection." },
-    { title: "Cloud & Edge Computing", desc: "Distributed systems, cloud platforms, and edge technologies." }
+    { title: "Foundation Models & LLMs", desc: "Architectures, pre-training, fine-tuning, and evaluation." },
+    { title: "Agentic Intelligence", desc: "Autonomous agents, multi-agent collaboration, and planning." },
+    { title: "AI Orchestration & Systems", desc: "Agent frameworks, deployment, scaling, and efficiency." },
+    { title: "AI Governance & Ethics", desc: "AI safety, alignment, regulation, and policy frameworks." },
+    { title: "AI Engineering", desc: "DevOps for AI, ML pipelines, testing, and monitoring." },
+    { title: "Applied AI Research", desc: "Agentic AI in healthcare, finance, software engineering, etc." }
   ],
   timeline: [
     { date: "30 July 2026", label: "Paper Submission", desc: "Deadline for paper submission" },
@@ -77,7 +77,7 @@ const conferenceData = {
   sessionChairs: []
 };
 
-const Icates26 = () => {
+const Aiforge26 = () => {
   return (
     <div className="bg-background">
       {/* ENTERPRISE HERO */}
@@ -404,4 +404,4 @@ const Icates26 = () => {
   );
 };
 
-export default Icates26;
+export default Aiforge26;

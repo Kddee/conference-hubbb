@@ -30,7 +30,7 @@ import ResearchFunding from "./pages/ResearchFunding";
 import Iccemb26 from "./pages/conferences/Iccemb26";
 import Icmref26 from "./pages/conferences/Icmref26";
 import Icaits26 from "./pages/conferences/Icaits26";
-import Icates26 from "./pages/conferences/Icates26";
+import Aiforge26 from "./pages/conferences/Aiforge26";
 import Icaids2024 from "./pages/conferences/Icaids2024";
 
 const queryClient = new QueryClient();
@@ -82,7 +82,7 @@ const App = () => {
           <Route path="/iccemb-26" element={<Iccemb26 />} />
           <Route path="/icmref-26" element={<Icmref26 />} />
           <Route path="/icaits-26" element={<Icaits26 />} />
-          <Route path="/icates-26" element={<Icates26 />} />
+          <Route path="/aiforge-26" element={<Aiforge26 />} />
           <Route path="/icaids-2024" element={<Icaids2024 />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

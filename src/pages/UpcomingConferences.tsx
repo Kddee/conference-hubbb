@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 
 const conferences = [
   {
-    title: "ICATES-26: International Conference on Artificial Intelligence, Technology & Engineering Systems",
+    title: "AIFORGE 2026: International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering",
     city: "Hybrid Mode",
     country: "Global",
     date: "15 August 2026",
     topic: "AI & Engineering",
-    link: "/icates-26",
+    link: "/aiforge-26",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
   },
   {

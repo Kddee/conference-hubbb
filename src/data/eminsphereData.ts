@@ -141,19 +141,19 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Registration Deadline", date: "26 June 2026" }
     ]
   },
-  "icates-26": {
-    id: "icates-26",
-    title: "ICATES-26",
+  "aiforge-26": {
+    id: "aiforge-26",
+    title: "AIFORGE 2026",
     date: "15 August 2026",
     location: "Hybrid Mode",
-    description: "A premier platform exploring advancements in AI, engineering technologies, and intelligent systems. It focuses on the integration of AI with robotics, automation, and smart infrastructure. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
+    description: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering. A premier platform exploring advancements in Agentic AI, foundation models, and AI orchestration. It focuses on the integration of AI with robust engineering and governance frameworks. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
-      "Artificial Intelligence & Machine Learning",
-      "Robotics & Automation",
-      "IoT & Smart Systems",
-      "Data Science & Engineering",
-      "Cybersecurity & Blockchain",
-      "Cloud & Edge Computing"
+      "Foundation Models & LLMs",
+      "Agentic Intelligence",
+      "AI Orchestration & Systems",
+      "AI Governance & Ethics",
+      "AI Engineering",
+      "Applied AI Research"
     ],
     milestones: [
       { name: "Paper Submission", date: "30 July 2026" },
