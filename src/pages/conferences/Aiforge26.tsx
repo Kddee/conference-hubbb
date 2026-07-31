@@ -32,7 +32,7 @@ const conferenceData = {
   title: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering",
   date: "15 August 2026",
   location: "Hybrid Mode",
-  registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeVxWk6j8SbsuQ5uaRxmp8dVpdPoDIn0gZV-H2VZvCGW42bBA/viewform?usp=header",
+  registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSfcwM0NErFjc5N3waZ_8H7aFkgAgK0cNnfa-n2JGzCg2soBEw/viewform?usp=publish-editor",
   about: [
     "A premier international platform bringing together researchers, engineers, academicians, and industry professionals to explore cutting-edge advancements in Agentic Intelligence, foundation models, and the orchestration of complex AI systems driving the future of innovation.",
     "AIFORGE 2026 focuses on the foundational research, orchestration, governance, and engineering of agentic AI. The conference promotes interdisciplinary research and practical innovations across domains such as multi-agent systems, AI alignment, robust AI engineering, and AI policy."
