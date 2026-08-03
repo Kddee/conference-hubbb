@@ -7,8 +7,8 @@ import { ArrowRight, Calendar, MapPin, CheckCircle2, User, Globe, BookOpen, Star
 const conferenceData = {
   id: "ICMREF-26",
   title: "International Conference on Multidisciplinary Research & Emerging Frontiers in AI, Software Systems & Emerging Technologies",
-  date: "16th August 2026",
-  location: "IMFC Kenya Headquarters, Nairobi, Kenya",
+  date: "4th October 2026",
+  location: "Tbilisi, Georgia",
   registrationLink: "https://forms.gle/oY44ySZUNz3puve4A",
   about: [
     "ICMREF-26 is an international academic forum dedicated to advancing multidisciplinary research across emerging domains in Artificial Intelligence, Software Systems, and Advanced Technologies. The conference aims to provide a structured platform for researchers, academicians, and industry professionals to present original contributions, exchange technical insights, and explore collaborative opportunities.",
@@ -18,13 +18,8 @@ const conferenceData = {
   venue: {
     inPerson: {
       title: "In-Person Participation",
-      address: "IMFC Kenya Headquarters\nKianda Kibera 42\nP.O. Box 410-00605\nUthiru, Nairobi, Kenya 🇰🇪",
+      address: "Conference Hub\nTbilisi, Georgia 🇬🇪",
       desc: "The physical venue provides a structured academic environment for paper presentations, technical sessions, and professional networking. Participants will have the opportunity to engage in direct discussions, panel interactions, and collaborative exchanges."
-    },
-    virtual: {
-      title: "Virtual Participation",
-      address: "Global Online Access",
-      desc: "ICMREF-26 offers a fully integrated virtual participation mode to ensure accessibility for international attendees. The conference will be conducted through secure digital platforms enabling live presentations, interactive Q&A sessions, and virtual networking."
     }
   },
   callForPapers: [
@@ -70,7 +65,7 @@ const conferenceData = {
     { title: "Conflict of Interest", icon: <Handshake className="h-6 w-6" />, desc: "Authors, reviewers, and committee members are required to disclose any potential conflicts of interest to ensure transparency and unbiased evaluation." }
   ],
   faq: [
-    { q: "Is the conference conducted in hybrid mode?", a: "Yes, ICMREF-26 will be conducted in both in-person (Nairobi, Kenya) and virtual modes to facilitate broader participation." },
+    { q: "Is the conference conducted in hybrid mode?", a: "No, ICMREF-26 will be conducted exclusively in-person in Tbilisi, Georgia to facilitate direct academic engagement." },
     { q: "Will all submitted papers be published?", a: "Only papers that are accepted through the peer review process and successfully registered will be included in the conference proceedings." },
     { q: "Are participation certificates provided?", a: "Certificates of participation/presentation will be issued to registered authors and attendees following the conference." },
     { q: "Are submissions checked for plagiarism?", a: "Yes, submissions may be screened using standard plagiarism detection tools as part of the review and quality assurance process." }
@@ -81,7 +76,7 @@ const conferenceData = {
     { category: "Paper Publication (Accepted Papers – IGI Global)", india: "INR 9,000", intl: "USD 180" }
   ],
   speakers: [
-    { name: "Lawrence Mazaki Mashati", org: "Conference Patron | Community Development Professional, IMFC", country: "Kenya", img: "https://static.wixstatic.com/media/30814e_86a164138da142578e674588143e3af3~mv2.jpeg" },
+    { name: "TBA", org: "Conference Patron", country: "Georgia", img: "https://static.wixstatic.com/media/30814e_86a164138da142578e674588143e3af3~mv2.jpeg" },
     { name: "Dr. Jitendra Pandey, FHEA", org: "Technical Program Committee Chair | Senior Faculty Member, Middle East College", country: "Oman", img: "https://static.wixstatic.com/media/30814e_bf66c69035bc4e41bc50c2345187c6f2~mv2.jpeg" }
   ],
   tracks: [
@@ -107,10 +102,10 @@ const conferenceData = {
     { name: "Emem Akpabio", org: "South Africa", country: "South Africa", img: "https://static.wixstatic.com/media/30814e_2dad2d939abb4236bcb405093be55872~mv2.jpg" }
   ],
   timeline: [
-    { date: "27 July 2026", label: "Paper Submission", desc: "Deadline for submitting papers" },
-    { date: "3 August 2026", label: "Acceptance Notification", desc: "Notification of acceptance" },
-    { date: "9 August 2026", label: "Final Camera-Ready Submission", desc: "Final submission deadline" },
-    { date: "16th August 2026", label: "Conference Date", desc: "Main event in Nairobi, Kenya" }
+    { date: "14 September 2026", label: "Paper Submission", desc: "Deadline for submitting papers" },
+    { date: "21 September 2026", label: "Acceptance Notification", desc: "Notification of acceptance" },
+    { date: "27 September 2026", label: "Final Camera-Ready Submission", desc: "Final submission deadline" },
+    { date: "4th October 2026", label: "Conference Date", desc: "Main event in Tbilisi, Georgia" }
   ]
 };
 
@@ -126,7 +121,7 @@ const Icmref26 = () => {
               <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span></span>
               {conferenceData.id} • Upcoming Conference
             </div>
-            <p className="font-mono text-accent text-sm uppercase tracking-wider mb-4">In Collaboration with IMFC Kenya</p>
+            <p className="font-mono text-accent text-sm uppercase tracking-wider mb-4">In Collaboration with Georgia Tech Events</p>
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight mb-6">
               {conferenceData.title}
             </h1>
@@ -183,14 +178,6 @@ const Icmref26 = () => {
                 <p className="font-mono text-sm whitespace-pre-line mb-4 font-semibold">{conferenceData.venue.inPerson.address}</p>
                 <p className="text-sm text-muted-foreground">{conferenceData.venue.inPerson.desc}</p>
               </Card>
-
-              <Card className="p-6 bg-card border-l-4 border-l-accent shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-xl mb-4 flex items-center gap-2">
-                  <Laptop className="h-5 w-5 text-accent" /> {conferenceData.venue.virtual.title}
-                </h3>
-                <p className="font-mono text-sm whitespace-pre-line mb-4 font-semibold">{conferenceData.venue.virtual.address}</p>
-                <p className="text-sm text-muted-foreground">{conferenceData.venue.virtual.desc}</p>
-              </Card>
             </div>
           </div>
         </div>
@@ -234,8 +221,8 @@ const Icmref26 = () => {
       {/* HOST CITY */}
       <section className="container py-24">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Host City: Nairobi, Kenya 🇰🇪</h2>
-          <p className="text-lg text-muted-foreground">Nairobi, the capital of Kenya, is recognized as one of Africa's leading centers for technological innovation and research-driven development.</p>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Host City: Tbilisi, Georgia 🇬🇪</h2>
+          <p className="text-lg text-muted-foreground">Tbilisi, the capital of Georgia, is recognized as a vibrant center for culture, education, and research-driven development.</p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {conferenceData.hostCity.map((item, idx) => (

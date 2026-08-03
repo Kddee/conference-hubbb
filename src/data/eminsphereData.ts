@@ -73,9 +73,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   "icmref-26": {
     id: "icmref-26",
     title: "International Conference on Multidisciplinary Research & Emerging Frontiers in AI, Software Systems & Emerging Technologies (ICMREF-26)",
-    date: "19 July 2026",
-    location: "Hybrid Mode | Nairobi, Kenya",
-    collaboration: "IMFC KENYA",
+    date: "4 October 2026",
+    location: "In-Person | Tbilisi, Georgia",
+    collaboration: "Georgia Tech Events",
     description: "ICMREF-26 is an international academic forum dedicated to advancing multidisciplinary research across emerging domains in Artificial Intelligence, Software Systems, and Advanced Technologies. The conference aims to provide a structured platform for researchers, academicians, and industry professionals to present original contributions, exchange technical insights, and explore collaborative opportunities.",
     thematicTracks: [
       "Artificial Intelligence & Machine Learning (Deep learning, NLP)",
@@ -86,9 +86,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Sustainable & Smart Systems (Green tech, smart infrastructure)"
     ],
     milestones: [
-      { name: "Paper Submission", date: "29 June 2026" },
-      { name: "Acceptance Notification", date: "6 July 2026" },
-      { name: "Final Submission", date: "12 July 2026" }
+      { name: "Paper Submission", date: "14 September 2026" },
+      { name: "Acceptance Notification", date: "21 September 2026" },
+      { name: "Final Submission", date: "27 September 2026" }
     ],
     speakers: [
       { name: "Dr. Ayoub Regragui", designation: "Technical Program Committee", university: "Mohammed V University, Morocco", image: "https://static.wixstatic.com/media/30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif" },
@@ -112,11 +112,11 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Emem Akpabio", designation: "South Africa", university: "", image: "https://static.wixstatic.com/media/30814e_2dad2d939abb4236bcb405093be55872~mv2.jpg" }
     ],
     patron: {
-      name: "Lawrence Mazaki Mashati",
+      name: "TBA",
       role: "Conference Patron",
       description: "Community Development Professional",
-      organization: "International Missionary for Christ Kenya (IMFC)",
-      location: "Nairobi, Kenya 🇰🇪",
+      organization: "Conference Hub",
+      location: "Tbilisi, Georgia 🇬🇪",
       image: "https://static.wixstatic.com/media/30814e_86a164138da142578e674588143e3af3~mv2.jpeg"
     }
   },

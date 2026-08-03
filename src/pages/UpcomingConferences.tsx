@@ -16,9 +16,9 @@ const conferences = [
   },
   {
     title: "ICMREF-26: International Conference on Multidisciplinary Research & Emerging Frontiers in AI",
-    city: "Nairobi",
-    country: "Kenya",
-    date: "16 August 2026",
+    city: "Tbilisi",
+    country: "Georgia",
+    date: "4 October 2026",
     topic: "Technology & AI",
     link: "/icmref-26",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop"

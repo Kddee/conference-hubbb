@@ -144,7 +144,7 @@ const Registration = () => (
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="ICAITS-26 — Virtual Mode">ICAITS-26 — Virtual Mode</SelectItem>
-                      <SelectItem value="ICMREF-26 — Nairobi, Kenya">ICMREF-26 — Nairobi, Kenya</SelectItem>
+                      <SelectItem value="ICMREF-26 — Tbilisi, Georgia">ICMREF-26 — Tbilisi, Georgia</SelectItem>
                       <SelectItem value="ICCEMB-26 — Virtual Mode">ICCEMB-26 — Virtual Mode</SelectItem>
                       <SelectItem value="ICATES-26 — Virtual Mode">ICATES-26 — Virtual Mode</SelectItem>
                     </SelectContent>
