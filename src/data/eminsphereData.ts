@@ -15,6 +15,7 @@ export interface ConferenceData {
   date: string;
   location: string;
   description: string;
+  registrationLink?: string;
   collaboration?: string;
   thematicTracks?: string[];
   milestones?: { name: string; date: string; }[];
@@ -146,6 +147,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     title: "AIFORGE 2026",
     date: "16 August 2026",
     location: "Hybrid Mode",
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdovsHUgDTtUSLoXdyufXRN67K59HSiLsxhmOUKQaE9VRcdwA/viewform?usp=publish-editor",
     description: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering. A premier platform exploring advancements in Agentic AI, foundation models, and AI orchestration. It focuses on the integration of AI with robust engineering and governance frameworks. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
       "Foundation Models & LLMs",
