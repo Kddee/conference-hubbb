@@ -112,6 +112,12 @@ const conferenceData = {
       org: "University Politehnica of Bucharest",
       country: "Romania",
       img: "https://static.wixstatic.com/media/30814e_fb0f8a532d8a413abf8b61b143684fed~mv2.png"
+    },
+    {
+      name: "Roksolana Trach",
+      org: "Independent Crypto Analyst & International Financial Market Analyst",
+      country: "USA",
+      img: "/icaits26/roksolana-trach.png"
     }
   ],
   sessionChairs: []

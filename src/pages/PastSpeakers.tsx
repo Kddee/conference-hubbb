@@ -88,6 +88,7 @@ const speakers = [
   { name: "Dr. Ratna Raja Kumar Jambi", role: "G S Moze College of Engineering", location: "India", image: "https://static.wixstatic.com/media/30814e_68b76caedcdf48b6988367c0c06ab3c8~mv2.jpeg" },
   { name: "Dr. Ratnaraja Kumar Jambi", role: "Conference Convener | Principal, G. S. Moze COE", location: "India", image: "https://static.wixstatic.com/media/30814e_68b76caedcdf48b6988367c0c06ab3c8~mv2.jpeg" },
   { name: "RC Holmes", role: "Wealthy Results LLC", location: "USA", image: "https://static.wixstatic.com/media/502b14_25f6163bd55c4354a06f544c5e8ffa9e~mv2.png" },
+  { name: "Roksolana Trach", role: "Independent Crypto Analyst & International Financial Market Analyst", location: "USA", image: "/icaits26/roksolana-trach.png" },
   { name: "Dr. Ruth Abiola Adimula", role: "University of Ilorin", location: "Nigeria", image: "https://static.wixstatic.com/media/30814e_164d8ef597e74e1a89f4e800e7c38a3f~mv2.jpeg" },
   { name: "Dr. Sadia Nazneen Karobi", role: "School of Environment and Life Sciences", location: "Global", image: "https://static.wixstatic.com/media/30814e_d7b9cf9312084baa9e85220ae3d0f383~mv2.png" },
   { name: "Sanjay Poddar", role: "Secure Cloud Strategist", location: "USA", image: "https://static.wixstatic.com/media/30814e_d78a35a5685040edb9f9ad90272fa830~mv2.jpeg" },
