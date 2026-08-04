@@ -310,7 +310,7 @@ const RecentConferences = () => {
       <div className="container max-w-3xl relative z-10 reveal">
         <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-8">Ready to explore our <span className="text-primary">past breakthroughs?</span></h2>
         <p className="text-xl text-white/70 mb-12">Dive into the archives and discover the research that shaped today's innovations.</p>
-        <Button asChild size="lg" className="bg-primary text-primary-foreground font-bold h-16 px-12 text-xl rounded-full hover:scale-105 transition-all shadow-[0_0_30px_rgba(0,153,204,0.3)] hover:shadow-[0_0_40px_rgba(0,153,204,0.4)]">
+        <Button asChild size="lg" className="bg-primary text-primary-foreground font-bold h-16 px-12 text-xl rounded-full hover:scale-105 transition-all shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.4)]">
           <Link to="/recent-proceedings">View Publications Database</Link>
         </Button>
       </div>

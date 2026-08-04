@@ -32,7 +32,7 @@ const RecentProceedings = () => {
             <div className="text-xs text-muted-foreground uppercase tracking-widest font-bold">Keynote Videos</div>
           </Card>
           <Card className="glass border-white/5 bg-card/40 p-6 text-center rounded-3xl hover:border-primary/30 transition-colors">
-            <Star className="h-8 w-8 mx-auto text-[#0099cc] mb-3" />
+            <Star className="h-8 w-8 mx-auto text-primary mb-3" />
             <div className="text-3xl font-bold text-white mb-1">15+</div>
             <div className="text-xs text-muted-foreground uppercase tracking-widest font-bold">Indexed Journals</div>
           </Card>

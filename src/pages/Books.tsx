@@ -13,12 +13,12 @@ const stats = [
 ];
 
 const disciplines = [
-  { title: "Artificial Intelligence", icon: BrainCircuit, color: "from-[#0099cc] to-[#0099cc]" },
-  { title: "Cloud Computing", icon: Cloud, color: "from-[#0099cc] to-[#0099cc]" },
-  { title: "Data Science", icon: Database, color: "from-[#0099cc] to-[#0099cc]" },
-  { title: "Internet of Things", icon: Network, color: "from-[#0099cc] to-[#0099cc]" },
-  { title: "Business & Management", icon: Briefcase, color: "from-[#0099cc] to-[#0099cc]" },
-  { title: "Engineering & Tech", icon: Cpu, color: "from-[#0099cc] to-[#0099cc]" },
+  { title: "Artificial Intelligence", icon: BrainCircuit, color: "from-primary to-primary" },
+  { title: "Cloud Computing", icon: Cloud, color: "from-primary to-primary" },
+  { title: "Data Science", icon: Database, color: "from-primary to-primary" },
+  { title: "Internet of Things", icon: Network, color: "from-primary to-primary" },
+  { title: "Business & Management", icon: Briefcase, color: "from-primary to-primary" },
+  { title: "Engineering & Tech", icon: Cpu, color: "from-primary to-primary" },
 ];
 const Books = () => (
   <>
@@ -144,7 +144,7 @@ const Books = () => (
           href="https://forms.gle/dnkfj4mUxXWHGmKXA" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0099cc] to-[#0099cc] text-white font-bold px-8 py-4 rounded-full hover:scale-105 transition-transform shadow-lg relative z-10 uppercase tracking-wide"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary text-white font-bold px-8 py-4 rounded-full hover:scale-105 transition-transform shadow-lg relative z-10 uppercase tracking-wide"
         >
           Submit Your Book Proposal
           <ArrowRight className="h-5 w-5" />

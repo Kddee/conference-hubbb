@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SiteLayout } from "./components/layout/SiteLayout";
 import { SplashAnimation } from "./components/SplashAnimation";
+import { ThemeBackground } from "./components/ThemeBackground";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import UpcomingConferences from "./pages/UpcomingConferences";
@@ -49,6 +50,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       {showSplash && <SplashAnimation onComplete={() => setShowSplash(false)} />}
+      <ThemeBackground />
       <TooltipProvider>
         <Toaster />
       <Sonner />

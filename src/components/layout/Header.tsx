@@ -85,7 +85,7 @@ export const Header = () => {
         </nav>
 
         <div className="hidden md:block">
-          <Button asChild className="bg-[#0099cc] text-white hover:bg-[#0099cc]/90 rounded-full font-black px-8 shadow-[0_0_20px_rgba(0,153,204,0.3)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-sm h-12">
+          <Button asChild className="bg-primary text-white hover:bg-primary/90 rounded-full font-black px-8 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-sm h-12">
             <Link to="/registration">Register Now</Link>
           </Button>
         </div>
@@ -112,7 +112,7 @@ export const Header = () => {
                 {l.label}
               </Link>
             ))}
-            <Button asChild className="mt-4 bg-[#0099cc] text-white rounded-xl h-12 font-black w-full uppercase tracking-wider">
+            <Button asChild className="mt-4 bg-primary text-white rounded-xl h-12 font-black w-full uppercase tracking-wider">
               <Link to="/registration" onClick={() => setOpen(false)}>Register Now</Link>
             </Button>
           </div>

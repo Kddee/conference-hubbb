@@ -154,8 +154,8 @@ const PastSpeakers = () => {
             </div>
           </Card>
           <Card className="glass-strong border-white/10 p-6 rounded-3xl flex items-center gap-6 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-            <div className="h-14 w-14 rounded-full bg-[#0099cc]/10 flex items-center justify-center shrink-0">
-              <Presentation className="h-6 w-6 text-[#0099cc]" />
+            <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+              <Presentation className="h-6 w-6 text-primary" />
             </div>
             <div>
               <div className="text-2xl font-bold text-white mb-1">500+</div>
@@ -180,7 +180,7 @@ const PastSpeakers = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors pointer-events-none" />
               
               <div className="relative mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary via-accent to-[#0099cc] opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary via-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></div>
                 <img src={s.image} alt={s.name} className="relative h-32 w-32 object-cover rounded-full border-4 border-background shadow-xl z-10" loading="lazy" />
               </div>
               

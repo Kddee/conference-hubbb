@@ -13,25 +13,25 @@ const researchSteps = [
     icon: Search,
     title: "Read, Present, and Learn",
     desc: "Gain insights, share ideas, and expand your expertise. Access reliable resources, create compelling presentations, and stay informed on the latest advancements.",
-    color: "#0099cc",
+    color: "hsl(var(--primary))",
   },
   {
     icon: Edit3,
     title: "Edit and Proofread",
     desc: "Polish your work to perfection. Ensure clarity, consistency, and quality with professional editing and proofreading services tailored to your research needs.",
-    color: "#0099cc",
+    color: "hsl(var(--primary))",
   },
   {
     icon: Send,
     title: "Review and Publish",
     desc: "Navigate the publication process with ease. From peer reviews to journal submissions, we help you refine and share your findings with the world.",
-    color: "#0099cc",
+    color: "hsl(var(--primary))",
   },
   {
     icon: Link2,
     title: "Refer and Cite",
     desc: "Acknowledge your sources accurately. Simplify referencing and citation with tools and guidance that save you time and effort.",
-    color: "#0099cc",
+    color: "hsl(var(--primary))",
   },
 ];
 
@@ -40,25 +40,25 @@ const whyAttendReasons = [
     icon: Users,
     title: "Engage with Experts Across Diverse Fields",
     desc: "Connect with leading professionals, researchers, and thought leaders from various disciplines. Gain insights into emerging trends, innovative solutions, and interdisciplinary collaborations that drive meaningful progress.",
-    color: "#0099cc",
+    color: "hsl(var(--primary))",
   },
   {
     icon: Lightbulb,
     title: "Discover Groundbreaking Research & Real-World Applications",
     desc: "Explore pioneering research that bridges the gap between theory and practice. Witness how cutting-edge innovations are transforming industries, solving global challenges, and shaping the future.",
-    color: "#0099cc",
+    color: "hsl(var(--primary))",
   },
   {
     icon: Globe2,
     title: "Network with Global Scholars, Innovators & Policymakers",
     desc: "Expand your professional circle by interacting with international experts, industry leaders, and policymakers. Build valuable collaborations, exchange ideas, and unlock new opportunities for growth and development.",
-    color: "#0099cc",
+    color: "hsl(var(--primary))",
   },
   {
     icon: Target,
     title: "Explore Strategies Aligned with Sustainable Development Goals (SDGs)",
     desc: "Engage in thought-provoking discussions on sustainability and global impact. Learn about actionable strategies, policies, and research initiatives that contribute to a better future in alignment with the United Nations SDGs.",
-    color: "#0099cc",
+    color: "hsl(var(--primary))",
   },
 ];
 
@@ -79,7 +79,7 @@ export const ConferenceSections = ({
     <>
       {/* RESEARCH JOURNEY */}
       <section className="relative py-24 bg-[#000d14] overflow-hidden border-t border-white/5">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#0099cc]/20 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         <div className="container max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Research Journey</h2>
@@ -151,7 +151,7 @@ export const ConferenceSections = ({
                 const [title, desc] = s.split(":");
                 return (
                   <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <CheckCircle2 className="h-6 w-6 text-[#0099cc] shrink-0" />
+                    <CheckCircle2 className="h-6 w-6 text-primary shrink-0" />
                     <div>
                       <span className="font-bold text-white block mb-1">{title}:</span>
                       <span className="text-white/70 text-sm leading-relaxed block">{desc}</span>
@@ -162,8 +162,8 @@ export const ConferenceSections = ({
             </div>
 
             <Card className="bg-white/5 border-white/10 rounded-3xl p-10 text-center flex flex-col items-center justify-center min-h-full">
-              <div className="w-20 h-20 rounded-full bg-[#0099cc]/10 flex items-center justify-center mb-6">
-                <Edit3 className="h-10 w-10 text-[#0099cc]" />
+              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                <Edit3 className="h-10 w-10 text-primary" />
               </div>
               <h3 className="text-3xl font-bold text-white mb-4">Let us help you make your research shine!</h3>
               <p className="text-white/50 text-base leading-relaxed mb-8">
@@ -171,7 +171,7 @@ export const ConferenceSections = ({
               </p>
               <a
                 href="/registration"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0099cc] text-white font-bold text-base hover:opacity-90 transition-opacity w-full justify-center shadow-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-white font-bold text-base hover:opacity-90 transition-opacity w-full justify-center shadow-lg"
               >
                 <Send className="h-5 w-5" /> Get Support Now
               </a>

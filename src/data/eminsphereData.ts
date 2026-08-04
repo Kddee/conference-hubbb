@@ -159,6 +159,11 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Paper Submission", date: "30 July 2026" },
       { name: "Acceptance Notification", date: "6 August 2026" },
       { name: "Final Submission", date: "12 August 2026" }
+    ],
+    speakers: [
+      { name: "Prof. Dr. Alexander Bull", designation: "IU International University", university: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
+      { name: "Nadine Zeinoun", designation: "President, ICF Chapter Ottawa", university: "Lebanon", image: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
+      { name: "Marghescu Cristina-Florentina", designation: "University Politehnica of Bucharest", university: "Romania", image: "https://static.wixstatic.com/media/30814e_fb0f8a532d8a413abf8b61b143684fed~mv2.png" }
     ]
   }
 };

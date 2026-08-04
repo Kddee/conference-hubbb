@@ -464,8 +464,8 @@ const Icaits26 = () => {
           
           <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
             {[
-              { title: "Best Keynote Speaker Award", icon: Crown, iconColor: "text-amber-400", glow: "bg-amber-400", bg: "from-amber-400/20 to-amber-400/5", border: "border-amber-400/20" },
-              { title: "Most Innovative Talk Award", icon: Lightbulb, iconColor: "text-blue-400", glow: "bg-blue-400", bg: "from-blue-400/20 to-blue-400/5", border: "border-blue-400/20" },
+              { title: "Best Keynote Speaker Award", icon: Crown, iconColor: "text-accent", glow: "bg-accent", bg: "from-accent/20 to-accent/5", border: "border-accent/20" },
+              { title: "Most Innovative Talk Award", icon: Lightbulb, iconColor: "text-primary", glow: "bg-primary", bg: "from-primary/20 to-primary/5", border: "border-primary/20" },
               { title: "Most Impactful Presentation Award", icon: Zap, iconColor: "text-purple-400", glow: "bg-purple-400", bg: "from-purple-400/20 to-purple-400/5", border: "border-purple-400/20" },
               { title: "Audience Choice Keynote Award", icon: Heart, iconColor: "text-rose-400", glow: "bg-rose-400", bg: "from-rose-400/20 to-rose-400/5", border: "border-rose-400/20" },
               { title: "Outstanding Speaker Excellence Award", icon: Medal, iconColor: "text-emerald-400", glow: "bg-emerald-400", bg: "from-emerald-400/20 to-emerald-400/5", border: "border-emerald-400/20" }

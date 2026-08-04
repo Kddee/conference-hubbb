@@ -250,7 +250,7 @@ const Index = () => {
               <span className="text-white/70 text-[10px] font-semibold tracking-wider leading-tight">RESEARCH FUNDING DEADLINE</span>
             </div>
             <div className="w-px h-10 bg-white/20 mx-2"></div>
-            <Button asChild className="rounded-full bg-[#0099cc] text-white hover:bg-[#0099cc]/90 h-[52px] px-10 text-sm font-black uppercase tracking-wider transition-all duration-300 ml-4 shadow-[0_0_20px_rgba(0,153,204,0.3)]">
+            <Button asChild className="rounded-full bg-primary text-white hover:bg-primary/90 h-[52px] px-10 text-sm font-black uppercase tracking-wider transition-all duration-300 ml-4 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
               <Link to="/research-funding">Apply Now</Link>
             </Button>
           </div>
@@ -264,7 +264,7 @@ const Index = () => {
                 <div key={s.label} className={`flex flex-col items-center text-center px-4 ${i !== 0 ? 'md:border-l border-white/10' : ''}`}>
                   <div className="text-4xl md:text-5xl font-sans font-black text-white mb-2 tracking-tight drop-shadow-lg">
                     {s.value.replace('+', '')}
-                    <span className="text-[#0099cc]">+</span>
+                    <span className="text-primary">+</span>
                   </div>
                   <div className="text-[10px] md:text-xs text-white/70 uppercase tracking-[0.2em] font-bold">{s.label}</div>
                 </div>
@@ -276,7 +276,7 @@ const Index = () => {
 
       {/* UNIQUE FLOATING TICKET BANNER FOR ICAITS-26 */}
       <div className="relative z-30 container px-4 mx-auto max-w-5xl mt-16 mb-8">
-        <div className="relative group rounded-[2.5rem] bg-gradient-to-r from-accent via-yellow-400 to-amber-500 p-1 shadow-[0_20px_50px_rgba(255,193,7,0.15)] hover:shadow-[0_30px_60px_rgba(255,193,7,0.3)] transition-all duration-500 transform hover:-translate-y-2">
+        <div className="relative group rounded-[2.5rem] bg-gradient-to-r from-accent via-primary to-secondary p-1 shadow-[0_20px_50px_rgba(16,185,129,0.15)] hover:shadow-[0_30px_60px_rgba(16,185,129,0.3)] transition-all duration-500 transform hover:-translate-y-2">
           
           <div className="relative h-full w-full bg-[#050B14] rounded-[2.4rem] overflow-hidden flex flex-col md:flex-row">
             
@@ -307,7 +307,7 @@ const Index = () => {
               <h3 className="text-4xl md:text-5xl font-serif font-black text-white mb-2 tracking-tight">
                 ICAITS-26
               </h3>
-              <p className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-300 mb-6">
+              <p className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent mb-6">
                 Artificial Intelligence & Intelligent Technology Systems
               </p>
               
@@ -321,7 +321,7 @@ const Index = () => {
               </div>
               
               <div className="flex items-center gap-6">
-                <Button asChild size="lg" className="rounded-full bg-accent hover:bg-yellow-400 text-[#050B14] font-black uppercase tracking-wider px-8 h-14 shadow-[0_0_20px_rgba(255,193,7,0.4)] transition-all">
+                <Button asChild size="lg" className="rounded-full bg-accent hover:bg-primary text-[#050B14] font-black uppercase tracking-wider px-8 h-14 shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all">
                   <Link to="/icaits-26" className="flex items-center gap-2">
                     Register Now <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -342,13 +342,13 @@ const Index = () => {
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="container relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 tracking-tight">Experience The <span className="text-[#0099cc]">Future</span> of Research</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 tracking-tight">Experience The <span className="text-primary">Future</span> of Research</h2>
             <p className="text-lg text-white/70">Watch how Eminsphere connects global innovators and academic leaders.</p>
           </div>
           
           <div className="max-w-5xl mx-auto relative group">
             {/* Glowing Backdrop */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#0099cc] to-[#0099cc] rounded-[2.5rem] blur opacity-25 group-hover:opacity-60 transition duration-1000 group-hover:duration-500" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary rounded-[2.5rem] blur opacity-25 group-hover:opacity-60 transition duration-1000 group-hover:duration-500" />
             
             {/* Video Container */}
             <div className="relative rounded-[2rem] overflow-hidden bg-black border border-white/10 shadow-2xl">
@@ -391,15 +391,15 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#000508] via-[#000508]/60 to-transparent transition-colors duration-500" />
                   
                   <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
-                    <div className="h-14 w-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mb-6 group-hover:-translate-y-2 group-hover:bg-[#0099cc] group-hover:border-[#0099cc] transition-all duration-500 shadow-xl">
+                    <div className="h-14 w-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mb-6 group-hover:-translate-y-2 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-xl">
                       <Icon className="h-7 w-7 text-white group-hover:text-black transition-colors duration-500" />
                     </div>
                     
                     <div className="transform group-hover:-translate-y-2 transition-transform duration-500">
-                      <h3 className="font-sans font-black text-2xl text-white mb-2 tracking-tight group-hover:text-[#0099cc] transition-colors duration-500">{label}</h3>
+                      <h3 className="font-sans font-black text-2xl text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-500">{label}</h3>
                       <div className="flex items-center text-white/70 font-bold text-sm group-hover:text-white transition-colors duration-500 uppercase tracking-widest">
                         <span>{count}</span>
-                        <ArrowRight className="ml-3 h-4 w-4 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 text-[#0099cc]" />
+                        <ArrowRight className="ml-3 h-4 w-4 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 text-primary" />
                       </div>
                     </div>
                   </div>
@@ -466,7 +466,7 @@ const Index = () => {
                 <Globe2 className="h-4 w-4" /> Worldwide Reach
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-black text-foreground mb-6 leading-[1.1] tracking-tight">
-                Global Conferences <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">That Drive Impact</span>
+                Global Conferences <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">That Drive Impact</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl">
                 Join a dynamic global network of researchers and industry leaders. Our hybrid conferences blend virtual accessibility with unparalleled in-person networking opportunities.
@@ -521,11 +521,11 @@ const Index = () => {
 
             {/* Content Side */}
             <div className="flex flex-col justify-center">
-              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#0099cc] mb-6">
+              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary mb-6">
                 <BookOpen className="h-4 w-4" /> Global Recognition
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-black text-white mb-6 leading-[1.1] tracking-tight">
-                Swift Publishing in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0099cc] to-[#00d9ff]">SCOPUS</span> Indexed Journals
+                Swift Publishing in <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">SCOPUS</span> Indexed Journals
               </h2>
               <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-xl">
                 Eminsphere provides a guaranteed, fast-track publishing pipeline for multidisciplinary research. Ensure your work reaches the global academic community with maximum visibility and prestige.
@@ -538,7 +538,7 @@ const Index = () => {
                   { title: "Get Indexed in Scopus", desc: "Secure your legacy with recognized, indexed publications." }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center font-black text-[#0099cc]">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center font-black text-primary">
                       0{idx + 1}
                     </div>
                     <div>
@@ -550,7 +550,7 @@ const Index = () => {
               </div>
 
               <div>
-                <Button asChild className="bg-[#0099cc] text-white hover:bg-[#0099cc]/90 rounded-full font-black px-10 h-14 shadow-[0_0_20px_rgba(0,153,204,0.3)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-sm">
+                <Button asChild className="bg-primary text-white hover:bg-primary/90 rounded-full font-black px-10 h-14 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-sm">
                   <Link to="/recent-proceedings">Publish Your Work Today <ArrowRight className="ml-2 h-5 w-5" /></Link>
                 </Button>
               </div>
@@ -562,15 +562,15 @@ const Index = () => {
       {/* WHY EMINSPHERE — TRUST & CREDIBILITY SECTION */}
       <section className="relative py-32 overflow-hidden bg-[#000d14]">
         <div className="absolute inset-0 dot-pattern opacity-5" />
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#0099cc]/30 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <div className="container relative z-10">
 
           {/* Section Header */}
           <div className="text-center max-w-4xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#0099cc] mb-5">
+            <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary mb-5">
               <ShieldCheck className="h-4 w-4" /> Globally Recognised
             </div>
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Why Researchers Trust <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0099cc] via-[#00bfff] to-[#0066ff]">Eminsphere</span></h2>
+            <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Why Researchers Trust <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">Eminsphere</span></h2>
             <p className="text-lg text-white/60 leading-relaxed">
               At Eminsphere, we bring together world-class researchers, academic institutions, and industry pioneers under one roof. Our conferences offer unparalleled opportunities to stay updated on cutting-edge technological developments, major breakthroughs, and global achievements. We are committed to advancing knowledge, fostering collaboration, and upholding the highest standards of academic integrity — making every Eminsphere event a globally credible milestone in your research journey.
             </p>
@@ -579,11 +579,11 @@ const Index = () => {
           {/* GLOBAL REACH — ANIMATED COUNTRIES */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#0099cc] mb-4">
+              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary mb-4">
                 <Globe2 className="h-4 w-4" /> International Presence
               </div>
               <h3 className="text-3xl md:text-4xl font-serif font-bold text-white mb-3">
-                One Platform. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0099cc] to-[#00e5ff]">Every Corner of the World.</span>
+                One Platform. <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Every Corner of the World.</span>
               </h3>
               <p className="text-white/50 max-w-2xl mx-auto text-sm">
                 Eminsphere conferences unite researchers, professors, and industry leaders from across the globe. Our past speakers have represented over 20 nations — each bringing unique perspectives that make our events truly international.
@@ -636,7 +636,7 @@ const Index = () => {
                   { flag: "🇸🇦", name: "Saudi Arabia" },
                   { flag: "🇧🇩", name: "Bangladesh" },
                 ].map((c, i) => (
-                  <div key={i} className="flex items-center gap-2 mx-3 px-5 py-3 rounded-full bg-white/5 border border-white/10 flex-shrink-0 hover:bg-white/10 hover:border-[#0099cc]/40 transition-colors cursor-default">
+                  <div key={i} className="flex items-center gap-2 mx-3 px-5 py-3 rounded-full bg-white/5 border border-white/10 flex-shrink-0 hover:bg-white/10 hover:border-primary/40 transition-colors cursor-default">
                     <span className="text-2xl">{c.flag}</span>
                     <span className="text-white/80 font-semibold text-sm whitespace-nowrap">{c.name}</span>
                   </div>
@@ -684,7 +684,7 @@ const Index = () => {
                   { flag: "🇴🇲", name: "Oman" },
                   { flag: "🇪🇸", name: "Spain" },
                 ].map((c, i) => (
-                  <div key={i} className="flex items-center gap-2 mx-3 px-5 py-3 rounded-full bg-white/5 border border-white/10 flex-shrink-0 hover:bg-white/10 hover:border-[#0099cc]/40 transition-colors cursor-default">
+                  <div key={i} className="flex items-center gap-2 mx-3 px-5 py-3 rounded-full bg-white/5 border border-white/10 flex-shrink-0 hover:bg-white/10 hover:border-primary/40 transition-colors cursor-default">
                     <span className="text-2xl">{c.flag}</span>
                     <span className="text-white/80 font-semibold text-sm whitespace-nowrap">{c.name}</span>
                   </div>
@@ -695,7 +695,7 @@ const Index = () => {
             {/* Country count strip */}
             <div className="flex justify-center mt-10">
               <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10">
-                <Globe2 className="h-5 w-5 text-[#0099cc]" />
+                <Globe2 className="h-5 w-5 text-primary" />
                 <span className="text-white font-bold text-sm">20+ Countries · 45+ Past Speakers · 5 Continents</span>
               </div>
             </div>
@@ -712,7 +712,7 @@ const Index = () => {
                   tag: "Scopus · Web of Science",
                   description: "Publish your research in globally recognized Scopus and Web of Science indexed journals. Our editorial team ensures your work meets the highest standards of peer-reviewed academic publishing.",
                   icon: BookOpen,
-                  color: "#0099cc",
+                  color: "hsl(var(--primary))",
                 },
                 {
                   num: "02",
@@ -720,7 +720,7 @@ const Index = () => {
                   tag: "Virtual · In-Person · Hybrid",
                   description: "World-class end-to-end execution of international scientific summits and corporate symposiums — from keynote curation to certificate issuance, handled with institutional precision.",
                   icon: Globe2,
-                  color: "#0099cc",
+                  color: "hsl(var(--primary))",
                 },
                 {
                   num: "03",
@@ -728,7 +728,7 @@ const Index = () => {
                   tag: "PhD · Masters · Research",
                   description: "Expert academic mentoring and editorial support for postgraduate researchers. Our advisors have decades of combined research experience across engineering, medicine, and social sciences.",
                   icon: GraduationCap,
-                  color: "#0099cc",
+                  color: "hsl(var(--primary))",
                 },
                 {
                   num: "04",
@@ -736,7 +736,7 @@ const Index = () => {
                   tag: "Certified · International",
                   description: "Professional upskilling programs certified by leading international universities. Designed for industry leaders, researchers, and institutions looking to expand competency and global standing.",
                   icon: Award,
-                  color: "#0099cc",
+                  color: "hsl(var(--primary))",
                 },
               ].map((s, i) => (
                 <div
@@ -794,7 +794,7 @@ const Index = () => {
               { value: "15+ Years", label: "Academic Publishing Experience", icon: Globe2 },
             ].map(({ value, label, icon: Icon }) => (
               <div key={label} className="flex flex-col items-center justify-center text-center p-8 bg-white/3 hover:bg-white/6 transition-colors">
-                <Icon className="h-6 w-6 text-[#0099cc] mb-4" />
+                <Icon className="h-6 w-6 text-primary mb-4" />
                 <div className="text-2xl font-black text-white mb-1">{value}</div>
                 <div className="text-xs text-white/50 uppercase tracking-wider font-bold">{label}</div>
               </div>
@@ -814,7 +814,7 @@ const Index = () => {
       <section className="py-32 bg-[#000508] overflow-hidden border-t border-white/5">
         <div className="container">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#0099cc] mb-4">
+            <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary mb-4">
               <Sparkles className="h-4 w-4" /> Legacy of Excellence
             </div>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Glimpses from Our Conferences</h2>
@@ -829,7 +829,7 @@ const Index = () => {
                 onClick={() => handleConfSwitch(idx)}
                 className={`px-5 py-3 rounded-full text-sm font-bold transition-all duration-300 border ${
                   activeConf === idx
-                    ? 'bg-[#0099cc] text-white border-[#0099cc] shadow-[0_0_20px_rgba(0,153,204,0.3)]'
+                    ? 'bg-primary text-white border-primary shadow-[0_0_20px_rgba(16,185,129,0.3)]'
                     : 'bg-white/5 text-white/60 border-white/10 hover:border-white/30 hover:text-white'
                 }`}
               >

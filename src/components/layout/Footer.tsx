@@ -51,7 +51,7 @@ export const Footer = () => {
               <a href="https://www.linkedin.com/company/106142250/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="h-8 w-8 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-smooth shadow-sm hover:shadow-gold">
                 <Linkedin className="h-3.5 w-3.5" />
               </a>
-              <a href="https://www.youtube.com/@Eminsphere" target="_blank" rel="noopener noreferrer" className="h-8 w-8 rounded-full bg-muted hover:bg-[#0099cc] hover:text-white flex items-center justify-center transition-smooth shadow-sm hover:shadow-gold">
+              <a href="https://www.youtube.com/@Eminsphere" target="_blank" rel="noopener noreferrer" className="h-8 w-8 rounded-full bg-muted hover:bg-primary hover:text-white flex items-center justify-center transition-smooth shadow-sm hover:shadow-gold">
                 <Youtube className="h-3.5 w-3.5" />
               </a>
             </div>

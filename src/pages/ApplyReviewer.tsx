@@ -172,7 +172,7 @@ const ApplyReviewer = () => (
         <p className="text-white/70 mb-10 leading-relaxed text-xl max-w-3xl mx-auto">
           If you are passionate about advancing research quality and contributing to internationally recognized academic initiatives, we invite you to formally apply.
         </p>
-        <Button asChild size="lg" className="h-16 px-10 text-lg rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_30px_rgba(0,153,204,0.3)] hover:scale-105 transition-all">
+        <Button asChild size="lg" className="h-16 px-10 text-lg rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:scale-105 transition-all">
           <a href="https://forms.gle/vgARCeUie6zzxWrS8" target="_blank" rel="noopener noreferrer">
             Submit Reviewer Application <ArrowRight className="ml-2 h-6 w-6" />
           </a>
