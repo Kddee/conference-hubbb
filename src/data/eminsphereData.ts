@@ -145,7 +145,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   "aiforge-26": {
     id: "aiforge-26",
     title: "AIFORGE 2026",
-    date: "16 August 2026",
+    date: "30 August 2026",
     location: "Hybrid Mode",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdovsHUgDTtUSLoXdyufXRN67K59HSiLsxhmOUKQaE9VRcdwA/viewform?usp=publish-editor",
     description: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering. A premier platform exploring advancements in Agentic AI, foundation models, and AI orchestration. It focuses on the integration of AI with robust engineering and governance frameworks. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
@@ -158,9 +158,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Applied AI Research"
     ],
     milestones: [
-      { name: "Paper Submission", date: "30 July 2026" },
-      { name: "Acceptance Notification", date: "6 August 2026" },
-      { name: "Final Submission", date: "12 August 2026" }
+      { name: "Paper Submission", date: "20 August 2026" },
+      { name: "Acceptance Notification", date: "26 August 2026" },
+      { name: "Final Submission", date: "28 August 2026" }
     ],
     speakers: [
       { name: "Prof. Dr. Alexander Bull", designation: "IU International University", university: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
