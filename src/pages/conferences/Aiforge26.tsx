@@ -47,10 +47,10 @@ const conferenceData = {
     { title: "AI Engineering", desc: "Building robust, scalable, and secure AI foundations." }
   ],
   publication: [
-    { title: "ISBN Proceedings", desc: "Official ISBN: 978-81-687765-9-3. All accepted and registered papers will be published in official conference proceedings with ISBN recognition." },
-    { title: "Scopus Opportunity", desc: "Selected papers may be recommended for Scopus journals." },
-    { title: "Web of Science", desc: "High-quality papers may be submitted to WoS journals." },
-    { title: "Peer Review", desc: "Double-blind international peer review process." }
+    { title: "ISBN Conference Proceedings", img: "https://i.postimg.cc/VvnzKNKj/image.png", desc: "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number (ISBN: 978-81-687765-9-3), ensuring global visibility, citation, and academic recognition." },
+    { title: "Scopus Indexed Journals (Opportunity)", img: "https://i.postimg.cc/hPVGr2wS/image.png", desc: "Extended versions of selected high-quality papers may be recommended for publication in Scopus indexed journals, subject to journal scope, editorial decision, and an additional peer-review process." },
+    { title: "Web of Science (Under Consideration)", img: "https://i.postimg.cc/0NX5QF6x/image.png", desc: "Selected papers may be considered for submission to journals indexed in Web of Science, based on quality, originality, and editorial evaluation." },
+    { title: "DOI & Digital Access", img: null, desc: "Each published paper may be assigned a Digital Object Identifier (DOI) to ensure permanent accessibility and citation tracking." }
   ],
   awards: [
     "ISBN: 978-81-687765-9-3 Conference Proceedings",
@@ -403,39 +403,46 @@ const Aiforge26 = () => {
         </div>
       </section>
 
-      {/* PUBLICATION & AWARDS */}
-      <section className="bg-muted py-24">
+      {/* PUBLICATION & INDEXING */}
+      <section className="bg-muted py-24 border-t border-border/50">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div>
-              <h2 className="text-3xl font-serif font-bold text-primary mb-8 flex items-center gap-3">
-                <Book className="h-8 w-8 text-accent" />
-                Publication & Indexing
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {conferenceData.publication.map((pub, idx) => (
-                  <Card key={idx} className="p-6 bg-card hover:shadow-md transition-shadow border-t-4 border-t-primary">
-                    <h4 className="font-bold text-lg mb-2">{pub.title}</h4>
-                    <p className="text-sm text-muted-foreground">{pub.desc}</p>
-                  </Card>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h2 className="text-3xl font-serif font-bold text-primary mb-8 flex items-center gap-3">
-                <Trophy className="h-8 w-8 text-accent" />
-                Awards & Recognition
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {conferenceData.awards.map((award, idx) => (
-                  <Card key={idx} className="p-6 bg-card flex flex-col items-center text-center justify-center hover:shadow-md transition-shadow border-t-4 border-t-accent">
-                    <Award className="h-10 w-10 text-accent mb-3" />
-                    <h4 className="font-bold text-lg">{award}</h4>
-                  </Card>
-                ))}
-              </div>
-            </div>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Publication & Indexing</h2>
+            <p className="text-lg text-muted-foreground">
+              All accepted and registered papers will be published in official proceedings with comprehensive global indexing and dissemination opportunities.
+            </p>
           </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {conferenceData.publication.map((item, idx) => (
+              <Card key={idx} className="p-6 bg-card hover:-translate-y-1 transition-transform border-t-4 border-t-primary shadow-sm text-center flex flex-col items-center">
+                {item.img && <img src={item.img} alt={item.title} className="h-16 mb-6 object-contain" />}
+                {!item.img && <Book className="h-12 w-12 text-primary mb-6" />}
+                <h3 className="font-bold text-lg mb-3">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AWARDS & RECOGNITION */}
+      <section className="container py-24">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6 flex items-center justify-center gap-3">
+            <Trophy className="h-10 w-10 text-accent" />
+            Awards & Recognition
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Honoring exceptional research, presentation quality, and innovative academic contributions across all conference tracks.
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {conferenceData.awards.map((award, idx) => (
+            <Card key={idx} className="p-6 bg-card flex flex-col items-center text-center justify-center hover:-translate-y-1 transition-transform border-t-4 border-t-accent shadow-md">
+              <Award className="h-10 w-10 text-accent mb-3" />
+              <h4 className="font-bold text-lg">{award}</h4>
+            </Card>
+          ))}
         </div>
       </section>
 
