@@ -162,7 +162,7 @@ const Aiforge26 = () => {
               </a>
             </Button>
 
-            <div className="mt-16 pt-8 border-t border-border/50 max-w-4xl">
+            <div className="mt-16 pt-8 border-t border-border/50 max-w-5xl">
               <p className="text-sm text-muted-foreground font-medium uppercase tracking-[0.2em] mb-6">Organized & Published By</p>
               <div className="flex flex-wrap items-center gap-6">
                 <div className="h-24 px-8 bg-card/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
@@ -175,6 +175,10 @@ const Aiforge26 = () => {
                 </div>
                 <div className="h-24 px-8 bg-white rounded-2xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
                   <img src="https://i.postimg.cc/VvnzKNKj/image.png" alt="ISBN Proceedings" className="h-14 object-contain" />
+                </div>
+                <div className="h-24 px-8 bg-card/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
+                  <Book className="h-9 w-9 text-primary" />
+                  <span className="ml-3 font-bold text-foreground tracking-tight text-xl">DOI & Digital Access</span>
                 </div>
               </div>
             </div>
