@@ -48,7 +48,7 @@ const conferenceData = {
   ],
   publication: [
     { title: "ISBN Conference Proceedings", img: "https://i.postimg.cc/VvnzKNKj/image.png", desc: "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number (ISBN: 978-81-687765-9-3), ensuring global visibility, citation, and academic recognition." },
-    { title: "Scopus Indexed Journals (Opportunity)", img: "https://i.postimg.cc/hPVGr2wS/image.png", desc: "Extended versions of selected high-quality papers may be recommended for publication in Scopus indexed journals, subject to journal scope, editorial decision, and an additional peer-review process." },
+    { title: "Google Scholar Indexing", img: "/google-scholar.svg", desc: "All published papers will be indexed in Google Scholar, providing broad global accessibility, citation tracking, and enhanced author visibility." },
     { title: "Web of Science (Under Consideration)", img: "https://i.postimg.cc/0NX5QF6x/image.png", desc: "Selected papers may be considered for submission to journals indexed in Web of Science, based on quality, originality, and editorial evaluation." },
     { title: "DOI & Digital Access", img: null, desc: "Each published paper may be assigned a Digital Object Identifier (DOI) to ensure permanent accessibility and citation tracking." }
   ],
@@ -70,7 +70,7 @@ const conferenceData = {
   timeline: [
     { date: "20 August 2026", label: "Paper Submission", desc: "Deadline for paper submission" },
     { date: "26 August 2026", label: "Acceptance", desc: "Notification of acceptance" },
-    { date: "28 August 2026", label: "Final Submission", desc: "Camera-ready submission" },
+    { date: "28 August 2026", label: "Registration Deadline", desc: "Final camera-ready and registration deadline" },
     { date: "30 August 2026", label: "Conference Date", desc: "Main event" }
   ],
   advisoryBoard: [

@@ -150,7 +150,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     date: "30 August 2026",
     location: "Hybrid Mode",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdovsHUgDTtUSLoXdyufXRN67K59HSiLsxhmOUKQaE9VRcdwA/viewform?usp=publish-editor",
-    description: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering. A premier platform exploring advancements in Agentic AI, foundation models, and AI orchestration. It focuses on the integration of AI with robust engineering and governance frameworks. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings (ISBN: 978-81-687765-9-3) and recommendations for Scopus/WoS indexed journals.",
+    description: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering. A premier platform exploring advancements in Agentic AI, foundation models, and AI orchestration. It focuses on the integration of AI with robust engineering and governance frameworks. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings (ISBN: 978-81-687765-9-3) with indexing across Google Scholar and Web of Science (WoS).",
     thematicTracks: [
       "Foundation Models & LLMs",
       "Agentic Intelligence",
@@ -162,7 +162,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     milestones: [
       { name: "Paper Submission", date: "20 August 2026" },
       { name: "Acceptance Notification", date: "26 August 2026" },
-      { name: "Final Submission", date: "28 August 2026" }
+      { name: "Registration Deadline", date: "28 August 2026" }
     ],
     speakers: [
       { name: "Prof. Dr. Alexander Bull", designation: "IU International University", university: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
