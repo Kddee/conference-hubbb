@@ -47,6 +47,7 @@ const conferenceData = {
     { title: "AI Engineering", desc: "Building robust, scalable, and secure AI foundations." }
   ],
   publication: [
+    { title: "Iterative International Publishers (IIP)", img: "/iip-logo.jpg", desc: "Conference proceedings and peer-reviewed papers are published in partnership with Iterative International Publishers (IIP), ensuring international distribution, indexing, and scholarly reach." },
     { title: "ISBN Conference Proceedings", img: "https://i.postimg.cc/VvnzKNKj/image.png", desc: "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number (ISBN: 978-81-687765-9-3), ensuring global visibility, citation, and academic recognition." },
     { title: "Google Scholar Indexing", img: "/google-scholar.svg", desc: "All published papers will be indexed in Google Scholar, providing broad global accessibility, citation tracking, and enhanced author visibility." },
     { title: "Web of Science (Under Consideration)", img: "https://i.postimg.cc/0NX5QF6x/image.png", desc: "Selected papers may be considered for submission to journals indexed in Web of Science, based on quality, originality, and editorial evaluation." },
@@ -161,27 +162,30 @@ const Aiforge26 = () => {
                 Register Now <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
+          </div>
+        </div>
+      </section>
 
-            <div className="mt-16 pt-8 border-t border-border/50 max-w-5xl">
-              <p className="text-sm text-muted-foreground font-medium uppercase tracking-[0.2em] mb-6">Organized & Published By</p>
-              <div className="flex flex-wrap items-center gap-6">
-                <div className="h-24 px-8 bg-card/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
-                  <img src="/eminsphere-logo.png" alt="Eminsphere" className="h-12 w-12 object-contain rounded-full" />
-                  <span className="ml-4 font-bold text-foreground tracking-tight text-2xl">Eminsphere</span>
+      {/* PUBLICATION & INDEXING */}
+      <section className="bg-muted/50 py-20 border-b border-border/50">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-4">Publication & Indexing</h2>
+            <p className="text-lg text-muted-foreground">
+              All accepted and registered papers will be published in official proceedings with comprehensive global indexing, ISBN registration, and dissemination opportunities.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {conferenceData.publication.map((item, idx) => (
+              <Card key={idx} className="p-6 bg-card hover:-translate-y-1 transition-transform border-t-4 border-t-primary shadow-sm text-center flex flex-col items-center justify-between">
+                <div>
+                  {item.img && <img src={item.img} alt={item.title} className="h-16 mb-5 object-contain mx-auto" />}
+                  {!item.img && <Book className="h-12 w-12 text-primary mb-5 mx-auto" />}
+                  <h3 className="font-bold text-base mb-2.5 text-foreground">{item.title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
-                <div className="h-24 px-8 bg-white rounded-2xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
-                  <img src="/iip-logo.jpg" alt="Iterative International Publishers (IIP)" className="h-16 w-16 object-contain" />
-                  <span className="ml-3 font-bold text-slate-900 tracking-tight text-xl">IIP</span>
-                </div>
-                <div className="h-24 px-8 bg-white rounded-2xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
-                  <img src="https://i.postimg.cc/VvnzKNKj/image.png" alt="ISBN Proceedings" className="h-14 object-contain" />
-                </div>
-                <div className="h-24 px-8 bg-card/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
-                  <Book className="h-9 w-9 text-primary" />
-                  <span className="ml-3 font-bold text-foreground tracking-tight text-xl">DOI & Digital Access</span>
-                </div>
-              </div>
-            </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -411,27 +415,7 @@ const Aiforge26 = () => {
         </div>
       </section>
 
-      {/* PUBLICATION & INDEXING */}
-      <section className="bg-muted py-24 border-t border-border/50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Publication & Indexing</h2>
-            <p className="text-lg text-muted-foreground">
-              All accepted and registered papers will be published in official proceedings with comprehensive global indexing and dissemination opportunities.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {conferenceData.publication.map((item, idx) => (
-              <Card key={idx} className="p-6 bg-card hover:-translate-y-1 transition-transform border-t-4 border-t-primary shadow-sm text-center flex flex-col items-center">
-                {item.img && <img src={item.img} alt={item.title} className="h-16 mb-6 object-contain" />}
-                {!item.img && <Book className="h-12 w-12 text-primary mb-6" />}
-                <h3 className="font-bold text-lg mb-3">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* AWARDS & RECOGNITION */}
       <section className="container py-24">
