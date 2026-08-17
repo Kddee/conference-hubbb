@@ -11,6 +11,7 @@ const conferences = [
     country: "Global",
     date: "30 August 2026",
     topic: "AI & Engineering",
+    isbn: "978-81-687765-9-3",
     link: "/aiforge-26",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
   },
@@ -73,6 +74,9 @@ const UpcomingConferences = () => (
               <div className="flex flex-wrap items-center gap-6 text-sm text-white/90 font-medium mb-8">
                 <div className="flex items-center gap-2"><Calendar className="h-5 w-5 text-primary" /> {c.date}</div>
                 <div className="flex items-center gap-2"><MapPin className="h-5 w-5 text-primary" /> {c.city}, {c.country}</div>
+                {c.isbn && (
+                  <div className="flex items-center gap-2"><BookOpen className="h-5 w-5 text-primary" /> ISBN: {c.isbn}</div>
+                )}
               </div>
               
               <Button asChild className="w-full sm:w-auto bg-white/10 backdrop-blur-md hover:bg-primary hover:text-primary-foreground border border-white/20 text-white font-bold h-14 px-8 rounded-xl transition-all duration-300">

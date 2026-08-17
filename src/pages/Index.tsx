@@ -176,7 +176,7 @@ const rotations = [-3, 2, -1.5, 3, -2, 1, -2.5, 2.5, -1, 3, -3, 1.5, -2, 2];
 
 const upcoming = [
   { title: "ICAITS-26: AI & Intelligent Technology Systems", city: "Virtual Mode", date: "26 July 2026", topic: "AI & Tech", link: "/icaits-26", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" },
-  { title: "AIFORGE 2026: Agentic Intelligence", city: "Hybrid Mode", date: "30 August 2026", topic: "AI & Engineering", link: "/aiforge-26", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" },
+  { title: "AIFORGE 2026: Agentic Intelligence", city: "Hybrid Mode", date: "30 August 2026", topic: "AI & Engineering", isbn: "978-81-687765-9-3", link: "/aiforge-26", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" },
   { title: "ICMREF-26: Multidisciplinary Research & AI", city: "Tbilisi, Georgia", date: "4 October 2026", topic: "Technology & AI", link: "/icmref-26", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" },
 ];
 
@@ -431,9 +431,12 @@ const Index = () => {
                   </div>
                   <h3 className="font-serif font-bold text-3xl text-white mb-4 leading-tight group-hover:text-primary transition-colors">{c.title}</h3>
                   
-                  <div className="flex items-center gap-6 text-sm text-white/80 font-medium mb-8">
+                  <div className="flex flex-wrap items-center gap-6 text-sm text-white/80 font-medium mb-8">
                     <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-primary" /> {c.date}</div>
                     <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> {c.city}</div>
+                    {c.isbn && (
+                      <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-primary" /> ISBN: {c.isbn}</div>
+                    )}
                   </div>
                   
                   <Button asChild className="w-full bg-white/10 backdrop-blur-md hover:bg-primary hover:text-primary-foreground border border-white/20 text-white font-bold h-14 rounded-xl transition-all duration-300">

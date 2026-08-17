@@ -30,8 +30,9 @@ import glimpse16 from "@/assets/Screenshot 2026-07-26 114953.png";
 const conferenceData = {
   id: "AIFORGE 2026",
   title: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering",
+  isbn: "978-81-687765-9-3",
   date: "30 August 2026",
-  location: "Hybrid Mode",
+  location: "Hybrid Mode, Global",
   registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdovsHUgDTtUSLoXdyufXRN67K59HSiLsxhmOUKQaE9VRcdwA/viewform?usp=publish-editor",
   about: [
     "A premier international platform bringing together researchers, engineers, academicians, and industry professionals to explore cutting-edge advancements in Agentic Intelligence, foundation models, and the orchestration of complex AI systems driving the future of innovation.",
@@ -46,12 +47,13 @@ const conferenceData = {
     { title: "AI Engineering", desc: "Building robust, scalable, and secure AI foundations." }
   ],
   publication: [
-    { title: "ISBN Proceedings", desc: "All accepted papers will be published with ISBN recognition." },
+    { title: "ISBN Proceedings", desc: "Official ISBN: 978-81-687765-9-3. All accepted and registered papers will be published in official conference proceedings with ISBN recognition." },
     { title: "Scopus Opportunity", desc: "Selected papers may be recommended for Scopus journals." },
     { title: "Web of Science", desc: "High-quality papers may be submitted to WoS journals." },
     { title: "Peer Review", desc: "Double-blind international peer review process." }
   ],
   awards: [
+    "ISBN: 978-81-687765-9-3 Conference Proceedings",
     "Best Paper Award",
     "Best Presentation Award",
     "Best Student Paper Award",
@@ -133,7 +135,7 @@ const Aiforge26 = () => {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-accent/20 to-accent/40 text-accent font-medium text-sm mb-8 backdrop-blur-md border border-accent/30">
               <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span></span>
-              {conferenceData.id} • Upcoming Conference
+              {conferenceData.id} • ISBN: {conferenceData.isbn}
             </div>
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight mb-6">
               {conferenceData.title}
@@ -147,6 +149,10 @@ const Aiforge26 = () => {
               <div className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 text-accent" />
                 <span className="font-medium">{conferenceData.location}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-accent" />
+                <span className="font-medium">ISBN: {conferenceData.isbn}</span>
               </div>
             </div>
 
@@ -191,6 +197,16 @@ const Aiforge26 = () => {
                   <strong className="text-primary font-semibold block mb-1">A Truly Global Gathering</strong> 
                   Join researchers, innovators, and thought leaders presenting from across the globe—including participants from the USA, Thailand, UK, Turkey, South Africa, and many more countries!
                 </p>
+              </div>
+
+              <div className="mt-4 flex items-start gap-4 p-5 bg-primary/5 rounded-xl border border-primary/20">
+                <BookOpen className="h-6 w-6 text-primary shrink-0 mt-1" />
+                <div>
+                  <strong className="text-primary font-semibold block mb-1">Official ISBN Publication</strong>
+                  <p className="text-foreground text-base">
+                    All accepted and registered papers will be officially published in the conference proceedings with <span className="font-mono font-bold text-accent">ISBN: {conferenceData.isbn}</span>.
+                  </p>
+                </div>
               </div>
             </div>
 
