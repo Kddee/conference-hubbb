@@ -50,7 +50,7 @@ const conferenceData = {
     { title: "ISBN Conference Proceedings", img: "https://i.postimg.cc/VvnzKNKj/image.png", desc: "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number (ISBN: 978-81-687765-9-3), ensuring global visibility, citation, and academic recognition." },
     { title: "Scopus Indexed Journals (Opportunity)", img: "https://i.postimg.cc/hPVGr2wS/image.png", desc: "Extended versions of selected high-quality papers may be recommended for publication in Scopus indexed journals, subject to journal scope, editorial decision, and an additional peer-review process." },
     { title: "Web of Science (Under Consideration)", img: "https://i.postimg.cc/0NX5QF6x/image.png", desc: "Selected papers may be considered for submission to journals indexed in Web of Science, based on quality, originality, and editorial evaluation." },
-    { title: "DOI & Digital Access", img: "/doi-logo.png", desc: "Each published paper may be assigned a Digital Object Identifier (DOI) to ensure permanent accessibility and citation tracking." }
+    { title: "DOI & Digital Access", img: null, desc: "Each published paper may be assigned a Digital Object Identifier (DOI) to ensure permanent accessibility and citation tracking." }
   ],
   awards: [
     "ISBN: 978-81-687765-9-3 Conference Proceedings",
@@ -175,9 +175,6 @@ const Aiforge26 = () => {
                 </div>
                 <div className="h-24 px-8 bg-white rounded-2xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
                   <img src="https://i.postimg.cc/VvnzKNKj/image.png" alt="ISBN Proceedings" className="h-14 object-contain" />
-                </div>
-                <div className="h-24 px-8 bg-white rounded-2xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
-                  <img src="/doi-logo.png" alt="Crossref DOI" className="h-8 object-contain" />
                 </div>
               </div>
             </div>
