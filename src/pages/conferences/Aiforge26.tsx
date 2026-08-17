@@ -169,8 +169,9 @@ const Aiforge26 = () => {
                   <img src="/eminsphere-logo.png" alt="Eminsphere" className="h-12 w-12 object-contain rounded-full" />
                   <span className="ml-4 font-bold text-foreground tracking-tight text-2xl">Eminsphere</span>
                 </div>
-                <div className="h-24 px-10 bg-white rounded-2xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
-                  <img src="https://static.wixstatic.com/media/30814e_1cce99ce2356404eb0b67f75ecbafe63~mv2.png" alt="IGI Global" className="h-14 object-contain" />
+                <div className="h-24 px-8 bg-white rounded-2xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
+                  <img src="/iip-logo.jpg" alt="Iterative International Publishers (IIP)" className="h-16 w-16 object-contain" />
+                  <span className="ml-3 font-bold text-slate-900 tracking-tight text-xl">IIP</span>
                 </div>
               </div>
             </div>
