@@ -50,7 +50,7 @@ const conferenceData = {
     { title: "ISBN Conference Proceedings", img: "https://i.postimg.cc/VvnzKNKj/image.png", desc: "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number (ISBN: 978-81-687765-9-3), ensuring global visibility, citation, and academic recognition." },
     { title: "Scopus Indexed Journals (Opportunity)", img: "https://i.postimg.cc/hPVGr2wS/image.png", desc: "Extended versions of selected high-quality papers may be recommended for publication in Scopus indexed journals, subject to journal scope, editorial decision, and an additional peer-review process." },
     { title: "Web of Science (Under Consideration)", img: "https://i.postimg.cc/0NX5QF6x/image.png", desc: "Selected papers may be considered for submission to journals indexed in Web of Science, based on quality, originality, and editorial evaluation." },
-    { title: "DOI & Digital Access", img: null, desc: "Each published paper may be assigned a Digital Object Identifier (DOI) to ensure permanent accessibility and citation tracking." }
+    { title: "DOI & Digital Access", img: "/doi-logo.png", desc: "Each published paper may be assigned a Digital Object Identifier (DOI) to ensure permanent accessibility and citation tracking." }
   ],
   awards: [
     "ISBN: 978-81-687765-9-3 Conference Proceedings",
@@ -162,9 +162,9 @@ const Aiforge26 = () => {
               </a>
             </Button>
 
-            <div className="mt-16 pt-8 border-t border-border/50 max-w-2xl">
+            <div className="mt-16 pt-8 border-t border-border/50 max-w-4xl">
               <p className="text-sm text-muted-foreground font-medium uppercase tracking-[0.2em] mb-6">Organized & Published By</p>
-              <div className="flex flex-wrap items-center gap-8">
+              <div className="flex flex-wrap items-center gap-6">
                 <div className="h-24 px-8 bg-card/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
                   <img src="/eminsphere-logo.png" alt="Eminsphere" className="h-12 w-12 object-contain rounded-full" />
                   <span className="ml-4 font-bold text-foreground tracking-tight text-2xl">Eminsphere</span>
@@ -172,6 +172,12 @@ const Aiforge26 = () => {
                 <div className="h-24 px-8 bg-white rounded-2xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
                   <img src="/iip-logo.jpg" alt="Iterative International Publishers (IIP)" className="h-16 w-16 object-contain" />
                   <span className="ml-3 font-bold text-slate-900 tracking-tight text-xl">IIP</span>
+                </div>
+                <div className="h-24 px-8 bg-white rounded-2xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
+                  <img src="https://i.postimg.cc/VvnzKNKj/image.png" alt="ISBN Proceedings" className="h-14 object-contain" />
+                </div>
+                <div className="h-24 px-8 bg-white rounded-2xl border border-white/20 flex items-center justify-center shadow-lg hover:shadow-xl transition-all">
+                  <img src="/doi-logo.png" alt="Crossref DOI" className="h-8 object-contain" />
                 </div>
               </div>
             </div>
