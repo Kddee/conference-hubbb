@@ -99,6 +99,15 @@ const conferenceData = {
   judges: [],
   speakers: [
     {
+      name: "Wiktoria Gromowa-Cieślik",
+      designation: "CEO, Technology Executive, Chief Metrics Officer",
+      org: "Human-Tech Fusion (HTFusion)",
+      country: "Poland",
+      topic: "The Metric Behind the Algorithm: How to make AI initiatives measurable, scalable, governable and worth funding",
+      bio: "Technology & Transformation Executive with mathematical background and experience spanning academia, enterprise-wide digital transformation, data and AI initiatives in global organizations. The founder of Human-Tech Fusion® - which combines mathematical, engineering and human insight to make technology measurable in the ways that matter: better decisions, healthier operations and sustainable business value.",
+      img: "/speakers/wiktoria-gromowa-cieslik.jpg"
+    },
+    {
       name: "Prof. Dr. Alexander Bull",
       org: "IU International University",
       country: "Germany",
@@ -330,7 +339,7 @@ const Aiforge26 = () => {
       <section className="container py-24 border-t border-border/50">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Keynote Speakers</h2>
-          <p className="text-lg text-muted-foreground">The visionaries and academic leaders presenting at {conferenceData.id}.</p>
+          <p className="text-lg text-muted-foreground">The visionaries and academic leaders presenting at AIFORGE 2026.</p>
         </div>
         
         {conferenceData.speakers && conferenceData.speakers.length > 0 ? (
@@ -338,7 +347,7 @@ const Aiforge26 = () => {
             {conferenceData.speakers.map((s, idx) => (
               <div 
                 key={idx} 
-                className="group flex flex-col items-center text-center w-full max-w-sm"
+                className="group flex flex-col items-center text-center w-full max-w-sm bg-card/40 p-6 rounded-2xl border border-white/5 hover:border-accent/30 transition-all shadow-sm hover:shadow-md"
               >
                 <div className="relative h-40 w-40 mb-6">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
@@ -351,7 +360,14 @@ const Aiforge26 = () => {
                   )}
                 </div>
                 <h4 className="font-bold text-primary text-lg leading-tight mb-1">{s.name}</h4>
-                <p className="text-sm text-muted-foreground mb-4 flex-grow">{s.org}</p>
+                {s.designation && <p className="text-xs font-semibold text-accent mb-1">{s.designation}</p>}
+                <p className="text-sm text-muted-foreground mb-3 flex-grow">{s.org}</p>
+                {s.topic && (
+                  <div className="text-xs italic text-primary/90 mb-4 px-3 py-2 bg-primary/5 border border-primary/10 rounded-xl text-left w-full">
+                    <span className="font-semibold not-italic block text-[11px] uppercase tracking-wider text-accent mb-1">Presentation</span>
+                    "{s.topic}"
+                  </div>
+                )}
                 {s.country && <p className="text-xs font-semibold uppercase tracking-wider text-accent mt-auto">{s.country}</p>}
               </div>
             ))}
