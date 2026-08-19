@@ -231,12 +231,9 @@ const Aiforge26 = () => {
               </div>
             </div>
 
-            {/* MICROSOFT CMT PEER REVIEW NOTE */}
-            <div className="mt-8 p-5 bg-muted/40 rounded-xl border border-border/60">
-              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
-              </p>
-            </div>
+            <p className="mt-8 text-muted-foreground text-base leading-relaxed">
+              The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+            </p>
 
             <div className="mt-8 p-8 bg-accent/5 rounded-2xl border border-accent/20">
               <h3 className="text-2xl font-bold text-primary mb-4">Call for Papers</h3>
