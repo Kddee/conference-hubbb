@@ -231,7 +231,30 @@ const Aiforge26 = () => {
               </div>
             </div>
 
-            <div className="mt-12 p-8 bg-accent/5 rounded-2xl border border-accent/20">
+            {/* MICROSOFT CMT PEER REVIEW HIGHLIGHT */}
+            <div className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10 border-2 border-primary/20 shadow-md relative overflow-hidden">
+              <div className="flex items-start gap-4">
+                <div className="h-12 w-12 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-sm border border-border/50">
+                  <svg className="h-6 w-6" viewBox="0 0 23 23">
+                    <path fill="#f35325" d="M1 1h10v10H1z"/>
+                    <path fill="#81bc06" d="M12 1h10v10H12z"/>
+                    <path fill="#05a6f0" d="M1 12h10v10H1z"/>
+                    <path fill="#ffba08" d="M12 12h10v10H1z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                    <span className="font-bold text-primary text-base">Microsoft CMT Peer-Review Infrastructure</span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider bg-accent/20 text-accent-foreground px-2.5 py-0.5 rounded-full border border-accent/30">Official Support</span>
+                  </div>
+                  <p className="text-foreground text-sm sm:text-base leading-relaxed">
+                    The <strong>Microsoft CMT</strong> service was used for managing the peer-reviewing process for this conference. This service was provided for free by <strong>Microsoft</strong> and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 p-8 bg-accent/5 rounded-2xl border border-accent/20">
               <h3 className="text-2xl font-bold text-primary mb-4">Call for Papers</h3>
               <p className="text-muted-foreground text-lg mb-6">{conferenceData.callForPapers}</p>
               
