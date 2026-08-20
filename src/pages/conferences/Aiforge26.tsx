@@ -243,24 +243,36 @@ const Aiforge26 = () => {
               The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
             </p>
 
-            <div className="mt-4 flex flex-wrap items-center gap-4">
-              <Button asChild variant="default" className="rounded-xl shadow-md gap-2 font-semibold">
+            <div className="mt-5 flex flex-wrap items-center gap-4">
+              <Button asChild variant="default" className="rounded-xl shadow-lg gap-2 font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-95 transition-all">
                 <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer">
                   Submit Paper in Microsoft CMT <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="rounded-xl shadow-sm gap-2 font-semibold border-primary/30 hover:bg-primary/10">
+                <a href={conferenceData.registrationLink} target="_blank" rel="noreferrer">
+                  Submit via Google Form <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
               <a 
                 href={conferenceData.cmtLink} 
                 target="_blank" 
                 rel="noreferrer"
-                className="text-sm font-medium text-primary hover:underline break-all"
+                className="text-xs font-medium text-muted-foreground hover:text-primary hover:underline break-all w-full mt-1"
               >
-                {conferenceData.cmtLink}
+                Direct Portal URL: {conferenceData.cmtLink}
               </a>
             </div>
 
             <div className="mt-8 p-8 bg-accent/5 rounded-2xl border border-accent/20">
-              <h3 className="text-2xl font-bold text-primary mb-4">Call for Papers</h3>
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                <h3 className="text-2xl font-bold text-primary">Call for Papers</h3>
+                <Button asChild size="sm" className="rounded-full shadow-md gap-1.5 font-semibold bg-primary hover:bg-primary/90">
+                  <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer">
+                    Submit Your Paper <ArrowRight className="h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
               <p className="text-muted-foreground text-lg mb-6">{conferenceData.callForPapers}</p>
               
               <div className="pt-6 border-t border-accent/10">
@@ -530,13 +542,30 @@ const Aiforge26 = () => {
         </div>
       </section>
 
+      {/* SUBMIT YOUR PAPER CTA */}
       <section className="container py-24 text-center">
-        <h2 className="text-3xl font-serif font-bold text-primary mb-6">Submit Your Paper</h2>
-        <Button asChild size="lg" className="rounded-full shadow-xl px-12 py-6 text-lg">
-          <a href={conferenceData.registrationLink} target="_blank" rel="noreferrer">
-            Register Now
-          </a>
-        </Button>
+        <div className="max-w-4xl mx-auto p-10 md:p-14 rounded-3xl bg-gradient-to-b from-card/90 via-card/60 to-muted/40 border border-primary/20 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-accent/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
+          
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-4">Submit Your Paper</h2>
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-8">
+            Submit your research manuscripts for double-blind peer review via the official Microsoft CMT portal or submit directly through the conference registration portal.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Button asChild size="lg" className="rounded-full shadow-xl px-8 py-6 text-base font-semibold bg-gradient-to-r from-primary to-accent hover:opacity-95 transition-all text-primary-foreground">
+              <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                Submit Paper in Microsoft CMT <ArrowRight className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="rounded-full shadow-md px-8 py-6 text-base font-semibold border-primary/30 hover:bg-primary/10">
+              <a href={conferenceData.registrationLink} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                Register & Submit Form <ArrowRight className="h-5 w-5" />
+              </a>
+            </Button>
+          </div>
+        </div>
       </section>
       
       <ConferenceSections conferenceName={conferenceData.id} glimpses={conferenceData.glimpses ?? []} importantDates={conferenceData.timeline} sessionChairs={conferenceData.sessionChairs} />
