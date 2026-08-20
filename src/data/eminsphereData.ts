@@ -150,6 +150,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     date: "30 August 2026",
     location: "Hybrid Mode",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdovsHUgDTtUSLoXdyufXRN67K59HSiLsxhmOUKQaE9VRcdwA/viewform?usp=publish-editor",
+    cmtLink: "https://cmt3.research.microsoft.com/AIFORGE2026",
     description: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering. A premier platform exploring advancements in Agentic AI, foundation models, and AI orchestration. It focuses on the integration of AI with robust engineering and governance frameworks. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings (ISBN: 978-81-687765-9-3) with indexing across Google Scholar and Web of Science (WoS).",
     thematicTracks: [
       "Foundation Models & LLMs",

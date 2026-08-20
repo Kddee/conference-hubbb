@@ -34,6 +34,7 @@ const conferenceData = {
   date: "30 August 2026",
   location: "Hybrid Mode, Global",
   registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdovsHUgDTtUSLoXdyufXRN67K59HSiLsxhmOUKQaE9VRcdwA/viewform?usp=publish-editor",
+  cmtLink: "https://cmt3.research.microsoft.com/AIFORGE2026",
   about: [
     "A premier international platform bringing together researchers, engineers, academicians, and industry professionals to explore cutting-edge advancements in Agentic Intelligence, foundation models, and the orchestration of complex AI systems driving the future of innovation.",
     "AIFORGE 2026 focuses on the foundational research, orchestration, governance, and engineering of agentic AI. The conference promotes interdisciplinary research and practical innovations across domains such as multi-agent systems, AI alignment, robust AI engineering, and AI policy."
@@ -166,11 +167,18 @@ const Aiforge26 = () => {
               </div>
             </div>
 
-            <Button asChild variant="hero" size="lg" className="rounded-full shadow-xl">
-              <a href={conferenceData.registrationLink} target="_blank" rel="noreferrer">
-                Register Now <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
+            <div className="flex flex-wrap items-center gap-4">
+              <Button asChild variant="hero" size="lg" className="rounded-full shadow-xl">
+                <a href={conferenceData.registrationLink} target="_blank" rel="noreferrer">
+                  Register Now <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full shadow-md border-white/20 bg-card/60 backdrop-blur-md hover:bg-card">
+                <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer">
+                  Submit in Microsoft CMT <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -234,6 +242,22 @@ const Aiforge26 = () => {
             <p className="mt-8 text-muted-foreground text-base leading-relaxed">
               The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
             </p>
+
+            <div className="mt-4 flex flex-wrap items-center gap-4">
+              <Button asChild variant="default" className="rounded-xl shadow-md gap-2 font-semibold">
+                <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer">
+                  Submit Paper in Microsoft CMT <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+              <a 
+                href={conferenceData.cmtLink} 
+                target="_blank" 
+                rel="noreferrer"
+                className="text-sm font-medium text-primary hover:underline break-all"
+              >
+                {conferenceData.cmtLink}
+              </a>
+            </div>
 
             <div className="mt-8 p-8 bg-accent/5 rounded-2xl border border-accent/20">
               <h3 className="text-2xl font-bold text-primary mb-4">Call for Papers</h3>
