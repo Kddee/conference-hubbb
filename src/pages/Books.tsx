@@ -30,15 +30,25 @@ import {
   ChevronDown,
   X,
   Eye,
-  SlidersHorizontal,
   BookmarkCheck,
   Flame,
-  Star
+  Star,
+  BookCheck,
+  Truck,
+  TrendingUp,
+  Scale,
+  Stethoscope,
+  Wheat,
+  Gavel,
+  BadgeCheck,
+  Receipt,
+  Printer,
+  Sparkle
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { publishedBooks, Book } from "@/data/booksData";
 
-// CATEGORIES & DISCIPLINES
+// CATEGORIES & DISCIPLINES FOR FILTERING
 const disciplines = [
   { id: "all", title: "All Disciplines", icon: BookOpen },
   { id: "ai", title: "Artificial Intelligence & ML", icon: BrainCircuit },
@@ -50,29 +60,29 @@ const disciplines = [
   { id: "business", title: "Business & Management", icon: Briefcase },
 ];
 
-// ACADEMIC STATS (NO TIMINGS OR DAYS)
+// ACADEMIC STATS
 const stats = [
   { value: "100+", label: "Published Titles", desc: "Peer-reviewed academic & research volumes" },
   { value: "100%", label: "Official ISBN", desc: "Approved by RRRNA, Ministry of Education" },
   { value: "Double-Blind", label: "Peer Review", desc: "Rigorous evaluation by expert referees" },
   { value: "50%", label: "Author Royalties", desc: "Transparent, leading author profit-share" },
-  { value: "Worldwide", label: "Amazon Distribution", desc: "Global print paperback & Kindle editions" },
+  { value: "Global", label: "Amazon & Kindle", desc: "Worldwide print paperback & digital release" },
 ];
 
-// WHY PUBLISH WITH EMINSPHERE (VALUE PROPOSITIONS)
+// WHY PUBLISH WITH EMINSPHERE (VALUE PROPOSITIONS - INSPIRED BY AGPH BOOKS)
 const publishingFeatures = [
   {
     icon: ShieldCheck,
-    title: "Official ISBN Allocation",
-    desc: "Every title receives a genuine, verified ISBN registered with the Raja Rammohun Roy National Agency for ISBN, Department of Higher Education, Ministry of Education, Government of India.",
+    title: "Official RRRNA ISBN Allocation",
+    desc: "Every title receives an official, government-registered ISBN with the Raja Rammohun Roy National Agency for ISBN, Department of Higher Education, Ministry of Education, Govt. of India.",
     color: "from-blue-500/20 to-blue-500/5",
     border: "border-blue-500/20",
     iconColor: "text-blue-500"
   },
   {
     icon: Globe,
-    title: "Worldwide Amazon Distribution",
-    desc: "Global distribution across Amazon marketplaces (USA, India, UK, Europe, Japan, Canada) in high-quality Print-on-Demand paperback and Kindle eBook formats.",
+    title: "Worldwide Amazon & Global Distribution",
+    desc: "Global availability on Amazon worldwide (USA, India, UK, Europe, Japan, Canada) in high-quality Print-on-Demand paperback and Kindle eBook formats.",
     color: "from-amber-500/20 to-amber-500/5",
     border: "border-amber-500/20",
     iconColor: "text-amber-500"
@@ -80,23 +90,39 @@ const publishingFeatures = [
   {
     icon: Copyright,
     title: "100% Author Copyright Retention",
-    desc: "Authors retain full intellectual property and moral rights. You maintain complete ownership of your academic ideas and scholarly contributions.",
+    desc: "Authors retain full intellectual property and moral rights. You maintain complete ownership of your academic ideas and scholarly contributions with no rights transfer.",
     color: "from-emerald-500/20 to-emerald-500/5",
     border: "border-emerald-500/20",
     iconColor: "text-emerald-500"
   },
   {
     icon: Award,
-    title: "Double-Blind Peer Review",
-    desc: "Manuscripts undergo comprehensive academic review by subject matter specialists to ensure research excellence, integrity, and institutional credit.",
+    title: "Double-Blind Academic Peer Review",
+    desc: "Manuscripts undergo comprehensive evaluation by independent subject matter specialists to ensure research excellence, integrity, and institutional accreditation standards.",
     color: "from-purple-500/20 to-purple-500/5",
     border: "border-purple-500/20",
     iconColor: "text-purple-500"
   },
   {
+    icon: BadgeCheck,
+    title: "Official Certificate of Publication",
+    desc: "Every author, co-author, and book chapter contributor receives an official Certificate of Publication containing the registered ISBN, DOI, and publication credentials.",
+    color: "from-teal-500/20 to-teal-500/5",
+    border: "border-teal-500/20",
+    iconColor: "text-teal-500"
+  },
+  {
+    icon: TrendingUp,
+    title: "50% Author Royalty & Sales Reports",
+    desc: "Receive up to 50% author royalty on net profits from book sales on Amazon and global distribution channels, supported by regular transparent sales statements.",
+    color: "from-indigo-500/20 to-indigo-500/5",
+    border: "border-indigo-500/20",
+    iconColor: "text-indigo-500"
+  },
+  {
     icon: FileCheck2,
-    title: "Complete Typesetting & Design",
-    desc: "End-to-end editorial support including LaTeX/Word interior formatting, professional cover art design, proofreading, and DOI allocation.",
+    title: "Academic Typesetting & LaTeX Formatting",
+    desc: "Specialized typesetting for complex mathematical equations, algorithms, chemical structures, tables, high-resolution figures, and citation bibliographies.",
     color: "from-rose-500/20 to-rose-500/5",
     border: "border-rose-500/20",
     iconColor: "text-rose-500"
@@ -104,50 +130,92 @@ const publishingFeatures = [
   {
     icon: Library,
     title: "Academic & Citation Indexing",
-    desc: "Cataloged in national library bibliographies, Google Books, and Google Scholar, maximizing international research reach and citation impact.",
+    desc: "Cataloged in national library bibliographies, Google Books, and Google Scholar, maximizing international research reach, university credits, and citation impact.",
     color: "from-cyan-500/20 to-cyan-500/5",
     border: "border-cyan-500/20",
     iconColor: "text-cyan-500"
+  },
+  {
+    icon: Truck,
+    title: "Author Copies & Doorstep Delivery",
+    desc: "Complimentary author paperback copies printed on premium acid-free paper with matte/gloss cover lamination, securely shipped directly to your institution or residence.",
+    color: "from-orange-500/20 to-orange-500/5",
+    border: "border-orange-500/20",
+    iconColor: "text-orange-500"
   }
 ];
 
-// TYPES OF BOOKS ACCEPTED
+// TYPES OF BOOKS ACCEPTED (COMPREHENSIVE SCOPE AS IN AGPH BOOKS)
 const bookTypes = [
   {
-    title: "Academic Textbooks",
-    target: "UG & PG Engineering, Science & Management Curricula",
-    desc: "Comprehensive course textbooks mapped to university syllabi, equipped with chapter summaries, case studies, problem sets, and pedagogical frameworks.",
+    title: "Academic Course Textbooks",
+    target: "UG & PG Engineering, Science, Management & Medicine",
+    desc: "Curriculum-aligned course textbooks equipped with chapter summaries, pedagogical objectives, solved examples, review questions, and case studies.",
     icon: BookOpen
   },
   {
-    title: "Research Monographs",
-    target: "Specialized Thematic Research Treatises",
-    desc: "In-depth scholarly treatises presenting novel algorithms, experimental results, empirical methodologies, and specialized breakthroughs.",
+    title: "Research Monographs & Treatises",
+    target: "Specialized Original Research & Advanced Theories",
+    desc: "In-depth scholarly research monographs presenting original algorithms, experimental validations, empirical methodologies, and specialized breakthroughs.",
     icon: BrainCircuit
   },
   {
     title: "Edited Volumes & Chapter Collections",
     target: "Thematic Multi-Author Publications",
-    desc: "Curated collections on emerging trends edited by distinguished academicians with peer-reviewed contributed chapters from international researchers.",
+    desc: "Curated collections on emerging multidisciplinary themes edited by senior academicians with peer-reviewed contributed chapters from international scholars.",
     icon: Layers
   },
   {
-    title: "PhD Theses to Book Conversion",
-    target: "Doctoral Scholars & Researchers",
-    desc: "Transform your completed doctoral dissertation into a published, globally distributed academic book with ISBN registration and scholarly indexing.",
+    title: "Thesis & Dissertation to Book",
+    target: "Doctoral Scholars & Postdoctoral Fellows",
+    desc: "Adapt your completed PhD thesis into a commercially viable, highly cited academic book with restructured chapters, institutional indexing, and ISBN registration.",
     icon: GraduationCap
   },
   {
-    title: "Industry & Technical Handbooks",
-    target: "Tech Executives, Engineers & Architects",
-    desc: "Practical reference handbooks, reference architectures, DevOps blueprints, and production-ready implementation guides for practitioners.",
+    title: "Reference Handbooks & Encyclopedias",
+    target: "Researchers, Industry Practitioners & Libraries",
+    desc: "Systematic reference handbooks, reference architectures, technical blueprints, and enterprise guides designed with thorough indexes and glossaries.",
     icon: Cpu
   },
   {
     title: "Conference Proceedings Volumes",
     target: "International Symposia & Summits",
-    desc: "Official proceedings of peer-reviewed international conferences with registered ISBN, DOI identifiers, and indexing dissemination.",
+    desc: "Official proceedings of peer-reviewed international conferences with registered ISBN, DOI identifiers, and indexing dissemination for maximum API credit.",
     icon: FileText
+  }
+];
+
+// ALL ACADEMIC DISCIPLINES COVERED (COMPREHENSIVE LIST LIKE AGPH)
+const academicDisciplinesCovered = [
+  {
+    category: "Science, Engineering & Technology",
+    icon: Cpu,
+    subjects: ["Computer Science & AI", "Electronics & Communication", "Mechanical & Civil Engineering", "Data Science & Cloud Systems", "Physics & Materials Science", "Applied Mathematics & Statistics"]
+  },
+  {
+    category: "Medical, Pharmacy & Health Sciences",
+    icon: Stethoscope,
+    subjects: ["Public Health & Epidemiology", "Pharmaceutical Sciences", "Nursing & Healthcare Informatics", "Clinical AI & Telemedicine", "Biomedical Engineering", "Biotechnology & Microbiology"]
+  },
+  {
+    category: "Commerce, Management & FinTech",
+    icon: Briefcase,
+    subjects: ["Business Administration & MBA", "Financial Analytics & FinTech", "Human Resource Management", "Marketing & E-Commerce", "Supply Chain & Operations", "Banking & Investment Strategy"]
+  },
+  {
+    category: "Law, Governance & Public Policy",
+    icon: Gavel,
+    subjects: ["Constitutional & Corporate Law", "Cyber Law & Intellectual Property", "Public Policy & Administration", "International Relations", "Human Rights & Ethics", "Legal Analytics"]
+  },
+  {
+    category: "Agriculture & Environmental Sciences",
+    icon: Wheat,
+    subjects: ["Agronomy & Soil Science", "Environmental Biotechnology", "Sustainable Agriculture", "Forestry & Ecology", "Climate Change & Smart Cities", "Renewable Energy Systems"]
+  },
+  {
+    category: "Social Sciences, Education & Humanities",
+    icon: GraduationCap,
+    subjects: ["Educational Pedagogy & Research", "Sociology & Psychology", "Economics & Econometrics", "English Literature & Linguistics", "Philosophy & Ethics", "Mass Communication"]
   }
 ];
 
@@ -200,7 +268,7 @@ const authorGuidelines = [
       "Abstract & Keywords for each chapter (50-100 words)",
       "Table of Contents with logical chapter breakdown",
       "Uniform heading hierarchy (H1, H2, H3)",
-      "Standard citation style (IEEE, APA, Harvard, or Springer format)"
+      "Standard citation style (IEEE, APA, Harvard, Vancouver, or Springer format)"
     ]
   },
   {
@@ -223,6 +291,58 @@ const authorGuidelines = [
   }
 ];
 
+// COMPARISON TABLE: EMINSPHERE PUBLISHING VS TRADITIONAL PUBLISHING
+const comparisonData = [
+  {
+    feature: "Copyright & Intellectual Property",
+    eminsphere: "100% Retained by Author",
+    traditional: "Transferred / Surrendered to Publisher",
+    positive: true
+  },
+  {
+    feature: "Author Royalties",
+    eminsphere: "Up to 50% Profit Share",
+    traditional: "Only 5% to 10% Net",
+    positive: true
+  },
+  {
+    feature: "Official ISBN Accreditation",
+    eminsphere: "Official Govt. of India (RRRNA) ISBN",
+    traditional: "Publisher's Proprietary ISBN",
+    positive: true
+  },
+  {
+    feature: "Global Amazon & Print-on-Demand",
+    eminsphere: "Worldwide Amazon (Paperback & Kindle)",
+    traditional: "Limited Regional Warehouse Distribution",
+    positive: true
+  },
+  {
+    feature: "Publication Certificate",
+    eminsphere: "Provided to All Authors & Chapter Contributors",
+    traditional: "Rarely Provided",
+    positive: true
+  },
+  {
+    feature: "Academic UGC/AICTE/API Score Credit",
+    eminsphere: "100% Eligible with Verified ISBN",
+    traditional: "Eligible but Lengthy Timeline",
+    positive: true
+  },
+  {
+    feature: "Review Process & Transparency",
+    eminsphere: "Transparent Double-Blind Peer Review",
+    traditional: "Opaque Multi-Year Review Queues",
+    positive: true
+  },
+  {
+    feature: "Thesis to Book Conversion",
+    eminsphere: "Dedicated Editorial Board Assistance",
+    traditional: "Rarely Accepted Without Major Refactor",
+    positive: true
+  }
+];
+
 // FAQS
 const faqs = [
   {
@@ -236,6 +356,14 @@ const faqs = [
   {
     q: "Where will my published book be available for purchase?",
     a: "Your book will be distributed globally on Amazon marketplaces worldwide (Amazon.in, Amazon.com, Amazon.co.uk, Amazon.de, Amazon.ca, etc.) in high-quality paperback print and Kindle eBook editions, ensuring instant international purchasing access."
+  },
+  {
+    q: "Does publishing a book with Eminsphere count towards Academic API / PBAS scores?",
+    a: "Yes. All our books are published with official ISBN numbers registered under the Ministry of Education, Govt. of India, and are peer-reviewed. They are fully compliant with UGC, AICTE, NAAC, and NIRF Career Advancement Scheme (CAS) guidelines for API points."
+  },
+  {
+    q: "Do chapter authors and editors receive Publication Certificates?",
+    a: "Yes. An official, digitally verifiable Certificate of Publication is issued to each main author, co-author, book editor, and contributing chapter author, detailing the Book Title, Chapter Title, ISBN, and publication credentials."
   },
   {
     q: "How does the peer review and publication process work?",
@@ -256,7 +384,7 @@ const Books = () => {
   const [selectedDiscipline, setSelectedDiscipline] = useState("all");
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [quickViewBook, setQuickViewBook] = useState<Book | null>(null);
-  const [activeTab, setActiveTab] = useState<"features" | "types" | "workflow" | "guidelines">("features");
+  const [activeTab, setActiveTab] = useState<"features" | "types" | "workflow" | "guidelines" | "disciplines" | "comparison">("features");
 
   // Dynamic proposal checklist state
   const [checklist, setChecklist] = useState<Record<string, boolean>>({
@@ -364,7 +492,7 @@ const Books = () => {
           <div className="hidden lg:flex items-center gap-6 text-xs text-primary-foreground/90">
             <span className="flex items-center gap-1.5"><CheckCircle2 className="h-3.5 w-3.5 text-accent" /> 100% Author Copyright Retention</span>
             <span className="flex items-center gap-1.5"><CheckCircle2 className="h-3.5 w-3.5 text-accent" /> Amazon Worldwide Distribution</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-3.5 w-3.5 text-accent" /> Double-Blind Peer Review</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-3.5 w-3.5 text-accent" /> UGC & AICTE API Credit Eligible</span>
           </div>
         </div>
       </div>
@@ -376,7 +504,7 @@ const Books = () => {
 
         <div className="container relative z-10 max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
-            <Sparkles className="h-4 w-4 text-accent" /> Official ISBN-Licensed Academic Publisher
+            <Sparkles className="h-4 w-4 text-accent" /> Official ISBN-Licensed Academic & Professional Publisher
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-[1.1] mb-6">
@@ -384,7 +512,7 @@ const Books = () => {
           </h1>
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
-            Empowering professors, researchers, and technology leaders to publish peer-reviewed academic textbooks, research monographs, edited volumes, and PhD theses with <strong>official ISBN allotment</strong> and <strong>worldwide Amazon distribution</strong>.
+            Empowering professors, researchers, doctoral scholars, and technology leaders to publish peer-reviewed academic textbooks, research monographs, edited volumes, and PhD theses with <strong>official ISBN registration</strong>, <strong>worldwide Amazon distribution</strong>, and <strong>100% copyright retention</strong>.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
@@ -395,12 +523,12 @@ const Books = () => {
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-full shadow-md px-8 py-6 text-base font-semibold border-primary/30 hover:bg-primary/10">
               <a href="#catalog" className="flex items-center gap-2">
-                <BookOpen className="h-5 w-5 text-accent" /> Explore Published Titles
+                <BookOpen className="h-5 w-5 text-accent" /> Browse Book Catalog
               </a>
             </Button>
             <Button asChild variant="ghost" size="lg" className="rounded-full px-6 py-6 text-base font-semibold text-muted-foreground hover:text-primary">
               <a href="#interactive-hub" className="flex items-center gap-2">
-                Explore Editorial Policies <ChevronDown className="h-4 w-4" />
+                Publishing Hub & Guidelines <ChevronDown className="h-4 w-4" />
               </a>
             </Button>
           </div>
@@ -507,16 +635,16 @@ const Books = () => {
         </section>
       )}
 
-      {/* DYNAMIC INTERACTIVE PUBLISHING HUB */}
+      {/* DYNAMIC INTERACTIVE PUBLISHING HUB (ALL AGPH BOOKS OFFERINGS) */}
       <section id="interactive-hub" className="bg-muted/40 py-20 lg:py-28 border-y border-border/50">
         <div className="container max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="text-xs font-bold text-accent uppercase tracking-widest mb-3">Author Knowledge Base</div>
+            <div className="text-xs font-bold text-accent uppercase tracking-widest mb-3">Author Knowledge Base & Scope</div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary mb-4">
-              Comprehensive Publishing Information
+              Comprehensive Publishing Portal
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Explore our peer-review policies, author submission guidelines, supported publishing categories, and publishing benefits.
+              Explore our full range of academic publishing services, peer-review policies, author guidelines, disciplines covered, and author protections.
             </p>
           </div>
 
@@ -525,7 +653,9 @@ const Books = () => {
             {[
               { id: "features", label: "💎 Why Publish with Us", icon: Sparkles },
               { id: "types", label: "📚 Book Formats & Scope", icon: Layers },
-              { id: "workflow", label: "⚖️ Peer-Review Workflow", icon: ShieldCheck },
+              { id: "disciplines", label: "🔬 Academic Disciplines", icon: GraduationCap },
+              { id: "comparison", label: "⚖️ Publishing Model Comparison", icon: Scale },
+              { id: "workflow", label: "🛡️ Peer-Review Workflow", icon: ShieldCheck },
               { id: "guidelines", label: "📋 Author Guidelines", icon: FileCheck2 },
             ].map(tab => {
               const Icon = tab.icon;
@@ -601,7 +731,81 @@ const Books = () => {
             </div>
           )}
 
-          {/* TAB 3: REVIEW WORKFLOW (NO DAYS OR TIMINGS) */}
+          {/* TAB 3: ACADEMIC DISCIPLINES COVERED */}
+          {activeTab === "disciplines" && (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-in fade-in duration-300">
+              {academicDisciplinesCovered.map((d, idx) => {
+                const Icon = d.icon;
+                return (
+                  <Card key={idx} className="p-7 bg-card border border-border/60 shadow-md rounded-2xl flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <h3 className="font-bold text-base text-primary leading-tight">{d.category}</h3>
+                      </div>
+                      <ul className="space-y-2 text-xs text-muted-foreground">
+                        {d.subjects.map((sub, sIdx) => (
+                          <li key={sIdx} className="flex items-center gap-2">
+                            <CheckCircle2 className="h-3.5 w-3.5 text-accent shrink-0" />
+                            <span>{sub}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="pt-4 mt-6 border-t border-border/40">
+                      <a href="https://forms.gle/dnkfj4mUxXWHGmKXA" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-primary hover:text-accent flex items-center gap-1">
+                        Submit Manuscript in this Domain <ArrowRight className="h-3 w-3" />
+                      </a>
+                    </div>
+                  </Card>
+                );
+              })}
+            </div>
+          )}
+
+          {/* TAB 4: PUBLISHING MODEL COMPARISON (EMINSPHERE VS TRADITIONAL) */}
+          {activeTab === "comparison" && (
+            <div className="animate-in fade-in duration-300">
+              <Card className="p-6 md:p-8 bg-card border border-border/60 rounded-3xl shadow-xl overflow-hidden">
+                <div className="text-center max-w-2xl mx-auto mb-8">
+                  <h3 className="text-2xl font-serif font-bold text-primary mb-2">
+                    Author-Centric Publishing vs. Traditional Publishing
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    Discover why thousands of professors, scholars, and scientists choose Eminsphere for transparent, author-owned book publishing.
+                  </p>
+                </div>
+
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left text-sm">
+                    <thead>
+                      <tr className="border-b border-border/60 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                        <th className="py-4 px-4">Publishing Parameter</th>
+                        <th className="py-4 px-4 bg-primary/10 text-primary rounded-t-xl">Eminsphere Academic Press</th>
+                        <th className="py-4 px-4">Traditional Publishers</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border/40">
+                      {comparisonData.map((row, idx) => (
+                        <tr key={idx} className="hover:bg-muted/30 transition-colors">
+                          <td className="py-4 px-4 font-semibold text-foreground">{row.feature}</td>
+                          <td className="py-4 px-4 bg-primary/5 font-bold text-primary flex items-center gap-2">
+                            <CheckCircle2 className="h-4 w-4 text-accent shrink-0" />
+                            {row.eminsphere}
+                          </td>
+                          <td className="py-4 px-4 text-muted-foreground">{row.traditional}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </Card>
+            </div>
+          )}
+
+          {/* TAB 5: REVIEW WORKFLOW (NO DAYS OR TIMINGS) */}
           {activeTab === "workflow" && (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-in fade-in duration-300">
               {reviewWorkflow.map((step, idx) => (
@@ -622,7 +826,7 @@ const Books = () => {
             </div>
           )}
 
-          {/* TAB 4: AUTHOR GUIDELINES & CHECKLIST */}
+          {/* TAB 6: AUTHOR GUIDELINES & CHECKLIST */}
           {activeTab === "guidelines" && (
             <div className="space-y-10 animate-in fade-in duration-300">
               <div className="grid md:grid-cols-3 gap-8">
