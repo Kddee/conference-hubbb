@@ -28,6 +28,8 @@ import {
   FileCheck2, 
   Library, 
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   X,
   Eye,
   BookmarkCheck,
@@ -473,8 +475,10 @@ const Books = () => {
     });
   }, [searchQuery, selectedDiscipline]);
 
-  // Featured flagship book
-  const featuredBook = publishedBooks[0];
+  // Featured flagship books list for the spotlight carousel
+  const featuredBooksList = useMemo(() => publishedBooks.slice(0, 5), []);
+  const [featuredIndex, setFeaturedIndex] = useState(0);
+  const featuredBook = featuredBooksList[featuredIndex] || publishedBooks[0];
 
   return (
     <div className="bg-background text-foreground min-h-screen">
@@ -578,26 +582,58 @@ const Books = () => {
         </div>
       </section>
 
-      {/* FEATURED FLAGSHIP PUBLICATION SPOTLIGHT */}
+      {/* FEATURED FLAGSHIP PUBLICATION SPOTLIGHT (INTERACTIVE MULTI-BOOK CAROUSEL) */}
       {featuredBook && (
         <section className="container py-16 max-w-7xl mx-auto">
           <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-r from-card via-card/90 to-primary/5 border border-primary/20 shadow-xl relative overflow-hidden flex flex-col lg:flex-row items-center gap-10">
             <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
             
-            <div className="w-full lg:w-1/3 flex justify-center shrink-0">
-              <div className="bg-white p-6 rounded-2xl shadow-2xl border border-border/50 max-w-[260px] transform hover:rotate-1 hover:scale-105 transition-all duration-500">
+            <div className="w-full lg:w-1/3 flex flex-col items-center justify-center shrink-0">
+              <div className="bg-white p-6 rounded-2xl shadow-2xl border border-border/50 max-w-[260px] transform hover:rotate-1 hover:scale-105 transition-all duration-500 mb-4">
                 <img src={featuredBook.image} alt={featuredBook.title} className="w-full h-auto object-contain drop-shadow-xl" />
+              </div>
+
+              {/* CAROUSEL SWITCHER DOTS & ARROWS */}
+              <div className="flex items-center gap-3">
+                <button 
+                  onClick={() => setFeaturedIndex(prev => (prev === 0 ? featuredBooksList.length - 1 : prev - 1))}
+                  className="p-2 rounded-full bg-muted/80 hover:bg-primary hover:text-primary-foreground transition-all shadow-sm"
+                  aria-label="Previous Featured Publication"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </button>
+                <div className="flex items-center gap-1.5">
+                  {featuredBooksList.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setFeaturedIndex(idx)}
+                      className={`h-2 rounded-full transition-all ${
+                        featuredIndex === idx ? "w-6 bg-primary" : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60"
+                      }`}
+                      aria-label={`Slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+                <button 
+                  onClick={() => setFeaturedIndex(prev => (prev === featuredBooksList.length - 1 ? 0 : prev + 1))}
+                  className="p-2 rounded-full bg-muted/80 hover:bg-primary hover:text-primary-foreground transition-all shadow-sm"
+                  aria-label="Next Featured Publication"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </button>
               </div>
             </div>
 
             <div className="w-full lg:w-2/3 space-y-4">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent/20 text-accent-foreground text-xs font-bold uppercase tracking-wider">
-                  <Flame className="h-3.5 w-3.5 text-accent" /> Featured Publication
-                </span>
-                <span className="font-mono text-xs font-bold bg-primary/10 text-primary px-3 py-1 rounded-md">
-                  ISBN: {featuredBook.isbn}
-                </span>
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent/20 text-accent-foreground text-xs font-bold uppercase tracking-wider">
+                    <Flame className="h-3.5 w-3.5 text-accent" /> Featured Spotlight ({featuredIndex + 1}/{featuredBooksList.length})
+                  </span>
+                  <span className="font-mono text-xs font-bold bg-primary/10 text-primary px-3 py-1 rounded-md">
+                    ISBN: {featuredBook.isbn}
+                  </span>
+                </div>
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-primary leading-tight">
