@@ -147,7 +147,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     id: "aiforge-26",
     title: "AIFORGE 2026",
     isbn: "978-81-687765-9-3",
-    date: "30 August 2026",
+    date: "6 September 2026",
     location: "Hybrid Mode",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdovsHUgDTtUSLoXdyufXRN67K59HSiLsxhmOUKQaE9VRcdwA/viewform?usp=publish-editor",
     cmtLink: "https://cmt3.research.microsoft.com/AIFORGE2026",
@@ -161,9 +161,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Applied AI Research"
     ],
     milestones: [
-      { name: "Paper Submission", date: "20 August 2026" },
-      { name: "Acceptance Notification", date: "26 August 2026" },
-      { name: "Registration Deadline", date: "28 August 2026" }
+      { name: "Paper Submission", date: "28 August 2026" },
+      { name: "Acceptance Notification", date: "2 September 2026" },
+      { name: "Registration Deadline", date: "4 September 2026" }
     ],
     speakers: [
       { name: "Wiktoria Gromowa-Cieślik", designation: "CEO & Chief Metrics Officer, Human-Tech Fusion (HTFusion)", university: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg" },

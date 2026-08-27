@@ -9,7 +9,7 @@ const conferences = [
     title: "AIFORGE 2026: International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering",
     city: "Hybrid Mode",
     country: "Global",
-    date: "30 August 2026",
+    date: "6 September 2026",
     topic: "AI & Engineering",
     isbn: "978-81-687765-9-3",
     link: "/aiforge-26",

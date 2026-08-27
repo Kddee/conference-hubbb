@@ -31,7 +31,7 @@ const conferenceData = {
   id: "AIFORGE 2026",
   title: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering",
   isbn: "978-81-687765-9-3",
-  date: "30 August 2026",
+  date: "6 September 2026",
   location: "Hybrid Mode, Global",
   registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdovsHUgDTtUSLoXdyufXRN67K59HSiLsxhmOUKQaE9VRcdwA/viewform?usp=publish-editor",
   cmtLink: "https://cmt3.research.microsoft.com/AIFORGE2026",
@@ -70,10 +70,10 @@ const conferenceData = {
     { title: "Applied AI Research", desc: "Agentic AI in healthcare, finance, software engineering, etc.", icon: Microscope }
   ],
   timeline: [
-    { date: "20 August 2026", label: "Paper Submission", desc: "Deadline for paper submission" },
-    { date: "26 August 2026", label: "Acceptance", desc: "Notification of acceptance" },
-    { date: "28 August 2026", label: "Registration Deadline", desc: "Final camera-ready and registration deadline" },
-    { date: "30 August 2026", label: "Conference Date", desc: "Main event" }
+    { date: "28 August 2026", label: "Paper Submission", desc: "Deadline for paper submission" },
+    { date: "2 September 2026", label: "Acceptance", desc: "Notification of acceptance" },
+    { date: "4 September 2026", label: "Registration Deadline", desc: "Final camera-ready and registration deadline" },
+    { date: "6 September 2026", label: "Conference Date", desc: "Main event" }
   ],
   advisoryBoard: [
     {
