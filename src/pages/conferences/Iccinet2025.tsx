@@ -57,7 +57,7 @@ const conferenceData = {
     { date: "26 Oct 2025", label: "Conference Day 2", desc: "Keynotes, panels & awards ceremony" }
   ],
   videos: [
-    { url: "https://www.youtube.com/embed/03f2bVenPIM", title: "Dr. Joe Perez | Keynote Speaker Message | ICCINET-25" },
+    { url: "https://www.youtube.com/embed/03f2bVenPIM", title: "Mr. Rajaguru Ganesan | Keynote Speaker Message | ICCINET-25" },
     { url: "https://www.youtube.com/embed/sQsk3HanogM", title: "Dr. Walida Ounruean | Keynote Speaker Message | ICCINET-25" }
   ],
   glimpses: [
