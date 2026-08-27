@@ -141,9 +141,9 @@ const conferenceData = {
       img: "/speakers/dr-sravanthi-dontu.jpg"
     },
     {
-      name: "Dr. Mbombi",
-      org: "Khizamane Nursing College",
-      country: "Limpopo, South Africa",
+      name: "Dr. Mbombi Khizamane",
+      org: "Nursing College Limpopo",
+      country: "South Africa",
       img: "/speakers/dr-mbombi.jpg"
     }
   ],
