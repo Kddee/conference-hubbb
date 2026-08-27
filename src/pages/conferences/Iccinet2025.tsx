@@ -21,9 +21,9 @@ const conferenceData = {
     { title: "Industry-Academia Synergy", desc: "Bridging research and industrial applications." }
   ],
   speakers: [
-    { name: "Dr. Joe Perez", org: "NC Department of Health & Human Services", country: "United States", img: "https://static.wixstatic.com/media/30814e_043f012b093045da87e7c6046631b299~mv2.avif" },
+    { name: "Dr. Joe Perez", org: "NC Department of Health & Human Services", country: "United States", img: "/speakers/dr-joe-perez.jpg" },
     { name: "Mr. Satish Kabade", org: "Product Technical Expert", country: "USA", img: "https://static.wixstatic.com/media/30814e_a31d532fb603465e846aceccb082827c~mv2.jpeg" },
-    { name: "Gregg Clunis", org: "Founder, Kojo", country: "United States", img: "https://static.wixstatic.com/media/30814e_5c95cc3899d64319998d594852b99123~mv2.jpeg" },
+    { name: "Gregg Clunis", org: "Founder, Kojo", country: "United States", img: "/speakers/gregg-clunis.jpg" },
     { name: "Nomi Khedawala", org: "Reddit", country: "USA", img: "/speakers/nomi-khedawala.png" },
     { name: "Mr. Bhushan B. Chaudhari", org: "Senior Technology Lead", country: "USA", img: "/speakers/bhushan-chaudhari.jpg" },
     { name: "Jim Saliba", org: "James Saliba Inc", country: "USA", img: "/speakers/jim-saliba.png" },
