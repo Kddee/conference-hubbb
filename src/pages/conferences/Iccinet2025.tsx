@@ -57,7 +57,6 @@ const conferenceData = {
     { date: "26 Oct 2025", label: "Conference Day 2", desc: "Keynotes, panels & awards ceremony" }
   ],
   videos: [
-    { url: "https://www.youtube.com/embed/03f2bVenPIM", title: "Mr. Rajaguru Ganesan | Keynote Speaker Message | ICCINET-25" },
     { url: "https://www.youtube.com/embed/sQsk3HanogM", title: "Dr. Walida Ounruean | Keynote Speaker Message | ICCINET-25" }
   ],
   glimpses: [
@@ -217,7 +216,7 @@ const Iccinet2025 = () => {
             <p className="text-lg text-muted-foreground">Exclusive video messages from our keynote speakers.</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className={conferenceData.videos.length === 1 ? "max-w-2xl mx-auto" : "grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"}>
             {conferenceData.videos.map((video, idx) => (
               <Card key={idx} className="overflow-hidden border-0 shadow-xl group rounded-2xl">
                 <div className="relative pt-[56.25%] w-full bg-slate-900">
