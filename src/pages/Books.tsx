@@ -45,7 +45,10 @@ import {
   BadgeCheck,
   Receipt,
   Printer,
-  Sparkle
+  Sparkle,
+  Barcode,
+  ScanBarcode,
+  Landmark
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { publishedBooks, Book } from "@/data/booksData";
@@ -145,6 +148,163 @@ const publishingFeatures = [
     border: "border-orange-500/20",
     iconColor: "text-orange-500"
   }
+];
+
+// GLOBAL ISBN SUPPORT REGIONS & AGENCIES (AS REQUESTED)
+const isbnSupportRegions = [
+  {
+    id: "india",
+    title: "India ISBN",
+    flag: "🇮🇳",
+    agency: "Raja Rammohun Roy National Agency (RRRNA)",
+    governingBody: "Dept. of Higher Education, Ministry of Education, Govt. of India",
+    coverage: "National & Global UGC/AICTE Recognition",
+    badge: "Govt. of India Registered",
+    color: "from-amber-500/20 via-orange-500/10 to-transparent",
+    borderColor: "border-amber-500/30",
+    badgeColor: "bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/30",
+    prefix: "978-93-XXXXX-XX-X / 978-81-XXXXX-XX-X",
+    benefits: [
+      "100% Eligible for UGC, AICTE, NAAC & NIRF API CAS Scores",
+      "Statutory Legal Deposit with the National Library of India",
+      "Cataloged in the Indian National Bibliography (INB)"
+    ]
+  },
+  {
+    id: "usa",
+    title: "USA ISBN",
+    flag: "🇺🇸",
+    agency: "US ISBN Agency (R.R. Bowker LLC)",
+    governingBody: "Official Identifier Agency for US Publishers & Libraries",
+    coverage: "North America & Worldwide Retail Networks",
+    badge: "US Industry Standard",
+    color: "from-blue-500/20 via-sky-500/10 to-transparent",
+    borderColor: "border-blue-500/30",
+    badgeColor: "bg-blue-500/15 text-blue-600 dark:text-blue-400 border-blue-500/30",
+    prefix: "978-0-XXXXX-XX-X / 978-1-XXXXX-XX-X",
+    benefits: [
+      "Global inclusion in Bowker's BooksInPrint Database",
+      "Library of Congress (LCCN) & US Academic Indexing",
+      "Seamless Amazon US, Barnes & Noble & Ingram distribution"
+    ]
+  },
+  {
+    id: "uk-ireland",
+    title: "UK & Ireland ISBN",
+    flag: "🇬🇧",
+    secondaryFlag: "🇮🇪",
+    agency: "Nielsen Book Services & UK ISBN Agency",
+    governingBody: "United Kingdom & Republic of Ireland Publishing Authority",
+    coverage: "United Kingdom, Ireland & Commonwealth",
+    badge: "British & European Standard",
+    color: "from-indigo-500/20 via-purple-500/10 to-transparent",
+    borderColor: "border-indigo-500/30",
+    badgeColor: "bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 border-indigo-500/30",
+    prefix: "978-0-XXXXX-XX-X / 978-1-XXXXX-XX-X",
+    benefits: [
+      "Official Legal Deposit with the British Library (London)",
+      "Cataloged in Nielsen Enhanced Teleordering Services",
+      "Prime distribution across Waterstones, Blackwell's & Amazon UK"
+    ]
+  },
+  {
+    id: "australia",
+    title: "Australia ISBN",
+    flag: "🇦🇺",
+    agency: "Thorpe-Bowker Australia",
+    governingBody: "Australian ISBN Agency & National Library of Australia",
+    coverage: "Australia, New Zealand & Oceania Region",
+    badge: "Asia-Pacific Standard",
+    color: "from-emerald-500/20 via-teal-500/10 to-transparent",
+    borderColor: "border-emerald-500/30",
+    badgeColor: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30",
+    prefix: "978-0-XXXXX-XX-X / 978-1-XXXXX-XX-X",
+    benefits: [
+      "Cataloged in National Library of Australia Trove database",
+      "Full coverage in Australian Books in Print registry",
+      "Direct discovery across APAC university & research libraries"
+    ]
+  },
+  {
+    id: "canada",
+    title: "Canada ISBN",
+    flag: "🇨🇦",
+    agency: "Library and Archives Canada (LAC) / ISBN Canada",
+    governingBody: "Bibliothèque et Archives Canada (National Agency)",
+    coverage: "Bilingual English & French North America",
+    badge: "Canadian National Standard",
+    color: "from-rose-500/20 via-red-500/10 to-transparent",
+    borderColor: "border-rose-500/30",
+    badgeColor: "bg-rose-500/15 text-rose-600 dark:text-rose-400 border-rose-500/30",
+    prefix: "978-0-XXXXX-XX-X / 978-2-XXXXX-XX-X",
+    benefits: [
+      "Official Legal Deposit with Library and Archives Canada",
+      "Bilingual indexing in Canadiana National Bibliography",
+      "Nationwide distribution across Indigo Chapters & Amazon CA"
+    ]
+  },
+  {
+    id: "international",
+    title: "International ISBN Support",
+    flag: "🌐",
+    agency: "International ISBN Agency & Global CrossRef",
+    governingBody: "Worldwide Standard Book Numbering Authority",
+    coverage: "Simultaneous 190+ Countries Global Release",
+    badge: "Worldwide Distribution",
+    color: "from-primary/20 via-accent/10 to-transparent",
+    borderColor: "border-primary/30",
+    badgeColor: "bg-primary/15 text-primary border-primary/30",
+    prefix: "13-Digit EAN • ISBN + CrossRef DOI Identifier",
+    benefits: [
+      "Simultaneous multi-country release across global marketplaces",
+      "CrossRef Digital Object Identifier (DOI) chapter linking",
+      "Indexed in Google Books, Google Scholar, and WorldCat"
+    ]
+  }
+];
+
+// COMPLETE ISBN ASSISTANCE SERVICES
+const isbnAssistanceServices = [
+  {
+    icon: ShieldCheck,
+    title: "ISBN Registration & Allocation",
+    desc: "Direct, official 13-digit ISBN registration and allocation through authorized national and international agencies."
+  },
+  {
+    icon: FileText,
+    title: "Bibliographic Metadata Management",
+    desc: "Comprehensive metadata indexing including title, subtitle, author bios, BISAC/Thema subject classification, and keywords."
+  },
+  {
+    icon: Barcode,
+    title: "EAN-13 Vector Barcode Generation",
+    desc: "High-resolution vector barcode generation with price extension for retail scanning, inventory, and library checkout systems."
+  },
+  {
+    icon: Library,
+    title: "Legal Deposit & Global Library Archiving",
+    desc: "Complete statutory legal deposit compliance with national archives, British Library, Library of Congress, and international bibliographies."
+  },
+  {
+    icon: Layers,
+    title: "Multi-Format Format-Specific ISBNs",
+    desc: "Dedicated separate ISBN allocation for Paperback, Hardcover, PDF, and Kindle/ePub editions adhering to ISO 2108."
+  },
+  {
+    icon: BadgeCheck,
+    title: "Official Certificate of ISBN Allocation",
+    desc: "Official digital Certificate of Publication with registered ISBN, barcode, and publisher verification credentials."
+  }
+];
+
+// BENEFICIARIES
+const isbnBeneficiaries = [
+  "Authors & Scholars",
+  "Researchers & Scientists",
+  "Academicians & Professors",
+  "Universities & Institutions",
+  "Independent Publishers & Editors",
+  "Conference Committees & Research Labs"
 ];
 
 // TYPES OF BOOKS ACCEPTED (COMPREHENSIVE SCOPE AS IN AGPH BOOKS)
@@ -386,7 +546,7 @@ const Books = () => {
   const [selectedDiscipline, setSelectedDiscipline] = useState("all");
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [quickViewBook, setQuickViewBook] = useState<Book | null>(null);
-  const [activeTab, setActiveTab] = useState<"features" | "types" | "workflow" | "guidelines" | "disciplines" | "comparison">("features");
+  const [activeTab, setActiveTab] = useState<"features" | "isbn" | "types" | "workflow" | "guidelines" | "disciplines" | "comparison">("features");
 
   // Dynamic proposal checklist state
   const [checklist, setChecklist] = useState<Record<string, boolean>>({
@@ -523,6 +683,11 @@ const Books = () => {
             <Button asChild size="lg" className="rounded-full shadow-2xl px-8 py-6 text-base font-bold bg-gradient-to-r from-primary to-accent hover:opacity-95 text-primary-foreground hover:scale-105 transition-all">
               <a href="https://forms.gle/dnkfj4mUxXWHGmKXA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 Submit Book Proposal <ArrowRight className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="rounded-full shadow-md px-8 py-6 text-base font-semibold border-primary/30 hover:bg-primary/10">
+              <a href="#global-isbn" className="flex items-center gap-2">
+                <Globe className="h-5 w-5 text-accent" /> Global ISBN Support
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-full shadow-md px-8 py-6 text-base font-semibold border-primary/30 hover:bg-primary/10">
@@ -671,6 +836,228 @@ const Books = () => {
         </section>
       )}
 
+      {/* GLOBAL ISBN SUPPORT SECTION (INTERNATIONAL BOOK PUBLISHING) */}
+      <section id="global-isbn" className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-b from-background via-primary/[0.03] to-background border-t border-border/50">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="container max-w-7xl mx-auto relative z-10">
+          {/* SECTION HEADER */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-md">
+              <Globe className="h-4 w-4 text-accent" /> Global ISBN Support
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary mb-5 leading-tight">
+              ISBN Support for International Book Publishing
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Publish your book with us and receive professional ISBN support for your publication. We provide ISBN registration and publishing assistance for eligible publications across major international publishing markets.
+            </p>
+          </div>
+
+          {/* ANATOMY OF AN ISBN & BARCODE INTERACTIVE GRAPHIC */}
+          <div className="mb-16 p-6 sm:p-8 rounded-3xl bg-card border border-primary/20 shadow-xl max-w-5xl mx-auto relative overflow-hidden">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-border/50">
+              <div className="flex items-center gap-3">
+                <div className="p-3 rounded-2xl bg-primary/10 text-primary">
+                  <ScanBarcode className="h-7 w-7 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-serif font-bold text-xl text-primary">Standard 13-Digit International Identifier (EAN-13)</h3>
+                  <p className="text-xs text-muted-foreground">Every published volume receives an authentic ISO 2108-compliant ISBN with full bibliographic metadata.</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 bg-muted/60 px-4 py-2 rounded-xl border border-border/60 font-mono text-xs font-bold text-foreground">
+                <ShieldCheck className="h-4 w-4 text-accent" /> 100% Agency Verified
+              </div>
+            </div>
+
+            {/* VISUAL 13-DIGIT BREAKDOWN */}
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-6 text-center">
+              <div className="p-3.5 rounded-xl bg-primary/5 border border-primary/20">
+                <div className="font-mono text-lg font-black text-primary">978</div>
+                <div className="text-[11px] font-bold text-accent uppercase mt-1">Bookland Prefix</div>
+                <div className="text-[10px] text-muted-foreground">GS1 Identifier</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-primary/5 border border-primary/20">
+                <div className="font-mono text-lg font-black text-primary">93 / 0 / 1</div>
+                <div className="text-[11px] font-bold text-accent uppercase mt-1">Registration Group</div>
+                <div className="text-[10px] text-muted-foreground">Country / Language</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-primary/5 border border-primary/20">
+                <div className="font-mono text-lg font-black text-primary">XXXXX</div>
+                <div className="text-[11px] font-bold text-accent uppercase mt-1">Publisher Prefix</div>
+                <div className="text-[10px] text-muted-foreground">Eminsphere Press</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-primary/5 border border-primary/20">
+                <div className="font-mono text-lg font-black text-primary">XXX</div>
+                <div className="text-[11px] font-bold text-accent uppercase mt-1">Title Identifier</div>
+                <div className="text-[10px] text-muted-foreground">Edition Specific</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-primary/5 border border-primary/20 col-span-2 sm:col-span-1">
+                <div className="font-mono text-lg font-black text-primary">X</div>
+                <div className="text-[11px] font-bold text-accent uppercase mt-1">Check Digit</div>
+                <div className="text-[10px] text-muted-foreground">Modulo 10 Validated</div>
+              </div>
+            </div>
+          </div>
+
+          {/* SECTION 1: INTERNATIONAL ISBN REGIONAL SUPPORT GRID */}
+          <div className="mb-20">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <div className="text-xs font-bold text-accent uppercase tracking-widest mb-2">Supported Jurisdictions & Registries</div>
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-primary">International ISBN Registration Support</h3>
+              <p className="text-sm text-muted-foreground mt-2">
+                We assist authors and institutions with official ISBN allocation across premier publishing markets worldwide.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {isbnSupportRegions.map((region) => (
+                <Card 
+                  key={region.id} 
+                  className={`p-7 bg-card border ${region.borderColor} shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 rounded-3xl flex flex-col justify-between relative overflow-hidden group`}
+                >
+                  <div className={`absolute top-0 right-0 w-36 h-36 bg-gradient-to-br ${region.color} rounded-bl-full pointer-events-none transition-all duration-500 group-hover:scale-125`} />
+                  
+                  <div>
+                    {/* TOP BADGE & FLAG */}
+                    <div className="flex items-center justify-between gap-3 mb-5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-3xl drop-shadow-sm">{region.flag}</span>
+                        {region.secondaryFlag && <span className="text-3xl drop-shadow-sm">{region.secondaryFlag}</span>}
+                      </div>
+                      <span className={`text-[11px] font-bold px-3 py-1 rounded-full border ${region.badgeColor}`}>
+                        {region.badge}
+                      </span>
+                    </div>
+
+                    <h4 className="font-serif font-bold text-xl text-primary mb-1 group-hover:text-accent transition-colors">
+                      {region.title}
+                    </h4>
+                    <div className="text-xs font-semibold text-foreground/90 mb-1">
+                      {region.agency}
+                    </div>
+                    <div className="text-[11px] text-muted-foreground mb-4 italic">
+                      {region.governingBody}
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-muted/50 border border-border/50 mb-5 font-mono text-[11px] text-primary font-semibold flex items-center justify-between">
+                      <span>Format:</span>
+                      <span className="tracking-tight">{region.prefix}</span>
+                    </div>
+
+                    {/* BENEFITS LIST */}
+                    <ul className="space-y-2.5 text-xs text-muted-foreground mb-6">
+                      {region.benefits.map((b, bIdx) => (
+                        <li key={bIdx} className="flex items-start gap-2 leading-relaxed">
+                          <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-4 border-t border-border/40">
+                    <a 
+                      href="https://forms.gle/dnkfj4mUxXWHGmKXA" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-xs font-bold text-primary hover:text-accent flex items-center justify-between transition-colors group-hover:translate-x-1"
+                    >
+                      <span>Apply for {region.title} Allocation</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* SECTION 2: COMPLETE ISBN ASSISTANCE */}
+          <div className="mb-20">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="text-xs font-bold text-accent uppercase tracking-widest mb-2">End-to-End Publishing Support</div>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
+                Complete ISBN Assistance
+              </h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                We support authors, researchers, academicians, institutions, and publishers with ISBN registration, allocation, metadata, barcode, and publication requirements.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {isbnAssistanceServices.map((service, idx) => {
+                const Icon = service.icon;
+                return (
+                  <Card key={idx} className="p-7 bg-card border border-border/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all rounded-2xl flex flex-col justify-between group">
+                    <div>
+                      <div className="h-12 w-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h4 className="font-serif font-bold text-lg text-primary mb-2 group-hover:text-accent transition-colors">
+                        {service.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {service.desc}
+                      </p>
+                    </div>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* SECTION 3: BENEFICIARIES STRIP */}
+          <div className="p-8 rounded-3xl bg-muted/40 border border-border/60 mb-20">
+            <div className="text-center mb-6">
+              <span className="text-xs font-bold uppercase tracking-widest text-accent">Who We Support</span>
+              <h4 className="text-xl font-serif font-bold text-primary mt-1">
+                Empowering the Global Scholarly & Publishing Community
+              </h4>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {isbnBeneficiaries.map((b, idx) => (
+                <div key={idx} className="flex items-center gap-2 bg-card px-4 py-2.5 rounded-full border border-border/60 shadow-sm text-xs font-bold text-foreground">
+                  <Check className="h-3.5 w-3.5 text-primary stroke-[3]" />
+                  <span>{b}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* SECTION 4: PUBLISH WITH US CTA BANNER */}
+          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-primary via-primary/95 to-accent text-primary-foreground shadow-2xl relative overflow-hidden text-center sm:text-left flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="space-y-3 max-w-2xl relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-bold uppercase tracking-wider">
+                <Sparkles className="h-3.5 w-3.5 text-accent" /> Publish With Us
+              </div>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white leading-tight">
+                Publish Your Book With Us
+              </h3>
+              <p className="text-sm sm:text-base text-primary-foreground/90 leading-relaxed">
+                Get professional publishing support with ISBN assistance for your book and take your publication to a global audience.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 shrink-0 relative z-10">
+              <Button asChild size="lg" className="rounded-full shadow-2xl px-8 py-6 text-base font-bold bg-white text-primary hover:bg-white/90 hover:scale-105 transition-all">
+                <a href="https://forms.gle/dnkfj4mUxXWHGmKXA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  Publish Your Book With Us <ArrowRight className="h-5 w-5 text-accent" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full px-7 py-6 text-sm font-semibold border-white/40 text-white hover:bg-white/10">
+                <a href="mailto:info@eminsphere.com" className="flex items-center gap-2">
+                  <Send className="h-4 w-4 text-accent" /> Email Inquiry
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* DYNAMIC INTERACTIVE PUBLISHING HUB (ALL AGPH BOOKS OFFERINGS) */}
       <section id="interactive-hub" className="bg-muted/40 py-20 lg:py-28 border-y border-border/50">
         <div className="container max-w-7xl mx-auto">
@@ -688,6 +1075,7 @@ const Books = () => {
           <div className="flex flex-wrap justify-center items-center gap-3 mb-12">
             {[
               { id: "features", label: "💎 Why Publish with Us", icon: Sparkles },
+              { id: "isbn", label: "🌐 Global ISBN Support", icon: Barcode },
               { id: "types", label: "📚 Book Formats & Scope", icon: Layers },
               { id: "disciplines", label: "🔬 Academic Disciplines", icon: GraduationCap },
               { id: "comparison", label: "⚖️ Publishing Model Comparison", icon: Scale },
@@ -729,6 +1117,104 @@ const Books = () => {
                   </Card>
                 );
               })}
+            </div>
+          )}
+
+          {/* TAB: GLOBAL ISBN SUPPORT */}
+          {activeTab === "isbn" && (
+            <div className="space-y-12 animate-in fade-in duration-300">
+              <div className="text-center max-w-2xl mx-auto">
+                <h3 className="text-2xl font-serif font-bold text-primary mb-2">
+                  International ISBN Registration & Licensing
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Publish your book with us and receive official ISBN registration, allocation, metadata, barcode, and publication support across international markets.
+                </p>
+              </div>
+
+              {/* REGIONS GRID */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {isbnSupportRegions.map((region) => (
+                  <Card 
+                    key={region.id} 
+                    className={`p-6 bg-card border ${region.borderColor} shadow-md hover:shadow-xl rounded-2xl flex flex-col justify-between relative overflow-hidden`}
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-4">
+                        <div className="flex items-center gap-2">
+                          <span className="text-2xl">{region.flag}</span>
+                          {region.secondaryFlag && <span className="text-2xl">{region.secondaryFlag}</span>}
+                          <span className="font-serif font-bold text-lg text-primary">{region.title}</span>
+                        </div>
+                        <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full border ${region.badgeColor}`}>
+                          {region.badge}
+                        </span>
+                      </div>
+
+                      <div className="text-xs font-semibold text-foreground/90 mb-1">{region.agency}</div>
+                      <div className="text-[11px] text-muted-foreground mb-4 italic">{region.governingBody}</div>
+
+                      <div className="p-2.5 rounded-lg bg-muted/50 border border-border/50 mb-4 font-mono text-[11px] text-primary font-semibold">
+                        {region.prefix}
+                      </div>
+
+                      <ul className="space-y-2 text-xs text-muted-foreground mb-4">
+                        {region.benefits.map((b, bIdx) => (
+                          <li key={bIdx} className="flex items-start gap-2">
+                            <CheckCircle2 className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="pt-3 border-t border-border/40">
+                      <a 
+                        href="https://forms.gle/dnkfj4mUxXWHGmKXA" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-xs font-bold text-primary hover:text-accent flex items-center justify-between transition-colors"
+                      >
+                        <span>Request {region.title}</span>
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </a>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+
+              {/* SERVICES MINI-GRID */}
+              <div className="p-8 rounded-3xl bg-card border border-primary/20 shadow-md">
+                <div className="text-center max-w-xl mx-auto mb-8">
+                  <h4 className="font-serif font-bold text-xl text-primary">Complete ISBN Assistance & Barcode Services</h4>
+                  <p className="text-xs text-muted-foreground mt-1">We support authors, researchers, academicians, institutions, and publishers with end-to-end publishing requirements.</p>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {isbnAssistanceServices.map((s, idx) => {
+                    const Icon = s.icon;
+                    return (
+                      <div key={idx} className="flex items-start gap-3 p-4 rounded-xl bg-muted/40 border border-border/50">
+                        <div className="p-2 rounded-lg bg-primary/10 text-primary shrink-0">
+                          <Icon className="h-4 w-4 text-accent" />
+                        </div>
+                        <div>
+                          <div className="font-bold text-xs text-primary">{s.title}</div>
+                          <div className="text-[11px] text-muted-foreground mt-0.5">{s.desc}</div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div className="mt-8 text-center pt-6 border-t border-border/50 flex flex-wrap items-center justify-center gap-4">
+                  <span className="text-xs font-medium text-muted-foreground">Ready to take your publication to a global audience?</span>
+                  <Button asChild size="sm" className="rounded-full font-bold">
+                    <a href="https://forms.gle/dnkfj4mUxXWHGmKXA" target="_blank" rel="noopener noreferrer">
+                      Publish Your Book With Us <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
             </div>
           )}
 
