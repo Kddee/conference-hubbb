@@ -139,6 +139,12 @@ const conferenceData = {
       org: "Department of Information Technology, University of the Cumberlands",
       country: "USA",
       img: "/speakers/dr-sravanthi-dontu.jpg"
+    },
+    {
+      name: "Dr. Mbombi",
+      org: "Khizamane Nursing College",
+      country: "Limpopo, South Africa",
+      img: "/speakers/dr-mbombi.jpg"
     }
   ],
   sessionChairs: []

@@ -171,7 +171,8 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Nadine Zeinoun", designation: "President, ICF Chapter Ottawa", university: "Lebanon", image: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
       { name: "Marghescu Cristina-Florentina", designation: "University Politehnica of Bucharest", university: "Romania", image: "https://static.wixstatic.com/media/30814e_fb0f8a532d8a413abf8b61b143684fed~mv2.png" },
       { name: "Hardeep Singh Tiwana", designation: "Golden Kubestronaut, The Kubernetes Show Creator", university: "USA", image: "/speakers/hardeep-singh-tiwana.jpg" },
-      { name: "Dr. Sravanthi Dontu", designation: "Independent Researcher, Corporate Professional, University of the Cumberlands", university: "USA", image: "/speakers/dr-sravanthi-dontu.jpg" }
+      { name: "Dr. Sravanthi Dontu", designation: "Independent Researcher, Corporate Professional, University of the Cumberlands", university: "USA", image: "/speakers/dr-sravanthi-dontu.jpg" },
+      { name: "Dr. Mbombi", designation: "Khizamane Nursing College", university: "Limpopo, South Africa", image: "/speakers/dr-mbombi.jpg" }
     ]
   }
 };
