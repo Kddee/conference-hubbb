@@ -21,16 +21,16 @@ const conferenceData = {
     { title: "Industry-Academia Synergy", desc: "Bridging research and industrial applications." }
   ],
   speakers: [
-    { name: "Dr. Joe Perez", org: "NC Department of Health & Human Services", country: "United States", img: "https://ui-avatars.com/api/?name=Joe+Perez&background=009688&color=fff&size=200" },
+    { name: "Dr. Joe Perez", org: "NC Department of Health & Human Services", country: "United States", img: "https://static.wixstatic.com/media/30814e_043f012b093045da87e7c6046631b299~mv2.avif" },
     { name: "Mr. Satish Kabade", org: "Product Technical Expert", country: "USA", img: "https://static.wixstatic.com/media/30814e_a31d532fb603465e846aceccb082827c~mv2.jpeg" },
-    { name: "Gregg Clunis", org: "Founder, Kojo", country: "United States", img: "https://ui-avatars.com/api/?name=Gregg+Clunis&background=26a69a&color=fff&size=200" },
-    { name: "Nomi Khedawala", org: "Reddit", country: "USA", img: "https://ui-avatars.com/api/?name=Nomi+Khedawala&background=f44336&color=fff&size=200" },
-    { name: "Mr. Bhushan B. Chaudhari", org: "Senior Technology Lead", country: "USA", img: "https://ui-avatars.com/api/?name=Bhushan+Chaudhari&background=ff9800&color=fff&size=200" },
-    { name: "Jim Saliba", org: "James Saliba Inc", country: "USA", img: "https://ui-avatars.com/api/?name=Jim+Saliba&background=9c27b0&color=fff&size=200" },
+    { name: "Gregg Clunis", org: "Founder, Kojo", country: "United States", img: "https://static.wixstatic.com/media/30814e_5c95cc3899d64319998d594852b99123~mv2.jpeg" },
+    { name: "Nomi Khedawala", org: "Reddit", country: "USA", img: "/speakers/nomi-khedawala.png" },
+    { name: "Mr. Bhushan B. Chaudhari", org: "Senior Technology Lead", country: "USA", img: "/speakers/bhushan-chaudhari.jpg" },
+    { name: "Jim Saliba", org: "James Saliba Inc", country: "USA", img: "/speakers/jim-saliba.png" },
     { name: "Dr. Walida Ounruean", org: "Uttaradit Rajabhat University", country: "Thailand", img: "https://static.wixstatic.com/media/30814e_73060115e6b34cb882286565559ff5e2~mv2.jpeg" },
     { name: "Dr. Tiansheng Yang", org: "University of South Wales", country: "UK", img: "https://static.wixstatic.com/media/30814e_ab0670f34d354ffabafcaa2849d78701~mv2.jpg" },
-    { name: "Mr. Sudipkumar Ghanvat", org: "VMO Digital", country: "United States", img: "https://ui-avatars.com/api/?name=Sudipkumar+Ghanvat&background=009688&color=fff&size=200" },
-    { name: "Anup Kagalkar", org: "Product Technical Expert", country: "United States", img: "https://ui-avatars.com/api/?name=Anup+Kagalkar&background=26a69a&color=fff&size=200" }
+    { name: "Mr. Sudipkumar Ghanvat", org: "VMO Digital", country: "United States", img: "/speakers/sudipkumar-ghanvat.png" },
+    { name: "Anup Kagalkar", org: "Product Technical Expert", country: "United States", img: "/speakers/anup-kagalkar.png" }
   ],
   tracks: [
     "Policy & Ethics: AI governance, data privacy, and technology-driven policies",
@@ -191,14 +191,14 @@ const Iccinet2025 = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
           {conferenceData.speakers.map((s, idx) => (
-            <div key={idx} className="group flex flex-col items-center text-center">
-              <div className="relative h-32 w-32 md:h-40 md:w-40 mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
-                <img src={s.img} alt={s.name} className="relative h-full w-full object-cover rounded-full border-4 border-background shadow-lg z-10" loading="lazy" />
+            <div key={idx} className="group flex flex-col items-center text-center bg-card/40 p-5 rounded-2xl border border-white/5 hover:border-accent/30 transition-all shadow-sm hover:shadow-md">
+              <div className="relative w-full aspect-[4/4.5] max-w-[180px] mb-4 overflow-hidden rounded-2xl border-2 border-primary/20 bg-muted/60 shadow-lg group-hover:border-accent/50 group-hover:shadow-xl transition-all">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
+                <img src={s.img} alt={s.name} className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
               </div>
-              <h4 className="font-bold text-primary text-lg leading-tight mb-1">{s.name}</h4>
-              <p className="text-sm text-muted-foreground mb-2 line-clamp-2">{s.org}</p>
-              <span className="text-xs font-bold text-accent uppercase tracking-wider flex items-center justify-center gap-1">
+              <h4 className="font-bold text-primary text-base leading-tight mb-1">{s.name}</h4>
+              <p className="text-xs text-muted-foreground mb-3 line-clamp-2 flex-grow">{s.org}</p>
+              <span className="text-[11px] font-semibold text-accent uppercase tracking-wider flex items-center justify-center gap-1 mt-auto">
                 <Globe className="h-3 w-3" /> {s.country}
               </span>
             </div>

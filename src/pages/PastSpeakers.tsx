@@ -25,7 +25,7 @@ const speakers = [
   { name: "Dr. Ayoub Regragui", role: "Mohammed V University, Rabat", location: "Morocco", image: "https://static.wixstatic.com/media/30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif" },
   { name: "BERKANI Samir", role: "Professor, University of Bouerdes", location: "Algeria", image: "https://static.wixstatic.com/media/30814e_e76d7e27c8cd48b3845ce3627ec85821~mv2.jpeg" },
   { name: "Bhavya Mehta", role: "Independent Researcher", location: "USA", image: "https://static.wixstatic.com/media/502b14_89220e1abdb549c79f1981b88df127d0~mv2.png" },
-  { name: "Mr. Bhushan B. Chaudhari", role: "Senior Technology Lead", location: "USA", image: "https://ui-avatars.com/api/?name=Bhushan+Chaudhari&background=ff9800&color=fff&size=200" },
+  { name: "Mr. Bhushan B. Chaudhari", role: "Senior Technology Lead", location: "USA", image: "/speakers/bhushan-chaudhari.jpg" },
   { name: "Mr. Bhushan Balkrishna Chaudhari", role: "Senior Technology Lead", location: "New Jersey, USA", image: "https://static.wixstatic.com/media/30814e_80c3ba4b5ad34cc1817090e1e30c7b8e~mv2.jpeg" },
   { name: "Dr. Danijela V. Pantović", role: "Assistant Professor", location: "Serbia", image: "https://static.wixstatic.com/media/30814e_b097c784e55f4e38837f599a1f7f735c~mv2.jpeg" },
   { name: "Dr. Darja Antolin Dresar", role: "Ph.D., Associate Professor", location: "Slovenia", image: "https://static.wixstatic.com/media/30814e_d89f6d1fda8143458c4f407543d1460f~mv2.jpeg" },
