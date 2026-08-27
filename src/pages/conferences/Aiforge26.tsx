@@ -131,6 +131,20 @@ const conferenceData = {
       org: "Independent Crypto Analyst & International Financial Market Analyst",
       country: "USA",
       img: "/icaits26/roksolana-trach.png"
+    },
+    {
+      name: "Hardeep Singh Tiwana",
+      designation: "Golden Kubestronaut, The Kubernetes Show Creator",
+      org: "The Kubernetes Show",
+      country: "USA",
+      img: "/speakers/hardeep-singh-tiwana.jpg"
+    },
+    {
+      name: "Dr. Sravanthi Dontu",
+      designation: "Independent Researcher, Corporate Professional",
+      org: "Department of Information Technology, University of the Cumberlands",
+      country: "USA",
+      img: "/speakers/dr-sravanthi-dontu.jpg"
     }
   ],
   sessionChairs: []
