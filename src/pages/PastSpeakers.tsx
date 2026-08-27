@@ -180,9 +180,9 @@ const PastSpeakers = () => {
             <Card key={i} className="relative overflow-hidden group glass border-white/5 bg-card/40 hover:bg-card/80 transition-all duration-500 rounded-[2rem] p-8 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(152,227,152,0.15)] flex flex-col items-center text-center">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors pointer-events-none" />
               
-              <div className="relative mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary via-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></div>
-                <img src={s.image} alt={s.name} className="relative h-32 w-32 object-cover rounded-full border-4 border-background shadow-xl z-10" loading="lazy" />
+              <div className="relative w-full aspect-[4/4.5] max-w-[200px] mb-6 overflow-hidden rounded-2xl border-2 border-primary/20 bg-muted/60 shadow-lg group-hover:border-accent/50 group-hover:shadow-xl transition-all">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
+                <img src={s.image} alt={s.name} className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
               </div>
               
               <h3 className="font-serif text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">{s.name}</h3>
@@ -210,8 +210,8 @@ const PastSpeakers = () => {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {globalVoices.map((s, i) => (
               <Card key={i} className="overflow-hidden glass border-white/5 bg-card/30 hover:bg-card/60 transition-all duration-300 group flex flex-col items-center text-center p-6 rounded-3xl hover:-translate-y-1 hover:border-primary/30">
-                <div className="relative h-20 w-20 mb-4 shrink-0">
-                  <img src={s.image} alt={s.name} className="h-full w-full object-cover rounded-full border-2 border-white/10 group-hover:border-primary/50 transition-colors shadow-md" loading="lazy" />
+                <div className="relative w-full aspect-[4/4.5] max-w-[120px] mb-4 overflow-hidden rounded-xl border border-white/10 group-hover:border-primary/50 transition-colors shadow-md shrink-0">
+                  <img src={s.image} alt={s.name} className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105" loading="lazy" />
                 </div>
                 <h3 className="font-serif font-bold text-white leading-tight mb-1 group-hover:text-primary transition-colors text-sm">{s.name}</h3>
                 <div className="text-xs text-muted-foreground font-medium mb-3 line-clamp-2">{s.role}</div>

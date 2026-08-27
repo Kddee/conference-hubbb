@@ -346,15 +346,15 @@ const Icaits26 = () => {
             {conferenceData.advisoryBoard.map((s, idx) => (
               <div 
                 key={idx} 
-                className="group flex flex-col items-center text-center w-full max-w-sm"
+                className="group flex flex-col items-center text-center w-full max-w-sm bg-card/40 p-6 rounded-2xl border border-white/5 hover:border-accent/30 transition-all shadow-sm hover:shadow-md"
               >
-                <div className="relative h-40 w-40 mb-6">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+                <div className="relative w-full aspect-[4/4.5] max-w-[220px] mb-5 overflow-hidden rounded-2xl border-2 border-primary/20 bg-muted/60 shadow-lg group-hover:border-accent/50 group-hover:shadow-xl transition-all">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
                   {s.img ? (
-                    <img src={s.img} alt={s.name} className="relative h-full w-full object-cover rounded-full border-4 border-background shadow-lg z-10" loading="lazy" />
+                    <img src={s.img} alt={s.name} className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                   ) : (
-                    <div className="relative h-full w-full rounded-full border-4 border-background shadow-lg z-10 bg-muted flex items-center justify-center">
-                      <User className="h-12 w-12 text-muted-foreground" />
+                    <div className="h-full w-full flex items-center justify-center bg-muted">
+                      <User className="h-16 w-16 text-muted-foreground/50" />
                     </div>
                   )}
                 </div>
@@ -379,15 +379,15 @@ const Icaits26 = () => {
             {conferenceData.judges.map((s, idx) => (
               <div 
                 key={idx} 
-                className="group flex flex-col items-center text-center w-full max-w-sm"
+                className="group flex flex-col items-center text-center w-full max-w-sm bg-card/40 p-6 rounded-2xl border border-white/5 hover:border-accent/30 transition-all shadow-sm hover:shadow-md"
               >
-                <div className="relative h-40 w-40 mb-6">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+                <div className="relative w-full aspect-[4/4.5] max-w-[220px] mb-5 overflow-hidden rounded-2xl border-2 border-primary/20 bg-muted/60 shadow-lg group-hover:border-accent/50 group-hover:shadow-xl transition-all">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
                   {s.img ? (
-                    <img src={s.img} alt={s.name} className="relative h-full w-full object-cover rounded-full border-4 border-background shadow-lg z-10" loading="lazy" />
+                    <img src={s.img} alt={s.name} className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                   ) : (
-                    <div className="relative h-full w-full rounded-full border-4 border-background shadow-lg z-10 bg-muted flex items-center justify-center">
-                      <User className="h-12 w-12 text-muted-foreground" />
+                    <div className="h-full w-full flex items-center justify-center bg-muted">
+                      <User className="h-16 w-16 text-muted-foreground/50" />
                     </div>
                   )}
                 </div>
@@ -412,15 +412,21 @@ const Icaits26 = () => {
             {conferenceData.speakers.map((s, idx) => (
               <div 
                 key={idx} 
-                className="group flex flex-col items-center text-center w-full max-w-sm"
+                className="group flex flex-col items-center text-center w-full max-w-sm bg-card/40 p-6 rounded-2xl border border-white/5 hover:border-accent/30 transition-all shadow-sm hover:shadow-md"
               >
-                <div className="relative h-40 w-40 mb-6">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+                <div className="relative w-full aspect-[4/4.5] max-w-[220px] mb-5 overflow-hidden rounded-2xl border-2 border-primary/20 bg-muted/60 shadow-lg group-hover:border-accent/50 group-hover:shadow-xl transition-all">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
                   {s.img ? (
-                    <img src={s.img} alt={s.name} className="relative h-full w-full object-cover rounded-full border-4 border-background shadow-lg z-10" style={s.name.includes("Nikola") ? { objectPosition: "center 15%" } : undefined} loading="lazy" />
+                    <img 
+                      src={s.img} 
+                      alt={s.name} 
+                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" 
+                      style={s.name.includes("Nikola") ? { objectPosition: "center 15%" } : undefined} 
+                      loading="lazy" 
+                    />
                   ) : (
-                    <div className="relative h-full w-full rounded-full border-4 border-background shadow-lg z-10 bg-muted flex items-center justify-center">
-                      <User className="h-12 w-12 text-muted-foreground" />
+                    <div className="h-full w-full flex items-center justify-center bg-muted">
+                      <User className="h-16 w-16 text-muted-foreground/50" />
                     </div>
                   )}
                 </div>
