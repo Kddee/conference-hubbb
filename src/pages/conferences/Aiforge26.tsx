@@ -145,6 +145,13 @@ const conferenceData = {
       org: "Nursing College Limpopo",
       country: "South Africa",
       img: "/speakers/dr-mbombi.jpg"
+    },
+    {
+      name: "Dr. Santosh Reddy Addula",
+      designation: "Department of Information Technology",
+      org: "University of the Cumberlands, Williamsburg, Kentucky",
+      country: "USA",
+      img: "/speakers/dr-santosh-reddy-addula.png"
     }
   ],
   sessionChairs: []
