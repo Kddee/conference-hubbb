@@ -166,6 +166,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Registration Deadline", date: "4 September 2026" }
     ],
     speakers: [
+      { name: "Palesa Mosiea", designation: "Inclusion & Accessibility, Leadership, Public Speaking & Advocacy, Gauteng", university: "South Africa", image: "/speakers/palesa-mosiea.jpg" },
       { name: "Wiktoria Gromowa-Cieślik", designation: "CEO & Chief Metrics Officer, Human-Tech Fusion (HTFusion)", university: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg" },
       { name: "Prof. Dr. Alexander Bull", designation: "IU International University", university: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
       { name: "Nadine Zeinoun", designation: "President, ICF Chapter Ottawa", university: "Lebanon", image: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
@@ -174,8 +175,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Dr. Sravanthi Dontu", designation: "Independent Researcher, Corporate Professional, University of the Cumberlands", university: "USA", image: "/speakers/dr-sravanthi-dontu.jpg" },
       { name: "Dr. Mbombi Khizamane", designation: "Nursing College Limpopo", university: "South Africa", image: "/speakers/dr-mbombi.jpg" },
       { name: "Dr. Santosh Reddy Addula", designation: "Department of Information Technology, University of the Cumberlands, Williamsburg, Kentucky", university: "USA", image: "/speakers/dr-santosh-reddy-addula.png" },
-      { name: "Dr. Tintin Flores", designation: "Biomedical & Healthcare Technology, Valenzuela, National Capital Region", university: "Philippines", image: "/speakers/dr-tintin-flores.jpg" },
-      { name: "Palesa Mosiea", designation: "Inclusion & Accessibility, Leadership, Public Speaking & Advocacy, Gauteng", university: "South Africa", image: "/speakers/palesa-mosiea.jpg" }
+      { name: "Dr. Tintin Flores", designation: "Biomedical & Healthcare Technology, Valenzuela, National Capital Region", university: "Philippines", image: "/speakers/dr-tintin-flores.jpg" }
     ]
   }
 };

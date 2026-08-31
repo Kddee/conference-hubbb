@@ -100,12 +100,17 @@ const conferenceData = {
   judges: [],
   speakers: [
     {
+      name: "Palesa Mosiea",
+      designation: "Inclusion & Accessibility, Leadership, Public Speaking & Advocacy",
+      org: "Gauteng",
+      country: "South Africa",
+      img: "/speakers/palesa-mosiea.jpg"
+    },
+    {
       name: "Wiktoria Gromowa-Cieślik",
       designation: "CEO, Technology Executive, Chief Metrics Officer",
       org: "Human-Tech Fusion (HTFusion)",
       country: "Poland",
-      topic: "The Metric Behind the Algorithm: How to make AI initiatives measurable, scalable, governable and worth funding",
-      bio: "Technology & Transformation Executive with mathematical background and experience spanning academia, enterprise-wide digital transformation, data and AI initiatives in global organizations. The founder of Human-Tech Fusion® - which combines mathematical, engineering and human insight to make technology measurable in the ways that matter: better decisions, healthier operations and sustainable business value.",
       img: "/speakers/wiktoria-gromowa-cieslik.jpg"
     },
     {
@@ -159,13 +164,6 @@ const conferenceData = {
       org: "Valenzuela, National Capital Region",
       country: "Philippines",
       img: "/speakers/dr-tintin-flores.jpg"
-    },
-    {
-      name: "Palesa Mosiea",
-      designation: "Inclusion & Accessibility, Leadership, Public Speaking & Advocacy",
-      org: "Gauteng",
-      country: "South Africa",
-      img: "/speakers/palesa-mosiea.jpg"
     }
   ],
   sessionChairs: []
