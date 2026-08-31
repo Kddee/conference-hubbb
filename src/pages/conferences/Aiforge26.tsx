@@ -152,6 +152,13 @@ const conferenceData = {
       org: "University of the Cumberlands, Williamsburg, Kentucky",
       country: "USA",
       img: "/speakers/dr-santosh-reddy-addula.png"
+    },
+    {
+      name: "Dr. Tintin Flores",
+      designation: "Biomedical & Healthcare Technology",
+      org: "Valenzuela, National Capital Region",
+      country: "Philippines",
+      img: "/speakers/dr-tintin-flores.jpg"
     }
   ],
   sessionChairs: []
