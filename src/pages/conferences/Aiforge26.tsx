@@ -159,6 +159,13 @@ const conferenceData = {
       org: "Valenzuela, National Capital Region",
       country: "Philippines",
       img: "/speakers/dr-tintin-flores.jpg"
+    },
+    {
+      name: "Palesa Mosiea",
+      designation: "Inclusion & Accessibility, Leadership, Public Speaking & Advocacy",
+      org: "Gauteng",
+      country: "South Africa",
+      img: "/speakers/palesa-mosiea.jpg"
     }
   ],
   sessionChairs: []

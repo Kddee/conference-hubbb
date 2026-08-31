@@ -174,7 +174,8 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Dr. Sravanthi Dontu", designation: "Independent Researcher, Corporate Professional, University of the Cumberlands", university: "USA", image: "/speakers/dr-sravanthi-dontu.jpg" },
       { name: "Dr. Mbombi Khizamane", designation: "Nursing College Limpopo", university: "South Africa", image: "/speakers/dr-mbombi.jpg" },
       { name: "Dr. Santosh Reddy Addula", designation: "Department of Information Technology, University of the Cumberlands, Williamsburg, Kentucky", university: "USA", image: "/speakers/dr-santosh-reddy-addula.png" },
-      { name: "Dr. Tintin Flores", designation: "Biomedical & Healthcare Technology, Valenzuela, National Capital Region", university: "Philippines", image: "/speakers/dr-tintin-flores.jpg" }
+      { name: "Dr. Tintin Flores", designation: "Biomedical & Healthcare Technology, Valenzuela, National Capital Region", university: "Philippines", image: "/speakers/dr-tintin-flores.jpg" },
+      { name: "Palesa Mosiea", designation: "Inclusion & Accessibility, Leadership, Public Speaking & Advocacy, Gauteng", university: "South Africa", image: "/speakers/palesa-mosiea.jpg" }
     ]
   }
 };
