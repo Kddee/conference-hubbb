@@ -150,13 +150,6 @@ const conferenceData = {
   judges: [],
   speakers: [
     {
-      name: "Palesa Mosiea",
-      designation: "Inclusion & Accessibility, Leadership, Public Speaking & Advocacy",
-      org: "Gauteng",
-      country: "South Africa",
-      img: "/speakers/palesa-mosiea.jpg"
-    },
-    {
       name: "Wiktoria Gromowa-Cieślik",
       designation: "CEO, Technology Executive, Chief Metrics Officer",
       org: "Human-Tech Fusion (HTFusion)",

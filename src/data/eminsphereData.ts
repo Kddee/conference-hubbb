@@ -166,7 +166,6 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Registration Deadline", date: "4 September 2026" }
     ],
     speakers: [
-      { name: "Palesa Mosiea", designation: "Inclusion & Accessibility, Leadership, Public Speaking & Advocacy, Gauteng", university: "South Africa", image: "/speakers/palesa-mosiea.jpg" },
       { name: "Wiktoria Gromowa-Cieślik", designation: "CEO & Chief Metrics Officer, Human-Tech Fusion (HTFusion)", university: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg" },
       { name: "Prof. Dr. Alexander Bull", designation: "IU International University", university: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
       { name: "Nadine Zeinoun", designation: "President, ICF Chapter Ottawa", university: "Lebanon", image: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
