@@ -176,10 +176,10 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Dr. Santosh Reddy Addula", designation: "Department of Information Technology, University of the Cumberlands, Williamsburg, Kentucky", university: "USA", image: "/speakers/dr-santosh-reddy-addula.png" },
       { name: "Dr. Tintin Flores", designation: "Biomedical & Healthcare Technology, Valenzuela, National Capital Region", university: "Philippines", image: "/speakers/dr-tintin-flores.jpg" },
       { name: "Dr. Peter Kamau, CPA-K", designation: "Founder & CEO, PETKAM Solutions Ltd | Govt. Consultant, National Employment Authority", university: "Kenya", image: "/speakers/dr-peter-kamau.jpg" },
+      { name: "Parikshit Sahagal", designation: "Technical Project Manager, CoStar Group Inc", university: "USA", image: "/speakers/parikshit-sahagal.jpg" },
       { name: "Jaco Visagie", designation: "Professor of Statistics, North-West University", university: "South Africa", image: "/speakers/jaco-visagie.jpg" },
       { name: "Dr. Dina Alkhodary", designation: "Associate Professor of Business Administration, Middle East University", university: "Jordan", image: "/speakers/dr-dina-alkhodary.jpg" },
-      { name: "Mayank Atreya", designation: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", university: "USA", image: "/speakers/mayank-atreya.jpg" },
-      { name: "Parikshit Sahagal", designation: "Technical Project Manager, CoStar Group Inc", university: "USA", image: "/speakers/parikshit-sahagal.jpg" }
+      { name: "Mayank Atreya", designation: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", university: "USA", image: "/speakers/mayank-atreya.jpg" }
     ]
   }
 };
