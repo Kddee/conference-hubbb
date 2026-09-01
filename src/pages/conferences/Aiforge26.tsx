@@ -164,6 +164,34 @@ const conferenceData = {
       org: "Valenzuela, National Capital Region",
       country: "Philippines",
       img: "/speakers/dr-tintin-flores.jpg"
+    },
+    {
+      name: "Dr. Peter Kamau, CPA-K",
+      designation: "Founder & CEO — PETKAM Solutions Ltd & PETKAM Elite Homes Ltd",
+      org: "Government Consultant — Ministry of Labour & National Employment Authority (NEA)",
+      country: "Kenya",
+      img: "/speakers/dr-peter-kamau.jpg"
+    },
+    {
+      name: "Jaco Visagie",
+      designation: "Professor of Statistics",
+      org: "North-West University",
+      country: "South Africa",
+      img: "/speakers/jaco-visagie.jpg"
+    },
+    {
+      name: "Dr. Dina Alkhodary",
+      designation: "Associate Professor of Business Administration",
+      org: "Middle East University",
+      country: "Jordan",
+      img: "/speakers/dr-dina-alkhodary.jpg"
+    },
+    {
+      name: "Mayank Atreya",
+      designation: "Technology & Engineering Leader",
+      org: "Enterprise Architecture, AI/ML-Driven Modernization, Multi-Cloud Architecture",
+      country: "USA",
+      img: "/speakers/mayank-atreya.jpg"
     }
   ],
   sessionChairs: []
