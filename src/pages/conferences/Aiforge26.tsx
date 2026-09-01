@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import ConferenceSections from "@/components/layout/ConferenceSections";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MapPin, CheckCircle2, Globe, BookOpen, Star, Trophy, Award, Search, Book, User, Crown, Lightbulb, Zap, Heart, Medal, Database, Cpu, Network, Shield, Settings, Microscope } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, CheckCircle2, Globe, BookOpen, Star, Trophy, Award, Search, Book, User, Crown, Lightbulb, Zap, Heart, Medal, Database, Cpu, Network, Shield, Settings, Microscope, Sparkles } from "lucide-react";
 import { useState } from "react";
 import speakerImg from "@/assets/WhatsApp Image 2026-06-17 at 7.59.19 PM (1).jpeg";
 import deepakSinghImg from "@/assets/WhatsApp Image 2026-07-25 at 10.08.48 AM.jpeg";
@@ -55,11 +55,61 @@ const conferenceData = {
     { title: "DOI & Digital Access", img: null, desc: "Each published paper may be assigned a Digital Object Identifier (DOI) to ensure permanent accessibility and citation tracking." }
   ],
   awards: [
-    "ISBN: 978-81-687765-9-3 Conference Proceedings",
-    "Best Paper Award",
-    "Best Presentation Award",
-    "Best Student Paper Award",
-    "Innovation Award"
+    {
+      title: "Global Innovation Excellence Award",
+      desc: "Recognizes outstanding innovation and visionary solutions.",
+      badge: "Visionary Innovation",
+      icon: Lightbulb,
+      glow: "bg-amber-400",
+      bg: "from-amber-500/20 to-amber-500/5",
+      border: "border-amber-500/30",
+      badgeColor: "bg-amber-500/15 text-amber-400 border-amber-500/30",
+      iconColor: "text-amber-400"
+    },
+    {
+      title: "Industry Leadership Award",
+      desc: "Honors excellence in demonstrating significant industry impact and leadership.",
+      badge: "Executive Leadership",
+      icon: Crown,
+      glow: "bg-blue-400",
+      bg: "from-blue-500/20 to-blue-500/5",
+      border: "border-blue-500/30",
+      badgeColor: "bg-blue-500/15 text-blue-400 border-blue-500/30",
+      iconColor: "text-blue-400"
+    },
+    {
+      title: "Research Impact Award",
+      desc: "Awarded for exceptional contributions to research and technological advancement.",
+      badge: "Scientific Advancement",
+      icon: Microscope,
+      glow: "bg-purple-400",
+      bg: "from-purple-500/20 to-purple-500/5",
+      border: "border-purple-500/30",
+      badgeColor: "bg-purple-500/15 text-purple-400 border-purple-500/30",
+      iconColor: "text-purple-400"
+    },
+    {
+      title: "Emerging Professional Award",
+      desc: "Celebrates promising talent and emerging leaders in the field.",
+      badge: "Rising Talent",
+      icon: Zap,
+      glow: "bg-emerald-400",
+      bg: "from-emerald-500/20 to-emerald-500/5",
+      border: "border-emerald-500/30",
+      badgeColor: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
+      iconColor: "text-emerald-400"
+    },
+    {
+      title: "Outstanding Presentation Award",
+      desc: "Recognizes the most compelling, clear, and impactful presentation.",
+      badge: "Delivery Excellence",
+      icon: Trophy,
+      glow: "bg-rose-400",
+      bg: "from-rose-500/20 to-rose-500/5",
+      border: "border-rose-500/30",
+      badgeColor: "bg-rose-500/15 text-rose-400 border-rose-500/30",
+      iconColor: "text-rose-400"
+    }
   ],
   tracks: [
     { title: "Foundation Models & LLMs", desc: "Architectures, pre-training, fine-tuning, and evaluation.", icon: Database },
@@ -494,69 +544,85 @@ const Aiforge26 = () => {
         )}
       </section>
 
-      {/* KEYNOTE AWARDS */}
-      <section className="relative py-24 border-t border-border/50 overflow-hidden">
-        {/* Subtle background effects */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[120px] pointer-events-none"></div>
-        
-        <div className="container relative z-10">
+      {/* AWARDS & RECOGNITION */}
+      <section className="relative py-24 lg:py-32 border-t border-border/50 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background">
+        {/* Ambient atmospheric glow effects */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-accent/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-primary/10 rounded-full blur-[130px] pointer-events-none"></div>
+        <div className="absolute top-10 left-10 w-[350px] h-[350px] bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="container relative z-10 max-w-6xl mx-auto">
+          {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent font-medium text-sm mb-6 border border-accent/20 shadow-sm backdrop-blur-md">
-              <Star className="h-4 w-4" /> Excellence Recognized
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-accent/15 text-accent font-semibold text-xs sm:text-sm mb-6 border border-accent/30 shadow-sm backdrop-blur-md">
+              <Trophy className="h-4 w-4" /> Official Honours & Distinctions
             </div>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Keynote Awards</h2>
-            <p className="text-lg text-muted-foreground">Celebrating outstanding contributions, innovation, and impact among our distinguished keynote speakers.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary mb-6">
+              Awards & Recognition
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Honoring outstanding innovation, visionary leadership, significant industry impact, cutting-edge research, and exceptional presentation delivery at AIFORGE 2026.
+            </p>
           </div>
-          
-          <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
-            {[
-              { title: "Best Keynote Speaker Award", icon: Crown, iconColor: "text-accent", glow: "bg-accent", bg: "from-accent/20 to-accent/5", border: "border-accent/20" },
-              { title: "Most Innovative Talk Award", icon: Lightbulb, iconColor: "text-primary", glow: "bg-primary", bg: "from-primary/20 to-primary/5", border: "border-primary/20" },
-              { title: "Most Impactful Presentation Award", icon: Zap, iconColor: "text-purple-400", glow: "bg-purple-400", bg: "from-purple-400/20 to-purple-400/5", border: "border-purple-400/20" },
-              { title: "Audience Choice Keynote Award", icon: Heart, iconColor: "text-rose-400", glow: "bg-rose-400", bg: "from-rose-400/20 to-rose-400/5", border: "border-rose-400/20" },
-              { title: "Outstanding Speaker Excellence Award", icon: Medal, iconColor: "text-emerald-400", glow: "bg-emerald-400", bg: "from-emerald-400/20 to-emerald-400/5", border: "border-emerald-400/20" }
-            ].map((award, idx) => (
+
+          {/* Cards Grid */}
+          <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto mb-14">
+            {conferenceData.awards.map((award, idx) => (
               <div 
                 key={idx} 
-                className="group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-2xl bg-gradient-to-b from-white/10 to-transparent hover:from-white/20 hover:to-white/5 p-[1px] transition-all duration-500"
+                className="group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-3xl bg-gradient-to-b from-white/15 via-white/5 to-transparent hover:from-white/25 hover:to-white/10 p-[1px] transition-all duration-500 flex flex-col"
               >
-                <Card className="relative h-full p-8 bg-card/90 backdrop-blur-xl border-0 flex flex-col items-center text-center justify-center rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <div className="relative mb-6">
-                    <div className={`absolute inset-0 ${award.glow} blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 rounded-full`}></div>
-                    <div className={`relative h-16 w-16 rounded-full bg-gradient-to-br ${award.bg} border ${award.border} flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-inner`}>
-                      <award.icon className={`h-8 w-8 ${award.iconColor} drop-shadow-md group-hover:text-white transition-colors duration-300`} />
+                <Card className="relative h-full p-8 bg-card/90 backdrop-blur-xl border-0 flex flex-col items-center text-center justify-between rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group-hover:-translate-y-2">
+                  <div className={`absolute top-0 right-0 w-36 h-36 bg-gradient-to-br ${award.bg} rounded-bl-full pointer-events-none transition-all duration-500 group-hover:scale-125`}></div>
+
+                  <div className="w-full flex flex-col items-center">
+                    {/* Badge */}
+                    <span className={`inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full border mb-6 ${award.badgeColor}`}>
+                      <Sparkles className="h-3 w-3" /> {award.badge}
+                    </span>
+
+                    {/* 3D Glowing Icon */}
+                    <div className="relative mb-6">
+                      <div className={`absolute inset-0 ${award.glow} blur-xl opacity-25 group-hover:opacity-50 transition-opacity duration-500 rounded-full`}></div>
+                      <div className={`relative h-20 w-20 rounded-2xl bg-gradient-to-br ${award.bg} border ${award.border} flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-inner`}>
+                        <award.icon className={`h-10 w-10 ${award.iconColor} drop-shadow-md group-hover:scale-105 transition-transform duration-300`} />
+                      </div>
                     </div>
+
+                    {/* Title & Description */}
+                    <h3 className="font-serif font-bold text-xl text-primary mb-3 leading-tight group-hover:text-accent transition-colors">
+                      {award.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                      {award.desc}
+                    </p>
                   </div>
-                  <h4 className="font-bold text-lg text-foreground transition-colors duration-300 relative z-10">{award.title}</h4>
+
+                  {/* Card Footer */}
+                  <div className="w-full pt-4 border-t border-border/40 flex items-center justify-center gap-2 text-xs font-semibold text-accent">
+                    <CheckCircle2 className="h-3.5 w-3.5" />
+                    <span>Official Plaque & Certificate</span>
+                  </div>
                 </Card>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-
-
-      {/* AWARDS & RECOGNITION */}
-      <section className="container py-24">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6 flex items-center justify-center gap-3">
-            <Trophy className="h-10 w-10 text-accent" />
-            Awards & Recognition
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Honoring exceptional research, presentation quality, and innovative academic contributions across all conference tracks.
-          </p>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {conferenceData.awards.map((award, idx) => (
-            <Card key={idx} className="p-6 bg-card flex flex-col items-center text-center justify-center hover:-translate-y-1 transition-transform border-t-4 border-t-accent shadow-md">
-              <Award className="h-10 w-10 text-accent mb-3" />
-              <h4 className="font-bold text-lg">{award}</h4>
-            </Card>
-          ))}
+          {/* Bottom Evaluation Banner */}
+          <div className="p-6 sm:p-8 rounded-3xl bg-card/70 backdrop-blur-md border border-primary/20 shadow-md text-center max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3 text-left">
+              <div className="p-3 rounded-2xl bg-primary/10 text-primary shrink-0">
+                <Award className="h-6 w-6 text-accent" />
+              </div>
+              <div>
+                <h4 className="font-bold text-sm text-primary">Peer-Reviewed Evaluation</h4>
+                <p className="text-xs text-muted-foreground">All awards are evaluated by the International Steering Committee and presented during the valedictory session.</p>
+              </div>
+            </div>
+            <div className="shrink-0 font-mono text-xs font-bold text-accent bg-accent/10 px-4 py-2 rounded-full border border-accent/20">
+              AIFORGE 2026 Honors
+            </div>
+          </div>
         </div>
       </section>
 
