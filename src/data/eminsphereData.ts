@@ -178,7 +178,8 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Dr. Peter Kamau, CPA-K", designation: "Founder & CEO, PETKAM Solutions Ltd | Govt. Consultant, National Employment Authority", university: "Kenya", image: "/speakers/dr-peter-kamau.jpg" },
       { name: "Jaco Visagie", designation: "Professor of Statistics, North-West University", university: "South Africa", image: "/speakers/jaco-visagie.jpg" },
       { name: "Dr. Dina Alkhodary", designation: "Associate Professor of Business Administration, Middle East University", university: "Jordan", image: "/speakers/dr-dina-alkhodary.jpg" },
-      { name: "Mayank Atreya", designation: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", university: "USA", image: "/speakers/mayank-atreya.jpg" }
+      { name: "Mayank Atreya", designation: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", university: "USA", image: "/speakers/mayank-atreya.jpg" },
+      { name: "Parikshit Sahagal", designation: "Technical Project Manager, CoStar Group Inc", university: "USA", image: "/speakers/parikshit-sahagal.jpg" }
     ]
   }
 };

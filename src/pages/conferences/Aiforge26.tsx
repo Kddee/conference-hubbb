@@ -235,6 +235,13 @@ const conferenceData = {
       org: "Enterprise Architecture, AI/ML-Driven Modernization, Multi-Cloud Architecture",
       country: "USA",
       img: "/speakers/mayank-atreya.jpg"
+    },
+    {
+      name: "Parikshit Sahagal",
+      designation: "Technical Project Manager",
+      org: "CoStar Group Inc",
+      country: "USA",
+      img: "/speakers/parikshit-sahagal.jpg"
     }
   ],
   sessionChairs: []
