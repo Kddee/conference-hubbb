@@ -242,6 +242,27 @@ const conferenceData = {
       org: "Enterprise Architecture, AI/ML-Driven Modernization, Multi-Cloud Architecture",
       country: "USA",
       img: "/speakers/mayank-atreya.jpg"
+    },
+    {
+      name: "Piyush Shukla",
+      designation: "Technology & Engineering Leader",
+      org: "Enterprise Engineering & Cloud Leadership",
+      country: "USA",
+      img: "/speakers/piyush-shukla.jpg"
+    },
+    {
+      name: "Dr. Eka Devidze",
+      designation: "Affiliated Professor",
+      org: "The University of Georgia",
+      country: "Georgia",
+      img: "/speakers/dr-eka-devidze.jpg"
+    },
+    {
+      name: "Assoc. Prof. Dr. Muliati Hj. Sedek",
+      designation: "Deputy Director (Scholarship Excellence), CAES",
+      org: "Universiti Teknikal Malaysia Melaka (UTeM)",
+      country: "Malaysia",
+      img: "/speakers/dr-muliati-sedek.jpg"
     }
   ],
   sessionChairs: []
