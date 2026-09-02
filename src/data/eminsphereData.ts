@@ -20,7 +20,7 @@ export interface ConferenceData {
   collaboration?: string;
   thematicTracks?: string[];
   milestones?: { name: string; date: string; }[];
-  speakers?: { name: string; designation: string; university: string; image: string; }[];
+  speakers?: { name: string; designation: string; university: string; image: string; category?: string; }[];
   patron?: { name: string; role: string; description: string; organization: string; location: string; image: string; };
 }
 
@@ -166,23 +166,23 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Registration Deadline", date: "4 September 2026" }
     ],
     speakers: [
-      { name: "Wiktoria Gromowa-Cieślik", designation: "CEO & Chief Metrics Officer, Human-Tech Fusion (HTFusion)", university: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg" },
-      { name: "Prof. Dr. Alexander Bull", designation: "IU International University", university: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
-      { name: "Nadine Zeinoun", designation: "President, ICF Chapter Ottawa", university: "Lebanon", image: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
-      { name: "Marghescu Cristina-Florentina", designation: "University Politehnica of Bucharest", university: "Romania", image: "https://static.wixstatic.com/media/30814e_fb0f8a532d8a413abf8b61b143684fed~mv2.png" },
-      { name: "Hardeep Singh Tiwana", designation: "Golden Kubestronaut, The Kubernetes Show Creator", university: "USA", image: "/speakers/hardeep-singh-tiwana.jpg" },
-      { name: "Dr. Sravanthi Dontu", designation: "Independent Researcher, Corporate Professional, University of the Cumberlands", university: "USA", image: "/speakers/dr-sravanthi-dontu.jpg" },
-      { name: "Dr. Mbombi Khizamane", designation: "Nursing College Limpopo", university: "South Africa", image: "/speakers/dr-mbombi.jpg" },
-      { name: "Dr. Santosh Reddy Addula", designation: "Department of Information Technology, University of the Cumberlands, Williamsburg, Kentucky", university: "USA", image: "/speakers/dr-santosh-reddy-addula.png" },
-      { name: "Dr. Tintin Flores", designation: "Biomedical & Healthcare Technology, Valenzuela, National Capital Region", university: "Philippines", image: "/speakers/dr-tintin-flores.jpg" },
-      { name: "Dr. Peter Kamau, CPA-K", designation: "Founder & CEO, PETKAM Solutions Ltd | Govt. Consultant, National Employment Authority", university: "Kenya", image: "/speakers/dr-peter-kamau.jpg" },
-      { name: "Parikshit Sahagal", designation: "Technical Project Manager, CoStar Group Inc", university: "USA", image: "/speakers/parikshit-sahagal.jpg" },
-      { name: "Jaco Visagie", designation: "Professor of Statistics, North-West University", university: "South Africa", image: "/speakers/jaco-visagie.jpg" },
-      { name: "Dr. Dina Alkhodary", designation: "Associate Professor of Business Administration, Middle East University", university: "Jordan", image: "/speakers/dr-dina-alkhodary.jpg" },
-      { name: "Mayank Atreya", designation: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", university: "USA", image: "/speakers/mayank-atreya.jpg" },
-      { name: "Piyush Shukla", designation: "Technology & Engineering Leader", university: "USA", image: "/speakers/piyush-shukla.jpg" },
-      { name: "Dr. Eka Devidze", designation: "Affiliated Professor, The University of Georgia", university: "Georgia", image: "/speakers/dr-eka-devidze.jpg" },
-      { name: "Assoc. Prof. Dr. Muliati Hj. Sedek", designation: "Deputy Director (Scholarship Excellence), CAES, Universiti Teknikal Malaysia Melaka (UTeM)", university: "Malaysia", image: "/speakers/dr-muliati-sedek.jpg" }
+      { name: "Wiktoria Gromowa-Cieślik", category: "Distinguished Speaker", designation: "CEO & Chief Metrics Officer, Human-Tech Fusion (HTFusion)", university: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg" },
+      { name: "Prof. Dr. Alexander Bull", category: "Plenary Speaker", designation: "IU International University", university: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
+      { name: "Nadine Zeinoun", category: "Plenary Speaker", designation: "President, ICF Chapter Ottawa", university: "Lebanon", image: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
+      { name: "Marghescu Cristina-Florentina", category: "Distinguished Speaker", designation: "University Politehnica of Bucharest", university: "Romania", image: "https://static.wixstatic.com/media/30814e_fb0f8a532d8a413abf8b61b143684fed~mv2.png" },
+      { name: "Hardeep Singh Tiwana", category: "Keynote Speaker", designation: "Golden Kubestronaut, The Kubernetes Show Creator", university: "USA", image: "/speakers/hardeep-singh-tiwana.jpg" },
+      { name: "Dr. Sravanthi Dontu", category: "Keynote Speaker", designation: "Independent Researcher, Corporate Professional, University of the Cumberlands", university: "USA", image: "/speakers/dr-sravanthi-dontu.jpg" },
+      { name: "Dr. Mbombi Khizamane", category: "Distinguished Speaker", designation: "Nursing College Limpopo", university: "South Africa", image: "/speakers/dr-mbombi.jpg" },
+      { name: "Dr. Santosh Reddy Addula", category: "Keynote Speaker", designation: "Department of Information Technology, University of the Cumberlands, Williamsburg, Kentucky", university: "USA", image: "/speakers/dr-santosh-reddy-addula.png" },
+      { name: "Dr. Tintin Flores", category: "Distinguished Speaker", designation: "Biomedical & Healthcare Technology, Valenzuela, National Capital Region", university: "Philippines", image: "/speakers/dr-tintin-flores.jpg" },
+      { name: "Dr. Peter Kamau, CPA-K", category: "Plenary Speaker", designation: "Founder & CEO, PETKAM Solutions Ltd | Govt. Consultant, National Employment Authority", university: "Kenya", image: "/speakers/dr-peter-kamau.jpg" },
+      { name: "Parikshit Sahagal", category: "Keynote Speaker", designation: "Technical Project Manager, CoStar Group Inc", university: "USA", image: "/speakers/parikshit-sahagal.jpg" },
+      { name: "Jaco Visagie", category: "Distinguished Speaker", designation: "Professor of Statistics, North-West University", university: "South Africa", image: "/speakers/jaco-visagie.jpg" },
+      { name: "Dr. Dina Alkhodary", category: "Plenary Speaker", designation: "Associate Professor of Business Administration, Middle East University", university: "Jordan", image: "/speakers/dr-dina-alkhodary.jpg" },
+      { name: "Mayank Atreya", category: "Keynote Speaker", designation: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", university: "USA", image: "/speakers/mayank-atreya.jpg" },
+      { name: "Piyush Shukla", category: "Keynote Speaker", designation: "Technology & Engineering Leader", university: "USA", image: "/speakers/piyush-shukla.jpg" },
+      { name: "Dr. Eka Devidze", category: "Invited Speaker", designation: "Affiliated Professor, The University of Georgia", university: "Georgia", image: "/speakers/dr-eka-devidze.jpg" },
+      { name: "Assoc. Prof. Dr. Muliati Hj. Sedek", category: "Invited Speaker", designation: "Deputy Director (Scholarship Excellence), CAES, Universiti Teknikal Malaysia Melaka (UTeM)", university: "Malaysia", image: "/speakers/dr-muliati-sedek.jpg" }
     ]
   }
 };

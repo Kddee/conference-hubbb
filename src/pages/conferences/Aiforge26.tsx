@@ -151,6 +151,7 @@ const conferenceData = {
   speakers: [
     {
       name: "Wiktoria Gromowa-Cieślik",
+      category: "Distinguished Speaker",
       designation: "CEO, Technology Executive, Chief Metrics Officer",
       org: "Human-Tech Fusion (HTFusion)",
       country: "Poland",
@@ -158,24 +159,28 @@ const conferenceData = {
     },
     {
       name: "Prof. Dr. Alexander Bull",
+      category: "Plenary Speaker",
       org: "IU International University",
       country: "Germany",
       img: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg"
     },
     {
       name: "Nadine Zeinoun",
+      category: "Plenary Speaker",
       org: "President, ICF Chapter Ottawa",
       country: "Lebanon",
       img: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg"
     },
     {
       name: "Marghescu Cristina-Florentina",
+      category: "Distinguished Speaker",
       org: "University Politehnica of Bucharest",
       country: "Romania",
       img: "https://static.wixstatic.com/media/30814e_fb0f8a532d8a413abf8b61b143684fed~mv2.png"
     },
     {
       name: "Hardeep Singh Tiwana",
+      category: "Keynote Speaker",
       designation: "Golden Kubestronaut, The Kubernetes Show Creator",
       org: "The Kubernetes Show",
       country: "USA",
@@ -183,6 +188,7 @@ const conferenceData = {
     },
     {
       name: "Dr. Sravanthi Dontu",
+      category: "Keynote Speaker",
       designation: "Independent Researcher, Corporate Professional",
       org: "Department of Information Technology, University of the Cumberlands",
       country: "USA",
@@ -190,12 +196,14 @@ const conferenceData = {
     },
     {
       name: "Dr. Mbombi Khizamane",
+      category: "Distinguished Speaker",
       org: "Nursing College Limpopo",
       country: "South Africa",
       img: "/speakers/dr-mbombi.jpg"
     },
     {
       name: "Dr. Santosh Reddy Addula",
+      category: "Keynote Speaker",
       designation: "Department of Information Technology",
       org: "University of the Cumberlands, Williamsburg, Kentucky",
       country: "USA",
@@ -203,6 +211,7 @@ const conferenceData = {
     },
     {
       name: "Dr. Tintin Flores",
+      category: "Distinguished Speaker",
       designation: "Biomedical & Healthcare Technology",
       org: "Valenzuela, National Capital Region",
       country: "Philippines",
@@ -210,6 +219,7 @@ const conferenceData = {
     },
     {
       name: "Dr. Peter Kamau, CPA-K",
+      category: "Plenary Speaker",
       designation: "Founder & CEO — PETKAM Solutions Ltd & PETKAM Elite Homes Ltd",
       org: "Government Consultant — Ministry of Labour & National Employment Authority (NEA)",
       country: "Kenya",
@@ -217,6 +227,7 @@ const conferenceData = {
     },
     {
       name: "Parikshit Sahagal",
+      category: "Keynote Speaker",
       designation: "Technical Project Manager",
       org: "CoStar Group Inc",
       country: "USA",
@@ -224,6 +235,7 @@ const conferenceData = {
     },
     {
       name: "Jaco Visagie",
+      category: "Distinguished Speaker",
       designation: "Professor of Statistics",
       org: "North-West University",
       country: "South Africa",
@@ -231,6 +243,7 @@ const conferenceData = {
     },
     {
       name: "Dr. Dina Alkhodary",
+      category: "Plenary Speaker",
       designation: "Associate Professor of Business Administration",
       org: "Middle East University",
       country: "Jordan",
@@ -238,6 +251,7 @@ const conferenceData = {
     },
     {
       name: "Mayank Atreya",
+      category: "Keynote Speaker",
       designation: "Technology & Engineering Leader",
       org: "Enterprise Architecture, AI/ML-Driven Modernization, Multi-Cloud Architecture",
       country: "USA",
@@ -245,6 +259,7 @@ const conferenceData = {
     },
     {
       name: "Piyush Shukla",
+      category: "Keynote Speaker",
       designation: "Technology & Engineering Leader",
       org: "Enterprise Engineering & Cloud Leadership",
       country: "USA",
@@ -252,6 +267,7 @@ const conferenceData = {
     },
     {
       name: "Dr. Eka Devidze",
+      category: "Invited Speaker",
       designation: "Affiliated Professor",
       org: "The University of Georgia",
       country: "Georgia",
@@ -259,6 +275,7 @@ const conferenceData = {
     },
     {
       name: "Assoc. Prof. Dr. Muliati Hj. Sedek",
+      category: "Invited Speaker",
       designation: "Deputy Director (Scholarship Excellence), CAES",
       org: "Universiti Teknikal Malaysia Melaka (UTeM)",
       country: "Malaysia",
@@ -269,6 +286,21 @@ const conferenceData = {
 };
 
 const Aiforge26 = () => {
+  const [speakerFilter, setSpeakerFilter] = useState<string>("All");
+
+  const filteredSpeakers = conferenceData.speakers.filter(s => {
+    if (speakerFilter === "All") return true;
+    return s.category === speakerFilter;
+  });
+
+  const categories = [
+    { label: "All Speakers", value: "All", count: conferenceData.speakers.length },
+    { label: "Keynote Speakers", value: "Keynote Speaker", count: conferenceData.speakers.filter(s => s.category === "Keynote Speaker").length },
+    { label: "Plenary Speakers", value: "Plenary Speaker", count: conferenceData.speakers.filter(s => s.category === "Plenary Speaker").length },
+    { label: "Distinguished Speakers", value: "Distinguished Speaker", count: conferenceData.speakers.filter(s => s.category === "Distinguished Speaker").length },
+    { label: "Invited Speakers", value: "Invited Speaker", count: conferenceData.speakers.filter(s => s.category === "Invited Speaker").length },
+  ];
+
   return (
     <div className="bg-background">
       {/* ENTERPRISE HERO */}
@@ -507,20 +539,63 @@ const Aiforge26 = () => {
         </section>
       )}
 
-      {/* KEYNOTE SPEAKERS */}
-      <section className="container py-24 border-t border-border/50">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">Keynote Speakers</h2>
-          <p className="text-lg text-muted-foreground">The visionaries and academic leaders presenting at AIFORGE 2026.</p>
+      {/* KEYNOTE, PLENARY, DISTINGUISHED & INVITED SPEAKERS */}
+      <section id="speakers" className="container py-24 border-t border-border/50">
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-xs sm:text-sm mb-6 border border-primary/20 shadow-sm backdrop-blur-md">
+            <Sparkles className="h-4 w-4 text-accent" /> Global Academic & Industry Luminaries
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary mb-6">
+            Keynote, Plenary, Distinguished & Invited Speakers
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            The visionary keynote leaders, plenary researchers, distinguished innovators, and invited experts presenting at AIFORGE 2026.
+          </p>
+
+          {/* Interactive Category Filter Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8">
+            {categories.map((cat) => {
+              const isActive = speakerFilter === cat.value;
+              return (
+                <button
+                  key={cat.value}
+                  onClick={() => setSpeakerFilter(cat.value)}
+                  className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 border ${
+                    isActive
+                      ? "bg-accent text-accent-foreground border-accent shadow-md scale-105"
+                      : "bg-card/60 text-muted-foreground border-border/60 hover:border-accent/40 hover:text-foreground"
+                  }`}
+                >
+                  {cat.label} <span className="opacity-75 font-mono text-xs">({cat.count})</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
         
-        {conferenceData.speakers && conferenceData.speakers.length > 0 ? (
+        {filteredSpeakers && filteredSpeakers.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-items-center">
-            {conferenceData.speakers.map((s, idx) => (
+            {filteredSpeakers.map((s, idx) => (
               <div 
                 key={idx} 
                 className="group flex flex-col items-center text-center w-full max-w-sm bg-card/40 p-6 rounded-2xl border border-white/5 hover:border-accent/30 transition-all shadow-sm hover:shadow-md"
               >
+                {/* Speaker Category Sub-heading / Role Badge */}
+                {s.category && (
+                  <span className={`inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full border mb-4 tracking-wide uppercase shadow-sm ${
+                    s.category === "Keynote Speaker" 
+                      ? "bg-amber-500/15 text-amber-400 border-amber-500/30"
+                      : s.category === "Plenary Speaker"
+                      ? "bg-blue-500/15 text-blue-400 border-blue-500/30"
+                      : s.category === "Distinguished Speaker"
+                      ? "bg-purple-500/15 text-purple-400 border-purple-500/30"
+                      : "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
+                  }`}>
+                    <Sparkles className="h-3 w-3" />
+                    {s.category}
+                  </span>
+                )}
+
                 <div className="relative w-full aspect-[4/4.5] max-w-[220px] mb-5 overflow-hidden rounded-2xl border-2 border-primary/20 bg-muted/60 shadow-lg group-hover:border-accent/50 group-hover:shadow-xl transition-all">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
                   {s.img ? (
@@ -555,10 +630,9 @@ const Aiforge26 = () => {
               <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-accent/10 text-accent mb-6">
                 <User className="h-8 w-8" />
               </div>
-              <h4 className="text-2xl font-serif font-bold text-white mb-3">Keynote Speakers</h4>
+              <h4 className="text-2xl font-serif font-bold text-white mb-3">Speakers</h4>
               <p className="text-muted-foreground text-lg">
-                Our lineup of distinguished keynote speakers is currently being finalized. 
-                Please check back soon for exciting announcements!
+                No speakers found in this category.
               </p>
             </div>
           </div>
