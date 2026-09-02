@@ -182,7 +182,8 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Mayank Atreya", category: "Keynote Speaker", designation: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", university: "USA", image: "/speakers/mayank-atreya.jpg" },
       { name: "Piyush Shukla", category: "Keynote Speaker", designation: "Technology & Engineering Leader", university: "USA", image: "/speakers/piyush-shukla.jpg" },
       { name: "Dr. Eka Devidze", category: "Invited Speaker", designation: "Affiliated Professor, The University of Georgia", university: "Georgia", image: "/speakers/dr-eka-devidze.jpg" },
-      { name: "Assoc. Prof. Dr. Muliati Hj. Sedek", category: "Invited Speaker", designation: "Deputy Director (Scholarship Excellence), CAES, Universiti Teknikal Malaysia Melaka (UTeM)", university: "Malaysia", image: "/speakers/dr-muliati-sedek.jpg" }
+      { name: "Assoc. Prof. Dr. Muliati Hj. Sedek", category: "Invited Speaker", designation: "Deputy Director (Scholarship Excellence), CAES, Universiti Teknikal Malaysia Melaka (UTeM)", university: "Malaysia", image: "/speakers/dr-muliati-sedek.jpg" },
+      { name: "Assoc. Prof. Ts. Dr. Noor Suhana Binti Sulaiman", category: "Invited Speaker", designation: "Dean, Research & Postgraduate Management (JPPS), University College TATI (UC TATI)", university: "Malaysia", image: "/speakers/dr-noor-suhana.jpg" }
     ]
   }
 };

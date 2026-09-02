@@ -280,6 +280,14 @@ const conferenceData = {
       org: "Universiti Teknikal Malaysia Melaka (UTeM)",
       country: "Malaysia",
       img: "/speakers/dr-muliati-sedek.jpg"
+    },
+    {
+      name: "Assoc. Prof. Ts. Dr. Noor Suhana Binti Sulaiman",
+      category: "Invited Speaker",
+      designation: "Dean, Research & Postgraduate Management (JPPS)",
+      org: "University College TATI (UC TATI)",
+      country: "Malaysia",
+      img: "/speakers/dr-noor-suhana.jpg"
     }
   ],
   sessionChairs: []
