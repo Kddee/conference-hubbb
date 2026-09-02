@@ -286,21 +286,6 @@ const conferenceData = {
 };
 
 const Aiforge26 = () => {
-  const [speakerFilter, setSpeakerFilter] = useState<string>("All");
-
-  const filteredSpeakers = conferenceData.speakers.filter(s => {
-    if (speakerFilter === "All") return true;
-    return s.category === speakerFilter;
-  });
-
-  const categories = [
-    { label: "All Speakers", value: "All", count: conferenceData.speakers.length },
-    { label: "Keynote Speakers", value: "Keynote Speaker", count: conferenceData.speakers.filter(s => s.category === "Keynote Speaker").length },
-    { label: "Plenary Speakers", value: "Plenary Speaker", count: conferenceData.speakers.filter(s => s.category === "Plenary Speaker").length },
-    { label: "Distinguished Speakers", value: "Distinguished Speaker", count: conferenceData.speakers.filter(s => s.category === "Distinguished Speaker").length },
-    { label: "Invited Speakers", value: "Invited Speaker", count: conferenceData.speakers.filter(s => s.category === "Invited Speaker").length },
-  ];
-
   return (
     <div className="bg-background">
       {/* ENTERPRISE HERO */}
@@ -551,31 +536,11 @@ const Aiforge26 = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             The visionary keynote leaders, plenary researchers, distinguished innovators, and invited experts presenting at AIFORGE 2026.
           </p>
-
-          {/* Interactive Category Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8">
-            {categories.map((cat) => {
-              const isActive = speakerFilter === cat.value;
-              return (
-                <button
-                  key={cat.value}
-                  onClick={() => setSpeakerFilter(cat.value)}
-                  className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 border ${
-                    isActive
-                      ? "bg-accent text-accent-foreground border-accent shadow-md scale-105"
-                      : "bg-card/60 text-muted-foreground border-border/60 hover:border-accent/40 hover:text-foreground"
-                  }`}
-                >
-                  {cat.label} <span className="opacity-75 font-mono text-xs">({cat.count})</span>
-                </button>
-              );
-            })}
-          </div>
         </div>
         
-        {filteredSpeakers && filteredSpeakers.length > 0 ? (
+        {conferenceData.speakers && conferenceData.speakers.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-items-center">
-            {filteredSpeakers.map((s, idx) => (
+            {conferenceData.speakers.map((s, idx) => (
               <div 
                 key={idx} 
                 className="group flex flex-col items-center text-center w-full max-w-sm bg-card/40 p-6 rounded-2xl border border-white/5 hover:border-accent/30 transition-all shadow-sm hover:shadow-md"
