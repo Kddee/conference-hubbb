@@ -310,7 +310,7 @@ const conferenceData = {
       designation: "King Abdulaziz University | Visiting Prof, Samarkand State University",
       org: "King Abdulaziz University & Samarkand State University",
       country: "Saudi Arabia",
-      img: "/speakers/prof-intakhab-alam-khan.png"
+      img: "/speakers/prof-intakhab-alam-khan.jpg"
     },
     {
       name: "Osman ARAYICI",
