@@ -48,7 +48,6 @@ const conferenceData = {
     { title: "AI Engineering", desc: "Building robust, scalable, and secure AI foundations." }
   ],
   publication: [
-    { title: "Iterative International Publishers (IIP)", img: "/iip-logo.jpg", desc: "Conference proceedings and peer-reviewed papers are published in partnership with Iterative International Publishers (IIP), ensuring international distribution, indexing, and scholarly reach." },
     { title: "ISBN Conference Proceedings", img: "https://i.postimg.cc/VvnzKNKj/image.png", desc: "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number (ISBN: 978-81-687765-9-3), ensuring global visibility, citation, and academic recognition." },
     { title: "Google Scholar Indexing", img: "/google-scholar.svg", desc: "All published papers will be indexed in Google Scholar, providing broad global accessibility, citation tracking, and enhanced author visibility." },
     { title: "Web of Science (Under Consideration)", img: "https://i.postimg.cc/0NX5QF6x/image.png", desc: "Selected papers may be considered for submission to journals indexed in Web of Science, based on quality, originality, and editorial evaluation." },
