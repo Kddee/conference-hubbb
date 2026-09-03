@@ -145,6 +145,34 @@ const conferenceData = {
       bio: ["Ezinne Esther Arisa is an industry leader and visionary in digital transformation. Her strategic insights have guided numerous organizations through complex technological shifts, cementing her status as a prominent figure in global innovation."],
       publications: ["Selected Publications coming soon..."],
       awards: ["Industry Leadership Award"]
+    },
+    {
+      name: "Marghescu Cristina-Florentina",
+      role: "Advisory Board Member",
+      org: "University Politehnica of Bucharest",
+      country: "Romania",
+      img: "https://static.wixstatic.com/media/30814e_fb0f8a532d8a413abf8b61b143684fed~mv2.png"
+    },
+    {
+      name: "Nadine Zeinoun",
+      role: "Advisory Board Member",
+      org: "President, ICF Chapter Ottawa",
+      country: "Lebanon",
+      img: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg"
+    },
+    {
+      name: "Dr. Mbombi Khizamane",
+      role: "Advisory Board Member",
+      org: "Nursing College Limpopo",
+      country: "South Africa",
+      img: "/speakers/dr-mbombi.jpg"
+    },
+    {
+      name: "Dr. Tintin Flores",
+      role: "Advisory Board Member",
+      org: "Biomedical & Healthcare Technology, Valenzuela",
+      country: "Philippines",
+      img: "/speakers/dr-tintin-flores.jpg"
     }
   ],
   judges: [],
@@ -165,20 +193,6 @@ const conferenceData = {
       img: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg"
     },
     {
-      name: "Nadine Zeinoun",
-      category: "Plenary Speaker",
-      org: "President, ICF Chapter Ottawa",
-      country: "Lebanon",
-      img: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg"
-    },
-    {
-      name: "Marghescu Cristina-Florentina",
-      category: "Distinguished Speaker",
-      org: "University Politehnica of Bucharest",
-      country: "Romania",
-      img: "https://static.wixstatic.com/media/30814e_fb0f8a532d8a413abf8b61b143684fed~mv2.png"
-    },
-    {
       name: "Hardeep Singh Tiwana",
       category: "Keynote Speaker",
       designation: "Golden Kubestronaut, The Kubernetes Show Creator",
@@ -195,27 +209,12 @@ const conferenceData = {
       img: "/speakers/dr-sravanthi-dontu.jpg"
     },
     {
-      name: "Dr. Mbombi Khizamane",
-      category: "Distinguished Speaker",
-      org: "Nursing College Limpopo",
-      country: "South Africa",
-      img: "/speakers/dr-mbombi.jpg"
-    },
-    {
       name: "Dr. Santosh Reddy Addula",
       category: "Keynote Speaker",
       designation: "Department of Information Technology",
       org: "University of the Cumberlands, Williamsburg, Kentucky",
       country: "USA",
       img: "/speakers/dr-santosh-reddy-addula.png"
-    },
-    {
-      name: "Dr. Tintin Flores",
-      category: "Distinguished Speaker",
-      designation: "Biomedical & Healthcare Technology",
-      org: "Valenzuela, National Capital Region",
-      country: "Philippines",
-      img: "/speakers/dr-tintin-flores.jpg"
     },
     {
       name: "Dr. Peter Kamau, CPA-K",
