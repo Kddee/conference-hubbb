@@ -187,7 +187,10 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Sandeep Kumar Khandelwal", category: "Invited Speaker", designation: "AI, DevOps & Cloud Computing Expert", university: "USA", image: "/speakers/sandeep-kumar-khandelwal.jpg" },
       { name: "Prof. Rehab Hegazy, PhD", category: "Invited Speaker", designation: "Professor of Pharmacology, Medical Research & Clinical Studies Institute, National Research Centre (NRC)", university: "Egypt", image: "/speakers/prof-rehab-hegazy.jpg" },
       { name: "Prof. Intakhab Alam Khan", category: "Invited Speaker", designation: "King Abdulaziz University, Saudi Arabia & Visiting Prof, Samarkand State University", university: "Saudi Arabia", image: "/speakers/prof-intakhab-alam-khan.png" },
-      { name: "Osman ARAYICI", category: "Invited Speaker", designation: "Dept. of Interior Architecture, Mimar Sinan Fine Arts University / Modoko Academy", university: "Turkey", image: "/speakers/osman-arayici.jpg" }
+      { name: "Osman ARAYICI", category: "Invited Speaker", designation: "Dept. of Interior Architecture, Mimar Sinan Fine Arts University / Modoko Academy", university: "Turkey", image: "/speakers/osman-arayici.jpg" },
+      { name: "Swarnabindu Roy", category: "Keynote Speaker", designation: "Data Engineering, Data Architecture & Program Management", university: "USA", image: "/speakers/swarnabindu-roy.jpg" },
+      { name: "Payal R.", category: "Keynote Speaker", designation: "Senior Data Engineer, Data Modeling, Data Warehousing & ETL Pipelines", university: "USA", image: "/speakers/payal-r.jpg" },
+      { name: "Dr. Carolina Barandiaran", category: "Keynote Speaker", designation: "Academic Leader & Researcher", university: "Argentina", image: "/speakers/dr-carolina-barandiaran.jpg" }
     ]
   }
 };

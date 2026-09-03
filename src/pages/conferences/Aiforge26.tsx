@@ -320,6 +320,30 @@ const conferenceData = {
       org: "Mimar Sinan Fine Arts University / Modoko Academy",
       country: "Turkey",
       img: "/speakers/osman-arayici.jpg"
+    },
+    {
+      name: "Swarnabindu Roy",
+      category: "Keynote Speaker",
+      designation: "Data Engineering, Data Architecture & Program Management",
+      org: "Enterprise Data & Cloud Architecture",
+      country: "USA",
+      img: "/speakers/swarnabindu-roy.jpg"
+    },
+    {
+      name: "Payal R.",
+      category: "Keynote Speaker",
+      designation: "Senior Data Engineer, Data Modeling & ETL Pipelines",
+      org: "Data Warehousing & Enterprise Data Engineering",
+      country: "USA",
+      img: "/speakers/payal-r.jpg"
+    },
+    {
+      name: "Dr. Carolina Barandiaran",
+      category: "Keynote Speaker",
+      designation: "Academic Leader & Researcher",
+      org: "Academic Research & Innovation",
+      country: "Argentina",
+      img: "/speakers/dr-carolina-barandiaran.jpg"
     }
   ],
   sessionChairs: []
