@@ -304,6 +304,22 @@ const conferenceData = {
       org: "Medical Research and Clinical Studies Institute, National Research Centre (NRC)",
       country: "Egypt",
       img: "/speakers/prof-rehab-hegazy.jpg"
+    },
+    {
+      name: "Prof. Intakhab Alam Khan",
+      category: "Invited Speaker",
+      designation: "King Abdulaziz University | Visiting Prof, Samarkand State University",
+      org: "King Abdulaziz University & Samarkand State University",
+      country: "Saudi Arabia",
+      img: "/speakers/prof-intakhab-alam-khan.png"
+    },
+    {
+      name: "Osman ARAYICI",
+      category: "Invited Speaker",
+      designation: "Dept. of Interior Architecture / Head of Scientific Committee",
+      org: "Mimar Sinan Fine Arts University / Modoko Academy",
+      country: "Turkey",
+      img: "/speakers/osman-arayici.jpg"
     }
   ],
   sessionChairs: []

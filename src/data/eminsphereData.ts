@@ -185,7 +185,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Assoc. Prof. Dr. Muliati Hj. Sedek", category: "Invited Speaker", designation: "Deputy Director (Scholarship Excellence), CAES, Universiti Teknikal Malaysia Melaka (UTeM)", university: "Malaysia", image: "/speakers/dr-muliati-sedek.jpg" },
       { name: "Assoc. Prof. Ts. Dr. Noor Suhana Binti Sulaiman", category: "Invited Speaker", designation: "Dean, Research & Postgraduate Management (JPPS), University College TATI (UC TATI)", university: "Malaysia", image: "/speakers/dr-noor-suhana.jpg" },
       { name: "Sandeep Kumar Khandelwal", category: "Invited Speaker", designation: "AI, DevOps & Cloud Computing Expert", university: "USA", image: "/speakers/sandeep-kumar-khandelwal.jpg" },
-      { name: "Prof. Rehab Hegazy, PhD", category: "Invited Speaker", designation: "Professor of Pharmacology, Medical Research & Clinical Studies Institute, National Research Centre (NRC)", university: "Egypt", image: "/speakers/prof-rehab-hegazy.jpg" }
+      { name: "Prof. Rehab Hegazy, PhD", category: "Invited Speaker", designation: "Professor of Pharmacology, Medical Research & Clinical Studies Institute, National Research Centre (NRC)", university: "Egypt", image: "/speakers/prof-rehab-hegazy.jpg" },
+      { name: "Prof. Intakhab Alam Khan", category: "Invited Speaker", designation: "King Abdulaziz University, Saudi Arabia & Visiting Prof, Samarkand State University", university: "Saudi Arabia", image: "/speakers/prof-intakhab-alam-khan.png" },
+      { name: "Osman ARAYICI", category: "Invited Speaker", designation: "Dept. of Interior Architecture, Mimar Sinan Fine Arts University / Modoko Academy", university: "Turkey", image: "/speakers/osman-arayici.jpg" }
     ]
   }
 };
