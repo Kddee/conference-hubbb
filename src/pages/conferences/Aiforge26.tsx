@@ -288,6 +288,22 @@ const conferenceData = {
       org: "University College TATI (UC TATI)",
       country: "Malaysia",
       img: "/speakers/dr-noor-suhana.jpg"
+    },
+    {
+      name: "Sandeep Kumar Khandelwal",
+      category: "Invited Speaker",
+      designation: "AI, DevOps & Cloud Computing Expert",
+      org: "Enterprise Cloud & AI Solutions",
+      country: "USA",
+      img: "/speakers/sandeep-kumar-khandelwal.jpg"
+    },
+    {
+      name: "Prof. Rehab Hegazy, PhD",
+      category: "Invited Speaker",
+      designation: "Professor of Pharmacology & Secretary-General",
+      org: "Medical Research and Clinical Studies Institute, National Research Centre (NRC)",
+      country: "Egypt",
+      img: "/speakers/prof-rehab-hegazy.jpg"
     }
   ],
   sessionChairs: []

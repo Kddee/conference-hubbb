@@ -183,7 +183,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Piyush Shukla", category: "Keynote Speaker", designation: "Technology & Engineering Leader", university: "USA", image: "/speakers/piyush-shukla.jpg" },
       { name: "Dr. Eka Devidze", category: "Invited Speaker", designation: "Affiliated Professor, The University of Georgia", university: "Georgia", image: "/speakers/dr-eka-devidze.jpg" },
       { name: "Assoc. Prof. Dr. Muliati Hj. Sedek", category: "Invited Speaker", designation: "Deputy Director (Scholarship Excellence), CAES, Universiti Teknikal Malaysia Melaka (UTeM)", university: "Malaysia", image: "/speakers/dr-muliati-sedek.jpg" },
-      { name: "Assoc. Prof. Ts. Dr. Noor Suhana Binti Sulaiman", category: "Invited Speaker", designation: "Dean, Research & Postgraduate Management (JPPS), University College TATI (UC TATI)", university: "Malaysia", image: "/speakers/dr-noor-suhana.jpg" }
+      { name: "Assoc. Prof. Ts. Dr. Noor Suhana Binti Sulaiman", category: "Invited Speaker", designation: "Dean, Research & Postgraduate Management (JPPS), University College TATI (UC TATI)", university: "Malaysia", image: "/speakers/dr-noor-suhana.jpg" },
+      { name: "Sandeep Kumar Khandelwal", category: "Invited Speaker", designation: "AI, DevOps & Cloud Computing Expert", university: "USA", image: "/speakers/sandeep-kumar-khandelwal.jpg" },
+      { name: "Prof. Rehab Hegazy, PhD", category: "Invited Speaker", designation: "Professor of Pharmacology, Medical Research & Clinical Studies Institute, National Research Centre (NRC)", university: "Egypt", image: "/speakers/prof-rehab-hegazy.jpg" }
     ]
   }
 };
