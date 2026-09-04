@@ -264,10 +264,10 @@ const conferenceData = {
       img: "/speakers/piyush-shukla.jpg"
     },
     {
-      name: "Dr. Eka Devidze",
+      name: "Eka Devidze",
       category: "Invited Speaker",
-      designation: "Affiliated Professor",
-      org: "The University of Georgia",
+      designation: "Chardins Voyages",
+      org: "International Black Sea University",
       country: "Georgia",
       img: "/speakers/dr-eka-devidze.jpg"
     },

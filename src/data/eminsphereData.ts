@@ -177,7 +177,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Dr. Dina Alkhodary", category: "Plenary Speaker", designation: "Associate Professor of Business Administration, Middle East University", university: "Jordan", image: "/speakers/dr-dina-alkhodary.jpg" },
       { name: "Mayank Atreya", category: "Keynote Speaker", designation: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", university: "USA", image: "/speakers/mayank-atreya.jpg" },
       { name: "Piyush Shukla", category: "Keynote Speaker", designation: "Technology & Engineering Leader", university: "USA", image: "/speakers/piyush-shukla.jpg" },
-      { name: "Dr. Eka Devidze", category: "Invited Speaker", designation: "Affiliated Professor, The University of Georgia", university: "Georgia", image: "/speakers/dr-eka-devidze.jpg" },
+      { name: "Eka Devidze", category: "Invited Speaker", designation: "Chardins Voyages, International Black Sea University", university: "Georgia", image: "/speakers/dr-eka-devidze.jpg" },
       { name: "Assoc. Prof. Dr. Muliati Hj. Sedek", category: "Invited Speaker", designation: "Deputy Director (Scholarship Excellence), CAES, Universiti Teknikal Malaysia Melaka (UTeM)", university: "Malaysia", image: "/speakers/dr-muliati-sedek.jpg" },
       { name: "Assoc. Prof. Ts. Dr. Noor Suhana Binti Sulaiman", category: "Invited Speaker", designation: "Dean, Research & Postgraduate Management (JPPS), University College TATI (UC TATI)", university: "Malaysia", image: "/speakers/dr-noor-suhana.jpg" },
       { name: "Sandeep Kumar Khandelwal", category: "Invited Speaker", designation: "AI, DevOps & Cloud Computing Expert", university: "USA", image: "/speakers/sandeep-kumar-khandelwal.jpg" },
