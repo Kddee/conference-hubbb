@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Internal Work Tracking & Automation (Private to local / not on GitHub)
+scripts/
+*.xlsx
+Daily Work Records*
