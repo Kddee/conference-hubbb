@@ -6,7 +6,7 @@
   <title>AIFORGE 2026 — Instagram Speaker Flyers (3 Parts)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Cabinet+Grotesk:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,11 +14,7 @@
     :root {
       --gold-primary: #f59e0b;
       --gold-bright: #fbbf24;
-      --gold-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #b45309 100%);
       --cyan-bright: #38bdf8;
-      --cyan-gradient: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-      --purple-bright: #c084fc;
-      --emerald-bright: #34d399;
     }
 
     body {
@@ -32,8 +28,8 @@
     .toolbar {
       max-width: 1120px;
       margin: 0 auto 30px auto;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1.5px solid rgba(245, 158, 11, 0.3);
       backdrop-filter: blur(12px);
       border-radius: 16px;
       padding: 20px 24px;
@@ -42,15 +38,17 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     }
 
     .toolbar-title h1 {
       font-size: 22px;
       font-weight: 800;
-      background: linear-gradient(135deg, #ffffff, #38bdf8, #fbbf24);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
+    }
+
+    .toolbar-title h1 span {
+      color: #fbbf24;
     }
 
     .toolbar-title p {
@@ -143,28 +141,28 @@
       height: 1350px;
       min-width: 1080px;
       min-height: 1350px;
-      background: radial-gradient(circle at 50% 10%, #0e1b38 0%, #050b18 55%, #020409 100%);
-      border: 3px solid rgba(245, 158, 11, 0.45);
+      background: radial-gradient(circle at 50% 8%, #0e1b38 0%, #050b18 55%, #020409 100%);
+      border: 3.5px solid #d97706;
       border-radius: 36px;
       position: relative;
       overflow: hidden;
-      padding: 44px 48px;
+      padding: 42px 46px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 0 0 80px rgba(56, 189, 248, 0.15);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95), 0 0 70px rgba(245, 158, 11, 0.25);
     }
 
     /* Ambient atmospheric glow */
     .insta-flyer::before {
       content: '';
       position: absolute;
-      top: -150px;
+      top: -160px;
       left: 50%;
       transform: translateX(-50%);
-      width: 800px;
+      width: 820px;
       height: 380px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, rgba(245, 158, 11, 0.15) 50%, transparent 75%);
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, rgba(245, 158, 11, 0.18) 50%, transparent 75%);
       pointer-events: none;
     }
 
@@ -183,15 +181,15 @@
     .flyer-top {
       position: relative;
       z-index: 10;
-      border-bottom: 1.5px solid rgba(255, 255, 255, 0.12);
-      padding-bottom: 22px;
+      border-bottom: 1.5px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 20px;
     }
 
     .brand-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .brand-left {
@@ -201,14 +199,14 @@
     }
 
     .brand-left img {
-      height: 54px;
-      width: 54px;
+      height: 56px;
+      width: 56px;
       object-fit: contain;
-      filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.4));
+      filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.45));
     }
 
     .brand-text-block h3 {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 800;
       letter-spacing: 0.5px;
       color: #ffffff;
@@ -218,57 +216,62 @@
     .brand-text-block p {
       font-size: 11.5px;
       color: #94a3b8;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .part-pill {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(245, 158, 11, 0.08));
-      border: 1.5px solid #fbbf24;
+      background: #0f172a;
+      border: 2px solid #fbbf24;
       color: #fbbf24;
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 800;
-      padding: 8px 20px;
+      padding: 8px 22px;
       border-radius: 999px;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      box-shadow: 0 0 20px rgba(251, 191, 36, 0.25);
+      box-shadow: 0 0 25px rgba(251, 191, 36, 0.35);
     }
 
     .main-title-block {
       text-align: center;
-      margin-top: 8px;
+      margin-top: 4px;
     }
 
     .conf-badge {
       display: inline-block;
       font-size: 13px;
       font-weight: 800;
-      letter-spacing: 3px;
+      letter-spacing: 3.5px;
       color: #38bdf8;
       text-transform: uppercase;
       margin-bottom: 4px;
     }
 
+    /* Solid, High-Contrast Heading that always renders sharp in html2canvas! */
     .conf-heading {
       font-family: 'Playfair Display', serif;
-      font-size: 50px;
+      font-size: 58px;
       font-weight: 900;
-      letter-spacing: -1px;
-      line-height: 1.08;
-      background: linear-gradient(135deg, #ffffff 30%, #e2e8f0 60%, #fbbf24 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+      line-height: 1.06;
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 35px rgba(251, 191, 36, 0.5);
       margin-bottom: 8px;
+    }
+
+    .conf-heading .year-highlight {
+      color: #fbbf24;
+      text-shadow: 0 0 35px rgba(245, 158, 11, 0.85);
     }
 
     .conf-subhead {
       font-size: 15px;
-      color: #cbd5e1;
+      color: #e2e8f0;
       font-weight: 500;
-      max-width: 820px;
-      margin: 0 auto 14px auto;
+      max-width: 860px;
+      margin: 0 auto 12px auto;
       line-height: 1.35;
     }
 
@@ -277,11 +280,12 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
+      margin-bottom: 14px;
     }
 
     .ribbon-item {
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(56, 189, 248, 0.35);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.4);
       padding: 6px 14px;
       border-radius: 999px;
       font-size: 12px;
@@ -293,8 +297,42 @@
     }
 
     .ribbon-item.gold {
-      border-color: rgba(245, 158, 11, 0.45);
+      border-color: rgba(245, 158, 11, 0.6);
       color: #fde68a;
+      background: rgba(245, 158, 11, 0.12);
+    }
+
+    /* ENHANCED TOP HEADING: INTRODUCING OUR SPEAKERS */
+    .introducing-banner-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 6px;
+    }
+
+    .introducing-banner {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.2) 0%, rgba(56, 189, 248, 0.25) 50%, rgba(245, 158, 11, 0.2) 100%);
+      border: 2px solid #fbbf24;
+      border-radius: 999px;
+      padding: 9px 36px;
+      box-shadow: 0 0 30px rgba(251, 191, 36, 0.35), inset 0 0 15px rgba(56, 189, 248, 0.2);
+    }
+
+    .introducing-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(251, 191, 36, 0.7);
+    }
+
+    .intro-sparkle {
+      color: #fbbf24;
+      font-size: 18px;
     }
 
     /* SPEAKERS SECTION GRID */
@@ -305,14 +343,14 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 16px 0;
+      padding: 20px 0 14px 0;
     }
 
     /* Grid for 7 speakers: Row 1 (4) + Row 2 (3 centered) */
     .grid-7-speakers {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 20px;
     }
 
     .grid-7-row1 {
@@ -324,7 +362,7 @@
     .grid-7-row2 {
       display: flex;
       justify-content: center;
-      gap: 22px;
+      gap: 24px;
     }
 
     .grid-7-row2 .speaker-card {
@@ -338,20 +376,19 @@
       gap: 18px;
     }
 
-    /* INDIVIDUAL SPEAKER CARD */
+    /* INDIVIDUAL SPEAKER CARD (Clean, spacious, no individual badge) */
     .speaker-card {
-      background: linear-gradient(160deg, rgba(15, 23, 42, 0.85) 0%, rgba(2, 6, 23, 0.95) 100%);
-      border: 1.5px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 16px 12px 14px 12px;
+      background: linear-gradient(160deg, rgba(15, 23, 42, 0.9) 0%, rgba(3, 7, 18, 0.95) 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 22px;
+      padding: 18px 12px 16px 12px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      transition: all 0.2s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
     }
 
     .speaker-card::before {
@@ -361,77 +398,24 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: var(--card-accent, linear-gradient(90deg, #fbbf24, #f59e0b));
-    }
-
-    .role-badge {
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 12px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      white-space: nowrap;
-    }
-
-    .role-keynote {
-      background: rgba(245, 158, 11, 0.18);
-      color: #fbbf24;
-      border: 1px solid rgba(245, 158, 11, 0.5);
-    }
-
-    .role-plenary {
-      background: rgba(56, 189, 248, 0.18);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.5);
-    }
-
-    .role-distinguished {
-      background: rgba(192, 132, 252, 0.18);
-      color: #c084fc;
-      border: 1px solid rgba(192, 132, 252, 0.5);
-    }
-
-    .role-invited {
-      background: rgba(52, 211, 153, 0.18);
-      color: #34d399;
-      border: 1px solid rgba(52, 211, 153, 0.5);
+      background: linear-gradient(90deg, #38bdf8, #fbbf24);
     }
 
     .photo-frame {
-      width: 104px;
-      height: 104px;
-      border-radius: 20px;
+      width: 114px;
+      height: 114px;
+      border-radius: 22px;
       overflow: hidden;
-      border: 2.5px solid rgba(255, 255, 255, 0.25);
+      border: 3px solid #38bdf8;
       margin-bottom: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
       position: relative;
-      background: #1e293b;
+      background: #0f172a;
     }
 
-    .photo-frame.gold-border {
+    .photo-frame.gold {
       border-color: #fbbf24;
-      box-shadow: 0 0 16px rgba(251, 191, 36, 0.35);
-    }
-
-    .photo-frame.cyan-border {
-      border-color: #38bdf8;
-      box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
-    }
-
-    .photo-frame.purple-border {
-      border-color: #c084fc;
-      box-shadow: 0 0 16px rgba(192, 132, 252, 0.35);
-    }
-
-    .photo-frame.emerald-border {
-      border-color: #34d399;
-      box-shadow: 0 0 16px rgba(52, 211, 153, 0.35);
+      box-shadow: 0 0 18px rgba(251, 191, 36, 0.4);
     }
 
     .photo-frame img {
@@ -442,21 +426,21 @@
     }
 
     .speaker-name {
-      font-size: 14.5px;
+      font-size: 15px;
       font-weight: 800;
       color: #ffffff;
-      line-height: 1.22;
-      margin-bottom: 5px;
+      line-height: 1.24;
+      margin-bottom: 4px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      height: 36px;
+      height: 38px;
     }
 
     .speaker-role {
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 11.5px;
+      font-weight: 700;
       color: #38bdf8;
       line-height: 1.25;
       margin-bottom: 4px;
@@ -464,19 +448,19 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      height: 28px;
+      height: 29px;
     }
 
     .speaker-org {
-      font-size: 10.5px;
-      color: #94a3b8;
+      font-size: 11px;
+      color: #cbd5e1;
       line-height: 1.25;
       margin-bottom: 8px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      height: 26px;
+      height: 28px;
       flex-grow: 1;
     }
 
@@ -484,20 +468,20 @@
       font-size: 10.5px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       color: #fbbf24;
-      background: rgba(245, 158, 11, 0.12);
-      padding: 3px 10px;
+      background: rgba(245, 158, 11, 0.15);
+      padding: 4px 12px;
       border-radius: 999px;
       margin-top: auto;
-      border: 1px solid rgba(245, 158, 11, 0.3);
+      border: 1px solid rgba(245, 158, 11, 0.35);
     }
 
     /* FOOTER */
     .flyer-bottom {
       position: relative;
       z-index: 10;
-      border-top: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-top: 1.5px solid rgba(255, 255, 255, 0.15);
       padding-top: 18px;
       display: flex;
       justify-content: space-between;
@@ -511,12 +495,12 @@
     }
 
     .qr-box {
-      width: 64px;
-      height: 64px;
+      width: 66px;
+      height: 66px;
       background: #ffffff;
       padding: 4px;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
     }
 
     .qr-box img {
@@ -526,7 +510,7 @@
     }
 
     .footer-text h4 {
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 800;
       color: #ffffff;
       margin-bottom: 2px;
@@ -548,18 +532,18 @@
     }
 
     .swipe-pill {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(99, 102, 241, 0.2));
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(99, 102, 241, 0.25));
       border: 1.5px solid #38bdf8;
       color: #ffffff;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 800;
-      padding: 8px 18px;
+      padding: 8px 20px;
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       letter-spacing: 0.5px;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.3);
     }
 
     .footer-sub {
@@ -596,8 +580,8 @@
   <!-- CONTROL TOOLBAR -->
   <div class="toolbar">
     <div class="toolbar-title">
-      <h1>AIFORGE 2026 — Instagram Post Flyers (3 Parts)</h1>
-      <p>1080 × 1350 px (Instagram 4:5 Vertical) • 22 Speakers Divided into 3 Post Cards (Alexander Bull Excluded)</p>
+      <h1>AIFORGE <span>2026</span> — Instagram Post Flyers (3 Parts)</h1>
+      <p>1080 × 1350 px (Instagram 4:5 Vertical) • 22 Speakers Divided Across 3 Parts (Alexander Bull Excluded)</p>
     </div>
     <div class="btn-group">
       <button class="btn btn-gold" onclick="downloadFlyer('flyer-part-1', 'AIFORGE_2026_Flyer_Part_1.png')">
@@ -639,12 +623,13 @@
                 <p>Global Research & Innovation Platform</p>
               </div>
             </div>
-            <div class="part-pill">PART 01 / 03 • KEYNOTE LUMINARIES</div>
+            <div class="part-pill">PART 01 / 03</div>
           </div>
 
           <div class="main-title-block">
             <div class="conf-badge">INTERNATIONAL CONFERENCE</div>
-            <h2 class="conf-heading">AIFORGE 2026</h2>
+            <!-- High-Contrast Heading that always captures crisp in html2canvas -->
+            <h2 class="conf-heading">AIFORGE <span class="year-highlight">2026</span></h2>
             <p class="conf-subhead">
               International Conference on Artificial Intelligence Engineering, Foundation Models & Agentic Systems
             </p>
@@ -653,6 +638,15 @@
               <span class="ribbon-item">🌐 Global Hybrid Conference</span>
               <span class="ribbon-item">📚 ISBN: 978-81-687765-9-3</span>
               <span class="ribbon-item">🔍 Google Scholar Indexed</span>
+            </div>
+
+            <!-- ENHANCED TOP HEADING: INTRODUCING OUR SPEAKERS -->
+            <div class="introducing-banner-wrap">
+              <div class="introducing-banner">
+                <span class="intro-sparkle">✦</span>
+                <h3 class="introducing-title">INTRODUCING OUR SPEAKERS</h3>
+                <span class="intro-sparkle">✦</span>
+              </div>
             </div>
           </div>
         </div>
@@ -663,9 +657,8 @@
             <!-- ROW 1 (4 SPEAKERS) -->
             <div class="grid-7-row1">
               <!-- 1. Hardeep Singh Tiwana -->
-              <div class="speaker-card" style="--card-accent: #fbbf24;">
-                <span class="role-badge role-keynote">🎙️ Keynote Speaker</span>
-                <div class="photo-frame gold-border">
+              <div class="speaker-card">
+                <div class="photo-frame gold">
                   <img src="/speakers/hardeep-singh-tiwana.jpg" alt="Hardeep Singh Tiwana">
                 </div>
                 <h4 class="speaker-name">Hardeep Singh Tiwana</h4>
@@ -675,9 +668,8 @@
               </div>
 
               <!-- 2. Dr. Sravanthi Dontu -->
-              <div class="speaker-card" style="--card-accent: #fbbf24;">
-                <span class="role-badge role-keynote">🎙️ Keynote Speaker</span>
-                <div class="photo-frame gold-border">
+              <div class="speaker-card">
+                <div class="photo-frame gold">
                   <img src="/speakers/dr-sravanthi-dontu.jpg" alt="Dr. Sravanthi Dontu">
                 </div>
                 <h4 class="speaker-name">Dr. Sravanthi Dontu</h4>
@@ -687,9 +679,8 @@
               </div>
 
               <!-- 3. Dr. Santosh Reddy Addula -->
-              <div class="speaker-card" style="--card-accent: #fbbf24;">
-                <span class="role-badge role-keynote">🎙️ Keynote Speaker</span>
-                <div class="photo-frame gold-border">
+              <div class="speaker-card">
+                <div class="photo-frame gold">
                   <img src="/speakers/dr-santosh-reddy-addula.png" alt="Dr. Santosh Reddy Addula">
                 </div>
                 <h4 class="speaker-name">Dr. Santosh Reddy Addula</h4>
@@ -699,9 +690,8 @@
               </div>
 
               <!-- 4. Dr. Peter Kamau, CPA-K -->
-              <div class="speaker-card" style="--card-accent: #38bdf8;">
-                <span class="role-badge role-plenary">🌟 Plenary Speaker</span>
-                <div class="photo-frame cyan-border">
+              <div class="speaker-card">
+                <div class="photo-frame">
                   <img src="/speakers/dr-peter-kamau.jpg" alt="Dr. Peter Kamau, CPA-K">
                 </div>
                 <h4 class="speaker-name">Dr. Peter Kamau, CPA-K</h4>
@@ -714,9 +704,8 @@
             <!-- ROW 2 (3 SPEAKERS CENTERED) -->
             <div class="grid-7-row2">
               <!-- 5. Parikshit Sahagal -->
-              <div class="speaker-card" style="--card-accent: #fbbf24;">
-                <span class="role-badge role-keynote">🎙️ Keynote Speaker</span>
-                <div class="photo-frame gold-border">
+              <div class="speaker-card">
+                <div class="photo-frame gold">
                   <img src="/speakers/parikshit-sahagal.jpg" alt="Parikshit Sahagal">
                 </div>
                 <h4 class="speaker-name">Parikshit Sahagal</h4>
@@ -726,9 +715,8 @@
               </div>
 
               <!-- 6. Jaco Visagie -->
-              <div class="speaker-card" style="--card-accent: #c084fc;">
-                <span class="role-badge role-distinguished">💎 Distinguished Speaker</span>
-                <div class="photo-frame purple-border">
+              <div class="speaker-card">
+                <div class="photo-frame">
                   <img src="/speakers/jaco-visagie.jpg" alt="Jaco Visagie">
                 </div>
                 <h4 class="speaker-name">Jaco Visagie</h4>
@@ -738,9 +726,8 @@
               </div>
 
               <!-- 7. Wiktoria Gromowa-Cieślik -->
-              <div class="speaker-card" style="--card-accent: #c084fc;">
-                <span class="role-badge role-distinguished">💎 Distinguished Speaker</span>
-                <div class="photo-frame purple-border">
+              <div class="speaker-card">
+                <div class="photo-frame">
                   <img src="/speakers/wiktoria-gromowa-cieslik.jpg" alt="Wiktoria Gromowa-Cieślik">
                 </div>
                 <h4 class="speaker-name">Wiktoria Gromowa-Cieślik</h4>
@@ -795,12 +782,12 @@
                 <p>Global Research & Innovation Platform</p>
               </div>
             </div>
-            <div class="part-pill">PART 02 / 03 • GLOBAL SCHOLARS</div>
+            <div class="part-pill">PART 02 / 03</div>
           </div>
 
           <div class="main-title-block">
             <div class="conf-badge">INTERNATIONAL CONFERENCE</div>
-            <h2 class="conf-heading">AIFORGE 2026</h2>
+            <h2 class="conf-heading">AIFORGE <span class="year-highlight">2026</span></h2>
             <p class="conf-subhead">
               International Conference on Artificial Intelligence Engineering, Foundation Models & Agentic Systems
             </p>
@@ -809,6 +796,15 @@
               <span class="ribbon-item">🌐 Global Hybrid Conference</span>
               <span class="ribbon-item">📚 ISBN: 978-81-687765-9-3</span>
               <span class="ribbon-item">🔍 Google Scholar Indexed</span>
+            </div>
+
+            <!-- ENHANCED TOP HEADING: INTRODUCING OUR SPEAKERS -->
+            <div class="introducing-banner-wrap">
+              <div class="introducing-banner">
+                <span class="intro-sparkle">✦</span>
+                <h3 class="introducing-title">INTRODUCING OUR SPEAKERS</h3>
+                <span class="intro-sparkle">✦</span>
+              </div>
             </div>
           </div>
         </div>
@@ -819,9 +815,8 @@
             <!-- ROW 1 (4 SPEAKERS) -->
             <div class="grid-7-row1">
               <!-- 8. Mayank Atreya -->
-              <div class="speaker-card" style="--card-accent: #fbbf24;">
-                <span class="role-badge role-keynote">🎙️ Keynote Speaker</span>
-                <div class="photo-frame gold-border">
+              <div class="speaker-card">
+                <div class="photo-frame gold">
                   <img src="/speakers/mayank-atreya.jpg" alt="Mayank Atreya">
                 </div>
                 <h4 class="speaker-name">Mayank Atreya</h4>
@@ -831,9 +826,8 @@
               </div>
 
               <!-- 9. Piyush Shukla -->
-              <div class="speaker-card" style="--card-accent: #fbbf24;">
-                <span class="role-badge role-keynote">🎙️ Keynote Speaker</span>
-                <div class="photo-frame gold-border">
+              <div class="speaker-card">
+                <div class="photo-frame gold">
                   <img src="/speakers/piyush-shukla.jpg" alt="Piyush Shukla">
                 </div>
                 <h4 class="speaker-name">Piyush Shukla</h4>
@@ -843,9 +837,8 @@
               </div>
 
               <!-- 10. Dr. Dina Alkhodary -->
-              <div class="speaker-card" style="--card-accent: #38bdf8;">
-                <span class="role-badge role-plenary">🌟 Plenary Speaker</span>
-                <div class="photo-frame cyan-border">
+              <div class="speaker-card">
+                <div class="photo-frame">
                   <img src="/speakers/dr-dina-alkhodary.jpg" alt="Dr. Dina Alkhodary">
                 </div>
                 <h4 class="speaker-name">Dr. Dina Alkhodary</h4>
@@ -855,9 +848,8 @@
               </div>
 
               <!-- 11. Dr. Eka Devidze -->
-              <div class="speaker-card" style="--card-accent: #34d399;">
-                <span class="role-badge role-invited">🤝 Invited Speaker</span>
-                <div class="photo-frame emerald-border">
+              <div class="speaker-card">
+                <div class="photo-frame">
                   <img src="/speakers/dr-eka-devidze.jpg" alt="Dr. Eka Devidze">
                 </div>
                 <h4 class="speaker-name">Dr. Eka Devidze</h4>
@@ -870,9 +862,8 @@
             <!-- ROW 2 (3 SPEAKERS CENTERED) -->
             <div class="grid-7-row2">
               <!-- 12. Assoc. Prof. Dr. Muliati Hj. Sedek -->
-              <div class="speaker-card" style="--card-accent: #34d399;">
-                <span class="role-badge role-invited">🤝 Invited Speaker</span>
-                <div class="photo-frame emerald-border">
+              <div class="speaker-card">
+                <div class="photo-frame">
                   <img src="/speakers/dr-muliati-sedek.jpg" alt="Assoc. Prof. Dr. Muliati Hj. Sedek">
                 </div>
                 <h4 class="speaker-name">Assoc. Prof. Dr. Muliati Sedek</h4>
@@ -882,9 +873,8 @@
               </div>
 
               <!-- 13. Assoc. Prof. Ts. Dr. Noor Suhana -->
-              <div class="speaker-card" style="--card-accent: #34d399;">
-                <span class="role-badge role-invited">🤝 Invited Speaker</span>
-                <div class="photo-frame emerald-border">
+              <div class="speaker-card">
+                <div class="photo-frame">
                   <img src="/speakers/dr-noor-suhana.jpg" alt="Dr. Noor Suhana">
                 </div>
                 <h4 class="speaker-name">Dr. Noor Suhana Sulaiman</h4>
@@ -894,9 +884,8 @@
               </div>
 
               <!-- 14. Sandeep Kumar Khandelwal -->
-              <div class="speaker-card" style="--card-accent: #34d399;">
-                <span class="role-badge role-invited">🤝 Invited Speaker</span>
-                <div class="photo-frame emerald-border">
+              <div class="speaker-card">
+                <div class="photo-frame">
                   <img src="/speakers/sandeep-kumar-khandelwal.jpg" alt="Sandeep Kumar Khandelwal">
                 </div>
                 <h4 class="speaker-name">Sandeep Kumar Khandelwal</h4>
@@ -951,12 +940,12 @@
                 <p>Global Research & Innovation Platform</p>
               </div>
             </div>
-            <div class="part-pill">PART 03 / 03 • INNOVATION LEADERS</div>
+            <div class="part-pill">PART 03 / 03</div>
           </div>
 
           <div class="main-title-block">
             <div class="conf-badge">INTERNATIONAL CONFERENCE</div>
-            <h2 class="conf-heading">AIFORGE 2026</h2>
+            <h2 class="conf-heading">AIFORGE <span class="year-highlight">2026</span></h2>
             <p class="conf-subhead">
               International Conference on Artificial Intelligence Engineering, Foundation Models & Agentic Systems
             </p>
@@ -966,6 +955,15 @@
               <span class="ribbon-item">📚 ISBN: 978-81-687765-9-3</span>
               <span class="ribbon-item">🔍 Google Scholar Indexed</span>
             </div>
+
+            <!-- ENHANCED TOP HEADING: INTRODUCING OUR SPEAKERS -->
+            <div class="introducing-banner-wrap">
+              <div class="introducing-banner">
+                <span class="intro-sparkle">✦</span>
+                <h3 class="introducing-title">INTRODUCING OUR SPEAKERS</h3>
+                <span class="intro-sparkle">✦</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -973,9 +971,8 @@
         <div class="speakers-section">
           <div class="grid-8-speakers">
             <!-- 15. Swarnabindu Roy -->
-            <div class="speaker-card" style="--card-accent: #fbbf24;">
-              <span class="role-badge role-keynote">🎙️ Keynote Speaker</span>
-              <div class="photo-frame gold-border">
+            <div class="speaker-card">
+              <div class="photo-frame gold">
                 <img src="/speakers/swarnabindu-roy.jpg" alt="Swarnabindu Roy">
               </div>
               <h4 class="speaker-name">Swarnabindu Roy</h4>
@@ -985,9 +982,8 @@
             </div>
 
             <!-- 16. Payal R. -->
-            <div class="speaker-card" style="--card-accent: #fbbf24;">
-              <span class="role-badge role-keynote">🎙️ Keynote Speaker</span>
-              <div class="photo-frame gold-border">
+            <div class="speaker-card">
+              <div class="photo-frame gold">
                 <img src="/speakers/payal-r.jpg" alt="Payal R.">
               </div>
               <h4 class="speaker-name">Payal R.</h4>
@@ -997,9 +993,8 @@
             </div>
 
             <!-- 17. Dr. Carolina Barandiaran -->
-            <div class="speaker-card" style="--card-accent: #fbbf24;">
-              <span class="role-badge role-keynote">🎙️ Keynote Speaker</span>
-              <div class="photo-frame gold-border">
+            <div class="speaker-card">
+              <div class="photo-frame gold">
                 <img src="/speakers/dr-carolina-barandiaran.jpg" alt="Dr. Carolina Barandiaran">
               </div>
               <h4 class="speaker-name">Dr. Carolina Barandiaran</h4>
@@ -1009,9 +1004,8 @@
             </div>
 
             <!-- 18. Prof. Rehab Hegazy, PhD -->
-            <div class="speaker-card" style="--card-accent: #34d399;">
-              <span class="role-badge role-invited">🤝 Invited Speaker</span>
-              <div class="photo-frame emerald-border">
+            <div class="speaker-card">
+              <div class="photo-frame">
                 <img src="/speakers/prof-rehab-hegazy.jpg" alt="Prof. Rehab Hegazy, PhD">
               </div>
               <h4 class="speaker-name">Prof. Rehab Hegazy, PhD</h4>
@@ -1021,9 +1015,8 @@
             </div>
 
             <!-- 19. Prof. Intakhab Alam Khan -->
-            <div class="speaker-card" style="--card-accent: #34d399;">
-              <span class="role-badge role-invited">🤝 Invited Speaker</span>
-              <div class="photo-frame emerald-border">
+            <div class="speaker-card">
+              <div class="photo-frame">
                 <img src="/speakers/prof-intakhab-alam-khan.jpg" alt="Prof. Intakhab Alam Khan">
               </div>
               <h4 class="speaker-name">Prof. Intakhab Alam Khan</h4>
@@ -1033,9 +1026,8 @@
             </div>
 
             <!-- 20. Osman ARAYICI -->
-            <div class="speaker-card" style="--card-accent: #34d399;">
-              <span class="role-badge role-invited">🤝 Invited Speaker</span>
-              <div class="photo-frame emerald-border">
+            <div class="speaker-card">
+              <div class="photo-frame">
                 <img src="/speakers/osman-arayici.jpg" alt="Osman ARAYICI">
               </div>
               <h4 class="speaker-name">Osman ARAYICI</h4>
@@ -1045,9 +1037,8 @@
             </div>
 
             <!-- 21. Nino Devidze -->
-            <div class="speaker-card" style="--card-accent: #c084fc;">
-              <span class="role-badge role-distinguished">💎 Distinguished Speaker</span>
-              <div class="photo-frame purple-border">
+            <div class="speaker-card">
+              <div class="photo-frame">
                 <img src="/speakers/nino-devidze.jpg" alt="Nino Devidze">
               </div>
               <h4 class="speaker-name">Nino Devidze</h4>
@@ -1057,9 +1048,8 @@
             </div>
 
             <!-- 22. Lali Mikeladze -->
-            <div class="speaker-card" style="--card-accent: #c084fc;">
-              <span class="role-badge role-distinguished">💎 Distinguished Speaker</span>
-              <div class="photo-frame purple-border">
+            <div class="speaker-card">
+              <div class="photo-frame">
                 <img src="/speakers/lali-mikeladze.jpg" alt="Lali Mikeladze">
               </div>
               <h4 class="speaker-name">Lali Mikeladze</h4>
@@ -1083,7 +1073,7 @@
             </div>
           </div>
           <div class="footer-right">
-            <div class="swipe-pill" style="border-color: #fbbf24; color: #fbbf24; background: rgba(245, 158, 11, 0.15);">JOIN THE SUMMIT 🚀</div>
+            <div class="swipe-pill" style="border-color: #fbbf24; color: #fbbf24; background: rgba(245, 158, 11, 0.18);">JOIN THE SUMMIT 🚀</div>
             <p class="footer-sub">Organized by EminSphere™</p>
           </div>
         </div>

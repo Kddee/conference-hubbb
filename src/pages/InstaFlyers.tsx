@@ -247,8 +247,8 @@ const FlyerCardPreview = ({
 
           <div className="text-center mt-2">
             <span className="text-[10px] font-black tracking-widest text-cyan-400 uppercase">INTERNATIONAL CONFERENCE</span>
-            <h2 className="text-2xl sm:text-3xl font-serif font-black text-white bg-gradient-to-r from-white via-slate-100 to-amber-300 bg-clip-text text-transparent">
-              AIFORGE 2026
+            <h2 className="text-3xl sm:text-4xl font-serif font-black text-white drop-shadow-md">
+              AIFORGE <span className="text-amber-400">2026</span>
             </h2>
             <p className="text-xs text-slate-300 max-w-xl mx-auto line-clamp-1 mt-0.5">
               Artificial Intelligence Engineering, Foundation Models & Agentic Systems
@@ -264,50 +264,38 @@ const FlyerCardPreview = ({
                 📚 ISBN: 978-81-687765-9-3
               </span>
             </div>
+
+            {/* Enhanced Top Banner: INTRODUCING OUR SPEAKERS */}
+            <div className="flex justify-center mt-3">
+              <div className="inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-gradient-to-r from-amber-500/20 via-cyan-500/20 to-amber-500/20 border-2 border-amber-400 shadow-lg shadow-amber-400/25">
+                <span className="text-amber-400 text-xs">✦</span>
+                <span className="text-xs sm:text-sm font-black text-white tracking-widest uppercase">
+                  INTRODUCING OUR SPEAKERS
+                </span>
+                <span className="text-amber-400 text-xs">✦</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Speakers Grid */}
+        {/* Speakers Grid (Clean, spacious, no individual badges) */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 relative z-10 my-4">
-          {speakers.map((s, idx) => {
-            const badgeClass =
-              s.category === "Keynote Speaker"
-                ? "bg-amber-500/15 text-amber-400 border-amber-500/40"
-                : s.category === "Plenary Speaker"
-                ? "bg-cyan-500/15 text-cyan-400 border-cyan-500/40"
-                : s.category === "Distinguished Speaker"
-                ? "bg-purple-500/15 text-purple-400 border-purple-500/40"
-                : "bg-emerald-500/15 text-emerald-400 border-emerald-500/40";
-
-            const frameBorder =
-              s.category === "Keynote Speaker"
-                ? "border-amber-400 shadow-amber-400/20"
-                : s.category === "Plenary Speaker"
-                ? "border-cyan-400 shadow-cyan-400/20"
-                : s.category === "Distinguished Speaker"
-                ? "border-purple-400 shadow-purple-400/20"
-                : "border-emerald-400 shadow-emerald-400/20";
-
-            return (
-              <div
-                key={idx}
-                className="bg-slate-950/70 border border-white/10 rounded-xl p-3 flex flex-col items-center text-center shadow-lg relative overflow-hidden"
-              >
-                <span className={`text-[8.5px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full border mb-2 ${badgeClass}`}>
-                  {s.category}
-                </span>
-                <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 mb-2 shadow-md ${frameBorder}`}>
-                  <img src={s.img} alt={s.name} className="w-full h-full object-cover object-top" />
-                </div>
-                <h4 className="font-bold text-white text-xs sm:text-sm line-clamp-1 leading-tight mb-1">{s.name}</h4>
-                <p className="text-[10px] text-cyan-400 font-semibold line-clamp-1 leading-tight mb-0.5">{s.role}</p>
-                <p className="text-[9.5px] text-slate-400 line-clamp-1 leading-tight mb-2">{s.org}</p>
-                <span className="text-[9px] font-extrabold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full border border-amber-400/20 mt-auto">
-                  {s.country}
-                </span>
+          {speakers.map((s, idx) => (
+            <div
+              key={idx}
+              className="bg-slate-950/80 border border-white/10 rounded-2xl p-3.5 flex flex-col items-center text-center shadow-lg relative overflow-hidden"
+            >
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-cyan-400 mb-2.5 shadow-md shadow-cyan-400/20">
+                <img src={s.img} alt={s.name} className="w-full h-full object-cover object-top" />
               </div>
-            );
-          })}
+              <h4 className="font-bold text-white text-xs sm:text-sm line-clamp-1 leading-tight mb-1">{s.name}</h4>
+              <p className="text-[10px] text-cyan-400 font-bold line-clamp-1 leading-tight mb-0.5">{s.role}</p>
+              <p className="text-[9.5px] text-slate-300 line-clamp-1 leading-tight mb-2">{s.org}</p>
+              <span className="text-[9px] font-extrabold uppercase tracking-wider text-amber-400 bg-amber-400/15 px-2.5 py-0.5 rounded-full border border-amber-400/30 mt-auto">
+                {s.country}
+              </span>
+            </div>
+          ))}
         </div>
 
         {/* Footer */}
