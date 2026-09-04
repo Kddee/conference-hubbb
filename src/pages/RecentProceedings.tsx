@@ -13,7 +13,7 @@ const RecentProceedings = () => {
     <main className="min-h-screen bg-background">
       <PageHero
         eyebrow="Digital Library"
-        title="Recent Conference Proceedings"
+        title="Digital Conference Proceedings"
         description="Access the published proceedings, abstracts, full papers, and keynote videos from Eminsphere's globally recognized summits."
         variant="bubbles"
       />

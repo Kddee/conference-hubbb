@@ -38,7 +38,7 @@ const speakers = [
   { name: "Dr. Firas Zeidan", role: "Higher Education & Research", location: "Lebanon", image: "https://static.wixstatic.com/media/30814e_571b3e70d8ff476f8b1272ef84538d8f~mv2.jpeg" },
   { name: "Dr. Ganesh Hinge", role: "Principal, Navsahyadri Group of Institutes, College of Engineering", location: "India", image: ganeshImg },
   { name: "Gregg Clunis", role: "Founder, Kojo", location: "United States", image: "/speakers/gregg-clunis.jpg" },
-  { name: "Hari Rowtu", role: "AI-Driven Technologies", location: "USA", image: "https://media.licdn.com/dms/image/v2/D5603AQFjVHDoTWblbg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1693892740547?e=1777507200&v=beta&t=kARRwy3UuUpmb_8YOH8HtAbySHXBJeMA6W_ZwPRnQHc" },
+  { name: "Hari Rowtu", role: "AI-Driven Technologies", location: "USA", image: "/speakers/hari-rowtu.jpg" },
   { name: "Harikrishnan R. Pillai", role: "AI & Distributed Systems", location: "USA", image: "https://static.wixstatic.com/media/30814e_73c89054e75f4b3bb9bf0c838418960f~mv2.png" },
   { name: "Hemang Upadhyay", role: "AI, E-commerce & Analytics", location: "USA", image: "https://static.wixstatic.com/media/30814e_d8f3f76a4383421eb967c779a89ac17f~mv2.jpeg" },
   { name: "Hicham ELKHOUAJA", role: "Researcher", location: "Morocco", image: "https://static.wixstatic.com/media/30814e_d1c8c65f9d4d4bd59632c05aa894aa71~mv2.jpeg" },

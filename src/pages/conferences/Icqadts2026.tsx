@@ -27,7 +27,7 @@ const conferenceData = {
     { name: "Pravin Barapatre", org: "AI & Robotics Leader", country: "USA", img: "https://static.wixstatic.com/media/30814e_b190cb540fe940dcb0c96cd2ceab143f~mv2.png" },
     { name: "Trupti Raikar", org: "SAP Technology Architect", country: "USA", img: "https://static.wixstatic.com/media/30814e_ca6075e6cef84116937f732636db6914~mv2.jpeg" },
     { name: "Anshuman Khandelwal", org: "Cloud Computing Architect", country: "USA", img: "https://static.wixstatic.com/media/30814e_2cb5972bc61d457eb6a1c8153a563e05~mv2.jpeg" },
-    { name: "Hari Rowtu", org: "AI-Driven Technologies", country: "USA", img: "https://media.licdn.com/dms/image/v2/D5603AQFjVHDoTWblbg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1693892740547?e=1777507200&v=beta&t=kARRwy3UuUpmb_8YOH8HtAbySHXBJeMA6W_ZwPRnQHc" },
+    { name: "Hari Rowtu", org: "AI-Driven Technologies", country: "USA", img: "/speakers/hari-rowtu.jpg" },
     { name: "Dr. Marek Wasiluk", org: "GxP Auditor", country: "Poland", img: "https://static.wixstatic.com/media/30814e_adff5072ac724ad69a6f9634c9d672e0~mv2.jpg" },
     { name: "Prof. Dr. Alexander Bull", org: "IU International University", country: "Germany", img: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" }
   ],
