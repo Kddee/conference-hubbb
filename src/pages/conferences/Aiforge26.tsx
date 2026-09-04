@@ -614,6 +614,15 @@ const Aiforge26 = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             The visionary keynote leaders, plenary researchers, distinguished innovators, and invited experts presenting at AIFORGE 2026.
           </p>
+          <div className="mt-6 flex justify-center">
+            <a
+              href="/insta-flyers"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/15 hover:bg-accent/25 text-accent font-bold text-sm border border-accent/40 shadow-lg shadow-accent/10 transition-all hover:scale-105"
+            >
+              <Sparkles className="h-4 w-4 text-accent" />
+              View & Download Instagram Speaker Flyers (3-Part Set)
+            </a>
+          </div>
         </div>
         
         {conferenceData.speakers && conferenceData.speakers.length > 0 ? (

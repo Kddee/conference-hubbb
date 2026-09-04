@@ -33,6 +33,7 @@ import Icmref26 from "./pages/conferences/Icmref26";
 import Icaits26 from "./pages/conferences/Icaits26";
 import Aiforge26 from "./pages/conferences/Aiforge26";
 import Icaids2024 from "./pages/conferences/Icaids2024";
+import InstaFlyers from "./pages/InstaFlyers";
 
 const queryClient = new QueryClient();
 
@@ -78,6 +79,7 @@ const App = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/insta-flyers" element={<InstaFlyers />} />
           </Route>
           
           {/* Custom Full-Page Conference Sites */}
