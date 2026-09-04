@@ -7,15 +7,15 @@ import ConferenceSections from "@/components/layout/ConferenceSections";
 import { Link } from "react-router-dom";
 
 const recent2026 = [
-  { id: "icaits-26", title: "ICAITS-26", date: "26 July 2026", type: "Virtual Mode" },
-  { id: "iccemb-26", title: "ICCEMB-26", date: "31 May 2026", type: "Online Mode" },
-  { id: "icqadts-2026", title: "ICQADTS-2026", date: "12 April 2026", type: "Hybrid Event" },
-  { id: "icaidss-26", title: "ICAIDSS-26", date: "29 March 2026", type: "Hybrid Event" },
-  { id: "icaeset-2026", title: "ICAESET-2026", date: "15 March 2026", type: "Hybrid Event" },
-  { id: "icnse-26", title: "ICNSE-26", date: "01 March 2026", type: "Hybrid Event" },
-  { id: "ictet-26", title: "ICTET-26", date: "15 February 2026", type: "Hybrid Event" },
-  { id: "icmess-26", title: "ICMESS-26", date: "2026", type: "Hybrid Event" },
-  { id: "icasit-26", title: "ICASIT-26", date: "2026", type: "Hybrid Event" },
+  { id: "icaits-26", title: "ICAITS-26", date: "26 July 2026", type: "Virtual Mode", image: "/conferences/icmess-glimpse.jpg" },
+  { id: "iccemb-26", title: "ICCEMB-26", date: "31 May 2026", type: "Online Mode", image: "/conferences/icasit-glimpse.png" },
+  { id: "icqadts-2026", title: "ICQADTS-2026", date: "12 April 2026", type: "Hybrid Event", image: "/conferences/iccinet-glimpse-4.jpg" },
+  { id: "icaidss-26", title: "ICAIDSS-26", date: "29 March 2026", type: "Hybrid Event", image: "/conferences/iccinet-glimpse-3.jpg" },
+  { id: "icaeset-2026", title: "ICAESET-2026", date: "15 March 2026", type: "Hybrid Event", image: "/conferences/iccinet-glimpse-2.jpg" },
+  { id: "icnse-26", title: "ICNSE-26", date: "01 March 2026", type: "Hybrid Event", image: "/conferences/iccinet-glimpse.jpg" },
+  { id: "ictet-26", title: "ICTET-26", date: "15 February 2026", type: "Hybrid Event", image: "/conferences/icetsgc-glimpse-2.jpeg" },
+  { id: "icmess-26", title: "ICMESS-26", date: "08 February 2026", type: "Hybrid Event", image: "/conferences/icmess-glimpse.jpg" },
+  { id: "icasit-26", title: "ICASIT-26", date: "25 January 2026", type: "Hybrid Event", image: "/conferences/icasit-glimpse.png" },
 ];
 
 // Additional sections data
@@ -42,16 +42,16 @@ const faqs = [
 ];
 
 const recent2025 = [
-  { id: "icmdia-25", title: "ICMDIA-25", date: "2025", type: "Hybrid Event" },
-  { id: "icetsgc-25", title: "ICETSGC-25", date: "2025", type: "Hybrid Event" },
-  { id: "iccinet-25", title: "ICCINET-25", date: "2025", type: "Hybrid Event" },
-  { id: "icamet-2025", title: "ICAMET 2025", date: "2025", type: "Hybrid Event" },
+  { id: "icmdia-25", title: "ICMDIA-25", date: "14 December 2025", type: "Hybrid Event", image: "/conferences/icmdia-glimpse.jpeg" },
+  { id: "icetsgc-25", title: "ICETSGC-25", date: "16 November 2025", type: "Hybrid Event", image: "/conferences/icetsgc-banner.jpg" },
+  { id: "iccinet-25", title: "ICCINET-25", date: "25 October 2025", type: "Hybrid Event", image: "/conferences/iccinet-glimpse.jpg" },
+  { id: "icamet-2025", title: "ICAMET 2025", date: "2025 (Pune, India)", type: "Hybrid Event", image: "/conferences/icamet-campus.jpg" },
 ];
 
 const recent2024 = [
-  { id: "icenta-2024", title: "ICENTA-2024", date: "2024", type: "Hybrid Event" },
-  { id: "iceiis-2024", title: "ICEIIS-2024", date: "2024", type: "Hybrid Event" },
-  { id: "icaids-2024", title: "ICAIDS-2024", date: "2024", type: "Hybrid Event" },
+  { id: "icenta-2024", title: "ICENTA-2024", date: "15–16 December 2024", type: "Hybrid Event", image: "/conferences/icenta-berlin.jpg" },
+  { id: "iceiis-2024", title: "ICEIIS-2024", date: "04 February 2024", type: "Hybrid Event", image: "/conferences/icetsgc-glimpse.jpeg" },
+  { id: "icaids-2024", title: "ICAIDS-2024", date: "10 March 2024", type: "Hybrid Event", image: "/conferences/icmess-glimpse-2.jpg" },
 ];
 
 const stats = [
@@ -69,40 +69,64 @@ const ConferenceGrid = ({ title, data }: { title: string, data: any[] }) => (
     </div>
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {data.map((c) => (
-        <Card key={c.id} className="relative overflow-hidden group border-white/5 bg-card/40 backdrop-blur-sm hover:border-primary/50 transition-all duration-500 h-full flex flex-col hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(152,227,152,0.15)] rounded-3xl p-8">
+        <Card key={c.id} className="relative overflow-hidden group border-white/10 bg-card/40 backdrop-blur-sm hover:border-primary/50 transition-all duration-500 h-full flex flex-col hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(152,227,152,0.15)] rounded-3xl p-0">
           <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-500 pointer-events-none" />
           
-          <div className="flex-1 relative z-10">
-            <div className="flex items-center justify-between mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-white tracking-widest uppercase">
-                <CheckCircle2 className="h-3 w-3 text-primary" /> Completed
-              </div>
-              <Award className="h-6 w-6 text-white/20 group-hover:text-primary transition-colors" />
-            </div>
-            
-            <h3 className="font-serif text-2xl md:text-3xl font-bold text-white mb-8 group-hover:text-primary transition-colors leading-tight">{c.title}</h3>
-            
-            <div className="space-y-4 text-sm text-muted-foreground font-medium mb-10">
-              <div className="flex items-center gap-4">
-                <div className="h-10 w-10 rounded-full bg-black/60 border border-white/5 flex items-center justify-center shrink-0">
-                  <Calendar className="h-4 w-4 text-primary" />
+          {c.image && (
+            <div className="relative h-48 w-full overflow-hidden rounded-t-3xl bg-slate-900 shrink-0">
+              <img
+                src={c.image}
+                alt={c.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-85 group-hover:opacity-100"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+              <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-bold text-white tracking-widest uppercase">
+                  <CheckCircle2 className="h-3 w-3 text-primary" /> Completed
                 </div>
-                <span>{c.date}</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="h-10 w-10 rounded-full bg-black/60 border border-white/5 flex items-center justify-center shrink-0">
-                  <Globe className="h-4 w-4 text-primary" />
+                <div className="h-8 w-8 rounded-full bg-black/70 backdrop-blur-md border border-white/10 flex items-center justify-center">
+                  <Award className="h-4 w-4 text-primary" />
                 </div>
-                <span>{c.type}</span>
               </div>
             </div>
+          )}
+
+          <div className="p-8 flex-1 flex flex-col justify-between relative z-10">
+            <div>
+              {!c.image && (
+                <div className="flex items-center justify-between mb-8">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-white tracking-widest uppercase">
+                    <CheckCircle2 className="h-3 w-3 text-primary" /> Completed
+                  </div>
+                  <Award className="h-6 w-6 text-white/20 group-hover:text-primary transition-colors" />
+                </div>
+              )}
+              
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-white mb-6 group-hover:text-primary transition-colors leading-tight">{c.title}</h3>
+              
+              <div className="space-y-4 text-sm text-muted-foreground font-medium mb-8">
+                <div className="flex items-center gap-4">
+                  <div className="h-10 w-10 rounded-full bg-black/60 border border-white/5 flex items-center justify-center shrink-0">
+                    <Calendar className="h-4 w-4 text-primary" />
+                  </div>
+                  <span>{c.date}</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="h-10 w-10 rounded-full bg-black/60 border border-white/5 flex items-center justify-center shrink-0">
+                    <Globe className="h-4 w-4 text-primary" />
+                  </div>
+                  <span>{c.type}</span>
+                </div>
+              </div>
+            </div>
+            
+            <Button asChild variant="outline" className="w-full relative z-10 glass border-white/10 hover:bg-primary/10 hover:border-primary/30 hover:text-white group/btn h-14 rounded-xl font-bold">
+              <Link to={["icaids-2024", "iccemb-26", "icaits-26"].includes(c.id) ? `/${c.id}` : `/recent-conferences/${c.id}`}>
+                View Memories & Photos <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
           </div>
-          
-          <Button asChild variant="outline" className="w-full relative z-10 glass border-white/10 hover:bg-primary/10 hover:border-primary/30 hover:text-white group/btn h-14 rounded-xl font-bold">
-            <Link to={["icaids-2024", "iccemb-26", "icaits-26"].includes(c.id) ? `/${c.id}` : `/recent-conferences/${c.id}`}>
-              View Memories & Photos <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
         </Card>
       ))}
     </div>

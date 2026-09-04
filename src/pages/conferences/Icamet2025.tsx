@@ -20,11 +20,15 @@ const conferenceData = {
     { title: "Awards & Recognition", desc: "Best paper and presentation awards encouraging excellence." }
   ],
   speakers: [
-    { name: "Hon. Shri. Rambhau Moze", org: "Chief Patron | President, Former MLA", country: "India", img: "https://ui-avatars.com/api/?name=Rambhau+Moze&background=f7b731&color=fff&size=200" },
+    { name: "Hon. Shri. Rambhau Moze", org: "Chief Patron | President, Former MLA", country: "India", img: "/speakers/rambhau-moze.jpg" },
     { name: "Dr. Ratnaraja Kumar Jambi", org: "Conference Convener | Principal, G. S. Moze COE", country: "India", img: "https://static.wixstatic.com/media/30814e_68b76caedcdf48b6988367c0c06ab3c8~mv2.jpeg" },
-    { name: "Prof. Deepak K. Sharma", org: "Co-Convener | Head of AIDS and IQAC", country: "India", img: "https://ui-avatars.com/api/?name=Deepak+Sharma&background=00a896&color=fff&size=200" },
-    { name: "Dr. Ushadevi Patil", org: "Co-Convener | Dean of R&D", country: "India", img: "https://ui-avatars.com/api/?name=Ushadevi+Patil&background=ff6b35&color=fff&size=200" }
+    { name: "Prof. Deepak K. Sharma", org: "Co-Convener | Head of AIDS and IQAC", country: "India", img: "/speakers/prof-deepak-sharma.jpg" },
+    { name: "Dr. Ushadevi Patil", org: "Co-Convener | Dean of R&D", country: "India", img: "/speakers/dr-ushadevi-patil.jpg" }
   ],
+  glimpses: [
+    "/conferences/icamet-campus.jpg"
+  ],
+  isbn: "978-93-342-5206-4",
   tracks: [
     "Advancements in Modern Engineering Practices",
     "Artificial Intelligence & Machine Learning",
@@ -61,7 +65,7 @@ const Icamet2025 = () => {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-accent/20 to-accent/40 text-accent font-medium text-sm mb-8 backdrop-blur-md border border-accent/30">
               <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span></span>
-              {conferenceData.id} • Upcoming Conference
+              {conferenceData.id} • ISBN: {conferenceData.isbn}
             </div>
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight mb-6">
               {conferenceData.title}

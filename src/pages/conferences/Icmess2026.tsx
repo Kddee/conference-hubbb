@@ -54,6 +54,10 @@ const conferenceData = {
     { date: "25 Jan 2026", label: "Acceptance Notice", desc: "Notification of acceptance" },
     { date: "30 Jan 2026", label: "Registration", desc: "Final registration deadline" },
     { date: "08 Feb 2026", label: "Conference Date", desc: "Event day in Kuala Lumpur" }
+  ],
+  glimpses: [
+    "/conferences/icmess-glimpse.jpg",
+    "/conferences/icmess-glimpse-2.jpg"
   ]
 };
 

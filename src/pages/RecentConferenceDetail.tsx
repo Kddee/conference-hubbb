@@ -60,7 +60,7 @@ const RecentConferenceDetail = () => {
     return <Iccinet2025 />;
   }
 
-  if (id === "icamet-25") {
+  if (id === "icamet-25" || id === "icamet-2025") {
     return <Icamet2025 />;
   }
 

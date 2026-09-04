@@ -47,9 +47,9 @@ const conferenceData = {
     { name: "Dr. Nilesh Vitthal Limbore", org: "Navsahyadri Group of Institutions", country: "India" }
   ],
   awards: [
-    { title: "Best Paper Award", desc: "For the most outstanding research paper submitted and presented." },
-    { title: "Best Presentation Award", desc: "For delivering an exceptional and engaging presentation." },
-    { title: "Outstanding Innovation Award", desc: "For creative, innovative, and impactful contributions in the field." }
+    { title: "Best Paper Award", desc: "For the most outstanding research paper submitted and presented.", img: "/conferences/award-best-paper.jpeg" },
+    { title: "Best Presentation Award", desc: "For delivering an exceptional and engaging presentation.", img: "/conferences/award-best-presentation.jpeg" },
+    { title: "Outstanding Innovation Award", desc: "For creative, innovative, and impactful contributions in the field.", img: "/conferences/award-best-innovation.jpeg" }
   ],
   timeline: [
     { date: "10 Oct 2025", label: "Final Paper & Reg.", desc: "Final submission and registration deadline" },
@@ -60,10 +60,10 @@ const conferenceData = {
     { url: "https://www.youtube.com/embed/sQsk3HanogM", title: "Dr. Walida Ounruean | Keynote Speaker Message | ICCINET-25" }
   ],
   glimpses: [
-    "https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+    "/conferences/iccinet-glimpse.jpg",
+    "/conferences/iccinet-glimpse-2.jpg",
+    "/conferences/iccinet-glimpse-3.jpg",
+    "/conferences/iccinet-glimpse-4.jpg"
   ]
 };
 
@@ -274,10 +274,14 @@ const Iccinet2025 = () => {
                   The conference recognizes outstanding contributions in research and innovation. Awards will be presented to authors and presenters who demonstrate excellence.
                 </p>
                 {conferenceData.awards.map((award, idx) => (
-                  <div key={idx} className="flex gap-4 items-start">
-                    <div className="h-12 w-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0 border border-accent/30 shadow-inner">
-                      <Star className="h-6 w-6 text-accent fill-accent" />
-                    </div>
+                  <div key={idx} className="flex gap-4 items-center bg-black/20 p-3 rounded-xl border border-white/5">
+                    {award.img ? (
+                      <img src={award.img} alt={award.title} className="h-14 w-14 rounded-lg object-cover shrink-0 border border-accent/40 shadow" />
+                    ) : (
+                      <div className="h-12 w-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0 border border-accent/30 shadow-inner">
+                        <Star className="h-6 w-6 text-accent fill-accent" />
+                      </div>
+                    )}
                     <div>
                       <h4 className="font-bold text-lg text-white">{award.title}</h4>
                       <p className="text-sm text-primary-foreground/70 mt-1">{award.desc}</p>

@@ -55,6 +55,10 @@ const conferenceData = {
     { date: "03 Dec 2025", label: "Registration", desc: "Final registration deadline" },
     { date: "14 Dec 2025", label: "Conference Date", desc: "Hybrid event in Helsinki" }
   ],
+  glimpses: [
+    "/conferences/icmdia-glimpse.jpeg",
+    "/conferences/icmdia-glimpse-2.jpeg"
+  ],
   videos: []
 };
 

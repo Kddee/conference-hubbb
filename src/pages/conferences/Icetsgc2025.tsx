@@ -22,15 +22,20 @@ const conferenceData = {
     { title: "Innovation", desc: "Encouraging startups & digital transformation." }
   ],
   speakers: [
-    { name: "Dr. Zoha Rahman", org: "Centre for Big Data & Machine Learning", country: "USA", img: "https://ui-avatars.com/api/?name=Zoha+Rahman&background=1e3a5f&color=fff&size=200" },
-    { name: "Dr. Uma A. Alkhudary", org: "Middle East University", country: "Jordan", img: "https://ui-avatars.com/api/?name=Uma+Alkhudary&background=f7b731&color=fff&size=200" },
-    { name: "Mr. Akshay Sharma", org: "Pension Systems Expert", country: "USA", img: "https://ui-avatars.com/api/?name=Akshay+Sharma&background=00a896&color=fff&size=200" },
+    { name: "Dr. Zoha Rahman", org: "Centre for Big Data & Machine Learning", country: "USA", img: "/speakers/dr-zoha-rahman.jpg" },
+    { name: "Dr. Uma A. Alkhudary", org: "Middle East University", country: "Jordan", img: "/speakers/dr-uma-alkhudary.jpg" },
+    { name: "Mr. Akshay Sharma", org: "Pension Systems Expert", country: "USA", img: "/speakers/akshay-sharma.jpg" },
     { name: "Dr. Firas Zeidan", org: "Higher Education & Research", country: "Lebanon", img: "https://static.wixstatic.com/media/30814e_d725b17d6d374b3abf1081771e55f53f~mv2.jpeg" },
-    { name: "Dr. Rana El Khawand", org: "UN-Habitat", country: "UN HABITAT", img: "https://static.wixstatic.com/media/502b14_e3b96c6fde384f0ba16dd14be8710af3~mv2.png" },
+    { name: "Dr. Rana El Khawand", org: "UN-Habitat", country: "UN HABITAT", img: "/speakers/dr-rana-el-khawand.jpg" },
     { name: "Prof. Dr. Alexander Bull", org: "IU International University", country: "Germany", img: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
-    { name: "Mouhssin Ait El Mouden", org: "Ibn Tofail University", country: "Morocco", img: "https://static.wixstatic.com/media/30814e_b0c50d221b41483fa5ab8bfb50f719e5~mv2.avif" },
-    { name: "Prof. Neha Singh", org: "PMM's BMMM College of Engineering", country: "India", img: "https://ui-avatars.com/api/?name=Neha+Singh&background=ff6b35&color=fff&size=200" },
-    { name: "Prof. Shweta N. Bansal", org: "D.Y. Patil College of Engineering", country: "India", img: "https://ui-avatars.com/api/?name=Shweta+Bansal&background=1a3d5c&color=fff&size=200" }
+    { name: "Mouhssin Ait El Mouden", org: "Ibn Tofail University", country: "Morocco", img: "/speakers/mouhssin-ait-el-mouden.jpg" },
+    { name: "Prof. Neha Singh", org: "PMM's BMMM College of Engineering", country: "India", img: "/speakers/prof-neha-singh.jpg" },
+    { name: "Prof. Shweta N. Bansal", org: "D.Y. Patil College of Engineering", country: "India", img: "/speakers/prof-shweta-bansal.jpg" }
+  ],
+  glimpses: [
+    "/conferences/icetsgc-glimpse.jpeg",
+    "/conferences/icetsgc-glimpse-2.jpeg",
+    "/conferences/icetsgc-banner.jpg"
   ],
   tracks: [
     "Emerging Technologies (AI, IoT, Cloud, Blockchain, Robotics)",

@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import ConferenceSections from "@/components/layout/ConferenceSections";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MapPin, CheckCircle2, BookOpen } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, CheckCircle2, BookOpen, Download, FileText, ExternalLink } from "lucide-react";
 
 const conferenceData = {
   id: "ICENTA-2024",
@@ -9,6 +9,7 @@ const conferenceData = {
   date: "December 15–16, 2024",
   location: "Mitte, Berlin, Germany (Virtual Mode)",
   registrationLink: "https://forms.gle/A4gJgze6ZR8qixLk8",
+  proceedingsPdf: "https://297b13a4-bada-45bf-b67b-9769cba8e18a.filesusr.com/ugd/30814e_e664e4ead9f740e287d8bc56ce6e9362.pdf",
   about: [
     "ICENTA-2024 is a global initiative by Eminsphere to foster innovation, collaboration, and knowledge exchange in Engineering, AI, IoT, Robotics, and Sustainable Technologies.",
     "Renowned academicians, researchers, industry experts, and policymakers will discuss the future of engineering advancements.",
@@ -22,6 +23,10 @@ const conferenceData = {
     { title: "Policy Discussions", desc: "Engage policymakers to drive technology-forward policies for global benefit." }
   ],
   speakers: [],
+  glimpses: [
+    "/conferences/icenta-berlin.jpg",
+    "/conferences/icenta-book.jpeg"
+  ],
   tracks: [
     "Artificial Intelligence (AI) & Machine Learning",
     "Internet of Things (IoT) & Industry 4.0",
@@ -68,11 +73,18 @@ const Icenta2024 = () => {
               </div>
             </div>
 
-            <Button asChild variant="hero" size="lg" className="rounded-full shadow-xl">
-              <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer">
-                Submit Paper / Register <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
+            <div className="flex flex-wrap gap-4">
+              <Button asChild variant="hero" size="lg" className="rounded-full shadow-xl">
+                <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer">
+                  Submit Paper / Register <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full shadow-xl bg-background/10 backdrop-blur-md border-primary-foreground/20 text-primary-foreground hover:bg-background/20 hover:text-white">
+                <a href={conferenceData.proceedingsPdf} target="_blank" rel="noopener noreferrer">
+                  Download Proceedings (PDF) <Download className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -154,7 +166,43 @@ const Icenta2024 = () => {
           </div>
         </div>
       </section>
-    <ConferenceSections conferenceName={conferenceData.id} glimpses={conferenceData.glimpses ?? []} importantDates={conferenceData.timeline} sessionChairs={conferenceData.sessionChairs} />
+      
+      {/* CONFERENCE PROCEEDINGS SHOWCASE */}
+      <section className="bg-muted py-24 border-t">
+        <div className="container max-w-4xl">
+          <Card className="p-8 md:p-12 bg-card border border-border/50 shadow-xl overflow-hidden">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-4 flex justify-center">
+                <img
+                  src="/conferences/icenta-book.jpeg"
+                  alt="ICENTA-2024 Conference Proceedings"
+                  className="rounded-xl shadow-2xl max-h-72 object-cover border border-border/50 hover:scale-105 transition-transform"
+                />
+              </div>
+              <div className="md:col-span-8 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-medium text-xs">
+                  <FileText className="h-3.5 w-3.5" /> Official Publication
+                </div>
+                <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
+                  Conference Proceedings & Abstract Book
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  The complete peer-reviewed papers and technical abstracts presented at ICENTA-2024 (Berlin) are compiled into the official conference proceedings volume.
+                </p>
+                <div className="pt-2">
+                  <Button asChild size="lg" className="rounded-full gap-2 shadow-lg">
+                    <a href={conferenceData.proceedingsPdf} target="_blank" rel="noopener noreferrer">
+                      <Download className="h-4 w-4" /> Download Official Proceedings (PDF)
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      <ConferenceSections conferenceName={conferenceData.id} glimpses={conferenceData.glimpses ?? []} importantDates={conferenceData.timeline} sessionChairs={conferenceData.sessionChairs} />
       </div>
   );
 };

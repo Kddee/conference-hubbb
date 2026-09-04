@@ -68,6 +68,10 @@ const conferenceData = {
     { url: "https://www.youtube.com/embed/EAevp6yHQhc", title: "Keynote Highlight (Shorts)" },
     { url: "https://www.youtube.com/embed/CC0xyJIVl4c", title: "Keynote Message" },
     { url: "https://www.youtube.com/embed/wHzJecX9h3Q", title: "Keynote Video" }
+  ],
+  glimpses: [
+    "/conferences/icasit-glimpse.png",
+    "/conferences/icasit-glimpse-2.png"
   ]
 };
 
