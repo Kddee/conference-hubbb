@@ -186,7 +186,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Osman ARAYICI", category: "Invited Speaker", designation: "Dept. of Interior Architecture, Mimar Sinan Fine Arts University / Modoko Academy", university: "Turkey", image: "/speakers/osman-arayici.jpg" },
       { name: "Swarnabindu Roy", category: "Keynote Speaker", designation: "Data Engineering, Data Architecture & Program Management", university: "USA", image: "/speakers/swarnabindu-roy.jpg" },
       { name: "Payal R.", category: "Keynote Speaker", designation: "Senior Data Engineer, Data Modeling, Data Warehousing & ETL Pipelines", university: "USA", image: "/speakers/payal-r.jpg" },
-      { name: "Dr. Carolina Barandiaran", category: "Keynote Speaker", designation: "Academic Leader & Researcher", university: "Argentina", image: "/speakers/dr-carolina-barandiaran.jpg" }
+      { name: "Dr. Carolina Barandiaran", category: "Keynote Speaker", designation: "Academic Leader & Researcher", university: "Argentina", image: "/speakers/dr-carolina-barandiaran.jpg" },
+      { name: "Nino Devidze", category: "Distinguished Speaker", designation: "Tourism Educator & Program Manager, The University of Georgia", university: "Georgia", image: "/speakers/nino-devidze.jpg" },
+      { name: "Lali Mikeladze", category: "Distinguished Speaker", designation: "Head of the BA Program in Tourism, Caucasus International University", university: "Georgia", image: "/speakers/lali-mikeladze.jpg" }
     ]
   }
 };

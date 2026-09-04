@@ -342,6 +342,22 @@ const conferenceData = {
       org: "Academic Research & Innovation",
       country: "Argentina",
       img: "/speakers/dr-carolina-barandiaran.jpg"
+    },
+    {
+      name: "Nino Devidze",
+      category: "Distinguished Speaker",
+      designation: "Tourism Educator & Program Manager",
+      org: "The University of Georgia",
+      country: "Georgia",
+      img: "/speakers/nino-devidze.jpg"
+    },
+    {
+      name: "Lali Mikeladze",
+      category: "Distinguished Speaker",
+      designation: "Head of the BA Program in Tourism",
+      org: "Caucasus International University",
+      country: "Georgia",
+      img: "/speakers/lali-mikeladze.jpg"
     }
   ],
   sessionChairs: []
