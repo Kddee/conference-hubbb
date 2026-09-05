@@ -175,7 +175,6 @@ const recentConferencesData = [
 const rotations = [-3, 2, -1.5, 3, -2, 1, -2.5, 2.5, -1, 3, -3, 1.5, -2, 2];
 
 const upcoming = [
-  { title: "ICAITS-26: AI & Intelligent Technology Systems", city: "Virtual Mode", date: "26 July 2026", topic: "AI & Tech", link: "/icaits-26", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" },
   { title: "AIFORGE 2026: Agentic Intelligence", city: "Hybrid Mode", date: "6 September 2026", topic: "AI & Engineering", isbn: "978-81-687765-9-3", link: "/aiforge-26", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" },
   { title: "ICMREF-26: Multidisciplinary Research & AI", city: "Tbilisi, Georgia", date: "4 October 2026", topic: "Technology & AI", link: "/icmref-26", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" },
 ];
@@ -274,7 +273,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* UNIQUE FLOATING TICKET BANNER FOR ICAITS-26 */}
+      {/* UNIQUE FLOATING TICKET BANNER FOR AIFORGE 2026 */}
       <div className="relative z-30 container px-4 mx-auto max-w-5xl mt-16 mb-8">
         <div className="relative group rounded-[2.5rem] bg-gradient-to-r from-accent via-primary to-secondary p-1 shadow-[0_20px_50px_rgba(16,185,129,0.15)] hover:shadow-[0_30px_60px_rgba(16,185,129,0.3)] transition-all duration-500 transform hover:-translate-y-2">
           
@@ -289,7 +288,7 @@ const Index = () => {
             {/* Left - Image Context */}
             <div className="md:w-2/5 relative h-64 md:h-auto overflow-hidden">
               <div className="absolute inset-0 bg-accent/20 mix-blend-overlay z-10"></div>
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="ICAITS-26" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-60 grayscale hover:grayscale-0" />
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="AIFORGE 2026" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-60 grayscale hover:grayscale-0" />
               <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#050B14] via-transparent to-transparent z-10"></div>
               <div className="absolute bottom-6 left-6 z-20">
                 <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center border-2 border-[#050B14] shadow-lg">
@@ -305,24 +304,24 @@ const Index = () => {
               </div>
               
               <h3 className="text-4xl md:text-5xl font-serif font-black text-white mb-2 tracking-tight">
-                ICAITS-26
+                AIFORGE 2026
               </h3>
-              <p className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent mb-6">
-                Artificial Intelligence & Intelligent Technology Systems
+              <p className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent mb-6 leading-snug">
+                Agentic Intelligence for Foundations, Orchestration, Research, Governance & Engineering
               </p>
               
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2 text-white/80 text-sm font-medium bg-white/5 px-4 py-2 rounded-lg border border-white/10">
-                  <Calendar className="w-4 h-4 text-accent" /> 19 July 2026
+                  <Calendar className="w-4 h-4 text-accent" /> 6 September 2026
                 </div>
                 <div className="flex items-center gap-2 text-white/80 text-sm font-medium bg-white/5 px-4 py-2 rounded-lg border border-white/10">
-                  <Globe className="w-4 h-4 text-accent" /> Virtual Mode
+                  <Globe className="w-4 h-4 text-accent" /> Hybrid Mode, Global
                 </div>
               </div>
               
               <div className="flex items-center gap-6">
                 <Button asChild size="lg" className="rounded-full bg-accent hover:bg-primary text-[#050B14] font-black uppercase tracking-wider px-8 h-14 shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all">
-                  <Link to="/icaits-26" className="flex items-center gap-2">
+                  <Link to="/aiforge-26" className="flex items-center gap-2">
                     Register Now <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
