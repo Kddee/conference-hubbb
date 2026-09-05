@@ -26,6 +26,9 @@ import glimpse13 from "@/assets/Screenshot 2026-07-26 171929.png";
 import glimpse14 from "@/assets/Screenshot 2026-07-26 173127.png";
 import glimpse15 from "@/assets/Screenshot 2026-07-26 174930.png";
 import glimpse16 from "@/assets/Screenshot 2026-07-26 114953.png";
+import jacoPromoVideo from "@/assets/jaco-visagie-promo.mp4";
+import wiktoriaPromoVideo from "@/assets/wiktoria-promo.mp4";
+import intakhabPromoVideo from "@/assets/intakhab-promo.mp4";
 
 const conferenceData = {
   id: "AIFORGE 2026",
@@ -838,7 +841,17 @@ const Aiforge26 = () => {
         </div>
       </section>
       
-      <ConferenceSections conferenceName={conferenceData.id} glimpses={conferenceData.glimpses ?? []} importantDates={conferenceData.timeline} sessionChairs={conferenceData.sessionChairs} />
+      <ConferenceSections 
+        conferenceName={conferenceData.id} 
+        glimpses={conferenceData.glimpses ?? []} 
+        importantDates={conferenceData.timeline} 
+        sessionChairs={conferenceData.sessionChairs} 
+        promotionalVideos={[
+          { src: jacoPromoVideo, name: "Jaco Visagie" },
+          { src: wiktoriaPromoVideo, name: "Wiktoria Gromowa-Cieślik" },
+          { src: intakhabPromoVideo, name: "Prof. Intakhab Alam Khan" }
+        ]}
+      />
     </div>
   );
 };

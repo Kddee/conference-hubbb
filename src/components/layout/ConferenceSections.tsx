@@ -1,11 +1,13 @@
-import { BookOpen, Edit3, Send, Link2, Search, Globe2, Lightbulb, Users, Target, CheckCircle2, Calendar, Globe, Image, History } from "lucide-react";
+import { BookOpen, Edit3, Send, Link2, Search, Globe2, Lightbulb, Users, Target, CheckCircle2, Calendar, Globe, Image, History, Play } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useState, useRef } from "react";
 
 interface ConferenceSectionsProps {
   conferenceName: string;
   glimpses?: string[];
   importantDates?: { date: string; label: string; desc: string }[];
   sessionChairs?: { name: string; org?: string; country: string; img: string; desc?: string; role?: string }[];
+  promotionalVideos?: { src: string; name: string }[];
 }
 
 const researchSteps = [
@@ -69,11 +71,57 @@ const supportingServices = [
   "Networking Facilitation: Introductions to key researchers and industry professionals in your field."
 ];
 
+const CustomVideoPlayer = ({ src }: { src: string }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+  };
+
+  const handlePause = () => {
+    setIsPlaying(false);
+  };
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
+
+  return (
+    <div className="w-full h-full relative cursor-pointer group/video" onClick={togglePlay}>
+      <video 
+        ref={videoRef}
+        src={src} 
+        className="w-full h-full object-cover" 
+        controls={isPlaying}
+        onPlay={handlePlay}
+        onPause={handlePause}
+        onEnded={handlePause}
+        preload="metadata"
+      />
+      {!isPlaying && (
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center transition-all duration-300 group-hover/video:bg-black/50 z-10">
+          <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-[0_4px_20px_rgba(var(--primary),0.5)] transform transition-transform duration-300 group-hover/video:scale-110">
+            <Play className="w-8 h-8 text-primary-foreground fill-primary-foreground ml-1" />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export const ConferenceSections = ({
   conferenceName,
   glimpses = [], 
   importantDates = [], 
-  sessionChairs = [] 
+  sessionChairs = [],
+  promotionalVideos = []
 }: ConferenceSectionsProps) => {
   return (
     <>
@@ -259,6 +307,38 @@ export const ConferenceSections = ({
           )}
         </div>
       </section>
+
+      {/* PROMOTIONAL VIDEOS */}
+      {promotionalVideos && promotionalVideos.length > 0 && (
+        <section className="py-24 bg-background border-t border-white/5">
+          <div className="container max-w-6xl">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
+                Hear from Our Speakers
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Discover why leading experts are excited to join {conferenceName}.
+              </p>
+            </div>
+            
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
+              {promotionalVideos.map((video, i) => (
+                <div 
+                  key={i} 
+                  className="group relative rounded-3xl overflow-hidden bg-card border border-white/5 hover:border-primary/30 hover:-translate-y-1 transition-all duration-400 shadow-lg"
+                >
+                  <div className="aspect-[9/16] bg-black/40 relative">
+                    <CustomVideoPlayer src={video.src} />
+                  </div>
+                  <div className="p-5 bg-card/90 backdrop-blur-md absolute bottom-0 left-0 right-0 border-t border-white/10 transform transition-transform duration-300">
+                    <h3 className="font-bold text-lg text-white text-center">{video.name}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* GLIMPSES SECTION */}
       {glimpses.length > 0 && (
