@@ -18,7 +18,6 @@ const mainNav = [
 ];
 
 const dropdownNav = [
-  { label: "Digital Conference Proceedings", to: "/recent-proceedings" },
   { label: "Advisory Members", to: "/advisory-members" },
   { label: "Apply as Reviewer", to: "/apply-reviewer" },
   { label: "Join Advisory Team", to: "/apply-advisory" },
