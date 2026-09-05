@@ -64,11 +64,14 @@
 
 @layer base {
   * { @apply border-border; }
-  body {
+  html, body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
   }
   h1, h2, h3, h4, h5 {
     font-family: 'Inter', system-ui, sans-serif;

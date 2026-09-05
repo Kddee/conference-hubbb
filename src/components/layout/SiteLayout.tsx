@@ -5,10 +5,10 @@ import { GlobalBackground } from "./GlobalBackground";
 
 export const SiteLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col w-full max-w-full overflow-x-clip">
       <GlobalBackground />
       <Header />
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-20 w-full max-w-full overflow-x-clip">
         <Outlet />
       </main>
       <Footer />

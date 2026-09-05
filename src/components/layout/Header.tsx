@@ -62,7 +62,7 @@ export const Header = () => {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-5 lg:gap-7">
+        <nav className="hidden xl:flex items-center gap-5 2xl:gap-7">
           {mainNav.map((l) => (
             <RouterNavLink key={l.to} to={l.to} className={({ isActive }) => `text-[13px] font-bold tracking-wide transition-smooth hover:text-accent whitespace-nowrap ${isActive ? "text-accent" : textColor}`}>
               {l.label}
@@ -83,37 +83,39 @@ export const Header = () => {
           </DropdownMenu>
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden xl:block">
           <Button asChild className="bg-primary text-white hover:bg-primary/90 rounded-full font-black px-8 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-sm h-12">
             <Link to="/registration">Register Now</Link>
           </Button>
         </div>
 
         <button
-          className={`md:hidden hover:text-accent transition-colors ${iconColor}`}
+          className={`xl:hidden p-2.5 rounded-xl hover:bg-white/10 active:bg-white/20 transition-colors ${iconColor}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X /> : <Menu />}
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-card/95 backdrop-blur-xl border-t border-white/10 animate-fade-in shadow-elegant">
-          <div className="container py-6 flex flex-col gap-2 max-h-[80vh] overflow-y-auto">
+        <div className="xl:hidden bg-card/95 backdrop-blur-xl border-t border-white/10 animate-fade-in shadow-elegant border-b border-border/50">
+          <div className="container py-4 flex flex-col gap-1 max-h-[75vh] overflow-y-auto overscroll-contain">
             {[...mainNav, ...dropdownNav].map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
-                className="py-3 px-4 rounded-xl text-white font-medium hover:bg-white/10 hover:text-accent transition-smooth"
+                className="py-2.5 px-4 rounded-xl text-white font-medium hover:bg-white/10 hover:text-accent active:bg-white/15 transition-smooth text-base"
                 onClick={() => setOpen(false)}
               >
                 {l.label}
               </Link>
             ))}
-            <Button asChild className="mt-4 bg-primary text-white rounded-xl h-12 font-black w-full uppercase tracking-wider">
-              <Link to="/registration" onClick={() => setOpen(false)}>Register Now</Link>
-            </Button>
+            <div className="pt-2 pb-1">
+              <Button asChild className="bg-primary text-white rounded-xl h-12 font-black w-full uppercase tracking-wider text-sm shadow-gold">
+                <Link to="/registration" onClick={() => setOpen(false)}>Register Now</Link>
+              </Button>
+            </div>
           </div>
         </div>
       )}

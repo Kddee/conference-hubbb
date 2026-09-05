@@ -27,76 +27,76 @@ const benefits = [
 const Registration = () => (
   <main className="min-h-screen bg-background">
     {/* HERO */}
-    <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-36 overflow-hidden bg-primary text-primary-foreground border-b">
+    <div className="relative pt-24 pb-14 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-36 overflow-hidden bg-primary text-primary-foreground border-b">
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-accent/20 opacity-90 z-0"></div>
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop')] opacity-10 mix-blend-overlay bg-cover bg-center"></div>
       <div className="container relative z-10 text-center max-w-4xl">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 text-primary-foreground font-bold text-sm tracking-wider uppercase mb-6 backdrop-blur-md border border-primary-foreground/20">
-          <Star className="h-4 w-4 text-accent fill-accent" /> Join The Global Community
+        <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary-foreground/10 text-primary-foreground font-bold text-xs sm:text-sm tracking-wider uppercase mb-4 sm:mb-6 backdrop-blur-md border border-primary-foreground/20">
+          <Star className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-accent fill-accent" /> Join The Global Community
         </div>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight text-white drop-shadow-md">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-4 sm:mb-6 leading-tight text-white drop-shadow-md break-words">
           Conference <span className="text-accent">Registration</span>
         </h1>
-        <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-8">
+        <p className="text-sm sm:text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-6 sm:mb-8">
           Interested in participating? Submit your details below to receive official registration guidelines, fee structures, and presentation schedules directly to your inbox.
         </p>
       </div>
     </div>
 
     {/* BENEFITS SECTION */}
-    <section className="container py-0 -mt-24 relative z-20 mb-24">
-      <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <section className="container py-0 -mt-8 sm:-mt-16 md:-mt-24 relative z-20 mb-12 sm:mb-24">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
         {benefits.map((b, idx) => (
-          <Card key={idx} className="relative overflow-hidden flex flex-col p-8 transition-all duration-300 shadow-lg border-border hover:border-accent/30 bg-card/95 backdrop-blur hover:-translate-y-1">
-            <div className="h-14 w-14 rounded-full bg-accent/10 flex items-center justify-center mb-6">
+          <Card key={idx} className="relative overflow-hidden flex flex-col p-6 sm:p-8 transition-all duration-300 shadow-lg border-border hover:border-accent/30 bg-card/95 backdrop-blur hover:-translate-y-1 rounded-2xl sm:rounded-3xl">
+            <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-accent/10 flex items-center justify-center mb-4 sm:mb-6">
               {b.icon}
             </div>
-            <h3 className="font-serif text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent mb-3">{b.title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">{b.desc}</p>
+            <h3 className="font-serif text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent mb-2 sm:mb-3">{b.title}</h3>
+            <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{b.desc}</p>
           </Card>
         ))}
       </div>
     </section>
 
     {/* FORM SECTION */}
-    <section id="register-form" className="bg-muted py-24 border-t">
+    <section id="register-form" className="bg-muted py-16 sm:py-24 border-t">
       <div className="container">
-        <div className="grid lg:grid-cols-12 gap-16 max-w-6xl mx-auto items-center">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-6xl mx-auto items-center">
           
           <div className="lg:col-span-5">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6 leading-tight">Request Registration Details</h2>
-            <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-primary mb-4 sm:mb-6 leading-tight">Request Registration Details</h2>
+            <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed">
               Fill out the inquiry form to receive our official registration packet. Our team will review your profile and email you the appropriate registration links and institutional guidelines.
             </p>
-            <div className="space-y-8">
-              <div className="flex gap-5">
-                <div className="h-14 w-14 rounded-full bg-background border border-border flex items-center justify-center shrink-0 shadow-sm">
-                  <MessageSquare className="h-6 w-6 text-accent" />
+            <div className="space-y-6 sm:space-y-8">
+              <div className="flex gap-4 sm:gap-5">
+                <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-background border border-border flex items-center justify-center shrink-0 shadow-sm">
+                  <MessageSquare className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground text-lg mb-1">Direct Communication</h4>
-                  <p className="text-sm text-muted-foreground">Our organizing committee will reach out to you within 24 hours.</p>
+                  <h4 className="font-bold text-foreground text-base sm:text-lg mb-1">Direct Communication</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Our organizing committee will reach out to you within 24 hours.</p>
                 </div>
               </div>
-              <div className="flex gap-5">
-                <div className="h-14 w-14 rounded-full bg-background border border-border flex items-center justify-center shrink-0 shadow-sm">
-                  <ShieldCheck className="h-6 w-6 text-accent" />
+              <div className="flex gap-4 sm:gap-5">
+                <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-background border border-border flex items-center justify-center shrink-0 shadow-sm">
+                  <ShieldCheck className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground text-lg mb-1">Privacy Guaranteed</h4>
-                  <p className="text-sm text-muted-foreground">Your details are secure and will only be used for official conference correspondence.</p>
+                  <h4 className="font-bold text-foreground text-base sm:text-lg mb-1">Privacy Guaranteed</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Your details are secure and will only be used for official conference correspondence.</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-7">
-            <Card className="p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-0 bg-background rounded-3xl relative overflow-hidden">
+            <Card className="p-5 sm:p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-0 bg-background rounded-2xl sm:rounded-3xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-accent"></div>
               
-              <h3 className="font-serif text-2xl font-bold text-primary mb-8">Registration Inquiry Form</h3>
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary mb-6 sm:mb-8">Registration Inquiry Form</h3>
               
-              <form className="space-y-6" onSubmit={(e) => {
+              <form className="space-y-5 sm:space-y-6" onSubmit={(e) => {
                 e.preventDefault();
                 const formData = new FormData(e.currentTarget);
                 const fullName = formData.get("Full Name");
@@ -114,7 +114,7 @@ const Registration = () => (
                 window.open(gmailUrl, '_blank');
                 e.currentTarget.reset();
               }}>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-2">
                     <Label className="text-foreground font-semibold flex items-center gap-2"><User className="h-4 w-4 text-muted-foreground" /> Full Name</Label>
                     <Input name="Full Name" placeholder="Dr. John Doe" required className="h-12 bg-muted/30 border-border focus:bg-background focus:border-accent" />
@@ -125,7 +125,7 @@ const Registration = () => (
                   </div>
                 </div>
                 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-2">
                     <Label className="text-foreground font-semibold flex items-center gap-2"><MapPin className="h-4 w-4 text-muted-foreground" /> Country</Label>
                     <Input name="Country" placeholder="United Kingdom" required className="h-12 bg-muted/30 border-border focus:bg-background focus:border-accent" />
@@ -151,11 +151,11 @@ const Registration = () => (
                   </Select>
                 </div>
                 
-                <div className="pt-4">
-                  <Button type="submit" variant="hero" size="lg" className="w-full h-14 text-lg font-bold shadow-xl">
-                    Submit Inquiry <Send className="ml-2 h-5 w-5" />
+                <div className="pt-2 sm:pt-4">
+                  <Button type="submit" variant="hero" size="lg" className="w-full h-12 sm:h-14 text-base sm:text-lg font-bold shadow-xl">
+                    Submit Inquiry <Send className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
-                  <p className="text-center text-xs text-muted-foreground mt-4">
+                  <p className="text-center text-xs text-muted-foreground mt-3 sm:mt-4">
                     By submitting this form, your email client will open to send the inquiry securely.
                   </p>
                 </div>

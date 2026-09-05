@@ -122,28 +122,28 @@ const Icmref26 = () => {
               {conferenceData.id} • Upcoming Conference
             </div>
             <p className="font-mono text-accent text-sm uppercase tracking-wider mb-4">In Collaboration with Georgia Tech Events</p>
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight mb-6">
+            <h1 className="text-2xl sm:text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight mb-6 break-words">
               {conferenceData.title}
             </h1>
             
-            <div className="flex flex-wrap gap-6 mb-10 text-foreground/90">
+            <div className="flex flex-wrap gap-4 sm:gap-6 mb-8 sm:mb-10 text-foreground/90 text-sm sm:text-base">
               <div className="flex items-center gap-2">
-                <Calendar className="h-5 w-5 text-accent" />
+                <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
                 <span className="font-medium">{conferenceData.date}</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-accent" />
+                <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
                 <span className="font-medium">{conferenceData.location}</span>
               </div>
             </div>
 
-            <div className="mb-10 p-6 bg-card rounded-lg border border-border inline-block">
-              <p className="text-sm text-muted-foreground mb-3 font-semibold uppercase tracking-wider">Publishing Partner</p>
-              <img src="https://static.wixstatic.com/media/30814e_1cce99ce2356404eb0b67f75ecbafe63~mv2.png" alt="IGI Global" className="h-16" />
+            <div className="mb-8 sm:mb-10 p-5 sm:p-6 bg-card rounded-xl border border-border inline-block max-w-full">
+              <p className="text-xs sm:text-sm text-muted-foreground mb-3 font-semibold uppercase tracking-wider">Publishing Partner</p>
+              <img src="https://static.wixstatic.com/media/30814e_1cce99ce2356404eb0b67f75ecbafe63~mv2.png" alt="IGI Global" className="h-12 sm:h-16 object-contain" />
             </div>
 
             <div>
-              <Button asChild variant="hero" size="lg" className="rounded-full shadow-xl">
+              <Button asChild variant="hero" size="lg" className="w-full sm:w-auto rounded-full shadow-xl">
                 <a href={conferenceData.registrationLink} target="_blank" rel="noreferrer">
                   Submit Paper / Register <ArrowRight className="ml-2 h-5 w-5" />
                 </a>

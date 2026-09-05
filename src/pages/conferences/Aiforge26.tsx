@@ -378,32 +378,32 @@ const Aiforge26 = () => {
               <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span></span>
               {conferenceData.id} • ISBN: {conferenceData.isbn}
             </div>
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight mb-6">
+            <h1 className="text-2xl sm:text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight mb-6 break-words">
               {conferenceData.title}
             </h1>
             
-            <div className="flex flex-wrap gap-6 mb-10 text-foreground/90">
+            <div className="flex flex-wrap gap-4 sm:gap-6 mb-8 sm:mb-10 text-foreground/90 text-sm sm:text-base">
               <div className="flex items-center gap-2">
-                <Calendar className="h-5 w-5 text-accent" />
+                <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
                 <span className="font-medium">{conferenceData.date}</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-accent" />
+                <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
                 <span className="font-medium">{conferenceData.location}</span>
               </div>
               <div className="flex items-center gap-2">
-                <BookOpen className="h-5 w-5 text-accent" />
+                <BookOpen className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
                 <span className="font-medium">ISBN: {conferenceData.isbn}</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <Button asChild variant="hero" size="lg" className="rounded-full shadow-xl">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+              <Button asChild variant="hero" size="lg" className="w-full sm:w-auto rounded-full shadow-xl">
                 <a href={conferenceData.registrationLink} target="_blank" rel="noreferrer">
                   Register Now <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full shadow-md border-white/20 bg-card/60 backdrop-blur-md hover:bg-card">
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full shadow-md border-white/20 bg-card/60 backdrop-blur-md hover:bg-card">
                 <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer">
                   Submit in Microsoft CMT <ArrowRight className="ml-2 h-5 w-5" />
                 </a>

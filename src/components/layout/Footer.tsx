@@ -3,10 +3,10 @@ import { Mail, Linkedin, Youtube, MapPin, Landmark } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border/50 text-foreground mt-24">
-      <div className="container py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="bg-card border-t border-border/50 text-foreground mt-16 sm:mt-24">
+      <div className="container py-12 sm:py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         {/* Column 1: About */}
-        <div className="space-y-6">
+        <div className="space-y-5 sm:space-y-6">
           <div>
             <h2 className="font-serif font-black text-2xl text-foreground tracking-tight">Eminsphere™</h2>
             <div className="text-sm text-muted-foreground mt-1">Global Academic, Research & Innovation Platform</div>

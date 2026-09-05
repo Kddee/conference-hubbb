@@ -70,27 +70,27 @@ const getBackgroundElements = (variant: string) => {
 
 export const PageHero = ({ eyebrow, title, description, children, variant = "default" }: PageHeroProps) => {
   return (
-    <section className="bg-background pt-32 pb-20 text-foreground border-b border-border/50 relative overflow-hidden">
+    <section className="bg-background pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 text-foreground border-b border-border/50 relative overflow-hidden">
       {/* Animated background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {getBackgroundElements(variant)}
       </div>
       
-      <div className="container relative z-10 text-center max-w-4xl">
+      <div className="container relative z-10 text-center max-w-4xl px-4 sm:px-6">
         {eyebrow && (
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-card border border-border/50 text-foreground text-xs font-semibold uppercase tracking-widest mb-6 animate-fade-in shadow-sm">
             {eyebrow}
           </div>
         )}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-sans font-extrabold mb-6 text-balance tracking-tight animate-fade-up">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-sans font-extrabold mb-6 text-balance tracking-tight animate-fade-up break-words">
           {title}
         </h1>
         {description && (
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-balance animate-fade-up max-w-2xl mx-auto" style={{animationDelay: '100ms'}}>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed text-balance animate-fade-up max-w-2xl mx-auto" style={{animationDelay: '100ms'}}>
             {description}
           </p>
         )}
-        {children && <div className="mt-10 animate-fade-up" style={{animationDelay: '200ms'}}>{children}</div>}
+        {children && <div className="mt-8 sm:mt-10 animate-fade-up" style={{animationDelay: '200ms'}}>{children}</div>}
       </div>
     </section>
   );

@@ -129,62 +129,62 @@ const PastSpeakers = () => {
       />
 
       {/* STATS */}
-      <section className="container max-w-5xl relative z-20 -mt-10 mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="glass-strong border-white/10 p-6 rounded-3xl flex items-center gap-6 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-            <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-              <Mic className="h-6 w-6 text-primary" />
+      <section className="container max-w-5xl relative z-20 -mt-8 sm:-mt-10 mb-12 sm:mb-20 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+          <Card className="glass-strong border-white/10 p-5 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-4 sm:gap-6 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+            <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+              <Mic className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-white mb-1">200+</div>
-              <div className="text-xs uppercase tracking-widest text-muted-foreground font-bold">Keynote Speakers</div>
+              <div className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">200+</div>
+              <div className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground font-bold">Keynote Speakers</div>
             </div>
           </Card>
-          <Card className="glass-strong border-white/10 p-6 rounded-3xl flex items-center gap-6 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-            <div className="h-14 w-14 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-              <Globe className="h-6 w-6 text-accent" />
+          <Card className="glass-strong border-white/10 p-5 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-4 sm:gap-6 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+            <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+              <Globe className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-white mb-1">50+</div>
-              <div className="text-xs uppercase tracking-widest text-muted-foreground font-bold">Nations Represented</div>
+              <div className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">50+</div>
+              <div className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground font-bold">Nations Represented</div>
             </div>
           </Card>
-          <Card className="glass-strong border-white/10 p-6 rounded-3xl flex items-center gap-6 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-            <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-              <Presentation className="h-6 w-6 text-primary" />
+          <Card className="glass-strong border-white/10 p-5 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-4 sm:gap-6 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+            <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+              <Presentation className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-white mb-1">500+</div>
-              <div className="text-xs uppercase tracking-widest text-muted-foreground font-bold">Hours of Insights</div>
+              <div className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">500+</div>
+              <div className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground font-bold">Hours of Insights</div>
             </div>
           </Card>
         </div>
       </section>
 
       {/* FEATURED KEYNOTES */}
-      <section className="container py-16 relative z-10 max-w-7xl">
-        <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-accent mb-4">
+      <section className="container py-12 sm:py-16 relative z-10 max-w-7xl px-4">
+        <div className="flex flex-col items-center text-center mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-accent mb-3 sm:mb-4">
             <Sparkles className="h-4 w-4" /> Distinguished Experts
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white">Featured Keynotes</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white">Featured Keynotes</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {featured.map((s, i) => (
-            <Card key={i} className="relative overflow-hidden group glass border-white/5 bg-card/40 hover:bg-card/80 transition-all duration-500 rounded-[2rem] p-8 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(152,227,152,0.15)] flex flex-col items-center text-center">
+            <Card key={i} className="relative overflow-hidden group glass border-white/5 bg-card/40 hover:bg-card/80 transition-all duration-500 rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(152,227,152,0.15)] flex flex-col items-center text-center">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors pointer-events-none" />
               
-              <div className="relative w-full aspect-[4/4.5] max-w-[200px] mb-6 overflow-hidden rounded-2xl border-2 border-primary/20 bg-muted/60 shadow-lg group-hover:border-accent/50 group-hover:shadow-xl transition-all">
+              <div className="relative w-full aspect-[4/4.5] max-w-[180px] sm:max-w-[200px] mb-5 sm:mb-6 overflow-hidden rounded-xl sm:rounded-2xl border-2 border-primary/20 bg-muted/60 shadow-lg group-hover:border-accent/50 group-hover:shadow-xl transition-all">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
                 <img src={s.image} alt={s.name} className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
               </div>
               
-              <h3 className="font-serif text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">{s.name}</h3>
-              <p className="text-muted-foreground font-medium mb-6 leading-relaxed">{s.role}</p>
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">{s.name}</h3>
+              <p className="text-muted-foreground text-sm sm:text-base font-medium mb-6 leading-relaxed">{s.role}</p>
               
               {s.location && (
-                <div className="mt-auto inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-white tracking-widest uppercase shadow-sm group-hover:bg-accent/10 group-hover:border-accent/30 group-hover:text-accent transition-colors">
+                <div className="mt-auto inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 text-[11px] sm:text-xs font-bold text-white tracking-widest uppercase shadow-sm group-hover:bg-accent/10 group-hover:border-accent/30 group-hover:text-accent transition-colors">
                   <MapPin className="h-3 w-3" /> {s.location}
                 </div>
               )}
@@ -194,24 +194,24 @@ const PastSpeakers = () => {
       </section>
 
       {/* GLOBAL VOICES */}
-      <section className="bg-primary/5 border-y border-white/5 py-24 relative overflow-hidden">
+      <section className="bg-primary/5 border-y border-white/5 py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="container relative z-10 max-w-7xl">
-          <div className="flex flex-col items-center text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Global Voices</h2>
-            <p className="text-xl text-muted-foreground">Researchers and practitioners from across the world.</p>
+        <div className="container relative z-10 max-w-7xl px-4">
+          <div className="flex flex-col items-center text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-white mb-3 sm:mb-4">Global Voices</h2>
+            <p className="text-base sm:text-xl text-muted-foreground">Researchers and practitioners from across the world.</p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6">
             {globalVoices.map((s, i) => (
-              <Card key={i} className="overflow-hidden glass border-white/5 bg-card/30 hover:bg-card/60 transition-all duration-300 group flex flex-col items-center text-center p-6 rounded-3xl hover:-translate-y-1 hover:border-primary/30">
-                <div className="relative w-full aspect-[4/4.5] max-w-[120px] mb-4 overflow-hidden rounded-xl border border-white/10 group-hover:border-primary/50 transition-colors shadow-md shrink-0">
+              <Card key={i} className="overflow-hidden glass border-white/5 bg-card/30 hover:bg-card/60 transition-all duration-300 group flex flex-col items-center text-center p-3 sm:p-6 rounded-2xl sm:rounded-3xl hover:-translate-y-1 hover:border-primary/30">
+                <div className="relative w-full aspect-[4/4.5] max-w-[100px] sm:max-w-[120px] mb-3 sm:mb-4 overflow-hidden rounded-lg sm:rounded-xl border border-white/10 group-hover:border-primary/50 transition-colors shadow-md shrink-0">
                   <img src={s.image} alt={s.name} className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105" loading="lazy" />
                 </div>
-                <h3 className="font-serif font-bold text-white leading-tight mb-1 group-hover:text-primary transition-colors text-sm">{s.name}</h3>
-                <div className="text-xs text-muted-foreground font-medium mb-3 line-clamp-2">{s.role}</div>
+                <h3 className="font-serif font-bold text-white leading-tight mb-1 group-hover:text-primary transition-colors text-xs sm:text-sm">{s.name}</h3>
+                <div className="text-[11px] sm:text-xs text-muted-foreground font-medium mb-2 sm:mb-3 line-clamp-2">{s.role}</div>
                 {s.location && (
-                  <div className="mt-auto inline-flex items-center gap-1 text-[10px] font-bold text-accent/70 uppercase tracking-wider group-hover:text-accent transition-colors">
+                  <div className="mt-auto inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-accent/70 uppercase tracking-wider group-hover:text-accent transition-colors">
                     <Globe className="h-3 w-3" /> {s.location}
                   </div>
                 )}
@@ -222,15 +222,15 @@ const PastSpeakers = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-32 text-center relative overflow-hidden">
+      <section className="py-16 sm:py-24 md:py-32 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
-        <div className="container max-w-3xl relative z-10">
-          <Quote className="h-16 w-16 mx-auto text-primary/30 mb-8" />
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 text-balance">Take the Stage. <br/><span className="text-primary">Share Your Vision.</span></h2>
-          <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
+        <div className="container max-w-3xl relative z-10 px-4">
+          <Quote className="h-12 w-12 sm:h-16 sm:w-16 mx-auto text-primary/30 mb-6 sm:mb-8" />
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-white mb-4 sm:mb-6 text-balance">Take the Stage. <br/><span className="text-primary">Share Your Vision.</span></h2>
+          <p className="text-base sm:text-xl text-muted-foreground mb-8 sm:mb-12 leading-relaxed">
             Are you leading groundbreaking research? Join our prestigious roster of global speakers and present your work to an international audience.
           </p>
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground h-16 px-12 rounded-full font-bold text-lg shadow-gold hover:-translate-y-1 transition-all">
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 sm:h-16 px-8 sm:px-12 rounded-full font-bold text-base sm:text-lg shadow-gold hover:-translate-y-1 transition-all w-full sm:w-auto text-center justify-center">
             <Link to="/registration">Apply to Speak <ArrowRight className="ml-3 h-5 w-5" /></Link>
           </Button>
         </div>

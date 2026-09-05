@@ -213,7 +213,7 @@ const Index = () => {
   return (
     <main className="bg-background noise">
       {/* HERO SECTION - AI4 STYLE */}
-      <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-32 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center pt-24 sm:pt-28 pb-16 sm:pb-32 overflow-hidden">
         {/* Background Image with Dark Cyan Tint Overlay */}
         <div className="absolute inset-0 z-0">
           <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2000&auto=format&fit=crop" alt="High Tech Background" className="w-full h-full object-cover" />
@@ -230,38 +230,38 @@ const Index = () => {
           <span className="text-primary text-lg">2026</span>
         </div>
 
-        <div className="relative container z-10 max-w-5xl mx-auto px-4 flex flex-col items-center text-center mt-10">
+        <div className="relative container z-10 max-w-5xl mx-auto px-4 flex flex-col items-center text-center mt-6 sm:mt-10">
           
           {/* MASSIVE TYPOGRAPHY */}
-          <h1 className="text-4xl md:text-6xl lg:text-[5.5rem] font-sans font-extrabold text-white leading-[1.1] tracking-tight mb-6 drop-shadow-2xl">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-sans font-extrabold text-white leading-[1.1] tracking-tight mb-6 drop-shadow-2xl">
             Join Us at The Forefront <br/> of Global Innovation
           </h1>
           
           {/* SUBHEADING */}
-          <p className="text-base md:text-lg text-white/70 max-w-2xl mb-12 drop-shadow-lg font-medium leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mb-8 sm:mb-12 drop-shadow-lg font-medium leading-relaxed">
             Eminsphere™ is the world's largest gathering of academic leaders and researchers. Join thousands of visionaries and technology innovators at the epicenter of the global community.
           </p>
 
           {/* PILL BOX BUTTON */}
-          <div className="inline-flex items-center rounded-full border border-white/20 bg-black/40 backdrop-blur-md p-1.5 pl-8 shadow-[0_0_30px_rgba(28,231,212,0.15)] hover:shadow-[0_0_40px_rgba(28,231,212,0.25)] transition-all duration-300">
-            <div className="flex flex-col text-left mr-6">
+          <div className="flex flex-col sm:inline-flex sm:flex-row items-center rounded-2xl sm:rounded-full border border-white/20 bg-black/40 backdrop-blur-md p-3 sm:p-1.5 sm:pl-8 shadow-[0_0_30px_rgba(28,231,212,0.15)] hover:shadow-[0_0_40px_rgba(28,231,212,0.25)] transition-all duration-300 gap-3 sm:gap-0 max-w-full">
+            <div className="flex flex-col text-center sm:text-left sm:mr-6">
               <span className="text-white text-[13px] font-bold tracking-widest leading-tight">MAY 31 2026</span>
               <span className="text-white/70 text-[10px] font-semibold tracking-wider leading-tight">RESEARCH FUNDING DEADLINE</span>
             </div>
-            <div className="w-px h-10 bg-white/20 mx-2"></div>
-            <Button asChild className="rounded-full bg-primary text-white hover:bg-primary/90 h-[52px] px-10 text-sm font-black uppercase tracking-wider transition-all duration-300 ml-4 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+            <div className="hidden sm:block w-px h-10 bg-white/20 mx-2"></div>
+            <Button asChild className="rounded-full bg-primary text-white hover:bg-primary/90 h-[48px] sm:h-[52px] w-full sm:w-auto px-8 sm:px-10 text-sm font-black uppercase tracking-wider transition-all duration-300 ml-0 sm:ml-4 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
               <Link to="/research-funding">Apply Now</Link>
             </Button>
           </div>
         </div>
 
         {/* BOTTOM STATS BAR */}
-        <div className="absolute bottom-0 inset-x-0 bg-[#0a0a0a]/90 border-t border-white/5 py-8 backdrop-blur-md z-20">
+        <div className="relative md:absolute md:bottom-0 inset-x-0 bg-[#0a0a0a]/90 border-t border-white/5 py-6 sm:py-8 backdrop-blur-md z-20 mt-12 md:mt-0">
           <div className="container max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-6 sm:gap-y-8">
               {stats.map((s, i) => (
                 <div key={s.label} className={`flex flex-col items-center text-center px-4 ${i !== 0 ? 'md:border-l border-white/10' : ''}`}>
-                  <div className="text-4xl md:text-5xl font-sans font-black text-white mb-2 tracking-tight drop-shadow-lg">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-white mb-2 tracking-tight drop-shadow-lg">
                     {s.value.replace('+', '')}
                     <span className="text-primary">+</span>
                   </div>
@@ -274,19 +274,19 @@ const Index = () => {
       </section>
 
       {/* UNIQUE FLOATING TICKET BANNER FOR AIFORGE 2026 */}
-      <div className="relative z-30 container px-4 mx-auto max-w-5xl mt-16 mb-8">
-        <div className="relative group rounded-[2.5rem] bg-gradient-to-r from-accent via-primary to-secondary p-1 shadow-[0_20px_50px_rgba(16,185,129,0.15)] hover:shadow-[0_30px_60px_rgba(16,185,129,0.3)] transition-all duration-500 transform hover:-translate-y-2">
+      <div className="relative z-30 container px-4 mx-auto max-w-5xl mt-12 sm:mt-16 mb-8">
+        <div className="relative group rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-r from-accent via-primary to-secondary p-1 shadow-[0_20px_50px_rgba(16,185,129,0.15)] hover:shadow-[0_30px_60px_rgba(16,185,129,0.3)] transition-all duration-500 transform hover:-translate-y-2">
           
-          <div className="relative h-full w-full bg-[#050B14] rounded-[2.4rem] overflow-hidden flex flex-col md:flex-row">
+          <div className="relative h-full w-full bg-[#050B14] rounded-[1.4rem] sm:rounded-[2.4rem] overflow-hidden flex flex-col md:flex-row">
             
             {/* Top Tape overlay */}
-            <div className="absolute top-0 left-0 w-full bg-accent/10 border-b border-accent/20 flex justify-between px-8 py-2 z-20 backdrop-blur-md">
+            <div className="absolute top-0 left-0 w-full bg-accent/10 border-b border-accent/20 flex justify-between px-4 sm:px-8 py-2 z-20 backdrop-blur-md">
               <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Limited Availability</span>
               <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Priority Access</span>
             </div>
 
             {/* Left - Image Context */}
-            <div className="md:w-2/5 relative h-64 md:h-auto overflow-hidden">
+            <div className="md:w-2/5 relative h-56 sm:h-64 md:h-auto overflow-hidden">
               <div className="absolute inset-0 bg-accent/20 mix-blend-overlay z-10"></div>
               <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="AIFORGE 2026" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-60 grayscale hover:grayscale-0" />
               <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#050B14] via-transparent to-transparent z-10"></div>
@@ -298,30 +298,30 @@ const Index = () => {
             </div>
 
             {/* Right - Content */}
-            <div className="md:w-3/5 p-8 md:p-12 relative z-10 flex flex-col justify-center pt-12 md:pt-12">
+            <div className="md:w-3/5 p-5 sm:p-8 md:p-12 relative z-10 flex flex-col justify-center pt-10 sm:pt-12 md:pt-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold tracking-widest uppercase mb-4 self-start">
                 <Sparkles className="w-3 h-3" /> Featured Conference
               </div>
               
-              <h3 className="text-4xl md:text-5xl font-serif font-black text-white mb-2 tracking-tight">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white mb-2 tracking-tight">
                 AIFORGE 2026
               </h3>
-              <p className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent mb-6 leading-snug">
+              <p className="text-base sm:text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent mb-6 leading-snug">
                 Agentic Intelligence for Foundations, Orchestration, Research, Governance & Engineering
               </p>
               
-              <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center gap-2 text-white/80 text-sm font-medium bg-white/5 px-4 py-2 rounded-lg border border-white/10">
+              <div className="flex flex-wrap gap-3 sm:gap-4 mb-8">
+                <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium bg-white/5 px-3 sm:px-4 py-2 rounded-lg border border-white/10">
                   <Calendar className="w-4 h-4 text-accent" /> 6 September 2026
                 </div>
-                <div className="flex items-center gap-2 text-white/80 text-sm font-medium bg-white/5 px-4 py-2 rounded-lg border border-white/10">
+                <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium bg-white/5 px-3 sm:px-4 py-2 rounded-lg border border-white/10">
                   <Globe className="w-4 h-4 text-accent" /> Hybrid Mode, Global
                 </div>
               </div>
               
-              <div className="flex items-center gap-6">
-                <Button asChild size="lg" className="rounded-full bg-accent hover:bg-primary text-[#050B14] font-black uppercase tracking-wider px-8 h-14 shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all">
-                  <Link to="/aiforge-26" className="flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
+                <Button asChild size="lg" className="rounded-full bg-accent hover:bg-primary text-[#050B14] font-black uppercase tracking-wider px-8 h-12 sm:h-14 shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all w-full sm:w-auto text-center justify-center">
+                  <Link to="/aiforge-26" className="flex items-center justify-center gap-2">
                     Register Now <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
@@ -337,12 +337,12 @@ const Index = () => {
       </div>
 
       {/* PROMO VIDEO SECTION */}
-      <section className="relative py-32 bg-black overflow-hidden">
+      <section className="relative py-16 sm:py-24 md:py-32 bg-black overflow-hidden">
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
-        <div className="container relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 tracking-tight">Experience The <span className="text-primary">Future</span> of Research</h2>
-            <p className="text-lg text-white/70">Watch how Eminsphere connects global innovators and academic leaders.</p>
+        <div className="container relative z-10 px-4">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4 sm:mb-6 tracking-tight">Experience The <span className="text-primary">Future</span> of Research</h2>
+            <p className="text-base sm:text-lg text-white/70">Watch how Eminsphere connects global innovators and academic leaders.</p>
           </div>
           
           <div className="max-w-5xl mx-auto relative group">
@@ -350,7 +350,7 @@ const Index = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary rounded-[2.5rem] blur opacity-25 group-hover:opacity-60 transition duration-1000 group-hover:duration-500" />
             
             {/* Video Container */}
-            <div className="relative rounded-[2rem] overflow-hidden bg-black border border-white/10 shadow-2xl">
+            <div className="relative rounded-2xl sm:rounded-[2rem] overflow-hidden bg-black border border-white/10 shadow-2xl">
               <video 
                 src={promoVideo} 
                 autoPlay 
@@ -365,17 +365,17 @@ const Index = () => {
       </section>
 
       {/* CATEGORIES - FLOATING CARDS */}
-      <section className="relative py-32 overflow-hidden border-t border-white/5">
+      <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden border-t border-white/5">
         <div className="absolute inset-0 dot-pattern opacity-10" />
-        <div className="container relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="container relative z-10 px-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-20 gap-6 sm:gap-8">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-accent mb-4">
+              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-accent mb-4">
                 <Zap className="h-4 w-4" /> Disciplines
               </div>
-              <h2 className="text-4xl md:text-6xl font-serif font-bold text-white">Explore Global Events by Expertise</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-white">Explore Global Events by Expertise</h2>
             </div>
-            <Button asChild variant="outline" className="glass rounded-full px-8 h-14 hover:bg-white/10 font-bold">
+            <Button asChild variant="outline" className="glass rounded-full px-6 sm:px-8 h-12 sm:h-14 hover:bg-white/10 font-bold w-full sm:w-auto text-center justify-center">
               <Link to="/upcoming-conferences">View All Categories <ChevronRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
@@ -384,19 +384,19 @@ const Index = () => {
             {categories.map(({ icon: Icon, label, count, image }) => (
               <Link to="/upcoming-conferences" key={label} className="block group h-full">
                 <Card
-                  className="relative overflow-hidden border-0 bg-black p-0 h-[340px] shadow-2xl transition-all duration-500 rounded-3xl cursor-pointer hover:shadow-[0_20px_40px_-15px_rgba(28,231,212,0.2)]"
+                  className="relative overflow-hidden border-0 bg-black p-0 h-[300px] sm:h-[340px] shadow-2xl transition-all duration-500 rounded-3xl cursor-pointer hover:shadow-[0_20px_40px_-15px_rgba(28,231,212,0.2)]"
                 >
                   <img src={image} alt={label} className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-110 transition-all duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#000508] via-[#000508]/60 to-transparent transition-colors duration-500" />
                   
-                  <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
-                    <div className="h-14 w-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mb-6 group-hover:-translate-y-2 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-xl">
-                      <Icon className="h-7 w-7 text-white group-hover:text-black transition-colors duration-500" />
+                  <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-10">
+                    <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mb-4 sm:mb-6 group-hover:-translate-y-2 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-xl">
+                      <Icon className="h-6 w-6 sm:h-7 sm:w-7 text-white group-hover:text-black transition-colors duration-500" />
                     </div>
                     
                     <div className="transform group-hover:-translate-y-2 transition-transform duration-500">
-                      <h3 className="font-sans font-black text-2xl text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-500">{label}</h3>
-                      <div className="flex items-center text-white/70 font-bold text-sm group-hover:text-white transition-colors duration-500 uppercase tracking-widest">
+                      <h3 className="font-sans font-black text-xl sm:text-2xl text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-500">{label}</h3>
+                      <div className="flex items-center text-white/70 font-bold text-xs sm:text-sm group-hover:text-white transition-colors duration-500 uppercase tracking-widest">
                         <span>{count}</span>
                         <ArrowRight className="ml-3 h-4 w-4 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 text-primary" />
                       </div>
@@ -410,27 +410,27 @@ const Index = () => {
       </section>
 
       {/* FEATURED UPCOMING CONFERENCES - PARALLAX STYLE */}
-      <section className="relative py-32 bg-black">
+      <section className="relative py-16 sm:py-24 md:py-32 bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-black to-background" />
-        <div className="container relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Upcoming Flagship Summits</h2>
-            <p className="text-xl text-muted-foreground">Reserve your seat at the world's most anticipated scientific gatherings.</p>
+        <div className="container relative z-10 px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-white mb-4 sm:mb-6">Upcoming Flagship Summits</h2>
+            <p className="text-base sm:text-xl text-muted-foreground">Reserve your seat at the world's most anticipated scientific gatherings.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {upcoming.map((c, idx) => (
-              <Card key={c.title} className="group relative overflow-hidden rounded-[2rem] border-0 bg-card h-[500px]">
+              <Card key={c.title} className="group relative overflow-hidden rounded-3xl sm:rounded-[2rem] border-0 bg-card min-h-[460px] h-auto sm:h-[500px]">
                 <img src={c.img} alt={c.title} className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
                 
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
                   <div className="inline-block bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 w-max">
                     {c.topic}
                   </div>
-                  <h3 className="font-serif font-bold text-3xl text-white mb-4 leading-tight group-hover:text-primary transition-colors">{c.title}</h3>
+                  <h3 className="font-serif font-bold text-2xl sm:text-3xl text-white mb-4 leading-tight group-hover:text-primary transition-colors">{c.title}</h3>
                   
-                  <div className="flex flex-wrap items-center gap-6 text-sm text-white/80 font-medium mb-8">
+                  <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-white/80 font-medium mb-6 sm:mb-8">
                     <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-primary" /> {c.date}</div>
                     <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> {c.city}</div>
                     {c.isbn && (
@@ -438,7 +438,7 @@ const Index = () => {
                     )}
                   </div>
                   
-                  <Button asChild className="w-full bg-white/10 backdrop-blur-md hover:bg-primary hover:text-primary-foreground border border-white/20 text-white font-bold h-14 rounded-xl transition-all duration-300">
+                  <Button asChild className="w-full bg-white/10 backdrop-blur-md hover:bg-primary hover:text-primary-foreground border border-white/20 text-white font-bold h-12 sm:h-14 rounded-xl transition-all duration-300">
                     <Link to={c.link}>
                       Register Now <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
@@ -448,8 +448,8 @@ const Index = () => {
             ))}
           </div>
           
-          <div className="mt-16 text-center">
-            <Button asChild variant="outline" size="lg" className="glass border-primary/30 hover:bg-primary/10 text-primary h-14 px-10 rounded-full font-bold">
+          <div className="mt-12 sm:mt-16 text-center">
+            <Button asChild variant="outline" size="lg" className="glass border-primary/30 hover:bg-primary/10 text-primary h-12 sm:h-14 px-8 sm:px-10 rounded-full font-bold w-full sm:w-auto">
               <Link to="/upcoming-conferences">View Complete Schedule</Link>
             </Button>
           </div>
@@ -457,50 +457,50 @@ const Index = () => {
       </section>
 
       {/* GLOBAL CONFERENCES INFOGRAPHIC SECTION */}
-      <section className="relative py-32 bg-background overflow-hidden border-t border-white/5">
+      <section className="relative py-16 sm:py-24 md:py-32 bg-background overflow-hidden border-t border-white/5">
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent pointer-events-none" />
         <div className="container relative z-10 max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             
             {/* Content Side (Left) */}
             <div className="flex flex-col justify-center order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary mb-6">
+              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-4 sm:mb-6">
                 <Globe2 className="h-4 w-4" /> Worldwide Reach
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-black text-foreground mb-6 leading-[1.1] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-black text-foreground mb-4 sm:mb-6 leading-[1.15] tracking-tight">
                 Global Conferences <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">That Drive Impact</span>
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 sm:mb-10 max-w-xl">
                 Join a dynamic global network of researchers and industry leaders. Our hybrid conferences blend virtual accessibility with unparalleled in-person networking opportunities.
               </p>
 
-              <div className="space-y-6 mb-12">
+              <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
                 {[
                   { title: "Connect & Collaborate", desc: "Network with international experts and leaders in your field." },
                   { title: "Publish in Indexed Journals", desc: "Showcase your work in high-impact factor journals." },
                   { title: "Experience Hybrid Formats", desc: "Attend virtually or in-person with seamless integration." }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center font-black text-primary">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center font-black text-primary text-sm sm:text-base">
                       0{idx + 1}
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-foreground mb-1">{item.title}</h4>
-                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      <h4 className="text-lg sm:text-xl font-bold text-foreground mb-1">{item.title}</h4>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               <div>
-                <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-black px-10 h-14 shadow-[0_0_20px_rgba(0,0,0,0.1)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-sm">
-                  <Link to="/upcoming-conferences">Explore Conferences <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-black px-8 sm:px-10 h-12 sm:h-14 shadow-[0_0_20px_rgba(0,0,0,0.1)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-xs sm:text-sm w-full sm:w-auto text-center justify-center">
+                  <Link to="/upcoming-conferences" className="flex items-center justify-center gap-2">Explore Conferences <ArrowRight className="ml-2 h-5 w-5" /></Link>
                 </Button>
               </div>
             </div>
 
             {/* Infographic Image Container (Right) */}
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-border group order-1 lg:order-2">
+            <div className="relative rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-2xl border border-border group order-1 lg:order-2">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
               <img src={globalConfImg} alt="Global Conferences That Drive Impact" className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-700" />
             </div>
@@ -510,50 +510,50 @@ const Index = () => {
       </section>
 
       {/* FAST-TRACK PUBLISHING SECTION (SCOPUS INFOGRAPHIC) */}
-      <section className="relative py-32 bg-[#000810] overflow-hidden border-t border-white/5">
+      <section className="relative py-16 sm:py-24 md:py-32 bg-[#000810] overflow-hidden border-t border-white/5">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="container relative z-10 max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             
             {/* Infographic Image Container */}
-            <div className="relative rounded-[2rem] overflow-hidden shadow-[0_0_50px_rgba(28,231,212,0.15)] border border-white/10 group">
+            <div className="relative rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-[0_0_50px_rgba(28,231,212,0.15)] border border-white/10 group">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
               <img src={scopusInfoImg} alt="Swift Publishing SCOPUS Indexed Journals" className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition-transform duration-700" />
             </div>
 
             {/* Content Side */}
             <div className="flex flex-col justify-center">
-              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary mb-6">
+              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-4 sm:mb-6">
                 <BookOpen className="h-4 w-4" /> Global Recognition
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-black text-white mb-6 leading-[1.1] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-black text-white mb-4 sm:mb-6 leading-[1.15] tracking-tight">
                 Swift Publishing in <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">SCOPUS</span> Indexed Journals
               </h2>
-              <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-xl">
+              <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-8 sm:mb-10 max-w-xl">
                 Eminsphere provides a guaranteed, fast-track publishing pipeline for multidisciplinary research. Ensure your work reaches the global academic community with maximum visibility and prestige.
               </p>
 
-              <div className="space-y-6 mb-12">
+              <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
                 {[
                   { title: "Boost Your Research Visibility", desc: "Gain unparalleled exposure among global institutions." },
                   { title: "Collaborate with Leading Experts", desc: "Connect with top-tier academics in your specific discipline." },
                   { title: "Get Indexed in Scopus", desc: "Secure your legacy with recognized, indexed publications." }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center font-black text-primary">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center font-black text-primary text-sm sm:text-base">
                       0{idx + 1}
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-white mb-1">{item.title}</h4>
-                      <p className="text-sm text-white/60">{item.desc}</p>
+                      <h4 className="text-lg sm:text-xl font-bold text-white mb-1">{item.title}</h4>
+                      <p className="text-xs sm:text-sm text-white/60 leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               <div>
-                <Button asChild className="bg-primary text-white hover:bg-primary/90 rounded-full font-black px-10 h-14 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-sm">
-                  <Link to="/recent-proceedings">Publish Your Work Today <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                <Button asChild className="bg-primary text-white hover:bg-primary/90 rounded-full font-black px-8 sm:px-10 h-12 sm:h-14 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-xs sm:text-sm w-full sm:w-auto text-center justify-center">
+                  <Link to="/recent-proceedings" className="flex items-center justify-center gap-2">Publish Your Work Today <ArrowRight className="ml-2 h-5 w-5" /></Link>
                 </Button>
               </div>
             </div>
@@ -562,40 +562,40 @@ const Index = () => {
       </section>
 
       {/* WHY EMINSPHERE — TRUST & CREDIBILITY SECTION */}
-      <section className="relative py-32 overflow-hidden bg-[#000d14]">
+      <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden bg-[#000d14]">
         <div className="absolute inset-0 dot-pattern opacity-5" />
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-        <div className="container relative z-10">
+        <div className="container relative z-10 px-4">
 
           {/* Section Header */}
-          <div className="text-center max-w-4xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary mb-5">
+          <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-20">
+            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-4 sm:mb-5">
               <ShieldCheck className="h-4 w-4" /> Globally Recognised
             </div>
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Why Researchers Trust <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">Eminsphere</span></h2>
-            <p className="text-lg text-white/60 leading-relaxed">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-white mb-4 sm:mb-6">Why Researchers Trust <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">Eminsphere</span></h2>
+            <p className="text-base sm:text-lg text-white/60 leading-relaxed">
               At Eminsphere, we bring together world-class researchers, academic institutions, and industry pioneers under one roof. Our conferences offer unparalleled opportunities to stay updated on cutting-edge technological developments, major breakthroughs, and global achievements. We are committed to advancing knowledge, fostering collaboration, and upholding the highest standards of academic integrity — making every Eminsphere event a globally credible milestone in your research journey.
             </p>
           </div>
 
           {/* GLOBAL REACH — ANIMATED COUNTRIES */}
-          <div className="mb-20">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary mb-4">
+          <div className="mb-12 sm:mb-20">
+            <div className="text-center mb-8 sm:mb-12">
+              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3 sm:mb-4">
                 <Globe2 className="h-4 w-4" /> International Presence
               </div>
-              <h3 className="text-3xl md:text-4xl font-serif font-bold text-white mb-3">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-3">
                 One Platform. <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Every Corner of the World.</span>
               </h3>
-              <p className="text-white/50 max-w-2xl mx-auto text-sm">
+              <p className="text-white/50 max-w-2xl mx-auto text-xs sm:text-sm">
                 Eminsphere conferences unite researchers, professors, and industry leaders from across the globe. Our past speakers have represented over 20 nations — each bringing unique perspectives that make our events truly international.
               </p>
             </div>
 
             {/* Animated Scrolling Country Pills */}
             <div className="overflow-hidden space-y-4 relative">
-              <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#000d14] to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#000d14] to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-[#000d14] to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-[#000d14] to-transparent z-10 pointer-events-none" />
 
               {/* Row 1 — scroll left */}
               <div className="flex w-max animate-[scroll_40s_linear_infinite]">
@@ -638,9 +638,9 @@ const Index = () => {
                   { flag: "🇸🇦", name: "Saudi Arabia" },
                   { flag: "🇧🇩", name: "Bangladesh" },
                 ].map((c, i) => (
-                  <div key={i} className="flex items-center gap-2 mx-3 px-5 py-3 rounded-full bg-white/5 border border-white/10 flex-shrink-0 hover:bg-white/10 hover:border-primary/40 transition-colors cursor-default">
-                    <span className="text-2xl">{c.flag}</span>
-                    <span className="text-white/80 font-semibold text-sm whitespace-nowrap">{c.name}</span>
+                  <div key={i} className="flex items-center gap-2 mx-2 sm:mx-3 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-white/5 border border-white/10 flex-shrink-0 hover:bg-white/10 hover:border-primary/40 transition-colors cursor-default">
+                    <span className="text-xl sm:text-2xl">{c.flag}</span>
+                    <span className="text-white/80 font-semibold text-xs sm:text-sm whitespace-nowrap">{c.name}</span>
                   </div>
                 ))}
               </div>
@@ -686,26 +686,26 @@ const Index = () => {
                   { flag: "🇴🇲", name: "Oman" },
                   { flag: "🇪🇸", name: "Spain" },
                 ].map((c, i) => (
-                  <div key={i} className="flex items-center gap-2 mx-3 px-5 py-3 rounded-full bg-white/5 border border-white/10 flex-shrink-0 hover:bg-white/10 hover:border-primary/40 transition-colors cursor-default">
-                    <span className="text-2xl">{c.flag}</span>
-                    <span className="text-white/80 font-semibold text-sm whitespace-nowrap">{c.name}</span>
+                  <div key={i} className="flex items-center gap-2 mx-2 sm:mx-3 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-white/5 border border-white/10 flex-shrink-0 hover:bg-white/10 hover:border-primary/40 transition-colors cursor-default">
+                    <span className="text-xl sm:text-2xl">{c.flag}</span>
+                    <span className="text-white/80 font-semibold text-xs sm:text-sm whitespace-nowrap">{c.name}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Country count strip */}
-            <div className="flex justify-center mt-10">
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10">
-                <Globe2 className="h-5 w-5 text-primary" />
-                <span className="text-white font-bold text-sm">20+ Countries · 45+ Past Speakers · 5 Continents</span>
+            <div className="flex justify-center mt-8 sm:mt-10 px-4">
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/5 border border-white/10 text-center">
+                <Globe2 className="h-4 w-4 sm:h-5 sm:w-5 text-primary shrink-0" />
+                <span className="text-white font-bold text-xs sm:text-sm">20+ Countries · 45+ Past Speakers · 5 Continents</span>
               </div>
             </div>
           </div>
 
           {/* Enterprise Services — Interactive Accordion */}
-          <div className="mb-20">
-            <h3 className="text-2xl md:text-3xl font-serif font-bold text-white text-center mb-14">Our Enterprise Solutions</h3>
+          <div className="mb-16 sm:mb-20">
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white text-center mb-10 sm:mb-14">Our Enterprise Solutions</h3>
             <div className="divide-y divide-white/5">
               {[
                 {
@@ -743,7 +743,7 @@ const Index = () => {
               ].map((s, i) => (
                 <div
                   key={s.num}
-                  className="group grid grid-cols-[80px_1fr] md:grid-cols-[120px_1fr_auto] gap-6 md:gap-10 items-center py-8 px-4 md:px-8 cursor-default hover:bg-white/3 rounded-2xl transition-all duration-500 relative overflow-hidden"
+                  className="group grid grid-cols-[60px_1fr] sm:grid-cols-[80px_1fr] md:grid-cols-[120px_1fr_auto] gap-4 sm:gap-6 md:gap-10 items-center py-6 sm:py-8 px-3 sm:px-4 md:px-8 cursor-default hover:bg-white/3 rounded-2xl transition-all duration-500 relative overflow-hidden"
                 >
                   {/* Animated left border */}
                   <div
@@ -753,7 +753,7 @@ const Index = () => {
 
                   {/* Big Number */}
                   <div
-                    className="font-black text-5xl md:text-7xl leading-none tabular-nums transition-colors duration-500 group-hover:opacity-100 opacity-20"
+                    className="font-black text-4xl sm:text-5xl md:text-7xl leading-none tabular-nums transition-colors duration-500 group-hover:opacity-100 opacity-20"
                     style={{ color: s.color }}
                   >
                     {s.num}
@@ -761,16 +761,16 @@ const Index = () => {
 
                   {/* Title + Description */}
                   <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-3 flex-wrap">
-                      <h4 className="text-xl md:text-2xl font-bold text-white group-hover:text-white transition-colors">{s.title}</h4>
+                    <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-white transition-colors">{s.title}</h4>
                       <span
-                        className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border opacity-0 group-hover:opacity-100 transition-all duration-500"
+                        className="text-[10px] font-bold uppercase tracking-widest px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full border opacity-0 group-hover:opacity-100 transition-all duration-500"
                         style={{ color: s.color, borderColor: `${s.color}40`, backgroundColor: `${s.color}10` }}
                       >
                         {s.tag}
                       </span>
                     </div>
-                    <p className="text-white/50 text-sm leading-relaxed max-w-2xl max-h-0 overflow-hidden group-hover:max-h-24 group-hover:text-white/70 transition-all duration-700">
+                    <p className="text-white/50 text-xs sm:text-sm leading-relaxed max-w-2xl max-h-0 overflow-hidden group-hover:max-h-24 group-hover:text-white/70 transition-all duration-700">
                       {s.description}
                     </p>
                   </div>
@@ -795,10 +795,10 @@ const Index = () => {
               { value: "100%", label: "Plagiarism-Free Policy", icon: BookOpen },
               { value: "15+ Years", label: "Academic Publishing Experience", icon: Globe2 },
             ].map(({ value, label, icon: Icon }) => (
-              <div key={label} className="flex flex-col items-center justify-center text-center p-8 bg-white/3 hover:bg-white/6 transition-colors">
-                <Icon className="h-6 w-6 text-primary mb-4" />
-                <div className="text-2xl font-black text-white mb-1">{value}</div>
-                <div className="text-xs text-white/50 uppercase tracking-wider font-bold">{label}</div>
+              <div key={label} className="flex flex-col items-center justify-center text-center p-5 sm:p-8 bg-white/3 hover:bg-white/6 transition-colors">
+                <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary mb-3 sm:mb-4" />
+                <div className="text-xl sm:text-2xl font-black text-white mb-1">{value}</div>
+                <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider font-bold">{label}</div>
               </div>
             ))}
           </div>
@@ -813,36 +813,36 @@ const Index = () => {
           100% { opacity: 1; transform: scale(1) translateY(0) rotate(var(--rot)); }
         }
       `}</style>
-      <section className="py-32 bg-[#000508] overflow-hidden border-t border-white/5">
-        <div className="container">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary mb-4">
+      <section className="py-16 sm:py-24 md:py-32 bg-[#000508] overflow-hidden border-t border-white/5">
+        <div className="container px-4">
+          <div className="text-center mb-10 sm:mb-16">
+            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3 sm:mb-4">
               <Sparkles className="h-4 w-4" /> Legacy of Excellence
             </div>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Glimpses from Our Conferences</h2>
-            <p className="text-white/50">Select a conference below to explore its moments.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-3 sm:mb-4">Glimpses from Our Conferences</h2>
+            <p className="text-sm sm:text-base text-white/50">Select a conference below to explore its moments.</p>
           </div>
 
           {/* Conference Tab Switcher */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-16">
             {recentConferencesData.map((conf, idx) => (
               <button
                 key={conf.title}
                 onClick={() => handleConfSwitch(idx)}
-                className={`px-5 py-3 rounded-full text-sm font-bold transition-all duration-300 border ${
+                className={`px-4 sm:px-5 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 border ${
                   activeConf === idx
                     ? 'bg-primary text-white border-primary shadow-[0_0_20px_rgba(16,185,129,0.3)]'
                     : 'bg-white/5 text-white/60 border-white/10 hover:border-white/30 hover:text-white'
                 }`}
               >
                 {conf.title}
-                <span className={`ml-2 text-[10px] font-normal ${activeConf === idx ? 'text-[#000508]/70' : 'text-white/30'}`}>{conf.date}</span>
+                <span className={`ml-1.5 sm:ml-2 text-[10px] font-normal ${activeConf === idx ? 'text-[#000508]/70' : 'text-white/30'}`}>{conf.date}</span>
               </button>
             ))}
           </div>
 
           {/* Staggered Polaroid Photo Grid */}
-          <div key={animKey} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div key={animKey} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
             {recentConferencesData[activeConf].images.map((img, idx) => {
               const rot = rotations[idx % rotations.length];
               return (
@@ -857,7 +857,7 @@ const Index = () => {
                   }}
                 >
                   <div
-                    className="bg-white p-2 pb-8 shadow-[0_8px_30px_rgba(0,0,0,0.5)] group-hover:rotate-0 transition-transform duration-400"
+                    className="bg-white p-1.5 sm:p-2 pb-5 sm:pb-8 shadow-[0_8px_30px_rgba(0,0,0,0.5)] group-hover:rotate-0 transition-transform duration-400"
                     style={{ transform: `rotate(${rot}deg)` }}
                   >
                     <img
@@ -873,8 +873,8 @@ const Index = () => {
           </div>
 
           {/* CTA below gallery */}
-          <div className="flex justify-center mt-10">
-            <Button asChild variant="outline" className="rounded-full border-white/20 text-white hover:bg-white/10 px-8 h-12 font-bold">
+          <div className="flex justify-center mt-8 sm:mt-10">
+            <Button asChild variant="outline" className="rounded-full border-white/20 text-white hover:bg-white/10 px-8 h-12 font-bold w-full sm:w-auto text-center justify-center">
               <Link to="/recent-conferences">View All Conference Details <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
@@ -882,23 +882,23 @@ const Index = () => {
       </section>
 
       {/* PUBLICATION CTA */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2000&auto=format&fit=crop')] opacity-10 mix-blend-overlay bg-cover bg-center bg-fixed" />
-        <div className="container relative z-10 max-w-5xl">
-          <Card className="glass-strong border-primary/20 p-12 md:p-20 text-center rounded-[3rem] shadow-[0_0_100px_rgba(152,227,152,0.1)] relative overflow-hidden">
+        <div className="container relative z-10 max-w-5xl px-4">
+          <Card className="glass-strong border-primary/20 p-6 sm:p-12 md:p-20 text-center rounded-3xl sm:rounded-[3rem] shadow-[0_0_100px_rgba(152,227,152,0.1)] relative overflow-hidden">
             <div className="absolute inset-0 shimmer opacity-20 pointer-events-none" />
-            <BookOpen className="h-20 w-20 mx-auto text-primary mb-8" />
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 text-balance">
+            <BookOpen className="h-14 w-14 sm:h-20 sm:w-20 mx-auto text-primary mb-6 sm:mb-8" />
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-white mb-4 sm:mb-6 text-balance">
               Get Published in Scopus & Web of Science
             </h2>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-base sm:text-xl text-white/70 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
               Elevate your academic profile. All accepted conference papers undergo rigorous double-blind peer review and are published in globally indexed partner journals and proceedings.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground h-16 px-10 rounded-full font-bold text-lg shadow-gold hover:-translate-y-1 transition-all">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 sm:h-16 px-8 sm:px-10 rounded-full font-bold text-base sm:text-lg shadow-gold hover:-translate-y-1 transition-all w-full sm:w-auto text-center justify-center">
                 <Link to="/registration">Submit Your Manuscript</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="h-16 px-10 rounded-full font-bold text-lg border-white/20 text-white hover:bg-white/10 transition-all">
+              <Button asChild size="lg" variant="outline" className="h-12 sm:h-16 px-8 sm:px-10 rounded-full font-bold text-base sm:text-lg border-white/20 text-white hover:bg-white/10 transition-all w-full sm:w-auto text-center justify-center">
                 <Link to="/recent-proceedings">View Digital Conference Proceedings</Link>
               </Button>
             </div>
