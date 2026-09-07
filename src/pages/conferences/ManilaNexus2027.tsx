@@ -327,15 +327,6 @@ const ManilaNexus2027 = () => {
     { country: "Malaysia 🇲🇾", role: "Digital Governance & Sustainable Cloud Networks" },
   ];
 
-  const fees = [
-    { category: "Author — Full Paper (Presentation & ISBN Proceedings)", india: "INR 9,500", intl: "USD 220" },
-    { category: "Student / Doctoral Research Scholar (Paper Author)", india: "INR 7,500", intl: "USD 180" },
-    { category: "Academic Delegate / Faculty (Oral Presentation)", india: "INR 6,000", intl: "USD 150" },
-    { category: "Industry / Corporate Professional Delegate", india: "INR 11,000", intl: "USD 280" },
-    { category: "Attendee / Listener (In-Person Attendance Only)", india: "INR 3,500", intl: "USD 90" },
-    { category: "Online Virtual Participant (Paper Presentation & Certificate)", india: "INR 5,500", intl: "USD 130" }
-  ];
-
   const venueFacilities = [
     { title: "Grand Plenary Hall", desc: "Acoustically tuned tiered auditorium accommodating 500+ delegates with dual panoramic LED displays." },
     { title: "Technical Parallel Rooms", desc: "4 specialized break-out halls with dedicated presentation podiums and hybrid streaming consoles." },
@@ -419,7 +410,6 @@ const ManilaNexus2027 = () => {
             <a href="#program" className="hover:text-cyan-400 transition-colors">Program</a>
             <a href="#committee" className="hover:text-cyan-400 transition-colors">Committee</a>
             <a href="#publication" className="hover:text-cyan-400 transition-colors">Publication</a>
-            <a href="#registration" className="hover:text-cyan-400 transition-colors">Registration</a>
             <a href="#venue" className="hover:text-cyan-400 transition-colors">Venue & Travel</a>
             <a href="#sponsors" className="hover:text-cyan-400 transition-colors">Sponsors</a>
             <a href="#faq" className="hover:text-cyan-400 transition-colors">FAQ</a>
@@ -431,7 +421,7 @@ const ManilaNexus2027 = () => {
               <a href="#submission">Submit Paper</a>
             </Button>
             <Button asChild size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-full text-xs font-semibold px-3 sm:px-4 shadow-md shadow-cyan-500/25">
-              <a href="#registration">Register</a>
+              <a href={EMN_REGISTRATION_LINK} target="_blank" rel="noreferrer">Register</a>
             </Button>
           </div>
         </div>
@@ -527,7 +517,7 @@ const ManilaNexus2027 = () => {
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 h-13 px-8 text-sm sm:text-base">
-                <a href="#registration">
+                <a href={EMN_REGISTRATION_LINK} target="_blank" rel="noreferrer">
                   Register Now
                 </a>
               </Button>
@@ -1081,58 +1071,6 @@ const ManilaNexus2027 = () => {
         </div>
       </section>
 
-      {/* 15 — REGISTRATION & FEES */}
-      <section id="registration" className="py-20 lg:py-28 bg-[#050d1c] border-y border-cyan-500/15">
-        <div className="container max-w-7xl px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-xs font-mono uppercase tracking-wider mb-4">
-              15 • Delegate Enrolment
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-6">
-              Registration Categories & Fee Matrix
-            </h2>
-            <p className="text-slate-300 text-base sm:text-lg">
-              Transparent registration tiers for authors, faculty, student scholars, industry executives, and virtual attendees.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto overflow-hidden rounded-2xl border border-cyan-500/30 bg-[#071329] shadow-2xl mb-12">
-            <div className="grid grid-cols-12 bg-gradient-to-r from-cyan-600 to-blue-700 text-white font-bold p-4 text-xs sm:text-sm">
-              <div className="col-span-6 sm:col-span-6">Registration Category</div>
-              <div className="col-span-3 sm:col-span-3 text-center">Indian Delegates</div>
-              <div className="col-span-3 sm:col-span-3 text-center">International Delegates</div>
-            </div>
-            <div className="divide-y divide-white/10">
-              {fees.map((fee, idx) => (
-                <div key={idx} className="grid grid-cols-12 p-4 text-xs sm:text-sm hover:bg-white/[0.02] transition-colors items-center">
-                  <div className="col-span-6 sm:col-span-6 font-medium text-white">{fee.category}</div>
-                  <div className="col-span-3 sm:col-span-3 text-center font-mono font-semibold text-cyan-400">{fee.india}</div>
-                  <div className="col-span-3 sm:col-span-3 text-center font-mono font-semibold text-cyan-400">{fee.intl}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* What's Included */}
-          <div className="max-w-4xl mx-auto p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-cyan-950/30 via-[#071329] to-blue-950/30 border border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="font-bold text-white text-lg mb-2">Every Registration Includes:</h3>
-              <ul className="grid sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-300">
-                <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-cyan-400 shrink-0" /> Full access to all technical & plenary sessions</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-cyan-400 shrink-0" /> Official Conference Kit & Delegate Badge</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-cyan-400 shrink-0" /> Author Certificate of Presentation / Participation</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-cyan-400 shrink-0" /> Buffet Luncheons & Coffee Networking Receptions</li>
-              </ul>
-            </div>
-            <Button asChild size="lg" className="rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-8 shadow-lg shadow-cyan-500/25 shrink-0">
-              <a href={EMN_REGISTRATION_LINK} target="_blank" rel="noreferrer">
-                Register for EMN 2027 <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* 16 — VENUE */}
       <section id="venue" className="py-20 lg:py-28 container max-w-7xl px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -1527,7 +1465,6 @@ const ManilaNexus2027 = () => {
               <a href="#speakers" className="hover:text-cyan-400 transition-colors">Speakers</a>
               <a href="#committee" className="hover:text-cyan-400 transition-colors">Committee</a>
               <a href="#program" className="hover:text-cyan-400 transition-colors">Program</a>
-              <a href="#registration" className="hover:text-cyan-400 transition-colors">Registration</a>
               <a href="#venue" className="hover:text-cyan-400 transition-colors">Venue</a>
               <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
             </div>
