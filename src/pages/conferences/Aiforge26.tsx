@@ -386,17 +386,25 @@ const Aiforge26 = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-              <Button asChild variant="hero" size="lg" className="w-full sm:w-auto rounded-full shadow-xl">
-                <a href="#glimpses">
-                  View Conference Glimpses <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full shadow-md border-white/20 bg-card/60 backdrop-blur-md hover:bg-card">
-                <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer">
-                  Microsoft CMT Archive <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
+            <div className="mt-8 p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-card/60 backdrop-blur-md border border-primary/20 shadow-xl max-w-3xl">
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mb-3">
+                Conference Concluded Successfully
+              </h2>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
+                Thank you to all keynote speakers, plenary presenters, researchers, and global delegates who made AIFORGE 2026 a resounding success. View the conference glimpses and memory archive below.
+              </p>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+                <Button asChild variant="hero" size="lg" className="w-full sm:w-auto rounded-full shadow-xl">
+                  <a href="#glimpses">
+                    View Conference Glimpses <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full shadow-md border-white/20 bg-card/60 backdrop-blur-md hover:bg-card">
+                  <a href="https://cmt3.research.microsoft.com/AIFORGE2026" target="_blank" rel="noreferrer">
+                    Microsoft CMT Portal <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -464,33 +472,20 @@ const Aiforge26 = () => {
 
             <div className="mt-5 flex flex-wrap items-center gap-4">
               <Button asChild variant="default" className="rounded-xl shadow-lg gap-2 font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-95 transition-all">
-                <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer">
-                  Submit Paper in Microsoft CMT <ArrowRight className="h-4 w-4" />
+                <a href="#glimpses">
+                  View Conference Glimpses <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
               <Button asChild variant="outline" className="rounded-xl shadow-sm gap-2 font-semibold border-primary/30 hover:bg-primary/10">
-                <a href={conferenceData.registrationLink} target="_blank" rel="noreferrer">
-                  Submit via Google Form <ArrowRight className="h-4 w-4" />
+                <a href="https://cmt3.research.microsoft.com/AIFORGE2026" target="_blank" rel="noreferrer">
+                  Microsoft CMT Portal <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
-              <a 
-                href={conferenceData.cmtLink} 
-                target="_blank" 
-                rel="noreferrer"
-                className="text-xs font-medium text-muted-foreground hover:text-primary hover:underline break-all w-full mt-1"
-              >
-                Direct Portal URL: {conferenceData.cmtLink}
-              </a>
             </div>
 
             <div className="mt-8 p-8 bg-accent/5 rounded-2xl border border-accent/20">
               <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
                 <h3 className="text-2xl font-bold text-primary">Call for Papers</h3>
-                <Button asChild size="sm" className="rounded-full shadow-md gap-1.5 font-semibold bg-primary hover:bg-primary/90">
-                  <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer">
-                    Submit Your Paper <ArrowRight className="h-4 w-4" />
-                  </a>
-                </Button>
               </div>
               <p className="text-muted-foreground text-lg mb-6">{conferenceData.callForPapers}</p>
               
