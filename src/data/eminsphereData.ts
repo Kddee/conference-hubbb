@@ -215,7 +215,6 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Main Conference", date: "20–21 March 2027" }
     ],
     speakers: [
-      { name: "Prof. Dr. Maria Elena Santos", designation: "Director, Institute of Intelligent Computing", university: "University of the Philippines Diliman, Philippines", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" },
       { name: "Dr. Jitendra Pandey, FHEA", designation: "TPC Chair & Senior Faculty Member", university: "Middle East College, Oman", image: "https://static.wixstatic.com/media/30814e_bf66c69035bc4e41bc50c2345187c6f2~mv2.jpeg" },
       { name: "Mr. Bhushan Balkrishna Chaudhari", designation: "Senior Technology Lead & Cloud Architect", university: "Enterprise Computing Division, USA", image: "https://static.wixstatic.com/media/30814e_86a164138da142578e674588143e3af3~mv2.jpeg" },
       { name: "Dr. Ayoub Regragui", designation: "Senior Research Scientist", university: "Mohammed V University, Morocco", image: "https://static.wixstatic.com/media/30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif" },

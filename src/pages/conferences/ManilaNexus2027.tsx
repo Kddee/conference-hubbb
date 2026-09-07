@@ -235,14 +235,6 @@ const ManilaNexus2027 = () => {
 
   const speakers = [
     {
-      name: "Prof. Dr. Maria Elena Santos",
-      title: "Director, Institute of Intelligent Computing",
-      affiliation: "University of the Philippines Diliman",
-      country: "Philippines 🇵🇭",
-      topic: "Sovereign AI Ecosystems & Scalable Autonomous Architectures in Southeast Asia",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop"
-    },
-    {
       name: "Dr. Jitendra Pandey, FHEA",
       title: "Technical Program Committee Chair & Senior Faculty Member",
       affiliation: "Middle East College",
@@ -287,7 +279,7 @@ const ManilaNexus2027 = () => {
   const programDay1 = [
     { time: "08:00 – 09:00", title: "Registration, Delegate Badge Collection & Welcome Coffee", track: "Plenary Foyer" },
     { time: "09:00 – 09:30", title: "Official Opening Ceremony & Presidential Address", track: "Grand Ballroom" },
-    { time: "09:30 – 10:15", title: "Opening Keynote: Sovereign AI & Scalable Autonomous Architectures", track: "Main Stage" },
+    { time: "09:30 – 10:15", title: "Opening Keynote: Frontier Intelligent Computing & Digital Futures", track: "Main Stage" },
     { time: "10:15 – 10:45", title: "Networking Coffee & Research Poster Exhibition", track: "Exhibition Hall" },
     { time: "10:45 – 12:30", title: "Technical Session I: Intelligent Computing & Machine Intelligence", track: "Rooms A, B & C" },
     { time: "12:30 – 13:30", title: "International Networking Luncheon", track: "Dining Pavilion" },
@@ -312,7 +304,7 @@ const ManilaNexus2027 = () => {
 
   const committee = [
     { role: "Conference General Chair", name: "Dr. Jitendra Pandey, FHEA", org: "Middle East College", country: "Oman" },
-    { role: "Conference Co-Chair", name: "Prof. Dr. Maria Elena Santos", org: "University of the Philippines", country: "Philippines" },
+    { role: "Conference Co-Chair", name: "TBA", org: "Academic Advisory Board", country: "Philippines" },
     { role: "Technical Program Chair", name: "Dr. Ayoub Regragui", org: "Mohammed V University", country: "Morocco" },
     { role: "Publication Chair", name: "Prof. Shweta N. Bansal", org: "D.Y. Patil College of Engineering", country: "India" },
     { role: "Industry Relations Chair", name: "Mr. Bhushan Balkrishna Chaudhari", org: "Enterprise Cloud Architect", country: "USA" },
