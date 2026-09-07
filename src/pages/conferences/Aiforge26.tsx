@@ -16,7 +16,7 @@ import intakhabPromoVideo from "@/assets/intakhab-promo.mp4";
 
 const conferenceData = {
   id: "AIFORGE 2026",
-  title: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering",
+  title: "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering (AIFORGE 2026)",
   isbn: "978-81-687765-9-3",
   date: "6 September 2026",
   location: "Hybrid Mode, Global",
@@ -52,7 +52,7 @@ const conferenceData = {
     { title: "ISBN Conference Proceedings", img: "https://i.postimg.cc/VvnzKNKj/image.png", desc: "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number (ISBN: 978-81-687765-9-3), ensuring global visibility, citation, and academic recognition." },
     { title: "Google Scholar Indexing", img: "/google-scholar.svg", desc: "All published papers will be indexed in Google Scholar, providing broad global accessibility, citation tracking, and enhanced author visibility." },
     { title: "Web of Science (Under Consideration)", img: "https://i.postimg.cc/0NX5QF6x/image.png", desc: "Selected papers may be considered for submission to journals indexed in Web of Science, based on quality, originality, and editorial evaluation." },
-    { title: "DOI & Digital Access", img: null, desc: "Each published paper may be assigned a Digital Object Identifier (DOI) to ensure permanent accessibility and citation tracking." }
+    { title: "DOI & Digital Access", img: "/doi-logo.svg", desc: "Each published paper may be assigned a Digital Object Identifier (DOI) to ensure permanent accessibility and citation tracking." }
   ],
   awards: [
     {
@@ -395,20 +395,20 @@ const Aiforge26 = () => {
               </div>
             </div>
 
-            <div className="mt-8 p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-card/60 backdrop-blur-md border border-primary/20 shadow-xl max-w-3xl">
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mb-3">
-                Conference Concluded Successfully
+            <div className="mt-8 max-w-3xl space-y-4">
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary">
+                AIFORGE 2026 Concluded Successfully
               </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
-                Thank you to all keynote speakers, plenary presenters, researchers, and global delegates who made AIFORGE 2026 a resounding success. View the conference glimpses and memory archive below.
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                Thank you to all keynote speakers, plenary presenters, researchers, and global delegates who made <strong className="text-foreground font-semibold">AIFORGE 2026</strong> a resounding success. View the conference glimpses and memory archive below.
               </p>
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-                <Button asChild variant="hero" size="lg" className="w-full sm:w-auto rounded-full shadow-xl">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                <Button asChild variant="hero" size="lg" className="rounded-full shadow-xl">
                   <a href="#glimpses">
                     View Conference Glimpses <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full shadow-md border-white/20 bg-card/60 backdrop-blur-md hover:bg-card">
+                <Button asChild variant="outline" size="lg" className="rounded-full shadow-md border-primary/30 hover:bg-primary/10">
                   <a href="https://cmt3.research.microsoft.com/AIFORGE2026" target="_blank" rel="noreferrer">
                     Microsoft CMT Portal <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
