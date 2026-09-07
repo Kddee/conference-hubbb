@@ -33,7 +33,10 @@ import {
   Trophy,
   Compass,
   FileCheck2,
-  Scale
+  Scale,
+  ExternalLink,
+  AlertCircle,
+  Info
 } from "lucide-react";
 
 import { toast } from "sonner";
@@ -240,7 +243,7 @@ const ManilaNexus2027 = () => {
       affiliation: "Middle East College",
       country: "Oman 🇴🇲",
       topic: "Cross-Disciplinary AI Foundations for Resilient Cyber Infrastructures",
-      image: "https://static.wixstatic.com/media/30814e_bf66c69035bc4e41bc50c2345187c6f2~mv2.jpeg"
+      image: "/speakers/dr-jitendra-pandey.jpg"
     },
     {
       name: "Mr. Bhushan Balkrishna Chaudhari",
@@ -248,7 +251,7 @@ const ManilaNexus2027 = () => {
       affiliation: "Enterprise Computing Division",
       country: "New Jersey, USA 🇺🇸",
       topic: "Architecting Enterprise Zero-Trust & High-Performance Distributed Systems",
-      image: "https://static.wixstatic.com/media/30814e_86a164138da142578e674588143e3af3~mv2.jpeg"
+      image: "/speakers/bhushan-chaudhari.jpg"
     },
     {
       name: "Dr. Ayoub Regragui",
@@ -256,7 +259,7 @@ const ManilaNexus2027 = () => {
       affiliation: "Mohammed V University",
       country: "Morocco 🇲🇦",
       topic: "Deep Generative Models for Multi-Modal Predictive Decision Systems",
-      image: "https://static.wixstatic.com/media/30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif"
+      image: "/speakers/dr-ayoub-regragui.avif"
     },
     {
       name: "Prof. Shweta N. Bansal",
@@ -264,7 +267,7 @@ const ManilaNexus2027 = () => {
       affiliation: "D.Y. Patil College of Engineering",
       country: "India 🇮🇳",
       topic: "Knowledge Graph Engineering & Intelligent Decision Automation",
-      image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg"
+      image: "/speakers/prof-shweta-bansal.jpg"
     },
     {
       name: "Dr. Zoha Rahman",
@@ -272,7 +275,7 @@ const ManilaNexus2027 = () => {
       affiliation: "Centre for Big Data & Machine Learning",
       country: "USA 🇺🇸",
       topic: "Next-Gen Quantum Computing Intersections with High-Dimensional Data Analytics",
-      image: "https://static.wixstatic.com/media/30814e_2a893f0530e74f178c18e5939b687048~mv2.jpg"
+      image: "/speakers/dr-zoha-rahman.jpg"
     }
   ];
 
@@ -874,26 +877,48 @@ const ManilaNexus2027 = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {speakers.map((sp, idx) => (
-            <Card key={idx} className="bg-[#071329] border-cyan-500/20 overflow-hidden hover:border-cyan-500/40 transition-all hover:-translate-y-1 group">
-              <div className="aspect-[4/3] overflow-hidden relative">
+            <Card
+              key={idx}
+              className="bg-[#071329] border-cyan-500/20 hover:border-cyan-400/50 transition-all hover:-translate-y-1.5 duration-300 group rounded-2xl p-6 sm:p-7 flex flex-col items-center text-center shadow-lg hover:shadow-cyan-500/10"
+            >
+              {/* Headshot Portrait Frame - Carefully proportioned with object-top to prevent face cropping */}
+              <div className="relative w-48 h-56 sm:w-52 sm:h-60 mb-5 overflow-hidden rounded-2xl border-2 border-cyan-500/30 bg-[#030914] shadow-md group-hover:border-cyan-400 group-hover:shadow-cyan-500/20 transition-all">
                 <img
                   src={sp.image}
                   alt={sp.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="h-full w-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-mono text-cyan-300 border border-white/10">
-                  {sp.country}
-                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-serif font-bold text-xl text-white mb-1 group-hover:text-cyan-300 transition-colors">{sp.name}</h3>
-                <p className="text-xs text-cyan-400 font-medium mb-1">{sp.title}</p>
-                <p className="text-xs text-slate-400 mb-4">{sp.affiliation}</p>
-                <div className="pt-3 border-t border-white/10">
-                  <div className="text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-1">Keynote Topic</div>
-                  <p className="text-xs text-slate-300 italic font-serif">"{sp.topic}"</p>
+
+              {/* Country Badge */}
+              <div className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/25 mb-3.5 shadow-sm">
+                <span>{sp.country}</span>
+              </div>
+
+              {/* Speaker Name */}
+              <h3 className="font-serif font-bold text-xl text-white mb-1.5 group-hover:text-cyan-300 transition-colors leading-snug">
+                {sp.name}
+              </h3>
+
+              {/* Designation / Academic Title */}
+              <p className="text-xs text-cyan-400 font-semibold mb-1 leading-relaxed">
+                {sp.title}
+              </p>
+
+              {/* Affiliation */}
+              <p className="text-xs text-slate-400 mb-5 leading-relaxed">
+                {sp.affiliation}
+              </p>
+
+              {/* Keynote Topic Box */}
+              <div className="mt-auto w-full pt-3.5 border-t border-cyan-500/15 bg-white/[0.02] p-3.5 rounded-xl text-left">
+                <div className="text-[10px] uppercase font-mono tracking-wider text-cyan-400/80 mb-1.5 flex items-center gap-1.5 font-semibold">
+                  <Sparkles className="h-3 w-3 text-cyan-400 shrink-0" /> Keynote Topic
                 </div>
+                <p className="text-xs text-slate-200 italic font-serif leading-relaxed">
+                  "{sp.topic}"
+                </p>
               </div>
             </Card>
           ))}
@@ -1158,6 +1183,205 @@ const ManilaNexus2027 = () => {
                 Official visa invitation letters are issued promptly to all registered international delegates to facilitate consular visa issuance.
               </p>
             </Card>
+          </div>
+
+          {/* Detailed Philippines Visa & Border Entry Information */}
+          <div className="mt-16 pt-16 border-t border-cyan-500/20">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-xs font-mono uppercase tracking-wider mb-4">
+                Visa & Border Regulations
+              </div>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white mb-4">
+                Philippines Visa Guidelines for International Delegates
+              </h3>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Official travel, visa exemption criteria, Philippine e-Visa details, mandatory eTravel declaration, and conference visa invitation letter procedures for delegates attending EMN 2027 in Manila.
+              </p>
+            </div>
+
+            {/* 4 Detailed Visa Pillar Cards */}
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              {/* Pillar 1: Visa-Free Entry (EO 408) */}
+              <Card className="p-6 sm:p-8 bg-[#071329] border-cyan-500/20 hover:border-cyan-500/40 transition-all rounded-2xl relative">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                    <Globe className="h-6 w-6" />
+                  </div>
+                  <span className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                    157+ Countries Eligible
+                  </span>
+                </div>
+                <h4 className="font-serif font-bold text-xl text-white mb-2">
+                  1. Visa-Free Entry (Executive Order No. 408)
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                  Nationals of 157 countries can enter the Philippines <strong className="text-cyan-300">without a visa</strong> for stays of up to <strong className="text-cyan-300">30 days</strong> for conference attendance, meetings, and business tourism.
+                </p>
+                <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 space-y-2 mb-4 text-xs text-slate-400">
+                  <p className="text-slate-200 font-semibold mb-1">Eligible Regions Include:</p>
+                  <p>• ASEAN member states (Singapore, Malaysia, Indonesia, Thailand, Vietnam, etc.)</p>
+                  <p>• United States, Canada, United Kingdom, Australia, New Zealand</p>
+                  <p>• European Union member states, Switzerland, Norway</p>
+                  <p>• Japan, South Korea, UAE, Saudi Arabia, Oman, Qatar</p>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-cyan-400/90 font-mono">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-400" />
+                  <span>Requires valid passport (min. 6 mos) + confirmed return ticket</span>
+                </div>
+              </Card>
+
+              {/* Pillar 2: 9(a) Visa & Official Philippine e-Visa */}
+              <Card className="p-6 sm:p-8 bg-[#071329] border-cyan-500/20 hover:border-cyan-500/40 transition-all rounded-2xl relative">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                    <FileCheck2 className="h-6 w-6" />
+                  </div>
+                  <span className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">
+                    Online & Consular
+                  </span>
+                </div>
+                <h4 className="font-serif font-bold text-xl text-white mb-2">
+                  2. Philippine 9(a) Visa & Official e-Visa Portal
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                  Delegates from non-visa-exempt nations (including India, China, and other non-EO 408 countries) must apply for a <strong className="text-cyan-300">9(a) Temporary Visitor Visa</strong> (Business / Conference Attendance category).
+                </p>
+                <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 space-y-2 mb-4 text-xs text-slate-400">
+                  <p className="text-slate-200 font-semibold mb-1">How to Apply:</p>
+                  <p>• <strong className="text-slate-300">Philippine Official e-Visa:</strong> Eligible passport holders can apply online via the Department of Foreign Affairs (DFA) portal (<span className="text-cyan-300 font-mono">evisa.gov.ph</span>).</p>
+                  <p>• <strong className="text-slate-300">Consular Application:</strong> Submit at the nearest Philippine Embassy or Consulate General in your home country.</p>
+                  <p>• <strong className="text-slate-300">Processing Time:</strong> 15 to 30 business days. We strongly advise applying at least 4–6 weeks in advance.</p>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-cyan-400/90 font-mono">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-400" />
+                  <span>Eminsphere provides official stamped Visa Support Letters</span>
+                </div>
+              </Card>
+
+              {/* Pillar 3: Mandatory eTravel Declaration */}
+              <Card className="p-6 sm:p-8 bg-[#071329] border-cyan-500/20 hover:border-cyan-500/40 transition-all rounded-2xl relative">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-12 w-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                    <AlertCircle className="h-6 w-6" />
+                  </div>
+                  <span className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                    Mandatory for All Travelers
+                  </span>
+                </div>
+                <h4 className="font-serif font-bold text-xl text-white mb-2">
+                  3. Mandatory Philippine eTravel QR Registration
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                  The Philippine Bureau of Immigration requires <strong className="text-amber-300">ALL arriving international passengers</strong> (both visa-free and visa holders) to complete the electronic customs and health declaration before flying.
+                </p>
+                <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 space-y-2 mb-4 text-xs text-slate-400">
+                  <p>• <strong className="text-slate-300">Official Portal:</strong> Register strictly at <a href="https://etravel.gov.ph" target="_blank" rel="noreferrer" className="text-cyan-400 underline font-mono">etravel.gov.ph</a> (official government portal).</p>
+                  <p>• <strong className="text-slate-300">Submission Window:</strong> Fill within <strong className="text-slate-200">72 hours prior to scheduled departure</strong> to the Philippines.</p>
+                  <p>• <strong className="text-slate-300">QR Code:</strong> Generates an official electronic QR code (Green status) required at airline check-in and NAIA border control.</p>
+                  <p className="text-amber-400/90 font-medium">⚠️ Registration is 100% free of charge. Beware of unauthorized third-party paid websites.</p>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-amber-400/90 font-mono">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-amber-400" />
+                  <span>Must be presented upon arrival at Manila Airport (NAIA)</span>
+                </div>
+              </Card>
+
+              {/* Pillar 4: Conference Visa Support Letter */}
+              <Card className="p-6 sm:p-8 bg-[#071329] border-cyan-500/20 hover:border-cyan-500/40 transition-all rounded-2xl relative">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                    <ShieldCheck className="h-6 w-6" />
+                  </div>
+                  <span className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">
+                    Secretariat Support
+                  </span>
+                </div>
+                <h4 className="font-serif font-bold text-xl text-white mb-2">
+                  4. Official Conference Visa Invitation Letter
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                  The Eminsphere Manila Nexus 2027 Secretariat issues official, authenticated Letters of Invitation and Visa Support Letters to registered authors, co-authors, and delegates.
+                </p>
+                <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 space-y-2 mb-4 text-xs text-slate-400">
+                  <p className="text-slate-200 font-semibold mb-1">To Request Your Official Letter:</p>
+                  <p>Email <span className="text-cyan-300 font-mono">conference@eminsphere.com</span> with Subject: <code className="text-slate-300 text-[11px] bg-white/5 px-1.5 py-0.5 rounded">[EMN 2027 Visa Letter Request - Paper ID]</code></p>
+                  <p>• Full Name (as printed on your international passport)</p>
+                  <p>• Passport Number, Country of Issue & Expiry Date</p>
+                  <p>• Accepted Paper Title & Manuscript Tracking ID (for authors)</p>
+                  <p>• Affiliated University / Research Organization & Current Designation</p>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-cyan-400/90 font-mono">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-400" />
+                  <span>Letters issued within 2 to 3 working days after registration</span>
+                </div>
+              </Card>
+            </div>
+
+            {/* Checklist & Practical Consular Guidance Card */}
+            <div className="p-8 rounded-2xl bg-gradient-to-r from-[#071329] via-[#081836] to-[#071329] border border-cyan-500/30">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-6">
+                <div>
+                  <h4 className="text-xl font-serif font-bold text-white mb-2 flex items-center gap-2">
+                    <FileText className="h-5 w-5 text-cyan-400" />
+                    Consular Visa Application Document Checklist
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-300">
+                    Standard documents required when applying for a Philippine 9(a) visa at a consular mission or via the e-Visa portal:
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <Button asChild variant="outline" size="sm" className="rounded-full border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 text-xs">
+                    <a href="https://evisa.gov.ph" target="_blank" rel="noreferrer">
+                      Philippine e-Visa Portal <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" size="sm" className="rounded-full border-amber-500/40 text-amber-300 hover:bg-amber-500/10 text-xs">
+                    <a href="https://etravel.gov.ph" target="_blank" rel="noreferrer">
+                      eTravel Portal (72h prior) <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
+                    </a>
+                  </Button>
+                  <Button asChild size="sm" className="rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs">
+                    <a href="mailto:conference@eminsphere.com?subject=EMN%202027%20Visa%20Invitation%20Letter%20Request">
+                      Request Visa Support Letter <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 pt-4 border-t border-white/10 text-xs text-slate-300">
+                <div className="p-3.5 rounded-xl bg-black/30 border border-white/5 space-y-1">
+                  <span className="text-cyan-400 font-semibold block mb-1 font-mono">01 • Passport Validity</span>
+                  <p className="text-slate-400">Must have at least 6 months validity beyond the date of departure from the Philippines, with at least 2 blank pages.</p>
+                </div>
+                <div className="p-3.5 rounded-xl bg-black/30 border border-white/5 space-y-1">
+                  <span className="text-cyan-400 font-semibold block mb-1 font-mono">02 • Conference Documentation</span>
+                  <p className="text-slate-400">Official Eminsphere Manila Nexus 2027 Letter of Invitation, paper acceptance certificate, and registration invoice.</p>
+                </div>
+                <div className="p-3.5 rounded-xl bg-black/30 border border-white/5 space-y-1">
+                  <span className="text-cyan-400 font-semibold block mb-1 font-mono">03 • Flight Reservation</span>
+                  <p className="text-slate-400">Confirmed round-trip flight booking or verifiable travel itinerary entering and exiting Manila (NAIA).</p>
+                </div>
+                <div className="p-3.5 rounded-xl bg-black/30 border border-white/5 space-y-1">
+                  <span className="text-cyan-400 font-semibold block mb-1 font-mono">04 • Accommodation Proof</span>
+                  <p className="text-slate-400">Hotel booking voucher or official conference partner accommodation reservation in Metro Manila.</p>
+                </div>
+                <div className="p-3.5 rounded-xl bg-black/30 border border-white/5 space-y-1">
+                  <span className="text-cyan-400 font-semibold block mb-1 font-mono">05 • Proof of Financial Support</span>
+                  <p className="text-slate-400">Recent bank statement, university travel sponsorship letter, or employer travel authorization guarantee.</p>
+                </div>
+                <div className="p-3.5 rounded-xl bg-black/30 border border-white/5 space-y-1">
+                  <span className="text-cyan-400 font-semibold block mb-1 font-mono">06 • eTravel QR Verification</span>
+                  <p className="text-slate-400">Mandatory digital registration on etravel.gov.ph within 72 hours prior to boarding flight to Manila.</p>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-3 text-xs text-slate-400">
+                <Info className="h-4 w-4 text-cyan-400 shrink-0" />
+                <span>
+                  <strong>Important Notice:</strong> Visa policies and processing timelines are established by the Philippine Bureau of Immigration and Department of Foreign Affairs. We advise all international participants to consult their local Philippine Embassy or Consulate General for specific consular requirements.
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
