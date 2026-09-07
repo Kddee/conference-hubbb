@@ -36,10 +36,17 @@ import {
   Scale
 } from "lucide-react";
 
-const EMN_REGISTRATION_LINK = "https://forms.gle/oY44ySZUNz3puve4A";
+import { toast } from "sonner";
+
+const EMN_REGISTRATION_LINK = "#";
 
 const ManilaNexus2027 = () => {
   const [activeDay, setActiveDay] = useState<"day1" | "day2">("day1");
+
+  const handleRegistrationClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    toast.info("Registration opening soon! The official registration portal link will be announced and updated shortly.");
+  };
 
   const quickStats = [
     { label: "Conference Dates", value: "20–21 March 2027", sub: "Two-Day Global Summit", icon: Calendar },
@@ -336,14 +343,6 @@ const ManilaNexus2027 = () => {
     { title: "Full Banquet Catering", desc: "Chef-curated international buffet luncheons, dietary-certified options, and continuous refreshments." }
   ];
 
-  const sponsorshipTiers = [
-    { tier: "Platinum Partner", slots: "2 Available", highlight: "Keynote speaking slot, premier double exhibition booth, 8 complimentary passes, full-page catalog feature.", badge: "Highest Visibility" },
-    { tier: "Gold Partner", slots: "4 Available", highlight: "Panel discussion inclusion, prime single exhibition booth, 5 complimentary passes, featured logo branding.", badge: "Prominent" },
-    { tier: "Silver Partner", slots: "6 Available", highlight: "Standard exhibition booth, 3 complimentary passes, branding on all conference banners and website.", badge: "Core" },
-    { tier: "Exhibition Partner", slots: "8 Available", highlight: "Dedicated product demo booth in main networking foyer, 2 delegate passes, attendee bag insert.", badge: "Showcase" },
-    { tier: "Technology / Academic / Media", slots: "Flexible", highlight: "Custom co-branding, session sponsorship, media coverage, and specialized award naming rights.", badge: "Specialized" }
-  ];
-
   const awards = [
     { title: "Best Research Paper Award", desc: "Awarded to the paper demonstrating supreme originality, methodological rigor, and transformative scientific contribution.", icon: Trophy },
     { title: "Best Student Paper Award", desc: "Recognizing outstanding primary research conducted and presented by a registered doctoral or graduate student.", icon: Award },
@@ -411,7 +410,6 @@ const ManilaNexus2027 = () => {
             <a href="#committee" className="hover:text-cyan-400 transition-colors">Committee</a>
             <a href="#publication" className="hover:text-cyan-400 transition-colors">Publication</a>
             <a href="#venue" className="hover:text-cyan-400 transition-colors">Venue & Travel</a>
-            <a href="#sponsors" className="hover:text-cyan-400 transition-colors">Sponsors</a>
             <a href="#faq" className="hover:text-cyan-400 transition-colors">FAQ</a>
             <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
           </nav>
@@ -420,8 +418,12 @@ const ManilaNexus2027 = () => {
             <Button asChild size="sm" variant="outline" className="border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 rounded-full text-xs font-semibold px-3 sm:px-4">
               <a href="#submission">Submit Paper</a>
             </Button>
-            <Button asChild size="sm" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-full text-xs font-semibold px-3 sm:px-4 shadow-md shadow-cyan-500/25">
-              <a href={EMN_REGISTRATION_LINK} target="_blank" rel="noreferrer">Register</a>
+            <Button
+              size="sm"
+              onClick={handleRegistrationClick}
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-full text-xs font-semibold px-3 sm:px-4 shadow-md shadow-cyan-500/25 cursor-pointer"
+            >
+              Register
             </Button>
           </div>
         </div>
@@ -516,10 +518,13 @@ const ManilaNexus2027 = () => {
                   Submit Your Paper <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 h-13 px-8 text-sm sm:text-base">
-                <a href={EMN_REGISTRATION_LINK} target="_blank" rel="noreferrer">
-                  Register Now
-                </a>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={handleRegistrationClick}
+                className="rounded-full border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 h-13 px-8 text-sm sm:text-base cursor-pointer"
+              >
+                Register Now
               </Button>
               <Button asChild size="lg" variant="ghost" className="text-slate-300 hover:text-white hover:bg-white/5 rounded-full h-13 px-6 text-sm sm:text-base">
                 <a href="#speaker-call">
@@ -852,7 +857,7 @@ const ManilaNexus2027 = () => {
                 Direct all initial submissions through our designated submission portal or contact the editorial secretariat at <span className="text-cyan-300 font-mono">papers@eminsphere.com</span>.
               </p>
               <Button asChild size="lg" className="rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-8 shadow-xl shadow-cyan-500/25">
-                <a href={EMN_REGISTRATION_LINK} target="_blank" rel="noreferrer">
+                <a href="mailto:papers@eminsphere.com?subject=EMN%202027%20Paper%20Submission">
                   Submit Paper Online <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -1162,43 +1167,6 @@ const ManilaNexus2027 = () => {
               </p>
             </Card>
           </div>
-        </div>
-      </section>
-
-      {/* 18 — SPONSORSHIP */}
-      <section id="sponsors" className="py-20 lg:py-28 container max-w-7xl px-4 sm:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-xs font-mono uppercase tracking-wider mb-4">
-            18 • Industry Partnerships
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-6">
-            Partner With Eminsphere Manila Nexus 2027
-          </h2>
-          <p className="text-slate-300 text-base sm:text-lg">
-            Position your organization at the epicenter of international AI and computing innovation before leading academics, enterprise buyers, and innovators.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {sponsorshipTiers.map((sp, idx) => (
-            <Card key={idx} className="p-6 bg-[#071329] border-cyan-500/20 hover:border-cyan-500/40 transition-all flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/20">
-                    {sp.badge}
-                  </span>
-                  <span className="text-xs text-slate-400">{sp.slots}</span>
-                </div>
-                <h3 className="font-serif font-bold text-xl text-white mb-3">{sp.tier}</h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">{sp.highlight}</p>
-              </div>
-              <Button asChild variant="outline" className="w-full border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 text-xs">
-                <a href="mailto:sponsorship@eminsphere.com?subject=EMN%202027%20Sponsorship%20Inquiry">
-                  Request Prospectus & Booking
-                </a>
-              </Button>
-            </Card>
-          ))}
         </div>
       </section>
 

@@ -196,7 +196,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     title: "Eminsphere Manila Nexus 2027 (EMN 2027)",
     date: "20–21 March 2027",
     location: "Hybrid — In-Person Manila, Philippines + Online",
-    registrationLink: "https://forms.gle/oY44ySZUNz3puve4A",
+    registrationLink: "#",
     description: "International Conference on Intelligent Computing, Emerging Systems and Digital Futures. A premier global summit bringing together researchers, academics, technology professionals, industry leaders, innovators, and emerging scholars to explore the evolving landscape of intelligent computing, emerging digital systems, and future technologies in Manila, Philippines.",
     thematicTracks: [
       "Intelligent Computing & Artificial Intelligence (AI, Generative AI, Agentic AI, Machine Learning)",
