@@ -131,7 +131,7 @@ const conferenceData = {
       role: "Conference General Chair",
       org: "Uttaradit Rajabhat University",
       country: "Thailand",
-      img: advisoryImg1,
+      img: "/speakers/dr-walida-ounruean.png",
       bio: ["Dr. Walida Ounruean is a distinguished academic and researcher known for her impactful contributions to education and technology. Serving as a crucial bridge between innovative educational methodologies and modern AI applications, her work is internationally recognized."],
       publications: ["Selected Publications coming soon..."],
       awards: ["Excellence in Research Award"]
@@ -141,7 +141,7 @@ const conferenceData = {
       role: "Conference Co-Chair",
       org: "Candy Rainbow Creations",
       country: "South Africa",
-      img: advisoryImg2,
+      img: "/speakers/ezinne-esther-arisa.png",
       bio: ["Ezinne Esther Arisa is an industry leader and visionary in digital transformation. Her strategic insights have guided numerous organizations through complex technological shifts, cementing her status as a prominent figure in global innovation."],
       publications: ["Selected Publications coming soon..."],
       awards: ["Industry Leadership Award"]
@@ -151,14 +151,14 @@ const conferenceData = {
       role: "Advisory Board Member",
       org: "University Politehnica of Bucharest",
       country: "Romania",
-      img: "https://static.wixstatic.com/media/30814e_fb0f8a532d8a413abf8b61b143684fed~mv2.png"
+      img: "/speakers/marghescu-cristina.png"
     },
     {
       name: "Nadine Zeinoun",
       role: "Advisory Board Member",
       org: "President, ICF Chapter Ottawa",
       country: "Lebanon",
-      img: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg"
+      img: "/speakers/nadine-zeinoun.jpeg"
     },
     {
       name: "Dr. Mbombi Khizamane",
@@ -190,7 +190,7 @@ const conferenceData = {
       category: "Plenary Speaker",
       org: "IU International University",
       country: "Germany",
-      img: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg"
+      img: "/speakers/prof-alexander-bull.jpeg"
     },
     {
       name: "Hardeep Singh Tiwana",
