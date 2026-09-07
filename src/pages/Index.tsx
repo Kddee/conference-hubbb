@@ -175,7 +175,6 @@ const recentConferencesData = [
 const rotations = [-3, 2, -1.5, 3, -2, 1, -2.5, 2.5, -1, 3, -3, 1.5, -2, 2];
 
 const upcoming = [
-  { title: "AIFORGE 2026: Agentic Intelligence", city: "Hybrid Mode", date: "6 September 2026", topic: "AI & Engineering", isbn: "978-81-687765-9-3", link: "/aiforge-26", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" },
   { title: "ICMREF-26: Multidisciplinary Research & AI", city: "Tbilisi, Georgia", date: "4 October 2026", topic: "Technology & AI", link: "/icmref-26", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" },
 ];
 
@@ -273,7 +272,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* UNIQUE FLOATING TICKET BANNER FOR AIFORGE 2026 */}
+      {/* UNIQUE FLOATING TICKET BANNER FOR ICMREF-26 */}
       <div className="relative z-30 container px-4 mx-auto max-w-5xl mt-12 sm:mt-16 mb-8">
         <div className="relative group rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-r from-accent via-primary to-secondary p-1 shadow-[0_20px_50px_rgba(16,185,129,0.15)] hover:shadow-[0_30px_60px_rgba(16,185,129,0.3)] transition-all duration-500 transform hover:-translate-y-2">
           
@@ -281,14 +280,14 @@ const Index = () => {
             
             {/* Top Tape overlay */}
             <div className="absolute top-0 left-0 w-full bg-accent/10 border-b border-accent/20 flex justify-between px-4 sm:px-8 py-2 z-20 backdrop-blur-md">
-              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Limited Availability</span>
-              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Priority Access</span>
+              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Registrations Open</span>
+              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Upcoming Flagship</span>
             </div>
 
             {/* Left - Image Context */}
             <div className="md:w-2/5 relative h-56 sm:h-64 md:h-auto overflow-hidden">
               <div className="absolute inset-0 bg-accent/20 mix-blend-overlay z-10"></div>
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="AIFORGE 2026" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-60 grayscale hover:grayscale-0" />
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" alt="ICMREF-26" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-60 grayscale hover:grayscale-0" />
               <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#050B14] via-transparent to-transparent z-10"></div>
               <div className="absolute bottom-6 left-6 z-20">
                 <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center border-2 border-[#050B14] shadow-lg">
@@ -300,34 +299,34 @@ const Index = () => {
             {/* Right - Content */}
             <div className="md:w-3/5 p-5 sm:p-8 md:p-12 relative z-10 flex flex-col justify-center pt-10 sm:pt-12 md:pt-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold tracking-widest uppercase mb-4 self-start">
-                <Sparkles className="w-3 h-3" /> Featured Conference
+                <Sparkles className="w-3 h-3" /> Featured Upcoming Conference
               </div>
               
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white mb-2 tracking-tight">
-                AIFORGE 2026
+                ICMREF-26
               </h3>
               <p className="text-base sm:text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent mb-6 leading-snug">
-                Agentic Intelligence for Foundations, Orchestration, Research, Governance & Engineering
+                Multidisciplinary Research & Emerging Frontiers in AI, Software Systems & Technologies
               </p>
               
               <div className="flex flex-wrap gap-3 sm:gap-4 mb-8">
                 <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium bg-white/5 px-3 sm:px-4 py-2 rounded-lg border border-white/10">
-                  <Calendar className="w-4 h-4 text-accent" /> 6 September 2026
+                  <Calendar className="w-4 h-4 text-accent" /> 4 October 2026
                 </div>
                 <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium bg-white/5 px-3 sm:px-4 py-2 rounded-lg border border-white/10">
-                  <Globe className="w-4 h-4 text-accent" /> Hybrid Mode, Global
+                  <MapPin className="w-4 h-4 text-accent" /> Tbilisi, Georgia
                 </div>
               </div>
               
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
                 <Button asChild size="lg" className="rounded-full bg-accent hover:bg-primary text-[#050B14] font-black uppercase tracking-wider px-8 h-12 sm:h-14 shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all w-full sm:w-auto text-center justify-center">
-                  <Link to="/aiforge-26" className="flex items-center justify-center gap-2">
+                  <Link to="/icmref-26" className="flex items-center justify-center gap-2">
                     Register Now <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
                 <div className="hidden sm:flex flex-col">
-                  <span className="text-white font-bold text-sm flex items-center gap-1"><Zap className="w-3 h-3 text-accent" /> Selling fast</span>
-                  <span className="text-white/50 text-xs">Join global innovators</span>
+                  <span className="text-white font-bold text-sm flex items-center gap-1"><Zap className="w-3 h-3 text-accent" /> Call For Papers Open</span>
+                  <span className="text-white/50 text-xs">Join global innovators in Georgia</span>
                 </div>
               </div>
             </div>
@@ -418,7 +417,7 @@ const Index = () => {
             <p className="text-base sm:text-xl text-muted-foreground">Reserve your seat at the world's most anticipated scientific gatherings.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className={upcoming.length === 1 ? "max-w-3xl mx-auto" : "grid md:grid-cols-2 lg:grid-cols-2 gap-8"}>
             {upcoming.map((c, idx) => (
               <Card key={c.title} className="group relative overflow-hidden rounded-3xl sm:rounded-[2rem] border-0 bg-card min-h-[460px] h-auto sm:h-[500px]">
                 <img src={c.img} alt={c.title} className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700" />

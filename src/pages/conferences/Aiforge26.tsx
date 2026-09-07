@@ -10,22 +10,6 @@ import advisoryImg2 from "@/assets/image copy 14.png";
 import talebHammadImg from "@/assets/image copy 15.png";
 import judgeImg1 from "@/assets/image copy 16.png";
 import judgeImg2 from "@/assets/image copy 17.png";
-import glimpse1 from "@/assets/Screenshot 2026-07-26 185654.png";
-import glimpse2 from "@/assets/Screenshot 2026-07-26 192304.png";
-import glimpse3 from "@/assets/Screenshot 2026-07-26 192410.png";
-import glimpse4 from "@/assets/Screenshot 2026-07-26 194531.png";
-import glimpse5 from "@/assets/Screenshot 2026-07-26 200802.png";
-import glimpse6 from "@/assets/Screenshot 2026-07-26 201646.png";
-import glimpse7 from "@/assets/Screenshot 2026-07-26 203543.png";
-import glimpse8 from "@/assets/Screenshot 2026-07-26 175052.png";
-import glimpse9 from "@/assets/Screenshot 2026-07-26 175522.png";
-import glimpse10 from "@/assets/Screenshot 2026-07-26 181210.png";
-import glimpse11 from "@/assets/Screenshot 2026-07-26 183214.png";
-import glimpse12 from "@/assets/Screenshot 2026-07-26 183500.png";
-import glimpse13 from "@/assets/Screenshot 2026-07-26 171929.png";
-import glimpse14 from "@/assets/Screenshot 2026-07-26 173127.png";
-import glimpse15 from "@/assets/Screenshot 2026-07-26 174930.png";
-import glimpse16 from "@/assets/Screenshot 2026-07-26 114953.png";
 import jacoPromoVideo from "@/assets/jaco-visagie-promo.mp4";
 import wiktoriaPromoVideo from "@/assets/wiktoria-promo.mp4";
 import intakhabPromoVideo from "@/assets/intakhab-promo.mp4";
@@ -42,7 +26,12 @@ const conferenceData = {
     "A premier international platform bringing together researchers, engineers, academicians, and industry professionals to explore cutting-edge advancements in Agentic Intelligence, foundation models, and the orchestration of complex AI systems driving the future of innovation.",
     "AIFORGE 2026 focuses on the foundational research, orchestration, governance, and engineering of agentic AI. The conference promotes interdisciplinary research and practical innovations across domains such as multi-agent systems, AI alignment, robust AI engineering, and AI policy."
   ],
-  glimpses: [],
+  glimpses: [
+    "/conferences/aiforge-glimpse-1.png",
+    "/conferences/aiforge-glimpse-2.png",
+    "/conferences/aiforge-glimpse-3.png",
+    "/conferences/aiforge-glimpse-4.png"
+  ],
   callForPapers: "Researchers and professionals are invited to submit original contributions in agentic AI, foundation models, AI orchestration, governance, and AI engineering.",
   objectives: [
     { title: "Agentic AI Innovation", desc: "Advancing autonomous and multi-agent systems." },
@@ -374,9 +363,9 @@ const Aiforge26 = () => {
         <div className="absolute inset-0 gradient-overlay z-0"></div>
         <div className="relative z-10 container max-w-6xl">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-accent/20 to-accent/40 text-accent font-medium text-sm mb-8 backdrop-blur-md border border-accent/30">
-              <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span></span>
-              {conferenceData.id} • ISBN: {conferenceData.isbn}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/15 text-emerald-400 font-semibold text-sm mb-8 backdrop-blur-md border border-emerald-500/30">
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+              {conferenceData.id} • Successfully Concluded • ISBN: {conferenceData.isbn}
             </div>
             <h1 className="text-2xl sm:text-4xl md:text-6xl font-serif font-bold text-foreground leading-tight mb-6 break-words">
               {conferenceData.title}
@@ -399,13 +388,13 @@ const Aiforge26 = () => {
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <Button asChild variant="hero" size="lg" className="w-full sm:w-auto rounded-full shadow-xl">
-                <a href={conferenceData.registrationLink} target="_blank" rel="noreferrer">
-                  Register Now <ArrowRight className="ml-2 h-5 w-5" />
+                <a href="#glimpses">
+                  View Conference Glimpses <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full shadow-md border-white/20 bg-card/60 backdrop-blur-md hover:bg-card">
                 <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer">
-                  Submit in Microsoft CMT <ArrowRight className="ml-2 h-5 w-5" />
+                  Microsoft CMT Archive <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
             </div>
@@ -815,26 +804,25 @@ const Aiforge26 = () => {
         </div>
       </section>
 
-      {/* SUBMIT YOUR PAPER CTA */}
+      {/* FINAL CTA */}
       <section className="container py-24 text-center">
-        <div className="max-w-4xl mx-auto p-10 md:p-14 rounded-3xl bg-gradient-to-b from-card/90 via-card/60 to-muted/40 border border-primary/20 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-accent/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
-          
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-4">Submit Your Paper</h2>
-          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-8">
-            Submit your research manuscripts for double-blind peer review via the official Microsoft CMT portal or submit directly through the conference registration portal.
+        <div className="max-w-3xl mx-auto bg-gradient-to-b from-primary/10 to-transparent p-12 rounded-3xl border border-primary/20">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-6">
+            Conference Concluded Successfully
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Thank you to all keynote speakers, plenary presenters, researchers, and global delegates who made AIFORGE 2026 a resounding success. View the conference glimpses and memory archive below.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button asChild size="lg" className="rounded-full shadow-xl px-8 py-6 text-base font-semibold bg-gradient-to-r from-primary to-accent hover:opacity-95 transition-all text-primary-foreground">
-              <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer" className="flex items-center gap-2">
-                Submit Paper in Microsoft CMT <ArrowRight className="h-5 w-5" />
+              <a href="#glimpses" className="flex items-center gap-2">
+                View Conference Glimpses <ArrowRight className="h-5 w-5" />
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-full shadow-md px-8 py-6 text-base font-semibold border-primary/30 hover:bg-primary/10">
-              <a href={conferenceData.registrationLink} target="_blank" rel="noreferrer" className="flex items-center gap-2">
-                Register & Submit Form <ArrowRight className="h-5 w-5" />
+              <a href={conferenceData.cmtLink} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                Microsoft CMT Portal <ArrowRight className="h-5 w-5" />
               </a>
             </Button>
           </div>

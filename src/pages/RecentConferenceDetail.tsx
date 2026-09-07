@@ -16,10 +16,15 @@ import Icamet2025 from "./conferences/Icamet2025";
 import Icenta2024 from "./conferences/Icenta2024";
 import Iceiis2024 from "./conferences/Iceiis2024";
 import Icaids2024 from "./conferences/Icaids2024";
+import Aiforge26 from "./conferences/Aiforge26";
 
 const RecentConferenceDetail = () => {
   const { id } = useParams();
   
+  if (id === "aiforge-26" || id === "aiforge-2026") {
+    return <Aiforge26 />;
+  }
+
   if (id === "icqadts-2026") {
     return <Icqadts2026 />;
   }

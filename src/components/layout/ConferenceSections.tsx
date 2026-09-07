@@ -1,6 +1,7 @@
 import { BookOpen, Edit3, Send, Link2, Search, Globe2, Lightbulb, Users, Target, CheckCircle2, Calendar, Globe, Image, History, Play } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useState, useRef } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 interface ConferenceSectionsProps {
   conferenceName: string;
@@ -123,6 +124,8 @@ export const ConferenceSections = ({
   sessionChairs = [],
   promotionalVideos = []
 }: ConferenceSectionsProps) => {
+  const [selectedGlimpse, setSelectedGlimpse] = useState<string | null>(null);
+
   return (
     <>
       {/* RESEARCH JOURNEY */}
@@ -340,26 +343,52 @@ export const ConferenceSections = ({
 
       {/* GLIMPSES SECTION */}
       {glimpses.length > 0 && (
-        <section className="py-16 sm:py-24 bg-[#000d14] border-t border-white/5">
+        <section id="glimpses" className="py-16 sm:py-24 bg-[#000d14] border-t border-white/5 scroll-mt-16">
           <div className="container max-w-6xl px-4">
             <div className="text-center mb-10 sm:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-4 uppercase tracking-wider">
                 Glimpses of {conferenceName}
               </h2>
+              <p className="text-white/60 text-xs sm:text-sm max-w-lg mx-auto">
+                Memories, keynote presentations, and live session highlights from {conferenceName}.
+              </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {glimpses.map((img, idx) => (
-                <div key={idx} className="group overflow-hidden rounded-xl sm:rounded-2xl border border-white/8 aspect-video bg-white/5">
+                <div 
+                  key={idx} 
+                  onClick={() => setSelectedGlimpse(img)}
+                  className="group cursor-pointer overflow-hidden rounded-xl sm:rounded-2xl border border-white/10 hover:border-primary/50 aspect-video bg-white/5 transition-all shadow-md hover:shadow-xl hover:-translate-y-1 relative"
+                >
                   <img
                     src={img}
                     alt={`${conferenceName} glimpse ${idx + 1}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                    <span className="text-white text-xs font-semibold px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/20">
+                      Click to Expand
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
+
+          <Dialog open={!!selectedGlimpse} onOpenChange={(open) => !open && setSelectedGlimpse(null)}>
+            <DialogContent className="max-w-4xl p-2 bg-black/95 border-white/15 text-white">
+              {selectedGlimpse && (
+                <div className="relative">
+                  <img
+                    src={selectedGlimpse}
+                    alt={`${conferenceName} Full Glimpse`}
+                    className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
+                  />
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
         </section>
       )}
     </>

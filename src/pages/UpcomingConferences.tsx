@@ -6,16 +6,6 @@ import { Link } from "react-router-dom";
 
 const conferences = [
   {
-    title: "AIFORGE 2026: International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering",
-    city: "Hybrid Mode",
-    country: "Global",
-    date: "6 September 2026",
-    topic: "AI & Engineering",
-    isbn: "978-81-687765-9-3",
-    link: "/aiforge-26",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
-  },
-  {
     title: "ICMREF-26: International Conference on Multidisciplinary Research & Emerging Frontiers in AI",
     city: "Tbilisi",
     country: "Georgia",
@@ -59,7 +49,7 @@ const UpcomingConferences = () => (
     
     {/* UPCOMING CONFERENCES LISTING */}
     <section className="container py-16 sm:py-24 relative z-10">
-      <div className="grid lg:grid-cols-2 gap-6 sm:gap-10">
+      <div className={conferences.length === 1 ? "max-w-4xl mx-auto" : "grid lg:grid-cols-2 gap-6 sm:gap-10"}>
         {conferences.map((c) => (
           <Card key={c.title} className="group relative overflow-hidden rounded-2xl sm:rounded-[2rem] border-0 bg-card min-h-[480px] sm:h-[450px] flex flex-col justify-end">
             <img src={c.image} alt={c.title} className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700" />
