@@ -30,7 +30,11 @@ const conferenceData = {
     "/conferences/aiforge-glimpse-1.png",
     "/conferences/aiforge-glimpse-2.png",
     "/conferences/aiforge-glimpse-3.png",
-    "/conferences/aiforge-glimpse-4.png"
+    "/conferences/aiforge-glimpse-4.png",
+    "/conferences/aiforge-glimpse-5.png",
+    "/conferences/aiforge-glimpse-6.png",
+    "/conferences/aiforge-glimpse-7.png",
+    "/conferences/aiforge-glimpse-8.png"
   ],
   callForPapers: "Researchers and professionals are invited to submit original contributions in agentic AI, foundation models, AI orchestration, governance, and AI engineering.",
   objectives: [
