@@ -33,6 +33,7 @@ import Icmref26 from "./pages/conferences/Icmref26";
 import Icaits26 from "./pages/conferences/Icaits26";
 import Aiforge26 from "./pages/conferences/Aiforge26";
 import Icaids2024 from "./pages/conferences/Icaids2024";
+import ManilaNexus2027 from "./pages/conferences/ManilaNexus2027";
 
 const queryClient = new QueryClient();
 
@@ -86,6 +87,8 @@ const App = () => {
           <Route path="/icaits-26" element={<Icaits26 />} />
           <Route path="/aiforge-26" element={<Aiforge26 />} />
           <Route path="/icaids-2024" element={<Icaids2024 />} />
+          <Route path="/manila-nexus-2027" element={<ManilaNexus2027 />} />
+          <Route path="/emn-2027" element={<ManilaNexus2027 />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

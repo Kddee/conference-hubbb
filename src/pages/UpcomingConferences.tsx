@@ -13,6 +13,15 @@ const conferences = [
     topic: "Technology & AI",
     link: "/icmref-26",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "Eminsphere Manila Nexus 2027 (EMN 2027): Intelligent Computing & Digital Futures",
+    city: "Manila",
+    country: "Philippines",
+    date: "20–21 March 2027",
+    topic: "Intelligent Computing & AI",
+    link: "/manila-nexus-2027",
+    image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop"
   }
 ];
 

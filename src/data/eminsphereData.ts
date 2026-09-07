@@ -187,8 +187,40 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Swarnabindu Roy", category: "Keynote Speaker", designation: "Data Engineering, Data Architecture & Program Management", university: "USA", image: "/speakers/swarnabindu-roy.jpg" },
       { name: "Payal R.", category: "Keynote Speaker", designation: "Senior Data Engineer, Data Modeling, Data Warehousing & ETL Pipelines", university: "USA", image: "/speakers/payal-r.jpg" },
       { name: "Dr. Carolina Barandiaran", category: "Keynote Speaker", designation: "Academic Leader & Researcher", university: "Argentina", image: "/speakers/dr-carolina-barandiaran.jpg" },
-      { name: "Nino Devidze", category: "Distinguished Speaker", designation: "Tourism Educator & Program Manager, The University of Georgia", university: "Georgia", image: "/speakers/nino-devidze.jpg" },
+      { name: "Nino Devidze", category: "Distinguished Speaker", designation: "Tourism Educator & Program Manager, The University of Georgia", university: "Georgia", image: "/speakers/dr-eka-devidze.jpg" },
       { name: "Lali Mikeladze", category: "Distinguished Speaker", designation: "Head of the BA Program in Tourism, Caucasus International University", university: "Georgia", image: "/speakers/lali-mikeladze.jpg" }
+    ]
+  },
+  "manila-nexus-2027": {
+    id: "manila-nexus-2027",
+    title: "Eminsphere Manila Nexus 2027 (EMN 2027)",
+    date: "20–21 March 2027",
+    location: "Hybrid — In-Person Manila, Philippines + Online",
+    registrationLink: "https://forms.gle/oY44ySZUNz3puve4A",
+    description: "International Conference on Intelligent Computing, Emerging Systems and Digital Futures. A premier global summit bringing together researchers, academics, technology professionals, industry leaders, innovators, and emerging scholars to explore the evolving landscape of intelligent computing, emerging digital systems, and future technologies in Manila, Philippines.",
+    thematicTracks: [
+      "Intelligent Computing & Artificial Intelligence (AI, Generative AI, Agentic AI, Machine Learning)",
+      "Emerging Computing Systems (Cloud, Edge, Distributed, Quantum Computing, HPC)",
+      "Data, Analytics & Knowledge Systems (Big Data, Data Engineering, Knowledge Graphs)",
+      "Cybersecurity & Digital Trust (Zero Trust, Privacy Engineering, Adversarial AI)",
+      "Smart Technologies & Digital Engineering (IoT, Robotics, Automation, Digital Twins)",
+      "Future Digital Society & Governance (AI Governance, Responsible AI, Tech Ethics)"
+    ],
+    milestones: [
+      { name: "Call for Papers Opens", date: "15 October 2026" },
+      { name: "Paper Submission Deadline", date: "20 January 2027" },
+      { name: "Acceptance Notification", date: "10 February 2027" },
+      { name: "Camera-Ready & Early Registration", date: "25 February 2027" },
+      { name: "Final Registration Deadline", date: "10 March 2027" },
+      { name: "Main Conference", date: "20–21 March 2027" }
+    ],
+    speakers: [
+      { name: "Prof. Dr. Maria Elena Santos", designation: "Director, Institute of Intelligent Computing", university: "University of the Philippines Diliman, Philippines", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" },
+      { name: "Dr. Jitendra Pandey, FHEA", designation: "TPC Chair & Senior Faculty Member", university: "Middle East College, Oman", image: "https://static.wixstatic.com/media/30814e_bf66c69035bc4e41bc50c2345187c6f2~mv2.jpeg" },
+      { name: "Mr. Bhushan Balkrishna Chaudhari", designation: "Senior Technology Lead & Cloud Architect", university: "Enterprise Computing Division, USA", image: "https://static.wixstatic.com/media/30814e_86a164138da142578e674588143e3af3~mv2.jpeg" },
+      { name: "Dr. Ayoub Regragui", designation: "Senior Research Scientist", university: "Mohammed V University, Morocco", image: "https://static.wixstatic.com/media/30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif" },
+      { name: "Prof. Shweta N. Bansal", designation: "Professor of Computer Engineering & IQAC Lead", university: "D.Y. Patil College of Engineering, India", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
+      { name: "Dr. Zoha Rahman", designation: "Lead Researcher, Machine Learning", university: "Centre for Big Data & Machine Learning, USA", image: "https://static.wixstatic.com/media/30814e_2a893f0530e74f178c18e5939b687048~mv2.jpg" }
     ]
   }
 };

@@ -176,6 +176,7 @@ const rotations = [-3, 2, -1.5, 3, -2, 1, -2.5, 2.5, -1, 3, -3, 1.5, -2, 2];
 
 const upcoming = [
   { title: "ICMREF-26: Multidisciplinary Research & AI", city: "Tbilisi, Georgia", date: "4 October 2026", topic: "Technology & AI", link: "/icmref-26", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" },
+  { title: "Eminsphere Manila Nexus 2027 (EMN 2027)", city: "Manila, Philippines", date: "20–21 March 2027", topic: "Intelligent Computing & Digital Futures", link: "/manila-nexus-2027", img: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop" },
 ];
 
 const CONFERENCE_DATE = new Date("2026-07-05T09:00:00+05:30");
