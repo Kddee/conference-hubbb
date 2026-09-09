@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import ConferenceSections from "@/components/layout/ConferenceSections";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MapPin, CheckCircle2, Globe, BookOpen, Star, Trophy, Award, Search, Book, User, Crown, Lightbulb, Zap, Heart, Medal, Database, Cpu, Network, Shield, Settings, Microscope, Sparkles } from "lucide-react";
 import { useState } from "react";
@@ -367,6 +368,35 @@ const conferenceData = {
 const Aiforge26 = () => {
   return (
     <div className="bg-background">
+      <SEOHead
+        title="AIFORGE 2026 • Conference Recap & Proceedings | ISBN 978-81-687765-9-3"
+        description="Official recap of AIFORGE 2026. Explore conference presentation glimpses, Google Scholar indexed proceedings, and ISBN 978-81-687765-9-3 research archive."
+        canonical="https://www.eminsphere.com/aiforge-26"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "AIFORGE 2026: International Conference on Agentic Intelligence",
+          "description": "International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering.",
+          "startDate": "2026-09-06T09:00:00Z",
+          "endDate": "2026-09-06T18:00:00Z",
+          "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "VirtualLocation",
+            "url": "https://www.eminsphere.com/aiforge-26"
+          },
+          "organizer": {
+            "@type": "Organization",
+            "name": "Eminsphere Global Conferences",
+            "url": "https://www.eminsphere.com/"
+          },
+          "recordedIn": {
+            "@type": "PublicationEvent",
+            "name": "AIFORGE 2026 Official Conference Proceedings",
+            "isbn": "978-81-687765-9-3"
+          }
+        }}
+      />
       {/* ENTERPRISE HERO */}
       <section className="relative overflow-hidden py-24 lg:py-32 bg-background border-b border-border/50">
         <div className="absolute inset-0 gradient-overlay z-0"></div>

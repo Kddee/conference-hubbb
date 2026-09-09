@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/layout/PageHero";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 import { Calendar, Globe2, ArrowRight, BookOpen, Users, Award, ShieldCheck, MapPin, Clock, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -49,6 +50,23 @@ const faqs = [
 
 const UpcomingConferences = () => (
   <main className="min-h-screen bg-background">
+    <SEOHead
+      title="Upcoming Conferences 2026–2027 | Global Academic Calendar"
+      description="Explore upcoming international academic conferences 2026–2027 in AI, engineering, science, and medicine. View dates, venues, and call for papers."
+      canonical="https://www.eminsphere.com/upcoming-conferences"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }}
+    />
     <PageHero
       eyebrow="2026 Official Calendar"
       title="Upcoming Global Conferences"

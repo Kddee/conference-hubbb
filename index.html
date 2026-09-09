@@ -28,6 +28,35 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Eminsphere — Global Academic Conferences 2026" />
     <meta name="twitter:description" content="Premier international academic conferences across every discipline. Register, present, publish." />
+
+    <!-- Schema.org Global Organization & WebSite Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.eminsphere.com/#organization",
+          "name": "Eminsphere Global Conferences",
+          "url": "https://www.eminsphere.com/",
+          "logo": "https://www.eminsphere.com/eminsphere-logo.png",
+          "description": "Premier international academic conference organizer connecting researchers worldwide across AI, engineering, science, and computing.",
+          "sameAs": [
+            "https://www.linkedin.com/company/eminsphere"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.eminsphere.com/#website",
+          "url": "https://www.eminsphere.com/",
+          "name": "Eminsphere",
+          "publisher": {
+            "@id": "https://www.eminsphere.com/#organization"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
 
   <body>

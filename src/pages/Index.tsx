@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -212,6 +213,11 @@ const Index = () => {
 
   return (
     <main className="bg-background noise">
+      <SEOHead
+        title="Eminsphere | Global Academic Conferences 2026"
+        description="Discover premier international academic conferences in engineering, AI, and science. Connect, present, and publish research worldwide with Eminsphere."
+        canonical="https://www.eminsphere.com/"
+      />
       {/* HERO SECTION - AI4 STYLE */}
       <section className="relative min-h-screen flex flex-col justify-center pt-24 sm:pt-28 pb-16 sm:pb-32 overflow-hidden">
         {/* Background Image with Dark Cyan Tint Overlay */}

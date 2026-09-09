@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/layout/PageHero";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 import { ArrowRight, FileText, Video, Search, BookOpen, ExternalLink, Filter, Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,11 @@ const RecentProceedings = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <SEOHead
+        title="Conference Proceedings & Digital Library | Eminsphere"
+        description="Access published peer-reviewed conference proceedings, abstracts, and full research papers with valid ISBN and DOI indexing from Eminsphere summits."
+        canonical="https://www.eminsphere.com/recent-proceedings"
+      />
       <PageHero
         eyebrow="Digital Library"
         title="Digital Conference Proceedings"

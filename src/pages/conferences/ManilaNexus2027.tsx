@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -378,6 +379,49 @@ const ManilaNexus2027 = () => {
 
   return (
     <div className="min-h-screen bg-[#030914] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+      <SEOHead
+        title="Eminsphere Manila Nexus 2027 | AI & Computing Conference"
+        description="Join Eminsphere Manila Nexus 2027 on 20–21 March 2027 in Manila, Philippines & Virtual. Submit papers on Sovereign AI, Distributed Systems, and Cloud Computing."
+        canonical="https://www.eminsphere.com/manila-nexus-2027"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "EducationEvent",
+          "name": "Eminsphere Manila Nexus 2027 (EMN 2027)",
+          "description": "International Conference on Sovereign AI Ecosystems, Scalable Autonomous Architectures, and Next-Generation Distributed Computing.",
+          "startDate": "2027-03-20T09:00:00+08:00",
+          "endDate": "2027-03-21T18:00:00+08:00",
+          "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": [
+            {
+              "@type": "Place",
+              "name": "Manila Conference Center & Hotel Partner",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Manila",
+                "addressCountry": "PH"
+              }
+            },
+            {
+              "@type": "VirtualLocation",
+              "url": "https://www.eminsphere.com/manila-nexus-2027"
+            }
+          ],
+          "organizer": {
+            "@type": "Organization",
+            "name": "Eminsphere Global Conferences",
+            "url": "https://www.eminsphere.com/"
+          },
+          "offers": {
+            "@type": "AggregateOffer",
+            "url": "https://www.eminsphere.com/manila-nexus-2027",
+            "priceCurrency": "USD",
+            "lowPrice": "90",
+            "highPrice": "280",
+            "validFrom": "2026-09-01"
+          }
+        }}
+      />
       
       {/* 01 - TOP IN-PAGE ANCHOR NAVIGATION */}
       <header className="sticky top-0 z-50 w-full border-b border-cyan-500/10 bg-[#030914]/90 backdrop-blur-xl">

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Card } from "@/components/ui/card";
+import SEOHead from "@/components/SEOHead";
 import { Calendar, Users, ArrowRight, Award, Globe, Globe2, BookOpen, CheckCircle2, ShieldCheck, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ConferenceSections from "@/components/layout/ConferenceSections";
@@ -157,6 +158,11 @@ const RecentConferences = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <SEOHead
+        title="Recent Conferences & Session Archives | Eminsphere"
+        description="Explore memories, session glimpses, keynote addresses, and archival galleries from prestigious global academic conferences organized by Eminsphere."
+        canonical="https://www.eminsphere.com/recent-conferences"
+      />
       <PageHero
         eyebrow="Legacy & Heritage"
         title="Recent Conferences"
