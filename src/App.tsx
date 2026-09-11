@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -86,6 +86,7 @@ const App = () => {
           <Route path="/icmref-26" element={<Icmref26 />} />
           <Route path="/icaits-26" element={<Icaits26 />} />
           <Route path="/aiforge-26" element={<Aiforge26 />} />
+          <Route path="/aiforge-2026" element={<Navigate to="/aiforge-26" replace />} />
           <Route path="/icaids-2024" element={<Icaids2024 />} />
           <Route path="/manila-nexus-2027" element={<ManilaNexus2027 />} />
           <Route path="/emn-2027" element={<ManilaNexus2027 />} />
