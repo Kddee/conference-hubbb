@@ -59,9 +59,11 @@
     </script>
   </head>
 
-  <body>
+  <body style="background-color: #07090e; margin: 0;">
+    <div id="root"></div>
+    
     <!-- Pre-rendered Semantic HTML for Search Engine Crawlers & Non-JS Spiders -->
-    <div id="root">
+    <noscript>
       <main style="max-width: 900px; margin: 0 auto; padding: 2rem; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; color: #1e293b;">
         <header>
           <h1 style="font-size: 2rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem;">
@@ -104,13 +106,10 @@
             </ul>
           </nav>
         </section>
+
+        <!-- Microsoft CMT Conference Acknowledgement (Visible in View Page Source / Crawlers) -->
+        <p>The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.</p>
       </main>
-    </div>
-    
-    <!-- Microsoft CMT Conference Acknowledgement (Visible in View Page Source / Crawlers) -->
-    <p style="font-size:0;line-height:0;opacity:0;position:absolute;pointer-events:none;">The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.</p>
-    <noscript>
-      <p>The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.</p>
     </noscript>
 
     <script type="module" src="/src/main.tsx"></script>
