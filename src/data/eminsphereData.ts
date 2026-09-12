@@ -225,6 +225,30 @@ export const upcomingConferences: Record<string, ConferenceData> = {
 };
 
 export const proceedings: Record<string, ProceedingData> = {
+  "aiforge-26": {
+    id: "aiforge-26",
+    title: "Proceeding AIFORGE 2026",
+    date: "2026",
+    description: "Official proceedings and presentations from the International Conference on Agentic Intelligence for Foundations, Orchestration, Research, Governance and Engineering (AIFORGE 2026).",
+    videos: [
+      "https://youtu.be/VeEkB4VtKgY",
+      "https://youtu.be/vOQAjvSZMqM",
+      "https://youtu.be/xut980IesMk",
+      "https://youtu.be/ulZ4EwhZi5Q",
+      "https://youtu.be/WMOJO4nlfXI",
+      "https://youtu.be/wkWylcWr02s",
+      "https://youtu.be/BT8Ei15-eYs",
+      "https://youtu.be/kQB8PYq3Vno",
+      "https://youtu.be/ArA87EykBCU",
+      "https://youtu.be/C9zioy0cMlE",
+      "https://youtu.be/jOleBaTuf6c",
+      "https://youtu.be/C6NfHP_-WWw",
+      "https://youtu.be/7Tdrtl-vAsU",
+      "https://youtu.be/3VYRLMCOVgo",
+      "https://youtu.be/VNCI9j2JQa4",
+      "https://youtu.be/dJmGW1VWX0w"
+    ]
+  },
   "icaits-26": {
     id: "icaits-26",
     title: "Proceeding ICAITS-26",
