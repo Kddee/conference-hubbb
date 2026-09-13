@@ -271,46 +271,6 @@ const conferenceData = {
     }
   ],
 
-  fees: [
-    {
-      category: "Author Presentation & Publication",
-      price: "$180 / ₹9,500",
-      type: "Oral / Virtual Presentation",
-      perks: [
-        "Full paper publication in ISBN Proceedings",
-        "Oral presentation slot in technical track",
-        "Official presentation certificate",
-        "Eligibility for Best Paper Award",
-        "Access to all keynote and technical sessions"
-      ],
-      featured: true
-    },
-    {
-      category: "Student / Research Scholar",
-      price: "$140 / ₹7,500",
-      type: "Student Author",
-      perks: [
-        "Full paper publication in ISBN Proceedings",
-        "Dedicated student track presentation",
-        "Official presentation certificate",
-        "Eligibility for Best Student Presenter Award",
-        "Mentorship feedback from international reviewers"
-      ],
-      featured: false
-    },
-    {
-      category: "Attendee / Listener",
-      price: "$60 / ₹3,000",
-      type: "Non-Presenting Delegate",
-      perks: [
-        "Full access to all keynote and technical tracks",
-        "Official Certificate of Participation",
-        "Digital copy of Conference Proceedings",
-        "Virtual networking room access"
-      ],
-      featured: false
-    }
-  ],
 
   awards: [
     {
@@ -696,59 +656,7 @@ const Icetis2026 = () => {
         </div>
       </section>
 
-      {/* REGISTRATION & DELEGATE CATEGORIES */}
-      <section className="py-16 sm:py-24 bg-card/20 border-y border-border/40">
-        <div className="container max-w-6xl px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-accent mb-3">
-              <FileCheck2 className="h-4 w-4" /> Registration & Fees
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-              Participation Categories
-            </h2>
-            <p className="text-muted-foreground text-sm sm:text-base">
-              Transparent registration tiers for authors, scholars, and global industry attendees.
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            {conferenceData.fees.map((fee, i) => (
-              <Card
-                key={i}
-                className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative ${
-                  fee.featured
-                    ? "glass-strong border-primary/50 shadow-gold scale-105 z-10"
-                    : "glass border-white/10 bg-card/40"
-                }`}
-              >
-                {fee.featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider shadow-md">
-                    Most Popular
-                  </span>
-                )}
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">{fee.type}</div>
-                  <h3 className="font-serif font-bold text-xl text-white mb-4">{fee.category}</h3>
-                  <div className="font-serif font-black text-2xl sm:text-3xl text-primary mb-6">{fee.price}</div>
-
-                  <ul className="space-y-3 text-xs sm:text-sm text-muted-foreground mb-8">
-                    {fee.perks.map((perk, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                        <span>{perk}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Button asChild className={`w-full rounded-full font-bold h-12 ${fee.featured ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-gold" : "bg-white/10 hover:bg-white/15 text-white"}`}>
-                  <Link to="/registration">Register Now</Link>
-                </Button>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* AWARDS & HONORS */}
       <section className="py-16 sm:py-24 container max-w-6xl px-4">
