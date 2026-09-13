@@ -122,6 +122,37 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       image: "https://static.wixstatic.com/media/30814e_86a164138da142578e674588143e3af3~mv2.jpeg"
     }
   },
+  "icetis-2026": {
+    id: "icetis-2026",
+    title: "International Conference on Emerging Technologies, Intelligent Systems & Sustainable Computing (ICETIS-2026)",
+    date: "25 October 2026",
+    isbn: "978-81-981245-4-1",
+    location: "Hybrid Mode | Singapore & Global Virtual Access",
+    registrationLink: "/registration",
+    description: "ICETIS-2026 is an international flagship research forum dedicated to groundbreaking advances in Emerging Technologies, Generative & Agentic AI, Cyber-Physical Systems, Quantum Computing, Cloud-Native Architectures, and Green Sustainable Computing. All accepted submissions undergo rigorous double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers and indexing across Google Scholar, with recommendations for Scopus/WoS indexed journals.",
+    thematicTracks: [
+      "Agentic AI & Generative Intelligence (Foundation models, autonomous multi-agent orchestration, LLM safety)",
+      "Quantum Technologies & Next-Gen Computing (Quantum algorithms, quantum cryptography, quantum simulation)",
+      "Cyber-Physical Systems & Intelligent IoT (Autonomous edge nodes, digital twins, robotic intelligence)",
+      "Cloud-Native & Distributed Architectures (Microservices, high-throughput pipelines, zero-trust security)",
+      "Sustainable Computing & Green Technologies (Energy-efficient hardware, low-carbon datacenters, eco-algorithms)",
+      "Biomedical Informatics & Smart Healthcare (AI diagnostics, clinical intelligence, computational biology)"
+    ],
+    milestones: [
+      { name: "Paper Submission Deadline", date: "5 October 2026" },
+      { name: "Acceptance Notification", date: "12 October 2026" },
+      { name: "Camera-Ready & Final Registration", date: "18 October 2026" },
+      { name: "Main Conference Sessions", date: "25 October 2026 (Sunday)" }
+    ],
+    speakers: [
+      { name: "Wiktoria Gromowa-Cieślik", designation: "CEO & Chief Metrics Officer, Human-Tech Fusion", university: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg", category: "Keynote Speaker" },
+      { name: "Dr. Sravanthi Dontu", designation: "Corporate Professional & Academic Researcher", university: "USA", image: "/speakers/dr-sravanthi-dontu.jpg", category: "Keynote Speaker" },
+      { name: "Hardeep Singh Tiwana", designation: "Golden Kubestronaut, The Kubernetes Show Creator", university: "USA", image: "/speakers/hardeep-singh-tiwana.jpg", category: "Keynote Speaker" },
+      { name: "Prof. Dr. Alexander Bull", designation: "IU International University", university: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg", category: "Plenary Speaker" },
+      { name: "Dr. Peter Kamau, CPA-K", designation: "Founder & CEO, PETKAM Solutions Ltd", university: "Kenya", image: "/speakers/dr-peter-kamau.jpg", category: "Plenary Speaker" },
+      { name: "Dr. Dina Alkhodary", designation: "Associate Professor of Business Administration, Middle East University", university: "Jordan", image: "/speakers/dr-dina-alkhodary.jpg", category: "Invited Speaker" }
+    ]
+  },
   "icaits-26": {
     id: "icaits-26",
     title: "International Conference on Artificial Intelligence & Intelligent Technology Systems (ICAITS-26)",

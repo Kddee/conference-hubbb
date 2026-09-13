@@ -16,6 +16,16 @@ const conferences = [
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop"
   },
   {
+    title: "ICETIS-2026: International Conference on Emerging Technologies, Intelligent Systems & Sustainable Computing",
+    city: "Singapore / Virtual",
+    country: "Global Hybrid",
+    date: "25 October 2026 (Sunday)",
+    topic: "AI & Sustainable Computing",
+    link: "/icetis-2026",
+    isbn: "978-81-981245-4-1",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
     title: "Eminsphere Manila Nexus 2027 (EMN 2027): Intelligent Computing & Digital Futures",
     city: "Manila",
     country: "Philippines",
@@ -76,7 +86,7 @@ const UpcomingConferences = () => (
     
     {/* UPCOMING CONFERENCES LISTING */}
     <section className="container py-16 sm:py-24 relative z-10">
-      <div className={conferences.length === 1 ? "max-w-4xl mx-auto" : "grid lg:grid-cols-2 gap-6 sm:gap-10"}>
+      <div className={conferences.length === 1 ? "max-w-4xl mx-auto" : "grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"}>
         {conferences.map((c) => (
           <Card key={c.title} className="group relative overflow-hidden rounded-2xl sm:rounded-[2rem] border-0 bg-card min-h-[480px] sm:h-[450px] flex flex-col justify-end">
             <img src={c.image} alt={c.title} className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700" />
