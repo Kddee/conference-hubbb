@@ -14,7 +14,6 @@ interface Speaker {
   role: string;
   location: string;
   image: string;
-  objectPosition?: string;
 }
 
 const speakers: Speaker[] = [
@@ -205,12 +204,19 @@ const PastSpeakers = () => {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6">
           {speakers.map((s, i) => (
             <Card key={i} className="overflow-hidden glass border-white/5 bg-card/30 hover:bg-card/60 transition-all duration-300 group flex flex-col items-center text-center p-3 sm:p-5 rounded-2xl sm:rounded-3xl hover:-translate-y-1 hover:border-primary/30">
-              <div className="relative w-full aspect-square max-w-[120px] sm:max-w-[150px] mb-3 sm:mb-4 overflow-hidden rounded-xl sm:rounded-2xl border border-white/10 group-hover:border-primary/50 transition-colors shadow-md shrink-0 bg-slate-900/60">
+              <div className="relative w-full aspect-square max-w-[120px] sm:max-w-[150px] mb-3 sm:mb-4 overflow-hidden rounded-xl sm:rounded-2xl border border-white/10 group-hover:border-primary/50 transition-all shadow-md shrink-0 bg-slate-950/80 flex items-center justify-center">
+                {/* Ambient blur fill so frame is richly filled with matching image tones */}
+                <img
+                  src={s.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover blur-md opacity-35 scale-125 pointer-events-none"
+                />
+                {/* Contained image so the full face, head, and shoulders fit 100% inside the frame */}
                 <img
                   src={s.image}
                   alt={s.name}
-                  className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                  style={s.objectPosition ? { objectPosition: s.objectPosition } : undefined}
+                  className="relative z-10 h-full w-full object-contain p-1 transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
