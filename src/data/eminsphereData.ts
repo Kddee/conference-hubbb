@@ -426,7 +426,33 @@ export const proceedings: Record<string, ProceedingData> = {
     title: "Proceeding ICAMET 2025",
     date: "2025",
     description: "International Conference on AI, Management, Engineering, and Technology (ICAMET 2025) held in Pune, India at Genba Sopanrao Moze College of Engineering, an accredited institution approved by AICTE and affiliated to Savitribai Phule Pune University. ISBN Number: 978-93-342-5206-4.",
-    videos: ["CEc9Jsc_kCc", "cRawYUUGvfE", "sK4t6-_YA0M", "WabTO7zXvWQ"]
+    papers: [
+      {
+        title: "Integration of Artificial Intelligence in Engineering Paradigms",
+        authors: "Dr. V. Sharma, Prof. P. Deshmukh",
+        pdfLink: "#"
+      },
+      {
+        title: "Algorithmic Efficiency in Network Security and Blockchain",
+        authors: "Mr. T. Gupta, Dr. N. Patil",
+        pdfLink: "#"
+      },
+      {
+        title: "Next-Generation Materials for Electronics Engineering",
+        authors: "A. Singh, M. Kaur",
+        pdfLink: "#"
+      },
+      {
+        title: "Strategic Management of AI Systems in Enterprise Resource Planning",
+        authors: "Dr. K. Joshi, M. Iyer",
+        pdfLink: "#"
+      },
+      {
+        title: "Optimized Cloud Architectures for High-Performance Computing",
+        authors: "Prof. S. Verma, Dr. R. Bhat",
+        pdfLink: "#"
+      }
+    ]
   },
 
   "iceiis24": {
