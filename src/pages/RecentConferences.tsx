@@ -51,7 +51,6 @@ const recent2025 = [
 ];
 
 const recent2024 = [
-  { id: "icenta-2024", title: "ICENTA-2024", date: "15–16 December 2024", type: "Hybrid Event", image: "/conferences/icenta-berlin.jpg" },
   { id: "iceiis-2024", title: "ICEIIS-2024", date: "04 February 2024", type: "Hybrid Event", image: "/conferences/icetsgc-glimpse.jpeg" },
   { id: "icaids-2024", title: "ICAIDS-2024", date: "10 March 2024", type: "Hybrid Event", image: "/conferences/icmess-glimpse-2.jpg" },
 ];

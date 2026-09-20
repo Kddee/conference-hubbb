@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import ConferenceSections from "@/components/layout/ConferenceSections";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MapPin, CheckCircle2, User, Award, Globe, BookOpen, FileText } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, CheckCircle2, User, Award, Globe, BookOpen, FileText, PlayCircle } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 
 const conferenceData = {
@@ -70,6 +70,20 @@ const conferenceData = {
     "https://static.wixstatic.com/media/30814e_605ee2e7551548308a37980f16e3f05c~mv2.png",
     "https://static.wixstatic.com/media/30814e_25032ed10f6040e4b648c22f8e779cff~mv2.png",
     "https://static.wixstatic.com/media/30814e_f38207f174624162a70afa18615cb002~mv2.png"
+  ],
+  videos: [
+    { title: "Proceeding Video 1", url: "https://www.youtube.com/embed/xuL3P-bBKgU" },
+    { title: "Proceeding Video 2", url: "https://www.youtube.com/embed/Em2Pz6cYwoY" },
+    { title: "Proceeding Video 3", url: "https://www.youtube.com/embed/0FmpMQE9FWY" },
+    { title: "Proceeding Video 4", url: "https://www.youtube.com/embed/7YbMUU10CLs" },
+    { title: "Proceeding Video 5", url: "https://www.youtube.com/embed/WernBsg8O7Q" },
+    { title: "Proceeding Video 6", url: "https://www.youtube.com/embed/g7XJWAEwaDo" },
+    { title: "Proceeding Video 7", url: "https://www.youtube.com/embed/jPzWRHmCyug" },
+    { title: "Proceeding Video 8", url: "https://www.youtube.com/embed/8aILSGa5hBg" },
+    { title: "Proceeding Video 9", url: "https://www.youtube.com/embed/Hdya75te1zM" },
+    { title: "Proceeding Video 10", url: "https://www.youtube.com/embed/9bKh5GhIb2c" },
+    { title: "Proceeding Video 11", url: "https://www.youtube.com/embed/dShRtaoWiVk" },
+    { title: "Proceeding Video 12", url: "https://www.youtube.com/embed/afovSZ9CeeE" }
   ]
 };
 
@@ -258,7 +272,39 @@ const Icqadts2026 = () => {
           </div>
         </div>
       </section>
-    <ConferenceSections conferenceName={conferenceData.id} glimpses={conferenceData.glimpses ?? []} importantDates={conferenceData.timeline} sessionChairs={conferenceData.sessionChairs} />
+      {/* PROCEEDINGS (Videos) */}
+      <section className="bg-muted py-24 border-y">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6 flex items-center justify-center gap-4">
+              <PlayCircle className="h-10 w-10 text-accent" />
+              Proceedings
+            </h2>
+            <p className="text-lg text-muted-foreground">Conference proceedings and video presentations.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
+            {conferenceData.videos.map((video, idx) => (
+              <Card key={idx} className="overflow-hidden border-0 shadow-xl group rounded-2xl">
+                <div className="relative pt-[56.25%] w-full bg-slate-900">
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full border-0"
+                    src={video.url}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="p-4 bg-primary text-primary-foreground text-center font-medium">
+                  {video.title}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ConferenceSections conferenceName={conferenceData.id} glimpses={conferenceData.glimpses ?? []} importantDates={conferenceData.timeline} sessionChairs={conferenceData.sessionChairs} />
       </div>
   );
 };

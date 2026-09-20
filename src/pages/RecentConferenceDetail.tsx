@@ -13,7 +13,7 @@ import Icmdia2025 from "./conferences/Icmdia2025";
 import Icetsgc2025 from "./conferences/Icetsgc2025";
 import Iccinet2025 from "./conferences/Iccinet2025";
 import Icamet2025 from "./conferences/Icamet2025";
-import Icenta2024 from "./conferences/Icenta2024";
+
 import Iceiis2024 from "./conferences/Iceiis2024";
 import Icaids2024 from "./conferences/Icaids2024";
 import Aiforge26 from "./conferences/Aiforge26";
@@ -69,9 +69,7 @@ const RecentConferenceDetail = () => {
     return <Icamet2025 />;
   }
 
-  if (id === "icenta-2024") {
-    return <Icenta2024 />;
-  }
+
 
   if (id === "iceiis-2024") {
     return <Iceiis2024 />;

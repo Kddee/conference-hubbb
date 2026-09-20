@@ -319,6 +319,26 @@ export const proceedings: Record<string, ProceedingData> = {
       { url: "https://youtu.be/oJXkP4vankk", speaker: "Dr. Jitendra Pandey", title: "Opening Address" }
     ]
   },
+  "icqadts-2026": {
+    id: "icqadts-2026",
+    title: "Proceeding ICQADTS-2026",
+    date: "2026",
+    description: "Official proceedings and presentations from the International Conference on Quantum-AI Driven Autonomous Digital Twin Systems (ICQADTS-2026).",
+    videos: [
+      "https://youtu.be/xuL3P-bBKgU",
+      "https://youtu.be/Em2Pz6cYwoY",
+      "https://youtu.be/0FmpMQE9FWY",
+      "https://youtu.be/7YbMUU10CLs",
+      "https://youtu.be/WernBsg8O7Q",
+      "https://youtu.be/g7XJWAEwaDo",
+      "https://youtu.be/jPzWRHmCyug",
+      "https://youtu.be/8aILSGa5hBg",
+      "https://youtu.be/Hdya75te1zM",
+      "https://youtu.be/9bKh5GhIb2c",
+      "https://youtu.be/dShRtaoWiVk",
+      "https://youtu.be/afovSZ9CeeE"
+    ]
+  },
   "copy-of-proceeding-icaeset-2026-26": {
     id: "copy-of-proceeding-icaeset-2026-26",
     title: "Proceeding ICAIDSS-2026",
@@ -406,55 +426,14 @@ export const proceedings: Record<string, ProceedingData> = {
     title: "Proceeding ICAMET 2025",
     date: "2025",
     description: "International Conference on AI, Management, Engineering, and Technology (ICAMET 2025) held in Pune, India at Genba Sopanrao Moze College of Engineering, an accredited institution approved by AICTE and affiliated to Savitribai Phule Pune University. ISBN Number: 978-93-342-5206-4.",
-    videos: ["CEc9Jsc_kCc", "cRawYUUGvfE", "sK4t6-_YA0M", "WabTO7zXvWQ"],
-    papers: [
-      {
-        title: "Integration of Artificial Intelligence in Engineering Paradigms",
-        authors: "Dr. V. Sharma, Prof. P. Deshmukh",
-        pdfLink: "#"
-      },
-      {
-        title: "Algorithmic Efficiency in Network Security and Blockchain",
-        authors: "Mr. T. Gupta, Dr. N. Patil",
-        pdfLink: "#"
-      },
-      {
-        title: "Next-Generation Materials for Electronics Engineering",
-        authors: "A. Singh, M. Kaur",
-        pdfLink: "#"
-      }
-    ]
+    videos: ["CEc9Jsc_kCc", "cRawYUUGvfE", "sK4t6-_YA0M", "WabTO7zXvWQ"]
   },
-  "icenta-2024": {
-    id: "icenta-2024",
-    title: "Proceeding ICENTA-2024",
-    date: "2024",
-    description: "International Conference on Engineering Nexus & Technological Advancements 2024 (ICENTA-2024) held in Mitte, Berlin, Germany. Theme: Bridging Innovation & Technology for a Smarter Future. ISBN Number: 978-93-342-5598-0. ISBN-13: 979-8314318546. Date: December 15-16, 2024. Mode: Virtual (Global Participation). Organized by Eminsphere.",
-    videos: ["PpccRDDsw1k", "ujuwrmFSCZQ", "TWzp3ADxfIc", "Xxs7Kpf7hT4"],
-    papers: [
-      {
-        title: "Bridging the Nexus Between Software Systems and Hardware Architecture",
-        authors: "Dr. H. Schmidt, K. Mueller",
-        pdfLink: "#"
-      },
-      {
-        title: "Smarter Futures: The Role of Quantum Computing in Engineering",
-        authors: "Prof. L. Wagner, Dr. J. Klein",
-        pdfLink: "#"
-      },
-      {
-        title: "Technological Advancements in Autonomous Vehicle Infrastructure",
-        authors: "M. Becker, S. Richter",
-        pdfLink: "#"
-      }
-    ]
-  },
+
   "iceiis24": {
     id: "iceiis24",
     title: "Proceeding ICEIIS-2024",
     date: "2024",
     description: "International Conference on Edge AI & Intelligent Infrastructure Systems (ICEIIS-2024), focused on the deployment of intelligent systems at the edge, integrating AI with real-world infrastructure including smart cities, industrial automation, and IoT ecosystems. Date: 04 Feb 2024 | Virtual. The conference explores real-time intelligent systems operating under constrained environments, enabling scalable, energy-efficient, and adaptive infrastructure solutions.",
-    videos: ["WAu3ZK-aMCs", "wpLib8tqUIE", "tgQMY3oxIHQ", "YOJIRoZyHDo"],
     papers: [
       {
         title: "Edge AI Frameworks for Real-Time Infrastructure Monitoring",
@@ -470,6 +449,16 @@ export const proceedings: Record<string, ProceedingData> = {
         title: "Energy-Efficient Algorithms for Smart City Sensor Networks",
         authors: "Dr. M. Joshi, P. Bhat",
         pdfLink: "#"
+      },
+      {
+        title: "Predictive Maintenance in Industrial IoT using Edge Intelligence",
+        authors: "Dr. H. Wang, Prof. S. Lee",
+        pdfLink: "#"
+      },
+      {
+        title: "Latency Optimization in Cyber-Physical Systems at the Edge",
+        authors: "Dr. E. Schmidt, M. Johansson",
+        pdfLink: "#"
       }
     ]
   },
@@ -478,7 +467,6 @@ export const proceedings: Record<string, ProceedingData> = {
     title: "Proceeding ICAIDS-2024",
     date: "2024",
     description: "International Conference on Autonomous AI & Distributed Intelligence Systems (ICAIDS-2024), bringing together researchers and practitioners exploring scalable artificial intelligence, multi-agent systems, and distributed intelligent architectures. Date: 10 March 2024 | Virtual Mode. The conference focuses on decentralized decision-making, autonomous system coordination, and resilient AI infrastructures.",
-    videos: ["V3SIabuurjU", "ivagv4eUKMw", "qaH31wvepRs", "C8CIqoNOM64"],
     papers: [
       {
         title: "Decentralized Decision-Making in Multi-Agent Systems",
@@ -494,6 +482,16 @@ export const proceedings: Record<string, ProceedingData> = {
         title: "Trust and Verification in Distributed Intelligent Networks",
         authors: "Prof. R. Krishnan",
         pdfLink: "#"
+      },
+      {
+        title: "Agentic AI Frameworks for Enterprise Supply Chain Optimization",
+        authors: "Dr. M. Chen, A. Kumar",
+        pdfLink: "#"
+      },
+      {
+        title: "Zero-Trust Security Models in Decentralized Autonomous Systems",
+        authors: "Dr. L. Silva, J. Patel",
+        pdfLink: "#"
       }
     ]
   },
@@ -502,7 +500,7 @@ export const proceedings: Record<string, ProceedingData> = {
     title: "Proceeding ICCINET-25",
     date: "2025",
     description: "The International Conference on Computational Intelligence and Emerging Technologies (ICCINET-25), held on October 25, 2025, proudly announces the official launch of its conference proceedings. The proceedings comprise a collection of peer-reviewed research papers presented during the conference, highlighting the latest advancements, innovative methodologies, and emerging applications in computational intelligence, machine learning, and smart technologies. This publication reflects the collaborative efforts of researchers, academicians, and industry experts from across the globe, contributing to the growing body of knowledge in intelligent systems and emerging technologies.",
-    videos: ["ALLLQmylkLo", "t_0RhQn7Esw", "RJo9N0ciMF4", "v8dKQ--66qk", "7fUH0kegnu0", "Y1lMMQOjvPo", "NFuRe39dIl4", "xROSdLVB-_A"],
+    videos: ["g5v9ePzJCoY", "NFuRe39dIl4", "Y1lMMQOjvPo", "t_0RhQn7Esw", "79cjkRdtHl0", "v8dKQ--66qk", "ALLLQmylkLo", "xROSdLVB-_A", "7fUH0kegnu0", "ZvPg8uiHmfE"],
     papers: [
       {
         title: "An Exploration of Game-Based Learning and Incidental Learning",
