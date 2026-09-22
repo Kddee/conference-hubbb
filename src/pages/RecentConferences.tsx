@@ -8,14 +8,14 @@ import ConferenceSections from "@/components/layout/ConferenceSections";
 import { Link } from "react-router-dom";
 
 const recent2026 = [
-  { id: "aiforge-26", title: "AIFORGE 2026", date: "06 September 2026", type: "Hybrid Mode", image: "/conferences/aiforge-glimpse-11.png" },
-  { id: "icaits-26", title: "ICAITS-26", date: "26 July 2026", type: "Virtual Mode" },
-  { id: "iccemb-26", title: "ICCEMB-26", date: "31 May 2026", type: "Online Mode" },
-  { id: "icqadts-2026", title: "ICQADTS-2026", date: "12 April 2026", type: "Hybrid Event" },
-  { id: "icaidss-26", title: "ICAIDSS-26", date: "29 March 2026", type: "Hybrid Event" },
-  { id: "icaeset-2026", title: "ICAESET-2026", date: "15 March 2026", type: "Hybrid Event" },
-  { id: "icnse-26", title: "ICNSE-26", date: "01 March 2026", type: "Hybrid Event" },
-  { id: "ictet-26", title: "ICTET-26", date: "15 February 2026", type: "Hybrid Event" },
+  { id: "aiforge-26", title: "AIFORGE 2026", date: "06 September 2026", type: "Hybrid Mode", image: "/conferences/aiforge-glimpse-7.png" },
+  { id: "icaits-26", title: "ICAITS-26", date: "26 July 2026", type: "Virtual Mode", image: "/conferences/Screenshot 2026-07-26 174930-Blw6y4EK.png" },
+  { id: "iccemb-26", title: "ICCEMB-26", date: "31 May 2026", type: "Online Mode", image: "/conferences/30814e_09571674cb8b483fa4476eccf53d73d8~mv2.png" },
+  { id: "icqadts-2026", title: "ICQADTS-2026", date: "12 April 2026", type: "Hybrid Event", image: "/conferences/30814e_6a64ae4eab594e29acaa5124ade0d3f7~mv2.jpeg" },
+  { id: "icaidss-26", title: "ICAIDSS-26", date: "29 March 2026", type: "Hybrid Event", image: "/conferences/30814e_93a8f9332aef4c4aa7fd4f0e49546811~mv2.png" },
+  { id: "icaeset-2026", title: "ICAESET-2026", date: "15 March 2026", type: "Hybrid Event", image: "/conferences/502b14_21b36ee9a54e4019ad6c50441ba55b96~mv2.png" },
+  { id: "icnse-26", title: "ICNSE-26", date: "01 March 2026", type: "Hybrid Event", image: "/conferences/502b14_0d1fcbd0b5824e94ac5ff878f38b3d15~mv2.png" },
+  { id: "ictet-26", title: "ICTET-26", date: "15 February 2026", type: "Hybrid Event", image: "/conferences/icetsgc-glimpse-2.jpeg" },
   { id: "icmess-26", title: "ICMESS-26", date: "08 February 2026", type: "Hybrid Event", image: "/conferences/icmess-glimpse-2.jpg" },
   { id: "icasit-26", title: "ICASIT-26", date: "25 January 2026", type: "Hybrid Event", image: "/conferences/icasit-glimpse-2.png" },
 ];
