@@ -8,16 +8,16 @@ import ConferenceSections from "@/components/layout/ConferenceSections";
 import { Link } from "react-router-dom";
 
 const recent2026 = [
-  { id: "aiforge-26", title: "AIFORGE 2026", date: "06 September 2026", type: "Hybrid Mode", image: "/conferences/aiforge-glimpse-1.png" },
-  { id: "icaits-26", title: "ICAITS-26", date: "26 July 2026", type: "Virtual Mode", image: "/conferences/icmess-glimpse.jpg" },
-  { id: "iccemb-26", title: "ICCEMB-26", date: "31 May 2026", type: "Online Mode", image: "/conferences/icasit-glimpse.png" },
-  { id: "icqadts-2026", title: "ICQADTS-2026", date: "12 April 2026", type: "Hybrid Event", image: "/conferences/iccinet-glimpse-4.jpg" },
-  { id: "icaidss-26", title: "ICAIDSS-26", date: "29 March 2026", type: "Hybrid Event", image: "/conferences/iccinet-glimpse-3.jpg" },
-  { id: "icaeset-2026", title: "ICAESET-2026", date: "15 March 2026", type: "Hybrid Event", image: "/conferences/iccinet-glimpse-2.jpg" },
-  { id: "icnse-26", title: "ICNSE-26", date: "01 March 2026", type: "Hybrid Event", image: "/conferences/iccinet-glimpse.jpg" },
-  { id: "ictet-26", title: "ICTET-26", date: "15 February 2026", type: "Hybrid Event", image: "/conferences/icetsgc-glimpse-2.jpeg" },
-  { id: "icmess-26", title: "ICMESS-26", date: "08 February 2026", type: "Hybrid Event", image: "/conferences/icmess-glimpse.jpg" },
-  { id: "icasit-26", title: "ICASIT-26", date: "25 January 2026", type: "Hybrid Event", image: "/conferences/icasit-glimpse.png" },
+  { id: "aiforge-26", title: "AIFORGE 2026", date: "06 September 2026", type: "Hybrid Mode", image: "/conferences/aiforge-glimpse-11.png" },
+  { id: "icaits-26", title: "ICAITS-26", date: "26 July 2026", type: "Virtual Mode" },
+  { id: "iccemb-26", title: "ICCEMB-26", date: "31 May 2026", type: "Online Mode" },
+  { id: "icqadts-2026", title: "ICQADTS-2026", date: "12 April 2026", type: "Hybrid Event" },
+  { id: "icaidss-26", title: "ICAIDSS-26", date: "29 March 2026", type: "Hybrid Event" },
+  { id: "icaeset-2026", title: "ICAESET-2026", date: "15 March 2026", type: "Hybrid Event" },
+  { id: "icnse-26", title: "ICNSE-26", date: "01 March 2026", type: "Hybrid Event" },
+  { id: "ictet-26", title: "ICTET-26", date: "15 February 2026", type: "Hybrid Event" },
+  { id: "icmess-26", title: "ICMESS-26", date: "08 February 2026", type: "Hybrid Event", image: "/conferences/icmess-glimpse-2.jpg" },
+  { id: "icasit-26", title: "ICASIT-26", date: "25 January 2026", type: "Hybrid Event", image: "/conferences/icasit-glimpse-2.png" },
 ];
 
 // Additional sections data
@@ -44,15 +44,15 @@ const faqs = [
 ];
 
 const recent2025 = [
-  { id: "icmdia-25", title: "ICMDIA-25", date: "14 December 2025", type: "Hybrid Event", image: "/conferences/icmdia-glimpse.jpeg" },
-  { id: "icetsgc-25", title: "ICETSGC-25", date: "16 November 2025", type: "Hybrid Event", image: "/conferences/icetsgc-banner.jpg" },
-  { id: "iccinet-25", title: "ICCINET-25", date: "25 October 2025", type: "Hybrid Event", image: "/conferences/iccinet-glimpse.jpg" },
+  { id: "icmdia-25", title: "ICMDIA-25", date: "14 December 2025", type: "Hybrid Event", image: "/conferences/icmdia-glimpse-2.jpeg" },
+  { id: "icetsgc-25", title: "ICETSGC-25", date: "16 November 2025", type: "Hybrid Event", image: "/conferences/icetsgc-glimpse-2.jpeg" },
+  { id: "iccinet-25", title: "ICCINET-25", date: "25 October 2025", type: "Hybrid Event", image: "/conferences/iccinet-glimpse-3.jpg" },
   { id: "icamet-2025", title: "ICAMET 2025", date: "2025 (Pune, India)", type: "Hybrid Event", image: "/conferences/icamet-campus.jpg" },
 ];
 
 const recent2024 = [
-  { id: "iceiis-2024", title: "ICEIIS-2024", date: "04 February 2024", type: "Hybrid Event", image: "/conferences/icetsgc-glimpse.jpeg" },
-  { id: "icaids-2024", title: "ICAIDS-2024", date: "10 March 2024", type: "Hybrid Event", image: "/conferences/icmess-glimpse-2.jpg" },
+  { id: "iceiis-2024", title: "ICEIIS-2024", date: "04 February 2024", type: "Hybrid Event" },
+  { id: "icaids-2024", title: "ICAIDS-2024", date: "10 March 2024", type: "Hybrid Event" },
 ];
 
 const stats = [
