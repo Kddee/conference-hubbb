@@ -10,7 +10,7 @@ const conferences = [
     title: "WSGEN-2026: World Summit on Generative AI, Frontier Tech & Autonomous Systems",
     city: "Singapore / Virtual",
     country: "Global Hybrid",
-    date: "25 October 2026 (Sunday)",
+    date: "27 October 2026 (Tuesday)",
     deadline: "23 October 2026",
     topic: "Generative AI & Autonomous Agents",
     link: "/wsgen-2026",

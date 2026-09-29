@@ -75,7 +75,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   "wsgen-2026": {
     id: "wsgen-2026",
     title: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WSGEN-2026)",
-    date: "25 October 2026",
+    date: "27 October 2026",
     isbn: "978-81-981245-4-1",
     location: "Hybrid Mode | Singapore International Hub & Worldwide Virtual Broadcast",
     registrationLink: "/registration",
@@ -89,9 +89,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "AI in Science, Healthcare & High-Impact Frontiers (AI drug discovery, precision genomics, climate modeling, scientific computing)"
     ],
     milestones: [
-      { name: "Paper / Abstract Submission Deadline", date: "22 October 2026" },
+      { name: "Paper / Abstract Submission Deadline", date: "23 October 2026" },
       { name: "Final Registration & Camera-Ready", date: "23 October 2026" },
-      { name: "Main Conference Sessions", date: "25 October 2026 (Sunday)" }
+      { name: "Main Conference Sessions", date: "27 October 2026 (Tuesday)" }
     ],
     speakers: [
       { name: "Wiktoria Gromowa-Cieślik", designation: "CEO & Chief Metrics Officer, Human-Tech Fusion", university: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg", category: "Keynote Speaker" },

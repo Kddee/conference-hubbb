@@ -48,7 +48,7 @@ interface Speaker {
 }
 
 const REGISTRATION_DEADLINE_DATE = new Date("2026-10-23T23:59:59+08:00");
-const CONFERENCE_TARGET_DATE = new Date("2026-10-25T09:00:00+08:00");
+const CONFERENCE_TARGET_DATE = new Date("2026-10-27T09:00:00+08:00");
 
 function useCountdown(target: Date) {
   const calc = () => {
@@ -76,7 +76,7 @@ const conferenceData = {
   fullForm: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WSGEN-2026)",
   theme: "Next-Gen Generative AI, Agentic Workflows & Frontier Autonomous Intelligence",
   tagline: "Where Silicon Valley GenAI Architects, Global AI Researchers, and NRI Technology Leaders Pioneer the Future of Intelligence",
-  date: "Sunday, 25 October 2026",
+  date: "Tuesday, 27 October 2026",
   registrationDeadline: "23 October 2026",
   mode: "Hybrid Mode • Singapore International Hub & Worldwide 24/7 Virtual Broadcast",
   isbn: "978-81-981245-4-1",
@@ -84,7 +84,7 @@ const conferenceData = {
   
   about: [
     "The World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WSGEN-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
-    "Held in Hybrid Mode on Sunday, 25 October 2026, WSGEN-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The summit delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
+    "Held in Hybrid Mode on Tuesday, 27 October 2026, WSGEN-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The summit delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
     "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN 978-81-981245-4-1, submitted for global cataloging across Google Scholar and leading scientific indices, with top-tier submissions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
   ],
 
@@ -219,7 +219,7 @@ const conferenceData = {
     {
       step: "02",
       title: "Paper / Abstract Submission Deadline",
-      date: "22 October 2026",
+      date: "23 October 2026",
       desc: "Final date to upload manuscripts for double-blind peer evaluation."
     },
     {
@@ -231,7 +231,7 @@ const conferenceData = {
     {
       step: "04",
       title: "World Summit Sessions",
-      date: "25 October 2026 (Sunday)",
+      date: "27 October 2026 (Tuesday)",
       desc: "Keynote addresses, technical paper defenses, live demos & global awards."
     }
   ],
@@ -401,7 +401,7 @@ const conferenceData = {
     },
     {
       q: "What is the timeline between paper submission and registration?",
-      a: "Paper and abstract submissions close on 22 October 2026. Final author registration and publication-ready uploads conclude on 23 October 2026, before the World Summit convenes on Sunday, 25 October 2026."
+      a: "Paper and abstract submissions close on 23 October 2026. Final author registration and publication-ready uploads conclude on 23 October 2026, before the World Summit convenes on Tuesday, 27 October 2026."
     },
     {
       q: "Can international researchers, NRIs, and authors present virtually without traveling?",
@@ -444,15 +444,15 @@ const Icetis2026 = () => {
     <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <SEOHead
         title="WSGEN-2026 | World Summit on Generative AI, Frontier Tech & Autonomous Systems"
-        description="Official World Summit website for WSGEN-2026 on Sunday, 25 October 2026. Paper submission deadline: 22 October 2026. Final registration deadline: 23 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
+        description="Official World Summit website for WSGEN-2026 on Tuesday, 27 October 2026. Paper submission & final registration deadline: 23 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
         canonical="https://www.eminsphere.com/wsgen-2026"
         schema={{
           "@context": "https://schema.org",
           "@type": "EducationEvent",
           "name": conferenceData.fullTitle,
           "alternateName": conferenceData.shortTitle,
-          "startDate": "2026-10-25T09:00:00+08:00",
-          "endDate": "2026-10-25T18:00:00+08:00",
+          "startDate": "2026-10-27T09:00:00+08:00",
+          "endDate": "2026-10-27T18:00:00+08:00",
           "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
           "eventStatus": "https://schema.org/EventScheduled",
           "location": [
@@ -519,7 +519,7 @@ const Icetis2026 = () => {
                   <AlertTriangle className="h-4 w-4" /> Registration Closes: 23 October 2026
                 </div>
                 <div className="text-[11px] font-bold text-white/80 bg-accent/15 px-3 py-1 rounded-full border border-accent/30">
-                  Summit: 25 Oct 2026
+                  Summit: 27 Oct 2026
                 </div>
               </div>
 
@@ -960,7 +960,7 @@ const Icetis2026 = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-3xl relative z-10 px-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-accent text-xs font-bold uppercase tracking-wider mb-4 border border-accent/25">
-            <Flame className="h-4 w-4" /> Registration Closes: 23 October 2026 • Summit: 25 October 2026
+            <Flame className="h-4 w-4" /> Registration Closes: 23 October 2026 • Summit: 27 October 2026
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-white mb-6 text-balance">
             Be Part of the World Summit on Generative AI & Autonomous Systems
