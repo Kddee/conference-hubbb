@@ -287,7 +287,7 @@ const Index = () => {
             
             {/* Top Tape overlay */}
             <div className="absolute top-0 left-0 w-full bg-accent/10 border-b border-accent/20 flex justify-between px-4 sm:px-8 py-2 z-20 backdrop-blur-md">
-              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Registration Closes: 22 October 2026</span>
+              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Registration Closes: 23 October 2026</span>
               <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Summit: 25 Oct 2026</span>
             </div>
 
@@ -324,7 +324,7 @@ const Index = () => {
                   <Calendar className="w-4 h-4 text-accent" /> 25 October 2026 (Sunday)
                 </div>
                 <div className="flex items-center gap-2 text-accent text-xs sm:text-sm font-bold bg-accent/10 px-3 sm:px-4 py-2 rounded-lg border border-accent/20">
-                  <Clock className="w-4 h-4 text-accent" /> Reg Closes: 22 October 2026
+                  <Clock className="w-4 h-4 text-accent" /> Reg Closes: 23 October 2026
                 </div>
                 <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium bg-white/5 px-3 sm:px-4 py-2 rounded-lg border border-white/10">
                   <MapPin className="w-4 h-4 text-accent" /> Singapore / Virtual

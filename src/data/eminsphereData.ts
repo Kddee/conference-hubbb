@@ -89,9 +89,8 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "AI in Science, Healthcare & High-Impact Frontiers (AI drug discovery, precision genomics, climate modeling, scientific computing)"
     ],
     milestones: [
-      { name: "Paper Submission Deadline", date: "12 October 2026" },
-      { name: "Acceptance Notification", date: "17 October 2026" },
-      { name: "Camera-Ready & Final Registration", date: "22 October 2026" },
+      { name: "Paper / Abstract Submission Deadline", date: "22 October 2026" },
+      { name: "Final Registration & Camera-Ready", date: "23 October 2026" },
       { name: "Main Conference Sessions", date: "25 October 2026 (Sunday)" }
     ],
     speakers: [

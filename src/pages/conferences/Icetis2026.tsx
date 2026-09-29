@@ -47,7 +47,7 @@ interface Speaker {
   objectPosition?: string;
 }
 
-const REGISTRATION_DEADLINE_DATE = new Date("2026-10-22T23:59:59+08:00");
+const REGISTRATION_DEADLINE_DATE = new Date("2026-10-23T23:59:59+08:00");
 const CONFERENCE_TARGET_DATE = new Date("2026-10-25T09:00:00+08:00");
 
 function useCountdown(target: Date) {
@@ -77,7 +77,7 @@ const conferenceData = {
   theme: "Next-Gen Generative AI, Agentic Workflows & Frontier Autonomous Intelligence",
   tagline: "Where Silicon Valley GenAI Architects, Global AI Researchers, and NRI Technology Leaders Pioneer the Future of Intelligence",
   date: "Sunday, 25 October 2026",
-  registrationDeadline: "22 October 2026",
+  registrationDeadline: "23 October 2026",
   mode: "Hybrid Mode • Singapore International Hub & Worldwide 24/7 Virtual Broadcast",
   isbn: "978-81-981245-4-1",
   registrationLink: "/registration",
@@ -91,7 +91,7 @@ const conferenceData = {
   highlights: [
     { stat: "50+", label: "Nations Represented", desc: "Global academic & Silicon Valley delegates" },
     { stat: "6", label: "Frontier AI Tracks", desc: "Agentic AI, LLMs to Embodied Systems" },
-    { stat: "22 Oct", label: "Final Registration", desc: "Strict registration closing deadline" },
+    { stat: "23 Oct", label: "Final Registration", desc: "Strict registration closing deadline" },
     { stat: "ISBN", label: "Official Proceedings", desc: "Assigned ISBN 978-81-981245-4-1" }
   ],
 
@@ -219,23 +219,17 @@ const conferenceData = {
     {
       step: "02",
       title: "Paper / Abstract Submission Deadline",
-      date: "12 October 2026",
+      date: "22 October 2026",
       desc: "Final date to upload manuscripts for double-blind peer evaluation."
     },
     {
       step: "03",
-      title: "Acceptance Notification",
-      date: "17 October 2026",
-      desc: "Double-blind review outcome letters and editorial critique dispatched."
-    },
-    {
-      step: "04",
-      title: "Final Registration & Camera-Ready",
-      date: "22 October 2026",
+      title: "Final Registration",
+      date: "23 October 2026",
       desc: "Strict deadline for author registration and final publication-ready upload."
     },
     {
-      step: "05",
+      step: "04",
       title: "World Summit Sessions",
       date: "25 October 2026 (Sunday)",
       desc: "Keynote addresses, technical paper defenses, live demos & global awards."
@@ -403,11 +397,11 @@ const conferenceData = {
   faqs: [
     {
       q: "When is the final registration deadline?",
-      a: "The final registration deadline is strictly Thursday, 22 October 2026. All presenting authors and global delegates must complete their registration and camera-ready manuscript upload by this date to be included in the official proceedings and presentation roster."
+      a: "The final registration deadline is strictly Friday, 23 October 2026. All presenting authors and global delegates must complete their registration and final publication-ready upload by this date to be included in the official proceedings and presentation roster."
     },
     {
       q: "What is the timeline between paper submission and registration?",
-      a: "Paper submissions close on 12 October 2026. Double-blind review results are announced on 17 October 2026. Authors of accepted papers then have until 22 October 2026 to register and submit final camera-ready files before the summit convenes on Sunday, 25 October 2026."
+      a: "Paper and abstract submissions close on 22 October 2026. Final author registration and publication-ready uploads conclude on 23 October 2026, before the World Summit convenes on Sunday, 25 October 2026."
     },
     {
       q: "Can international researchers, NRIs, and authors present virtually without traveling?",
@@ -450,7 +444,7 @@ const Icetis2026 = () => {
     <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <SEOHead
         title="ICETIS-2026 | World Summit on Generative AI, Frontier Tech & Autonomous Systems"
-        description="Official World Summit website for ICETIS-2026 on Sunday, 25 October 2026. Final registration deadline: 22 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
+        description="Official World Summit website for ICETIS-2026 on Sunday, 25 October 2026. Paper submission deadline: 22 October 2026. Final registration deadline: 23 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
         canonical="https://www.eminsphere.com/icetis-2026"
         schema={{
           "@context": "https://schema.org",
@@ -522,7 +516,7 @@ const Icetis2026 = () => {
             <div className="mb-10 max-w-2xl mx-auto bg-gradient-to-r from-accent/10 via-card to-primary/10 backdrop-blur-md border border-accent/30 p-5 sm:p-6 rounded-2xl sm:rounded-3xl shadow-[0_0_50px_rgba(28,231,212,0.15)]">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
                 <div className="flex items-center gap-2 text-accent font-black text-xs sm:text-sm uppercase tracking-wider">
-                  <AlertTriangle className="h-4 w-4" /> Registration Closes: 22 October 2026
+                  <AlertTriangle className="h-4 w-4" /> Registration Closes: 23 October 2026
                 </div>
                 <div className="text-[11px] font-bold text-white/80 bg-accent/15 px-3 py-1 rounded-full border border-accent/30">
                   Summit: 25 Oct 2026
@@ -577,7 +571,7 @@ const Icetis2026 = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
               <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black h-12 sm:h-14 px-8 rounded-full shadow-gold hover:-translate-y-0.5 transition-all text-sm sm:text-base">
                 <Link to={conferenceData.registrationLink}>
-                  Register Online (Before 22 Oct) <ArrowRight className="ml-2 h-4 w-4" />
+                  Register Online (Before 23 Oct) <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold h-12 sm:h-14 px-8 rounded-full transition-all text-sm sm:text-base">
@@ -721,7 +715,7 @@ const Icetis2026 = () => {
         </div>
       </section>
 
-      {/* IMPORTANT DATES / TIMELINE WITH 22 OCT REGISTRATION DEADLINE */}
+      {/* IMPORTANT DATES / TIMELINE WITH 23 OCT REGISTRATION DEADLINE */}
       <section className="py-16 sm:py-24 bg-card/25 border-y border-border/40">
         <div className="container max-w-6xl px-4">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
@@ -732,18 +726,18 @@ const Icetis2026 = () => {
               Important Summit Dates
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base">
-              Please note the adjusted timeline leading up to the final registration closing on 22 October 2026.
+              Please note the adjusted timeline leading up to the final registration closing on 23 October 2026.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {conferenceData.milestones.map((m, i) => (
               <Card
                 key={i}
                 className={`p-5 rounded-2xl flex flex-col justify-between transition-all duration-300 ${
-                  i === 3
+                  i === 2
                     ? "bg-accent/15 border-accent/60 shadow-[0_0_30px_rgba(28,231,212,0.2)]"
-                    : i === 4
+                    : i === 3
                     ? "bg-primary/15 border-primary/50 shadow-gold"
                     : "bg-card/40 border-white/10 hover:border-white/20"
                 }`}
@@ -754,7 +748,7 @@ const Icetis2026 = () => {
                   <p className="text-xs text-muted-foreground mb-4">{m.desc}</p>
                 </div>
                 <div className={`pt-3 border-t border-white/10 font-mono text-xs sm:text-sm font-bold ${
-                  i === 3 ? "text-accent text-sm font-black" : "text-primary"
+                  i === 2 ? "text-accent text-sm font-black" : "text-primary"
                 }`}>
                   {m.date}
                 </div>
@@ -966,7 +960,7 @@ const Icetis2026 = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-3xl relative z-10 px-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-accent text-xs font-bold uppercase tracking-wider mb-4 border border-accent/25">
-            <Flame className="h-4 w-4" /> Registration Closes: 22 October 2026 • Summit: 25 October 2026
+            <Flame className="h-4 w-4" /> Registration Closes: 23 October 2026 • Summit: 25 October 2026
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-white mb-6 text-balance">
             Be Part of the World Summit on Generative AI & Autonomous Systems
@@ -976,7 +970,7 @@ const Icetis2026 = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-black h-12 sm:h-14 px-10 rounded-full shadow-gold hover:-translate-y-1 transition-all text-sm sm:text-base w-full sm:w-auto">
-              <Link to="/registration">Register Online (Closes 22 Oct)</Link>
+              <Link to="/registration">Register Online (Closes 23 Oct)</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white/20 hover:bg-white/10 text-white font-semibold h-12 sm:h-14 px-8 rounded-full transition-all text-sm sm:text-base w-full sm:w-auto">
               <Link to="/upcoming-conferences">View All Upcoming Summits</Link>

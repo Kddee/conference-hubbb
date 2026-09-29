@@ -11,7 +11,7 @@ const conferences = [
     city: "Singapore / Virtual",
     country: "Global Hybrid",
     date: "25 October 2026 (Sunday)",
-    deadline: "22 October 2026",
+    deadline: "23 October 2026",
     topic: "Generative AI & Autonomous Agents",
     link: "/icetis-2026",
     isbn: "978-81-981245-4-1",
