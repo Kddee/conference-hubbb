@@ -74,12 +74,12 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   },
   "icetis-2026": {
     id: "icetis-2026",
-    title: "International Conference on Emerging Technologies, Intelligent Systems & Sustainable Computing (ICETIS-2026)",
+    title: "World Congress on Frontier Technologies, Intelligent Systems & Sustainable Computing (ICETIS-2026)",
     date: "25 October 2026",
     isbn: "978-81-981245-4-1",
-    location: "Hybrid Mode | Singapore & Global Virtual Access",
+    location: "Hybrid Mode | Singapore International Hub & Worldwide Virtual Broadcast",
     registrationLink: "/registration",
-    description: "ICETIS-2026 is an international flagship research forum dedicated to groundbreaking advances in Emerging Technologies, Generative & Agentic AI, Cyber-Physical Systems, Quantum Computing, Cloud-Native Architectures, and Green Sustainable Computing. All accepted submissions undergo rigorous double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers and indexing across Google Scholar, with recommendations for Scopus/WoS indexed journals.",
+    description: "ICETIS-2026 is an international flagship research forum dedicated to groundbreaking advances in Frontier AI, Autonomous Systems, Quantum Computing, Cloud-Native Architectures, and Green Sustainable Computing. Uniting Silicon Valley innovators, global researchers, and NRI technology leaders, all accepted submissions undergo rigorous double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers and indexing across Google Scholar, with recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
       "Agentic AI & Generative Intelligence (Foundation models, autonomous multi-agent orchestration, LLM safety)",
       "Quantum Technologies & Next-Gen Computing (Quantum algorithms, quantum cryptography, quantum simulation)",

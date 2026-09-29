@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 
 const conferences = [
   {
-    title: "ICETIS-2026: International Conference on Emerging Technologies, Intelligent Systems & Sustainable Computing",
+    title: "ICETIS-2026: World Congress on Frontier Technologies, Intelligent Systems & Sustainable Computing",
     city: "Singapore / Virtual",
     country: "Global Hybrid",
     date: "25 October 2026 (Sunday)",
-    topic: "AI & Sustainable Computing",
+    topic: "Frontier AI, Quantum & Deep-Tech",
     link: "/icetis-2026",
     isbn: "978-81-981245-4-1",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"

@@ -176,7 +176,7 @@ const recentConferencesData = [
 const rotations = [-3, 2, -1.5, 3, -2, 1, -2.5, 2.5, -1, 3, -3, 1.5, -2, 2];
 
 const upcoming = [
-  { title: "ICETIS-2026: Emerging Technologies, Intelligent Systems & Sustainable Computing", city: "Singapore / Virtual", date: "25 October 2026 (Sunday)", topic: "AI & Sustainable Computing", link: "/icetis-2026", isbn: "978-81-981245-4-1", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
+  { title: "ICETIS-2026: World Congress on Frontier Technologies, Intelligent Systems & Sustainable Computing", city: "Singapore / Virtual", date: "25 October 2026 (Sunday)", topic: "Frontier AI, Quantum & Deep-Tech", link: "/icetis-2026", isbn: "978-81-981245-4-1", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
   { title: "Eminsphere Manila Nexus 2027 (EMN 2027)", city: "Manila, Philippines", date: "20–21 March 2027", topic: "Intelligent Computing & Digital Futures", link: "/manila-nexus-2027", img: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop" },
 ];
 
@@ -312,8 +312,11 @@ const Index = () => {
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white mb-2 tracking-tight">
                 ICETIS-2026
               </h3>
-              <p className="text-base sm:text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent mb-6 leading-snug">
-                Emerging Technologies, Intelligent Systems & Sustainable Computing
+              <p className="text-base sm:text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent mb-2 leading-snug">
+                World Congress on Frontier Technologies, Intelligent Systems & Sustainable Computing
+              </p>
+              <p className="text-xs sm:text-sm text-white/70 mb-6 italic">
+                "Global Convergence: Frontier Intelligence, Quantum Horizons & Sustainable Deep-Tech"
               </p>
               
               <div className="flex flex-wrap gap-3 sm:gap-4 mb-8">
