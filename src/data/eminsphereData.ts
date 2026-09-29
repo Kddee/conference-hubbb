@@ -72,14 +72,14 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Camera Ready & Registration", date: "13 June 2026" }
     ]
   },
-  "ws-gaias-2026": {
-    id: "ws-gaias-2026",
-    title: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WS-GAIAS-2026)",
+  "genai-2026": {
+    id: "genai-2026",
+    title: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (GENAI-2026)",
     date: "25 October 2026",
     isbn: "978-81-981245-4-1",
     location: "Hybrid Mode | Singapore International Hub & Worldwide Virtual Broadcast",
     registrationLink: "/registration",
-    description: "WS-GAIAS-2026 (World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems) is an international flagship summit dedicated to groundbreaking advances in Generative AI, Autonomous Agentic Orchestration, Sovereign Foundation Models, and Physical Deep-Tech. Uniting Silicon Valley innovators, global researchers, and NRI technology leaders, all accepted submissions undergo rigorous double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers (ISBN: 978-81-981245-4-1) and indexing across Google Scholar, with recommendations for Scopus/WoS indexed journals.",
+    description: "GENAI-2026 (World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems) is an international flagship summit dedicated to groundbreaking advances in Generative AI, Autonomous Agentic Orchestration, Sovereign Foundation Models, and Physical Deep-Tech. Uniting Silicon Valley innovators, global researchers, and NRI technology leaders, all accepted submissions undergo rigorous double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers (ISBN: 978-81-981245-4-1) and indexing across Google Scholar, with recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
       "Generative AI, Large Language Models & Foundation Models (Pre-training, fine-tuning, reasoning architectures, multimodal LLMs)",
       "Autonomous Agentic AI & Multi-Agent Orchestration (Tool-use, self-reflective agents, multi-agent swarms, planning frameworks)",

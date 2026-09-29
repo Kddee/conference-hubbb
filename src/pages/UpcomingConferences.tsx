@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 
 const conferences = [
   {
-    title: "WS-GAIAS-2026: World Summit on Generative AI, Frontier Tech & Autonomous Systems",
+    title: "GENAI-2026: World Summit on Generative AI, Frontier Tech & Autonomous Systems",
     city: "Singapore / Virtual",
     country: "Global Hybrid",
     date: "25 October 2026 (Sunday)",
     deadline: "23 October 2026",
     topic: "Generative AI & Autonomous Agents",
-    link: "/ws-gaias-2026",
+    link: "/genai-2026",
     isbn: "978-81-981245-4-1",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
   },
