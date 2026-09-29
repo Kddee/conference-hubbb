@@ -32,7 +32,8 @@ import {
   BadgeCheck,
   Plane,
   Building2,
-  Share2
+  AlertTriangle,
+  Bot
 } from "lucide-react";
 
 interface Speaker {
@@ -46,6 +47,7 @@ interface Speaker {
   objectPosition?: string;
 }
 
+const REGISTRATION_DEADLINE_DATE = new Date("2026-10-22T23:59:59+08:00");
 const CONFERENCE_TARGET_DATE = new Date("2026-10-25T09:00:00+08:00");
 
 function useCountdown(target: Date) {
@@ -70,32 +72,39 @@ function useCountdown(target: Date) {
 const conferenceData = {
   id: "ICETIS-2026",
   shortTitle: "ICETIS-2026",
-  fullTitle: "World Congress on Frontier Technologies, Intelligent Systems & Sustainable Computing",
-  theme: "Global Convergence: Frontier Intelligence, Quantum Horizons & Sustainable Deep-Tech Infrastructures",
-  tagline: "Uniting Silicon Valley Visionaries, European Academicians, Global NRI Technology Executives & International Scholars Across 50+ Nations",
+  fullTitle: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems",
+  fullForm: "International Conference on Emerging Technologies, Intelligent Agents & Systems (ICETIS-2026)",
+  theme: "Next-Gen Generative AI, Agentic Workflows & Frontier Autonomous Intelligence",
+  tagline: "Where Silicon Valley GenAI Architects, Global AI Researchers, and NRI Technology Leaders Pioneer the Future of Intelligence",
   date: "Sunday, 25 October 2026",
+  registrationDeadline: "22 October 2026",
   mode: "Hybrid Mode • Singapore International Hub & Worldwide 24/7 Virtual Broadcast",
   isbn: "978-81-981245-4-1",
   registrationLink: "/registration",
   
   about: [
-    "The World Congress on Frontier Technologies, Intelligent Systems & Sustainable Computing (ICETIS-2026) is a premier peer-reviewed international scientific summit convened to address seismic paradigm shifts across Artificial Intelligence, Quantum Architectures, Autonomous Cyber-Physical Systems, and Sustainable Global Computing.",
-    "Held in Hybrid Mode on Sunday, 25 October 2026, ICETIS-2026 establishes a high-level confluence uniting global scholars, Silicon Valley architects, European university chairs, Asian research institutes, and prominent NRI technology directors. The congress delivers a prestigious, merit-driven forum to debate cutting-edge breakthroughs, publish double-blind peer-reviewed contributions with official ISBN proceedings, and accelerate real-world deep-tech applications for resilient, carbon-neutral digital economies.",
-    "All accepted and registered papers will be published in the official Conference Proceedings with assigned ISBN 978-81-981245-4-1 and submitted for comprehensive cataloging across Google Scholar and leading indexing databases, with high-ranking papers recommended for publication in Scopus and Web of Science (WoS) partner journals."
+    "The World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICETIS-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
+    "Held in Hybrid Mode on Sunday, 25 October 2026, ICETIS-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The summit delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
+    "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN 978-81-981245-4-1, submitted for global cataloging across Google Scholar and leading scientific indices, with top-tier submissions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
   ],
 
   highlights: [
     { stat: "50+", label: "Nations Represented", desc: "Global academic & Silicon Valley delegates" },
-    { stat: "6", label: "Frontier Research Tracks", desc: "Spanning Agentic AI to Green Computing" },
-    { stat: "100%", label: "Double-Blind Review", desc: "Rigorous international scientific jury" },
+    { stat: "6", label: "Frontier AI Tracks", desc: "Agentic AI, LLMs to Embodied Systems" },
+    { stat: "22 Oct", label: "Final Registration", desc: "Strict registration closing deadline" },
     { stat: "ISBN", label: "Official Proceedings", desc: "Assigned ISBN 978-81-981245-4-1" }
   ],
 
   pillars: [
     {
-      icon: Globe,
-      title: "Global Dual-Stage Hybrid Platform",
-      desc: "Present either in person at the Singapore international academic partner hub or virtually via our interactive low-latency global broadcast, synchronized across Americas, Europe, and Asia-Pacific time zones."
+      icon: Bot,
+      title: "Frontier GenAI & Agentic AI Focus",
+      desc: "Anchored in the world's most trending tech domains: Autonomous Agents, Foundation Model Alignment, Multimodal LLMs, and Embodied Physical AI."
+    },
+    {
+      icon: Users,
+      title: "Silicon Valley & NRI Diaspora Confluence",
+      desc: "Connect directly with prominent Indian-origin technology executives, US cloud innovators, and European research leaders driving Tier-1 enterprise GenAI systems."
     },
     {
       icon: BookOpen,
@@ -103,24 +112,19 @@ const conferenceData = {
       desc: "All accepted papers receive official ISBN 978-81-981245-4-1 publication and permanent DOI identifiers, with top 15% high-impact manuscripts fast-tracked to Scopus (Q1/Q2) & Web of Science journals."
     },
     {
-      icon: Users,
-      title: "Silicon Valley & NRI Diaspora Confluence",
-      desc: "Engage with prominent Indian-origin technology executives, US cloud innovators, and European research leaders shaping the vanguard of global computing, enterprise systems, and AI."
+      icon: Globe,
+      title: "Global Dual-Stage Hybrid Platform",
+      desc: "Present either in person at the Singapore international academic partner hub or virtually via our interactive low-latency global broadcast, synchronized across Americas, Europe, and Asia-Pacific time zones."
     },
     {
       icon: ShieldCheck,
-      title: "100% Merit-Based Double-Blind Review",
-      desc: "Submissions undergo stringent evaluation by our international technical review board, providing authors with transparent, high-value editorial critique within 14 working days."
+      title: "Strict Double-Blind Peer Review",
+      desc: "Submissions undergo stringent evaluation by our international technical review board, providing authors with transparent, high-value editorial critique within 5 working days."
     },
     {
       icon: Award,
       title: "Prestigious Global Honors & Citations",
-      desc: "Celebrate scientific excellence with the Best Research Paper Gold Award, Best Student Presenter Citation, and the Sustainable Deep-Tech Innovation Trophy awarded at the summit."
-    },
-    {
-      icon: Plane,
-      title: "Official Visa & Diplomatic Assistance",
-      desc: "Registered international delegates and expatriates requesting entry to Singapore receive expedited official invitation letters with verifiable institutional endorsement."
+      desc: "Celebrate scientific excellence with the Best Research Paper Gold Award, Best Student Presenter Citation, and the Frontier AI Innovation Trophy awarded at the summit."
     }
   ],
 
@@ -129,78 +133,78 @@ const conferenceData = {
       id: "track-1",
       number: "01",
       icon: Cpu,
-      title: "Frontier AI, Agentic Workflows & Foundation Models",
+      title: "Generative AI, Large Language Models & Foundation Models",
       topics: [
-        "Autonomous multi-agent orchestration & self-reflective cognitive loops",
-        "Large Language Models (LLMs) & foundation model safety, alignment & RLHF",
-        "Neuro-symbolic computing & causal inference architectures",
-        "Explainable AI (XAI), algorithmic fairness & enterprise governance",
-        "Generative synthesis for automated software engineering & chip design"
+        "Architectures for Next-Gen LLMs, Multimodal Transformers & Mixture-of-Experts (MoE)",
+        "Foundation model alignment, RLHF/DPO, reasoning benchmarks & synthetic data",
+        "Context window expansion, KV-cache optimization & sub-quadratic attention",
+        "Model distillation, quantization, LoRA & parameter-efficient fine-tuning",
+        "Generative AI for automated code synthesis, formal verification & chip architecture"
       ]
     },
     {
       id: "track-2",
       number: "02",
       icon: Zap,
-      title: "Quantum Computing, Post-Quantum Cryptography & Hardware Security",
+      title: "Autonomous Agentic AI, Multi-Agent Orchestration & Reasoning",
       topics: [
-        "Quantum algorithms for optimization, simulation & quantum chemistry",
-        "Post-quantum cryptography (PQC) & quantum-resistant TLS frameworks",
-        "Quantum machine learning (QML) & hybrid classical-quantum pipelines",
-        "Hardware-level quantum error correction & superconducting qubit scaling",
-        "Quantum key distribution (QKD) & decentralized quantum networks"
+        "Autonomous multi-agent swarms, self-reflective cognitive loops & tool execution",
+        "Hierarchical planning, goal decomposition & long-horizon episodic memory",
+        "Neuro-symbolic computing & causal inference architectures in autonomous agents",
+        "Multi-agent game theory, cooperative consensus & automated negotiation protocols",
+        "Agentic benchmarking, safety bounds & human-in-the-loop oversight frameworks"
       ]
     },
     {
       id: "track-3",
       number: "03",
-      icon: Network,
-      title: "Autonomous Cyber-Physical Systems & Next-Gen 6G IoT",
+      icon: Database,
+      title: "Enterprise GenAI, Scalable Cloud Systems & Sovereign LLMs",
       topics: [
-        "Autonomous edge nodes & real-time embedded neural processing",
-        "Industrial digital twins & predictive operational telemetry at scale",
-        "Swarm robotics, autonomous vehicle coordination & spatial intelligence",
-        "Smart city sensor fabrics & resilient critical infrastructure computing",
-        "Ultra-reliable low-latency communications (URLLC) & 6G radio architectures"
+        "Enterprise RAG (Retrieval-Augmented Generation) & high-dimensional vector databases",
+        "Private on-premise & sovereign LLM deployment frameworks for critical sectors",
+        "Kubernetes orchestration for distributed GPU/TPU training & inferencing clusters",
+        "High-throughput model serving, vLLM & continuous latency optimization",
+        "Zero-trust security, model confidentiality & enterprise compliance in generative AI"
       ]
     },
     {
       id: "track-4",
       number: "04",
-      icon: Database,
-      title: "Enterprise Cloud-Native, Distributed Systems & Sovereign Data",
+      icon: Network,
+      title: "Physical AI, Autonomous Robotics & Embodied Intelligence",
       topics: [
-        "Kubernetes orchestration, serverless frameworks & zero-trust service meshes",
-        "High-throughput event streaming & federated consensus architectures",
-        "Sovereign cloud compliance, multi-region residency & confidential computing",
-        "Decentralized ledger architectures, verifiable credentials & Web3 infrastructure",
-        "High-performance distributed storage & edge-accelerated databases"
+        "Embodied foundation models for dexterous robotic manipulation & locomotion",
+        "Vision-Language-Action (VLA) models & real-time multimodal edge sensory fusion",
+        "Industrial digital twins & predictive robotic automation at gigawatt scale",
+        "Autonomous vehicles, spatial intelligence & coordinated drone swarm intelligence",
+        "Ultra-low latency edge inferencing, neuromorphic processors & hardware accelerators"
       ]
     },
     {
       id: "track-5",
       number: "05",
-      icon: Leaf,
-      title: "Sustainable Deep-Tech, Green Datacenters & Net-Zero Computing",
+      icon: ShieldCheck,
+      title: "Frontier AI Safety, Alignment, Red-Teaming & Global Governance",
       topics: [
-        "Energy-efficient machine learning training & model weight quantization",
-        "Carbon-neutral datacenter designs & liquid immersion cooling innovations",
-        "Embodied carbon lifecycle assessment for computing silicon & servers",
-        "Renewable energy integration via AI-driven predictive smart grids",
-        "Circular electronics, e-waste abatement & sustainable computing metrics"
+        "Frontier AI catastrophic risk mitigation, containment & model guardrailing",
+        "Automated adversarial red-teaming, prompt injection & jailbreak defenses",
+        "Explainable AI (XAI), mechanistic interpretability & internal representation mapping",
+        "Watermarking, deepfake detection & cryptographic synthetic provenance tracking",
+        "Global AI governance frameworks, regulatory compliance & international alignment"
       ]
     },
     {
       id: "track-6",
       number: "06",
       icon: HeartPulse,
-      title: "Precision Biomedical Informatics & Healthcare AI Systems",
+      title: "AI in Science, Healthcare & High-Impact Frontiers",
       topics: [
-        "AI-assisted clinical diagnostics & high-resolution biomedical imaging",
+        "AI-driven scientific discovery, computational biology, protein folding & drug design",
+        "Multimodal clinical diagnostics, pathology AI & high-resolution medical imaging",
         "Privacy-preserving federated learning across international medical networks",
-        "Wearable biosensing fabrics & real-time patient telemetry algorithms",
-        "Computational genomics & in-silico therapeutic compound discovery",
-        "Clinical decision support systems & strict HIPAA / GDPR health data compliance"
+        "Quantum computing & quantum machine learning (QML) algorithms",
+        "GenAI applications in quantitative finance, legal tech & predictive modeling"
       ]
     }
   ],
@@ -208,33 +212,33 @@ const conferenceData = {
   milestones: [
     {
       step: "01",
-      title: "Call for Papers Announcement",
+      title: "Call for Papers & Submissions",
       date: "Active & Open",
-      desc: "Portal accepting original full papers, short papers, and abstracts."
+      desc: "Submissions portal accepting full papers, short papers, and research abstracts."
     },
     {
       step: "02",
-      title: "Paper Submission Deadline",
-      date: "05 October 2026",
-      desc: "Final deadline to submit original manuscripts for double-blind review."
+      title: "Paper / Abstract Submission Deadline",
+      date: "12 October 2026",
+      desc: "Final date to upload manuscripts for double-blind peer evaluation."
     },
     {
       step: "03",
       title: "Acceptance Notification",
-      date: "12 October 2026",
+      date: "17 October 2026",
       desc: "Double-blind review outcome letters and editorial critique dispatched."
     },
     {
       step: "04",
-      title: "Camera-Ready & Final Registration",
-      date: "18 October 2026",
-      desc: "Final publication-ready manuscript submission and author seat confirmation."
+      title: "Final Registration & Camera-Ready",
+      date: "22 October 2026",
+      desc: "Strict deadline for author registration and final publication-ready upload."
     },
     {
       step: "05",
-      title: "World Congress Sessions",
+      title: "World Summit Sessions",
       date: "25 October 2026 (Sunday)",
-      desc: "Plenary keynotes, international technical tracks, oral defenses & awards."
+      desc: "Keynote addresses, technical paper defenses, live demos & global awards."
     }
   ],
 
@@ -381,7 +385,7 @@ const conferenceData = {
   awards: [
     {
       title: "Best Research Paper Gold Award",
-      desc: "Conferred upon the manuscript demonstrating outstanding scientific innovation, methodological excellence, and measurable impact.",
+      desc: "Conferred upon the manuscript demonstrating outstanding scientific innovation, methodological excellence, and measurable impact in GenAI & Autonomous Systems.",
       badge: "Gold Award"
     },
     {
@@ -390,13 +394,21 @@ const conferenceData = {
       badge: "Excellence"
     },
     {
-      title: "Sustainable Deep-Tech Innovation Trophy",
-      desc: "Honors pioneering research with exceptional practical applicability toward decarbonized systems and green computing.",
-      badge: "Green Deep-Tech"
+      title: "Frontier AI Innovation Trophy",
+      desc: "Honors pioneering research with breakthrough practical applicability in multi-agent systems and enterprise intelligence.",
+      badge: "Deep-Tech Honor"
     }
   ],
 
   faqs: [
+    {
+      q: "When is the final registration deadline?",
+      a: "The final registration deadline is strictly Thursday, 22 October 2026. All presenting authors and global delegates must complete their registration and camera-ready manuscript upload by this date to be included in the official proceedings and presentation roster."
+    },
+    {
+      q: "What is the timeline between paper submission and registration?",
+      a: "Paper submissions close on 12 October 2026. Double-blind review results are announced on 17 October 2026. Authors of accepted papers then have until 22 October 2026 to register and submit final camera-ready files before the summit convenes on Sunday, 25 October 2026."
+    },
     {
       q: "Can international researchers, NRIs, and authors present virtually without traveling?",
       a: "Yes, absolutely. ICETIS-2026 is conducted in a full Dual-Stage Hybrid format. International delegates, NRIs, and scholars can present remotely from anywhere in the world through our high-definition interactive conference platform with dedicated live Q&A. Remote presentations carry identical academic validity, and official ISBN proceedings and presentation certificates are issued with full verification."
@@ -418,10 +430,6 @@ const conferenceData = {
       a: "Authors must prepare manuscripts using standard IEEE or Springer two-column conference template (typically 6 to 8 pages including figures, tables, and references). Submissions must be entirely anonymized for double-blind review, with author names and institutional affiliations omitted from initial drafts."
     },
     {
-      q: "How are sessions synchronized across different global time zones?",
-      a: "The technical program is divided into synchronized regional broadcast blocks to ensure comfortable oral presentation slots for participants in the Americas (PST/EST), Europe/Middle East (CET/GST), and Asia-Pacific (SGT/IST)."
-    },
-    {
       q: "What is the policy regarding academic integrity and plagiarism screening?",
       a: "Strict scientific ethics are enforced. All submitted manuscripts are screened using automated plagiarism detection software (Turnitin/iThenticate). Manuscripts displaying uncredited similarity exceeding 15% (excluding standard bibliography) will be automatically disqualified."
     }
@@ -431,7 +439,7 @@ const conferenceData = {
 const Icetis2026 = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [speakerFilter, setSpeakerFilter] = useState<"all" | "international" | "nri">("all");
-  const countdown = useCountdown(CONFERENCE_TARGET_DATE);
+  const regCountdown = useCountdown(REGISTRATION_DEADLINE_DATE);
 
   const filteredSpeakers = conferenceData.speakers.filter((s) => {
     if (speakerFilter === "all") return true;
@@ -441,8 +449,8 @@ const Icetis2026 = () => {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <SEOHead
-        title="ICETIS-2026 | World Congress on Frontier Technologies, Intelligent Systems & Sustainable Computing"
-        description="Official World Congress website for ICETIS-2026 on Sunday, 25 October 2026 in Singapore & Virtual Stage. Premier gathering uniting global researchers, Silicon Valley pioneers, and NRI technology leaders in Agentic AI, Quantum Computing, and Sustainable Deep-Tech."
+        title="ICETIS-2026 | World Summit on Generative AI, Frontier Tech & Autonomous Systems"
+        description="Official World Summit website for ICETIS-2026 on Sunday, 25 October 2026. Final registration deadline: 22 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
         canonical="https://www.eminsphere.com/icetis-2026"
         schema={{
           "@context": "https://schema.org",
@@ -480,56 +488,66 @@ const Icetis2026 = () => {
       {/* HERO SECTION */}
       <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-32 border-b border-border/40">
         {/* Ambient background glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] sm:w-[1100px] h-[500px] bg-gradient-to-tr from-primary/20 via-accent/15 to-transparent blur-[150px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] sm:w-[1100px] h-[500px] bg-gradient-to-tr from-primary/25 via-accent/20 to-transparent blur-[150px] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff0c_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none opacity-40" />
 
         <div className="container relative z-10 max-w-6xl px-4">
           <div className="max-w-5xl mx-auto text-center">
             
             {/* Live Flagship Summit Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/25 text-xs sm:text-sm font-semibold mb-6 shadow-sm backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 text-primary border border-primary/30 text-xs sm:text-sm font-bold mb-6 shadow-sm backdrop-blur-md">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
               </span>
-              <span>{conferenceData.shortTitle} • World Congress on Frontier Technologies 2026</span>
+              <span>{conferenceData.shortTitle} • World Summit on Generative AI & Autonomous Systems</span>
             </div>
 
             {/* Main Summit Title */}
-            <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.1] mb-6">
+            <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08] mb-5">
               {conferenceData.fullTitle}
             </h1>
 
-            {/* Elevated Master Theme */}
-            <p className="text-base sm:text-xl md:text-2xl text-accent font-semibold mb-4 max-w-4xl mx-auto leading-snug">
+            {/* Trending Master Theme */}
+            <p className="text-base sm:text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-accent via-primary to-accent font-black mb-4 max-w-4xl mx-auto leading-snug">
               "{conferenceData.theme}"
             </p>
 
-            {/* Global Diaspora & International Slogan */}
+            {/* Global Slogan */}
             <p className="text-xs sm:text-sm md:text-base text-muted-foreground font-medium mb-8 max-w-3xl mx-auto leading-relaxed">
               {conferenceData.tagline}
             </p>
 
-            {/* LIVE COUNTDOWN TIMER */}
-            <div className="mb-10 max-w-2xl mx-auto bg-card/60 backdrop-blur-md border border-white/10 p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-              <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary mb-3 flex items-center justify-center gap-2">
-                <Clock className="h-3.5 w-3.5" /> Summit Commences In
+            {/* URGENT REGISTRATION DEADLINE & COUNTDOWN BANNER */}
+            <div className="mb-10 max-w-2xl mx-auto bg-gradient-to-r from-accent/10 via-card to-primary/10 backdrop-blur-md border border-accent/30 p-5 sm:p-6 rounded-2xl sm:rounded-3xl shadow-[0_0_50px_rgba(28,231,212,0.15)]">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
+                <div className="flex items-center gap-2 text-accent font-black text-xs sm:text-sm uppercase tracking-wider">
+                  <AlertTriangle className="h-4 w-4" /> Registration Closes: 22 October 2026
+                </div>
+                <div className="text-[11px] font-bold text-white/80 bg-accent/15 px-3 py-1 rounded-full border border-accent/30">
+                  Summit: 25 Oct 2026
+                </div>
               </div>
+
+              <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary mb-3 flex items-center justify-center gap-2">
+                <Clock className="h-3.5 w-3.5" /> Registration Portal Closes In
+              </div>
+
               <div className="grid grid-cols-4 gap-2 sm:gap-4 text-center">
                 <div className="p-2 sm:p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="text-2xl sm:text-4xl font-serif font-black text-white">{countdown.days}</div>
+                  <div className="text-2xl sm:text-4xl font-serif font-black text-white">{regCountdown.days}</div>
                   <div className="text-[9px] sm:text-xs uppercase tracking-wider text-muted-foreground font-bold">Days</div>
                 </div>
                 <div className="p-2 sm:p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="text-2xl sm:text-4xl font-serif font-black text-white">{countdown.hours}</div>
+                  <div className="text-2xl sm:text-4xl font-serif font-black text-white">{regCountdown.hours}</div>
                   <div className="text-[9px] sm:text-xs uppercase tracking-wider text-muted-foreground font-bold">Hours</div>
                 </div>
                 <div className="p-2 sm:p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="text-2xl sm:text-4xl font-serif font-black text-white">{countdown.minutes}</div>
+                  <div className="text-2xl sm:text-4xl font-serif font-black text-white">{regCountdown.minutes}</div>
                   <div className="text-[9px] sm:text-xs uppercase tracking-wider text-muted-foreground font-bold">Mins</div>
                 </div>
                 <div className="p-2 sm:p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="text-2xl sm:text-4xl font-serif font-black text-accent">{countdown.seconds}</div>
+                  <div className="text-2xl sm:text-4xl font-serif font-black text-accent">{regCountdown.seconds}</div>
                   <div className="text-[9px] sm:text-xs uppercase tracking-wider text-muted-foreground font-bold">Secs</div>
                 </div>
               </div>
@@ -539,7 +557,7 @@ const Icetis2026 = () => {
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm text-white/90 font-medium mb-10">
               <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-sm">
                 <Calendar className="h-4 w-4 text-primary" />
-                <span>{conferenceData.date}</span>
+                <span>Summit: {conferenceData.date}</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-sm">
                 <MapPin className="h-4 w-4 text-accent" />
@@ -559,11 +577,11 @@ const Icetis2026 = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
               <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black h-12 sm:h-14 px-8 rounded-full shadow-gold hover:-translate-y-0.5 transition-all text-sm sm:text-base">
                 <Link to={conferenceData.registrationLink}>
-                  Submit Abstract / Register <ArrowRight className="ml-2 h-4 w-4" />
+                  Register Online (Before 22 Oct) <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold h-12 sm:h-14 px-8 rounded-full transition-all text-sm sm:text-base">
-                <a href="#tracks">Explore 6 Research Tracks</a>
+                <a href="#tracks">Explore GenAI Tracks</a>
               </Button>
             </div>
           </div>
@@ -583,20 +601,20 @@ const Icetis2026 = () => {
         </div>
       </section>
 
-      {/* GLOBAL DIASPORA & INTERNATIONAL LEADERSHIP BANNER */}
+      {/* GLOBAL DIASPORA & SILICON VALLEY LEADERSHIP BANNER */}
       <section className="container max-w-6xl mb-16 sm:mb-20 px-4">
         <div className="relative rounded-3xl p-6 sm:p-10 bg-gradient-to-r from-primary/15 via-card to-accent/15 border border-white/10 overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10 grid lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider mb-3">
-                <Sparkles className="h-3.5 w-3.5" /> High-Level Global Tech Confluence
+                <Sparkles className="h-3.5 w-3.5" /> Silicon Valley & Global NRI Tech Network
               </div>
               <h3 className="text-xl sm:text-3xl font-serif font-bold text-white mb-2 leading-snug">
-                Where International Academia Meets Silicon Valley & NRI Enterprise Leadership
+                Accelerating the Next Frontier of Generative AI & Autonomous Intelligence
               </h3>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                ICETIS-2026 is strategically curated to foster collaborative synergies between prominent Indian-origin technology executives, North American innovators, European scholars, and Asian research institutes. Whether presenting virtually or in person in Singapore, participants gain unparalleled access to international academic panels, peer feedback, and cross-border innovation networks.
+                ICETIS-2026 provides a high-status international platform connecting prominent Non-Resident Indian (NRI) engineering executives from Tier-1 US tech firms, European university chairs, Asian AI researchers, and startup founders. Whether presenting virtually or in person in Singapore, participants gain high-level peer feedback, international citation recognition, and direct access to global AI leadership circles.
               </p>
             </div>
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
@@ -604,14 +622,14 @@ const Icetis2026 = () => {
                 <Globe className="h-6 w-6 text-accent shrink-0" />
                 <div>
                   <div className="text-xs font-bold text-white">50+ Nations Participating</div>
-                  <div className="text-[10px] text-muted-foreground">Europe, Americas, Asia-Pacific, Middle East</div>
+                  <div className="text-[10px] text-muted-foreground">USA, UK, Germany, Singapore, India & more</div>
                 </div>
               </div>
               <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center gap-3">
                 <Building2 className="h-6 w-6 text-primary shrink-0" />
                 <div>
-                  <div className="text-xs font-bold text-white">Silicon Valley & NRI Network</div>
-                  <div className="text-[10px] text-muted-foreground">Architects from Tier-1 global tech enterprises</div>
+                  <div className="text-xs font-bold text-white">Silicon Valley & Enterprise AI</div>
+                  <div className="text-[10px] text-muted-foreground">Architects from global cloud & AI enterprises</div>
                 </div>
               </div>
             </div>
@@ -651,17 +669,17 @@ const Icetis2026 = () => {
         </div>
       </section>
 
-      {/* THEMATIC RESEARCH TRACKS */}
+      {/* THEMATIC RESEARCH TRACKS (TRENDING GENAI & AGENTIC AI) */}
       <section id="tracks" className="py-16 sm:py-24 container max-w-6xl px-4">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-accent mb-3">
             <Presentation className="h-4 w-4" /> Comprehensive Call for Papers
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-            Six Cutting-Edge Thematic Tracks
+            Six Vanguard AI & Deep-Tech Tracks
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            Authors and research teams are invited to submit original, unpublished manuscripts aligned with our core multidisciplinary themes.
+            Authors and research teams are invited to submit original, unpublished manuscripts across these high-impact trending domains.
           </p>
         </div>
 
@@ -703,7 +721,7 @@ const Icetis2026 = () => {
         </div>
       </section>
 
-      {/* IMPORTANT DATES / TIMELINE */}
+      {/* IMPORTANT DATES / TIMELINE WITH 22 OCT REGISTRATION DEADLINE */}
       <section className="py-16 sm:py-24 bg-card/25 border-y border-border/40">
         <div className="container max-w-6xl px-4">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
@@ -711,10 +729,10 @@ const Icetis2026 = () => {
               <Clock className="h-4 w-4" /> Timelines & Milestones
             </div>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
-              Important Submission Dates
+              Important Summit Dates
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base">
-              Please note the strict deadlines for double-blind submission, reviewer notification, and camera-ready registration.
+              Please note the adjusted timeline leading up to the final registration closing on 22 October 2026.
             </p>
           </div>
 
@@ -723,7 +741,9 @@ const Icetis2026 = () => {
               <Card
                 key={i}
                 className={`p-5 rounded-2xl flex flex-col justify-between transition-all duration-300 ${
-                  i === 4
+                  i === 3
+                    ? "bg-accent/15 border-accent/60 shadow-[0_0_30px_rgba(28,231,212,0.2)]"
+                    : i === 4
                     ? "bg-primary/15 border-primary/50 shadow-gold"
                     : "bg-card/40 border-white/10 hover:border-white/20"
                 }`}
@@ -733,7 +753,9 @@ const Icetis2026 = () => {
                   <h4 className="font-bold text-white text-sm sm:text-base mb-1">{m.title}</h4>
                   <p className="text-xs text-muted-foreground mb-4">{m.desc}</p>
                 </div>
-                <div className="pt-3 border-t border-white/10 font-mono text-xs sm:text-sm font-bold text-accent">
+                <div className={`pt-3 border-t border-white/10 font-mono text-xs sm:text-sm font-bold ${
+                  i === 3 ? "text-accent text-sm font-black" : "text-primary"
+                }`}>
                   {m.date}
                 </div>
               </Card>
@@ -742,7 +764,7 @@ const Icetis2026 = () => {
         </div>
       </section>
 
-      {/* FEATURED KEYNOTE & PLENARY SPEAKERS (WORLD-CLASS INTERNATIONAL & NRI LINEUP) */}
+      {/* FEATURED KEYNOTE & PLENARY SPEAKERS */}
       <section className="py-16 sm:py-24 container max-w-6xl px-4">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3">
@@ -943,18 +965,18 @@ const Icetis2026 = () => {
       <section className="py-20 sm:py-28 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-3xl relative z-10 px-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4 border border-primary/20">
-            <Flame className="h-4 w-4" /> Global Call for Papers • Sunday, 25 October 2026
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-accent text-xs font-bold uppercase tracking-wider mb-4 border border-accent/25">
+            <Flame className="h-4 w-4" /> Registration Closes: 22 October 2026 • Summit: 25 October 2026
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-white mb-6 text-balance">
-            Be Part of the Premier Global Summit in Frontier & Sustainable Computing
+            Be Part of the World Summit on Generative AI & Autonomous Systems
           </h2>
           <p className="text-sm sm:text-lg text-muted-foreground mb-10 leading-relaxed">
-            Submit your manuscript today to present your research before world-renowned academicians, Silicon Valley architects, and global NRI pioneers. Achieve international recognition with ISBN proceedings and Scopus/WoS publication recommendations.
+            Submit your manuscript today to present before world-renowned academicians, Silicon Valley architects, and global NRI pioneers. Achieve international recognition with ISBN proceedings and Scopus/WoS publication recommendations.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-black h-12 sm:h-14 px-10 rounded-full shadow-gold hover:-translate-y-1 transition-all text-sm sm:text-base w-full sm:w-auto">
-              <Link to="/registration">Submit Paper / Register Now</Link>
+              <Link to="/registration">Register Online (Closes 22 Oct)</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white/20 hover:bg-white/10 text-white font-semibold h-12 sm:h-14 px-8 rounded-full transition-all text-sm sm:text-base w-full sm:w-auto">
               <Link to="/upcoming-conferences">View All Upcoming Summits</Link>

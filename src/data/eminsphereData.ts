@@ -74,24 +74,24 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   },
   "icetis-2026": {
     id: "icetis-2026",
-    title: "World Congress on Frontier Technologies, Intelligent Systems & Sustainable Computing (ICETIS-2026)",
+    title: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICETIS-2026)",
     date: "25 October 2026",
     isbn: "978-81-981245-4-1",
     location: "Hybrid Mode | Singapore International Hub & Worldwide Virtual Broadcast",
     registrationLink: "/registration",
-    description: "ICETIS-2026 is an international flagship research forum dedicated to groundbreaking advances in Frontier AI, Autonomous Systems, Quantum Computing, Cloud-Native Architectures, and Green Sustainable Computing. Uniting Silicon Valley innovators, global researchers, and NRI technology leaders, all accepted submissions undergo rigorous double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers and indexing across Google Scholar, with recommendations for Scopus/WoS indexed journals.",
+    description: "ICETIS-2026 (International Conference on Emerging Technologies, Intelligent Agents & Systems) is an international flagship summit dedicated to groundbreaking advances in Generative AI, Autonomous Agentic Orchestration, Sovereign Foundation Models, and Physical Deep-Tech. Uniting Silicon Valley innovators, global researchers, and NRI technology leaders, all accepted submissions undergo rigorous double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers (ISBN: 978-81-981245-4-1) and indexing across Google Scholar, with recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
-      "Agentic AI & Generative Intelligence (Foundation models, autonomous multi-agent orchestration, LLM safety)",
-      "Quantum Technologies & Next-Gen Computing (Quantum algorithms, quantum cryptography, quantum simulation)",
-      "Cyber-Physical Systems & Intelligent IoT (Autonomous edge nodes, digital twins, robotic intelligence)",
-      "Cloud-Native & Distributed Architectures (Microservices, high-throughput pipelines, zero-trust security)",
-      "Sustainable Computing & Green Technologies (Energy-efficient hardware, low-carbon datacenters, eco-algorithms)",
-      "Biomedical Informatics & Smart Healthcare (AI diagnostics, clinical intelligence, computational biology)"
+      "Generative AI, Large Language Models & Foundation Models (Pre-training, fine-tuning, reasoning architectures, multimodal LLMs)",
+      "Autonomous Agentic AI & Multi-Agent Orchestration (Tool-use, self-reflective agents, multi-agent swarms, planning frameworks)",
+      "Enterprise GenAI, Scalable Cloud Systems & Sovereign LLMs (Production deployment, low-latency inference, on-prem AI, cloud-native scale)",
+      "Physical AI, Autonomous Robotics & Embodied Intelligence (Edge neural systems, autonomous drones, humanoid robotics, digital twins)",
+      "Frontier AI Safety, Alignment, Red-Teaming & Global Governance (Adversarial robustness, mechanistic interpretability, safety benchmarks)",
+      "AI in Science, Healthcare & High-Impact Frontiers (AI drug discovery, precision genomics, climate modeling, scientific computing)"
     ],
     milestones: [
-      { name: "Paper Submission Deadline", date: "5 October 2026" },
-      { name: "Acceptance Notification", date: "12 October 2026" },
-      { name: "Camera-Ready & Final Registration", date: "18 October 2026" },
+      { name: "Paper Submission Deadline", date: "12 October 2026" },
+      { name: "Acceptance Notification", date: "17 October 2026" },
+      { name: "Camera-Ready & Final Registration", date: "22 October 2026" },
       { name: "Main Conference Sessions", date: "25 October 2026 (Sunday)" }
     ],
     speakers: [

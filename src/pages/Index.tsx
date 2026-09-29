@@ -176,7 +176,7 @@ const recentConferencesData = [
 const rotations = [-3, 2, -1.5, 3, -2, 1, -2.5, 2.5, -1, 3, -3, 1.5, -2, 2];
 
 const upcoming = [
-  { title: "ICETIS-2026: World Congress on Frontier Technologies, Intelligent Systems & Sustainable Computing", city: "Singapore / Virtual", date: "25 October 2026 (Sunday)", topic: "Frontier AI, Quantum & Deep-Tech", link: "/icetis-2026", isbn: "978-81-981245-4-1", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
+  { title: "ICETIS-2026: World Summit on Generative AI, Frontier Tech & Autonomous Systems", city: "Singapore / Virtual", date: "25 October 2026 (Sunday)", topic: "Generative AI & Autonomous Agents", link: "/icetis-2026", isbn: "978-81-981245-4-1", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
   { title: "Eminsphere Manila Nexus 2027 (EMN 2027)", city: "Manila, Philippines", date: "20–21 March 2027", topic: "Intelligent Computing & Digital Futures", link: "/manila-nexus-2027", img: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop" },
 ];
 
@@ -287,8 +287,8 @@ const Index = () => {
             
             {/* Top Tape overlay */}
             <div className="absolute top-0 left-0 w-full bg-accent/10 border-b border-accent/20 flex justify-between px-4 sm:px-8 py-2 z-20 backdrop-blur-md">
-              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Registrations Open</span>
-              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Upcoming Flagship</span>
+              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Registration Closes: 22 October 2026</span>
+              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Summit: 25 Oct 2026</span>
             </div>
 
             {/* Left - Image Context */}
@@ -306,22 +306,25 @@ const Index = () => {
             {/* Right - Content */}
             <div className="md:w-3/5 p-5 sm:p-8 md:p-12 relative z-10 flex flex-col justify-center pt-10 sm:pt-12 md:pt-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold tracking-widest uppercase mb-4 self-start">
-                <Sparkles className="w-3 h-3" /> Featured Upcoming Conference
+                <Sparkles className="w-3 h-3" /> Featured World Summit
               </div>
               
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white mb-2 tracking-tight">
                 ICETIS-2026
               </h3>
               <p className="text-base sm:text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent mb-2 leading-snug">
-                World Congress on Frontier Technologies, Intelligent Systems & Sustainable Computing
+                World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems
               </p>
               <p className="text-xs sm:text-sm text-white/70 mb-6 italic">
-                "Global Convergence: Frontier Intelligence, Quantum Horizons & Sustainable Deep-Tech"
+                "Next-Gen Generative AI, Agentic Workflows & Frontier Autonomous Intelligence"
               </p>
               
               <div className="flex flex-wrap gap-3 sm:gap-4 mb-8">
                 <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium bg-white/5 px-3 sm:px-4 py-2 rounded-lg border border-white/10">
                   <Calendar className="w-4 h-4 text-accent" /> 25 October 2026 (Sunday)
+                </div>
+                <div className="flex items-center gap-2 text-accent text-xs sm:text-sm font-bold bg-accent/10 px-3 sm:px-4 py-2 rounded-lg border border-accent/20">
+                  <Clock className="w-4 h-4 text-accent" /> Reg Closes: 22 October 2026
                 </div>
                 <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium bg-white/5 px-3 sm:px-4 py-2 rounded-lg border border-white/10">
                   <MapPin className="w-4 h-4 text-accent" /> Singapore / Virtual

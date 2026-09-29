@@ -7,11 +7,12 @@ import { Link } from "react-router-dom";
 
 const conferences = [
   {
-    title: "ICETIS-2026: World Congress on Frontier Technologies, Intelligent Systems & Sustainable Computing",
+    title: "ICETIS-2026: World Summit on Generative AI, Frontier Tech & Autonomous Systems",
     city: "Singapore / Virtual",
     country: "Global Hybrid",
     date: "25 October 2026 (Sunday)",
-    topic: "Frontier AI, Quantum & Deep-Tech",
+    deadline: "22 October 2026",
+    topic: "Generative AI & Autonomous Agents",
     link: "/icetis-2026",
     isbn: "978-81-981245-4-1",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
@@ -92,6 +93,9 @@ const UpcomingConferences = () => (
               <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm text-white/90 font-medium mb-6 sm:mb-8">
                 <div className="flex items-center gap-2"><Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-primary" /> {c.date}</div>
                 <div className="flex items-center gap-2"><MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-primary" /> {c.city}, {c.country}</div>
+                {c.deadline && (
+                  <div className="flex items-center gap-2 text-accent font-bold"><Clock className="h-4 w-4 sm:h-5 sm:w-5 text-accent" /> Reg Closes: {c.deadline}</div>
+                )}
                 {c.isbn && (
                   <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 sm:h-5 sm:w-5 text-primary" /> ISBN: {c.isbn}</div>
                 )}
