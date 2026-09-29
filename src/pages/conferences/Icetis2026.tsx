@@ -70,10 +70,10 @@ function useCountdown(target: Date) {
 }
 
 const conferenceData = {
-  id: "ICETIS-2026",
-  shortTitle: "ICETIS-2026",
+  id: "WS-GAIAS-2026",
+  shortTitle: "WS-GAIAS-2026",
   fullTitle: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems",
-  fullForm: "International Conference on Emerging Technologies, Intelligent Agents & Systems (ICETIS-2026)",
+  fullForm: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WS-GAIAS-2026)",
   theme: "Next-Gen Generative AI, Agentic Workflows & Frontier Autonomous Intelligence",
   tagline: "Where Silicon Valley GenAI Architects, Global AI Researchers, and NRI Technology Leaders Pioneer the Future of Intelligence",
   date: "Sunday, 25 October 2026",
@@ -83,8 +83,8 @@ const conferenceData = {
   registrationLink: "/registration",
   
   about: [
-    "The World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICETIS-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
-    "Held in Hybrid Mode on Sunday, 25 October 2026, ICETIS-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The summit delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
+    "The World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WS-GAIAS-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
+    "Held in Hybrid Mode on Sunday, 25 October 2026, WS-GAIAS-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The summit delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
     "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN 978-81-981245-4-1, submitted for global cataloging across Google Scholar and leading scientific indices, with top-tier submissions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
   ],
 
@@ -405,7 +405,7 @@ const conferenceData = {
     },
     {
       q: "Can international researchers, NRIs, and authors present virtually without traveling?",
-      a: "Yes, absolutely. ICETIS-2026 is conducted in a full Dual-Stage Hybrid format. International delegates, NRIs, and scholars can present remotely from anywhere in the world through our high-definition interactive conference platform with dedicated live Q&A. Remote presentations carry identical academic validity, and official ISBN proceedings and presentation certificates are issued with full verification."
+      a: "Yes, absolutely. WS-GAIAS-2026 is conducted in a full Dual-Stage Hybrid format. International delegates, NRIs, and scholars can present remotely from anywhere in the world through our high-definition interactive conference platform with dedicated live Q&A. Remote presentations carry identical academic validity, and official ISBN proceedings and presentation certificates are issued with full verification."
     },
     {
       q: "Do in-person attendees receive official visa invitation letters for Singapore?",
@@ -443,9 +443,9 @@ const Icetis2026 = () => {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <SEOHead
-        title="ICETIS-2026 | World Summit on Generative AI, Frontier Tech & Autonomous Systems"
-        description="Official World Summit website for ICETIS-2026 on Sunday, 25 October 2026. Paper submission deadline: 22 October 2026. Final registration deadline: 23 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
-        canonical="https://www.eminsphere.com/icetis-2026"
+        title="WS-GAIAS-2026 | World Summit on Generative AI, Frontier Tech & Autonomous Systems"
+        description="Official World Summit website for WS-GAIAS-2026 on Sunday, 25 October 2026. Paper submission deadline: 22 October 2026. Final registration deadline: 23 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
+        canonical="https://www.eminsphere.com/ws-gaias-2026"
         schema={{
           "@context": "https://schema.org",
           "@type": "EducationEvent",
@@ -458,7 +458,7 @@ const Icetis2026 = () => {
           "location": [
             {
               "@type": "VirtualLocation",
-              "url": "https://www.eminsphere.com/icetis-2026"
+              "url": "https://www.eminsphere.com/ws-gaias-2026"
             },
             {
               "@type": "Place",
@@ -608,7 +608,7 @@ const Icetis2026 = () => {
                 Accelerating the Next Frontier of Generative AI & Autonomous Intelligence
               </h3>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                ICETIS-2026 provides a high-status international platform connecting prominent Non-Resident Indian (NRI) engineering executives from Tier-1 US tech firms, European university chairs, Asian AI researchers, and startup founders. Whether presenting virtually or in person in Singapore, participants gain high-level peer feedback, international citation recognition, and direct access to global AI leadership circles.
+                WS-GAIAS-2026 provides a high-status international platform connecting prominent Non-Resident Indian (NRI) engineering executives from Tier-1 US tech firms, European university chairs, Asian AI researchers, and startup founders. Whether presenting virtually or in person in Singapore, participants gain high-level peer feedback, international citation recognition, and direct access to global AI leadership circles.
               </p>
             </div>
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
@@ -639,7 +639,7 @@ const Icetis2026 = () => {
               <BadgeCheck className="h-4 w-4" /> Global Value Proposition
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-              Why Global Delegates, NRIs & Scholars Choose ICETIS-2026
+              Why Global Delegates, NRIs & Scholars Choose WS-GAIAS-2026
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
               Engineered to meet the highest international standards of scholarly rigor, career impact, and global networking.
@@ -768,7 +768,7 @@ const Icetis2026 = () => {
             Distinguished Plenary & Keynote Speakers
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            Renowned international scientists, European academic chairs, and prominent Silicon Valley NRI tech leaders addressing ICETIS-2026.
+            Renowned international scientists, European academic chairs, and prominent Silicon Valley NRI tech leaders addressing WS-GAIAS-2026.
           </p>
 
           {/* Interactive Filter Tabs */}

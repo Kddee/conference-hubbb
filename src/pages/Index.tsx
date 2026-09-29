@@ -176,7 +176,7 @@ const recentConferencesData = [
 const rotations = [-3, 2, -1.5, 3, -2, 1, -2.5, 2.5, -1, 3, -3, 1.5, -2, 2];
 
 const upcoming = [
-  { title: "ICETIS-2026: World Summit on Generative AI, Frontier Tech & Autonomous Systems", city: "Singapore / Virtual", date: "25 October 2026 (Sunday)", topic: "Generative AI & Autonomous Agents", link: "/icetis-2026", isbn: "978-81-981245-4-1", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
+  { title: "WS-GAIAS-2026: World Summit on Generative AI, Frontier Tech & Autonomous Systems", city: "Singapore / Virtual", date: "25 October 2026 (Sunday)", topic: "Generative AI & Autonomous Agents", link: "/ws-gaias-2026", isbn: "978-81-981245-4-1", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
   { title: "Eminsphere Manila Nexus 2027 (EMN 2027)", city: "Manila, Philippines", date: "20–21 March 2027", topic: "Intelligent Computing & Digital Futures", link: "/manila-nexus-2027", img: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop" },
 ];
 
@@ -279,7 +279,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* UNIQUE FLOATING TICKET BANNER FOR ICETIS-2026 */}
+      {/* UNIQUE FLOATING TICKET BANNER FOR WS-GAIAS-2026 */}
       <div className="relative z-30 container px-4 mx-auto max-w-5xl mt-12 sm:mt-16 mb-8">
         <div className="relative group rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-r from-accent via-primary to-secondary p-1 shadow-[0_20px_50px_rgba(16,185,129,0.15)] hover:shadow-[0_30px_60px_rgba(16,185,129,0.3)] transition-all duration-500 transform hover:-translate-y-2">
           
@@ -294,7 +294,7 @@ const Index = () => {
             {/* Left - Image Context */}
             <div className="md:w-2/5 relative h-56 sm:h-64 md:h-auto overflow-hidden">
               <div className="absolute inset-0 bg-accent/20 mix-blend-overlay z-10"></div>
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="ICETIS-2026" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-60 grayscale hover:grayscale-0" />
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="WS-GAIAS-2026" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-60 grayscale hover:grayscale-0" />
               <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#050B14] via-transparent to-transparent z-10"></div>
               <div className="absolute bottom-6 left-6 z-20">
                 <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center border-2 border-[#050B14] shadow-lg">
@@ -310,7 +310,7 @@ const Index = () => {
               </div>
               
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white mb-2 tracking-tight">
-                ICETIS-2026
+                WS-GAIAS-2026
               </h3>
               <p className="text-base sm:text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent mb-2 leading-snug">
                 World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems
@@ -336,7 +336,7 @@ const Index = () => {
               
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
                 <Button asChild size="lg" className="rounded-full bg-accent hover:bg-primary text-[#050B14] font-black uppercase tracking-wider px-8 h-12 sm:h-14 shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all w-full sm:w-auto text-center justify-center">
-                  <Link to="/icetis-2026" className="flex items-center justify-center gap-2">
+                  <Link to="/ws-gaias-2026" className="flex items-center justify-center gap-2">
                     Register Now <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
