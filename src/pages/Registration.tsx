@@ -144,7 +144,7 @@ const Registration = () => (
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="ICAITS-26 — Virtual Mode">ICAITS-26 — Virtual Mode</SelectItem>
-                      <SelectItem value="GENAI-2026 — Singapore / Virtual">GENAI-2026 (World Summit on Generative AI & Autonomous Systems)</SelectItem>
+                      <SelectItem value="WSGEN-2026 — Singapore / Virtual">WSGEN-2026 (World Summit on Generative AI & Autonomous Systems)</SelectItem>
                       <SelectItem value="ICCEMB-26 — Virtual Mode">ICCEMB-26 — Virtual Mode</SelectItem>
                       <SelectItem value="ICATES-26 — Virtual Mode">ICATES-26 — Virtual Mode</SelectItem>
                     </SelectContent>

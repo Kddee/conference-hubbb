@@ -91,12 +91,14 @@ const App = () => {
           <Route path="/icaids-2024" element={<Icaids2024 />} />
           <Route path="/manila-nexus-2027" element={<ManilaNexus2027 />} />
           <Route path="/emn-2027" element={<ManilaNexus2027 />} />
-          <Route path="/genai-2026" element={<Icetis2026 />} />
-          <Route path="/ws-genai-2026" element={<Navigate to="/genai-2026" replace />} />
-          <Route path="/ws-gaias-2026" element={<Navigate to="/genai-2026" replace />} />
-          <Route path="/ws-gais-2026" element={<Navigate to="/genai-2026" replace />} />
-          <Route path="/icetis-2026" element={<Navigate to="/genai-2026" replace />} />
-          <Route path="/icetis-26" element={<Navigate to="/genai-2026" replace />} />
+          <Route path="/wsgen-2026" element={<Icetis2026 />} />
+          <Route path="/wsgen" element={<Navigate to="/wsgen-2026" replace />} />
+          <Route path="/genai-2026" element={<Navigate to="/wsgen-2026" replace />} />
+          <Route path="/ws-genai-2026" element={<Navigate to="/wsgen-2026" replace />} />
+          <Route path="/ws-gaias-2026" element={<Navigate to="/wsgen-2026" replace />} />
+          <Route path="/ws-gais-2026" element={<Navigate to="/wsgen-2026" replace />} />
+          <Route path="/icetis-2026" element={<Navigate to="/wsgen-2026" replace />} />
+          <Route path="/icetis-26" element={<Navigate to="/wsgen-2026" replace />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
