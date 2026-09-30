@@ -39,7 +39,7 @@ export const Footer = () => {
             <div>
               <div className="text-[10px] font-bold uppercase tracking-wider text-accent mb-3">Get Involved</div>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/registration" className="hover:text-accent transition-colors">Registration</Link></li>
+                <li><a href="https://forms.gle/M6GiaTdkpqH8DWWe6" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Registration</a></li>
                 <li><Link to="/apply-reviewer" className="hover:text-accent transition-colors">Reviewer</Link></li>
                 <li><Link to="/apply-advisory" className="hover:text-accent transition-colors">Advisory</Link></li>
               </ul>

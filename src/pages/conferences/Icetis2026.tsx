@@ -70,7 +70,7 @@ const conferenceData = {
   registrationDeadline: "23 October 2026",
   mode: "Hybrid Mode • Worldwide Virtual",
   isbn: "978-81-981245-4-1",
-  registrationLink: "https://forms.gle/ERnrg38rgf4hf16y5",
+  registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
   
   about: [
     "The World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WSGEN-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",

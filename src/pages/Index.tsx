@@ -336,7 +336,7 @@ const Index = () => {
               
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Button asChild size="lg" className="rounded-full bg-accent hover:bg-primary text-[#050B14] hover:text-white font-black uppercase tracking-wider px-8 h-12 sm:h-14 shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all w-full sm:w-auto text-center justify-center">
-                  <a href="https://forms.gle/ERnrg38rgf4hf16y5" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                  <a href="https://forms.gle/M6GiaTdkpqH8DWWe6" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                     Register Online <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>

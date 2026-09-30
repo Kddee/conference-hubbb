@@ -85,7 +85,7 @@ export const Header = () => {
 
         <div className="hidden xl:block">
           <Button asChild className="bg-primary text-white hover:bg-primary/90 rounded-full font-black px-8 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-sm h-12">
-            <Link to="/registration">Register Now</Link>
+            <a href="https://forms.gle/M6GiaTdkpqH8DWWe6" target="_blank" rel="noopener noreferrer">Register Now</a>
           </Button>
         </div>
 
@@ -113,7 +113,7 @@ export const Header = () => {
             ))}
             <div className="pt-2 pb-1">
               <Button asChild className="bg-primary text-white rounded-xl h-12 font-black w-full uppercase tracking-wider text-sm shadow-gold">
-                <Link to="/registration" onClick={() => setOpen(false)}>Register Now</Link>
+                <a href="https://forms.gle/M6GiaTdkpqH8DWWe6" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>Register Now</a>
               </Button>
             </div>
           </div>
