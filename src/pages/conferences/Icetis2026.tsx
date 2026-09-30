@@ -276,7 +276,7 @@ const conferenceData = {
   faqs: [
     {
       q: "When is the final registration deadline?",
-      a: "The final registration deadline is strictly Friday, 23 October 2026. All presenting authors and global delegates must complete their registration and final publication-ready upload by this date to be included in the official proceedings and presentation roster."
+      a: "The final registration deadline is strictly Friday, 23 October 2026. All presenting authors and global delegates must complete their registration and final publication-ready upload by this date to be included in the official proceedings and presentation schedule."
     },
     {
       q: "What is the timeline between paper submission and registration?",
@@ -621,7 +621,7 @@ const Icetis2026 = () => {
         </div>
       </section>
 
-      {/* DISTINGUISHED PLENARY & KEYNOTE SPEAKERS (OFFICIAL ROSTER UPDATE ANNOUNCEMENT) */}
+      {/* DISTINGUISHED PLENARY & KEYNOTE SPEAKERS (OFFICIAL LINEUP UPDATE ANNOUNCEMENT) */}
       <section id="speakers" className="py-16 sm:py-24 container max-w-6xl px-4">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3">
@@ -653,7 +653,7 @@ const Icetis2026 = () => {
             </div>
 
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-4 leading-tight">
-              Distinguished Keynote Roster Will Be Updated Soon
+              Distinguished Keynote Speakers Will Be Updated Soon
             </h3>
 
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-8">
