@@ -70,7 +70,7 @@ const conferenceData = {
   registrationDeadline: "23 October 2026",
   mode: "Hybrid Mode • Worldwide Virtual",
   isbn: "978-81-981245-4-1",
-  registrationLink: "/registration",
+  registrationLink: "https://forms.gle/ERnrg38rgf4hf16y5",
   
   about: [
     "The World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WSGEN-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
@@ -433,9 +433,9 @@ const Icetis2026 = () => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
               <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black h-12 sm:h-14 px-8 rounded-full shadow-gold hover:-translate-y-0.5 transition-all text-sm sm:text-base">
-                <Link to={conferenceData.registrationLink}>
+                <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer">
                   Register Online (Before 23 Oct) <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold h-12 sm:h-14 px-8 rounded-full transition-all text-sm sm:text-base">
                 <a href="#tracks">Explore GenAI Tracks</a>
@@ -568,9 +568,9 @@ const Icetis2026 = () => {
                 </ul>
 
                 <div className="pt-3 border-t border-white/5 mt-auto">
-                  <Link to="/registration" className="inline-flex items-center text-xs font-bold text-accent hover:text-white transition-colors">
+                  <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-xs font-bold text-accent hover:text-white transition-colors">
                     Submit Paper to Track {track.number} <ArrowRight className="ml-1 h-3.5 w-3.5" />
-                  </Link>
+                  </a>
                 </div>
               </Card>
             );
@@ -702,9 +702,9 @@ const Icetis2026 = () => {
             {/* Action Buttons & Contact */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
               <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 py-6 rounded-full shadow-gold hover:-translate-y-0.5 transition-all text-sm">
-                <Link to="/registration" className="flex items-center gap-2">
+                <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   Register for Summit (Before 23 Oct) <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold px-8 py-6 rounded-full transition-all text-sm">
                 <a href="#tracks" className="flex items-center gap-2">
@@ -845,7 +845,9 @@ const Icetis2026 = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-black h-12 sm:h-14 px-10 rounded-full shadow-gold hover:-translate-y-1 transition-all text-sm sm:text-base w-full sm:w-auto">
-              <Link to="/registration">Register Online (Closes 23 Oct)</Link>
+              <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer">
+                Register Online (Closes 23 Oct)
+              </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white/20 hover:bg-white/10 text-white font-semibold h-12 sm:h-14 px-8 rounded-full transition-all text-sm sm:text-base w-full sm:w-auto">
               <Link to="/upcoming-conferences">View All Upcoming Summits</Link>

@@ -334,15 +334,18 @@ const Index = () => {
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
-                <Button asChild size="lg" className="rounded-full bg-accent hover:bg-primary text-[#050B14] font-black uppercase tracking-wider px-8 h-12 sm:h-14 shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all w-full sm:w-auto text-center justify-center">
-                  <Link to="/wsgen-2026" className="flex items-center justify-center gap-2">
-                    Register Now <ArrowRight className="w-4 h-4" />
-                  </Link>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+                <Button asChild size="lg" className="rounded-full bg-accent hover:bg-primary text-[#050B14] hover:text-white font-black uppercase tracking-wider px-8 h-12 sm:h-14 shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all w-full sm:w-auto text-center justify-center">
+                  <a href="https://forms.gle/ERnrg38rgf4hf16y5" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                    Register Online <ArrowRight className="w-4 h-4" />
+                  </a>
                 </Button>
-                <div className="hidden sm:flex flex-col">
+                <Button asChild size="lg" variant="outline" className="rounded-full border-white/20 hover:bg-white/10 text-white font-bold h-12 sm:h-14 px-6 transition-all w-full sm:w-auto text-center justify-center">
+                  <Link to="/wsgen-2026">Summit Details</Link>
+                </Button>
+                <div className="hidden lg:flex flex-col ml-2">
                   <span className="text-white font-bold text-sm flex items-center gap-1"><Zap className="w-3 h-3 text-accent" /> Call For Papers Open</span>
-                  <span className="text-white/50 text-xs">Join global innovators & researchers</span>
+                  <span className="text-white/50 text-xs">Closes: 23 October 2026</span>
                 </div>
               </div>
             </div>

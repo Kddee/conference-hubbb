@@ -1,53 +1,95 @@
-import { PageHero } from "@/components/layout/PageHero";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Check, Star, ShieldCheck, Zap, ArrowRight, User, Mail, Globe, Building2, MapPin, Send, MessageSquare, Award, BookOpen, Users } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
+import { 
+  Star, 
+  ShieldCheck, 
+  ArrowRight, 
+  Globe, 
+  ExternalLink, 
+  Award, 
+  BookOpen, 
+  Users, 
+  Calendar, 
+  Clock, 
+  Sparkles, 
+  CheckCircle2, 
+  FileText 
+} from "lucide-react";
+
+const REGISTRATION_FORM_URL = "https://forms.gle/ERnrg38rgf4hf16y5";
 
 const benefits = [
   { 
-    title: "Global Networking", 
-    desc: "Connect with industry leaders, distinguished professors, and leading researchers from over 50 countries.",
+    title: "Global Scholarly Network", 
+    desc: "Connect directly with Silicon Valley GenAI architects, university chairs, and researchers across 50+ nations.",
     icon: <Users className="h-6 w-6 text-accent" />
   },
   { 
-    title: "Publication Opportunities", 
-    desc: "All accepted papers get published in Scopus & Web of Science indexed proceedings.",
+    title: "Official ISBN Proceedings", 
+    desc: "All accepted papers receive official ISBN 978-81-981245-4-1 cataloging and persistent DOI indexing.",
     icon: <BookOpen className="h-6 w-6 text-accent" />
   },
   { 
-    title: "Awards & Recognition", 
-    desc: "Compete for Best Paper and Presentation awards, boosting your academic profile.",
+    title: "Scopus & WoS Journal Track", 
+    desc: "Top 15% high-impact manuscripts fast-tracked for publication in partner Scopus (Q1/Q2) & WoS indexed journals.",
     icon: <Award className="h-6 w-6 text-accent" />
   },
 ];
 
+const highlights = [
+  "Instant digital registration confirmation & paper submission routing",
+  "Dual-Stage Hybrid participation credentials (Worldwide Virtual 24/7 interactive access)",
+  "Official institutional Letter of Invitation for travel and academic clearance",
+  "Assigned session slot with live interactive Q&A and verified presentation certification",
+  "Permanent digital repository archiving across Google Scholar & academic indices"
+];
+
 const Registration = () => (
-  <main className="min-h-screen bg-background">
+  <main className="min-h-screen bg-background text-foreground">
+    <SEOHead
+      title="Official Registration | WSGEN-2026 • World Summit on Generative AI & Autonomous Systems"
+      description="Register for WSGEN-2026: World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems. Final registration deadline: 23 October 2026."
+      canonical="https://www.eminsphere.com/registration"
+    />
+
     {/* HERO */}
-    <div className="relative pt-24 pb-14 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-36 overflow-hidden bg-primary text-primary-foreground border-b">
+    <div className="relative pt-24 pb-14 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-36 overflow-hidden bg-primary text-primary-foreground border-b border-border/40">
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-accent/20 opacity-90 z-0"></div>
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop')] opacity-10 mix-blend-overlay bg-cover bg-center"></div>
-      <div className="container relative z-10 text-center max-w-4xl">
+      
+      <div className="container relative z-10 text-center max-w-4xl px-4">
         <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary-foreground/10 text-primary-foreground font-bold text-xs sm:text-sm tracking-wider uppercase mb-4 sm:mb-6 backdrop-blur-md border border-primary-foreground/20">
-          <Star className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-accent fill-accent" /> Join The Global Community
+          <Star className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-accent fill-accent" /> Official Registration Portal
         </div>
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-4 sm:mb-6 leading-tight text-white drop-shadow-md break-words">
+        
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-black mb-4 sm:mb-6 leading-tight text-white drop-shadow-md break-words">
           Conference <span className="text-accent">Registration</span>
         </h1>
-        <p className="text-sm sm:text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-6 sm:mb-8">
-          Interested in participating? Submit your details below to receive official registration guidelines, fee structures, and presentation schedules directly to your inbox.
+        
+        <p className="text-sm sm:text-lg md:text-xl text-primary-foreground/85 leading-relaxed mb-6 sm:mb-8 max-w-3xl mx-auto">
+          World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WSGEN-2026)
         </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-white/90">
+          <span className="inline-flex items-center gap-1.5 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15">
+            <Calendar className="h-3.5 w-3.5 text-accent" /> Summit: 27 October 2026
+          </span>
+          <span className="inline-flex items-center gap-1.5 bg-accent/20 text-accent font-bold px-3.5 py-1.5 rounded-full border border-accent/30">
+            <Clock className="h-3.5 w-3.5" /> Closes: 23 October 2026
+          </span>
+          <span className="inline-flex items-center gap-1.5 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15">
+            <Globe className="h-3.5 w-3.5 text-accent" /> Hybrid • Worldwide Virtual
+          </span>
+        </div>
       </div>
     </div>
 
     {/* BENEFITS SECTION */}
-    <section className="container py-0 -mt-8 sm:-mt-16 md:-mt-24 relative z-20 mb-12 sm:mb-24">
+    <section className="container py-0 -mt-8 sm:-mt-16 md:-mt-24 relative z-20 mb-12 sm:mb-20 px-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
         {benefits.map((b, idx) => (
-          <Card key={idx} className="relative overflow-hidden flex flex-col p-6 sm:p-8 transition-all duration-300 shadow-lg border-border hover:border-accent/30 bg-card/95 backdrop-blur hover:-translate-y-1 rounded-2xl sm:rounded-3xl">
+          <Card key={idx} className="relative overflow-hidden flex flex-col p-6 sm:p-8 transition-all duration-300 shadow-xl border-border hover:border-accent/40 bg-card/95 backdrop-blur hover:-translate-y-1 rounded-2xl sm:rounded-3xl">
             <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-accent/10 flex items-center justify-center mb-4 sm:mb-6">
               {b.icon}
             </div>
@@ -58,111 +100,63 @@ const Registration = () => (
       </div>
     </section>
 
-    {/* FORM SECTION */}
-    <section id="register-form" className="bg-muted py-16 sm:py-24 border-t">
-      <div className="container">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-6xl mx-auto items-center">
+    {/* REGISTRATION DIRECT PORTAL SECTION (FORMLESS) */}
+    <section id="register-portal" className="py-12 sm:py-20 bg-muted/30 border-t border-border/40">
+      <div className="container max-w-5xl px-4">
+        <div className="relative rounded-3xl p-6 sm:p-12 bg-gradient-to-b from-card via-card to-background border border-accent/25 shadow-2xl overflow-hidden">
+          {/* Ambient Glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
           
-          <div className="lg:col-span-5">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-primary mb-4 sm:mb-6 leading-tight">Request Registration Details</h2>
-            <p className="text-muted-foreground text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed">
-              Fill out the inquiry form to receive our official registration packet. Our team will review your profile and email you the appropriate registration links and institutional guidelines.
+          <div className="relative z-10 text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/15 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider mb-5">
+              <Sparkles className="h-3.5 w-3.5" /> Official Google Forms Registration Portal
+            </div>
+
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif font-black text-white mb-4 leading-tight">
+              Complete Your Registration Online
+            </h2>
+
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
+              All author, speaker, and delegate registrations for <strong className="text-white">WSGEN-2026 (World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems)</strong> are submitted directly through the official registration portal.
             </p>
-            <div className="space-y-6 sm:space-y-8">
-              <div className="flex gap-4 sm:gap-5">
-                <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-background border border-border flex items-center justify-center shrink-0 shadow-sm">
-                  <MessageSquare className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-foreground text-base sm:text-lg mb-1">Direct Communication</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Our organizing committee will reach out to you within 24 hours.</p>
-                </div>
-              </div>
-              <div className="flex gap-4 sm:gap-5">
-                <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-background border border-border flex items-center justify-center shrink-0 shadow-sm">
-                  <ShieldCheck className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-foreground text-base sm:text-lg mb-1">Privacy Guaranteed</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Your details are secure and will only be used for official conference correspondence.</p>
-                </div>
+
+            {/* Direct Form CTA Button */}
+            <div className="mb-10">
+              <Button asChild size="lg" className="rounded-full bg-accent hover:bg-primary text-[#050B14] hover:text-white font-black text-base sm:text-lg px-8 sm:px-12 h-14 sm:h-16 shadow-[0_0_35px_rgba(16,185,129,0.35)] hover:scale-105 transition-all duration-300 w-full sm:w-auto">
+                <a href={REGISTRATION_FORM_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3">
+                  <FileText className="h-5 w-5" /> Open Official Registration Form <ExternalLink className="h-5 w-5" />
+                </a>
+              </Button>
+              <div className="mt-3 text-xs text-muted-foreground">
+                Opens directly in a new tab: <span className="text-accent underline font-mono">{REGISTRATION_FORM_URL}</span>
               </div>
             </div>
+
+            {/* Highlights Box */}
+            <div className="text-left bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
+              <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-accent mb-4 flex items-center gap-2">
+                <ShieldCheck className="h-4 w-4" /> What Happens After You Submit:
+              </div>
+              <ul className="space-y-3">
+                {highlights.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-xs sm:text-sm text-white/90">
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Support Desk Notice */}
+            <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+              <span>Organized by Eminsphere Global Academic Publishing & Summits</span>
+              <a href="mailto:info@eminsphere.com" className="text-accent hover:underline font-mono">
+                Need Help? Contact: info@eminsphere.com
+              </a>
+            </div>
+
           </div>
-
-          <div className="lg:col-span-7">
-            <Card className="p-5 sm:p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-0 bg-background rounded-2xl sm:rounded-3xl relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-accent"></div>
-              
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary mb-6 sm:mb-8">Registration Inquiry Form</h3>
-              
-              <form className="space-y-5 sm:space-y-6" onSubmit={(e) => {
-                e.preventDefault();
-                const formData = new FormData(e.currentTarget);
-                const fullName = formData.get("Full Name");
-                const email = formData.get("Email");
-                const country = formData.get("Country");
-                const affiliation = formData.get("Affiliation");
-                const conference = formData.get("Conference");
-
-                const subject = encodeURIComponent(`Registration Inquiry: ${fullName}`);
-                const body = encodeURIComponent(
-                  `Hello Eminsphere Team,\n\nI would like to request registration details for the upcoming conference.\n\nHere are my details:\n- Full Name: ${fullName}\n- Email: ${email}\n- Country: ${country}\n- Affiliation: ${affiliation}\n- Conference of Interest: ${conference}\n\nThank you.`
-                );
-
-                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@eminsphere.com&su=${subject}&body=${body}`;
-                window.open(gmailUrl, '_blank');
-                e.currentTarget.reset();
-              }}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                  <div className="space-y-2">
-                    <Label className="text-foreground font-semibold flex items-center gap-2"><User className="h-4 w-4 text-muted-foreground" /> Full Name</Label>
-                    <Input name="Full Name" placeholder="Dr. John Doe" required className="h-12 bg-muted/30 border-border focus:bg-background focus:border-accent" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-foreground font-semibold flex items-center gap-2"><Mail className="h-4 w-4 text-muted-foreground" /> Email Address</Label>
-                    <Input name="Email" type="email" placeholder="john.doe@university.edu" required className="h-12 bg-muted/30 border-border focus:bg-background focus:border-accent" />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                  <div className="space-y-2">
-                    <Label className="text-foreground font-semibold flex items-center gap-2"><MapPin className="h-4 w-4 text-muted-foreground" /> Country</Label>
-                    <Input name="Country" placeholder="United Kingdom" required className="h-12 bg-muted/30 border-border focus:bg-background focus:border-accent" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-foreground font-semibold flex items-center gap-2"><Building2 className="h-4 w-4 text-muted-foreground" /> Affiliation</Label>
-                    <Input name="Affiliation" placeholder="Oxford University" required className="h-12 bg-muted/30 border-border focus:bg-background focus:border-accent" />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label className="text-foreground font-semibold">Conference of Interest</Label>
-                  <Select name="Conference" required>
-                    <SelectTrigger className="h-12 bg-muted/30 border-border focus:bg-background focus:border-accent">
-                      <SelectValue placeholder="Choose a conference..." />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="ICAITS-26 — Virtual Mode">ICAITS-26 — Virtual Mode</SelectItem>
-                      <SelectItem value="WSGEN-2026 — Hybrid / Worldwide Virtual">WSGEN-2026 (World Summit on Generative AI & Autonomous Systems)</SelectItem>
-                      <SelectItem value="ICCEMB-26 — Virtual Mode">ICCEMB-26 — Virtual Mode</SelectItem>
-                      <SelectItem value="ICATES-26 — Virtual Mode">ICATES-26 — Virtual Mode</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                
-                <div className="pt-2 sm:pt-4">
-                  <Button type="submit" variant="hero" size="lg" className="w-full h-12 sm:h-14 text-base sm:text-lg font-bold shadow-xl">
-                    Submit Inquiry <Send className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                  </Button>
-                  <p className="text-center text-xs text-muted-foreground mt-3 sm:mt-4">
-                    By submitting this form, your email client will open to send the inquiry securely.
-                  </p>
-                </div>
-              </form>
-            </Card>
-          </div>
-
         </div>
       </div>
     </section>
