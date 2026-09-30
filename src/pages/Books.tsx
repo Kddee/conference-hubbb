@@ -28,8 +28,6 @@ import {
   FileCheck2, 
   Library, 
   ChevronDown,
-  ChevronLeft,
-  ChevronRight,
   X,
   Eye,
   BookmarkCheck,
@@ -49,8 +47,6 @@ import {
   Barcode,
   ScanBarcode,
   Landmark,
-  LayoutList,
-  LayoutGrid,
   User,
   Calendar
 } from "lucide-react";
@@ -551,7 +547,6 @@ const Books = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [quickViewBook, setQuickViewBook] = useState<Book | null>(null);
   const [activeTab, setActiveTab] = useState<"features" | "isbn" | "types" | "workflow" | "guidelines" | "disciplines" | "comparison">("features");
-  const [viewMode, setViewMode] = useState<"list" | "grid">("list");
 
   // Dynamic proposal checklist state
   const [checklist, setChecklist] = useState<Record<string, boolean>>({
@@ -666,11 +661,6 @@ const Books = () => {
     });
   }, [searchQuery, selectedDiscipline]);
 
-  // Featured flagship books list for the spotlight carousel
-  const featuredBooksList = useMemo(() => publishedBooks.slice(0, 5), []);
-  const [featuredIndex, setFeaturedIndex] = useState(0);
-  const featuredBook = featuredBooksList[featuredIndex] || publishedBooks[0];
-
   return (
     <div className="bg-background text-foreground min-h-screen">
       {/* GOVERNMENT RECOGNITION TOP STRIP */}
@@ -778,94 +768,226 @@ const Books = () => {
         </div>
       </section>
 
-      {/* FEATURED FLAGSHIP PUBLICATION SPOTLIGHT (INTERACTIVE MULTI-BOOK CAROUSEL) */}
-      {featuredBook && (
-        <section className="container py-16 max-w-7xl mx-auto">
-          <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-r from-card via-card/90 to-primary/5 border border-primary/20 shadow-xl relative overflow-hidden flex flex-col lg:flex-row items-center gap-10">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
-            
-            <div className="w-full lg:w-1/3 flex flex-col items-center justify-center shrink-0">
-              <div className="bg-white p-6 rounded-2xl shadow-2xl border border-border/50 max-w-[260px] transform hover:rotate-1 hover:scale-105 transition-all duration-500 mb-4">
-                <img src={featuredBook.image} alt={featuredBook.title} className="w-full h-auto object-contain drop-shadow-xl" />
-              </div>
+      {/* PUBLISHED ACADEMIC BOOKS (EACH BOOK IN ITS OWN SEPARATE SECTION, STACKED ONE BELOW ANOTHER, NEWEST ON TOP) */}
+      <section id="catalog" className="container py-16 lg:py-24 max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-md">
+            <BookOpen className="h-4 w-4 text-accent" /> Published Academic Books & Monographs
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary mb-4 leading-tight">
+            Peer-Reviewed Academic Book Titles
+          </h2>
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+            All volumes are published with official registered ISBN allocations, double-blind peer reviewed, and available worldwide on Amazon in paperback and Kindle editions. Ordered chronologically with newest releases on top.
+          </p>
+        </div>
 
-              {/* CAROUSEL SWITCHER DOTS & ARROWS */}
-              <div className="flex items-center gap-3">
-                <button 
-                  onClick={() => setFeaturedIndex(prev => (prev === 0 ? featuredBooksList.length - 1 : prev - 1))}
-                  className="p-2 rounded-full bg-muted/80 hover:bg-primary hover:text-primary-foreground transition-all shadow-sm"
-                  aria-label="Previous Featured Publication"
+        {/* SEARCH & FILTER CONTROLS */}
+        <div className="mb-12 space-y-6 max-w-4xl mx-auto">
+          {/* SEARCH BAR */}
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input 
+              type="text"
+              placeholder="Search by title, author name, ISBN, or topic keywords..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-12 pr-4 py-6 text-base rounded-2xl bg-card border-border/80 shadow-sm focus-visible:ring-primary"
+            />
+            {searchQuery && (
+              <button 
+                onClick={() => setSearchQuery("")}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground hover:text-foreground bg-muted px-2.5 py-1 rounded-md"
+              >
+                Clear
+              </button>
+            )}
+          </div>
+
+          {/* DISCIPLINE PILLS */}
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+            {disciplines.map((d) => {
+              const Icon = d.icon;
+              const isSelected = selectedDiscipline === d.id;
+              return (
+                <button
+                  key={d.id}
+                  onClick={() => setSelectedDiscipline(d.id)}
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                    isSelected
+                      ? "bg-primary text-primary-foreground shadow-md scale-105"
+                      : "bg-card border border-border/60 text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
                 >
-                  <ChevronLeft className="h-4 w-4" />
+                  <Icon className="h-3.5 w-3.5" />
+                  {d.title}
                 </button>
-                <div className="flex items-center gap-1.5">
-                  {featuredBooksList.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setFeaturedIndex(idx)}
-                      className={`h-2 rounded-full transition-all ${
-                        featuredIndex === idx ? "w-6 bg-primary" : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60"
-                      }`}
-                      aria-label={`Slide ${idx + 1}`}
-                    />
-                  ))}
-                </div>
-                <button 
-                  onClick={() => setFeaturedIndex(prev => (prev === featuredBooksList.length - 1 ? 0 : prev + 1))}
-                  className="p-2 rounded-full bg-muted/80 hover:bg-primary hover:text-primary-foreground transition-all shadow-sm"
-                  aria-label="Next Featured Publication"
-                >
-                  <ChevronRight className="h-4 w-4" />
+              );
+            })}
+          </div>
+
+          {/* DYNAMIC MATCH COUNTER */}
+          <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-muted-foreground px-2">
+            <div className="flex items-center gap-3">
+              <span className="bg-primary/10 text-primary font-bold px-3 py-1.5 rounded-full border border-primary/20">
+                Showing {filteredBooks.length} of {publishedBooks.length} published titles (Newest on Top)
+              </span>
+              {selectedDiscipline !== "all" && (
+                <button onClick={() => setSelectedDiscipline("all")} className="text-primary hover:underline">
+                  Reset Category Filter
                 </button>
-              </div>
-            </div>
-
-            <div className="w-full lg:w-2/3 space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent/20 text-accent-foreground text-xs font-bold uppercase tracking-wider">
-                    <Flame className="h-3.5 w-3.5 text-accent" /> Featured Spotlight ({featuredIndex + 1}/{featuredBooksList.length})
-                  </span>
-                  <span className="font-mono text-xs font-bold bg-primary/10 text-primary px-3 py-1 rounded-md">
-                    ISBN: {featuredBook.isbn}
-                  </span>
-                </div>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-primary leading-tight">
-                {featuredBook.title}
-              </h2>
-              {featuredBook.subtitle && (
-                <p className="text-base text-muted-foreground font-medium italic">
-                  {featuredBook.subtitle}
-                </p>
               )}
-
-              <p className="text-sm text-foreground/80 font-medium">
-                <strong>Author(s):</strong> {featuredBook.authors}
-              </p>
-
-              <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                {featuredBook.description}
-              </p>
-
-              <div className="flex flex-wrap items-center gap-4 pt-4">
-                <Button asChild size="lg" className="rounded-full shadow-lg font-bold bg-primary hover:bg-accent text-primary-foreground hover:text-accent-foreground transition-all">
-                  <a href={featuredBook.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                    <ShoppingCart className="h-4 w-4" /> Buy on Amazon
-                  </a>
-                </Button>
-                <Link 
-                  to={`/books/${featuredBook.id}`}
-                  className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline px-4 py-2"
-                >
-                  <BookOpen className="h-4 w-4 text-accent" /> Read Full Synopsis & Details <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
+            </div>
+            <div className="text-xs text-muted-foreground flex items-center gap-1.5">
+              <ShieldCheck className="h-4 w-4 text-accent" />
+              <span>Official RRRNA Ministry of Education ISBN Allocation</span>
             </div>
           </div>
-        </section>
-      )}
+        </div>
+
+        {/* VERTICAL STACK OF SEPARATE BOOK SECTIONS (ONE BELOW ANOTHER) */}
+        {filteredBooks.length > 0 ? (
+          <div className="flex flex-col gap-10">
+            {filteredBooks.map((book, index) => {
+              const isNewRelease = index < 2 && (book.date.includes("2026") || book.date.includes("September"));
+              return (
+                <article 
+                  key={book.id} 
+                  id={`book-${book.id}`}
+                  className="overflow-hidden flex flex-col md:flex-row border border-border/70 bg-card hover:border-primary/40 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 relative group"
+                >
+                  {/* Left: Book Cover & Quick Actions */}
+                  <div className="md:w-72 lg:w-80 bg-gradient-to-b from-white via-slate-50 to-slate-100 p-6 sm:p-8 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-border/50 relative shrink-0 min-h-[340px]">
+                    {/* Status Badges */}
+                    <div className="absolute top-4 left-4 flex flex-col gap-1.5 z-10">
+                      {isNewRelease && (
+                        <span className="bg-accent text-accent-foreground text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                          <Flame className="h-3.5 w-3.5 fill-current" /> Latest Release
+                        </span>
+                      )}
+                      <span className="bg-primary/95 text-primary-foreground text-[10px] font-bold px-2.5 py-0.5 rounded-md shadow-sm flex items-center gap-1">
+                        <ShieldCheck className="h-3 w-3 text-accent" /> Official ISBN
+                      </span>
+                    </div>
+
+                    {/* Quick View Button */}
+                    <button
+                      onClick={() => setQuickViewBook(book)}
+                      className="absolute top-4 right-4 bg-white/90 hover:bg-white text-foreground p-2 rounded-full shadow-md z-10 opacity-80 group-hover:opacity-100 transition-all hover:scale-110"
+                      title="Quick Preview"
+                    >
+                      <Eye className="h-4 w-4 text-primary" />
+                    </button>
+
+                    {/* Cover Image */}
+                    <Link to={`/books/${book.id}`} className="my-auto block">
+                      <img 
+                        src={book.image} 
+                        alt={book.title} 
+                        className="max-h-[270px] w-auto object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl rounded-sm mx-auto" 
+                        loading="lazy" 
+                      />
+                    </Link>
+
+                    {book.wrapImage && (
+                      <a
+                        href={book.wrapImage}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 text-[11px] font-bold text-accent hover:underline flex items-center gap-1.5 z-10 bg-accent/10 px-3 py-1 rounded-full border border-accent/25"
+                      >
+                        <BookOpen className="h-3 w-3" /> View Complete Cover Wrap
+                      </a>
+                    )}
+                  </div>
+
+                  {/* Right: Book Details, Authors, Synopsis, and Amazon Action */}
+                  <div className="p-6 sm:p-8 md:p-10 flex flex-col flex-1 justify-between">
+                    <div>
+                      {/* Top Metadata Row */}
+                      <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="font-mono text-xs font-bold bg-primary/10 text-primary px-3 py-1 rounded-md">
+                            ISBN: {book.isbn}
+                          </span>
+                          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground bg-muted/70 px-3 py-1 rounded-md">
+                            <Calendar className="h-3.5 w-3.5 text-accent" /> {book.date}
+                          </span>
+                        </div>
+                        <span className="text-[11px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20 flex items-center gap-1">
+                          <CheckCircle2 className="h-3 w-3" /> Peer-Reviewed & Cataloged
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="font-serif font-bold text-2xl sm:text-3xl text-primary leading-tight mb-2 group-hover:text-accent transition-colors">
+                        <Link to={`/books/${book.id}`} className="hover:underline">
+                          {book.title}
+                        </Link>
+                      </h3>
+
+                      {/* Subtitle */}
+                      {book.subtitle && (
+                        <p className="text-muted-foreground text-sm sm:text-base font-medium mb-4 italic leading-snug">
+                          {book.subtitle}
+                        </p>
+                      )}
+
+                      {/* Author Line */}
+                      <div className="flex items-center gap-2 text-sm text-foreground/90 font-medium mb-4 bg-muted/40 p-3 rounded-xl border border-border/40">
+                        <User className="h-4 w-4 text-primary shrink-0" />
+                        <span><strong>Author(s):</strong> {book.authors}</span>
+                      </div>
+
+                      {/* Synopsis / Excerpt */}
+                      <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed line-clamp-4 mb-6">
+                        {book.description.replace(/^Publisher:[^\n]*\n|^ISBN:[^\n]*\n|^Approved by:[^\n]*\n/g, '')}
+                      </p>
+                    </div>
+
+                    {/* Footer Row */}
+                    <div className="pt-5 border-t border-border/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                      <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                        <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">Eminsphere Publishing</span>
+                        <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">Paperback & Kindle</span>
+                        <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">English</span>
+                      </div>
+
+                      <div className="flex items-center gap-3 w-full sm:w-auto">
+                        <Link 
+                          to={`/books/${book.id}`}
+                          className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-2 bg-secondary text-secondary-foreground font-bold px-5 py-3 rounded-xl hover:bg-secondary/80 text-xs sm:text-sm transition-colors shadow-sm"
+                        >
+                          <BookOpen className="h-4 w-4 text-accent" />
+                          Read Synopsis & Details
+                        </Link>
+                        <a 
+                          href={book.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-2 bg-primary text-primary-foreground font-bold px-6 py-3 rounded-xl hover:bg-accent hover:text-accent-foreground text-xs sm:text-sm transition-all shadow-md"
+                        >
+                          <ShoppingCart className="h-4 w-4" />
+                          Buy on Amazon
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="text-center py-16 bg-card rounded-2xl border border-border/60 max-w-xl mx-auto p-8">
+            <BookOpen className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+            <h3 className="font-bold text-xl text-primary mb-2">No matching titles found</h3>
+            <p className="text-sm text-muted-foreground mb-6">Try searching with a different keyword or select "All Disciplines".</p>
+            <Button onClick={() => { setSearchQuery(""); setSelectedDiscipline("all"); }} variant="outline" className="rounded-full">
+              Reset Search & Filters
+            </Button>
+          </div>
+        )}
+      </section>
 
       {/* GLOBAL ISBN SUPPORT SECTION (INTERNATIONAL BOOK PUBLISHING) */}
       <section id="global-isbn" className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-b from-background via-primary/[0.03] to-background border-t border-border/50">
@@ -1473,320 +1595,6 @@ const Books = () => {
         </div>
       </section>
 
-      {/* INTERACTIVE BOOK CATALOG */}
-      <section id="catalog" className="container py-20 lg:py-28 max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="text-xs font-bold text-accent uppercase tracking-widest mb-3">Curated Peer-Reviewed Volumes</div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary mb-5">Published Academic Titles</h2>
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Discover peer-reviewed academic volumes and technical monographs with registered ISBN numbers, authored by leading professors, researchers, and scientists.
-          </p>
-        </div>
-
-        {/* SEARCH & FILTER CONTROLS */}
-        <div className="mb-12 space-y-6 max-w-4xl mx-auto">
-          {/* SEARCH BAR */}
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input 
-              type="text"
-              placeholder="Search by title, author name, ISBN, or topic keywords..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-12 pr-4 py-6 text-base rounded-2xl bg-card border-border/80 shadow-sm focus-visible:ring-primary"
-            />
-            {searchQuery && (
-              <button 
-                onClick={() => setSearchQuery("")}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground hover:text-foreground bg-muted px-2.5 py-1 rounded-md"
-              >
-                Clear
-              </button>
-            )}
-          </div>
-
-          {/* DISCIPLINE PILLS */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
-            {disciplines.map((d) => {
-              const Icon = d.icon;
-              const isSelected = selectedDiscipline === d.id;
-              return (
-                <button
-                  key={d.id}
-                  onClick={() => setSelectedDiscipline(d.id)}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold transition-all ${
-                    isSelected
-                      ? "bg-primary text-primary-foreground shadow-md scale-105"
-                      : "bg-card border border-border/60 text-muted-foreground hover:text-foreground hover:bg-muted"
-                  }`}
-                >
-                  <Icon className="h-3.5 w-3.5" />
-                  {d.title}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* DYNAMIC MATCH COUNTER & VIEW TOGGLE */}
-          <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-muted-foreground px-2">
-            <div className="flex items-center gap-3">
-              <span>Showing {filteredBooks.length} of {publishedBooks.length} published titles (Newest on Top)</span>
-              {selectedDiscipline !== "all" && (
-                <button onClick={() => setSelectedDiscipline("all")} className="text-primary hover:underline">
-                  Reset Category Filter
-                </button>
-              )}
-            </div>
-
-            {/* Layout Mode Toggle */}
-            <div className="flex items-center gap-1 bg-card border border-border/70 p-1 rounded-xl shadow-sm">
-              <button
-                onClick={() => setViewMode("list")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  viewMode === "list"
-                    ? "bg-primary text-primary-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-                title="Stacked List (One Below Another)"
-              >
-                <LayoutList className="h-3.5 w-3.5" />
-                <span>Stacked List</span>
-              </button>
-              <button
-                onClick={() => setViewMode("grid")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  viewMode === "grid"
-                    ? "bg-primary text-primary-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-                title="Grid View"
-              >
-                <LayoutGrid className="h-3.5 w-3.5" />
-                <span>Grid View</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* BOOK CARDS CONTAINER */}
-        {filteredBooks.length > 0 ? (
-          viewMode === "list" ? (
-            /* STACKED LIST VIEW: SEPARATE BOOKS ONE BELOW ANOTHER WITH NEWEST ON TOP */
-            <div className="flex flex-col gap-8">
-              {filteredBooks.map((book, index) => {
-                const isNewRelease = index < 2 && book.date.includes("2026");
-                return (
-                  <Card 
-                    key={book.id} 
-                    className="overflow-hidden flex flex-col md:flex-row hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-border/70 bg-card group rounded-3xl shadow-lg relative"
-                  >
-                    {/* Visual Cover Section (Left) */}
-                    <div className="md:w-72 lg:w-80 bg-gradient-to-b from-white via-slate-50 to-slate-100 p-6 sm:p-8 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-border/50 relative shrink-0 min-h-[320px]">
-                      {/* Status Badges */}
-                      <div className="absolute top-4 left-4 flex flex-col gap-1.5 z-10">
-                        {isNewRelease && (
-                          <span className="bg-accent text-accent-foreground text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md flex items-center gap-1">
-                            <Flame className="h-3.5 w-3.5 text-accent-foreground" /> New Release
-                          </span>
-                        )}
-                        <span className="bg-primary/95 text-primary-foreground text-[10px] font-bold px-2.5 py-0.5 rounded-md shadow-sm flex items-center gap-1">
-                          <ShieldCheck className="h-3 w-3 text-accent" /> ISBN Approved
-                        </span>
-                      </div>
-
-                      {/* Quick View Button */}
-                      <button
-                        onClick={() => setQuickViewBook(book)}
-                        className="absolute top-4 right-4 bg-white/90 hover:bg-white text-foreground p-2 rounded-full shadow-md z-10 opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
-                        title="Quick Preview"
-                      >
-                        <Eye className="h-4 w-4 text-primary" />
-                      </button>
-
-                      {/* Cover Image */}
-                      <img 
-                        src={book.image} 
-                        alt={book.title} 
-                        className="max-h-[250px] w-auto object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl rounded-sm my-auto" 
-                        loading="lazy" 
-                      />
-
-                      {book.wrapImage && (
-                        <a
-                          href={book.wrapImage}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-3 text-[11px] font-bold text-accent hover:underline flex items-center gap-1.5 z-10 bg-accent/10 px-3 py-1 rounded-full border border-accent/25"
-                        >
-                          <BookOpen className="h-3 w-3" /> View Complete Cover Wrap
-                        </a>
-                      )}
-                    </div>
-
-                    {/* Content Section (Right) */}
-                    <div className="p-6 sm:p-8 md:p-10 flex flex-col flex-1 justify-between">
-                      <div>
-                        {/* Top Metadata Row */}
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                          <div className="flex flex-wrap items-center gap-2">
-                            <span className="font-mono text-xs font-bold bg-primary/10 text-primary px-3 py-1 rounded-md">
-                              ISBN: {book.isbn}
-                            </span>
-                            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground bg-muted/60 px-3 py-1 rounded-md">
-                              <Calendar className="h-3.5 w-3.5 text-accent" /> {book.date}
-                            </span>
-                          </div>
-                          <span className="text-[11px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20 flex items-center gap-1">
-                            <CheckCircle2 className="h-3 w-3" /> Peer-Reviewed & Cataloged
-                          </span>
-                        </div>
-
-                        {/* Title */}
-                        <h3 className="font-serif font-bold text-2xl sm:text-3xl text-primary leading-tight mb-2 group-hover:text-accent transition-colors">
-                          <Link to={`/books/${book.id}`} className="hover:underline">
-                            {book.title}
-                          </Link>
-                        </h3>
-
-                        {/* Subtitle */}
-                        {book.subtitle && (
-                          <p className="text-muted-foreground text-sm sm:text-base font-medium mb-4 italic leading-snug">
-                            {book.subtitle}
-                          </p>
-                        )}
-
-                        {/* Author Line */}
-                        <div className="flex items-center gap-2 text-sm text-foreground/90 font-medium mb-4 bg-muted/30 p-3 rounded-xl border border-border/40">
-                          <User className="h-4 w-4 text-primary shrink-0" />
-                          <span><strong>Author(s):</strong> {book.authors}</span>
-                        </div>
-
-                        {/* Description / Synopsis excerpt */}
-                        <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed line-clamp-3 mb-6">
-                          {book.description.replace(/^Publisher:[^\n]*\n|^ISBN:[^\n]*\n|^Approved by:[^\n]*\n/g, '')}
-                        </p>
-                      </div>
-
-                      {/* Action & Publishing Footer */}
-                      <div className="pt-5 border-t border-border/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                          <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">Eminsphere Publishing</span>
-                          <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">Paperback & Kindle</span>
-                          <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">English</span>
-                        </div>
-
-                        <div className="flex items-center gap-3 w-full sm:w-auto">
-                          <Link 
-                            to={`/books/${book.id}`}
-                            className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-2 bg-secondary text-secondary-foreground font-bold px-5 py-3 rounded-xl hover:bg-secondary/80 text-xs sm:text-sm transition-colors shadow-sm"
-                          >
-                            <BookOpen className="h-4 w-4 text-accent" />
-                            Read Synopsis & Details
-                          </Link>
-                          <a 
-                            href={book.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-2 bg-primary text-primary-foreground font-bold px-6 py-3 rounded-xl hover:bg-accent hover:text-accent-foreground text-xs sm:text-sm transition-all shadow-md"
-                          >
-                            <ShoppingCart className="h-4 w-4" />
-                            Buy on Amazon
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                );
-              })}
-            </div>
-          ) : (
-            /* GRID VIEW */
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredBooks.map((book) => (
-                <Card key={book.id} className="overflow-hidden flex flex-col hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border-0 bg-card group rounded-2xl shadow-md">
-                  <div className="bg-gradient-to-b from-white via-slate-50 to-slate-100 p-6 flex justify-center items-center border-b border-border/50 relative overflow-hidden h-[340px]">
-                    <div className="absolute top-3 left-3 bg-primary/90 text-primary-foreground text-[11px] font-bold px-2.5 py-1 rounded-md shadow-sm z-10 flex items-center gap-1">
-                      <ShieldCheck className="h-3.5 w-3.5 text-accent" /> ISBN Approved
-                    </div>
-
-                    {/* QUICK VIEW TRIGGER */}
-                    <button
-                      onClick={() => setQuickViewBook(book)}
-                      className="absolute top-3 right-3 bg-white/90 hover:bg-white text-foreground p-2 rounded-full shadow-md z-10 opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
-                      title="Quick Preview"
-                    >
-                      <Eye className="h-4 w-4 text-primary" />
-                    </button>
-
-                    <img 
-                      src={book.image} 
-                      alt={book.title} 
-                      className="max-h-[290px] w-auto object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl rounded-sm" 
-                      loading="lazy" 
-                    />
-                  </div>
-
-                  <div className="p-7 flex flex-col flex-1 justify-between">
-                    <div>
-                      <h3 className="font-serif font-bold text-xl text-primary leading-tight mb-2 group-hover:text-accent transition-colors line-clamp-2">
-                        {book.title}
-                      </h3>
-                      {book.subtitle && (
-                        <p className="text-muted-foreground text-xs font-medium mb-4 line-clamp-1 italic">
-                          {book.subtitle}
-                        </p>
-                      )}
-
-                      <div className="space-y-2 mt-4 mb-6 text-xs bg-muted/40 p-4 rounded-xl border border-border/40">
-                        <div className="flex items-start gap-2">
-                          <strong className="text-primary min-w-[70px]">Author(s):</strong>
-                          <span className="text-muted-foreground font-medium line-clamp-1">{book.authors}</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <strong className="text-primary min-w-[70px]">ISBN:</strong>
-                          <span className="text-foreground font-mono font-semibold">{book.isbn}</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <strong className="text-primary min-w-[70px]">Published:</strong>
-                          <span className="text-muted-foreground">{book.date}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="pt-4 border-t border-border/50 flex gap-3">
-                      <Link 
-                        to={`/books/${book.id}`}
-                        className="inline-flex flex-1 justify-center items-center gap-2 bg-secondary text-secondary-foreground font-bold px-4 py-3 rounded-xl hover:bg-secondary/80 text-xs transition-colors shadow-sm"
-                      >
-                        <BookOpen className="h-3.5 w-3.5 text-accent" />
-                        Read Synopsis
-                      </Link>
-                      <a 
-                        href={book.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="inline-flex flex-1 justify-center items-center gap-2 bg-primary text-primary-foreground font-bold px-4 py-3 rounded-xl hover:bg-accent hover:text-accent-foreground text-xs transition-all shadow-md"
-                      >
-                        <ShoppingCart className="h-3.5 w-3.5" />
-                        Buy on Amazon
-                      </a>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          )
-        ) : (
-          <div className="text-center py-16 bg-card rounded-2xl border border-border/60 max-w-xl mx-auto p-8">
-            <BookOpen className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-            <h3 className="font-bold text-xl text-primary mb-2">No matching titles found</h3>
-            <p className="text-sm text-muted-foreground mb-6">Try searching with a different keyword or select "All Disciplines".</p>
-            <Button onClick={() => { setSearchQuery(""); setSelectedDiscipline("all"); }} variant="outline" className="rounded-full">
-              Reset Search & Filters
-            </Button>
-          </div>
-        )}
-      </section>
 
       {/* QUICK VIEW MODAL */}
       {quickViewBook && (
