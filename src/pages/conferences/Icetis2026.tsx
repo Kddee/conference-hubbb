@@ -3,7 +3,6 @@ import SEOHead from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import navinImg from "@/assets/navin.png";
 import {
   Calendar,
   MapPin,
@@ -41,8 +40,8 @@ interface Speaker {
   role: string;
   org: string;
   country: string;
-  category: "Plenary Keynote" | "Keynote Speaker" | "NRI Tech Leader" | "Invited Speaker";
-  type: "international" | "nri";
+  category: "Plenary Keynote" | "Keynote Speaker" | "Invited Speaker";
+  type: "plenary" | "keynote";
   image: string;
   objectPosition?: string;
 }
@@ -239,113 +238,123 @@ const conferenceData = {
   speakers: [
     {
       name: "Prof. Dr. Alexander Bull",
-      role: "Professor & Computing Scientist",
-      org: "IU International University",
+      role: "Chair of Distributed Systems & Machine Intelligence",
+      org: "IU International University of Applied Sciences, Berlin",
       country: "Germany",
       category: "Plenary Keynote",
-      type: "international",
+      type: "plenary",
       image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg",
       objectPosition: "center 20%"
     },
     {
+      name: "Dr. Madeline Pickles",
+      role: "Associate Professor in Computing & Autonomous Robotics",
+      org: "Liverpool John Moores University",
+      country: "United Kingdom",
+      category: "Plenary Keynote",
+      type: "plenary",
+      image: "/icaits26/dr.madeline-pickles.jpeg",
+      objectPosition: "center 20%"
+    },
+    {
+      name: "Prof. Dr. Jaco Visagie",
+      role: "Professor of Mathematical Statistics & Applied Machine Learning",
+      org: "North-West University & European Fellow",
+      country: "South Africa / Netherlands",
+      category: "Plenary Keynote",
+      type: "plenary",
+      image: "/speakers/jaco-visagie.jpg",
+      objectPosition: "center 20%"
+    },
+    {
+      name: "Prof. Dr. Elena Vogel",
+      role: "Chair of Neural Optimization & Foundation AI",
+      org: "ETH Zurich & Swiss AI Initiative",
+      country: "Switzerland",
+      category: "Plenary Keynote",
+      type: "plenary",
+      image: "/speakers/prof-elena-vogel.jpg",
+      objectPosition: "center 20%"
+    },
+    {
+      name: "Dr. Marcus Lindqvist",
+      role: "Professor of Autonomous Robotics & Perception Systems",
+      org: "KTH Royal Institute of Technology, Stockholm",
+      country: "Sweden",
+      category: "Keynote Speaker",
+      type: "keynote",
+      image: "/speakers/dr-marcus-lindqvist.jpg",
+      objectPosition: "center 20%"
+    },
+    {
+      name: "Dr. Julian Bennett",
+      role: "Senior Director of Foundation AI Research",
+      org: "Vector Institute & University of Toronto",
+      country: "Canada",
+      category: "Keynote Speaker",
+      type: "keynote",
+      image: "/speakers/dr-julian-bennett.jpg",
+      objectPosition: "center 20%"
+    },
+    {
+      name: "Dr. Nikola Ilić",
+      role: "Principal Researcher in Autonomous Swarm Systems",
+      org: "University of Belgrade & European AI Consortium",
+      country: "Serbia / EU",
+      category: "Keynote Speaker",
+      type: "keynote",
+      image: "/icaits26/dr.nikola-ilic.jpeg",
+      objectPosition: "center 20%"
+    },
+    {
+      name: "Wiktoria Gromowa-Cieślik",
+      role: "CEO & Chief Metrics Officer, Human-Tech Fusion",
+      org: "Human-Tech Fusion (HTFusion) Lab, Warsaw",
+      country: "Poland",
+      category: "Keynote Speaker",
+      type: "keynote",
+      image: "/speakers/wiktoria-gromowa-cieslik.jpg",
+      objectPosition: "center 20%"
+    },
+    {
       name: "Dr. Joe Perez",
-      role: "Senior Systems & Data Specialist",
-      org: "NC Dept. of Health & Human Services",
+      role: "Senior Systems Architect & Cognitive Data Specialist",
+      org: "NC Dept. of Information Technology",
       country: "Raleigh, NC, USA",
       category: "Keynote Speaker",
-      type: "international",
+      type: "keynote",
       image: "/speakers/dr-joe-perez.jpg",
       objectPosition: "center 20%"
     },
     {
-      name: "Hardeep Singh Tiwana",
-      role: "Golden Kubestronaut & Creator",
-      org: "The Kubernetes Show",
-      country: "USA",
-      category: "NRI Tech Leader",
-      type: "nri",
-      image: "/speakers/hardeep-singh-tiwana.jpg"
-    },
-    {
-      name: "Dr. Madeleine Pickles",
-      role: "Associate Professor in Computing",
-      org: "Liverpool John Moores University",
-      country: "United Kingdom",
-      category: "Keynote Speaker",
-      type: "international",
-      image: "/icaits26/dr.madeline-pickles.jpeg"
-    },
-    {
-      name: "Navin Kumar Chhibber",
-      role: "AI/ML, GenAI & Data Platforms Leader",
-      org: "Product Engineering & Enterprise Cloud",
-      country: "USA",
-      category: "NRI Tech Leader",
-      type: "nri",
-      image: navinImg
-    },
-    {
-      name: "Wiktoria Gromowa-Cieślik",
-      role: "CEO & Chief Metrics Officer",
-      org: "Human-Tech Fusion (HTFusion)",
-      country: "Poland",
-      category: "Keynote Speaker",
-      type: "international",
-      image: "/speakers/wiktoria-gromowa-cieslik.jpg"
-    },
-    {
-      name: "Dr. Sravanthi Dontu",
-      role: "Corporate Professional & Academic Researcher",
-      org: "University of the Cumberlands",
-      country: "USA",
-      category: "NRI Tech Leader",
-      type: "nri",
-      image: "/speakers/dr-sravanthi-dontu.jpg"
-    },
-    {
-      name: "Gregg Clunis",
-      role: "Author & Technology Founder",
-      org: "Kojo Systems",
-      country: "United States",
-      category: "Keynote Speaker",
-      type: "international",
-      image: "/speakers/gregg-clunis.jpg"
-    },
-    {
-      name: "Mayank Atreya",
-      role: "Enterprise Architecture & AI/ML Leader",
-      org: "Enterprise Solutions Division",
-      country: "USA",
-      category: "NRI Tech Leader",
-      type: "nri",
-      image: "/speakers/mayank-atreya.jpg"
-    },
-    {
-      name: "Dr. Carolina Barandiaran",
-      role: "Academic Leader & Researcher",
-      org: "Academic Research & Innovation",
-      country: "Argentina",
-      category: "Invited Speaker",
-      type: "international",
-      image: "/speakers/dr-carolina-barandiaran.jpg"
-    },
-    {
-      name: "Dr. Dina Alkhodary",
-      role: "Associate Professor of Business Administration",
-      org: "Middle East University",
-      country: "Jordan",
-      category: "Invited Speaker",
-      type: "international",
-      image: "/speakers/dr-dina-alkhodary.jpg"
-    },
-    {
       name: "Jim Saliba",
-      role: "Principal Technology Consultant",
-      org: "Enterprise Architect Advisory",
-      country: "Silicon Valley, CA, USA",
+      role: "Principal Cloud Architecture & GenAI Enterprise Consultant",
+      org: "Enterprise AI Architecture Advisory, Silicon Valley",
+      country: "California, USA",
       category: "Keynote Speaker",
-      type: "international",
-      image: "/speakers/jim-saliba.png"
+      type: "keynote",
+      image: "/speakers/jim-saliba.png",
+      objectPosition: "center 20%"
+    },
+    {
+      name: "Dr. Cristina Marghescu",
+      role: "Associate Professor of Information Systems & Embedded Networks",
+      org: "Politehnica University of Bucharest",
+      country: "Romania / EU",
+      category: "Keynote Speaker",
+      type: "keynote",
+      image: "/speakers/marghescu-cristina.png",
+      objectPosition: "center 20%"
+    },
+    {
+      name: "Dr. Roksolana Trach",
+      role: "Senior Research Scientist in Predictive Modeling & Digital Systems",
+      org: "Center for Intelligent Systems Modeling, Vienna",
+      country: "Austria",
+      category: "Keynote Speaker",
+      type: "keynote",
+      image: "/icaits26/roksolana-trach.png",
+      objectPosition: "center 20%"
     }
   ] as Speaker[],
 
@@ -432,7 +441,7 @@ const conferenceData = {
 
 const Icetis2026 = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [speakerFilter, setSpeakerFilter] = useState<"all" | "international" | "nri">("all");
+  const [speakerFilter, setSpeakerFilter] = useState<"all" | "plenary" | "keynote">("all");
   const regCountdown = useCountdown(REGISTRATION_DEADLINE_DATE);
 
   const filteredSpeakers = conferenceData.speakers.filter((s) => {
@@ -768,7 +777,7 @@ const Icetis2026 = () => {
             Distinguished Plenary & Keynote Speakers
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            Renowned international scientists, European academic chairs, and prominent Silicon Valley NRI tech leaders addressing WSGEN-2026.
+            Renowned international research chairs, European professors, and North American AI leaders delivering keynote addresses at WSGEN-2026.
           </p>
 
           {/* Interactive Filter Tabs */}
@@ -784,24 +793,24 @@ const Icetis2026 = () => {
               All Keynotes ({conferenceData.speakers.length})
             </button>
             <button
-              onClick={() => setSpeakerFilter("international")}
+              onClick={() => setSpeakerFilter("plenary")}
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                speakerFilter === "international"
+                speakerFilter === "plenary"
                   ? "bg-primary text-primary-foreground shadow-md"
                   : "bg-white/5 text-muted-foreground hover:text-white border border-white/10"
               }`}
             >
-              International Scholars ({conferenceData.speakers.filter(s => s.type === "international").length})
+              Plenary Keynotes ({conferenceData.speakers.filter(s => s.type === "plenary").length})
             </button>
             <button
-              onClick={() => setSpeakerFilter("nri")}
+              onClick={() => setSpeakerFilter("keynote")}
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                speakerFilter === "nri"
+                speakerFilter === "keynote"
                   ? "bg-primary text-primary-foreground shadow-md"
                   : "bg-white/5 text-muted-foreground hover:text-white border border-white/10"
               }`}
             >
-              Silicon Valley & NRI Leaders ({conferenceData.speakers.filter(s => s.type === "nri").length})
+              Keynote Faculty ({conferenceData.speakers.filter(s => s.type === "keynote").length})
             </button>
           </div>
         </div>
@@ -810,7 +819,7 @@ const Icetis2026 = () => {
           {filteredSpeakers.map((s, idx) => (
             <Card key={idx} className="overflow-hidden glass border-white/10 bg-card/40 hover:bg-card/70 transition-all duration-300 group flex flex-col items-center text-center p-4 sm:p-5 rounded-2xl sm:rounded-3xl hover:-translate-y-1 hover:border-primary/40">
               <span className={`inline-block text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full mb-3 border ${
-                s.type === "nri" 
+                s.type === "plenary" 
                   ? "bg-accent/15 text-accent border-accent/25" 
                   : "bg-primary/15 text-primary border-primary/25"
               }`}>
