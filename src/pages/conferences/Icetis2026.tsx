@@ -35,16 +35,7 @@ import {
   Bot
 } from "lucide-react";
 
-interface Speaker {
-  name: string;
-  role: string;
-  org: string;
-  country: string;
-  category: "Plenary Keynote" | "Keynote Speaker" | "Invited Speaker";
-  type: "plenary" | "keynote";
-  image: string;
-  objectPosition?: string;
-}
+
 
 const REGISTRATION_DEADLINE_DATE = new Date("2026-10-23T23:59:59+08:00");
 const CONFERENCE_TARGET_DATE = new Date("2026-10-27T09:00:00+08:00");
@@ -235,128 +226,7 @@ const conferenceData = {
     }
   ],
 
-  speakers: [
-    {
-      name: "Prof. Dr. Stuart Russell",
-      role: "Professor of Computer Science & Director of CHAI",
-      org: "University of California, Berkeley",
-      country: "United States",
-      category: "Plenary Keynote",
-      type: "plenary",
-      image: "/speakers/prof-stuart-russell.jpg",
-      objectPosition: "center 20%"
-    },
-    {
-      name: "Prof. Dr. Yann LeCun",
-      role: "Chief AI Scientist & Silver Professor of Computer Science",
-      org: "New York University (NYU) & Meta AI",
-      country: "United States",
-      category: "Plenary Keynote",
-      type: "plenary",
-      image: "/speakers/prof-yann-lecun.jpg",
-      objectPosition: "center 20%"
-    },
-    {
-      name: "Prof. Dr. Yoshua Bengio",
-      role: "Full Professor & Scientific Director",
-      org: "Mila – Quebec AI Institute & Université de Montréal",
-      country: "Canada",
-      category: "Plenary Keynote",
-      type: "plenary",
-      image: "/speakers/prof-yoshua-bengio.jpg",
-      objectPosition: "center 20%"
-    },
-    {
-      name: "Prof. Dr. Christopher Manning",
-      role: "Thomas M. Siebel Professor in ML & Director of SAIL",
-      org: "Stanford University (Stanford AI Lab)",
-      country: "United States",
-      category: "Plenary Keynote",
-      type: "plenary",
-      image: "/speakers/prof-christopher-manning.jpg",
-      objectPosition: "center 20%"
-    },
-    {
-      name: "Prof. Dr. Mihaela van der Schaar",
-      role: "John Humphrey Plummer Professor of ML, AI and Medicine",
-      org: "University of Cambridge & Alan Turing Institute",
-      country: "United Kingdom",
-      category: "Keynote Speaker",
-      type: "keynote",
-      image: "/speakers/prof-mihaela-van-der-schaar.jpg",
-      objectPosition: "center 20%"
-    },
-    {
-      name: "Prof. Dr. Michael Wooldridge",
-      role: "Professor of Computer Science & Head of Department",
-      org: "University of Oxford & Alan Turing Institute",
-      country: "United Kingdom",
-      category: "Keynote Speaker",
-      type: "keynote",
-      image: "/speakers/prof-michael-wooldridge.jpg",
-      objectPosition: "center 20%"
-    },
-    {
-      name: "Prof. Dr. Chelsea Finn",
-      role: "Assistant Professor of Computer Science & Robotics",
-      org: "Stanford University (IRIS Lab)",
-      country: "United States",
-      category: "Keynote Speaker",
-      type: "keynote",
-      image: "/speakers/prof-chelsea-finn.jpg",
-      objectPosition: "center 20%"
-    },
-    {
-      name: "Dr. Peter Norvig",
-      role: "Fellow of Stanford HAI & Former Director of Research at Google",
-      org: "Stanford Institute for Human-Centered AI (HAI)",
-      country: "United States",
-      category: "Keynote Speaker",
-      type: "keynote",
-      image: "/speakers/prof-peter-norvig.jpg",
-      objectPosition: "center 20%"
-    },
-    {
-      name: "Prof. Dr. Richard S. Sutton",
-      role: "Distinguished Research Professor & Pioneer of RL",
-      org: "University of Alberta & Keen Technologies",
-      country: "Canada",
-      category: "Keynote Speaker",
-      type: "keynote",
-      image: "/speakers/prof-richard-sutton.jpg",
-      objectPosition: "center 20%"
-    },
-    {
-      name: "Prof. Dr. Jürgen Schmidhuber",
-      role: "Director of the AI Initiative & Co-Creator of LSTM",
-      org: "KAUST & IDSIA Swiss AI Lab",
-      country: "Switzerland / Germany",
-      category: "Keynote Speaker",
-      type: "keynote",
-      image: "/speakers/prof-jurgen-schmidhuber.jpg",
-      objectPosition: "center 20%"
-    },
-    {
-      name: "Prof. Dr. Sebastian Thrun",
-      role: "Adjunct Professor of Computer Science & Founder",
-      org: "Stanford University & Google X Founder",
-      country: "United States",
-      category: "Keynote Speaker",
-      type: "keynote",
-      image: "/speakers/prof-sebastian-thrun.jpg",
-      objectPosition: "center 20%"
-    },
-    {
-      name: "Prof. Dr. Dan Jurafsky",
-      role: "Jackson Eli Reynolds Professor & Chair of Linguistics",
-      org: "Stanford University",
-      country: "United States",
-      category: "Keynote Speaker",
-      type: "keynote",
-      image: "/speakers/prof-dan-jurafsky.jpg",
-      objectPosition: "center 20%"
-    }
-  ] as Speaker[],
+
 
   publications: [
     {
@@ -441,13 +311,7 @@ const conferenceData = {
 
 const Icetis2026 = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [speakerFilter, setSpeakerFilter] = useState<"all" | "plenary" | "keynote">("all");
   const regCountdown = useCountdown(REGISTRATION_DEADLINE_DATE);
-
-  const filteredSpeakers = conferenceData.speakers.filter((s) => {
-    if (speakerFilter === "all") return true;
-    return s.type === speakerFilter;
-  });
 
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
@@ -767,8 +631,8 @@ const Icetis2026 = () => {
         </div>
       </section>
 
-      {/* FEATURED KEYNOTE & PLENARY SPEAKERS */}
-      <section className="py-16 sm:py-24 container max-w-6xl px-4">
+      {/* DISTINGUISHED PLENARY & KEYNOTE SPEAKERS (OFFICIAL ROSTER UPDATE ANNOUNCEMENT) */}
+      <section id="speakers" className="py-16 sm:py-24 container max-w-6xl px-4">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3">
             <Users className="h-4 w-4" /> World-Class Keynote Faculty
@@ -777,83 +641,95 @@ const Icetis2026 = () => {
             Distinguished Plenary & Keynote Speakers
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            Renowned international research chairs, European professors, and North American AI leaders delivering keynote addresses at WSGEN-2026.
+            World-renowned international research chairs, European professors, and frontier AI leaders delivering plenary lectures at WSGEN-2026.
           </p>
-
-          {/* Interactive Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-6">
-            <button
-              onClick={() => setSpeakerFilter("all")}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                speakerFilter === "all"
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "bg-white/5 text-muted-foreground hover:text-white border border-white/10"
-              }`}
-            >
-              All Keynotes ({conferenceData.speakers.length})
-            </button>
-            <button
-              onClick={() => setSpeakerFilter("plenary")}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                speakerFilter === "plenary"
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "bg-white/5 text-muted-foreground hover:text-white border border-white/10"
-              }`}
-            >
-              Plenary Keynotes ({conferenceData.speakers.filter(s => s.type === "plenary").length})
-            </button>
-            <button
-              onClick={() => setSpeakerFilter("keynote")}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                speakerFilter === "keynote"
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "bg-white/5 text-muted-foreground hover:text-white border border-white/10"
-              }`}
-            >
-              Keynote Faculty ({conferenceData.speakers.filter(s => s.type === "keynote").length})
-            </button>
-          </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          {filteredSpeakers.map((s, idx) => (
-            <Card key={idx} className="overflow-hidden glass border-white/10 bg-card/40 hover:bg-card/70 transition-all duration-300 group flex flex-col items-center text-center p-4 sm:p-5 rounded-2xl sm:rounded-3xl hover:-translate-y-1 hover:border-primary/40">
-              <span className={`inline-block text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full mb-3 border ${
-                s.type === "plenary" 
-                  ? "bg-accent/15 text-accent border-accent/25" 
-                  : "bg-primary/15 text-primary border-primary/25"
-              }`}>
-                {s.category}
-              </span>
+        {/* ENHANCED INFORMATIVE ANNOUNCEMENT CARD */}
+        <div className="relative rounded-3xl p-8 sm:p-14 bg-gradient-to-br from-card/80 via-card/50 to-primary/10 border border-primary/30 shadow-2xl overflow-hidden backdrop-blur-md">
+          {/* Subtle Ambient Glows */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
-              {/* Best fit frame with zero clipping */}
-              <div className="relative w-full aspect-square max-w-[120px] sm:max-w-[140px] mb-3 overflow-hidden rounded-xl sm:rounded-2xl border border-white/10 group-hover:border-primary/50 transition-all shadow-md shrink-0 bg-slate-950/80 flex items-center justify-center">
-                <img
-                  src={s.image}
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute inset-0 w-full h-full object-cover blur-md opacity-35 scale-125 pointer-events-none"
-                />
-                <img
-                  src={s.image}
-                  alt={s.name}
-                  style={s.objectPosition ? { objectPosition: s.objectPosition } : undefined}
-                  className="relative z-10 h-full w-full object-contain p-1 transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                />
+          <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
+            {/* Pulsing Status Pill */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/15 border border-accent/35 text-accent text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 animate-pulse shadow-sm">
+              <Clock className="h-4 w-4 text-accent" />
+              <span>Official Speaker Lineup Updating Soon</span>
+            </div>
+
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 flex items-center justify-center mb-6 shadow-inner">
+              <Sparkles className="h-8 w-8 sm:h-10 sm:w-10 text-primary animate-pulse" />
+            </div>
+
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-4 leading-tight">
+              Distinguished Keynote Roster Will Be Updated Soon
+            </h3>
+
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-8">
+              The International Academic Advisory Committee and Program Chairs of <strong className="text-white">WSGEN-2026</strong> are currently finalizing formal confirmations for our distinguished plenary keynote speakers, invited industry architects, and research chairs from leading international universities and deep-tech labs across the United States, Europe, and the Asia-Pacific.
+            </p>
+
+            {/* 3 Value Highlights */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full text-left mb-10">
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-primary/40 transition-colors">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="p-2 rounded-xl bg-primary/20 text-primary">
+                    <Globe className="h-4 w-4" />
+                  </div>
+                  <h4 className="text-xs sm:text-sm font-bold text-white">Global AI Faculty</h4>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Visionary addresses spanning Large Foundation Models, Autonomous Agentic Swarms, and Embodied Physical AI.
+                </p>
               </div>
 
-              <h4 className="font-serif font-bold text-white text-sm sm:text-base leading-tight mb-1 group-hover:text-primary transition-colors">
-                {s.name}
-              </h4>
-              <div className="text-[11px] font-semibold text-accent mb-0.5 line-clamp-1">{s.role}</div>
-              <div className="text-[11px] text-muted-foreground mb-3 line-clamp-1">{s.org}</div>
-
-              <div className="mt-auto inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-white/80 uppercase tracking-wider">
-                <Globe className="h-3 w-3 text-accent" /> {s.country}
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-accent/40 transition-colors">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="p-2 rounded-xl bg-accent/20 text-accent">
+                    <Presentation className="h-4 w-4" />
+                  </div>
+                  <h4 className="text-xs sm:text-sm font-bold text-white">Dual-Stage Broadcast</h4>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  All plenary and keynote sessions will be streamed globally in real-time with interactive live Q&A for worldwide delegates.
+                </p>
               </div>
-            </Card>
-          ))}
+
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-emerald-500/40 transition-colors">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400">
+                    <CheckCircle2 className="h-4 w-4" />
+                  </div>
+                  <h4 className="text-xs sm:text-sm font-bold text-white">Direct Author Access</h4>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Presenting authors and attendees will participate in dedicated interactive breakout forums and bilateral networking circles.
+                </p>
+              </div>
+            </div>
+
+            {/* Action Buttons & Contact */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
+              <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 py-6 rounded-full shadow-gold hover:-translate-y-0.5 transition-all text-sm">
+                <Link to="/registration" className="flex items-center gap-2">
+                  Register for Summit (Before 23 Oct) <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold px-8 py-6 rounded-full transition-all text-sm">
+                <a href="#tracks" className="flex items-center gap-2">
+                  Explore Research Tracks
+                </a>
+              </Button>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-white/10 text-xs text-muted-foreground flex flex-wrap items-center justify-center gap-2">
+              <span>Are you a senior researcher or tech leader interested in delivering an Invited Plenary Session?</span>
+              <a href="mailto:info@eminsphere.com" className="text-primary font-bold hover:underline inline-flex items-center gap-1">
+                Contact Program Secretariat <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
