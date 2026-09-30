@@ -77,7 +77,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     title: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WSGEN-2026)",
     date: "27 October 2026",
     isbn: "978-81-981245-4-1",
-    location: "Hybrid Mode | Singapore International Hub & Worldwide Virtual Broadcast",
+    location: "Hybrid Mode | Worldwide Virtual",
     registrationLink: "/registration",
     description: "WSGEN-2026 (World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems) is an international flagship summit dedicated to groundbreaking advances in Generative AI, Autonomous Agentic Orchestration, Sovereign Foundation Models, and Physical Deep-Tech. Uniting Silicon Valley innovators, global researchers, and NRI technology leaders, all accepted submissions undergo rigorous double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers (ISBN: 978-81-981245-4-1) and indexing across Google Scholar, with recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [

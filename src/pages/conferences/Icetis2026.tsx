@@ -68,7 +68,7 @@ const conferenceData = {
   tagline: "Where Silicon Valley GenAI Architects, Global AI Researchers, and NRI Technology Leaders Pioneer the Future of Intelligence",
   date: "Tuesday, 27 October 2026",
   registrationDeadline: "23 October 2026",
-  mode: "Hybrid Mode • Singapore International Hub & Worldwide 24/7 Virtual Broadcast",
+  mode: "Hybrid Mode • Worldwide Virtual",
   isbn: "978-81-981245-4-1",
   registrationLink: "/registration",
   
@@ -104,7 +104,7 @@ const conferenceData = {
     {
       icon: Globe,
       title: "Global Dual-Stage Hybrid Platform",
-      desc: "Present either in person at the Singapore international academic partner hub or virtually via our interactive low-latency global broadcast, synchronized across Americas, Europe, and Asia-Pacific time zones."
+      desc: "Present either in person or virtually via our interactive low-latency global broadcast, synchronized across Americas, Europe, and Asia-Pacific time zones with full interactive digital participation."
     },
     {
       icon: ShieldCheck,
@@ -287,8 +287,8 @@ const conferenceData = {
       a: "Yes, absolutely. WSGEN-2026 is conducted in a full Dual-Stage Hybrid format. International delegates, NRIs, and scholars can present remotely from anywhere in the world through our high-definition interactive conference platform with dedicated live Q&A. Remote presentations carry identical academic validity, and official ISBN proceedings and presentation certificates are issued with full verification."
     },
     {
-      q: "Do in-person attendees receive official visa invitation letters for Singapore?",
-      a: "Yes. All registered in-person authors, keynote delegates, and co-authors receive an official institutional Letter of Invitation formatted to international diplomatic standards to facilitate consular visa processing for entry into Singapore."
+      q: "Do registered attendees receive official institutional invitation letters?",
+      a: "Yes. All registered authors, keynote delegates, and co-authors receive an official institutional Letter of Invitation formatted to international academic standards to facilitate institutional, academic, and travel clearances."
     },
     {
       q: "How are the conference proceedings published and indexed?",
@@ -328,21 +328,11 @@ const Icetis2026 = () => {
           "endDate": "2026-10-27T18:00:00+08:00",
           "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
           "eventStatus": "https://schema.org/EventScheduled",
-          "location": [
-            {
-              "@type": "VirtualLocation",
-              "url": "https://www.eminsphere.com/wsgen-2026"
-            },
-            {
-              "@type": "Place",
-              "name": "Singapore International Innovation Hub",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Singapore",
-                "addressCountry": "SG"
-              }
-            }
-          ],
+          "location": {
+            "@type": "VirtualLocation",
+            "name": "Worldwide Virtual Presentation & Global Broadcast",
+            "url": "https://www.eminsphere.com/wsgen-2026"
+          },
           "description": conferenceData.about[0],
           "organizer": {
             "@type": "Organization",
@@ -481,7 +471,7 @@ const Icetis2026 = () => {
                 Accelerating the Next Frontier of Generative AI & Autonomous Intelligence
               </h3>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                WSGEN-2026 provides a high-status international platform connecting prominent Non-Resident Indian (NRI) engineering executives from Tier-1 US tech firms, European university chairs, Asian AI researchers, and startup founders. Whether presenting virtually or in person in Singapore, participants gain high-level peer feedback, international citation recognition, and direct access to global AI leadership circles.
+                WSGEN-2026 provides a high-status international platform connecting prominent Non-Resident Indian (NRI) engineering executives from Tier-1 US tech firms, European university chairs, Asian AI researchers, and startup founders. Whether presenting virtually or in person, participants gain high-level peer feedback, international citation recognition, and direct access to global AI leadership circles.
               </p>
             </div>
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
@@ -489,7 +479,7 @@ const Icetis2026 = () => {
                 <Globe className="h-6 w-6 text-accent shrink-0" />
                 <div>
                   <div className="text-xs font-bold text-white">50+ Nations Participating</div>
-                  <div className="text-[10px] text-muted-foreground">USA, UK, Germany, Singapore, India & more</div>
+                  <div className="text-[10px] text-muted-foreground">USA, UK, Germany, Canada, Australia & more</div>
                 </div>
               </div>
               <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-center gap-3">

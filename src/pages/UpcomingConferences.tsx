@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 const conferences = [
   {
     title: "WSGEN-2026: World Summit on Generative AI, Frontier Tech & Autonomous Systems",
-    city: "Singapore / Virtual",
-    country: "Global Hybrid",
+    city: "Hybrid Mode",
+    country: "Worldwide Virtual",
     date: "27 October 2026 (Tuesday)",
     deadline: "23 October 2026",
     topic: "Generative AI & Autonomous Agents",
