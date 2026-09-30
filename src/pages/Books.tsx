@@ -577,57 +577,65 @@ const Books = () => {
       if (!matchesSearch) return false;
 
       if (selectedDiscipline === "all") return true;
+      const text = `${book.title} ${book.subtitle} ${book.description}`.toLowerCase();
+
       if (selectedDiscipline === "ai") {
         return (
-          book.title.toLowerCase().includes("ai") || 
-          book.title.toLowerCase().includes("intelligence") || 
-          book.title.toLowerCase().includes("learning") || 
-          book.title.toLowerCase().includes("generative")
+          text.includes("ai") || 
+          text.includes("intelligence") || 
+          text.includes("learning") || 
+          text.includes("generative")
         );
       }
       if (selectedDiscipline === "cloud") {
         return (
-          book.title.toLowerCase().includes("cloud") || 
-          book.title.toLowerCase().includes("distributed") || 
-          book.title.toLowerCase().includes("scale") || 
-          book.title.toLowerCase().includes("iam")
+          text.includes("cloud") || 
+          text.includes("distributed") || 
+          text.includes("scale") || 
+          text.includes("iam")
         );
       }
       if (selectedDiscipline === "data") {
         return (
-          book.title.toLowerCase().includes("data") || 
-          book.title.toLowerCase().includes("analytics") || 
-          book.title.toLowerCase().includes("event-driven")
+          text.includes("data") || 
+          text.includes("analytics") || 
+          text.includes("event-driven")
         );
       }
       if (selectedDiscipline === "software") {
         return (
-          book.title.toLowerCase().includes("software") || 
-          book.title.toLowerCase().includes("computing") || 
-          book.title.toLowerCase().includes("information technology") || 
-          book.title.toLowerCase().includes("legacy")
+          text.includes("software") || 
+          text.includes("computing") || 
+          text.includes("information technology") || 
+          text.includes("cybersecurity") ||
+          text.includes("automation") ||
+          text.includes("legacy")
         );
       }
       if (selectedDiscipline === "health") {
         return (
-          book.title.toLowerCase().includes("health") || 
-          book.title.toLowerCase().includes("compliance") || 
-          book.title.toLowerCase().includes("public health")
+          text.includes("health") || 
+          text.includes("compliance") || 
+          text.includes("public health")
         );
       }
       if (selectedDiscipline === "math") {
         return (
-          book.title.toLowerCase().includes("geometry") || 
-          book.title.toLowerCase().includes("transmission") || 
-          book.title.toLowerCase().includes("radiowave")
+          text.includes("geometry") || 
+          text.includes("transmission") || 
+          text.includes("radiowave")
         );
       }
       if (selectedDiscipline === "business") {
         return (
-          book.title.toLowerCase().includes("energy") || 
-          book.title.toLowerCase().includes("financial") || 
-          book.title.toLowerCase().includes("analytics") || 
-          book.title.toLowerCase().includes("sustainable")
+          text.includes("supply chain") ||
+          text.includes("logistics") ||
+          text.includes("operations") ||
+          text.includes("business") ||
+          text.includes("energy") || 
+          text.includes("financial") || 
+          text.includes("analytics") || 
+          text.includes("sustainable")
         );
       }
 

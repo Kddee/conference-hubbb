@@ -58,6 +58,16 @@ const BookDetails = () => {
                   className="w-full max-w-[240px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-sm" 
                   loading="lazy" 
                 />
+                {book.wrapImage && (
+                  <a 
+                    href={book.wrapImage} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center gap-1.5 text-[11px] font-bold text-accent bg-accent/10 px-3 py-1.5 rounded-full border border-accent/25 hover:bg-accent hover:text-accent-foreground transition-all mt-3"
+                  >
+                    <BookOpen className="h-3 w-3" /> View Complete Cover Wrap (Spine & Back)
+                  </a>
+                )}
               </div>
 
               <div className="w-full space-y-3 mb-6">
