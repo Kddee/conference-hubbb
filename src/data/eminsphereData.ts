@@ -195,11 +195,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Main Conference", date: "20–21 March 2027" }
     ],
     speakers: [
-      { name: "Dr. Jitendra Pandey, FHEA", designation: "TPC Chair & Senior Faculty Member", university: "Middle East College, Oman", image: "https://static.wixstatic.com/media/30814e_bf66c69035bc4e41bc50c2345187c6f2~mv2.jpeg" },
-      { name: "Mr. Bhushan Balkrishna Chaudhari", designation: "Senior Technology Lead & Cloud Architect", university: "Enterprise Computing Division, USA", image: "https://static.wixstatic.com/media/30814e_86a164138da142578e674588143e3af3~mv2.jpeg" },
-      { name: "Dr. Ayoub Regragui", designation: "Senior Research Scientist", university: "Mohammed V University, Morocco", image: "https://static.wixstatic.com/media/30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif" },
-      { name: "Prof. Shweta N. Bansal", designation: "Professor of Computer Engineering & IQAC Lead", university: "D.Y. Patil College of Engineering, India", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
-      { name: "Dr. Zoha Rahman", designation: "Lead Researcher, Machine Learning", university: "Centre for Big Data & Machine Learning, USA", image: "https://static.wixstatic.com/media/30814e_2a893f0530e74f178c18e5939b687048~mv2.jpg" }
+      { name: "Dr. Jitendra Pandey, FHEA", designation: "TPC Chair & Senior Faculty Member", university: "Middle East College, Oman", image: "https://static.wixstatic.com/media/30814e_bf66c69035bc4e41bc50c2345187c6f2~mv2.jpeg" }
     ]
   }
 };

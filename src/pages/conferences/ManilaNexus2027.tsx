@@ -245,38 +245,6 @@ const ManilaNexus2027 = () => {
       country: "Oman 🇴🇲",
       topic: "Cross-Disciplinary AI Foundations for Resilient Cyber Infrastructures",
       image: "/speakers/dr-jitendra-pandey.jpg"
-    },
-    {
-      name: "Mr. Bhushan Balkrishna Chaudhari",
-      title: "Senior Technology Lead & Cloud Architect",
-      affiliation: "Enterprise Computing Division",
-      country: "New Jersey, USA 🇺🇸",
-      topic: "Architecting Enterprise Zero-Trust & High-Performance Distributed Systems",
-      image: "/speakers/bhushan-chaudhari.jpg"
-    },
-    {
-      name: "Dr. Ayoub Regragui",
-      title: "Senior Research Scientist & Faculty of Sciences",
-      affiliation: "Mohammed V University",
-      country: "Morocco 🇲🇦",
-      topic: "Deep Generative Models for Multi-Modal Predictive Decision Systems",
-      image: "/speakers/dr-ayoub-regragui.avif"
-    },
-    {
-      name: "Prof. Shweta N. Bansal",
-      title: "Professor of Computer Engineering & IQAC Lead",
-      affiliation: "D.Y. Patil College of Engineering",
-      country: "India 🇮🇳",
-      topic: "Knowledge Graph Engineering & Intelligent Decision Automation",
-      image: "/speakers/prof-shweta-bansal.jpg"
-    },
-    {
-      name: "Dr. Zoha Rahman",
-      title: "Lead Researcher, Machine Learning & Analytics",
-      affiliation: "Centre for Big Data & Machine Learning",
-      country: "USA 🇺🇸",
-      topic: "Next-Gen Quantum Computing Intersections with High-Dimensional Data Analytics",
-      image: "/speakers/dr-zoha-rahman.jpg"
     }
   ];
 
@@ -309,10 +277,10 @@ const ManilaNexus2027 = () => {
   const committee = [
     { role: "Conference General Chair", name: "Dr. Jitendra Pandey, FHEA", org: "Middle East College", country: "Oman" },
     { role: "Conference Co-Chair", name: "TBA", org: "Academic Advisory Board", country: "Philippines" },
-    { role: "Technical Program Chair", name: "Dr. Ayoub Regragui", org: "Mohammed V University", country: "Morocco" },
-    { role: "Publication Chair", name: "Prof. Shweta N. Bansal", org: "D.Y. Patil College of Engineering", country: "India" },
-    { role: "Industry Relations Chair", name: "Mr. Bhushan Balkrishna Chaudhari", org: "Enterprise Cloud Architect", country: "USA" },
-    { role: "International Relations Chair", name: "Dr. Zoha Rahman", org: "Big Data & ML Centre", country: "USA" },
+    { role: "Technical Program Chair", name: "TBA", org: "International Academic Board", country: "International" },
+    { role: "Publication Chair", name: "TBA", org: "Editorial & Proceedings Board", country: "International" },
+    { role: "Industry Relations Chair", name: "TBA", org: "Enterprise Computing Division", country: "International" },
+    { role: "International Relations Chair", name: "TBA", org: "Global Liaison Council", country: "International" },
     { role: "Local Organizing Chair", name: "Engr. Carlo Mendoza, Ph.D.", org: "Manila Tech Consortium", country: "Philippines" },
     { role: "Special Sessions Chair", name: "Dr. Dina A. Alkhodary", org: "Academic Forum", country: "Jordan" }
   ];
@@ -919,7 +887,7 @@ const ManilaNexus2027 = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 max-w-4xl mx-auto gap-8">
           {speakers.map((sp, idx) => (
             <Card
               key={idx}
@@ -966,6 +934,41 @@ const ManilaNexus2027 = () => {
               </div>
             </Card>
           ))}
+
+          {/* Announcement Card for Additional Keynotes */}
+          <Card className="bg-gradient-to-br from-[#071329] via-[#040d1e] to-[#091e3d] border-2 border-dashed border-cyan-500/30 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-between text-center shadow-lg relative overflow-hidden group hover:border-cyan-400/60 transition-all">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
+            
+            <div className="flex flex-col items-center">
+              <div className="h-20 w-20 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5 shadow-inner group-hover:scale-110 group-hover:border-cyan-400 transition-all duration-300">
+                <Users className="h-10 w-10 text-cyan-400" />
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 text-[11px] font-mono font-medium px-3.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/25 mb-3 shadow-sm">
+                <span>Roster in Finalization</span>
+              </div>
+
+              <h3 className="font-serif font-bold text-xl sm:text-2xl text-white mb-2 leading-snug">
+                Additional Keynote Speakers
+              </h3>
+
+              <p className="text-xs sm:text-sm text-cyan-400 font-semibold mb-3">
+                Official Lineup Updating Soon
+              </p>
+
+              <p className="text-xs text-slate-300 leading-relaxed mb-6 max-w-sm">
+                The International Technical Program Committee is currently confirming additional keynote luminaries, research directors, and enterprise engineering fellows. The full confirmed roster will be announced shortly.
+              </p>
+            </div>
+
+            <div className="w-full pt-4 border-t border-cyan-500/15">
+              <Button asChild variant="outline" className="w-full rounded-xl border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 hover:text-white transition-all text-xs font-semibold">
+                <a href="#speaker-call" className="flex items-center justify-center gap-1.5">
+                  Propose Keynote / Expression of Interest <ArrowRight className="h-3.5 w-3.5 ml-1" />
+                </a>
+              </Button>
+            </div>
+          </Card>
         </div>
       </section>
 
