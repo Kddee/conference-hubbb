@@ -849,7 +849,7 @@ const Books = () => {
         {filteredBooks.length > 0 ? (
           <div className="flex flex-col gap-10">
             {filteredBooks.map((book, index) => {
-              const isNewRelease = index < 2 && (book.date.includes("2026") || book.date.includes("September"));
+              const isNewRelease = index < 3 && (book.date.includes("2026") || book.date.includes("September") || book.date.includes("October"));
               return (
                 <article 
                   key={book.id} 

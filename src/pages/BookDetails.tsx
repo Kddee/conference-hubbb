@@ -51,11 +51,11 @@ const BookDetails = () => {
           {/* LEFT COLUMN: COVER & PURCHASE CARD */}
           <div className="lg:col-span-4 space-y-6">
             <Card className="p-6 bg-card border border-border/60 rounded-3xl shadow-xl flex flex-col items-center text-center overflow-hidden relative">
-              <div className="bg-gradient-to-b from-white via-slate-50 to-slate-100 p-8 rounded-2xl w-full flex justify-center items-center mb-6 shadow-inner border border-border/40">
+              <div className="bg-gradient-to-b from-white via-slate-50 to-slate-100 p-6 sm:p-8 rounded-2xl w-full flex flex-col justify-center items-center mb-6 shadow-inner border border-border/40">
                 <img 
                   src={book.image} 
                   alt={book.title} 
-                  className="w-full max-w-[240px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-sm" 
+                  className="w-full max-w-[320px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-sm" 
                   loading="lazy" 
                 />
                 {book.wrapImage && (
@@ -63,7 +63,7 @@ const BookDetails = () => {
                     href={book.wrapImage} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="inline-flex items-center gap-1.5 text-[11px] font-bold text-accent bg-accent/10 px-3 py-1.5 rounded-full border border-accent/25 hover:bg-accent hover:text-accent-foreground transition-all mt-3"
+                    className="inline-flex items-center gap-1.5 text-[11px] font-bold text-accent bg-accent/10 px-3.5 py-1.5 rounded-full border border-accent/25 hover:bg-accent hover:text-accent-foreground transition-all mt-4 shadow-sm"
                   >
                     <BookOpen className="h-3 w-3" /> View Complete Cover Wrap (Spine & Back)
                   </a>
