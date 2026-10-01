@@ -11,7 +11,7 @@ const conferences = [
     city: "Hybrid Mode",
     country: "Worldwide Virtual",
     date: "27 October 2026 (Tuesday)",
-    deadline: "23 October 2026",
+    deadline: "25 October 2026",
     topic: "Generative AI & Autonomous Agents",
     link: "/wsgen-2026",
     isbn: "978-81-981245-4-1",

@@ -90,7 +90,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     ],
     milestones: [
       { name: "Paper / Abstract Submission Deadline", date: "23 October 2026" },
-      { name: "Final Registration & Camera-Ready", date: "23 October 2026" },
+      { name: "Final Registration & Camera-Ready", date: "25 October 2026" },
       { name: "Main Conference Sessions", date: "27 October 2026 (Tuesday)" }
     ],
     speakers: [
