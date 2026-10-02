@@ -60,10 +60,10 @@ function useCountdown(target: Date) {
 }
 
 const conferenceData = {
-  id: "WSGEN-2026",
-  shortTitle: "WSGEN-2026",
-  fullTitle: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems",
-  fullForm: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WSGEN-2026)",
+  id: "ICGEN-2026",
+  shortTitle: "ICGEN-2026",
+  fullTitle: "International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems",
+  fullForm: "International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026)",
   theme: "Next-Gen Generative AI, Agentic Workflows & Frontier Autonomous Intelligence",
   tagline: "Where Silicon Valley GenAI Architects, Global AI Researchers, and NRI Technology Leaders Pioneer the Future of Intelligence",
   date: "Tuesday, 27 October 2026",
@@ -73,8 +73,8 @@ const conferenceData = {
   registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
   
   about: [
-    "The World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WSGEN-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
-    "Held in Hybrid Mode on Tuesday, 27 October 2026, WSGEN-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The summit delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
+    "The International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
+    "Held in Hybrid Mode on Tuesday, 27 October 2026, ICGEN-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The conference delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
     "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN 978-81-981245-4-1, submitted for global cataloging across Google Scholar and leading scientific indices, with top-tier submissions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
   ],
 
@@ -114,7 +114,7 @@ const conferenceData = {
     {
       icon: Award,
       title: "Prestigious Global Honors & Citations",
-      desc: "Celebrate scientific excellence with the Best Research Paper Gold Award, Best Student Presenter Citation, and the Frontier AI Innovation Trophy awarded at the summit."
+      desc: "Celebrate scientific excellence with the Best Research Paper Gold Award, Best Student Presenter Citation, and the Frontier AI Innovation Trophy awarded at the conference."
     }
   ],
 
@@ -220,7 +220,7 @@ const conferenceData = {
     },
     {
       step: "04",
-      title: "World Summit Sessions",
+      title: "International Conference Sessions",
       date: "27 October 2026 (Tuesday)",
       desc: "Keynote addresses, technical paper defenses, live demos & global awards."
     }
@@ -280,11 +280,11 @@ const conferenceData = {
     },
     {
       q: "What is the timeline between paper submission and registration?",
-      a: "Paper and abstract submissions close on 23 October 2026. Final author registration and publication-ready uploads conclude on 25 October 2026, before the World Summit convenes on Tuesday, 27 October 2026."
+      a: "Paper and abstract submissions close on 23 October 2026. Final author registration and publication-ready uploads conclude on 25 October 2026, before the International Conference convenes on Tuesday, 27 October 2026."
     },
     {
       q: "Can international researchers, NRIs, and authors present virtually without traveling?",
-      a: "Yes, absolutely. WSGEN-2026 is conducted in a full Dual-Stage Hybrid format. International delegates, NRIs, and scholars can present remotely from anywhere in the world through our high-definition interactive conference platform with dedicated live Q&A. Remote presentations carry identical academic validity, and official ISBN proceedings and presentation certificates are issued with full verification."
+      a: "Yes, absolutely. ICGEN-2026 is conducted in a full Dual-Stage Hybrid format. International delegates, NRIs, and scholars can present remotely from anywhere in the world through our high-definition interactive conference platform with dedicated live Q&A. Remote presentations carry identical academic validity, and official ISBN proceedings and presentation certificates are issued with full verification."
     },
     {
       q: "Do registered attendees receive official institutional invitation letters?",
@@ -316,9 +316,9 @@ const Icetis2026 = () => {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <SEOHead
-        title="WSGEN-2026 | World Summit on Generative AI, Frontier Tech & Autonomous Systems"
-        description="Official World Summit website for WSGEN-2026 on Tuesday, 27 October 2026. Paper submission & final registration deadline: 25 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
-        canonical="https://www.eminsphere.com/wsgen-2026"
+        title="ICGEN-2026 | International Conference on Generative AI, Frontier Tech & Autonomous Systems"
+        description="Official International Conference website for ICGEN-2026 on Tuesday, 27 October 2026. Paper submission & final registration deadline: 25 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
+        canonical="https://www.eminsphere.com/icgen-2026"
         schema={{
           "@context": "https://schema.org",
           "@type": "EducationEvent",
@@ -331,7 +331,7 @@ const Icetis2026 = () => {
           "location": {
             "@type": "VirtualLocation",
             "name": "Worldwide Virtual Presentation & Global Broadcast",
-            "url": "https://www.eminsphere.com/wsgen-2026"
+            "url": "https://www.eminsphere.com/icgen-2026"
           },
           "description": conferenceData.about[0],
           "organizer": {
@@ -351,16 +351,16 @@ const Icetis2026 = () => {
         <div className="container relative z-10 max-w-6xl px-4">
           <div className="max-w-5xl mx-auto text-center">
             
-            {/* Live Flagship Summit Pill */}
+            {/* Live Flagship Conference Pill */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 text-primary border border-primary/30 text-xs sm:text-sm font-bold mb-6 shadow-sm backdrop-blur-md">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
               </span>
-              <span>{conferenceData.shortTitle} • World Summit on Generative AI & Autonomous Systems</span>
+              <span>{conferenceData.shortTitle} • International Conference on Generative AI & Autonomous Systems</span>
             </div>
 
-            {/* Main Summit Title */}
+            {/* Main Conference Title */}
             <h1 className="font-serif font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08] mb-5">
               {conferenceData.fullTitle}
             </h1>
@@ -382,7 +382,7 @@ const Icetis2026 = () => {
                   <AlertTriangle className="h-4 w-4" /> Registration Closes: 25 October 2026
                 </div>
                 <div className="text-[11px] font-bold text-white/80 bg-accent/15 px-3 py-1 rounded-full border border-accent/30">
-                  Summit: 27 Oct 2026
+                  Conference: 27 Oct 2026
                 </div>
               </div>
 
@@ -414,7 +414,7 @@ const Icetis2026 = () => {
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm text-white/90 font-medium mb-10">
               <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-sm">
                 <Calendar className="h-4 w-4 text-primary" />
-                <span>Summit: {conferenceData.date}</span>
+                <span>Conference: {conferenceData.date}</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-sm">
                 <MapPin className="h-4 w-4 text-accent" />
@@ -471,7 +471,7 @@ const Icetis2026 = () => {
                 Accelerating the Next Frontier of Generative AI & Autonomous Intelligence
               </h3>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                WSGEN-2026 provides a high-status international platform connecting prominent Non-Resident Indian (NRI) engineering executives from Tier-1 US tech firms, European university chairs, Asian AI researchers, and startup founders. Whether presenting virtually or in person, participants gain high-level peer feedback, international citation recognition, and direct access to global AI leadership circles.
+                ICGEN-2026 provides a high-status international platform connecting prominent Non-Resident Indian (NRI) engineering executives from Tier-1 US tech firms, European university chairs, Asian AI researchers, and startup founders. Whether presenting virtually or in person, participants gain high-level peer feedback, international citation recognition, and direct access to global AI leadership circles.
               </p>
             </div>
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
@@ -502,7 +502,7 @@ const Icetis2026 = () => {
               <BadgeCheck className="h-4 w-4" /> Global Value Proposition
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-              Why Global Delegates, NRIs & Scholars Choose WSGEN-2026
+              Why Global Delegates, NRIs & Scholars Choose ICGEN-2026
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
               Engineered to meet the highest international standards of scholarly rigor, career impact, and global networking.
@@ -586,7 +586,7 @@ const Icetis2026 = () => {
               <Clock className="h-4 w-4" /> Timelines & Milestones
             </div>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
-              Important Summit Dates
+              Important Conference Dates
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base">
               Please note the adjusted timeline leading up to the final registration closing on 25 October 2026.
@@ -631,7 +631,7 @@ const Icetis2026 = () => {
             Distinguished Plenary & Keynote Speakers
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            World-renowned international research chairs, European professors, and frontier AI leaders delivering plenary lectures at WSGEN-2026.
+            World-renowned international research chairs, European professors, and frontier AI leaders delivering plenary lectures at ICGEN-2026.
           </p>
         </div>
 
@@ -657,7 +657,7 @@ const Icetis2026 = () => {
             </h3>
 
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-8">
-              The International Academic Advisory Committee and Program Chairs of <strong className="text-white">WSGEN-2026</strong> are currently finalizing formal confirmations for our distinguished plenary keynote speakers, invited industry architects, and research chairs from leading international universities and deep-tech labs across the United States, Europe, and the Asia-Pacific.
+              The International Academic Advisory Committee and Program Chairs of <strong className="text-white">ICGEN-2026</strong> are currently finalizing formal confirmations for our distinguished plenary keynote speakers, invited industry architects, and research chairs from leading international universities and deep-tech labs across the United States, Europe, and the Asia-Pacific.
             </p>
 
             {/* 3 Value Highlights */}
@@ -835,10 +835,10 @@ const Icetis2026 = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-3xl relative z-10 px-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-accent text-xs font-bold uppercase tracking-wider mb-4 border border-accent/25">
-            <Flame className="h-4 w-4" /> Registration Closes: 25 October 2026 • Summit: 27 October 2026
+            <Flame className="h-4 w-4" /> Registration Closes: 25 October 2026 • Conference: 27 October 2026
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-white mb-6 text-balance">
-            Be Part of the World Summit on Generative AI & Autonomous Systems
+            Be Part of the International Conference on Generative AI & Autonomous Systems
           </h2>
           <p className="text-sm sm:text-lg text-muted-foreground mb-10 leading-relaxed">
             Submit your manuscript today to present before world-renowned academicians, Silicon Valley architects, and global NRI pioneers. Achieve international recognition with ISBN proceedings and Scopus/WoS publication recommendations.
@@ -850,7 +850,7 @@ const Icetis2026 = () => {
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white/20 hover:bg-white/10 text-white font-semibold h-12 sm:h-14 px-8 rounded-full transition-all text-sm sm:text-base w-full sm:w-auto">
-              <Link to="/upcoming-conferences">View All Upcoming Summits</Link>
+              <Link to="/upcoming-conferences">View All Upcoming Conferences</Link>
             </Button>
           </div>
         </div>

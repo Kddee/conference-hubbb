@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 
 const conferences = [
   {
-    title: "WSGEN-2026: World Summit on Generative AI, Frontier Tech & Autonomous Systems",
+    title: "ICGEN-2026: International Conference on Generative AI, Frontier Tech & Autonomous Systems",
     city: "Hybrid Mode",
     country: "Worldwide Virtual",
     date: "27 October 2026 (Tuesday)",
     deadline: "25 October 2026",
     topic: "Generative AI & Autonomous Agents",
-    link: "/wsgen-2026",
+    link: "/icgen-2026",
     isbn: "978-81-981245-4-1",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
   },

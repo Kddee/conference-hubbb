@@ -72,14 +72,14 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Camera Ready & Registration", date: "13 June 2026" }
     ]
   },
-  "wsgen-2026": {
-    id: "wsgen-2026",
-    title: "World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (WSGEN-2026)",
+  "icgen-2026": {
+    id: "icgen-2026",
+    title: "International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026)",
     date: "27 October 2026",
     isbn: "978-81-981245-4-1",
     location: "Hybrid Mode | Worldwide Virtual",
     registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
-    description: "WSGEN-2026 (World Summit on Generative AI, Frontier Technologies & Intelligent Autonomous Systems) is an international flagship summit dedicated to groundbreaking advances in Generative AI, Autonomous Agentic Orchestration, Sovereign Foundation Models, and Physical Deep-Tech. Uniting Silicon Valley innovators, global researchers, and NRI technology leaders, all accepted submissions undergo rigorous double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers (ISBN: 978-81-981245-4-1) and indexing across Google Scholar, with recommendations for Scopus/WoS indexed journals.",
+    description: "ICGEN-2026 (International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems) is an international flagship conference dedicated to groundbreaking advances in Generative AI, Autonomous Agentic Orchestration, Sovereign Foundation Models, and Physical Deep-Tech. Uniting Silicon Valley innovators, global researchers, and NRI technology leaders, all accepted submissions undergo rigorous double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers (ISBN: 978-81-981245-4-1) and indexing across Google Scholar, with recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
       "Generative AI, Large Language Models & Foundation Models (Pre-training, fine-tuning, reasoning architectures, multimodal LLMs)",
       "Autonomous Agentic AI & Multi-Agent Orchestration (Tool-use, self-reflective agents, multi-agent swarms, planning frameworks)",
@@ -199,6 +199,8 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     ]
   }
 };
+
+upcomingConferences["wsgen-2026"] = upcomingConferences["icgen-2026"];
 
 export const proceedings: Record<string, ProceedingData> = {
   "aiforge-26": {
