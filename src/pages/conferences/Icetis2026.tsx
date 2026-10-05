@@ -38,7 +38,7 @@ import {
 
 
 const REGISTRATION_DEADLINE_DATE = new Date("2026-10-25T23:59:59+08:00");
-const CONFERENCE_TARGET_DATE = new Date("2026-10-27T09:00:00+08:00");
+const CONFERENCE_TARGET_DATE = new Date("2026-10-25T09:00:00+08:00");
 
 function useCountdown(target: Date) {
   const calc = () => {
@@ -66,15 +66,15 @@ const conferenceData = {
   fullForm: "International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026)",
   theme: "Next-Gen Generative AI, Agentic Workflows & Frontier Autonomous Intelligence",
   tagline: "Where Silicon Valley GenAI Architects, Global AI Researchers, and NRI Technology Leaders Pioneer the Future of Intelligence",
-  date: "Tuesday, 27 October 2026",
-  registrationDeadline: "25 October 2026",
+  date: "Sunday, 25 October 2026",
+  registrationDeadline: "23 October 2026",
   mode: "Hybrid Mode • Worldwide Virtual",
   isbn: "978-81-981245-4-1",
   registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
   
   about: [
     "The International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
-    "Held in Hybrid Mode on Tuesday, 27 October 2026, ICGEN-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The conference delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
+    "Held in Hybrid Mode on Sunday, 25 October 2026, ICGEN-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The conference delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
     "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN 978-81-981245-4-1, submitted for global cataloging across Google Scholar and leading scientific indices, with top-tier submissions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
   ],
 
@@ -221,7 +221,7 @@ const conferenceData = {
     {
       step: "04",
       title: "International Conference Sessions",
-      date: "27 October 2026 (Tuesday)",
+      date: "25 October 2026 (Sunday)",
       desc: "Keynote addresses, technical paper defenses, live demos & global awards."
     }
   ],
@@ -280,7 +280,7 @@ const conferenceData = {
     },
     {
       q: "What is the timeline between paper submission and registration?",
-      a: "Paper and abstract submissions close on 23 October 2026. Final author registration and publication-ready uploads conclude on 25 October 2026, before the International Conference convenes on Tuesday, 27 October 2026."
+      a: "Paper and abstract submissions close on 23 October 2026. Final author registration and publication-ready uploads conclude on 23 October 2026, before the International Conference convenes on Sunday, 25 October 2026."
     },
     {
       q: "Can international researchers, NRIs, and authors present virtually without traveling?",
@@ -317,15 +317,15 @@ const Icetis2026 = () => {
     <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <SEOHead
         title="ICGEN-2026 | International Conference on Generative AI, Frontier Tech & Autonomous Systems"
-        description="Official International Conference website for ICGEN-2026 on Tuesday, 27 October 2026. Paper submission & final registration deadline: 25 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
+        description="Official International Conference website for ICGEN-2026 on Sunday, 25 October 2026. Paper submission & final registration deadline: 23 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
         canonical="https://www.eminsphere.com/icgen-2026"
         schema={{
           "@context": "https://schema.org",
           "@type": "EducationEvent",
           "name": conferenceData.fullTitle,
           "alternateName": conferenceData.shortTitle,
-          "startDate": "2026-10-27T09:00:00+08:00",
-          "endDate": "2026-10-27T18:00:00+08:00",
+          "startDate": "2026-10-25T09:00:00+08:00",
+          "endDate": "2026-10-25T18:00:00+08:00",
           "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
           "eventStatus": "https://schema.org/EventScheduled",
           "location": {
@@ -379,10 +379,10 @@ const Icetis2026 = () => {
             <div className="mb-10 max-w-2xl mx-auto bg-gradient-to-r from-accent/10 via-card to-primary/10 backdrop-blur-md border border-accent/30 p-5 sm:p-6 rounded-2xl sm:rounded-3xl shadow-[0_0_50px_rgba(28,231,212,0.15)]">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
                 <div className="flex items-center gap-2 text-accent font-black text-xs sm:text-sm uppercase tracking-wider">
-                  <AlertTriangle className="h-4 w-4" /> Registration Closes: 25 October 2026
+                  <AlertTriangle className="h-4 w-4" /> Registration Closes: 23 October 2026
                 </div>
                 <div className="text-[11px] font-bold text-white/80 bg-accent/15 px-3 py-1 rounded-full border border-accent/30">
-                  Conference: 27 Oct 2026
+                  Conference: 25 Oct 2026
                 </div>
               </div>
 
@@ -835,7 +835,7 @@ const Icetis2026 = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-3xl relative z-10 px-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-accent text-xs font-bold uppercase tracking-wider mb-4 border border-accent/25">
-            <Flame className="h-4 w-4" /> Registration Closes: 25 October 2026 • Conference: 27 October 2026
+            <Flame className="h-4 w-4" /> Registration Closes: 23 October 2026 • Conference: 25 October 2026
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-white mb-6 text-balance">
             Be Part of the International Conference on Generative AI & Autonomous Systems

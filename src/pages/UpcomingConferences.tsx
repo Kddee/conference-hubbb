@@ -10,7 +10,7 @@ const conferences = [
     title: "ICGEN-2026: International Conference on Generative AI, Frontier Tech & Autonomous Systems",
     city: "Hybrid Mode",
     country: "Worldwide Virtual",
-    date: "27 October 2026 (Tuesday)",
+    date: "25 October 2026 (Sunday)",
     deadline: "25 October 2026",
     topic: "Generative AI & Autonomous Agents",
     link: "/icgen-2026",

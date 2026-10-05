@@ -75,7 +75,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   "icgen-2026": {
     id: "icgen-2026",
     title: "International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026)",
-    date: "27 October 2026",
+    date: "25 October 2026",
     isbn: "978-81-981245-4-1",
     location: "Hybrid Mode | Worldwide Virtual",
     registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
@@ -91,7 +91,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     milestones: [
       { name: "Paper / Abstract Submission Deadline", date: "23 October 2026" },
       { name: "Final Registration & Camera-Ready", date: "25 October 2026" },
-      { name: "Main Conference Sessions", date: "27 October 2026 (Tuesday)" }
+      { name: "Main Conference Sessions", date: "25 October 2026 (Sunday)" }
     ],
     speakers: [
       { name: "Wiktoria Gromowa-Cieślik", designation: "CEO & Chief Metrics Officer, Human-Tech Fusion", university: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg", category: "Keynote Speaker" },
