@@ -12,14 +12,14 @@ export const Footer = () => {
             <div className="text-sm text-muted-foreground mt-1">Global Academic, Research & Innovation Platform</div>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Eminsphere™ is a professionally structured and compliant organization, operating in alignment with regulatory frameworks established by the Government of India.
+            Eminsphere™ is a professionally structured organization operating in alignment with applicable Indian regulatory frameworks.
           </p>
-          <div className="space-y-3 flex flex-col items-start">
+          <div className="space-y-2 flex flex-col items-start">
             <span className="inline-flex items-center px-3 py-1.5 rounded-md bg-muted/50 text-xs text-muted-foreground border border-border">
-              Recognized as an MSME Registered Enterprise
+              MSME Registered Enterprise
             </span>
             <span className="inline-flex items-center px-3 py-1.5 rounded-md bg-muted/50 text-xs text-muted-foreground border border-border">
-              Compliant with Maharashtra Shop & Establishment Regulations
+              Registration details available upon request / as applicable
             </span>
           </div>
         </div>
