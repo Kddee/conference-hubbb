@@ -32,7 +32,8 @@ import {
   Plane,
   Building2,
   AlertTriangle,
-  Bot
+  Bot,
+  Book
 } from "lucide-react";
 
 
@@ -228,30 +229,26 @@ const conferenceData = {
 
 
 
-  publications: [
+  publication: [
     {
-      title: "Official ISBN Conference Proceedings",
-      badge: "Assigned ISBN",
-      desc: "All accepted and presented papers are cataloged in official proceedings with ISBN 978-81-981245-4-1, ensuring permanent international academic attribution.",
-      icon: BookOpen
+      title: "ISBN Conference Proceedings",
+      img: "https://i.postimg.cc/VvnzKNKj/image.png",
+      desc: "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number (ISBN: 978-81-687765-9-3), ensuring global visibility, citation, and academic recognition."
     },
     {
-      title: "Google Scholar Citation Indexing",
-      badge: "Worldwide Visibility",
-      desc: "Conference proceedings and published papers are indexed in Google Scholar to maximize worldwide citation discovery and author H-index impact.",
-      icon: Globe
+      title: "Google Scholar Indexing",
+      img: "/google-scholar.svg",
+      desc: "All published papers will be indexed in Google Scholar, providing broad global accessibility, citation tracking, and enhanced author visibility."
     },
     {
-      title: "Scopus & WoS Journal Fast-Track",
-      badge: "Indexed Track",
-      desc: "Top 15% evaluated papers receive editorial recommendation for expedited publication in partner Scopus (Q1/Q2) & Web of Science journals.",
-      icon: Award
+      title: "Web of Science (Under Consideration)",
+      img: "https://i.postimg.cc/0NX5QF6x/image.png",
+      desc: "Selected papers may be considered for submission to journals indexed in Web of Science, based on quality, originality, and editorial evaluation."
     },
     {
-      title: "Digital Object Identifier (DOI)",
-      badge: "Persistent Link",
-      desc: "Individual DOIs assigned to each paper enable persistent, verified citation resolution across international digital libraries.",
-      icon: ShieldCheck
+      title: "DOI & Digital Access",
+      img: "/doi-logo.svg",
+      desc: "Each published paper may be assigned a Digital Object Identifier (DOI) to ensure permanent accessibility and citation tracking."
     }
   ],
 
@@ -309,7 +306,7 @@ const conferenceData = {
   ]
 };
 
-const Icetis2026 = () => {
+const Icgen2026 = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const regCountdown = useCountdown(REGISTRATION_DEADLINE_DATE);
 
@@ -723,39 +720,55 @@ const Icetis2026 = () => {
         </div>
       </section>
 
-      {/* PUBLICATION & GLOBAL INDEXING */}
+      {/* PUBLICATION & INDEXING */}
       <section className="py-16 sm:py-24 bg-card/30 border-y border-border/40">
         <div className="container max-w-6xl px-4">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-accent mb-3">
-              <Award className="h-4 w-4" /> International Indexing Standards
-            </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-              Publication, Indexing & Digital Archival
+              Publication & Indexing
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-              Every accepted paper undergoes rigorous double-blind vetting and receives permanent scholarly attribution.
+              All accepted and registered papers will be published in official proceedings with comprehensive global indexing, ISBN registration, and dissemination opportunities.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {conferenceData.publications.map((pub, i) => {
-              const IconComp = pub.icon;
-              return (
-                <Card key={i} className="p-6 rounded-2xl bg-card/60 border-white/10 flex flex-col justify-between hover:border-primary/40 transition-all">
-                  <div>
-                    <div className="h-10 w-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
-                      <IconComp className="h-5 w-5" />
-                    </div>
-                    <span className="inline-block px-2.5 py-0.5 rounded-full bg-accent/15 text-accent text-[10px] font-bold uppercase tracking-wider mb-2">
-                      {pub.badge}
-                    </span>
-                    <h3 className="font-serif font-bold text-white text-base mb-2">{pub.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{pub.desc}</p>
+            {conferenceData.publication.map((item, idx) => (
+              <Card
+                key={idx}
+                className="p-6 rounded-2xl bg-card hover:-translate-y-1 transition-all duration-300 border-t-4 border-t-primary border-white/10 shadow-lg text-center flex flex-col items-center justify-between group"
+              >
+                <div className="w-full flex flex-col items-center">
+                  <div className="h-16 w-full flex items-center justify-center mb-5">
+                    {item.img ? (
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="h-14 max-w-[150px] object-contain mx-auto filter brightness-95 group-hover:brightness-110 transition-all"
+                      />
+                    ) : (
+                      <BookOpen className="h-12 w-12 text-primary mb-5 mx-auto" />
+                    )}
                   </div>
-                </Card>
-              );
-            })}
+                  <h3 className="font-serif font-bold text-base sm:text-lg mb-2.5 text-white group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          {/* Microsoft CMT Service Notice */}
+          <div className="mt-10 sm:mt-12 p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-card/60 border border-white/10 backdrop-blur-md flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left shadow-lg">
+            <div className="h-12 w-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+              <ShieldCheck className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed flex-grow">
+              The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+            </p>
           </div>
         </div>
       </section>
@@ -859,4 +872,4 @@ const Icetis2026 = () => {
   );
 };
 
-export default Icetis2026;
+export default Icgen2026;
