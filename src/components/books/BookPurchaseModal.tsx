@@ -387,6 +387,18 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
               )}
             </div>
 
+            {paymentSuccess.edition === "ebook" && (
+              <div className="pt-1">
+                <a
+                  href="/sample-academic-guide.pdf"
+                  download="Sample-Academic-Guide-eBook.pdf"
+                  className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl font-bold text-sm bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-md cursor-pointer"
+                >
+                  <BookOpen className="w-4 h-4" /> Download Sample eBook PDF Now
+                </a>
+              </div>
+            )}
+
             <Button
               onClick={handleModalClose}
               size="lg"

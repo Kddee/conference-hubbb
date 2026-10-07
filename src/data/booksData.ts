@@ -34,6 +34,20 @@ export function getBookPrice(book: { pricePaperbackINR?: number; priceEbookINR?:
 
 export const publishedBooks: Book[] = [
   {
+    id: "sample-academic-guide-pdf",
+    title: "Sample Academic Research Guide (Test Edition)",
+    subtitle: "Payment Gateway Verification & Instant PDF Download (₹1 Test Order)",
+    authors: "Eminsphere Editorial Board & Research Team",
+    isbn: "TEST-978-0001",
+    date: "Live Test 2026",
+    link: "https://www.eminsphere.com/books",
+    image: "/books/artificial-intelligence-new-horizons.jpg",
+    description: "Publisher: Eminsphere™\nISBN: TEST-978-0001\nFormat: Sample PDF Monograph / Instant eBook\n\nAbout the Sample Edition:\nThis is an official 1-Rupee sample book designed for authors, researchers, and customers to verify the end-to-end Razorpay Payment Gateway integration. Razorpay and the Reserve Bank of India (RBI) require a minimum transaction of ₹1.00 (100 paise) for live digital payment processing.\n\nTesting Instructions:\n1. Click 'Buy Direct (₹1)'.\n2. Provide your name, contact phone number, and email address.\n3. Complete the test order using any live UPI app (Google Pay, PhonePe, Paytm, CRED) or test card.\n4. You will immediately receive the official order confirmation, unique Razorpay Payment ID, and access to download the sample academic guide PDF.",
+    pricePaperbackINR: 1,
+    priceEbookINR: 1,
+    priceINR: 1
+  },
+  {
     id: "artificial-intelligence-new-horizons",
     title: "Artificial Intelligence: New Horizons and Applications",
     subtitle: "Machine Learning, Computer Vision, Cybersecurity & Human-Centric AI",

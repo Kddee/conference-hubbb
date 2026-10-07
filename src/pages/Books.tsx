@@ -1524,9 +1524,15 @@ const Books = () => {
                             <Calendar className="h-3.5 w-3.5 text-accent" /> {book.date}
                           </span>
                         </div>
-                        <span className="text-[11px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20 flex items-center gap-1">
-                          <CheckCircle2 className="h-3 w-3" /> Peer-Reviewed & Cataloged
-                        </span>
+                        {book.id === "sample-academic-guide-pdf" ? (
+                          <span className="text-[11px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-3 py-1 rounded-full border border-amber-500/30 flex items-center gap-1">
+                            <Sparkles className="h-3 w-3 text-amber-500" /> Payment Test Sample (₹1)
+                          </span>
+                        ) : (
+                          <span className="text-[11px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20 flex items-center gap-1">
+                            <CheckCircle2 className="h-3 w-3" /> Peer-Reviewed & Cataloged
+                          </span>
+                        )}
                       </div>
 
                       {/* Title */}
