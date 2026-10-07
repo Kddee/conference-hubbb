@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import {
-  RAZORPAY_KEY_ID,
+  getRazorpayKeyId,
   loadRazorpayScript,
   createRazorpayOrder,
   verifyRazorpayPayment,
@@ -126,23 +126,24 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
         receipt: `rcpt_${book.id.slice(0, 8)}_${Date.now()}`,
         notes: {
           bookId: book.id,
-          bookTitle: book.title,
+          bookTitle: book.title.slice(0, 50),
           isbn: book.isbn,
-          customerName: formData.name,
-          customerPhone: formData.phone,
-          customerEmail: formData.email,
-          shippingAddress: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`,
+          customerName: formData.name.trim().slice(0, 50),
+          customerPhone: cleanPhone.slice(-10),
+          customerEmail: cleanEmail.slice(0, 50),
+          shippingAddress: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`.slice(0, 200),
         },
       });
 
+      const keyToUse = getRazorpayKeyId(order.key_id);
+
       // 3. Configure Razorpay Standard Web Checkout
       const options = {
-        key: RAZORPAY_KEY_ID,
+        key: keyToUse,
         amount: order.amount,
         currency: order.currency || "INR",
         name: "Eminsphere Global Publishing",
-        description: `Order: ${book.title}`,
-        image: typeof window !== "undefined" ? `${window.location.origin}/favicon.png` : undefined,
+        description: `Order: ${book.title}`.slice(0, 60),
         order_id: order.order_id,
         prefill: {
           name: formData.name.trim(),
@@ -150,9 +151,9 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
           contact: cleanPhone.slice(-10),
         },
         notes: {
-          book_title: book.title,
+          book_title: book.title.slice(0, 80),
           isbn: book.isbn,
-          shipping_address: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`,
+          shipping_address: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`.slice(0, 240),
         },
         theme: {
           color: "#0284c7",

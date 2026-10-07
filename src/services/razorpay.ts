@@ -6,8 +6,21 @@ declare global {
   }
 }
 
-export const RAZORPAY_KEY_ID =
-  import.meta.env.VITE_RAZORPAY_KEY_ID || "rzp_test_TkwCXKlFUEjHhG";
+export function getRazorpayKeyId(orderKeyId?: string): string {
+  if (orderKeyId && typeof orderKeyId === "string" && orderKeyId !== "undefined" && orderKeyId.trim() !== "") {
+    return orderKeyId.trim();
+  }
+  const envKey =
+    typeof import.meta !== "undefined" && import.meta.env
+      ? import.meta.env.VITE_RAZORPAY_KEY_ID
+      : "";
+  if (envKey && typeof envKey === "string" && envKey !== "undefined" && envKey.trim() !== "") {
+    return envKey.trim();
+  }
+  return "rzp_test_TkwCXKlFUEjHhG";
+}
+
+export const RAZORPAY_KEY_ID = getRazorpayKeyId();
 
 /**
  * Loads the Razorpay checkout.js script dynamically if not already loaded
@@ -35,6 +48,7 @@ export interface CreateOrderResponse {
   amount: number;
   currency: string;
   receipt?: string;
+  key_id?: string;
 }
 
 /**

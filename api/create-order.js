@@ -105,6 +105,7 @@ export default async function handler(req, res) {
       amount: order.amount,
       currency: order.currency,
       receipt: order.receipt,
+      key_id: key_id,
     });
   } catch (error) {
     console.error("Razorpay order creation error:", error);

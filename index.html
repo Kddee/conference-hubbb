@@ -17,7 +17,7 @@
     <!-- Security Headers & Policies -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; frame-src 'self' https: https://*.razorpay.com https://api.razorpay.com; connect-src 'self' https: https://*.razorpay.com;" />
 
     <!-- Social OpenGraph & Twitter Tags -->
     <meta property="og:title" content="Eminsphere — Global Academic Conferences 2026" />
