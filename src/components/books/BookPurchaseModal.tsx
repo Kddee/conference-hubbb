@@ -42,7 +42,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
   book,
   isOpen,
   onClose,
-  initialEdition = "paperback",
+  initialEdition = "ebook",
 }) => {
   const [selectedEdition, setSelectedEdition] = useState<BookEdition>(initialEdition);
   const [formData, setFormData] = useState({
@@ -453,41 +453,13 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                 Choose Format & Edition
               </Label>
               <div className="grid grid-cols-2 gap-3">
-                {/* Paperback Option */}
-                <button
-                  type="button"
-                  onClick={() => setSelectedEdition("paperback")}
-                  className={`p-3.5 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
-                    selectedEdition === "paperback"
-                      ? "border-emerald-500 bg-emerald-500/10 ring-2 ring-emerald-500/30 shadow-sm"
-                      : "border-border/60 bg-muted/20 hover:bg-muted/40"
-                  }`}
-                >
-                  <div className="flex items-center justify-between w-full">
-                    <span className="text-xs font-bold text-foreground flex items-center gap-1.5">
-                      <Truck className="w-3.5 h-3.5 text-emerald-500" /> Paperback
-                    </span>
-                    {selectedEdition === "paperback" && (
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    )}
-                  </div>
-                  <div className="mt-2.5">
-                    <div className="font-mono text-lg font-bold text-emerald-600 dark:text-emerald-400">
-                      ₹{paperbackPrice}.00
-                    </div>
-                    <div className="text-[10px] text-muted-foreground mt-0.5">
-                      Physical copy • Free India shipping
-                    </div>
-                  </div>
-                </button>
-
-                {/* eBook Option */}
+                {/* eBook Option (In Front) */}
                 <button
                   type="button"
                   onClick={() => setSelectedEdition("ebook")}
                   className={`p-3.5 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
                     selectedEdition === "ebook"
-                      ? "border-primary bg-primary/10 ring-2 ring-primary/30 shadow-sm"
+                      ? "border-emerald-500 bg-emerald-500/10 ring-2 ring-emerald-500/30 shadow-sm"
                       : "border-border/60 bg-muted/20 hover:bg-muted/40"
                   }`}
                 >
@@ -496,15 +468,43 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                       <Sparkles className="w-3.5 h-3.5 text-accent" /> eBook / Digital
                     </span>
                     {selectedEdition === "ebook" && (
-                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
                     )}
                   </div>
                   <div className="mt-2.5">
-                    <div className="font-mono text-lg font-bold text-primary">
+                    <div className="font-mono text-lg font-bold text-emerald-600 dark:text-emerald-400">
                       ₹{ebookPrice}.00
                     </div>
                     <div className="text-[10px] text-muted-foreground mt-0.5">
                       Instant PDF/ePub • Email delivery
+                    </div>
+                  </div>
+                </button>
+
+                {/* Paperback Option */}
+                <button
+                  type="button"
+                  onClick={() => setSelectedEdition("paperback")}
+                  className={`p-3.5 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
+                    selectedEdition === "paperback"
+                      ? "border-primary bg-primary/10 ring-2 ring-primary/30 shadow-sm"
+                      : "border-border/60 bg-muted/20 hover:bg-muted/40"
+                  }`}
+                >
+                  <div className="flex items-center justify-between w-full">
+                    <span className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                      <Truck className="w-3.5 h-3.5 text-primary" /> Paperback
+                    </span>
+                    {selectedEdition === "paperback" && (
+                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                    )}
+                  </div>
+                  <div className="mt-2.5">
+                    <div className="font-mono text-lg font-bold text-foreground">
+                      ₹{paperbackPrice}.00
+                    </div>
+                    <div className="text-[10px] text-muted-foreground mt-0.5">
+                      Physical copy • Free India shipping
                     </div>
                   </div>
                 </button>
