@@ -77,16 +77,20 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
   const handleCheckout = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const cleanEmail = formData.email.trim();
+    const cleanPhone = formData.phone.trim().replace(/\D/g, "");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
     // Validation
     if (!formData.name.trim()) {
       toast.error("Please enter your full name");
       return;
     }
-    if (!formData.email.trim() || !formData.email.includes("@")) {
-      toast.error("Please enter a valid email address");
+    if (!emailRegex.test(cleanEmail)) {
+      toast.error("Please enter a valid email address (e.g. name@gmail.com). Do not enter a UPI handle in the email field.");
       return;
     }
-    if (!formData.phone.trim() || formData.phone.length < 10) {
+    if (cleanPhone.length < 10) {
       toast.error("Please enter a valid 10-digit mobile number");
       return;
     }
@@ -141,9 +145,9 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
         image: typeof window !== "undefined" ? `${window.location.origin}/favicon.png` : undefined,
         order_id: order.order_id,
         prefill: {
-          name: formData.name,
-          email: formData.email,
-          contact: formData.phone,
+          name: formData.name.trim(),
+          email: cleanEmail,
+          contact: cleanPhone.slice(-10),
         },
         notes: {
           book_title: book.title,
@@ -321,10 +325,10 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                 </span>
               </div>
               <DialogTitle className="text-2xl font-serif font-bold text-foreground">
-                Order Paperback Edition
+                Order Paperback Edition (Step 1 of 2)
               </DialogTitle>
               <DialogDescription className="text-xs sm:text-sm text-muted-foreground">
-                Get an authentic, author-signed publisher copy delivered straight to your doorstep across India via Razorpay Secure Checkout.
+                Enter your shipping address below. After clicking Proceed, the secure Razorpay payment window will open where you select your payment method (UPI, Cards, NetBanking).
               </DialogDescription>
             </DialogHeader>
 
@@ -403,11 +407,14 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                   name="email"
                   type="email"
                   required
-                  placeholder="ramesh@example.com"
+                  placeholder="e.g. name@gmail.com"
                   value={formData.email}
                   onChange={handleInputChange}
                   className="h-10 text-sm rounded-xl"
                 />
+                <p className="text-[11px] text-muted-foreground">
+                  Enter your email (e.g. name@gmail.com). Do NOT enter a UPI ID here.
+                </p>
               </div>
 
               <div className="space-y-1.5">
@@ -516,7 +523,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                   type="submit"
                   disabled={isProcessing || isVerifying}
                   size="lg"
-                  className="sm:w-2/3 rounded-xl font-bold bg-primary hover:bg-accent text-primary-foreground hover:text-accent-foreground shadow-lg flex items-center justify-center gap-2"
+                  className="sm:w-2/3 rounded-xl font-bold bg-primary hover:bg-accent text-primary-foreground hover:text-accent-foreground shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                 >
                   {isProcessing || isVerifying ? (
                     <>
@@ -525,11 +532,15 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                     </>
                   ) : (
                     <>
-                      <CreditCard className="w-4 h-4" /> Pay ₹{price} via Razorpay
+                      <CreditCard className="w-4 h-4" /> Proceed to Payment (₹{price}) →
                     </>
                   )}
                 </Button>
               </div>
+
+              <p className="text-[11px] text-center text-muted-foreground pt-1">
+                Next: The official Razorpay window will open to choose <strong>UPI (GPay / PhonePe)</strong>, <strong>Card</strong>, or <strong>NetBanking</strong>.
+              </p>
             </form>
           </div>
         )}
