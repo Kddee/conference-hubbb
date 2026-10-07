@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { publishedBooks } from "@/data/booksData";
+import { publishedBooks, getBookPrice } from "@/data/booksData";
+import { BookPurchaseModal } from "@/components/books/BookPurchaseModal";
 import { PageHero } from "@/components/layout/PageHero";
 import { 
   ArrowLeft, 
@@ -13,13 +15,16 @@ import {
   Sparkles, 
   Share2, 
   ArrowRight,
-  Send
+  Send,
+  CreditCard,
+  Truck
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const BookDetails = () => {
   const { id } = useParams<{ id: string }>();
+  const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
   const book = publishedBooks.find(b => b.id === id);
 
   if (!book) {
@@ -71,12 +76,23 @@ const BookDetails = () => {
               </div>
 
               <div className="w-full space-y-3 mb-6">
-                <Button asChild size="lg" className="w-full rounded-2xl shadow-xl py-6 font-bold text-base bg-primary hover:bg-accent text-primary-foreground hover:text-accent-foreground transition-all">
+                <Button 
+                  onClick={() => setIsPurchaseModalOpen(true)}
+                  size="lg" 
+                  className="w-full rounded-2xl shadow-xl py-6 font-bold text-base bg-emerald-600 hover:bg-emerald-500 text-white transition-all flex items-center justify-center gap-2 group cursor-pointer"
+                >
+                  <CreditCard className="h-5 w-5 group-hover:scale-110 transition-transform" /> 
+                  Buy Direct — ₹{getBookPrice(book)}
+                </Button>
+                <div className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground font-medium">
+                  <Truck className="h-3.5 w-3.5 text-emerald-500" /> Free Express Delivery across India (Razorpay)
+                </div>
+                <Button asChild variant="outline" size="sm" className="w-full rounded-xl border-border/70 text-xs font-semibold">
                   <a href={book.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                    <ShoppingCart className="h-5 w-5" /> Buy on Amazon
+                    <ShoppingCart className="h-4 w-4" /> Or Buy on Amazon
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="sm" className="w-full rounded-xl border-border/70 text-xs font-semibold">
+                <Button asChild variant="ghost" size="sm" className="w-full text-xs font-semibold text-muted-foreground hover:text-foreground">
                   <a href="https://forms.gle/dnkfj4mUxXWHGmKXA" target="_blank" rel="noopener noreferrer">
                     Submit Similar Proposal
                   </a>
@@ -85,6 +101,10 @@ const BookDetails = () => {
 
               {/* SPECIFICATION LIST */}
               <div className="w-full text-left space-y-3 pt-4 border-t border-border/50 text-xs text-muted-foreground">
+                <div className="flex justify-between py-1 border-b border-border/30">
+                  <span className="font-semibold text-foreground">Direct Price</span>
+                  <span className="font-mono font-bold text-emerald-500">₹{getBookPrice(book)}.00</span>
+                </div>
                 <div className="flex justify-between py-1 border-b border-border/30">
                   <span className="font-semibold text-foreground">ISBN</span>
                   <span className="font-mono font-bold text-primary">{book.isbn}</span>
@@ -217,6 +237,13 @@ const BookDetails = () => {
           </div>
         </div>
       </section>
+
+      {/* RAZORPAY CHECKOUT MODAL */}
+      <BookPurchaseModal
+        book={book}
+        isOpen={isPurchaseModalOpen}
+        onClose={() => setIsPurchaseModalOpen(false)}
+      />
     </div>
   );
 };

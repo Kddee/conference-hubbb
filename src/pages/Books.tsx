@@ -48,10 +48,12 @@ import {
   ScanBarcode,
   Landmark,
   User,
-  Calendar
+  Calendar,
+  CreditCard
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { publishedBooks, Book } from "@/data/booksData";
+import { publishedBooks, Book, getBookPrice } from "@/data/booksData";
+import { BookPurchaseModal } from "@/components/books/BookPurchaseModal";
 
 // CATEGORIES & DISCIPLINES FOR FILTERING
 const disciplines = [
@@ -546,6 +548,7 @@ const Books = () => {
   const [selectedDiscipline, setSelectedDiscipline] = useState("all");
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [quickViewBook, setQuickViewBook] = useState<Book | null>(null);
+  const [selectedBookForCheckout, setSelectedBookForCheckout] = useState<Book | null>(null);
   const [activeTab, setActiveTab] = useState<"features" | "isbn" | "types" | "workflow" | "guidelines" | "disciplines" | "comparison">("features");
 
   // Dynamic proposal checklist state
@@ -948,27 +951,36 @@ const Books = () => {
                     {/* Footer Row */}
                     <div className="pt-5 border-t border-border/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                       <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                        <span className="bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-mono font-bold px-2.5 py-1 rounded-md border border-emerald-500/30">
+                          ₹{getBookPrice(book)} Direct
+                        </span>
                         <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">Eminsphere Publishing</span>
                         <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">Paperback & Kindle</span>
-                        <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">English</span>
                       </div>
 
-                      <div className="flex items-center gap-3 w-full sm:w-auto">
+                      <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
+                        <Button
+                          onClick={() => setSelectedBookForCheckout(book)}
+                          className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-md cursor-pointer"
+                        >
+                          <CreditCard className="h-4 w-4" />
+                          Buy Direct (₹{getBookPrice(book)})
+                        </Button>
                         <Link 
                           to={`/books/${book.id}`}
-                          className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-2 bg-secondary text-secondary-foreground font-bold px-5 py-3 rounded-xl hover:bg-secondary/80 text-xs sm:text-sm transition-colors shadow-sm"
+                          className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-2 bg-secondary text-secondary-foreground font-bold px-4 py-2.5 rounded-xl hover:bg-secondary/80 text-xs sm:text-sm transition-colors shadow-sm"
                         >
                           <BookOpen className="h-4 w-4 text-accent" />
-                          Read Synopsis & Details
+                          Details
                         </Link>
                         <a 
                           href={book.link} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-2 bg-primary text-primary-foreground font-bold px-6 py-3 rounded-xl hover:bg-accent hover:text-accent-foreground text-xs sm:text-sm transition-all shadow-md"
+                          className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-1.5 bg-muted hover:bg-muted/80 text-foreground font-semibold px-3 py-2.5 rounded-xl text-xs transition-all border border-border/60"
                         >
-                          <ShoppingCart className="h-4 w-4" />
-                          Buy on Amazon
+                          <ShoppingCart className="h-3.5 w-3.5" />
+                          Amazon
                         </a>
                       </div>
                     </div>
@@ -1629,15 +1641,26 @@ const Books = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-4 pt-2">
-                  <Button asChild size="sm" className="rounded-xl flex-1 font-bold">
-                    <a href={quickViewBook.link} target="_blank" rel="noopener noreferrer">
-                      <ShoppingCart className="h-4 w-4 mr-1.5" /> Buy on Amazon
-                    </a>
+                <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
+                  <Button 
+                    onClick={() => {
+                      const book = quickViewBook;
+                      setQuickViewBook(null);
+                      setSelectedBookForCheckout(book);
+                    }}
+                    size="sm" 
+                    className="rounded-xl flex-1 font-bold bg-emerald-600 hover:bg-emerald-500 text-white cursor-pointer"
+                  >
+                    <CreditCard className="h-4 w-4 mr-1.5" /> Buy Direct (₹{getBookPrice(quickViewBook)})
                   </Button>
                   <Button asChild variant="outline" size="sm" className="rounded-xl flex-1 font-semibold">
+                    <a href={quickViewBook.link} target="_blank" rel="noopener noreferrer">
+                      <ShoppingCart className="h-4 w-4 mr-1.5" /> Amazon
+                    </a>
+                  </Button>
+                  <Button asChild variant="ghost" size="sm" className="rounded-xl font-semibold">
                     <Link to={`/books/${quickViewBook.id}`}>
-                      Full Details Page <ArrowRight className="h-4 w-4 ml-1.5" />
+                      Details <ArrowRight className="h-4 w-4 ml-1.5" />
                     </Link>
                   </Button>
                 </div>
@@ -1719,6 +1742,13 @@ const Books = () => {
           </div>
         </div>
       </section>
+
+      {/* RAZORPAY CHECKOUT MODAL */}
+      <BookPurchaseModal
+        book={selectedBookForCheckout}
+        isOpen={!!selectedBookForCheckout}
+        onClose={() => setSelectedBookForCheckout(null)}
+      />
     </div>
   );
 };

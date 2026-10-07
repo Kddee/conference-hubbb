@@ -14,6 +14,13 @@ export interface Book {
   image: string;
   wrapImage?: string;
   description: string;
+  priceINR?: number;
+}
+
+export const DEFAULT_BOOK_PRICE_INR = 699;
+
+export function getBookPrice(book: { priceINR?: number }): number {
+  return book.priceINR && book.priceINR > 0 ? book.priceINR : DEFAULT_BOOK_PRICE_INR;
 }
 
 export const publishedBooks: Book[] = [
