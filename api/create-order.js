@@ -57,11 +57,16 @@ export default async function handler(req, res) {
 
   for (const [k, v] of Object.entries(process.env)) {
     const cleanKey = k.trim().toUpperCase();
+    const val = (v || "").trim();
     if (["RAZORPAY_KEY_ID", "VITE_RAZORPAY_KEY_ID", "RAZORPAY_KEY"].includes(cleanKey)) {
-      key_id = key_id || (v || "").trim();
+      if (val.startsWith("rzp_live") || !key_id) {
+        key_id = val;
+      }
     }
     if (["RAZORPAY_KEY_SECRET", "RAZORPAY_SECRET"].includes(cleanKey)) {
-      key_secret = key_secret || (v || "").trim();
+      if (!key_secret || val.length > 20) {
+        key_secret = val;
+      }
     }
   }
 
@@ -106,6 +111,7 @@ export default async function handler(req, res) {
       currency: order.currency,
       receipt: order.receipt,
       key_id: key_id,
+      key_mode: key_id.startsWith("rzp_live") ? "live" : "test",
     });
   } catch (error) {
     console.error("Razorpay order creation error:", error);

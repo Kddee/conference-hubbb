@@ -57,6 +57,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [isVerifying, setIsVerifying] = useState(false);
+  const [isRazorpayActive, setIsRazorpayActive] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState<{
     orderId: string;
     paymentId: string;
@@ -193,8 +194,12 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
         },
         modal: {
           ondismiss: () => {
-            toast.info("Payment window closed. You can retry whenever you are ready.");
+            setIsRazorpayActive(false);
             setIsProcessing(false);
+            if (typeof document !== "undefined") {
+              document.body.style.pointerEvents = "auto";
+            }
+            toast.info("Payment window closed. You can retry whenever you are ready.");
           },
         },
         handler: async (response: {
@@ -202,6 +207,10 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
           razorpay_order_id: string;
           razorpay_signature: string;
         }) => {
+          setIsRazorpayActive(false);
+          if (typeof document !== "undefined") {
+            document.body.style.pointerEvents = "auto";
+          }
           try {
             setIsVerifying(true);
             // 4. Verify payment signature on backend
@@ -238,28 +247,40 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
 
       razorpayInstance.on("payment.failed", (errorData: any) => {
         console.error("Payment failed:", errorData);
+        setIsRazorpayActive(false);
+        setIsProcessing(false);
+        if (typeof document !== "undefined") {
+          document.body.style.pointerEvents = "auto";
+        }
         toast.error(
           `Payment failed: ${errorData.error?.description || "Transaction was declined."}`
         );
-        setIsProcessing(false);
       });
 
+      setIsRazorpayActive(true);
+      if (typeof document !== "undefined") {
+        document.body.style.pointerEvents = "auto";
+      }
       razorpayInstance.open();
     } catch (err: any) {
       console.error("Checkout initiation error:", err);
-      toast.error(err.message || "Failed to initialize payment. Please try again.");
+      setIsRazorpayActive(false);
       setIsProcessing(false);
+      if (typeof document !== "undefined") {
+        document.body.style.pointerEvents = "auto";
+      }
+      toast.error(err.message || "Failed to initialize payment. Please try again.");
     }
   };
 
   const handleModalClose = () => {
-    if (isProcessing || isVerifying) return;
+    if (isProcessing || isVerifying || isRazorpayActive) return;
     setPaymentSuccess(null);
     onClose();
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={handleModalClose}>
+    <Dialog open={isOpen && !isRazorpayActive} onOpenChange={handleModalClose}>
       <DialogContent className="max-w-xl max-h-[92vh] overflow-y-auto p-0 border border-border/80 bg-background rounded-3xl shadow-2xl">
         {paymentSuccess ? (
           /* SUCCESS SCREEN */

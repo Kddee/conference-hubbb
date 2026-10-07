@@ -422,3 +422,17 @@
   background: hsl(160 84% 39% / 0.3);
   color: hsl(160 84% 39%);
 }
+
+/* =============================================
+   RAZORPAY CHECKOUT IFRAME OVERRIDES
+   Ensures checkout modal options and inputs are 100% clickable and topmost
+============================================= */
+iframe.razorpay-checkout-frame {
+  pointer-events: auto !important;
+  z-index: 2147483647 !important;
+}
+
+body[style*="pointer-events: none"] iframe.razorpay-checkout-frame {
+  pointer-events: auto !important;
+}
+
