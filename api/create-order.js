@@ -72,8 +72,15 @@ export default async function handler(req, res) {
     const detectedRazorKeys = Object.keys(process.env).filter((k) =>
       k.toLowerCase().includes("razor")
     );
+    const nonSystemKeys = Object.keys(process.env).filter(
+      (k) =>
+        !k.startsWith("AWS_") &&
+        !k.startsWith("npm_") &&
+        !k.startsWith("_") &&
+        !["PATH", "HOME", "USER", "SHELL", "TZ", "LANG", "LD_LIBRARY_PATH"].includes(k)
+    );
     return sendJson(res, 401, {
-      error: `Razorpay credentials missing in environment: ${missing.join(", ")}. Variables detected in Vercel (${process.env.VERCEL_ENV || "production"}): [${detectedRazorKeys.join(", ") || "None"}]. Please make sure both RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET are added with the 'Production' checkbox checked in Vercel.`,
+      error: `Razorpay credentials missing in environment: ${missing.join(", ")}. Vercel Project: '${process.env.VERCEL_GIT_REPO_SLUG || "unknown"}', Environment: '${process.env.VERCEL_ENV || "production"}'. Custom variables found: [${nonSystemKeys.join(", ") || "None"}].`,
     });
   }
 
