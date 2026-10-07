@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Book, getBookPrice } from "@/data/booksData";
+import React, { useState, useEffect } from "react";
+import { Book, getBookPrice, BookEdition } from "@/data/booksData";
 import {
   Dialog,
   DialogContent,
@@ -20,6 +20,8 @@ import {
   Copy,
   Check,
   Lock,
+  BookOpen,
+  Mail,
 } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -33,13 +35,16 @@ interface BookPurchaseModalProps {
   book: Book | null;
   isOpen: boolean;
   onClose: () => void;
+  initialEdition?: BookEdition;
 }
 
 export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
   book,
   isOpen,
   onClose,
+  initialEdition = "paperback",
 }) => {
+  const [selectedEdition, setSelectedEdition] = useState<BookEdition>(initialEdition);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -55,12 +60,22 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
   const [paymentSuccess, setPaymentSuccess] = useState<{
     orderId: string;
     paymentId: string;
+    edition: BookEdition;
+    amount: number;
   } | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (initialEdition) {
+      setSelectedEdition(initialEdition);
+    }
+  }, [initialEdition, isOpen]);
+
   if (!book) return null;
 
-  const price = getBookPrice(book);
+  const paperbackPrice = getBookPrice(book, "paperback");
+  const ebookPrice = getBookPrice(book, "ebook");
+  const currentPrice = selectedEdition === "ebook" ? ebookPrice : paperbackPrice;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -81,30 +96,36 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
     const cleanPhone = formData.phone.trim().replace(/\D/g, "");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-    // Validation
+    // Basic Validation
     if (!formData.name.trim()) {
       toast.error("Please enter your full name");
       return;
     }
     if (!emailRegex.test(cleanEmail)) {
-      toast.error("Please enter a valid email address (e.g. name@gmail.com). Do not enter a UPI handle in the email field.");
+      toast.error(
+        "Please enter a valid email address (e.g. name@gmail.com). Do not enter a UPI handle in the email field."
+      );
       return;
     }
     if (cleanPhone.length < 10) {
       toast.error("Please enter a valid 10-digit mobile number");
       return;
     }
-    if (!formData.address.trim()) {
-      toast.error("Please enter your delivery street address");
-      return;
-    }
-    if (!formData.city.trim() || !formData.state.trim()) {
-      toast.error("Please enter your city and state");
-      return;
-    }
-    if (!formData.pincode.trim() || formData.pincode.length < 6) {
-      toast.error("Please enter a valid 6-digit PIN code");
-      return;
+
+    // Physical shipping validation only if Paperback is selected
+    if (selectedEdition === "paperback") {
+      if (!formData.address.trim()) {
+        toast.error("Please enter your delivery street address");
+        return;
+      }
+      if (!formData.city.trim() || !formData.state.trim()) {
+        toast.error("Please enter your city and state");
+        return;
+      }
+      if (!formData.pincode.trim() || formData.pincode.length < 6) {
+        toast.error("Please enter a valid 6-digit PIN code");
+        return;
+      }
     }
 
     setIsProcessing(true);
@@ -119,7 +140,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
       }
 
       // 2. Call backend to create Order
-      const amountInPaise = price * 100;
+      const amountInPaise = currentPrice * 100;
       const order = await createRazorpayOrder({
         amount: amountInPaise,
         currency: "INR",
@@ -127,11 +148,19 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
         notes: {
           bookId: book.id,
           bookTitle: book.title.slice(0, 50),
+          edition: selectedEdition === "paperback" ? "Paperback Edition" : "eBook Edition",
           isbn: book.isbn,
           customerName: formData.name.trim().slice(0, 50),
           customerPhone: cleanPhone.slice(-10),
           customerEmail: cleanEmail.slice(0, 50),
-          shippingAddress: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`.slice(0, 200),
+          deliveryType:
+            selectedEdition === "paperback"
+              ? "Doorstep Courier Delivery"
+              : "Instant Digital Email Delivery",
+          shippingAddress:
+            selectedEdition === "paperback"
+              ? `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`.slice(0, 200)
+              : `Digital Delivery to ${cleanEmail}`,
         },
       });
 
@@ -143,7 +172,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
         amount: order.amount,
         currency: order.currency || "INR",
         name: "Eminsphere Global Publishing",
-        description: `Order: ${book.title}`.slice(0, 60),
+        description: `Order (${selectedEdition === "paperback" ? "Paperback" : "eBook"}): ${book.title}`.slice(0, 60),
         order_id: order.order_id,
         prefill: {
           name: formData.name.trim(),
@@ -152,8 +181,12 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
         },
         notes: {
           book_title: book.title.slice(0, 80),
+          edition: selectedEdition === "paperback" ? "Paperback" : "eBook",
           isbn: book.isbn,
-          shipping_address: `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`.slice(0, 240),
+          shipping_address:
+            selectedEdition === "paperback"
+              ? `${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`.slice(0, 240)
+              : `Digital Delivery: ${cleanEmail}`,
         },
         theme: {
           color: "#0284c7",
@@ -182,8 +215,12 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
             setPaymentSuccess({
               orderId: response.razorpay_order_id,
               paymentId: response.razorpay_payment_id,
+              edition: selectedEdition,
+              amount: currentPrice,
             });
-            toast.success("Payment verified successfully! Your book order has been placed.");
+            toast.success(
+              `Payment verified! Your ${selectedEdition === "paperback" ? "Paperback" : "eBook"} order is placed.`
+            );
           } catch (verificationError: any) {
             console.error("Verification failed:", verificationError);
             toast.error(
@@ -223,19 +260,19 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={handleModalClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto p-0 rounded-2xl border-border bg-card">
+      <DialogContent className="max-w-xl max-h-[92vh] overflow-y-auto p-0 border border-border/80 bg-background rounded-3xl shadow-2xl">
         {paymentSuccess ? (
           /* SUCCESS SCREEN */
-          <div className="p-8 text-center space-y-6">
-            <div className="mx-auto w-16 h-16 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-500 animate-in zoom-in duration-300">
+          <div className="p-6 sm:p-8 text-center space-y-6">
+            <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 mx-auto flex items-center justify-center border border-emerald-500/20">
               <CheckCircle2 className="w-10 h-10" />
             </div>
 
             <div>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 mb-2">
-                <Sparkles className="w-3.5 h-3.5" /> Order Confirmed & Paid
+              <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                Payment Successful
               </span>
-              <h2 className="text-2xl font-serif font-bold text-foreground">
+              <h2 className="text-2xl font-serif font-bold text-foreground mt-3">
                 Thank You for Your Order!
               </h2>
               <p className="text-sm text-muted-foreground mt-1">
@@ -248,9 +285,23 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
             {/* Receipt Summary Card */}
             <div className="bg-muted/40 rounded-xl p-5 border border-border/60 text-left space-y-3 text-xs sm:text-sm">
               <div className="flex items-center justify-between pb-2 border-b border-border/40">
+                <span className="text-muted-foreground">Edition Ordered</span>
+                <span className="font-bold text-foreground flex items-center gap-1.5">
+                  {paymentSuccess.edition === "paperback" ? (
+                    <>
+                      <Truck className="w-4 h-4 text-primary" /> Paperback Edition (Physical)
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="w-4 h-4 text-accent" /> eBook Edition (Digital)
+                    </>
+                  )}
+                </span>
+              </div>
+              <div className="flex items-center justify-between pb-2 border-b border-border/40">
                 <span className="text-muted-foreground">Amount Paid</span>
-                <span className="font-bold text-base text-foreground">
-                  ₹{price}.00 (All Inclusive)
+                <span className="font-bold text-base text-foreground font-mono">
+                  ₹{paymentSuccess.amount}.00 (All Inclusive)
                 </span>
               </div>
               <div className="flex items-center justify-between py-1 border-b border-border/40">
@@ -285,24 +336,55 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                   )}
                 </button>
               </div>
+
+              {/* Delivery Details */}
               <div className="pt-1">
-                <span className="text-muted-foreground block mb-1">
-                  Shipping Delivery Address:
-                </span>
-                <p className="text-foreground font-medium leading-relaxed">
-                  {formData.name} • {formData.phone}
-                  <br />
-                  {formData.address}, {formData.city}, {formData.state} - {formData.pincode}
-                </p>
+                {paymentSuccess.edition === "paperback" ? (
+                  <>
+                    <span className="text-muted-foreground block mb-1">
+                      Shipping Delivery Address:
+                    </span>
+                    <p className="text-foreground font-medium leading-relaxed">
+                      {formData.name} • {formData.phone}
+                      <br />
+                      {formData.address}, {formData.city}, {formData.state} - {formData.pincode}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-muted-foreground block mb-1">
+                      Digital Delivery Destination:
+                    </span>
+                    <p className="text-foreground font-medium leading-relaxed">
+                      {formData.name} • {formData.phone}
+                      <br />
+                      <span className="text-emerald-500 font-semibold">
+                        ✓ Download links & reading license sent to {formData.email}
+                      </span>
+                    </p>
+                  </>
+                )}
               </div>
             </div>
 
             <div className="flex items-center gap-2 text-xs text-muted-foreground justify-center">
-              <Truck className="w-4 h-4 text-primary" />
-              <span>
-                Estimated dispatch within 24–48 hours. Tracking details will be emailed to{" "}
-                <strong>{formData.email}</strong>.
-              </span>
+              {paymentSuccess.edition === "paperback" ? (
+                <>
+                  <Truck className="w-4 h-4 text-primary" />
+                  <span>
+                    Estimated dispatch within 24–48 hours. Tracking details will be emailed to{" "}
+                    <strong>{formData.email}</strong>.
+                  </span>
+                </>
+              ) : (
+                <>
+                  <Mail className="w-4 h-4 text-accent" />
+                  <span>
+                    Instant digital delivery confirmed. Please check your inbox at{" "}
+                    <strong>{formData.email}</strong>.
+                  </span>
+                </>
+              )}
             </div>
 
             <Button
@@ -322,14 +404,22 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                   <ShieldCheck className="w-3 h-3" /> Direct Publisher Order
                 </span>
                 <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-                  <Truck className="w-3 h-3" /> Free Express Delivery
+                  {selectedEdition === "paperback" ? (
+                    <>
+                      <Truck className="w-3 h-3" /> Free Express Delivery
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="w-3 h-3" /> Instant Digital Access
+                    </>
+                  )}
                 </span>
               </div>
               <DialogTitle className="text-2xl font-serif font-bold text-foreground">
-                Order Paperback Edition (Step 1 of 2)
+                Order {selectedEdition === "paperback" ? "Paperback" : "eBook"} Edition
               </DialogTitle>
               <DialogDescription className="text-xs sm:text-sm text-muted-foreground">
-                Enter your shipping address below. After clicking Proceed, the secure Razorpay payment window will open where you select your payment method (UPI, Cards, NetBanking).
+                Select your preferred edition below, fill in your details, and proceed to Razorpay's secure checkout (UPI, Cards, NetBanking).
               </DialogDescription>
             </DialogHeader>
 
@@ -338,7 +428,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
               <img
                 src={book.image}
                 alt={book.title}
-                className="w-16 h-20 object-contain rounded shadow-sm bg-white p-1 border border-border/40"
+                className="w-16 h-20 object-contain rounded shadow-sm bg-white p-1 border border-border/40 shrink-0"
               />
               <div className="flex-1 min-w-0">
                 <h4 className="font-serif font-bold text-sm sm:text-base text-foreground truncate">
@@ -351,17 +441,81 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                   </span>
                   <span>•</span>
                   <span className="text-sm font-bold text-primary font-mono">
-                    ₹{price}.00
+                    ₹{currentPrice}.00
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Shipping & Buyer Details Form */}
+            {/* 2 EDITIONS SELECTOR: BOOK (eBook) vs PAPERBACK */}
+            <div className="space-y-2">
+              <Label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                Choose Format & Edition
+              </Label>
+              <div className="grid grid-cols-2 gap-3">
+                {/* Paperback Option */}
+                <button
+                  type="button"
+                  onClick={() => setSelectedEdition("paperback")}
+                  className={`p-3.5 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
+                    selectedEdition === "paperback"
+                      ? "border-emerald-500 bg-emerald-500/10 ring-2 ring-emerald-500/30 shadow-sm"
+                      : "border-border/60 bg-muted/20 hover:bg-muted/40"
+                  }`}
+                >
+                  <div className="flex items-center justify-between w-full">
+                    <span className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                      <Truck className="w-3.5 h-3.5 text-emerald-500" /> Paperback
+                    </span>
+                    {selectedEdition === "paperback" && (
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    )}
+                  </div>
+                  <div className="mt-2.5">
+                    <div className="font-mono text-lg font-bold text-emerald-600 dark:text-emerald-400">
+                      ₹{paperbackPrice}.00
+                    </div>
+                    <div className="text-[10px] text-muted-foreground mt-0.5">
+                      Physical copy • Free India shipping
+                    </div>
+                  </div>
+                </button>
+
+                {/* eBook Option */}
+                <button
+                  type="button"
+                  onClick={() => setSelectedEdition("ebook")}
+                  className={`p-3.5 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
+                    selectedEdition === "ebook"
+                      ? "border-primary bg-primary/10 ring-2 ring-primary/30 shadow-sm"
+                      : "border-border/60 bg-muted/20 hover:bg-muted/40"
+                  }`}
+                >
+                  <div className="flex items-center justify-between w-full">
+                    <span className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-accent" /> eBook / Digital
+                    </span>
+                    {selectedEdition === "ebook" && (
+                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                    )}
+                  </div>
+                  <div className="mt-2.5">
+                    <div className="font-mono text-lg font-bold text-primary">
+                      ₹{ebookPrice}.00
+                    </div>
+                    <div className="text-[10px] text-muted-foreground mt-0.5">
+                      Instant PDF/ePub • Email delivery
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            {/* Buyer Details Form */}
             <form onSubmit={handleCheckout} className="space-y-4">
               <div className="space-y-1">
                 <h5 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  Delivery Details
+                  {selectedEdition === "paperback" ? "Delivery & Contact Details" : "Customer Details"}
                 </h5>
               </div>
 
@@ -400,7 +554,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
 
               <div className="space-y-1.5">
                 <Label htmlFor="checkout-email" className="text-xs font-semibold">
-                  Email Address (for order receipt & tracking){" "}
+                  Email Address ({selectedEdition === "ebook" ? "For eBook delivery & receipt" : "For tracking & receipt"}){" "}
                   <span className="text-destructive">*</span>
                 </Label>
                 <Input
@@ -414,87 +568,108 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                   className="h-10 text-sm rounded-xl"
                 />
                 <p className="text-[11px] text-muted-foreground">
-                  Enter your email (e.g. name@gmail.com). Do NOT enter a UPI ID here.
+                  {selectedEdition === "ebook"
+                    ? "Your digital eBook will be sent to this email immediately."
+                    : "Enter your email (e.g. name@gmail.com). Do NOT enter a UPI ID here."}
                 </p>
               </div>
 
-              <div className="space-y-1.5">
-                <Label htmlFor="checkout-address" className="text-xs font-semibold">
-                  Complete Street Address (House / Dept / Flat, Area){" "}
-                  <span className="text-destructive">*</span>
-                </Label>
-                <Input
-                  id="checkout-address"
-                  name="address"
-                  required
-                  placeholder="e.g. Flat 402, Sunshine Heights, FC Road"
-                  value={formData.address}
-                  onChange={handleInputChange}
-                  className="h-10 text-sm rounded-xl"
-                />
-              </div>
+              {/* Physical Delivery Address (Only for Paperback) */}
+              {selectedEdition === "paperback" ? (
+                <>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="checkout-address" className="text-xs font-semibold">
+                      Complete Street Address (House / Dept / Flat, Area){" "}
+                      <span className="text-destructive">*</span>
+                    </Label>
+                    <Input
+                      id="checkout-address"
+                      name="address"
+                      required
+                      placeholder="e.g. Flat 402, Sunshine Heights, FC Road"
+                      value={formData.address}
+                      onChange={handleInputChange}
+                      className="h-10 text-sm rounded-xl"
+                    />
+                  </div>
 
-              <div className="grid grid-cols-3 gap-3">
-                <div className="space-y-1.5">
-                  <Label htmlFor="checkout-city" className="text-xs font-semibold">
-                    City <span className="text-destructive">*</span>
-                  </Label>
-                  <Input
-                    id="checkout-city"
-                    name="city"
-                    required
-                    placeholder="e.g. Pune"
-                    value={formData.city}
-                    onChange={handleInputChange}
-                    className="h-10 text-sm rounded-xl"
-                  />
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="space-y-1.5">
+                      <Label htmlFor="checkout-city" className="text-xs font-semibold">
+                        City <span className="text-destructive">*</span>
+                      </Label>
+                      <Input
+                        id="checkout-city"
+                        name="city"
+                        required
+                        placeholder="e.g. Pune"
+                        value={formData.city}
+                        onChange={handleInputChange}
+                        className="h-10 text-sm rounded-xl"
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <Label htmlFor="checkout-state" className="text-xs font-semibold">
+                        State <span className="text-destructive">*</span>
+                      </Label>
+                      <Input
+                        id="checkout-state"
+                        name="state"
+                        required
+                        placeholder="Maharashtra"
+                        value={formData.state}
+                        onChange={handleInputChange}
+                        className="h-10 text-sm rounded-xl"
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <Label htmlFor="checkout-pincode" className="text-xs font-semibold">
+                        PIN Code <span className="text-destructive">*</span>
+                      </Label>
+                      <Input
+                        id="checkout-pincode"
+                        name="pincode"
+                        required
+                        maxLength={6}
+                        placeholder="411004"
+                        value={formData.pincode}
+                        onChange={handleInputChange}
+                        className="h-10 text-sm rounded-xl font-mono"
+                      />
+                    </div>
+                  </div>
+                </>
+              ) : (
+                /* Digital Delivery Banner */
+                <div className="p-3.5 bg-accent/10 border border-accent/25 rounded-2xl text-xs text-foreground flex items-start gap-2.5">
+                  <Sparkles className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                  <div className="leading-relaxed">
+                    <strong>Instant Digital Delivery:</strong> No physical shipping needed. You will receive an authentic DRM-free high-resolution academic copy with reading license sent to your email immediately upon checkout.
+                  </div>
                 </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="checkout-state" className="text-xs font-semibold">
-                    State <span className="text-destructive">*</span>
-                  </Label>
-                  <Input
-                    id="checkout-state"
-                    name="state"
-                    required
-                    placeholder="Maharashtra"
-                    value={formData.state}
-                    onChange={handleInputChange}
-                    className="h-10 text-sm rounded-xl"
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="checkout-pincode" className="text-xs font-semibold">
-                    PIN Code <span className="text-destructive">*</span>
-                  </Label>
-                  <Input
-                    id="checkout-pincode"
-                    name="pincode"
-                    required
-                    maxLength={6}
-                    placeholder="411004"
-                    value={formData.pincode}
-                    onChange={handleInputChange}
-                    className="h-10 text-sm rounded-xl font-mono"
-                  />
-                </div>
-              </div>
+              )}
 
               {/* Price & Security Summary */}
               <div className="pt-4 border-t border-border/60 space-y-3">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">Book Price (Paperback)</span>
-                  <span className="font-semibold text-foreground">₹{price}.00</span>
+                  <span className="text-muted-foreground">
+                    Book Price ({selectedEdition === "paperback" ? "Paperback Edition" : "eBook Edition"})
+                  </span>
+                  <span className="font-semibold text-foreground font-mono">
+                    ₹{currentPrice}.00
+                  </span>
                 </div>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">Shipping & Handling</span>
+                  <span className="text-muted-foreground">
+                    {selectedEdition === "paperback" ? "Shipping & Handling" : "Delivery Mode"}
+                  </span>
                   <span className="font-bold text-emerald-600 dark:text-emerald-400">
-                    FREE (Included)
+                    {selectedEdition === "paperback" ? "FREE Express Delivery" : "Instant Digital Access"}
                   </span>
                 </div>
                 <div className="flex items-center justify-between text-base font-bold pt-2 border-t border-border/40 text-foreground">
                   <span>Total Payable</span>
-                  <span className="font-mono text-xl text-primary">₹{price}.00</span>
+                  <span className="font-mono text-xl text-primary">₹{currentPrice}.00</span>
                 </div>
               </div>
 
@@ -523,25 +698,25 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                 <Button
                   type="submit"
                   disabled={isProcessing || isVerifying}
-                  size="lg"
-                  className="sm:w-2/3 rounded-xl font-bold bg-primary hover:bg-accent text-primary-foreground hover:text-accent-foreground shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                  className="sm:w-2/3 rounded-xl font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg cursor-pointer"
                 >
-                  {isProcessing || isVerifying ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      {isVerifying ? "Verifying Payment..." : "Opening Razorpay..."}
-                    </>
+                  {isProcessing ? (
+                    <span className="flex items-center gap-2">
+                      <Loader2 className="w-4 h-4 animate-spin" /> Opening Razorpay...
+                    </span>
                   ) : (
-                    <>
-                      <CreditCard className="w-4 h-4" /> Proceed to Payment (₹{price}) →
-                    </>
+                    <span className="flex items-center gap-2">
+                      <CreditCard className="w-4 h-4" /> Proceed to Payment (₹{currentPrice}) →
+                    </span>
                   )}
                 </Button>
               </div>
 
-              <p className="text-[11px] text-center text-muted-foreground pt-1">
-                Next: The official Razorpay window will open to choose <strong>UPI (GPay / PhonePe)</strong>, <strong>Card</strong>, or <strong>NetBanking</strong>.
-              </p>
+              {isProcessing && (
+                <p className="text-[11px] text-center text-muted-foreground animate-pulse">
+                  Opening the official Razorpay checkout window to choose UPI (GPay / PhonePe), Card, or NetBanking.
+                </p>
+              )}
             </form>
           </div>
         )}

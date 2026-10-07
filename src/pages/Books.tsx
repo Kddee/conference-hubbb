@@ -952,10 +952,12 @@ const Books = () => {
                     <div className="pt-5 border-t border-border/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                       <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
                         <span className="bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-mono font-bold px-2.5 py-1 rounded-md border border-emerald-500/30">
-                          ₹{getBookPrice(book)} Direct
+                          Paperback: ₹{getBookPrice(book, "paperback")}
                         </span>
-                        <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">Eminsphere Publishing</span>
-                        <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">Paperback & Kindle</span>
+                        <span className="bg-primary/15 text-primary font-mono font-bold px-2.5 py-1 rounded-md border border-primary/30">
+                          eBook: ₹{getBookPrice(book, "ebook")}
+                        </span>
+                        <span className="bg-muted/70 px-2.5 py-1 rounded-md font-medium">Amazon Converted INR</span>
                       </div>
 
                       <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
@@ -964,7 +966,7 @@ const Books = () => {
                           className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-md cursor-pointer"
                         >
                           <CreditCard className="h-4 w-4" />
-                          Buy Direct (₹{getBookPrice(book)})
+                          Buy Direct (₹{getBookPrice(book, "paperback")})
                         </Button>
                         <Link 
                           to={`/books/${book.id}`}
@@ -1651,7 +1653,7 @@ const Books = () => {
                     size="sm" 
                     className="rounded-xl flex-1 font-bold bg-emerald-600 hover:bg-emerald-500 text-white cursor-pointer"
                   >
-                    <CreditCard className="h-4 w-4 mr-1.5" /> Buy Direct (₹{getBookPrice(quickViewBook)})
+                    <CreditCard className="h-4 w-4 mr-1.5" /> Buy Direct (₹{getBookPrice(quickViewBook, "paperback")})
                   </Button>
                   <Button asChild variant="outline" size="sm" className="rounded-xl flex-1 font-semibold">
                     <a href={quickViewBook.link} target="_blank" rel="noopener noreferrer">
