@@ -42,6 +42,15 @@ export default async function handler(req, res) {
     return sendJson(res, 405, { error: "Method not allowed. Use POST." });
   }
 
+  // Attempt to load local .env in development environments if process.env is missing keys
+  if (!process.env.RAZORPAY_KEY_SECRET) {
+    try {
+      if (typeof process.loadEnvFile === "function") {
+        process.loadEnvFile();
+      }
+    } catch {}
+  }
+
   const key_secret = process.env.RAZORPAY_KEY_SECRET;
 
   if (!key_secret) {
