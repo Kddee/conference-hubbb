@@ -138,7 +138,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
         currency: order.currency || "INR",
         name: "Eminsphere Global Publishing",
         description: `Order: ${book.title}`,
-        image: "/favicon.png",
+        image: typeof window !== "undefined" ? `${window.location.origin}/favicon.png` : undefined,
         order_id: order.order_id,
         prefill: {
           name: formData.name,
