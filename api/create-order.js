@@ -80,7 +80,7 @@ export default async function handler(req, res) {
         !["PATH", "HOME", "USER", "SHELL", "TZ", "LANG", "LD_LIBRARY_PATH"].includes(k)
     );
     return sendJson(res, 401, {
-      error: `Razorpay credentials missing in environment: ${missing.join(", ")}. Vercel Project: '${process.env.VERCEL_GIT_REPO_SLUG || "unknown"}', Environment: '${process.env.VERCEL_ENV || "production"}'. Custom variables found: [${nonSystemKeys.join(", ") || "None"}].`,
+      error: `Razorpay credentials missing in environment: ${missing.join(", ")}. In Vercel Dashboard, open Project: '${process.env.VERCEL_PROJECT_NAME || process.env.VERCEL_GIT_REPO_SLUG || "unknown"}' -> Settings -> Environment Variables. Make sure Production is checked.`,
     });
   }
 
