@@ -109,6 +109,10 @@ export default async function handler(req, res) {
       .filter((k) => k.toUpperCase().includes("RAZORPAY"))
       .map((k) => `${k} (starts with ${String(process.env[k]).slice(0, 8)}...)`);
 
+    const sampleKeys = Object.keys(process.env).filter(
+      (k) => !k.startsWith("npm_") && !k.startsWith("_")
+    );
+
     return sendJson(res, 200, {
       order_id: order.id,
       amount: order.amount,
@@ -117,6 +121,7 @@ export default async function handler(req, res) {
       key_id: key_id,
       key_mode: key_id.startsWith("rzp_live") ? "live" : "test",
       env_keys_found: envKeysFound,
+      sample_keys: sampleKeys,
     });
   } catch (error) {
     console.error("Razorpay order creation error:", error);
