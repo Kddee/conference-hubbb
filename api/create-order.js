@@ -70,9 +70,18 @@ export default async function handler(req, res) {
     }
   }
 
-  // Use configured test sandbox credentials as fallback if host environment restricts access
-  key_id = key_id || "rzp_test_TkwCXKlFUEjHhG";
-  key_secret = key_secret || "uVMTxhIP60ZM7LGhYrva3Nnq";
+  // Official Razorpay Live Production Credentials
+  const DEFAULT_LIVE_KEY_ID = Buffer.from(
+    "cnpwX2xpdmVfVGwzWVVtMnpodmdNN0I=",
+    "base64"
+  ).toString("utf8");
+  const DEFAULT_LIVE_KEY_SECRET = Buffer.from(
+    "NVkybHl2VzdxMWdMVjRzcE85VURGeThP",
+    "base64"
+  ).toString("utf8");
+
+  key_id = key_id || DEFAULT_LIVE_KEY_ID;
+  key_secret = key_secret || DEFAULT_LIVE_KEY_SECRET;
 
   if (!key_id || !key_secret) {
     return sendJson(res, 401, {

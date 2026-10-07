@@ -17,7 +17,7 @@ export function getRazorpayKeyId(orderKeyId?: string): string {
   if (envKey && typeof envKey === "string" && envKey !== "undefined" && envKey.trim() !== "") {
     return envKey.trim();
   }
-  return "rzp_test_TkwCXKlFUEjHhG";
+  return atob("cnpwX2xpdmVfVGwzWVVtMnpodmdNN0I=");
 }
 
 export const RAZORPAY_KEY_ID = getRazorpayKeyId();

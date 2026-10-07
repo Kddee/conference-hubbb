@@ -29,4 +29,6 @@ dist
 # Internal Work Tracking & Automation (Private to local / not on GitHub)
 scripts/
 *.xlsx
+*.csv
+razorpay/
 Daily Work Records*
