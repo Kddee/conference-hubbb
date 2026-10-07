@@ -51,15 +51,29 @@ export default async function handler(req, res) {
     } catch {}
   }
 
-  const key_id = (process.env.RAZORPAY_KEY_ID || process.env.VITE_RAZORPAY_KEY_ID || "").trim();
-  const key_secret = (process.env.RAZORPAY_KEY_SECRET || "").trim();
+  // Resolve keys with case-insensitivity and trim whitespace
+  let key_id = "";
+  let key_secret = "";
+
+  for (const [k, v] of Object.entries(process.env)) {
+    const cleanKey = k.trim().toUpperCase();
+    if (["RAZORPAY_KEY_ID", "VITE_RAZORPAY_KEY_ID", "RAZORPAY_KEY"].includes(cleanKey)) {
+      key_id = key_id || (v || "").trim();
+    }
+    if (["RAZORPAY_KEY_SECRET", "RAZORPAY_SECRET"].includes(cleanKey)) {
+      key_secret = key_secret || (v || "").trim();
+    }
+  }
 
   if (!key_id || !key_secret) {
     const missing = [];
     if (!key_id) missing.push("RAZORPAY_KEY_ID");
     if (!key_secret) missing.push("RAZORPAY_KEY_SECRET");
+    const detectedRazorKeys = Object.keys(process.env).filter((k) =>
+      k.toLowerCase().includes("razor")
+    );
     return sendJson(res, 401, {
-      error: `Razorpay credentials missing in environment: ${missing.join(", ")}. If you just added them in Vercel, please Redeploy the latest deployment.`,
+      error: `Razorpay credentials missing in environment: ${missing.join(", ")}. Variables detected in Vercel (${process.env.VERCEL_ENV || "production"}): [${detectedRazorKeys.join(", ") || "None"}]. Please make sure both RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET are added with the 'Production' checkbox checked in Vercel.`,
     });
   }
 

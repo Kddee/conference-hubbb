@@ -51,7 +51,15 @@ export default async function handler(req, res) {
     } catch {}
   }
 
-  const key_secret = (process.env.RAZORPAY_KEY_SECRET || "").trim();
+  // Resolve secret key with case-insensitivity and trim whitespace
+  let key_secret = "";
+
+  for (const [k, v] of Object.entries(process.env)) {
+    const cleanKey = k.trim().toUpperCase();
+    if (["RAZORPAY_KEY_SECRET", "RAZORPAY_SECRET"].includes(cleanKey)) {
+      key_secret = key_secret || (v || "").trim();
+    }
+  }
 
   if (!key_secret) {
     return sendJson(res, 401, {
