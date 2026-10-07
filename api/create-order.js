@@ -86,7 +86,7 @@ export default async function handler(req, res) {
       k.toUpperCase().startsWith("R")
     );
     return sendJson(res, 401, {
-      error: `Razorpay credentials missing in environment: ${missing.join(", ")}. In Vercel Project: '${process.env.VERCEL_PROJECT_NAME || process.env.VERCEL_GIT_REPO_SLUG || "unknown"}' (env: ${process.env.VERCEL_ENV || "unknown"}). Keys with 'razor': [${keysMatchingRazor.join(", ") || "None"}]. Keys with 'R': [${keysStartingWithR.join(", ") || "None"}]. Total env keys: ${Object.keys(process.env).length}.`,
+      error: `Razorpay credentials missing in environment: ${missing.join(", ")}. In Vercel Project: '${process.env.VERCEL_PROJECT_NAME || process.env.VERCEL_GIT_REPO_SLUG || "unknown"}' (env: ${process.env.VERCEL_ENV || "unknown"}, commit: ${process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) || "unknown"}). Keys with 'razor': [${keysMatchingRazor.join(", ") || "None"}]. Keys with 'R': [${keysStartingWithR.join(", ") || "None"}]. Total env keys: ${Object.keys(process.env).length}.`,
     });
   }
 
