@@ -51,11 +51,11 @@ export default async function handler(req, res) {
     } catch {}
   }
 
-  const key_secret = process.env.RAZORPAY_KEY_SECRET;
+  const key_secret = (process.env.RAZORPAY_KEY_SECRET || "").trim();
 
   if (!key_secret) {
     return sendJson(res, 401, {
-      error: "Razorpay secret key not configured in environment",
+      error: "RAZORPAY_KEY_SECRET is missing in environment. Please add it to Vercel Environment Variables and Redeploy.",
     });
   }
 

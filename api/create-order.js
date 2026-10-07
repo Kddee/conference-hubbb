@@ -51,12 +51,15 @@ export default async function handler(req, res) {
     } catch {}
   }
 
-  const key_id = process.env.RAZORPAY_KEY_ID || process.env.VITE_RAZORPAY_KEY_ID;
-  const key_secret = process.env.RAZORPAY_KEY_SECRET;
+  const key_id = (process.env.RAZORPAY_KEY_ID || process.env.VITE_RAZORPAY_KEY_ID || "").trim();
+  const key_secret = (process.env.RAZORPAY_KEY_SECRET || "").trim();
 
   if (!key_id || !key_secret) {
+    const missing = [];
+    if (!key_id) missing.push("RAZORPAY_KEY_ID");
+    if (!key_secret) missing.push("RAZORPAY_KEY_SECRET");
     return sendJson(res, 401, {
-      error: "Razorpay API credentials not configured in environment",
+      error: `Razorpay credentials missing in environment: ${missing.join(", ")}. If you just added them in Vercel, please Redeploy the latest deployment.`,
     });
   }
 
