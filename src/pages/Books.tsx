@@ -59,6 +59,7 @@ import { publishedBooks, Book, getBookPrice } from "@/data/booksData";
 import { BookPurchaseModal } from "@/components/books/BookPurchaseModal";
 import { BookAnalyticsDashboard } from "@/components/books/BookAnalyticsDashboard";
 import { BookReviewFormModal } from "@/components/books/BookReviewFormModal";
+import { BookReviewsModal } from "@/components/books/BookReviewsModal";
 import {
   getBookAnalytics,
   getCatalogSummary,
@@ -562,6 +563,7 @@ const Books = () => {
   const [quickViewBook, setQuickViewBook] = useState<Book | null>(null);
   const [selectedBookForCheckout, setSelectedBookForCheckout] = useState<Book | null>(null);
   const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false);
+  const [selectedBookForReviews, setSelectedBookForReviews] = useState<Book | null>(null);
   const [selectedBookForReview, setSelectedBookForReview] = useState<Book | null>(null);
   const [catalogSummary, setCatalogSummary] = useState(getCatalogSummary());
   const [recordsMap, setRecordsMap] = useState<Record<string, BookAnalyticsRecord>>({});
@@ -1585,14 +1587,14 @@ const Books = () => {
                                 <button
                                   type="button"
                                   onClick={() => {
-                                    setSelectedBookForReview(book);
+                                    setSelectedBookForReviews(book);
                                   }}
                                   className="inline-flex items-center gap-1 text-xs font-bold text-amber-500 hover:text-amber-600 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20 transition-colors cursor-pointer"
-                                  title="Click to write or read reviews"
+                                  title="Click to view reader & academic reviews"
                                 >
                                   <Star className="h-3.5 w-3.5 fill-current" />
                                   <span>{stats.averageRating}</span>
-                                  <span className="text-muted-foreground font-normal">({stats.reviewCount})</span>
+                                  <span className="text-muted-foreground font-normal">({stats.reviewCount} reviews)</span>
                                 </button>
                                 <span className="inline-flex items-center gap-1 font-mono text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded-md border border-emerald-500/20">
                                   <Download className="h-3 w-3" />
@@ -1602,15 +1604,9 @@ const Books = () => {
                             );
                           })()}
                         </div>
-                        {book.id === "sample-academic-guide-pdf" ? (
-                          <span className="text-[11px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-3 py-1 rounded-full border border-amber-500/30 flex items-center gap-1">
-                            <Sparkles className="h-3 w-3 text-amber-500" /> Payment Test Sample (₹1)
-                          </span>
-                        ) : (
-                          <span className="text-[11px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20 flex items-center gap-1">
-                            <CheckCircle2 className="h-3 w-3" /> Peer-Reviewed & Cataloged
-                          </span>
-                        )}
+                        <span className="text-[11px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20 flex items-center gap-1">
+                          <CheckCircle2 className="h-3 w-3" /> Peer-Reviewed & Cataloged
+                        </span>
                       </div>
 
                       {/* Title */}
@@ -1661,13 +1657,13 @@ const Books = () => {
                           Buy Direct (₹{getBookPrice(book, "ebook")})
                         </Button>
                         <Button
-                          onClick={() => setSelectedBookForReview(book)}
+                          onClick={() => setSelectedBookForReviews(book)}
                           variant="outline"
                           className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-1.5 border-amber-500/40 text-amber-600 dark:text-amber-400 hover:bg-amber-500/10 font-bold px-3 py-2.5 rounded-xl text-xs sm:text-sm transition-all cursor-pointer"
-                          title="Submit reader or academic review"
+                          title="See reader & academic reviews"
                         >
                           <Star className="h-3.5 w-3.5 fill-current" />
-                          Review
+                          See Reviews
                         </Button>
                         <Link 
                           to={`/books/${book.id}`}
@@ -1860,6 +1856,13 @@ const Books = () => {
       <BookAnalyticsDashboard
         isOpen={isAnalyticsOpen}
         onClose={() => setIsAnalyticsOpen(false)}
+      />
+
+      {/* BOOK REVIEWS VIEWER MODAL */}
+      <BookReviewsModal
+        book={selectedBookForReviews}
+        isOpen={!!selectedBookForReviews}
+        onClose={() => setSelectedBookForReviews(null)}
       />
 
       {/* BOOK REVIEW FORM MODAL */}

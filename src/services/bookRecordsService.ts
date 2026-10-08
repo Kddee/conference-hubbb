@@ -39,24 +39,16 @@ export interface OrderRecord {
   paymentId?: string;
 }
 
-const STORAGE_KEY_ANALYTICS = "eminsphere_book_analytics_v1";
-const STORAGE_KEY_REVIEWS = "eminsphere_book_reviews_v1";
-const STORAGE_KEY_ORDERS = "eminsphere_book_orders_v1";
+const STORAGE_KEY_ANALYTICS = "eminsphere_book_analytics_v2";
+const STORAGE_KEY_REVIEWS = "eminsphere_book_reviews_v2";
+const STORAGE_KEY_ORDERS = "eminsphere_book_orders_v2";
 const EVENT_NAME_RECORDS_UPDATED = "eminsphere_book_records_updated";
 
-// Baseline benchmark analytics per book
+// Baseline benchmark analytics per published volume
 const INITIAL_ANALYTICS: Record<
   string,
   Omit<BookAnalyticsRecord, "bookId" | "averageRating" | "reviewCount">
 > = {
-  "sample-academic-guide-pdf": {
-    downloadsCount: 84,
-    ordersCount: 26,
-    ebookOrdersCount: 26,
-    paperbackOrdersCount: 0,
-    totalRevenueINR: 26,
-    viewsCount: 312,
-  },
   "artificial-intelligence-new-horizons": {
     downloadsCount: 246,
     ordersCount: 48,
@@ -213,34 +205,6 @@ const INITIAL_ANALYTICS: Record<
 
 // Initial Peer & Reader Reviews for academic credibility
 const INITIAL_REVIEWS: BookReview[] = [
-  {
-    id: "rev-sample-1",
-    bookId: "sample-academic-guide-pdf",
-    userName: "Dr. K. R. Mehra",
-    userRole: "Academic Dean & Evaluator",
-    rating: 5,
-    title: "Seamless verification and instant PDF receipt",
-    comment:
-      "Tested the direct checkout gateway and received the PDF immediately. Payment gateway confirmation is instant and smooth. Excellent implementation for academic readers.",
-    date: "2026-10-06",
-    edition: "ebook",
-    isVerified: true,
-    helpfulCount: 14,
-  },
-  {
-    id: "rev-sample-2",
-    bookId: "sample-academic-guide-pdf",
-    userName: "Prof. Arvind Saxena",
-    userRole: "Editorial Advisor, Pune",
-    rating: 5,
-    title: "Accurate ₹1 token verification",
-    comment:
-      "UPI payment routed through Razorpay without friction. Clear order ID, invoice generation, and immediate digital monograph download.",
-    date: "2026-10-05",
-    edition: "ebook",
-    isVerified: true,
-    helpfulCount: 9,
-  },
   {
     id: "rev-ai-1",
     bookId: "artificial-intelligence-new-horizons",
@@ -402,7 +366,8 @@ export function getAllReviews(): BookReview[] {
     setStoredJson(STORAGE_KEY_REVIEWS, INITIAL_REVIEWS);
     return INITIAL_REVIEWS;
   }
-  return stored;
+  // Filter out any legacy test book reviews
+  return stored.filter((r) => r.bookId !== "sample-academic-guide-pdf");
 }
 
 /**
@@ -477,7 +442,6 @@ function computeRatingStats(bookId: string): {
 } {
   const reviews = getBookReviews(bookId);
   if (reviews.length === 0) {
-    // Default academic baseline rating if no specific reviews yet
     return { averageRating: 4.8, reviewCount: 0 };
   }
   const sum = reviews.reduce((acc, r) => acc + r.rating, 0);
@@ -588,7 +552,6 @@ export function recordBookPurchase(orderData: {
   current.ordersCount += 1;
   if (orderData.edition === "ebook") {
     current.ebookOrdersCount += 1;
-    // An eBook purchase also grants access to instant download
     current.downloadsCount += 1;
   } else {
     current.paperbackOrdersCount += 1;
