@@ -32,3 +32,6 @@ scripts/
 *.csv
 razorpay/
 Daily Work Records*
+/books/
+
+

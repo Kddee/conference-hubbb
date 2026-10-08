@@ -81,6 +81,7 @@ export interface VerifyPaymentParams {
   razorpay_order_id: string;
   razorpay_payment_id: string;
   razorpay_signature: string;
+  bookId?: string;
 }
 
 export interface VerifyPaymentResponse {
@@ -88,6 +89,9 @@ export interface VerifyPaymentResponse {
   message: string;
   order_id: string;
   payment_id: string;
+  downloadUrl?: string;
+  downloadToken?: string;
+  expires?: number;
 }
 
 /**
@@ -122,3 +126,42 @@ export interface CustomerShippingDetails {
   state: string;
   pincode: string;
 }
+
+export interface OrderEmailPayload {
+  orderId: string;
+  paymentId: string;
+  bookId: string;
+  bookTitle: string;
+  edition: "paperback" | "ebook";
+  amount: number;
+  customerName: string;
+  customerEmail: string;
+  customerPhone: string;
+  shippingAddress?: {
+    address?: string;
+    city?: string;
+    state?: string;
+    pincode?: string;
+  };
+  pdfDownloadUrl?: string;
+}
+
+/**
+ * Dispatches order details to info@eminsphere.com and official receipt to customer
+ */
+export async function sendOrderNotificationEmail(
+  payload: OrderEmailPayload
+): Promise<{ success: boolean; message?: string }> {
+  try {
+    const res = await fetch("/api/send-order-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    return await res.json();
+  } catch (err) {
+    console.warn("Could not dispatch order notification email:", err);
+    return { success: false };
+  }
+}
+

@@ -104,11 +104,26 @@ export default async function handler(req, res) {
       });
     }
 
+    // Generate cryptographically signed download access token for the book
+    const targetBookId = (body.bookId || "").trim();
+    const expires = Date.now() + 30 * 24 * 60 * 60 * 1000; // 30 days access
+    const downloadToken = crypto
+      .createHmac("sha256", key_secret)
+      .update(`${targetBookId}:${razorpay_payment_id}:${expires}`)
+      .digest("hex");
+
+    const downloadUrl = targetBookId
+      ? `/api/download-book?bookId=${encodeURIComponent(targetBookId)}&paymentId=${encodeURIComponent(razorpay_payment_id)}&expires=${expires}&token=${downloadToken}`
+      : "";
+
     return sendJson(res, 200, {
       success: true,
       message: "Payment signature verified successfully",
       order_id: razorpay_order_id,
       payment_id: razorpay_payment_id,
+      downloadUrl,
+      downloadToken,
+      expires,
     });
   } catch (error) {
     console.error("Razorpay verification error:", error);

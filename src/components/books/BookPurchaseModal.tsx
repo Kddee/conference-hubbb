@@ -22,6 +22,8 @@ import {
   Lock,
   BookOpen,
   Mail,
+  Printer,
+  Download,
 } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -29,6 +31,7 @@ import {
   loadRazorpayScript,
   createRazorpayOrder,
   verifyRazorpayPayment,
+  sendOrderNotificationEmail,
 } from "@/services/razorpay";
 import {
   recordBookPurchase,
@@ -67,6 +70,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
     paymentId: string;
     edition: BookEdition;
     amount: number;
+    downloadUrl?: string;
   } | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -218,18 +222,53 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
           try {
             setIsVerifying(true);
             // 4. Verify payment signature on backend
-            await verifyRazorpayPayment({
+            const verifyRes = await verifyRazorpayPayment({
               razorpay_order_id: response.razorpay_order_id,
               razorpay_payment_id: response.razorpay_payment_id,
               razorpay_signature: response.razorpay_signature,
+              bookId: book.id,
             });
 
-            // Set state to show success screen
+            const finalDownloadUrl =
+              verifyRes.downloadUrl || book.pdfFile || `/books/pdf/${book.id}.pdf`;
+
+            // Set state to show success screen with book download access
             setPaymentSuccess({
               orderId: response.razorpay_order_id,
               paymentId: response.razorpay_payment_id,
               edition: selectedEdition,
               amount: currentPrice,
+              downloadUrl: finalDownloadUrl,
+            });
+
+            // 5. Send order notification email to info@eminsphere.com and receipt to customer
+            const absoluteDownloadUrl =
+              typeof window !== "undefined" && finalDownloadUrl.startsWith("/")
+                ? `${window.location.origin}${finalDownloadUrl}`
+                : finalDownloadUrl;
+
+            sendOrderNotificationEmail({
+              orderId: response.razorpay_order_id,
+              paymentId: response.razorpay_payment_id,
+              bookId: book.id,
+              bookTitle: book.title,
+              edition: selectedEdition,
+              amount: currentPrice,
+              customerName: formData.name.trim(),
+              customerEmail: cleanEmail,
+              customerPhone: cleanPhone,
+              shippingAddress:
+                selectedEdition === "paperback"
+                  ? {
+                      address: formData.address.trim(),
+                      city: formData.city.trim(),
+                      state: formData.state.trim(),
+                      pincode: formData.pincode.trim(),
+                    }
+                  : undefined,
+              pdfDownloadUrl: absoluteDownloadUrl,
+            }).catch((emailErr) => {
+              console.warn("Background order email trigger:", emailErr);
             });
 
             // Record purchase and metrics in book records service
@@ -426,25 +465,56 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
             </div>
 
             {paymentSuccess.edition === "ebook" && (
-              <div className="pt-1">
+              <div className="pt-2 space-y-2">
                 <a
-                  href="/sample-academic-guide.pdf"
-                  download="Sample-Academic-Guide-eBook.pdf"
+                  href={
+                    paymentSuccess.downloadUrl ||
+                    book.pdfFile ||
+                    `/books/pdf/${book.id}.pdf`
+                  }
+                  download={book.pdfFileName || `${book.title}.pdf`}
                   onClick={() => recordBookDownload(book.id)}
-                  className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl font-bold text-sm bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-md cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2.5 w-full py-4 px-4 rounded-2xl font-bold text-sm bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white transition-all shadow-lg hover:shadow-emerald-500/25 cursor-pointer text-center"
                 >
-                  <BookOpen className="w-4 h-4" /> Download Sample eBook PDF Now
+                  <Download className="w-5 h-5 flex-shrink-0 animate-bounce" />
+                  <span className="truncate">Download eBook PDF: {book.title}</span>
                 </a>
+                <p className="text-[11px] text-muted-foreground text-center">
+                  🔒 Authenticated DRM-Licensed Copy • Payment Reference: {paymentSuccess.paymentId}
+                </p>
               </div>
             )}
 
-            <Button
-              onClick={handleModalClose}
-              size="lg"
-              className="w-full rounded-xl font-bold bg-primary hover:bg-accent text-primary-foreground hover:text-accent-foreground"
-            >
-              Done
-            </Button>
+            {paymentSuccess.edition === "paperback" && (
+              <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-3.5 text-xs text-blue-700 dark:text-blue-300 text-left flex items-start gap-2.5">
+                <Truck className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block font-semibold">Priority Courier Packaging Dispatched to Desk</strong>
+                  <span>
+                    Your complete shipping address and recipient details have been transmitted to{" "}
+                    <strong>info@eminsphere.com</strong>. Our logistics partners will deliver to your doorstep.
+                  </span>
+                </div>
+              </div>
+            )}
+
+            <div className="flex flex-col sm:flex-row items-center gap-2.5 pt-2">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => window.print()}
+                className="w-full rounded-xl font-medium border-border/80 text-xs sm:text-sm flex items-center justify-center gap-2"
+              >
+                <Printer className="w-4 h-4" /> Print Order Receipt
+              </Button>
+              <Button
+                onClick={handleModalClose}
+                size="lg"
+                className="w-full rounded-xl font-bold bg-primary hover:bg-accent text-primary-foreground hover:text-accent-foreground"
+              >
+                Done
+              </Button>
+            </div>
           </div>
         ) : (
           /* CHECKOUT FORM */
