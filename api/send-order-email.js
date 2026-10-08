@@ -1,4 +1,25 @@
 import nodemailer from "nodemailer";
+import fs from "fs";
+import path from "path";
+
+const BOOK_PDF_MAP = {
+  "artificial-intelligence-new-horizons": "artificial-intelligence-new-horizons.pdf",
+  "emerging-digital-technologies": "emerging-digital-technologies.pdf",
+  "ai-driven-supply-chains": "ai-driven-supply-chains.pdf",
+  "next-generation-ai-native-iam": "next-generation-ai-native-iam.pdf",
+  "building-public-health-data-systems": "building-public-health-data-systems.pdf",
+  "cloud-scale-systems": "cloud-scale-systems.pdf",
+  "designing-scalable-event-driven-data-platforms": "designing-scalable-event-driven-data-platforms.pdf",
+  "healthcare-cloud-compliance": "healthcare-cloud-compliance.pdf",
+  "modernization-of-legacy-systems-over-cloud": "modernization-of-legacy-systems-over-cloud.pdf",
+  "analytics-in-the-ai-era": "analytics-in-the-ai-era.pdf",
+  "it-in-the-energy-sector": "it-in-the-energy-sector.pdf",
+  "secure-cloud-ai-ml-for-financial-and-pension-systems": "secure-cloud-ai-ml-for-financial-and-pension-systems.pdf",
+  "predictive-analytics-for-meteorological-data-using-ai": "predictive-analytics-for-meteorological-data-using-ai.pdf",
+  "mastering-cloud-computing-fundamentals-to-enterprise-scale": "mastering-cloud-computing-fundamentals-to-enterprise-scale.pdf",
+  "artificial-intelligence-for-scalable-distributed-systems": "artificial-intelligence-for-scalable-distributed-systems.pdf",
+  "mechai-nexus-convergence-of-ai-robotics": "mechai-nexus-convergence-of-ai-robotics.pdf",
+};
 
 async function parseBody(req) {
   if (req.body) {
@@ -37,11 +58,12 @@ function sendJson(res, statusCode, data) {
 }
 
 function getSmtpConfig() {
-  const host = process.env.SMTP_HOST || process.env.MAIL_HOST || "";
+  const host = (process.env.SMTP_HOST || process.env.MAIL_HOST || "smtp.gmail.com").trim();
   const port = Number(process.env.SMTP_PORT || process.env.MAIL_PORT || 465);
-  const user = process.env.SMTP_USER || process.env.EMAIL_USER || process.env.MAIL_USER || "";
-  const pass = process.env.SMTP_PASS || process.env.EMAIL_PASS || process.env.MAIL_PASS || "";
-  const secure = process.env.SMTP_SECURE === "true" || port === 465;
+  const user = (process.env.SMTP_USER || process.env.EMAIL_USER || process.env.MAIL_USER || "info@eminsphere.com").trim();
+  const rawPass = (process.env.SMTP_PASS || process.env.EMAIL_PASS || process.env.MAIL_PASS || "cxkw pivc nfdw hdmf").trim();
+  const pass = rawPass.replace(/\s+/g, "");
+  const secure = process.env.SMTP_SECURE === "false" ? false : port === 465 || true;
 
   if (host && user && pass) {
     return {
@@ -49,17 +71,6 @@ function getSmtpConfig() {
       port,
       secure,
       auth: { user, pass },
-    };
-  }
-
-  // Also support Gmail simple app password if GMAIL_USER and GMAIL_APP_PASSWORD are provided
-  if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
-    return {
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
     };
   }
 
@@ -96,7 +107,7 @@ export default async function handler(req, res) {
     } = body;
 
     const isPaperback = edition.toLowerCase() === "paperback";
-    const notificationTarget = process.env.ORDER_NOTIFICATION_EMAIL || "info@eminsphere.com";
+    const notificationTarget = (process.env.ORDER_NOTIFICATION_EMAIL || "info@eminsphere.com").trim();
     const orderDate = new Date().toLocaleString("en-IN", {
       timeZone: "Asia/Kolkata",
       dateStyle: "full",
@@ -121,7 +132,7 @@ export default async function handler(req, res) {
     const publisherHtml = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 650px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
         <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 24px 32px; color: #ffffff;">
-          <h1 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.02em;">Eminsphere Global Publishing</h1>
+          <h1 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.02em;">EminSphere Global Publishing</h1>
           <p style="margin: 4px 0 0 0; font-size: 13px; color: #94a3b8;">Automated Order Desk & Fulfillment Notification</p>
         </div>
 
@@ -146,7 +157,7 @@ export default async function handler(req, res) {
             <tr>
               <td style="padding: 8px 0; color: #64748b;">Edition:</td>
               <td style="padding: 8px 0; font-weight: 600; color: ${isPaperback ? "#2563eb" : "#059669"};">
-                ${isPaperback ? "📦 PHYSICAL PAPERBACK (Requires Courier Dispatch)" : "📱 DIGITAL eBOOK (Delivered via Download Link)"}
+                ${isPaperback ? "📦 PHYSICAL PAPERBACK (Requires Courier Dispatch)" : "📱 DIGITAL eBOOK (Delivered via Download Link & Email Attachment)"}
               </td>
             </tr>
             <tr>
@@ -214,17 +225,17 @@ export default async function handler(req, res) {
           }
         </div>
         <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 16px 32px; font-size: 11px; color: #94a3b8; text-align: center;">
-          Eminsphere Publishing Agency • Automated Order Dispatch Engine • info@eminsphere.com
+          EminSphere Publishing Agency • Automated Order Dispatch Engine • info@eminsphere.com
         </div>
       </div>
     `;
 
     // 2. HTML Email for Customer (customerEmail)
-    const customerSubject = `Order Confirmation & Official Receipt: ${bookTitle} - Eminsphere Global Publishing`;
+    const customerSubject = `Order Confirmation & Official Receipt: ${bookTitle} - EminSphere`;
     const customerHtml = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
         <div style="background: linear-gradient(135deg, #090d16 0%, #1e293b 100%); padding: 26px 32px; color: #ffffff;">
-          <h1 style="margin: 0; font-size: 22px; font-weight: 700;">Eminsphere Global Publishing</h1>
+          <h1 style="margin: 0; font-size: 22px; font-weight: 700;">EminSphere</h1>
           <p style="margin: 4px 0 0 0; font-size: 13px; color: #94a3b8;">Official Order Confirmation & Payment Receipt</p>
         </div>
 
@@ -233,7 +244,7 @@ export default async function handler(req, res) {
             Dear <strong>${customerName}</strong>,
           </p>
           <p style="font-size: 14px; color: #475569; line-height: 1.6;">
-            Thank you for purchasing directly from Eminsphere Global Publishing. Your payment has been successfully verified, and your order has been confirmed.
+            Thank you for purchasing directly from EminSphere. Your payment has been successfully verified, and your order has been confirmed.
           </p>
 
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin: 24px 0;">
@@ -274,7 +285,7 @@ export default async function handler(req, res) {
                 📥 Access Your Digital eBook Now
               </h3>
               <p style="font-size: 13px; color: #15803d; margin: 0 0 16px 0;">
-                Your copy of <strong>"${bookTitle}"</strong> is ready for instant download:
+                Your verified copy of <strong>"${bookTitle}"</strong> is ready. You can download the PDF anytime using the button below (also attached to this email):
               </p>
               <a href="${pdfDownloadUrl}" style="display: inline-block; background: #059669; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 14px; padding: 12px 28px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
                 Download eBook PDF Now
@@ -307,39 +318,65 @@ export default async function handler(req, res) {
           }
 
           <p style="font-size: 13px; color: #64748b; line-height: 1.5; margin-top: 24px;">
-            For queries, invoices, or delivery status, please reply to this email or contact us at <a href="mailto:info@eminsphere.com" style="color: #0284c7;">info@eminsphere.com</a>.
+            For queries, invoices, or delivery status, please reply directly to this email or contact us at <a href="mailto:info@eminsphere.com" style="color: #0284c7;">info@eminsphere.com</a>.
           </p>
 
           <p style="font-size: 13px; color: #0f172a; margin-bottom: 0;">
             Warm regards,<br />
             <strong>Editorial & Fulfillment Team</strong><br />
-            Eminsphere Global Publishing
+            EminSphere
           </p>
         </div>
 
         <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 16px 32px; font-size: 11px; color: #94a3b8; text-align: center;">
-          © ${new Date().getFullYear()} Eminsphere Global Publishing. All rights reserved. • info@eminsphere.com
+          © ${new Date().getFullYear()} EminSphere. All rights reserved. • info@eminsphere.com
         </div>
       </div>
     `;
 
-    // 3. Attempt to send via Nodemailer
+    // 3. Resolve PDF file attachment for customer eBook order
+    const attachments = [];
+    if (!isPaperback && bookId) {
+      const matchedFileName = BOOK_PDF_MAP[bookId] || `${bookId}.pdf`;
+      const possibleFilePaths = [
+        path.join(process.cwd(), "public", "books", "pdf", matchedFileName),
+        path.join(process.cwd(), "dist", "books", "pdf", matchedFileName),
+        path.join(process.cwd(), "books", matchedFileName),
+      ];
+
+      for (const p of possibleFilePaths) {
+        if (fs.existsSync(p)) {
+          const stat = fs.statSync(p);
+          // Attach if within safe email size (< 20MB)
+          if (stat.size < 20 * 1024 * 1024) {
+            attachments.push({
+              filename: `${bookTitle.replace(/[/\\?%*:|"<>]/g, "-")}.pdf`,
+              path: p,
+            });
+          }
+          break;
+        }
+      }
+    }
+
+    // 4. Attempt to send via Nodemailer
     const smtpConfig = getSmtpConfig();
     let emailStatus = {
       publisherSent: false,
       customerSent: false,
       mode: smtpConfig ? "live_smtp" : "logged_pending_smtp_config",
+      hasAttachment: attachments.length > 0,
     };
 
     if (smtpConfig) {
       const transporter = nodemailer.createTransport(smtpConfig);
-      const senderAddress = smtpConfig.auth?.user || "orders@eminsphere.com";
 
-      // Dispatch to publisher
+      // Dispatch to publisher (info@eminsphere.com)
       try {
         await transporter.sendMail({
-          from: `"Eminsphere Orders" <${senderAddress}>`,
+          from: '"EminSphere" <info@eminsphere.com>',
           to: notificationTarget,
+          replyTo: customerEmail || "info@eminsphere.com",
           subject: publisherSubject,
           html: publisherHtml,
         });
@@ -352,20 +389,18 @@ export default async function handler(req, res) {
       if (customerEmail && customerEmail.includes("@")) {
         try {
           await transporter.sendMail({
-            from: `"Eminsphere Publishing" <${senderAddress}>`,
+            from: '"EminSphere" <info@eminsphere.com>',
             to: customerEmail,
+            replyTo: "info@eminsphere.com",
             subject: customerSubject,
             html: customerHtml,
+            attachments: attachments,
           });
           emailStatus.customerSent = true;
         } catch (err) {
           console.error("Failed sending customer receipt email:", err);
         }
       }
-    } else {
-      console.log(
-        "[SMTP Notice] Outbound SMTP credentials not configured in environment variables. Email notification was logged and ready to dispatch once SMTP_HOST/SMTP_USER/SMTP_PASS are added to Vercel."
-      );
     }
 
     return sendJson(res, 200, {
