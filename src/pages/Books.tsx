@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -49,11 +49,23 @@ import {
   Landmark,
   User,
   Calendar,
-  CreditCard
+  CreditCard,
+  BarChart3,
+  FileSpreadsheet,
+  Download
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { publishedBooks, Book, getBookPrice } from "@/data/booksData";
 import { BookPurchaseModal } from "@/components/books/BookPurchaseModal";
+import { BookAnalyticsDashboard } from "@/components/books/BookAnalyticsDashboard";
+import { BookReviewFormModal } from "@/components/books/BookReviewFormModal";
+import {
+  getBookAnalytics,
+  getCatalogSummary,
+  exportAnalyticsCSV,
+  subscribeToRecords,
+  BookAnalyticsRecord,
+} from "@/services/bookRecordsService";
 
 // CATEGORIES & DISCIPLINES FOR FILTERING
 const disciplines = [
@@ -549,6 +561,28 @@ const Books = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [quickViewBook, setQuickViewBook] = useState<Book | null>(null);
   const [selectedBookForCheckout, setSelectedBookForCheckout] = useState<Book | null>(null);
+  const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false);
+  const [selectedBookForReview, setSelectedBookForReview] = useState<Book | null>(null);
+  const [catalogSummary, setCatalogSummary] = useState(getCatalogSummary());
+  const [recordsMap, setRecordsMap] = useState<Record<string, BookAnalyticsRecord>>({});
+
+  const refreshRecords = () => {
+    setCatalogSummary(getCatalogSummary());
+    const map: Record<string, BookAnalyticsRecord> = {};
+    publishedBooks.forEach((b) => {
+      map[b.id] = getBookAnalytics(b.id);
+    });
+    setRecordsMap(map);
+  };
+
+  useEffect(() => {
+    refreshRecords();
+    const unsubscribe = subscribeToRecords(() => {
+      refreshRecords();
+    });
+    return unsubscribe;
+  }, []);
+
   const [activeTab, setActiveTab] = useState<"features" | "isbn" | "types" | "workflow" | "guidelines" | "disciplines" | "comparison">("features");
 
   // Dynamic proposal checklist state
@@ -1390,6 +1424,25 @@ const Books = () => {
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
             All volumes are published with official registered ISBN allocations, double-blind peer reviewed, and available worldwide on Amazon in paperback and Kindle editions. Ordered chronologically with newest releases on top.
           </p>
+
+          {/* CATALOG ANALYTICS & CSV CONTROLS */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
+            <Button
+              onClick={() => setIsAnalyticsOpen(true)}
+              className="rounded-2xl font-bold gap-2 text-xs sm:text-sm py-5 px-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg cursor-pointer transition-all hover:scale-105"
+            >
+              <BarChart3 className="w-4 h-4 text-accent" />
+              <span>Book Records & Analytics ({catalogSummary.totalDownloads.toLocaleString()}+ Total Downloads)</span>
+            </Button>
+            <Button
+              onClick={() => exportAnalyticsCSV()}
+              variant="outline"
+              className="rounded-2xl font-bold gap-2 text-xs sm:text-sm py-5 px-5 border-emerald-500/40 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/10 shadow-sm cursor-pointer"
+            >
+              <FileSpreadsheet className="w-4 h-4 text-emerald-500" />
+              <span>Export Records (CSV)</span>
+            </Button>
+          </div>
         </div>
 
         {/* SEARCH & FILTER CONTROLS */}
@@ -1523,6 +1576,31 @@ const Books = () => {
                           <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground bg-muted/70 px-3 py-1 rounded-md">
                             <Calendar className="h-3.5 w-3.5 text-accent" /> {book.date}
                           </span>
+
+                          {/* Live Rating & Downloads */}
+                          {(() => {
+                            const stats = recordsMap[book.id] || getBookAnalytics(book.id);
+                            return (
+                              <>
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setSelectedBookForReview(book);
+                                  }}
+                                  className="inline-flex items-center gap-1 text-xs font-bold text-amber-500 hover:text-amber-600 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20 transition-colors cursor-pointer"
+                                  title="Click to write or read reviews"
+                                >
+                                  <Star className="h-3.5 w-3.5 fill-current" />
+                                  <span>{stats.averageRating}</span>
+                                  <span className="text-muted-foreground font-normal">({stats.reviewCount})</span>
+                                </button>
+                                <span className="inline-flex items-center gap-1 font-mono text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded-md border border-emerald-500/20">
+                                  <Download className="h-3 w-3" />
+                                  <span>{stats.downloadsCount} downloads</span>
+                                </span>
+                              </>
+                            );
+                          })()}
                         </div>
                         {book.id === "sample-academic-guide-pdf" ? (
                           <span className="text-[11px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-3 py-1 rounded-full border border-amber-500/30 flex items-center gap-1">
@@ -1581,6 +1659,15 @@ const Books = () => {
                         >
                           <CreditCard className="h-4 w-4" />
                           Buy Direct (₹{getBookPrice(book, "ebook")})
+                        </Button>
+                        <Button
+                          onClick={() => setSelectedBookForReview(book)}
+                          variant="outline"
+                          className="inline-flex flex-1 sm:flex-initial justify-center items-center gap-1.5 border-amber-500/40 text-amber-600 dark:text-amber-400 hover:bg-amber-500/10 font-bold px-3 py-2.5 rounded-xl text-xs sm:text-sm transition-all cursor-pointer"
+                          title="Submit reader or academic review"
+                        >
+                          <Star className="h-3.5 w-3.5 fill-current" />
+                          Review
                         </Button>
                         <Link 
                           to={`/books/${book.id}`}
@@ -1768,6 +1855,22 @@ const Books = () => {
         isOpen={!!selectedBookForCheckout}
         onClose={() => setSelectedBookForCheckout(null)}
       />
+
+      {/* BOOK ANALYTICS & RECORDS DASHBOARD */}
+      <BookAnalyticsDashboard
+        isOpen={isAnalyticsOpen}
+        onClose={() => setIsAnalyticsOpen(false)}
+      />
+
+      {/* BOOK REVIEW FORM MODAL */}
+      {selectedBookForReview && (
+        <BookReviewFormModal
+          book={selectedBookForReview}
+          isOpen={!!selectedBookForReview}
+          onClose={() => setSelectedBookForReview(null)}
+          onReviewSubmitted={refreshRecords}
+        />
+      )}
     </div>
   );
 };

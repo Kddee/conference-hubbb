@@ -30,6 +30,10 @@ import {
   createRazorpayOrder,
   verifyRazorpayPayment,
 } from "@/services/razorpay";
+import {
+  recordBookPurchase,
+  recordBookDownload,
+} from "@/services/bookRecordsService";
 
 interface BookPurchaseModalProps {
   book: Book | null;
@@ -227,6 +231,19 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
               edition: selectedEdition,
               amount: currentPrice,
             });
+
+            // Record purchase and metrics in book records service
+            recordBookPurchase({
+              bookId: book.id,
+              bookTitle: book.title,
+              edition: selectedEdition,
+              amount: currentPrice,
+              customerName: formData.name.trim(),
+              customerEmail: cleanEmail,
+              paymentId: response.razorpay_payment_id,
+              orderId: response.razorpay_order_id,
+            });
+
             toast.success(
               `Payment verified! Your ${selectedEdition === "paperback" ? "Paperback" : "eBook"} order is placed.`
             );
@@ -413,6 +430,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                 <a
                   href="/sample-academic-guide.pdf"
                   download="Sample-Academic-Guide-eBook.pdf"
+                  onClick={() => recordBookDownload(book.id)}
                   className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl font-bold text-sm bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-md cursor-pointer"
                 >
                   <BookOpen className="w-4 h-4" /> Download Sample eBook PDF Now

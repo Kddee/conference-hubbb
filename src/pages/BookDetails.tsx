@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { publishedBooks, getBookPrice } from "@/data/booksData";
 import { BookPurchaseModal } from "@/components/books/BookPurchaseModal";
+import { BookReviewsSection } from "@/components/books/BookReviewsSection";
+import { BookAnalyticsDashboard } from "@/components/books/BookAnalyticsDashboard";
 import { PageHero } from "@/components/layout/PageHero";
 import { 
   ArrowLeft, 
@@ -9,23 +11,45 @@ import {
   BookOpen, 
   ShieldCheck, 
   Globe, 
-  Copyright, 
   User, 
   Calendar, 
   Sparkles, 
-  Share2, 
   ArrowRight,
-  Send,
   CreditCard,
-  Truck
+  Download,
+  Star,
+  BarChart3,
+  CheckCircle2,
+  TrendingUp,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { 
+  getBookAnalytics, 
+  recordBookView, 
+  subscribeToRecords, 
+  BookAnalyticsRecord 
+} from "@/services/bookRecordsService";
 
 const BookDetails = () => {
   const { id } = useParams<{ id: string }>();
   const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
+  const [isAnalyticsModalOpen, setIsAnalyticsModalOpen] = useState(false);
   const book = publishedBooks.find(b => b.id === id);
+
+  const [analytics, setAnalytics] = useState<BookAnalyticsRecord | null>(null);
+
+  useEffect(() => {
+    if (book) {
+      recordBookView(book.id);
+      setAnalytics(getBookAnalytics(book.id));
+
+      const unsubscribe = subscribeToRecords(() => {
+        setAnalytics(getBookAnalytics(book.id));
+      });
+      return unsubscribe;
+    }
+  }, [book?.id]);
 
   if (!book) {
     return <Navigate to="/books" replace />;
@@ -44,13 +68,25 @@ const BookDetails = () => {
       />
 
       <section className="container py-12 md:py-20 max-w-6xl mx-auto">
-        <Link 
-          to="/books" 
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 font-medium text-sm group"
-        >
-          <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-          Back to Book Catalog
-        </Link>
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+          <Link 
+            to="/books" 
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium text-sm group"
+          >
+            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            Back to Book Catalog
+          </Link>
+
+          <Button
+            onClick={() => setIsAnalyticsModalOpen(true)}
+            variant="outline"
+            size="sm"
+            className="rounded-xl font-bold gap-2 text-xs border-primary/30 text-primary hover:bg-primary/10 shadow-sm cursor-pointer"
+          >
+            <BarChart3 className="w-3.5 h-3.5" />
+            View Book Records & Metrics
+          </Button>
+        </div>
 
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           {/* LEFT COLUMN: COVER & PURCHASE CARD */}
@@ -136,6 +172,68 @@ const BookDetails = () => {
               </div>
             </Card>
 
+            {/* PUBLICATION IMPACT & RECORDS SNAPSHOT */}
+            <Card className="p-5 bg-card border border-border/60 rounded-3xl text-xs space-y-4 shadow-sm">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-sm text-foreground flex items-center gap-1.5">
+                  <TrendingUp className="h-4 w-4 text-emerald-500" /> Publication Records
+                </span>
+                <span className="text-[10px] bg-emerald-500/10 text-emerald-600 font-bold px-2 py-0.5 rounded-full">
+                  Live Metrics
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 pt-1">
+                <div className="bg-muted/50 p-3 rounded-xl border border-border/40">
+                  <span className="text-[10px] text-muted-foreground uppercase tracking-wider block font-medium">
+                    Total Downloads
+                  </span>
+                  <span className="text-xl font-mono font-bold text-foreground flex items-center gap-1 mt-0.5">
+                    <Download className="w-3.5 h-3.5 text-emerald-500" />
+                    {analytics?.downloadsCount ?? 0}
+                  </span>
+                </div>
+
+                <div className="bg-muted/50 p-3 rounded-xl border border-border/40">
+                  <span className="text-[10px] text-muted-foreground uppercase tracking-wider block font-medium">
+                    Direct Orders
+                  </span>
+                  <span className="text-xl font-mono font-bold text-foreground mt-0.5 block">
+                    {analytics?.ordersCount ?? 0}
+                  </span>
+                </div>
+
+                <div className="bg-muted/50 p-3 rounded-xl border border-border/40">
+                  <span className="text-[10px] text-muted-foreground uppercase tracking-wider block font-medium">
+                    Average Rating
+                  </span>
+                  <span className="text-xl font-mono font-bold text-amber-500 flex items-center gap-1 mt-0.5">
+                    <Star className="w-3.5 h-3.5 fill-current" />
+                    {analytics?.averageRating ?? 4.8}
+                  </span>
+                </div>
+
+                <div className="bg-muted/50 p-3 rounded-xl border border-border/40">
+                  <span className="text-[10px] text-muted-foreground uppercase tracking-wider block font-medium">
+                    Verified Reviews
+                  </span>
+                  <span className="text-xl font-mono font-bold text-foreground mt-0.5 block">
+                    {analytics?.reviewCount ?? 0}
+                  </span>
+                </div>
+              </div>
+
+              <Button
+                onClick={() => setIsAnalyticsModalOpen(true)}
+                variant="ghost"
+                size="sm"
+                className="w-full text-xs font-semibold text-primary hover:text-accent gap-1.5 pt-2"
+              >
+                <BarChart3 className="w-3.5 h-3.5" />
+                View Detailed Catalog Analytics
+              </Button>
+            </Card>
+
             {/* TRUST BADGE CARD */}
             <Card className="p-5 bg-muted/40 border border-border/60 rounded-2xl text-xs space-y-3">
               <div className="flex items-center gap-2 font-bold text-primary">
@@ -150,9 +248,27 @@ const BookDetails = () => {
           {/* RIGHT COLUMN: BOOK SYNOPSIS & AUTHOR DETAILS */}
           <div className="lg:col-span-8 space-y-8">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold uppercase tracking-wider mb-4">
-                <Sparkles className="h-3.5 w-3.5" /> Peer-Reviewed Volume
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold uppercase tracking-wider">
+                  <Sparkles className="h-3.5 w-3.5" /> Peer-Reviewed Volume
+                </span>
+
+                {/* Rating Badge */}
+                <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 text-xs font-bold">
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <span>{analytics?.averageRating ?? 4.8}</span>
+                  <span className="text-muted-foreground font-normal">
+                    ({analytics?.reviewCount ?? 0} reviews)
+                  </span>
+                </div>
+
+                {/* Download Badge */}
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold font-mono">
+                  <Download className="w-3.5 h-3.5" />
+                  <span>{analytics?.downloadsCount ?? 0} Downloads</span>
+                </span>
               </div>
+
               <h1 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-3 leading-tight">
                 {book.title}
               </h1>
@@ -206,6 +322,9 @@ const BookDetails = () => {
                 </a>
               </Button>
             </div>
+
+            {/* ACADEMIC REVIEWS & RATINGS SECTION */}
+            <BookReviewsSection book={book} />
           </div>
         </div>
 
@@ -247,6 +366,13 @@ const BookDetails = () => {
         book={book}
         isOpen={isPurchaseModalOpen}
         onClose={() => setIsPurchaseModalOpen(false)}
+      />
+
+      {/* BOOK ANALYTICS & RECORDS DASHBOARD */}
+      <BookAnalyticsDashboard
+        isOpen={isAnalyticsModalOpen}
+        onClose={() => setIsAnalyticsModalOpen(false)}
+        initialBookId={book.id}
       />
     </div>
   );
