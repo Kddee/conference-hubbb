@@ -72,6 +72,7 @@ const conferenceData = {
   mode: "Hybrid Mode • Worldwide Virtual",
   isbn: "978-81-981245-4-1",
   registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
+  cmtLink: "https://cmt3.research.microsoft.com/ICGEN2026",
   
   about: [
     "The International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
@@ -428,13 +429,18 @@ const Icgen2026 = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
               <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black h-12 sm:h-14 px-8 rounded-full shadow-gold hover:-translate-y-0.5 transition-all text-sm sm:text-base">
                 <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer">
                   Register Online (Before 25 Oct) <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold h-12 sm:h-14 px-8 rounded-full transition-all text-sm sm:text-base">
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-accent/15 hover:bg-accent/25 border-accent/40 text-accent font-bold h-12 sm:h-14 px-8 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-sm sm:text-base">
+                <a href={conferenceData.cmtLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                  Submit via CMT <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold h-12 sm:h-14 px-7 rounded-full transition-all text-sm sm:text-base">
                 <a href="#tracks">Explore GenAI Tracks</a>
               </Button>
             </div>
@@ -532,9 +538,16 @@ const Icgen2026 = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
             Six Vanguard AI & Deep-Tech Tracks
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6">
             Authors and research teams are invited to submit original, unpublished manuscripts across these high-impact trending domains.
           </p>
+          <div className="flex justify-center">
+            <Button asChild size="lg" className="rounded-full bg-accent hover:bg-accent/90 text-accent-foreground font-black px-8 h-12 shadow-lg hover:-translate-y-0.5 transition-all text-sm">
+              <a href={conferenceData.cmtLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                Submit via CMT <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -761,14 +774,16 @@ const Icgen2026 = () => {
             ))}
           </div>
 
-          {/* Microsoft CMT Service Notice */}
-          <div className="mt-10 sm:mt-12 p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-card/60 border border-white/10 backdrop-blur-md flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left shadow-lg">
-            <div className="h-12 w-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-              <ShieldCheck className="h-6 w-6 text-primary" />
-            </div>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed flex-grow">
+          {/* Microsoft CMT Service Plain Acknowledgment & Submission */}
+          <div className="mt-12 pt-8 border-t border-white/10 text-center max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
               The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
             </p>
+            <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 h-12 shadow-lg hover:-translate-y-0.5 transition-all text-sm sm:text-base">
+              <a href={conferenceData.cmtLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                Submit via CMT <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -857,9 +872,14 @@ const Icgen2026 = () => {
             Submit your manuscript today to present before world-renowned academicians, Silicon Valley architects, and global NRI pioneers. Achieve international recognition with ISBN proceedings and Scopus/WoS publication recommendations.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-black h-12 sm:h-14 px-10 rounded-full shadow-gold hover:-translate-y-1 transition-all text-sm sm:text-base w-full sm:w-auto">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-black h-12 sm:h-14 px-8 rounded-full shadow-gold hover:-translate-y-1 transition-all text-sm sm:text-base w-full sm:w-auto">
               <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer">
                 Register Online (Before 25 Oct)
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-accent/40 bg-accent/15 hover:bg-accent/25 text-accent font-bold h-12 sm:h-14 px-8 rounded-full shadow-md hover:-translate-y-1 transition-all text-sm sm:text-base w-full sm:w-auto">
+              <a href={conferenceData.cmtLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                Submit via CMT <ExternalLink className="h-4 w-4" />
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white/20 hover:bg-white/10 text-white font-semibold h-12 sm:h-14 px-8 rounded-full transition-all text-sm sm:text-base w-full sm:w-auto">

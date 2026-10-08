@@ -79,6 +79,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     isbn: "978-81-981245-4-1",
     location: "Hybrid Mode | Worldwide Virtual",
     registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
+    cmtLink: "https://cmt3.research.microsoft.com/ICGEN2026",
     description: "ICGEN-2026 (International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems) is an international flagship conference dedicated to groundbreaking advances in Generative AI, Autonomous Agentic Orchestration, Sovereign Foundation Models, and Physical Deep-Tech. Uniting Silicon Valley innovators, global researchers, and NRI technology leaders, all accepted submissions undergo rigorous double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers (ISBN: 978-81-981245-4-1) and indexing across Google Scholar, with recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
       "Generative AI, Large Language Models & Foundation Models (Pre-training, fine-tuning, reasoning architectures, multimodal LLMs)",
