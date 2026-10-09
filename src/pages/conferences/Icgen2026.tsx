@@ -271,6 +271,25 @@ const conferenceData = {
     }
   ],
 
+  speakers: [
+    {
+      name: "Heinz Dollberg",
+      designation: "Executive Vice President (ret.), Allianz",
+      organization: "Allianz",
+      country: "Germany 🇩🇪",
+      image: "/speakers/heinz-dollberg.jpg",
+      category: "Keynote Speaker"
+    },
+    {
+      name: "Peter Kasahara",
+      designation: "CXO for AI & Data Leadership and Innovation / Fortune 200 Group Chief Data Officer",
+      organization: "Zurich, Switzerland",
+      country: "Switzerland 🇨🇭",
+      image: "/speakers/peter-kasahara.jpg",
+      category: "Keynote Speaker"
+    }
+  ],
+
   faqs: [
     {
       q: "When is the final registration deadline?",
@@ -641,94 +660,87 @@ const Icgen2026 = () => {
             Distinguished Plenary & Keynote Speakers
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            World-renowned international research chairs, European professors, and frontier AI leaders delivering plenary lectures at ICGEN-2026.
+            World-renowned international corporate executives, enterprise leaders, and frontier AI practitioners delivering keynote addresses at ICGEN-2026.
           </p>
         </div>
 
-        {/* ENHANCED INFORMATIVE ANNOUNCEMENT CARD */}
-        <div className="relative rounded-3xl p-8 sm:p-14 bg-gradient-to-br from-card/80 via-card/50 to-primary/10 border border-primary/30 shadow-2xl overflow-hidden backdrop-blur-md">
-          {/* Subtle Ambient Glows */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+        {/* KEYNOTE SPEAKERS GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+          {conferenceData.speakers.map((s, idx) => (
+            <Card
+              key={idx}
+              className="group relative overflow-hidden rounded-3xl bg-card/60 border border-white/10 hover:border-primary/40 backdrop-blur-md p-6 sm:p-8 flex flex-col items-center text-center shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300"
+            >
+              {/* Subtle Ambient Glow */}
+              <div className="absolute top-0 right-0 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none group-hover:bg-primary/20 transition-all" />
 
-          <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
-            {/* Pulsing Status Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/15 border border-accent/35 text-accent text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 animate-pulse shadow-sm">
-              <Clock className="h-4 w-4 text-accent" />
-              <span>Official Speaker Lineup Updating Soon</span>
-            </div>
-
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 flex items-center justify-center mb-6 shadow-inner">
-              <Sparkles className="h-8 w-8 sm:h-10 sm:w-10 text-primary animate-pulse" />
-            </div>
-
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-4 leading-tight">
-              Distinguished Keynote Speakers Will Be Updated Soon
-            </h3>
-
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-8">
-              The International Academic Advisory Committee and Program Chairs of <strong className="text-white">ICGEN-2026</strong> are currently finalizing formal confirmations for our distinguished plenary keynote speakers, invited industry architects, and research chairs from leading international universities and deep-tech labs across the United States, Europe, and the Asia-Pacific.
-            </p>
-
-            {/* 3 Value Highlights */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full text-left mb-10">
-              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-primary/40 transition-colors">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="p-2 rounded-xl bg-primary/20 text-primary">
-                    <Globe className="h-4 w-4" />
-                  </div>
-                  <h4 className="text-xs sm:text-sm font-bold text-white">Global AI Faculty</h4>
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Visionary addresses spanning Large Foundation Models, Autonomous Agentic Swarms, and Embodied Physical AI.
-                </p>
+              {/* Role Badge */}
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-1 rounded-full bg-primary/15 text-primary border border-primary/30 mb-5 shadow-sm uppercase tracking-wider">
+                <Sparkles className="h-3 w-3" />
+                <span>{s.category}</span>
               </div>
 
-              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-accent/40 transition-colors">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="p-2 rounded-xl bg-accent/20 text-accent">
-                    <Presentation className="h-4 w-4" />
-                  </div>
-                  <h4 className="text-xs sm:text-sm font-bold text-white">Dual-Stage Broadcast</h4>
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  All plenary and keynote sessions will be streamed globally in real-time with interactive live Q&A for worldwide delegates.
-                </p>
+              {/* Headshot Portrait Frame - Carefully proportioned with object-top to prevent face cropping */}
+              <div className="relative w-48 h-56 sm:w-56 sm:h-64 mb-5 overflow-hidden rounded-2xl border-2 border-primary/30 bg-[#030914] shadow-md group-hover:border-primary group-hover:shadow-primary/20 transition-all">
+                <img
+                  src={s.image}
+                  alt={s.name}
+                  className="h-full w-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
 
-              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-emerald-500/40 transition-colors">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400">
-                    <CheckCircle2 className="h-4 w-4" />
-                  </div>
-                  <h4 className="text-xs sm:text-sm font-bold text-white">Direct Author Access</h4>
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Presenting authors and attendees will participate in dedicated interactive breakout forums and bilateral networking circles.
-                </p>
+              {/* Country Badge */}
+              <div className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/25 mb-3.5 shadow-sm">
+                <span>{s.country}</span>
               </div>
-            </div>
 
-            {/* Action Buttons & Contact */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
-              <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 py-6 rounded-full shadow-gold hover:-translate-y-0.5 transition-all text-sm">
-                <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  Register Online (Before 25 Oct) <ArrowRight className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold px-8 py-6 rounded-full transition-all text-sm">
-                <a href="#tracks" className="flex items-center gap-2">
-                  Explore Research Tracks
-                </a>
-              </Button>
-            </div>
+              {/* Speaker Name */}
+              <h3 className="font-serif font-bold text-2xl sm:text-3xl text-white mb-2 group-hover:text-primary transition-colors leading-snug">
+                {s.name}
+              </h3>
 
-            <div className="mt-8 pt-6 border-t border-white/10 text-xs text-muted-foreground flex flex-wrap items-center justify-center gap-2">
-              <span>Are you a senior researcher or tech leader interested in delivering an Invited Plenary Session?</span>
-              <a href="mailto:info@eminsphere.com" className="text-primary font-bold hover:underline inline-flex items-center gap-1">
-                Contact Program Secretariat <ExternalLink className="h-3 w-3" />
+              {/* Designation */}
+              <p className="text-xs sm:text-sm font-semibold text-accent mb-2 leading-relaxed">
+                {s.designation}
+              </p>
+
+              {/* Affiliation / Organization */}
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                {s.organization}
+              </p>
+            </Card>
+          ))}
+        </div>
+
+        {/* Additional Speakers & Call for Invited Chairs */}
+        <div className="relative rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-card/80 via-card/50 to-primary/10 border border-white/10 shadow-lg text-center max-w-4xl mx-auto backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider mb-3">
+            <Clock className="h-3.5 w-3.5" /> Additional Invited Speakers & Chairs
+          </div>
+          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl mx-auto">
+            The International Academic Advisory Committee of <strong className="text-white">ICGEN-2026</strong> is currently finalizing confirmations for additional invited plenary chairs and industry research leaders across the United States, Europe, and Asia-Pacific.
+          </p>
+
+          {/* Action Buttons & Contact */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto mb-6">
+            <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 py-6 rounded-full shadow-gold hover:-translate-y-0.5 transition-all text-sm">
+              <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                Register Online (Before 25 Oct) <ArrowRight className="h-4 w-4" />
               </a>
-            </div>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold px-8 py-6 rounded-full transition-all text-sm">
+              <a href="#tracks" className="flex items-center gap-2">
+                Explore Research Tracks
+              </a>
+            </Button>
+          </div>
+
+          <div className="pt-4 border-t border-white/10 text-xs text-muted-foreground flex flex-wrap items-center justify-center gap-2">
+            <span>Are you a senior researcher or tech leader interested in delivering an Invited Session?</span>
+            <a href="mailto:info@eminsphere.com" className="text-primary font-bold hover:underline inline-flex items-center gap-1">
+              Contact Program Secretariat <ExternalLink className="h-3 w-3" />
+            </a>
           </div>
         </div>
       </section>

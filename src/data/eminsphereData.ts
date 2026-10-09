@@ -95,12 +95,8 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Main Conference Sessions", date: "25 October 2026 (Sunday)" }
     ],
     speakers: [
-      { name: "Wiktoria Gromowa-Cieślik", designation: "CEO & Chief Metrics Officer, Human-Tech Fusion", university: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg", category: "Keynote Speaker" },
-      { name: "Dr. Sravanthi Dontu", designation: "Corporate Professional & Academic Researcher", university: "USA", image: "/speakers/dr-sravanthi-dontu.jpg", category: "Keynote Speaker" },
-      { name: "Hardeep Singh Tiwana", designation: "Golden Kubestronaut, The Kubernetes Show Creator", university: "USA", image: "/speakers/hardeep-singh-tiwana.jpg", category: "Keynote Speaker" },
-      { name: "Prof. Dr. Alexander Bull", designation: "IU International University", university: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg", category: "Plenary Speaker" },
-      { name: "Dr. Peter Kamau, CPA-K", designation: "Founder & CEO, PETKAM Solutions Ltd", university: "Kenya", image: "/speakers/dr-peter-kamau.jpg", category: "Plenary Speaker" },
-      { name: "Dr. Dina Alkhodary", designation: "Associate Professor of Business Administration, Middle East University", university: "Jordan", image: "/speakers/dr-dina-alkhodary.jpg", category: "Invited Speaker" }
+      { name: "Heinz Dollberg", designation: "Executive Vice President (ret.), Allianz", university: "Germany", image: "/speakers/heinz-dollberg.jpg", category: "Keynote Speaker" },
+      { name: "Peter Kasahara", designation: "CXO for AI & Data Leadership and Innovation / Fortune 200 Group Chief Data Officer", university: "Zurich, Switzerland", image: "/speakers/peter-kasahara.jpg", category: "Keynote Speaker" }
     ]
   },
   "icaits-26": {
