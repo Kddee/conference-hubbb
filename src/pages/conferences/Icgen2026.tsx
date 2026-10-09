@@ -287,6 +287,14 @@ const conferenceData = {
       country: "Switzerland 🇨🇭",
       image: "/speakers/peter-kasahara.jpg",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Pam Didner",
+      designation: "AI Keynote Speaker | Making AI Make Sense for Business Professionals | 5x Author & Consultant | Inc Magazine Columnist",
+      organization: "AI (Copilot & Claude) Workshops & Training | B2B Sales & Marketing",
+      country: "Raleigh-Durham, Carolina, USA 🇺🇸",
+      image: "/speakers/pam-didner.jpg",
+      category: "Keynote Speaker"
     }
   ],
 
@@ -665,7 +673,7 @@ const Icgen2026 = () => {
         </div>
 
         {/* KEYNOTE SPEAKERS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12">
           {conferenceData.speakers.map((s, idx) => (
             <Card
               key={idx}
