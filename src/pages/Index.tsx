@@ -176,7 +176,7 @@ const recentConferencesData = [
 const rotations = [-3, 2, -1.5, 3, -2, 1, -2.5, 2.5, -1, 3, -3, 1.5, -2, 2];
 
 const upcoming = [
-  { title: "ICGEN-2026: International Conference on Generative AI, Frontier Tech & Autonomous Systems", city: "Hybrid / Worldwide Virtual", date: "25 October 2026 (Sunday)", topic: "Generative AI & Autonomous Agents", link: "/icgen-2026", isbn: "978-81-981245-4-1", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
+  { title: "ICGEN-2026: International Conference on Generative AI, Frontier Tech & Autonomous Systems", city: "Hybrid / Worldwide Virtual", date: "25 October 2026 (Sunday)", topic: "Generative AI & Autonomous Agents", link: "/icgen-2026", isbn: "978-81-182375-1-8", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
   { title: "Eminsphere Manila Nexus 2027 (EMN 2027)", city: "Manila, Philippines", date: "20–21 March 2027", topic: "Intelligent Computing & Digital Futures", link: "/manila-nexus-2027", img: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop" },
 ];
 
@@ -330,7 +330,7 @@ const Index = () => {
                   <Globe className="w-4 h-4 text-accent" /> Hybrid / Worldwide Virtual
                 </div>
                 <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium bg-white/5 px-3 sm:px-4 py-2 rounded-lg border border-white/10">
-                  <BookOpen className="w-4 h-4 text-accent" /> ISBN: 978-81-981245-4-1
+                  <BookOpen className="w-4 h-4 text-accent" /> ISBN: 978-81-182375-1-8
                 </div>
               </div>
               

@@ -14,7 +14,7 @@ const conferences = [
     deadline: "25 October 2026",
     topic: "Generative AI & Autonomous Agents",
     link: "/icgen-2026",
-    isbn: "978-81-981245-4-1",
+    isbn: "978-81-182375-1-8",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
   },
   {

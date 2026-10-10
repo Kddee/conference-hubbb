@@ -70,21 +70,21 @@ const conferenceData = {
   date: "Sunday, 25 October 2026",
   registrationDeadline: "23 October 2026",
   mode: "Hybrid Mode • Worldwide Virtual",
-  isbn: "978-81-981245-4-1",
+  isbn: "978-81-182375-1-8",
   registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
   cmtLink: "https://cmt3.research.microsoft.com/ICGEN2026",
   
   about: [
     "The International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
     "Held in Hybrid Mode on Sunday, 25 October 2026, ICGEN-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The conference delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
-    "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN 978-81-981245-4-1, submitted for global cataloging across Google Scholar and leading scientific indices, with top-tier submissions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
+    "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN 978-81-182375-1-8, submitted for global cataloging across Google Scholar and leading scientific indices, with top-tier submissions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
   ],
 
   highlights: [
     { stat: "50+", label: "Nations Represented", desc: "Global academic & Silicon Valley delegates" },
     { stat: "6", label: "Frontier AI Tracks", desc: "Agentic AI, LLMs to Embodied Systems" },
     { stat: "25 Oct", label: "Final Registration", desc: "Strict registration closing deadline" },
-    { stat: "ISBN", label: "Official Proceedings", desc: "Assigned ISBN 978-81-981245-4-1" }
+    { stat: "ISBN", label: "Official Proceedings", desc: "Assigned ISBN 978-81-182375-1-8" }
   ],
 
   pillars: [
@@ -101,7 +101,7 @@ const conferenceData = {
     {
       icon: BookOpen,
       title: "ISBN Proceedings & Scopus Fast-Track",
-      desc: "All accepted papers receive official ISBN 978-81-981245-4-1 publication and permanent DOI identifiers, with top 15% high-impact manuscripts fast-tracked to Scopus (Q1/Q2) & Web of Science journals."
+      desc: "All accepted papers receive official ISBN 978-81-182375-1-8 publication and permanent DOI identifiers, with top 15% high-impact manuscripts fast-tracked to Scopus (Q1/Q2) & Web of Science journals."
     },
     {
       icon: Globe,
@@ -234,7 +234,7 @@ const conferenceData = {
     {
       title: "ISBN Conference Proceedings",
       img: "https://i.postimg.cc/VvnzKNKj/image.png",
-      desc: "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number (ISBN: 978-81-687765-9-3), ensuring global visibility, citation, and academic recognition."
+      desc: "All accepted and registered papers will be published in the official conference proceedings with a valid ISBN Number (ISBN: 978-81-182375-1-8), ensuring global visibility, citation, and academic recognition."
     },
     {
       title: "Google Scholar Indexing",
@@ -317,7 +317,7 @@ const conferenceData = {
     },
     {
       q: "How are the conference proceedings published and indexed?",
-      a: "All accepted, registered, and presented manuscripts are published in the official Conference Proceedings with assigned ISBN 978-81-981245-4-1. The proceedings are submitted for comprehensive indexing across Google Scholar, research repositories, and assigned persistent DOIs for global scholarly citations."
+      a: "All accepted, registered, and presented manuscripts are published in the official Conference Proceedings with assigned ISBN 978-81-182375-1-8. The proceedings are submitted for comprehensive indexing across Google Scholar, research repositories, and assigned persistent DOIs for global scholarly citations."
     },
     {
       q: "What is the procedure for Scopus and Web of Science (WoS) journal recommendations?",
