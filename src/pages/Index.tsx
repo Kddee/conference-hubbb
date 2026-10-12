@@ -177,6 +177,8 @@ const rotations = [-3, 2, -1.5, 3, -2, 1, -2.5, 2.5, -1, 3, -3, 1.5, -2, 2];
 
 const upcoming = [
   { title: "ICGEN-2026: International Conference on Generative AI, Frontier Tech & Autonomous Systems", city: "Hybrid / Worldwide Virtual", date: "25 October 2026 (Sunday)", topic: "Generative AI & Autonomous Agents", link: "/icgen-2026", isbn: "978-81-182375-1-8", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
+  { title: "ICPAI-2026: International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence", city: "Hybrid / Worldwide Virtual", date: "22 November 2026 (Sunday)", topic: "Physical AI & Humanoid Robotics", link: "/icpai-2026", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200&auto=format&fit=crop" },
+  { title: "ICMEDAI-2026: International Conference on Generative AI in Healthcare, Precision Medicine & Digital Biology", city: "Hybrid / Worldwide Virtual", date: "20 December 2026 (Sunday)", topic: "Bio-AI & Precision Medicine", link: "/icmedai-2026", img: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1200&auto=format&fit=crop" },
   { title: "Eminsphere Manila Nexus 2027 (EMN 2027)", city: "Manila, Philippines", date: "20–21 March 2027", topic: "Intelligent Computing & Digital Futures", link: "/manila-nexus-2027", img: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop" },
 ];
 

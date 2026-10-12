@@ -18,6 +18,26 @@ const conferences = [
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
   },
   {
+    title: "ICPAI-2026: International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence",
+    city: "Hybrid Mode",
+    country: "Worldwide Virtual",
+    date: "22 November 2026 (Sunday)",
+    deadline: "20 November 2026",
+    topic: "Physical AI & Humanoid Robotics",
+    link: "/icpai-2026",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    title: "ICMEDAI-2026: International Conference on Generative AI in Healthcare, Precision Medicine & Digital Biology",
+    city: "Hybrid Mode",
+    country: "Worldwide Virtual",
+    date: "20 December 2026 (Sunday)",
+    deadline: "18 December 2026",
+    topic: "Bio-AI & Precision Medicine",
+    link: "/icmedai-2026",
+    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
     title: "Eminsphere Manila Nexus 2027 (EMN 2027): Intelligent Computing & Digital Futures",
     city: "Manila",
     country: "Philippines",

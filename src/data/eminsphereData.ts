@@ -100,6 +100,52 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Pam Didner", designation: "AI Keynote Speaker | 5x Author & Enterprise Consultant | Inc Magazine Columnist", university: "Raleigh-Durham, Carolina, USA", image: "/speakers/pam-didner.jpg", category: "Keynote Speaker" }
     ]
   },
+  "icpai-2026": {
+    id: "icpai-2026",
+    title: "International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence (ICPAI-2026)",
+    date: "22 November 2026",
+    location: "Hybrid Mode | Worldwide Virtual",
+    registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
+    cmtLink: "https://cmt3.research.microsoft.com",
+    description: "ICPAI-2026 (International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence) is a world-class scientific forum dedicated to groundbreaking advances in Embodied AI, Humanoid Robotics, Vision-Language-Action (VLA) architectures, and Autonomous Spatial Systems. Bringing together robotics researchers, AI scientists, and deep-tech pioneers across 50+ nations, all accepted submissions undergo double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers and indexing across Google Scholar, with recommendations for Scopus/WoS indexed special issues.",
+    thematicTracks: [
+      "Embodied AI & Vision-Language-Action (VLA) Architectures (Sensorimotor policies, multimodal spatial reasoning)",
+      "Humanoid Robotics, Dexterous Manipulation & Locomotion (Bipedal dynamics, whole-body control, tactile feedback)",
+      "Spatial Intelligence, World Models & 3D Neural Representations (NeRFs, 3D Gaussian Splatting, simulation physics)",
+      "Autonomous Vehicles, Aerial Drones & Multi-Robot Swarm Orchestration (Cooperative fleets, decentralized navigation)",
+      "Edge Neuromorphic Hardware & Real-Time Sensorimotor Actuation (Low-latency inference, embedded robotics compute)",
+      "Sim-to-Real Transfer, Industrial Twins & Safety Certification (Domain randomization, factory robotics, fail-safe AI)"
+    ],
+    milestones: [
+      { name: "Paper / Abstract Submission Deadline", date: "15 November 2026" },
+      { name: "Acceptance Notification", date: "18 November 2026" },
+      { name: "Final Registration & Camera-Ready", date: "20 November 2026" },
+      { name: "Main Conference Sessions", date: "22 November 2026 (Sunday)" }
+    ]
+  },
+  "icmedai-2026": {
+    id: "icmedai-2026",
+    title: "International Conference on Generative AI in Healthcare, Precision Medicine & Digital Biology (ICMEDAI-2026)",
+    date: "20 December 2026",
+    location: "Hybrid Mode | Worldwide Virtual",
+    registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
+    cmtLink: "https://cmt3.research.microsoft.com",
+    description: "ICMEDAI-2026 (International Conference on Generative AI in Healthcare, Precision Medicine & Digital Biology) is a premier international congress exploring transformative advancements at the intersection of Generative AI, Bioinformatics, Clinical LLMs, and Precision Therapeutics. Gathering biomedical researchers, clinicians, computational biologists, and AI healthcare leaders, all accepted papers undergo double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers and indexing across Google Scholar, with select papers recommended for Scopus/WoS partner journals.",
+    thematicTracks: [
+      "Generative AI for Molecular Design & De Novo Drug Discovery (Target validation, chemical language models, lead optimization)",
+      "Clinical Foundation Models & Medical LLMs (Diagnostic reasoning, EHR intelligence, clinical documentation copilots)",
+      "Genomic AI, Protein Structure Prediction & Computational Biology (AlphaFold architectures, genomic sequence transformers)",
+      "Digital Twins in Healthcare & Patient Simulation Ecosystems (In-silico clinical trials, physiological simulations)",
+      "Autonomous Surgical Robotics & Computer-Assisted Intervention (Computer vision in surgery, real-time image guidance)",
+      "Medical Data Privacy, Federated Learning & Ethical Bio-Governance (HIPAA/GDPR compliance, algorithmic fairness, safety bounds)"
+    ],
+    milestones: [
+      { name: "Paper / Abstract Submission Deadline", date: "13 December 2026" },
+      { name: "Acceptance Notification", date: "16 December 2026" },
+      { name: "Final Registration & Camera-Ready", date: "18 December 2026" },
+      { name: "Main Conference Sessions", date: "20 December 2026 (Sunday)" }
+    ]
+  },
   "icaits-26": {
     id: "icaits-26",
     title: "International Conference on Artificial Intelligence & Intelligent Technology Systems (ICAITS-26)",

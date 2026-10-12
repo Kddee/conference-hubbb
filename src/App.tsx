@@ -35,6 +35,8 @@ import Aiforge26 from "./pages/conferences/Aiforge26";
 import Icaids2024 from "./pages/conferences/Icaids2024";
 import ManilaNexus2027 from "./pages/conferences/ManilaNexus2027";
 import Icgen2026 from "./pages/conferences/Icgen2026";
+import Icpai2026 from "./pages/conferences/Icpai2026";
+import Icmedai2026 from "./pages/conferences/Icmedai2026";
 
 const queryClient = new QueryClient();
 
@@ -101,6 +103,10 @@ const App = () => {
           <Route path="/ws-gais-2026" element={<Navigate to="/icgen-2026" replace />} />
           <Route path="/icetis-2026" element={<Navigate to="/icgen-2026" replace />} />
           <Route path="/icetis-26" element={<Navigate to="/icgen-2026" replace />} />
+          <Route path="/icpai-2026" element={<Icpai2026 />} />
+          <Route path="/icpai" element={<Navigate to="/icpai-2026" replace />} />
+          <Route path="/icmedai-2026" element={<Icmedai2026 />} />
+          <Route path="/icmedai" element={<Navigate to="/icmedai-2026" replace />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
