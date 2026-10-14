@@ -5,11 +5,16 @@ import navinImg from "@/assets/navin.png";
 
 // Removing duplicates from the provided data
 const advisoryMembers = [
+  { name: "Nino Devidze", role: "Tourism Educator & Program Manager, The University of Georgia", location: "Georgia", image: "/speakers/nino-devidze.jpg" },
+  { name: "Mayank Atreya", role: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", location: "USA", image: "/speakers/mayank-atreya.jpg" },
+  { name: "Roksolana Trach", role: "Independent Crypto Analyst & International Financial Market Analyst", location: "USA", image: "/icaits26/roksolana-trach.png" },
+  { name: "Wiktoria Gromowa-Cieślik", role: "CEO & Chief Metrics Officer, Human-Tech Fusion (HTFusion)", location: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg" },
+  { name: "Mouhssin Ait El Mouden", role: "Researcher, Faculty of Letters, Ibn Tofail University, Kenitra", location: "Morocco", image: "/speakers/mouhssin-ait-el-mouden.jpg" },
+  { name: "Dr. Nadia Adnan", role: "Assistant Professor & Research Scientist, Prince Mohammad Bin Fahd University", location: "Saudi Arabia", image: "/speakers/dr-nadia-adnan.jpg" },
+  { name: "Katarzyna Antosz", role: "Associate Professor, Rzeszow University of Technology", location: "Poland", image: "/speakers/katarzyna-antosz.jpg" },
   // Temporarily removed: Dr. Walida Ounruean (Director & Senior Research Fellow, Innovora Mind LLC, Thailand)
   // { name: "Dr. Walida Ounruean", role: "Head Advisory Board Member, Curriculum and Instruction, Faculty of Education, Uttaradit Rajabhat University", location: "Thailand", image: "https://static.wixstatic.com/media/30814e_ac6c40d612254293a4f1f4479dfd7b61~mv2.avif" },
   { name: "Prof. Deepak K. Sharma", role: "Head Advisory Board Member, Head EnTC, NESGI", location: "India", image: "https://static.wixstatic.com/media/30814e_3b46f80d696f49b2b7fd6ebc4a1e9ee3~mv2.jpeg" },
-  // Temporarily removed: Dr. Katarzyna Antosz (Board Member & Research Strategist, European Academy of Engineering Sciences, Poland)
-  // { name: "Katarzyna Antosz", role: "Associate Professor, Rzeszow University of Technology", location: "Poland", image: "https://static.wixstatic.com/media/30814e_36d2bb3012e64343a18002662ca61e6b~mv2.avif" },
   { name: "Mr. Satish Kabade", role: "Product Technical Expert, Independent Researcher", location: "NJ, USA", image: "https://static.wixstatic.com/media/30814e_a31d532fb603465e846aceccb082827c~mv2.jpeg" },
   { name: "Nadine Zeinoun", role: "Master Certified Coach, President ICF Chapter Ottawa, Facilitator Saint Joseph University", location: "Lebanon", image: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
   // Temporarily removed: Dr. Tiansheng Yang (Faculty Member & Research Director, University of South Wales, United Kingdom)
@@ -23,7 +28,6 @@ const advisoryMembers = [
   { name: "Anshuman Khandelwal", role: "Independent Researcher, Cloud Computing & Microservices Architecture", location: "North Carolina, USA", image: "https://static.wixstatic.com/media/30814e_2cb5972bc61d457eb6a1c8153a563e05~mv2.jpeg" },
   // Temporarily removed: Dr. Joe Perez (Head of Data Strategy, NC Department of Health & Human Services, Raleigh, NC, USA)
   // { name: "Dr. Joe Perez", role: "Senior Systems Specialist & Team Leader, NC Department of Health & Human Services", location: "USA", image: "https://static.wixstatic.com/media/30814e_043f012b093045da87e7c6046631b299~mv2.avif" },
-  { name: "Mouhssin Ait El Mouden", role: "Researcher, Faculty of Letters, Ibn Tofail University, Kenitra", location: "Morocco", image: "https://static.wixstatic.com/media/30814e_b0c50d221b41483fa5ab8bfb50f719e5~mv2.avif" },
   { name: "Dr. Ayoub Regragui", role: "Doctorate in Applied Linguistics, Mohammed V University, Rabat", location: "Morocco", image: "https://static.wixstatic.com/media/30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif" },
   { name: "Nilesh Charankar", role: "AI Technology Leader and Independent Researcher", location: "USA", image: "https://static.wixstatic.com/media/30814e_70debe4180c34f9f83be4d5219c41358~mv2.jpeg" },
   { name: "Lawrence Mazaki Mashati", role: "Community Development Professional, IMFC", location: "Nairobi, Kenya", image: "https://static.wixstatic.com/media/30814e_86a164138da142578e674588143e3af3~mv2.jpeg" },
