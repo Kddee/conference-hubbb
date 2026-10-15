@@ -295,6 +295,14 @@ const conferenceData = {
       country: "Raleigh-Durham, Carolina, USA 🇺🇸",
       image: "/speakers/pam-didner.jpg",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Dr Montsheng Letsoalo",
+      designation: "Founder & Social Neuroscientist",
+      organization: "Trauma Neuro Institute",
+      country: "South Africa 🇿🇦",
+      image: "/speakers/dr-montsheng-letsoalo.jpg",
+      category: "Keynote Speaker"
     }
   ],
 
@@ -672,8 +680,8 @@ const Icgen2026 = () => {
           </p>
         </div>
 
-        {/* KEYNOTE SPEAKERS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12">
+        {/* KEYNOTE SPEAKERS GRID (2 PROFILES PER ROW, 2 ROWS) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto mb-12">
           {conferenceData.speakers.map((s, idx) => (
             <Card
               key={idx}
