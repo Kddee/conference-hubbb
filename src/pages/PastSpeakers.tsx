@@ -1,5 +1,4 @@
 import pankajImg from "@/assets/WhatsApp Image 2026-05-29 at 11.21.06 AM.jpeg";
-import navinImg from "@/assets/navin.png";
 import deepakSinghImg from "@/assets/WhatsApp Image 2026-07-25 at 10.08.48 AM.jpeg";
 import talebHammadImg from "@/assets/image copy 15.png";
 import souravSarkarImg from "@/assets/image copy 16.png";
@@ -18,7 +17,6 @@ interface Speaker {
 
 const speakers: Speaker[] = [
   { name: "Prof. Dr. Alexander Bull", role: "IU International University", location: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg", objectPosition: "center 20%" },
-  { name: "Dr. Joe Perez", role: "NC Department of Health & Human Services", location: "Raleigh, NC, USA", image: "/speakers/dr-joe-perez.jpg", objectPosition: "center 20%" },
   { name: "Dr. Madeleine Pickles", role: "Associate Professor, Liverpool John Moores University", location: "United Kingdom", image: "/icaits26/dr.madeline-pickles.jpeg" },
   { name: "Dr. Aleksandra Gardasevic-Slavuljica", role: "Expert", location: "Montenegro", image: "https://static.wixstatic.com/media/30814e_bf1d23feb75d44208e57fb12c007e7ac~mv2.jpeg" },
   { name: "Dr. Carolina Barandiaran", role: "Academic Leader & Researcher, Academic Research & Innovation", location: "Argentina", image: "/speakers/dr-carolina-barandiaran.jpg" },
@@ -29,7 +27,6 @@ const speakers: Speaker[] = [
   { name: "Prof. Cigdem Demir", role: "AHBV University, Ankara", location: "Turkey", image: "/icaits26/prof.Cigdem-demir.jpeg" },
   { name: "Dr. Tiansheng Yang", role: "University of South Wales", location: "United Kingdom", image: "https://static.wixstatic.com/media/30814e_3a6549a4d2904005a224db41ca5f9cd0~mv2.avif" },
   { name: "Dr. Danijela V. Pantović", role: "Assistant Professor", location: "Serbia", image: "https://static.wixstatic.com/media/30814e_b097c784e55f4e38837f599a1f7f735c~mv2.jpeg" },
-  { name: "Dr. Aida Mehrad", role: "C3S Business School", location: "Spain", image: "https://static.wixstatic.com/media/502b14_2f32591e100346daa035a4aaf27ef7d7~mv2.jpeg" },
   { name: "Lawrence Mazaki Mashati", role: "Conference Patron | Community Development Professional, IMFC", location: "Kenya", image: "/speakers/lawrence-mashati.jpg" },
   { name: "Jim Saliba", role: "Principal Consultant", location: "San Jose, California", image: "/speakers/jim-saliba.png" },
   { name: "Mr. Akshay Sharma", role: "Pension Systems Expert", location: "USA", image: "/speakers/akshay-sharma.jpg" },
@@ -66,14 +63,12 @@ const speakers: Speaker[] = [
   { name: "Mrugendra Madalagi", role: "Solution Architect", location: "USA", image: "/speakers/mrugendra-madalagi.jpg" },
   { name: "Emem Akpabio", role: "Invited Delegate, International Conference Participant", location: "South Africa", image: "https://static.wixstatic.com/media/30814e_2dad2d939abb4236bcb405093be55872~mv2.jpg" },
   { name: "Nandan Sharma", role: "Information Security Leader, BC Public Service", location: "Canada", image: "https://static.wixstatic.com/media/30814e_3cdb660543a146ab81e18da144efabad~mv2.jpg" },
-  { name: "Navin Kumar Chhibber", role: "AI/ML, GenAI and Data Platforms Leader, Product Engineering and Digital Transformation Expert, USA", location: "USA", image: navinImg },
   { name: "Dr. Entela Shkodrani", role: "University Hospital Center, Tirana", location: "Albania", image: "https://static.wixstatic.com/media/30814e_1729c779d5bf4cbc9d0b4b2e1d51e148~mv2.jpeg" },
   { name: "Nilesh Charankar", role: "AI Technology Leader and Independent Researcher", location: "USA", image: "/speakers/nilesh-charankar.jpg" },
   { name: "Nomi Khedawala", role: "Sr. Technical Program Manager", location: "San Francisco", image: "https://static.wixstatic.com/media/30814e_4dddbaf5110540e7b8c0d5ed7826a8e5~mv2.jpeg" },
   { name: "Ezinne Esther Arisa", role: "Candy Rainbow Creations", location: "South Africa", image: "https://static.wixstatic.com/media/502b14_3adc2682f9064817b4728eca9cd4a0b1~mv2.jpeg" },
   { name: "Pankaj Arora", role: "Healthcare Supply Chain Transformation Leader, Raleigh, North Carolina", location: "USA", image: pankajImg },
   { name: "Parikshit Sahagal", role: "Technical Project Manager, CoStar Group Inc", location: "USA", image: "/speakers/parikshit-sahagal.jpg" },
-  { name: "Dr. Firas Zeidan", role: "Higher Education & Research", location: "Lebanon", image: "https://static.wixstatic.com/media/30814e_571b3e70d8ff476f8b1272ef84538d8f~mv2.jpeg" },
   { name: "Piyush Shukla", role: "Technology & Engineering Leader, Enterprise Engineering & Cloud Leadership", location: "USA", image: "/speakers/piyush-shukla.jpg" },
   { name: "Ponsankar Shanmugam S", role: "Distributed & AI Systems", location: "USA", image: "https://static.wixstatic.com/media/30814e_4a4018f89ef94597bca4b870f45069b0~mv2.jpeg" },
   { name: "Dr. Ghazal Abdolbaghi", role: "Shahid Beheshti University, Tehran", location: "Iran", image: "/icaits26/Dr.Ghazal-Abdolbaghi.jpeg" },
@@ -115,7 +110,6 @@ const speakers: Speaker[] = [
   { name: "Dr. Marek Wasiluk", role: "Clinical Research Expert, Poland", location: "Poland", image: "https://static.wixstatic.com/media/30814e_adff5072ac724ad69a6f9634c9d672e0~mv2.jpg" },
   { name: "Veeramani Sampathkumar", role: "Fintech Technology Leader", location: "USA", image: "https://static.wixstatic.com/media/30814e_9166636afad548f9aab5e2b2d1b35e97~mv2.jpeg" },
   { name: "Vijayachandar Sanikal", role: "IEEE Senior Member", location: "USA", image: "https://static.wixstatic.com/media/502b14_0269601f3e7b4a9ba877aec373e7f5ee~mv2.png" },
-  { name: "Marghescu Cristina-Florentina", role: "University Politehnica of Bucharest", location: "Romania", image: "https://static.wixstatic.com/media/30814e_fb0f8a532d8a413abf8b61b143684fed~mv2.png" },
   { name: "Yesha Patel", role: "Senior Solution Architect", location: "United States", image: "https://static.wixstatic.com/media/30814e_6354e00a70db405c823ee8721026e4f1~mv2.avif" },
   { name: "Yukti Goyal", role: "Lead Software Engineer", location: "Tampa, FL", image: "https://static.wixstatic.com/media/30814e_f4baaf1857454707a3b7c0c8e5e10963~mv2.avif" },
   { name: "Dr. Mbombi Khizamane", role: "Advisory Board Member, Nursing College Limpopo", location: "South Africa", image: "/speakers/dr-mbombi.jpg" },
