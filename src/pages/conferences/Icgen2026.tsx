@@ -303,6 +303,15 @@ const conferenceData = {
       country: "South Africa 🇿🇦",
       image: "/speakers/dr-montsheng-letsoalo.jpg",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Ms. Fadwa Saad AlBawardi",
+      designation: "Saudi Arabian Entrepreneur & Founder, FSAB Consultancy | Senior Consultant in Digital Transformation, AI & Data Strategies",
+      organization: "UN ITU Speaker & UNITAR Trainer | Elsevier Reviewer for AI & Technical Research | USA Today Bestselling Author",
+      country: "Saudi Arabia 🇸🇦",
+      image: "/speakers/fadwa-saad-albawardi.jpg",
+      category: "Keynote Speaker",
+      bio: "Saudi Arabian Entrepreneur and founder of FSAB Consultancy, providing strategic services in Digital Transformation, Performance Management, Data and AI strategies. A Certified Strategy and Business Planning Professional with 22+ years of experience, Elsevier reviewer for international AI research, UNITAR trainer, and public speaker at United Nations ITU AI for Good Summits and IGF."
     }
   ],
 
@@ -680,8 +689,8 @@ const Icgen2026 = () => {
           </p>
         </div>
 
-        {/* KEYNOTE SPEAKERS GRID (2 PROFILES PER ROW, 2 ROWS) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto mb-12">
+        {/* KEYNOTE SPEAKERS GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12">
           {conferenceData.speakers.map((s, idx) => (
             <Card
               key={idx}
@@ -725,6 +734,13 @@ const Icgen2026 = () => {
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {s.organization}
               </p>
+
+              {/* Bio summary */}
+              {"bio" in s && s.bio && (
+                <p className="text-xs text-muted-foreground/80 mt-3 pt-3 border-t border-white/10 leading-relaxed text-center">
+                  {s.bio}
+                </p>
+              )}
             </Card>
           ))}
         </div>
