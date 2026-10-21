@@ -97,9 +97,12 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     speakers: [
       { name: "Heinz Dollberg", designation: "Executive Vice President (ret.), Allianz", university: "Germany", image: "/speakers/heinz-dollberg.jpg", category: "Keynote Speaker" },
       { name: "Peter Kasahara", designation: "CXO for AI & Data Leadership and Innovation / Fortune 200 Group Chief Data Officer", university: "Zurich, Switzerland", image: "/speakers/peter-kasahara.jpg", category: "Keynote Speaker" },
-      { name: "Pam Didner", designation: "AI Keynote Speaker | 5x Author & Enterprise Consultant | Inc Magazine Columnist", university: "Raleigh-Durham, Carolina, USA", image: "/speakers/pam-didner.jpg", category: "Keynote Speaker" },
+      { name: "Harshini Gadam", designation: "Enterprise Generative AI & Autonomous Systems Expert", university: "USA", image: "/speakers/harshini-gadam.png", category: "Keynote Speaker" },
       { name: "Dr Montsheng Letsoalo", designation: "Founder & Social Neuroscientist, Trauma Neuro Institute", university: "South Africa", image: "/speakers/dr-montsheng-letsoalo.jpg", category: "Keynote Speaker" },
-      { name: "Ms. Fadwa Saad AlBawardi", designation: "Saudi Arabian Entrepreneur & Founder, FSAB Consultancy | Senior Consultant in Digital Transformation, AI & Data Strategy | UN ITU Speaker & UNITAR Trainer", university: "Saudi Arabia", image: "/speakers/fadwa-saad-albawardi.jpg", category: "Keynote Speaker" }
+      { name: "Sanjay Kumar", designation: "IT Operations & Digital Transformation Expert", university: "USA", image: "/speakers/sanjay-kumar.png", category: "Keynote Speaker" },
+      { name: "Ms. Fadwa Saad AlBawardi", designation: "Saudi Arabian Entrepreneur & Founder, FSAB Consultancy | Senior Consultant in Digital Transformation, AI & Data Strategy | UN ITU Speaker & UNITAR Trainer", university: "Saudi Arabia", image: "/speakers/fadwa-saad-albawardi.jpg", category: "Keynote Speaker" },
+      { name: "Shubh Chandra Roy", designation: "Technology & Engineering Leader | Enterprise Engineering & Cloud Systems", university: "USA", image: "/speakers/shubh-chandra-roy.jpg", category: "Keynote Speaker" },
+      { name: "Pam Didner", designation: "AI Keynote Speaker | 5x Author & Enterprise Consultant | Inc Magazine Columnist", university: "Raleigh-Durham, Carolina, USA", image: "/speakers/pam-didner.jpg", category: "Keynote Speaker" }
     ]
   },
   "icpai-2026": {

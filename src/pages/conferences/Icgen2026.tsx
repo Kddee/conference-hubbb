@@ -289,11 +289,11 @@ const conferenceData = {
       category: "Keynote Speaker"
     },
     {
-      name: "Pam Didner",
-      designation: "AI Keynote Speaker | Making AI Make Sense for Business Professionals | 5x Author & Consultant | Inc Magazine Columnist",
-      organization: "AI (Copilot & Claude) Workshops & Training | B2B Sales & Marketing",
-      country: "Raleigh-Durham, Carolina, USA 🇺🇸",
-      image: "/speakers/pam-didner.jpg",
+      name: "Harshini Gadam",
+      designation: "Enterprise Generative AI & Autonomous Systems Expert",
+      organization: "Enterprise AI & Autonomous Systems, USA",
+      country: "USA 🇺🇸",
+      image: "/speakers/harshini-gadam.png",
       category: "Keynote Speaker"
     },
     {
@@ -305,13 +305,36 @@ const conferenceData = {
       category: "Keynote Speaker"
     },
     {
+      name: "Sanjay Kumar",
+      designation: "IT Operations & Digital Transformation Expert",
+      organization: "Enterprise IT & Digital Transformation, USA",
+      country: "USA 🇺🇸",
+      image: "/speakers/sanjay-kumar.png",
+      category: "Keynote Speaker"
+    },
+    {
       name: "Ms. Fadwa Saad AlBawardi",
       designation: "Saudi Arabian Entrepreneur & Founder, FSAB Consultancy | Senior Consultant in Digital Transformation, AI & Data Strategies",
       organization: "UN ITU Speaker & UNITAR Trainer | Elsevier Reviewer for AI & Technical Research | USA Today Bestselling Author",
       country: "Saudi Arabia 🇸🇦",
       image: "/speakers/fadwa-saad-albawardi.jpg",
-      category: "Keynote Speaker",
-      bio: "Saudi Arabian Entrepreneur and founder of FSAB Consultancy, providing strategic services in Digital Transformation, Performance Management, Data and AI strategies. A Certified Strategy and Business Planning Professional with 22+ years of experience, Elsevier reviewer for international AI research, UNITAR trainer, and public speaker at United Nations ITU AI for Good Summits and IGF."
+      category: "Keynote Speaker"
+    },
+    {
+      name: "Shubh Chandra Roy",
+      designation: "Technology & Engineering Leader",
+      organization: "Enterprise Engineering & Cloud Systems, USA",
+      country: "USA 🇺🇸",
+      image: "/speakers/shubh-chandra-roy.jpg",
+      category: "Keynote Speaker"
+    },
+    {
+      name: "Pam Didner",
+      designation: "AI Keynote Speaker | Making AI Make Sense for Business Professionals | 5x Author & Consultant | Inc Magazine Columnist",
+      organization: "AI (Copilot & Claude) Workshops & Training | B2B Sales & Marketing",
+      country: "Raleigh-Durham, Carolina, USA 🇺🇸",
+      image: "/speakers/pam-didner.jpg",
+      category: "Keynote Speaker"
     }
   ],
 
