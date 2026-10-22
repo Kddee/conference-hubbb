@@ -318,7 +318,8 @@ const conferenceData = {
       organization: "UN ITU Speaker & UNITAR Trainer | Elsevier Reviewer for AI & Technical Research | USA Today Bestselling Author",
       country: "Saudi Arabia 🇸🇦",
       image: "/speakers/fadwa-saad-albawardi.jpg",
-      category: "Keynote Speaker"
+      category: "Keynote Speaker",
+      bio: "Saudi Arabian Entrepreneur and founder of FSAB Consultancy, providing strategic services in Digital Transformation, Performance Management, Data and AI strategies. A Certified Strategy and Business Planning Professional with 22+ years of experience, Elsevier reviewer for international AI research, UNITAR trainer, and public speaker at United Nations ITU AI for Good Summits and IGF."
     },
     {
       name: "Shubh Chandra Roy",
@@ -350,6 +351,22 @@ const conferenceData = {
       organization: "AI (Copilot & Claude) Workshops & Training | B2B Sales & Marketing",
       country: "Raleigh-Durham, Carolina, USA 🇺🇸",
       image: "/speakers/pam-didner.jpg",
+      category: "Keynote Speaker"
+    },
+    {
+      name: "Damodhara Reddy Palavali",
+      designation: "Zero Trust & Identity Security Specialist",
+      organization: "IEEE Senior Member | Sbase Technologies",
+      country: "USA 🇺🇸",
+      image: "/speakers/damodhara-reddy-palavali.jpg",
+      category: "Keynote Speaker"
+    },
+    {
+      name: "Dr. Walida Ounruean",
+      designation: "Faculty of Education, Curriculum & Instruction",
+      organization: "Uttaradit Rajabhat University",
+      country: "Thailand 🇹🇭",
+      image: "/speakers/dr-walida-ounruean.png",
       category: "Keynote Speaker"
     }
   ],
