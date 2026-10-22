@@ -106,7 +106,8 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Dr. Pallavi Omkar Sawant", designation: "Assistant Professor", university: "M. L. Dahanukar College of Commerce (Autonomous), Mumbai, India", image: "/speakers/dr-pallavi-omkar-sawant.jpg", category: "Keynote Speaker" },
       { name: "Pam Didner", designation: "AI Keynote Speaker | 5x Author & Enterprise Consultant | Inc Magazine Columnist", university: "Raleigh-Durham, Carolina, USA", image: "/speakers/pam-didner.jpg", category: "Keynote Speaker" },
       { name: "Damodhara Reddy Palavali", designation: "Zero Trust & Identity Security Specialist, Sbase Technologies | IEEE Senior Member", university: "USA", image: "/speakers/damodhara-reddy-palavali.jpg", category: "Keynote Speaker" },
-      { name: "Dr. Walida Ounruean", designation: "Faculty of Education, Curriculum and Instruction, Uttaradit Rajabhat University", university: "Thailand", image: "/speakers/dr-walida-ounruean.png", category: "Keynote Speaker" }
+      { name: "Dr. Walida Ounruean", designation: "Faculty of Education, Curriculum and Instruction, Uttaradit Rajabhat University", university: "Thailand", image: "/speakers/dr-walida-ounruean.png", category: "Keynote Speaker" },
+      { name: "Prof. Rehab Hegazy, PhD", designation: "Professor of Pharmacology & Secretary-General, Medical Research and Clinical Studies Institute, National Research Centre (NRC)", university: "Egypt", image: "/speakers/prof-rehab-hegazy.jpg", category: "Keynote Speaker" }
     ]
   },
   "icpai-2026": {

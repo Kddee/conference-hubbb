@@ -368,6 +368,14 @@ const conferenceData = {
       country: "Thailand 🇹🇭",
       image: "/speakers/dr-walida-ounruean.png",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Prof. Rehab Hegazy, PhD",
+      designation: "Professor of Pharmacology & Secretary-General",
+      organization: "Medical Research and Clinical Studies Institute, National Research Centre (NRC)",
+      country: "Egypt 🇪🇬",
+      image: "/speakers/prof-rehab-hegazy.jpg",
+      category: "Keynote Speaker"
     }
   ],
 
