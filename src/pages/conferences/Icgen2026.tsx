@@ -337,6 +337,14 @@ const conferenceData = {
       category: "Keynote Speaker"
     },
     {
+      name: "Dr. Pallavi Omkar Sawant",
+      designation: "Assistant Professor",
+      organization: "M. L. Dahanukar College of Commerce (Autonomous), Mumbai",
+      country: "India 🇮🇳",
+      image: "/speakers/dr-pallavi-omkar-sawant.jpg",
+      category: "Keynote Speaker"
+    },
+    {
       name: "Pam Didner",
       designation: "AI Keynote Speaker | Making AI Make Sense for Business Professionals | 5x Author & Consultant | Inc Magazine Columnist",
       organization: "AI (Copilot & Claude) Workshops & Training | B2B Sales & Marketing",
