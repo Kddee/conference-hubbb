@@ -399,6 +399,14 @@ const conferenceData = {
       country: "Ghana 🇬🇭",
       image: "/speakers/richard-afoakwah-nti.png",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Dr. Marek Wasiluk",
+      designation: "Clinical Research Expert",
+      organization: "Clinical Research, Poland",
+      country: "Poland 🇵🇱",
+      image: "/speakers/dr-marek-wasiluk.png",
+      category: "Keynote Speaker"
     }
   ],
 

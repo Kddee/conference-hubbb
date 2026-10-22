@@ -110,7 +110,8 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Prof. Rehab Hegazy, PhD", designation: "Professor of Pharmacology & Secretary-General, Medical Research and Clinical Studies Institute, National Research Centre (NRC)", university: "Egypt", image: "/speakers/prof-rehab-hegazy.jpg", category: "Keynote Speaker" },
       { name: "Prof. Dr. Hamid Saremi", designation: "Professor of Financial Management & Accounting", university: "Iran", image: "/speakers/prof-dr-hamid-saremi.png", category: "Keynote Speaker" },
       { name: "Dr. Carolina Barandiaran", designation: "Academic Leader & Researcher, Academic Research & Innovation", university: "Argentina", image: "/speakers/dr-carolina-barandiaran.png", category: "Keynote Speaker" },
-      { name: "Richard Afoakwah-Nti", designation: "Founder & CEO, Rich Dream Consult | IT Expert & Entrepreneur", university: "Accra, Ghana", image: "/speakers/richard-afoakwah-nti.png", category: "Keynote Speaker" }
+      { name: "Richard Afoakwah-Nti", designation: "Founder & CEO, Rich Dream Consult | IT Expert & Entrepreneur", university: "Accra, Ghana", image: "/speakers/richard-afoakwah-nti.png", category: "Keynote Speaker" },
+      { name: "Dr. Marek Wasiluk", designation: "Clinical Research Expert", university: "Poland", image: "/speakers/dr-marek-wasiluk.png", category: "Keynote Speaker" }
     ]
   },
   "icpai-2026": {

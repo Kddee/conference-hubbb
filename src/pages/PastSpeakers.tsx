@@ -107,7 +107,7 @@ const speakers: Speaker[] = [
   { name: "Lali Mikeladze", role: "Head of the BA Program in Tourism, Caucasus International University", location: "Georgia", image: "/speakers/lali-mikeladze.jpg" },
   { name: "Trupti Raikar", role: "SAP Technology Architect", location: "USA", image: "https://static.wixstatic.com/media/30814e_ca6075e6cef84116937f732636db6914~mv2.jpeg" },
   { name: "Utkarsh Sharma", role: "AI–FinTech Leader", location: "USA", image: "https://static.wixstatic.com/media/30814e_150514da48cb41598e25829a5c686936~mv2.jpeg" },
-  { name: "Dr. Marek Wasiluk", role: "Clinical Research Expert, Poland", location: "Poland", image: "https://static.wixstatic.com/media/30814e_adff5072ac724ad69a6f9634c9d672e0~mv2.jpg" },
+  { name: "Dr. Marek Wasiluk", role: "Clinical Research Expert, Poland", location: "Poland", image: "/speakers/dr-marek-wasiluk.png" },
   { name: "Veeramani Sampathkumar", role: "Fintech Technology Leader", location: "USA", image: "https://static.wixstatic.com/media/30814e_9166636afad548f9aab5e2b2d1b35e97~mv2.jpeg" },
   { name: "Vijayachandar Sanikal", role: "IEEE Senior Member", location: "USA", image: "https://static.wixstatic.com/media/502b14_0269601f3e7b4a9ba877aec373e7f5ee~mv2.png" },
   { name: "Yesha Patel", role: "Senior Solution Architect", location: "United States", image: "https://static.wixstatic.com/media/30814e_6354e00a70db405c823ee8721026e4f1~mv2.avif" },
