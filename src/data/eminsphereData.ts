@@ -111,7 +111,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Prof. Dr. Hamid Saremi", designation: "Professor of Financial Management & Accounting", university: "Iran", image: "/speakers/prof-dr-hamid-saremi.png", category: "Keynote Speaker" },
       { name: "Dr. Carolina Barandiaran", designation: "Academic Leader & Researcher, Academic Research & Innovation", university: "Argentina", image: "/speakers/dr-carolina-barandiaran.png", category: "Keynote Speaker" },
       { name: "Richard Afoakwah-Nti", designation: "Founder & CEO, Rich Dream Consult | IT Expert & Entrepreneur", university: "Accra, Ghana", image: "/speakers/richard-afoakwah-nti.png", category: "Keynote Speaker" },
-      { name: "Dr. Marek Wasiluk", designation: "Clinical Research Expert", university: "Poland", image: "/speakers/dr-marek-wasiluk.png", category: "Keynote Speaker" }
+      { name: "Dr. Marek Wasiluk", designation: "Clinical Research Expert", university: "Poland", image: "/speakers/dr-marek-wasiluk.png", category: "Keynote Speaker" },
+      { name: "Antara", designation: "Cloud & Data Architecture Expert", university: "USA", image: "/speakers/antara.png", category: "Keynote Speaker" },
+      { name: "Prathap Raghavan", designation: "Director of Product Management, Santander", university: "USA", image: "/speakers/prathap-raghavan.png", category: "Keynote Speaker" }
     ]
   },
   "icpai-2026": {

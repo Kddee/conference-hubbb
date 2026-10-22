@@ -75,7 +75,7 @@ const speakers: Speaker[] = [
   { name: "Pradeep Kachakayala", role: "Cloud Computing & AI Solutions", location: "USA", image: "https://static.wixstatic.com/media/30814e_45aeebc11e0045a8bd8941721d274f1a~mv2.png" },
   { name: "Prajakta Talathi", role: "Education Finance", location: "USA", image: "https://static.wixstatic.com/media/30814e_bf9d3d9fb4974bc0ba217b4bb03ea14d~mv2.jpg" },
   { name: "Gregg Clunis", role: "Founder, Kojo", location: "United States", image: "/speakers/gregg-clunis.jpg" },
-  { name: "Prathap Raghavan", role: "Santander", location: "USA", image: "https://static.wixstatic.com/media/30814e_5167abbef7fa4549b18fcf6bdf6bbdbd~mv2.png" },
+  { name: "Prathap Raghavan", role: "Santander", location: "USA", image: "/speakers/prathap-raghavan.png" },
   { name: "Pravin Barapatre", role: "AI & Robotics Leader", location: "USA", image: "/speakers/pravin-barapatre.jpg" },
   { name: "Hassan Mohammad Karimi", role: "Researcher, Amirkabir University of Technology", location: "Iran", image: "/icaits26/hassan-mohammad-karimi.png" },
   { name: "Dr. Rahul Azmeera", role: "Independent Researcher, University Of The Cumberlands", location: "USA", image: "/icaits26/rahul-azmeera.png" },

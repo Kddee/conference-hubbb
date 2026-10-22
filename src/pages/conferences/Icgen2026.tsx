@@ -407,6 +407,22 @@ const conferenceData = {
       country: "Poland 🇵🇱",
       image: "/speakers/dr-marek-wasiluk.png",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Antara",
+      designation: "Cloud & Data Architecture Expert",
+      organization: "Enterprise Cloud & Data Architecture",
+      country: "USA 🇺🇸",
+      image: "/speakers/antara.png",
+      category: "Keynote Speaker"
+    },
+    {
+      name: "Prathap Raghavan",
+      designation: "Director of Product Management & Technology Leader",
+      organization: "Santander",
+      country: "USA 🇺🇸",
+      image: "/speakers/prathap-raghavan.png",
+      category: "Keynote Speaker"
     }
   ],
 

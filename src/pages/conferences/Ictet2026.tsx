@@ -29,7 +29,7 @@ const conferenceData = {
     { name: "Dr. Aida Mehrad", org: "C3S Business School", country: "Spain", img: "https://static.wixstatic.com/media/502b14_2f32591e100346daa035a4aaf27ef7d7~mv2.jpeg" },
     { name: "Dr. Mehwish (Mishy) Rashid", org: "Keiser University", country: "USA", img: "https://static.wixstatic.com/media/30814e_d030e1dbf7ef4028909beba2b99a69be~mv2.jpeg" },
     { name: "Nadine Zeinoun", org: "President, ICF Chapter Ottawa", country: "Lebanon", img: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
-    { name: "Prathap Raghavan", org: "Santander", country: "USA", img: "https://static.wixstatic.com/media/30814e_5167abbef7fa4549b18fcf6bdf6bbdbd~mv2.png" },
+    { name: "Prathap Raghavan", org: "Santander", country: "USA", img: "/speakers/prathap-raghavan.png" },
     { name: "Sudeep Annappa Shanubhog", org: "Tential Inc.", country: "USA", img: "https://static.wixstatic.com/media/30814e_d49cf5c47ba64a629f0bb3c0618967e6~mv2.jpeg" },
     { name: "Utkarsh Sharma", org: "AI–FinTech Leader", country: "USA", img: "https://static.wixstatic.com/media/30814e_150514da48cb41598e25829a5c686936~mv2.jpeg" },
     { name: "Shyam Kumar Gajula", org: "Cybersecurity Researcher", country: "United States", img: "https://static.wixstatic.com/media/30814e_c5f4a33e93c34938bf4f267806ac057c~mv2.jpg" },
