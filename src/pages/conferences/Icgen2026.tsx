@@ -375,6 +375,30 @@ const conferenceData = {
       country: "Egypt 🇪🇬",
       image: "/speakers/prof-rehab-hegazy.jpg",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Prof. Dr. Hamid Saremi",
+      designation: "Professor of Financial Management & Accounting",
+      organization: "Islamic Azad University & Former Chancellor, Asrar Higher Education Institute",
+      country: "Iran 🇮🇷",
+      image: "/speakers/prof-dr-hamid-saremi.png",
+      category: "Keynote Speaker"
+    },
+    {
+      name: "Dr. Carolina Barandiaran",
+      designation: "Academic Leader & Researcher",
+      organization: "Academic Research & Innovation",
+      country: "Argentina 🇦🇷",
+      image: "/speakers/dr-carolina-barandiaran.png",
+      category: "Keynote Speaker"
+    },
+    {
+      name: "Richard Afoakwah-Nti",
+      designation: "Founder & CEO, Rich Dream Consult | IT Expert & Entrepreneur",
+      organization: "Rich Dream Consult (RDC) • Accra",
+      country: "Ghana 🇬🇭",
+      image: "/speakers/richard-afoakwah-nti.png",
+      category: "Keynote Speaker"
     }
   ],
 
