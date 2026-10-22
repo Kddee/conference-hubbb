@@ -329,6 +329,14 @@ const conferenceData = {
       category: "Keynote Speaker"
     },
     {
+      name: "FNU Lovleen Kaur",
+      designation: "Generative AI & Agentic AI Expert",
+      organization: "Software Engineering, Full-Stack Development, Enterprise AI Solutions, USA",
+      country: "USA 🇺🇸",
+      image: "/speakers/fnu-lovleen-kaur.jpg",
+      category: "Keynote Speaker"
+    },
+    {
       name: "Pam Didner",
       designation: "AI Keynote Speaker | Making AI Make Sense for Business Professionals | 5x Author & Consultant | Inc Magazine Columnist",
       organization: "AI (Copilot & Claude) Workshops & Training | B2B Sales & Marketing",

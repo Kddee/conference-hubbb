@@ -102,6 +102,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Sanjay Kumar", designation: "IT Operations & Digital Transformation Expert", university: "USA", image: "/speakers/sanjay-kumar.png", category: "Keynote Speaker" },
       { name: "Ms. Fadwa Saad AlBawardi", designation: "Saudi Arabian Entrepreneur & Founder, FSAB Consultancy | Senior Consultant in Digital Transformation, AI & Data Strategy | UN ITU Speaker & UNITAR Trainer", university: "Saudi Arabia", image: "/speakers/fadwa-saad-albawardi.jpg", category: "Keynote Speaker" },
       { name: "Shubh Chandra Roy", designation: "Technology & Engineering Leader | Enterprise Engineering & Cloud Systems", university: "USA", image: "/speakers/shubh-chandra-roy.jpg", category: "Keynote Speaker" },
+      { name: "FNU Lovleen Kaur", designation: "Generative AI & Agentic AI Expert | Software Engineering, Full-Stack Development & Enterprise AI Solutions", university: "USA", image: "/speakers/fnu-lovleen-kaur.jpg", category: "Keynote Speaker" },
       { name: "Pam Didner", designation: "AI Keynote Speaker | 5x Author & Enterprise Consultant | Inc Magazine Columnist", university: "Raleigh-Durham, Carolina, USA", image: "/speakers/pam-didner.jpg", category: "Keynote Speaker" }
     ]
   },
