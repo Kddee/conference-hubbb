@@ -108,7 +108,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Damodhara Reddy Palavali", designation: "Zero Trust & Identity Security Specialist, Sbase Technologies | IEEE Senior Member", university: "USA", image: "/speakers/damodhara-reddy-palavali.jpg", category: "Keynote Speaker" },
       { name: "Dr. Walida Ounruean", designation: "Faculty of Education, Curriculum and Instruction, Uttaradit Rajabhat University", university: "Thailand", image: "/speakers/dr-walida-ounruean.png", category: "Keynote Speaker" },
       { name: "Prof. Rehab Hegazy, PhD", designation: "Professor of Pharmacology & Secretary-General, Medical Research and Clinical Studies Institute, National Research Centre (NRC)", university: "Egypt", image: "/speakers/prof-rehab-hegazy.jpg", category: "Keynote Speaker" },
-      { name: "Prof. Dr. Hamid Saremi", designation: "Professor of Financial Management & Accounting | Former Chancellor, Asrar Higher Education Institute", university: "Iran", image: "/speakers/prof-dr-hamid-saremi.png", category: "Keynote Speaker" },
+      { name: "Prof. Dr. Hamid Saremi", designation: "Professor of Financial Management & Accounting", university: "Iran", image: "/speakers/prof-dr-hamid-saremi.png", category: "Keynote Speaker" },
       { name: "Dr. Carolina Barandiaran", designation: "Academic Leader & Researcher, Academic Research & Innovation", university: "Argentina", image: "/speakers/dr-carolina-barandiaran.png", category: "Keynote Speaker" },
       { name: "Richard Afoakwah-Nti", designation: "Founder & CEO, Rich Dream Consult | IT Expert & Entrepreneur", university: "Accra, Ghana", image: "/speakers/richard-afoakwah-nti.png", category: "Keynote Speaker" }
     ]

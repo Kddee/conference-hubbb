@@ -379,7 +379,7 @@ const conferenceData = {
     {
       name: "Prof. Dr. Hamid Saremi",
       designation: "Professor of Financial Management & Accounting",
-      organization: "Islamic Azad University & Former Chancellor, Asrar Higher Education Institute",
+      organization: "",
       country: "Iran 🇮🇷",
       image: "/speakers/prof-dr-hamid-saremi.png",
       category: "Keynote Speaker"
@@ -818,9 +818,11 @@ const Icgen2026 = () => {
               </p>
 
               {/* Affiliation / Organization */}
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                {s.organization}
-              </p>
+              {s.organization && (
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {s.organization}
+                </p>
+              )}
 
               {/* Bio summary */}
               {"bio" in s && s.bio && (
