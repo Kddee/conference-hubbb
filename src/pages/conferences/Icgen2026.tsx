@@ -318,8 +318,7 @@ const conferenceData = {
       organization: "UN ITU Speaker & UNITAR Trainer | Elsevier Reviewer for AI & Technical Research | USA Today Bestselling Author",
       country: "Saudi Arabia 🇸🇦",
       image: "/speakers/fadwa-saad-albawardi.jpg",
-      category: "Keynote Speaker",
-      bio: "Saudi Arabian Entrepreneur and founder of FSAB Consultancy, providing strategic services in Digital Transformation, Performance Management, Data and AI strategies. A Certified Strategy and Business Planning Professional with 22+ years of experience, Elsevier reviewer for international AI research, UNITAR trainer, and public speaker at United Nations ITU AI for Good Summits and IGF."
+      category: "Keynote Speaker"
     },
     {
       name: "Shubh Chandra Roy",
