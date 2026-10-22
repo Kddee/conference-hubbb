@@ -113,7 +113,8 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Richard Afoakwah-Nti", designation: "Founder & CEO, Rich Dream Consult | IT Expert & Entrepreneur", university: "Accra, Ghana", image: "/speakers/richard-afoakwah-nti.png", category: "Keynote Speaker" },
       { name: "Dr. Marek Wasiluk", designation: "Clinical Research Expert", university: "Poland", image: "/speakers/dr-marek-wasiluk.png", category: "Keynote Speaker" },
       { name: "Antara", designation: "Cloud & Data Architecture Expert", university: "USA", image: "/speakers/antara.png", category: "Keynote Speaker" },
-      { name: "Prathap Raghavan", designation: "Director of Product Management, Santander", university: "USA", image: "/speakers/prathap-raghavan.png", category: "Keynote Speaker" }
+      { name: "Prathap Raghavan", designation: "Director of Product Management, Santander", university: "USA", image: "/speakers/prathap-raghavan.png", category: "Keynote Speaker" },
+      { name: "Vipin Das", designation: "Cloud Solution Architect | Platform, DevOps, Infrastructure, Security & FinOps", university: "Centreville, Virginia, USA", image: "/speakers/vipin-das.png", category: "Keynote Speaker" }
     ]
   },
   "icpai-2026": {

@@ -423,6 +423,14 @@ const conferenceData = {
       country: "USA 🇺🇸",
       image: "/speakers/prathap-raghavan.png",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Vipin Das",
+      designation: "Cloud Solution Architect | Platform, DevOps, Infrastructure, Security & FinOps",
+      organization: "Centreville, Virginia, United States",
+      country: "USA 🇺🇸",
+      image: "/speakers/vipin-das.png",
+      category: "Keynote Speaker"
     }
   ],
 
