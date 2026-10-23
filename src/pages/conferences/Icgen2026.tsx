@@ -431,6 +431,14 @@ const conferenceData = {
       country: "USA 🇺🇸",
       image: "/speakers/vipin-das.png",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Suresh Srinivasan",
+      designation: "Enterprise Software & Big Data Engineering Expert",
+      organization: "Enterprise Software & Big Data Systems, USA",
+      country: "USA 🇺🇸",
+      image: "/speakers/suresh-srinivasan.jpg",
+      category: "Keynote Speaker"
     }
   ],
 
