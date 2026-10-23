@@ -130,7 +130,7 @@ const speakers: Speaker[] = [
   { name: "RC Holmes", role: "Wealthy Results LLC", location: "USA", image: "https://static.wixstatic.com/media/502b14_25f6163bd55c4354a06f544c5e8ffa9e~mv2.png" },
   { name: "Prof. Rehab Hegazy, PhD", role: "Professor of Pharmacology, Medical Research and Clinical Studies Institute, National Research Centre (NRC)", location: "Egypt", image: "/speakers/prof-rehab-hegazy.jpg" },
   { name: "Roksolana Trach", role: "Independent Crypto Analyst & International Financial Market Analyst", location: "USA", image: "/icaits26/roksolana-trach.png" },
-  { name: "Dr. Ruth Abiola Adimula", role: "University of Ilorin", location: "Nigeria", image: "https://static.wixstatic.com/media/30814e_164d8ef597e74e1a89f4e800e7c38a3f~mv2.jpeg" },
+  { name: "Dr. Ruth Abiola Adimula", role: "University of Ilorin", location: "Nigeria", image: "/speakers/dr-ruth-abiola-adimula.png" },
   { name: "Dr. Sadia Nazneen Karobi", role: "School of Environment and Life Sciences", location: "Global", image: "https://static.wixstatic.com/media/30814e_d7b9cf9312084baa9e85220ae3d0f383~mv2.png" },
   { name: "Sam Lawe", role: "Navico Group", location: "New Zealand", image: "https://static.wixstatic.com/media/30814e_485133b243e34681b345c2286ad708b2~mv2.jpeg" },
   { name: "Taleb Hammad", role: "DBA / Executive Director", location: "USA", image: talebHammadImg },

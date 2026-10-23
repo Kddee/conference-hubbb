@@ -442,6 +442,14 @@ const conferenceData = {
       country: "USA 🇺🇸",
       image: "/speakers/abhishek-sutar.png",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Dr. Ruth Abiola Adimula, Esq. fspsp",
+      designation: "Associate Professor",
+      organization: "Centre for Peace and Strategic Studies, University of Ilorin, Ilorin",
+      country: "Nigeria 🇳🇬",
+      image: "/speakers/dr-ruth-abiola-adimula.png",
+      category: "Keynote Speaker"
     }
   ],
 

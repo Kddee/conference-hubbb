@@ -41,7 +41,7 @@ const advisoryMembers = [
   // { name: "Dr. Zoha Rahman", role: "Founder and Country Director, Centre for Big Data & Machine Learning", location: "USA", image: "https://static.wixstatic.com/media/30814e_2a893f0530e74f178c18e5939b687048~mv2.jpg" },
   { name: "Yukti Goyal", role: "Lead Software Engineer", location: "Tampa, FL, USA", image: "https://static.wixstatic.com/media/30814e_f4baaf1857454707a3b7c0c8e5e10963~mv2.avif" },
   { name: "Trupti Raikar", role: "Independent Researcher, SAP Technology Architect", location: "Texas, USA", image: "https://static.wixstatic.com/media/30814e_ca6075e6cef84116937f732636db6914~mv2.jpeg" },
-  { name: "Dr. Ruth Abiola Adimula", role: "Associate Professor, Centre for Peace and Strategic Studies", location: "Nigeria", image: "https://static.wixstatic.com/media/30814e_d096ce6ec8ff4b05a2cc1c7db574278b~mv2.jpeg" },
+  { name: "Dr. Ruth Abiola Adimula", role: "Associate Professor, Centre for Peace and Strategic Studies", location: "Nigeria", image: "/speakers/dr-ruth-abiola-adimula.png" },
   { name: "Anup Gupta", role: "Associate Director – Digital Transformation Leader", location: "North Carolina, USA", image: "https://static.wixstatic.com/media/30814e_916aabc5c238468882d8066892ff6a27~mv2.jpg" },
   { name: "Nandan Sharma", role: "Information Security Leader, BC Public Service", location: "Canada / USA", image: "https://static.wixstatic.com/media/30814e_3cdb660543a146ab81e18da144efabad~mv2.jpg" },
   { name: "Prof. Dr. Alexander Bull", role: "Faculty of Business Administration, IU International University of Applied Sciences", location: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
