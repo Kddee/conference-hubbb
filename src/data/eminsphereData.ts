@@ -22,6 +22,7 @@ export interface ConferenceData {
   milestones?: { name: string; date: string; }[];
   speakers?: { name: string; designation: string; university: string; image: string; category?: string; }[];
   patron?: { name: string; role: string; description: string; organization: string; location: string; image: string; };
+  advisoryBoard?: { name: string; designation?: string; role?: string; university?: string; location?: string; image: string; category?: string; }[];
 }
 
 export interface ProceedingData {
@@ -94,21 +95,22 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Final Registration & Camera-Ready", date: "25 October 2026" },
       { name: "Main Conference Sessions", date: "25 October 2026 (Sunday)" }
     ],
+    advisoryBoard: [
+      { name: "Heinz Dollberg", designation: "Executive Vice President (ret.), Allianz", university: "Germany", image: "/speakers/heinz-dollberg.jpg", category: "Advisory Member" },
+      { name: "Peter Kasahara", designation: "CXO for AI & Data Leadership and Innovation / Fortune 200 Group Chief Data Officer", university: "Zurich, Switzerland", image: "/speakers/peter-kasahara.jpg", category: "Advisory Member" },
+      { name: "Ms. Fadwa Saad AlBawardi", designation: "Saudi Arabian Entrepreneur & Founder, FSAB Consultancy | Senior Consultant in Digital Transformation, AI & Data Strategy | UN ITU Speaker & UNITAR Trainer", university: "Saudi Arabia", image: "/speakers/fadwa-saad-albawardi.jpg", category: "Advisory Member" },
+      { name: "Pam Didner", designation: "AI Keynote Speaker | Making AI Make Sense for Business Professionals | 5x Author & Consultant | Inc Magazine Columnist", university: "Raleigh-Durham, Carolina, USA", image: "/speakers/pam-didner.jpg", category: "Advisory Member" }
+    ],
     speakers: [
-      { name: "Heinz Dollberg", designation: "Executive Vice President (ret.), Allianz", university: "Germany", image: "/speakers/heinz-dollberg.jpg", category: "Keynote Speaker" },
-      { name: "Peter Kasahara", designation: "CXO for AI & Data Leadership and Innovation / Fortune 200 Group Chief Data Officer", university: "Zurich, Switzerland", image: "/speakers/peter-kasahara.jpg", category: "Keynote Speaker" },
       { name: "Harshini Gadam", designation: "Enterprise Generative AI & Autonomous Systems Expert", university: "USA", image: "/speakers/harshini-gadam.png", category: "Keynote Speaker" },
       { name: "Dr Montsheng Letsoalo", designation: "Founder & Social Neuroscientist, Trauma Neuro Institute", university: "South Africa", image: "/speakers/dr-montsheng-letsoalo.jpg", category: "Keynote Speaker" },
       { name: "Sanjay Kumar", designation: "IT Operations & Digital Transformation Expert", university: "USA", image: "/speakers/sanjay-kumar.png", category: "Keynote Speaker" },
-      { name: "Ms. Fadwa Saad AlBawardi", designation: "Saudi Arabian Entrepreneur & Founder, FSAB Consultancy | Senior Consultant in Digital Transformation, AI & Data Strategy | UN ITU Speaker & UNITAR Trainer", university: "Saudi Arabia", image: "/speakers/fadwa-saad-albawardi.jpg", category: "Keynote Speaker" },
       { name: "Shubh Chandra Roy", designation: "Technology & Engineering Leader | Enterprise Engineering & Cloud Systems", university: "USA", image: "/speakers/shubh-chandra-roy.jpg", category: "Keynote Speaker" },
       { name: "FNU Lovleen Kaur", designation: "Generative AI & Agentic AI Expert | Software Engineering, Full-Stack Development & Enterprise AI Solutions", university: "USA", image: "/speakers/fnu-lovleen-kaur.jpg", category: "Keynote Speaker" },
       { name: "Dr. Pallavi Omkar Sawant", designation: "Assistant Professor", university: "M. L. Dahanukar College of Commerce (Autonomous), Mumbai, India", image: "/speakers/dr-pallavi-omkar-sawant.jpg", category: "Keynote Speaker" },
-      { name: "Pam Didner", designation: "AI Keynote Speaker | 5x Author & Enterprise Consultant | Inc Magazine Columnist", university: "Raleigh-Durham, Carolina, USA", image: "/speakers/pam-didner.jpg", category: "Keynote Speaker" },
       { name: "Damodhara Reddy Palavali", designation: "Zero Trust & Identity Security Specialist, Sbase Technologies | IEEE Senior Member", university: "USA", image: "/speakers/damodhara-reddy-palavali.jpg", category: "Keynote Speaker" },
       { name: "Dr. Walida Ounruean", designation: "Faculty of Education, Curriculum and Instruction, Uttaradit Rajabhat University", university: "Thailand", image: "/speakers/dr-walida-ounruean.png", category: "Keynote Speaker" },
       { name: "Prof. Rehab Hegazy, PhD", designation: "Professor of Pharmacology & Secretary-General, Medical Research and Clinical Studies Institute, National Research Centre (NRC)", university: "Egypt", image: "/speakers/prof-rehab-hegazy.jpg", category: "Keynote Speaker" },
-      { name: "Prof. Dr. Hamid Saremi", designation: "Professor of Financial Management & Accounting", university: "Iran", image: "/speakers/prof-dr-hamid-saremi.png", category: "Keynote Speaker" },
       { name: "Dr. Carolina Barandiaran", designation: "Academic Leader & Researcher, Academic Research & Innovation", university: "Argentina", image: "/speakers/dr-carolina-barandiaran.png", category: "Keynote Speaker" },
       { name: "Richard Afoakwah-Nti", designation: "Founder & CEO, Rich Dream Consult | IT Expert & Entrepreneur", university: "Accra, Ghana", image: "/speakers/richard-afoakwah-nti.png", category: "Keynote Speaker" },
       { name: "Dr. Marek Wasiluk", designation: "Clinical Research Expert", university: "Poland", image: "/speakers/dr-marek-wasiluk.png", category: "Keynote Speaker" },

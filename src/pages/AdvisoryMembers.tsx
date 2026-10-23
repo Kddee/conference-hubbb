@@ -46,6 +46,10 @@ const advisoryMembers = [
   { name: "Nandan Sharma", role: "Information Security Leader, BC Public Service", location: "Canada / USA", image: "https://static.wixstatic.com/media/30814e_3cdb660543a146ab81e18da144efabad~mv2.jpg" },
   { name: "Prof. Dr. Alexander Bull", role: "Faculty of Business Administration, IU International University of Applied Sciences", location: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
   { name: "Hemang Upadhyay", role: "Independent Researcher, AI, E-commerce & Analytics", location: "USA", image: "https://static.wixstatic.com/media/30814e_d8f3f76a4383421eb967c779a89ac17f~mv2.jpeg" },
+  { name: "Heinz Dollberg", role: "Executive Vice President (ret.), Allianz", location: "Germany", image: "/speakers/heinz-dollberg.jpg" },
+  { name: "Peter Kasahara", role: "CXO for AI & Data Leadership and Innovation / Fortune 200 Group Chief Data Officer", location: "Zurich, Switzerland", image: "/speakers/peter-kasahara.jpg" },
+  { name: "Ms. Fadwa Saad AlBawardi", role: "Saudi Arabian Entrepreneur & Founder, FSAB Consultancy | Senior Consultant in Digital Transformation, AI & Data Strategies", location: "Saudi Arabia", image: "/speakers/fadwa-saad-albawardi.jpg" },
+  { name: "Pam Didner", role: "AI Keynote Speaker | Making AI Make Sense for Business Professionals | 5x Author & Consultant | Inc Magazine Columnist", location: "Raleigh-Durham, Carolina, USA", image: "/speakers/pam-didner.jpg" },
   // Temporarily removed: Dr. Ratna Raja Kumar Jambi (Director, Innovora Mind LLC, USA)
   // { name: "Dr. Ratna Raja Kumar Jambi", role: "Director, Innovora Mind LLC", location: "USA", image: "https://static.wixstatic.com/media/30814e_68b76caedcdf48b6988367c0c06ab3c8~mv2.jpeg" }
 ];

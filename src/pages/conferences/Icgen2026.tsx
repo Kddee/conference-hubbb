@@ -271,14 +271,14 @@ const conferenceData = {
     }
   ],
 
-  speakers: [
+  advisoryMembers: [
     {
       name: "Heinz Dollberg",
       designation: "Executive Vice President (ret.), Allianz",
       organization: "Allianz",
       country: "Germany 🇩🇪",
       image: "/speakers/heinz-dollberg.jpg",
-      category: "Keynote Speaker"
+      category: "Advisory Member"
     },
     {
       name: "Peter Kasahara",
@@ -286,8 +286,27 @@ const conferenceData = {
       organization: "Zurich, Switzerland",
       country: "Switzerland 🇨🇭",
       image: "/speakers/peter-kasahara.jpg",
-      category: "Keynote Speaker"
+      category: "Advisory Member"
     },
+    {
+      name: "Ms. Fadwa Saad AlBawardi",
+      designation: "Saudi Arabian Entrepreneur & Founder, FSAB Consultancy | Senior Consultant in Digital Transformation, AI & Data Strategies",
+      organization: "UN ITU Speaker & UNITAR Trainer | Elsevier Reviewer for AI & Technical Research | USA Today Bestselling Author",
+      country: "Saudi Arabia 🇸🇦",
+      image: "/speakers/fadwa-saad-albawardi.jpg",
+      category: "Advisory Member"
+    },
+    {
+      name: "Pam Didner",
+      designation: "AI Keynote Speaker | Making AI Make Sense for Business Professionals | 5x Author & Consultant | Inc Magazine Columnist",
+      organization: "AI (Copilot & Claude) Workshops & Training | B2B Sales & Marketing",
+      country: "Raleigh-Durham, Carolina, USA 🇺🇸",
+      image: "/speakers/pam-didner.jpg",
+      category: "Advisory Member"
+    }
+  ],
+
+  speakers: [
     {
       name: "Harshini Gadam",
       designation: "Enterprise Generative AI & Autonomous Systems Expert",
@@ -310,14 +329,6 @@ const conferenceData = {
       organization: "Enterprise IT & Digital Transformation, USA",
       country: "USA 🇺🇸",
       image: "/speakers/sanjay-kumar.png",
-      category: "Keynote Speaker"
-    },
-    {
-      name: "Ms. Fadwa Saad AlBawardi",
-      designation: "Saudi Arabian Entrepreneur & Founder, FSAB Consultancy | Senior Consultant in Digital Transformation, AI & Data Strategies",
-      organization: "UN ITU Speaker & UNITAR Trainer | Elsevier Reviewer for AI & Technical Research | USA Today Bestselling Author",
-      country: "Saudi Arabia 🇸🇦",
-      image: "/speakers/fadwa-saad-albawardi.jpg",
       category: "Keynote Speaker"
     },
     {
@@ -345,14 +356,6 @@ const conferenceData = {
       category: "Keynote Speaker"
     },
     {
-      name: "Pam Didner",
-      designation: "AI Keynote Speaker | Making AI Make Sense for Business Professionals | 5x Author & Consultant | Inc Magazine Columnist",
-      organization: "AI (Copilot & Claude) Workshops & Training | B2B Sales & Marketing",
-      country: "Raleigh-Durham, Carolina, USA 🇺🇸",
-      image: "/speakers/pam-didner.jpg",
-      category: "Keynote Speaker"
-    },
-    {
       name: "Damodhara Reddy Palavali",
       designation: "Zero Trust & Identity Security Specialist",
       organization: "IEEE Senior Member | Sbase Technologies",
@@ -374,14 +377,6 @@ const conferenceData = {
       organization: "Medical Research and Clinical Studies Institute, National Research Centre (NRC)",
       country: "Egypt 🇪🇬",
       image: "/speakers/prof-rehab-hegazy.jpg",
-      category: "Keynote Speaker"
-    },
-    {
-      name: "Prof. Dr. Hamid Saremi",
-      designation: "Professor of Financial Management & Accounting",
-      organization: "",
-      country: "Iran 🇮🇷",
-      image: "/speakers/prof-dr-hamid-saremi.png",
       category: "Keynote Speaker"
     },
     {
@@ -910,6 +905,66 @@ const Icgen2026 = () => {
             <a href="mailto:info@eminsphere.com" className="text-primary font-bold hover:underline inline-flex items-center gap-1">
               Contact Program Secretariat <ExternalLink className="h-3 w-3" />
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNATIONAL ADVISORY COMMITTEE / MEMBERS */}
+      <section id="advisory" className="py-16 sm:py-24 bg-card/25 border-t border-border/40">
+        <div className="container max-w-6xl px-4">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3">
+              <Sparkles className="h-4 w-4" /> Strategic Leadership & Advisory
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+              International Advisory Board Members
+            </h2>
+            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+              Distinguished global industry executives, enterprise leaders, and thought leaders guiding the academic governance, vision, and strategic direction of ICGEN-2026.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {conferenceData.advisoryMembers.map((m, idx) => (
+              <Card
+                key={idx}
+                className="group relative overflow-hidden rounded-3xl bg-card/60 border border-white/10 hover:border-primary/40 backdrop-blur-md p-6 flex flex-col items-center text-center shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300"
+              >
+                <div className="absolute top-0 right-0 w-36 h-36 bg-primary/10 rounded-full blur-2xl pointer-events-none group-hover:bg-primary/20 transition-all" />
+
+                <div className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-accent/15 text-accent border border-accent/30 mb-4 shadow-sm uppercase tracking-wider">
+                  <Sparkles className="h-3 w-3" />
+                  <span>{m.category}</span>
+                </div>
+
+                <div className="relative w-40 h-48 sm:w-44 sm:h-52 mb-4 overflow-hidden rounded-2xl border-2 border-primary/30 bg-[#030914] shadow-md group-hover:border-primary group-hover:shadow-primary/20 transition-all">
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    className="h-full w-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3.5 py-0.5 rounded-full bg-accent/10 text-accent border border-accent/25 mb-3 shadow-sm">
+                  <span>{m.country}</span>
+                </div>
+
+                <h3 className="font-serif font-bold text-xl text-white mb-2 group-hover:text-primary transition-colors leading-snug">
+                  {m.name}
+                </h3>
+
+                <p className="text-xs font-semibold text-accent mb-2 leading-relaxed">
+                  {m.designation}
+                </p>
+
+                {m.organization && (
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {m.organization}
+                  </p>
+                )}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
