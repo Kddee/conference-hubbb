@@ -62,7 +62,7 @@ const conferenceData = {
   fullForm: "International Conference on Generative AI in Healthcare, Precision Medicine & Digital Biology (ICMEDAI-2026)",
   theme: "Next-Gen Bio-Intelligence: Foundation Models, Generative Drug Discovery & Autonomous Healthcare Systems",
   tagline: "The Premier Global Scientific Forum Connecting Medical AI Innovators, Clinical Researchers & Digital Biology Leaders",
-  date: "Sunday, 20 December 2026",
+  date: "20 December 2026",
   registrationDeadline: "18 December 2026",
   mode: "Hybrid Mode • Worldwide Virtual",
   registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
@@ -70,14 +70,14 @@ const conferenceData = {
   
   about: [
     "The International Conference on Generative AI in Healthcare, Precision Medicine & Digital Biology (ICMEDAI-2026) is the leading global congress addressing transformative breakthroughs at the intersection of deep generative models, bioinformatics, medical diagnostics, and personalized therapeutics.",
-    "Held in Hybrid Mode on Sunday, 20 December 2026, ICMEDAI-2026 convenes a premier international community of clinicians, biomedical engineers, pharmaceutical scientists, and AI architects from across 50+ countries. The conference provides an expedited double-blind peer-reviewed venue examining de novo molecular generation, clinical LLMs, protein language models, and AI-enabled robotic surgery.",
+    "Held in Hybrid Mode on 20 December 2026, ICMEDAI-2026 convenes a premier international community of clinicians, biomedical engineers, pharmaceutical scientists, and AI architects from across 50+ countries. The conference provides an expedited double-blind peer-reviewed venue examining de novo molecular generation, clinical LLMs, protein language models, and AI-enabled robotic surgery.",
     "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN registration, submitted for global indexing across Google Scholar, with top-tier research fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
   ],
 
   highlights: [
     { stat: "50+", label: "Nations Represented", desc: "Global medical AI & biotech delegates" },
     { stat: "6", label: "Specialized Tracks", desc: "Drug Design, Medical LLMs & Bio-AI" },
-    { stat: "20 Dec", label: "Conference Sunday", desc: "One-day high-impact global summit" },
+    { stat: "20 Dec", label: "Conference Date", desc: "One-day high-impact global summit" },
     { stat: "ISBN", label: "Official Proceedings", desc: "Global Cataloging & DOI assigned" }
   ],
 
@@ -217,7 +217,7 @@ const conferenceData = {
     {
       step: "04",
       title: "International Conference Sessions",
-      date: "20 December 2026 (Sunday)",
+      date: "20 December 2026",
       desc: "Keynote addresses, technical presentation tracks, clinical case sessions & global awards."
     }
   ],
@@ -291,7 +291,7 @@ const Icmedai2026 = () => {
     <main className="min-h-screen bg-[#050B14] text-foreground selection:bg-primary selection:text-primary-foreground font-sans relative overflow-hidden">
       <SEOHead
         title="ICMEDAI-2026 | International Conference on Generative AI in Healthcare & Precision Medicine"
-        description="Join ICMEDAI-2026 on Sunday, 20 December 2026. A premier global conference exploring Generative AI in medicine, drug discovery, clinical LLMs & digital biology. ISBN Proceedings & Scopus Fast-Track."
+        description="Join ICMEDAI-2026 on 20 December 2026. A premier global conference exploring Generative AI in medicine, drug discovery, clinical LLMs & digital biology. ISBN Proceedings & Scopus Fast-Track."
         canonical="https://www.eminsphere.com/icmedai-2026"
         schema={{
           "@context": "https://schema.org",
@@ -682,7 +682,7 @@ const Icmedai2026 = () => {
             Ready to Share Your Medical AI Innovations?
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto mb-8">
-            Connect with clinical scientists, biotech pioneers, and AI engineers on Sunday, 20 December 2026.
+            Connect with clinical scientists, biotech pioneers, and AI engineers on 20 December 2026.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 h-12 sm:h-14 rounded-full shadow-gold hover:-translate-y-0.5 transition-all">

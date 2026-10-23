@@ -61,7 +61,7 @@ const conferenceData = {
   fullForm: "International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence (ICPAI-2026)",
   theme: "From Foundation Models to Embodied Action: Humanoids, Spatial Intelligence & Autonomous World Models",
   tagline: "The Premier Global Scientific Forum Connecting Silicon Valley Robotics Architects, Global Researchers & NRI Technology Leaders",
-  date: "Sunday, 22 November 2026",
+  date: "22 November 2026",
   registrationDeadline: "20 November 2026",
   mode: "Hybrid Mode • Worldwide Virtual",
   registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
@@ -69,14 +69,14 @@ const conferenceData = {
   
   about: [
     "The International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence (ICPAI-2026) is the premier global scientific forum dedicated to bridging digital foundation models with physical execution in the real world: the emergence of Embodied AI, Humanoid Robotics, Spatial Computing, and Autonomous Cyber-Physical Systems.",
-    "Held in Hybrid Mode on Sunday, 22 November 2026, ICPAI-2026 brings together an elite international assembly of robotics engineers, AI researchers, Silicon Valley architects, and leading academic chairs across more than 50 countries. The conference delivers an expedited, high-impact double-blind peer-reviewed platform examining sensorimotor learning, whole-body dynamics, 3D world models, and industrial-scale physical autonomy.",
+    "Held in Hybrid Mode on 22 November 2026, ICPAI-2026 brings together an elite international assembly of robotics engineers, AI researchers, Silicon Valley architects, and leading academic chairs across more than 50 countries. The conference delivers an expedited, high-impact double-blind peer-reviewed platform examining sensorimotor learning, whole-body dynamics, 3D world models, and industrial-scale physical autonomy.",
     "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN registration, submitted for global indexing across Google Scholar, with select high-caliber contributions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
   ],
 
   highlights: [
     { stat: "50+", label: "Nations Represented", desc: "Global robotics & AI delegates" },
     { stat: "6", label: "Specialized Tracks", desc: "VLA models, Humanoids & Spatial AI" },
-    { stat: "22 Nov", label: "Conference Sunday", desc: "One-day high-impact global summit" },
+    { stat: "22 Nov", label: "Conference Date", desc: "One-day high-impact global summit" },
     { stat: "ISBN", label: "Official Proceedings", desc: "Global Cataloging & DOI assigned" }
   ],
 
@@ -216,7 +216,7 @@ const conferenceData = {
     {
       step: "04",
       title: "International Conference Sessions",
-      date: "22 November 2026 (Sunday)",
+      date: "22 November 2026",
       desc: "Keynote addresses, technical presentation tracks, live robotics demonstrations & global awards."
     }
   ],
@@ -290,7 +290,7 @@ const Icpai2026 = () => {
     <main className="min-h-screen bg-[#050B14] text-foreground selection:bg-primary selection:text-primary-foreground font-sans relative overflow-hidden">
       <SEOHead
         title="ICPAI-2026 | International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence"
-        description="Join ICPAI-2026 on Sunday, 22 November 2026. A premier international conference exploring Physical AI, Humanoids, VLA models, and Autonomous Robotics. ISBN Proceedings & Scopus Fast-Track."
+        description="Join ICPAI-2026 on 22 November 2026. A premier international conference exploring Physical AI, Humanoids, VLA models, and Autonomous Robotics. ISBN Proceedings & Scopus Fast-Track."
         canonical="https://www.eminsphere.com/icpai-2026"
         schema={{
           "@context": "https://schema.org",
@@ -681,7 +681,7 @@ const Icpai2026 = () => {
             Ready to Present Your Physical AI Research?
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto mb-8">
-            Join international researchers, Silicon Valley architects, and robotics leaders on Sunday, 22 November 2026.
+            Join international researchers, Silicon Valley architects, and robotics leaders on 22 November 2026.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 h-12 sm:h-14 rounded-full shadow-gold hover:-translate-y-0.5 transition-all">

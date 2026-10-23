@@ -67,7 +67,7 @@ const conferenceData = {
   fullForm: "International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026)",
   theme: "Next-Gen Generative AI, Agentic Workflows & Frontier Autonomous Intelligence",
   tagline: "Where Silicon Valley GenAI Architects, Global AI Researchers, and NRI Technology Leaders Pioneer the Future of Intelligence",
-  date: "Sunday, 25 October 2026",
+  date: "25 October 2026",
   registrationDeadline: "23 October 2026",
   mode: "Hybrid Mode • Worldwide Virtual",
   isbn: "978-81-182375-1-8",
@@ -76,7 +76,7 @@ const conferenceData = {
   
   about: [
     "The International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
-    "Held in Hybrid Mode on Sunday, 25 October 2026, ICGEN-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The conference delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
+    "Held in Hybrid Mode on 25 October 2026, ICGEN-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations. The conference delivers a high-impact, peer-reviewed forum to dissect groundbreaking advancements in multi-agent orchestration, reasoning benchmarks, enterprise GenAI scale, and embodied physical intelligence.",
     "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN 978-81-182375-1-8, submitted for global cataloging across Google Scholar and leading scientific indices, with top-tier submissions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
   ],
 
@@ -223,7 +223,7 @@ const conferenceData = {
     {
       step: "04",
       title: "International Conference Sessions",
-      date: "25 October 2026 (Sunday)",
+      date: "25 October 2026",
       desc: "Keynote addresses, technical paper defenses, live demos & global awards."
     }
   ],
@@ -448,11 +448,11 @@ const conferenceData = {
   faqs: [
     {
       q: "When is the final registration deadline?",
-      a: "The final registration deadline is strictly Sunday, 25 October 2026. All presenting authors and global delegates must complete their registration and final publication-ready upload by this date to be included in the official proceedings and presentation schedule."
+      a: "The final registration deadline is strictly 25 October 2026. All presenting authors and global delegates must complete their registration and final publication-ready upload by this date to be included in the official proceedings and presentation schedule."
     },
     {
       q: "What is the timeline between paper submission and registration?",
-      a: "Paper and abstract submissions close on 23 October 2026. Final author registration and publication-ready uploads conclude on 23 October 2026, before the International Conference convenes on Sunday, 25 October 2026."
+      a: "Paper and abstract submissions close on 23 October 2026. Final author registration and publication-ready uploads conclude on 23 October 2026, before the International Conference convenes on 25 October 2026."
     },
     {
       q: "Can international researchers, NRIs, and authors present virtually without traveling?",
@@ -489,7 +489,7 @@ const Icgen2026 = () => {
     <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <SEOHead
         title="ICGEN-2026 | International Conference on Generative AI, Frontier Tech & Autonomous Systems"
-        description="Official International Conference website for ICGEN-2026 on Sunday, 25 October 2026. Paper submission & final registration deadline: 23 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
+        description="Official International Conference website for ICGEN-2026 on 25 October 2026. Paper submission & final registration deadline: 23 October 2026. Convening global researchers, Silicon Valley architects, and NRI tech leaders in Generative AI, Agentic Workflows, and Frontier Deep-Tech."
         canonical="https://www.eminsphere.com/icgen-2026"
         schema={{
           "@context": "https://schema.org",

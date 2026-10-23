@@ -93,7 +93,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     milestones: [
       { name: "Paper / Abstract Submission Deadline", date: "23 October 2026" },
       { name: "Final Registration & Camera-Ready", date: "25 October 2026" },
-      { name: "Main Conference Sessions", date: "25 October 2026 (Sunday)" }
+      { name: "Main Conference Sessions", date: "25 October 2026" }
     ],
     advisoryBoard: [
       { name: "Heinz Dollberg", designation: "Executive Vice President (ret.), Allianz", university: "Germany", image: "/speakers/heinz-dollberg.jpg", category: "Advisory Member" },
@@ -141,7 +141,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Paper / Abstract Submission Deadline", date: "15 November 2026" },
       { name: "Acceptance Notification", date: "18 November 2026" },
       { name: "Final Registration & Camera-Ready", date: "20 November 2026" },
-      { name: "Main Conference Sessions", date: "22 November 2026 (Sunday)" }
+      { name: "Main Conference Sessions", date: "22 November 2026" }
     ]
   },
   "icmedai-2026": {
@@ -164,7 +164,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Paper / Abstract Submission Deadline", date: "13 December 2026" },
       { name: "Acceptance Notification", date: "16 December 2026" },
       { name: "Final Registration & Camera-Ready", date: "18 December 2026" },
-      { name: "Main Conference Sessions", date: "20 December 2026 (Sunday)" }
+      { name: "Main Conference Sessions", date: "20 December 2026" }
     ]
   },
   "icaits-26": {
