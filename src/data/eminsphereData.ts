@@ -115,7 +115,8 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Antara", designation: "Cloud & Data Architecture Expert", university: "USA", image: "/speakers/antara.png", category: "Keynote Speaker" },
       { name: "Prathap Raghavan", designation: "Director of Product Management, Santander", university: "USA", image: "/speakers/prathap-raghavan.png", category: "Keynote Speaker" },
       { name: "Vipin Das", designation: "Cloud Solution Architect | Platform, DevOps, Infrastructure, Security & FinOps", university: "Centreville, Virginia, USA", image: "/speakers/vipin-das.png", category: "Keynote Speaker" },
-      { name: "Suresh Srinivasan", designation: "Enterprise Software & Big Data Engineering Expert", university: "USA", image: "/speakers/suresh-srinivasan.jpg", category: "Keynote Speaker" }
+      { name: "Suresh Srinivasan", designation: "Enterprise Software & Big Data Engineering Expert", university: "USA", image: "/speakers/suresh-srinivasan.jpg", category: "Keynote Speaker" },
+      { name: "Abhishek Sutar", designation: "Deep Learning & AI Optimization Expert", university: "USA", image: "/speakers/abhishek-sutar.png", category: "Keynote Speaker" }
     ]
   },
   "icpai-2026": {

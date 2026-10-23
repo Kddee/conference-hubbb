@@ -439,6 +439,14 @@ const conferenceData = {
       country: "USA 🇺🇸",
       image: "/speakers/suresh-srinivasan.jpg",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Abhishek Sutar",
+      designation: "Deep Learning & AI Optimization Expert",
+      organization: "Deep Learning & AI Optimization, USA",
+      country: "USA 🇺🇸",
+      image: "/speakers/abhishek-sutar.png",
+      category: "Keynote Speaker"
     }
   ],
 
