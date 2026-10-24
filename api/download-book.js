@@ -3,6 +3,10 @@ import path from "path";
 import crypto from "crypto";
 
 const BOOK_PDF_MAP = {
+  "generative-ai-student-work-authenticity": {
+    file: "generative-ai-student-work-authenticity.pdf",
+    title: "Generative-AI-and-Student-Work-Authenticity.pdf",
+  },
   "ai-distributed-systems-future-digital-technology": {
     file: "ai-distributed-systems-future-digital-technology.pdf",
     title: "AI-Distributed-Systems-and-the-Future-of-Digital-Technology.pdf",
