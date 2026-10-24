@@ -3,6 +3,10 @@ import path from "path";
 import crypto from "crypto";
 
 const BOOK_PDF_MAP = {
+  "ai-distributed-systems-future-digital-technology": {
+    file: "ai-distributed-systems-future-digital-technology.pdf",
+    title: "AI-Distributed-Systems-and-the-Future-of-Digital-Technology.pdf",
+  },
   "artificial-intelligence-new-horizons": {
     file: "artificial-intelligence-new-horizons.pdf",
     title: "Artificial-Intelligence-New-Horizons-and-Applications.pdf",

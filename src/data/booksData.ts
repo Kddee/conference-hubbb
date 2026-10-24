@@ -36,6 +36,23 @@ export function getBookPrice(book: { pricePaperbackINR?: number; priceEbookINR?:
 
 export const publishedBooks: Book[] = [
   {
+    id: "ai-distributed-systems-future-digital-technology",
+    title: "AI, Distributed Systems and the Future of Digital Technology",
+    subtitle: "A Comprehensive Exploration of Intelligent Systems, Distributed Architectures and a Digital Tomorrow",
+    authors: "Mr. Nitin Kishen, Dr. D. P. Kothari",
+    isbn: "978-8118237501",
+    date: "October 2026",
+    link: "https://www.amazon.com/dp/B0HNP86X35",
+    image: "/books/ai-distributed-systems-future-digital-technology.jpg",
+    wrapImage: "/books/ai-distributed-systems-future-digital-technology-wrap.jpg",
+    description: "Publisher: Eminsphere™\nISBN: 978-8118237501\nApproved by: RRRNA, Ministry of Education\n\nAbout the Authors:\n\nNitin Kishen Choweth Vijayakumar is an accomplished engineering leader specializing in global-scale platforms, internationalization, and AI-driven systems. At PayPal, he leads Globalization Engineering, enabling digital products to operate across more than 200 countries and 40 languages. His expertise spans enterprise platform architecture, developer SDKs, AI-powered localization, and large-scale engineering modernization, with a strong focus on scalability, reliability, regulatory compliance, and developer productivity. An IEEE Senior Member and SCRS Fellow, he has been selected for competitive leadership development programmes and has contributed to the global computing community through engagements with the Unicode Consortium, peer-reviewed publications, manuscript reviews for top ACM and Elsevier journals, IEEE conferences, and international technology award panels.\n\nDr. D. P. Kothari is a distinguished academician, researcher, and internationally renowned authority in Electrical Power and Energy Systems. An alumnus of BITS Pilani, he has served in eminent leadership positions, including Vice-Chancellor of VIT University, Vellore, and Director-in-Charge and Deputy Director (Administration) at IIT Delhi. With over 840 research publications, 74 authored books, and guidance of 57 Ph.D. scholars, his contributions span power system optimization, renewable energy, energy conservation, and sustainable energy management. A recipient of numerous prestigious honours, including the National Khosla Award for Lifetime Achievements in Engineering, he is a Fellow of several distinguished professional and scientific bodies, including IEEE, FNAE, and FNASc. His enduring contributions to engineering education, research, and academic leadership have established him as a highly respected figure in the global academic community.\n\nAbout the Book:\nAI, Distributed Systems and the Future of Digital Technology provides a comprehensive and rigorous exploration of the convergence of artificial intelligence and distributed computing systems. Authored by industry leaders and academic scholars, this volume delivers both foundational theoretical insight and practical operational frameworks for building, securing, and scaling next-generation digital platforms.\n\nKey areas explored include:\n• Foundations of Artificial Intelligence and Intelligent Systems\n• Principles and Architecture of Distributed Systems\n• Integrating Artificial Intelligence with Distributed Computing\n• Cloud Computing, Edge Intelligence, and Digital Infrastructure\n• Distributed Data Management and Intelligent Analytics\n• Distributed Architectures for Scalable and Reliable Digital Systems\n• Cybersecurity, Privacy, and Trust in Intelligent Distributed Systems\n• Digital Platforms, Globalization, and Technological Ecosystems\n• Intelligent Digital Technologies and Real-World Applications\n• The Future of Digital Technology: Innovation, Challenges, and Research Directions",
+    pricePaperbackINR: 1059,
+    priceEbookINR: 96,
+    priceINR: 1059,
+    pdfFile: "/books/pdf/ai-distributed-systems-future-digital-technology.pdf",
+    pdfFileName: "AI, Distributed Systems and the Future of Digital Technology.pdf"
+  },
+  {
     id: "artificial-intelligence-new-horizons",
     title: "Artificial Intelligence: New Horizons and Applications",
     subtitle: "Machine Learning, Computer Vision, Cybersecurity & Human-Centric AI",
