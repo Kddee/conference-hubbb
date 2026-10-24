@@ -209,7 +209,7 @@ const BookDetails = () => {
                   </span>
                   <span className="text-xl font-mono font-bold text-amber-500 flex items-center gap-1 mt-0.5">
                     <Star className="w-3.5 h-3.5 fill-current" />
-                    {analytics?.averageRating ?? 4.8}
+                    {analytics && analytics.reviewCount > 0 ? analytics.averageRating : "New"}
                   </span>
                 </div>
 
@@ -256,10 +256,16 @@ const BookDetails = () => {
                 {/* Rating Badge */}
                 <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 text-xs font-bold">
                   <Star className="w-3.5 h-3.5 fill-current" />
-                  <span>{analytics?.averageRating ?? 4.8}</span>
-                  <span className="text-muted-foreground font-normal">
-                    ({analytics?.reviewCount ?? 0} reviews)
-                  </span>
+                  {analytics && analytics.reviewCount > 0 ? (
+                    <>
+                      <span>{analytics.averageRating}</span>
+                      <span className="text-muted-foreground font-normal">
+                        ({analytics.reviewCount} reviews)
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-muted-foreground font-normal">New Release</span>
+                  )}
                 </div>
 
                 {/* Download Badge */}

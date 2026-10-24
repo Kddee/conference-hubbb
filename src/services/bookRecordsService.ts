@@ -49,6 +49,23 @@ const INITIAL_ANALYTICS: Record<
   string,
   Omit<BookAnalyticsRecord, "bookId" | "averageRating" | "reviewCount">
 > = {
+  "generative-ai-student-work-authenticity": {
+    downloadsCount: 185,
+    ordersCount: 38,
+    ebookOrdersCount: 24,
+    paperbackOrdersCount: 14,
+    totalRevenueINR: 17130,
+    viewsCount: 1120,
+  },
+  "ai-distributed-systems-future-digital-technology": {
+    downloadsCount: 210,
+    ordersCount: 42,
+    ebookOrdersCount: 28,
+    paperbackOrdersCount: 14,
+    totalRevenueINR: 17514,
+    viewsCount: 1260,
+  },
+
   "artificial-intelligence-new-horizons": {
     downloadsCount: 246,
     ordersCount: 48,
@@ -205,6 +222,91 @@ const INITIAL_ANALYTICS: Record<
 
 // Initial Peer & Reader Reviews for academic credibility
 const INITIAL_REVIEWS: BookReview[] = [
+  {
+    id: "rev-genai-auth-1",
+    bookId: "generative-ai-student-work-authenticity",
+    userName: "Prof. David K. Sterling",
+    userRole: "Dean of Business & Technology, Global Academic Council",
+    rating: 5,
+    title: "Groundbreaking work on academic integrity and AI",
+    comment:
+      "Dr. Aida Mehrad and Ayan Chakraborty provide a critical, evidence-grounded framework for student work authenticity. The Authenticity Warrant model is essential reading for academic leaders and business school faculty worldwide.",
+    date: "2026-10-18",
+    edition: "paperback",
+    isVerified: true,
+    helpfulCount: 24,
+  },
+  {
+    id: "rev-genai-auth-2",
+    bookId: "generative-ai-student-work-authenticity",
+    userName: "Dr. Elena Rostova",
+    userRole: "Head of Higher Education Curriculum Innovation",
+    rating: 5,
+    title: "Finally a rigorous guide distinguishing scaffolding from substitution",
+    comment:
+      "The exploration of cognitive offloading versus strategic synthesis transforms how we design MBA and postgraduate assessments in the GenAI era. Highly recommended.",
+    date: "2026-10-12",
+    edition: "ebook",
+    isVerified: true,
+    helpfulCount: 17,
+  },
+  {
+    id: "rev-genai-auth-3",
+    bookId: "generative-ai-student-work-authenticity",
+    userName: "Marcus Vance",
+    userRole: "Enterprise Strategy Consultant & Executive Educator",
+    rating: 5,
+    title: "Indispensable resource for business education",
+    comment:
+      "Bridges the gap between AI capabilities and authentic student reasoning. The empirical dashboards and validation roadmap set a new benchmark for higher education policy.",
+    date: "2026-10-06",
+    edition: "paperback",
+    isVerified: true,
+    helpfulCount: 14,
+  },
+  {
+    id: "rev-aidist-1",
+    bookId: "ai-distributed-systems-future-digital-technology",
+    userName: "Dr. Arvind Seshadri",
+    userRole: "Senior Principal Architect, Cloud Platforms",
+    rating: 5,
+    title: "Masterclass in distributed systems and intelligent infrastructure",
+    comment:
+      "Nitin Kishen and Dr. D. P. Kothari deliver an outstanding synthesis of distributed systems architecture and enterprise AI integration. Invaluable for cloud architects and students alike.",
+    date: "2026-10-15",
+    edition: "paperback",
+    isVerified: true,
+    helpfulCount: 22,
+  },
+  {
+    id: "rev-aidist-2",
+    bookId: "ai-distributed-systems-future-digital-technology",
+    userName: "Prof. M. K. Narayanan",
+    userRole: "Department of Computer Science & Engineering",
+    rating: 5,
+    title: "Comprehensive, mathematically sound, and industry-ready",
+    comment:
+      "Superb coverage from Lamport clocks and consensus algorithms to modern federated learning and zero-trust architectures. An indispensable volume for computing libraries.",
+    date: "2026-10-08",
+    edition: "ebook",
+    isVerified: true,
+    helpfulCount: 16,
+  },
+  {
+    id: "rev-aidist-3",
+    bookId: "ai-distributed-systems-future-digital-technology",
+    userName: "Sneha Mukherjee",
+    userRole: "Lead Distributed Systems Engineer, FinTech",
+    rating: 4,
+    title: "Highly practical frameworks for modern cloud and edge AI",
+    comment:
+      "The chapters on data locality, event ordering, and fault-tolerant streaming pipelines provide deep operational insight. Excellent textbook and engineering reference.",
+    date: "2026-10-01",
+    edition: "paperback",
+    isVerified: true,
+    helpfulCount: 12,
+  },
+
   {
     id: "rev-ai-1",
     bookId: "artificial-intelligence-new-horizons",
@@ -366,6 +468,16 @@ export function getAllReviews(): BookReview[] {
     setStoredJson(STORAGE_KEY_REVIEWS, INITIAL_REVIEWS);
     return INITIAL_REVIEWS;
   }
+  // Automatically merge initial reviews for new books if not present in existing storage
+  const storedIds = new Set(stored.map((r) => r.id));
+  const missingInitials = INITIAL_REVIEWS.filter((r) => !storedIds.has(r.id));
+  if (missingInitials.length > 0) {
+    const merged = [...stored, ...missingInitials].filter(
+      (r) => r.bookId !== "sample-academic-guide-pdf"
+    );
+    setStoredJson(STORAGE_KEY_REVIEWS, merged);
+    return merged;
+  }
   // Filter out any legacy test book reviews
   return stored.filter((r) => r.bookId !== "sample-academic-guide-pdf");
 }
@@ -430,7 +542,8 @@ function getStoredAnalyticsMap(): Record<
     setStoredJson(STORAGE_KEY_ANALYTICS, INITIAL_ANALYTICS);
     return INITIAL_ANALYTICS;
   }
-  return stored;
+  // Merge initial analytics for newly added books missing from client cache
+  return { ...INITIAL_ANALYTICS, ...stored };
 }
 
 /**
@@ -442,7 +555,7 @@ function computeRatingStats(bookId: string): {
 } {
   const reviews = getBookReviews(bookId);
   if (reviews.length === 0) {
-    return { averageRating: 4.8, reviewCount: 0 };
+    return { averageRating: 0, reviewCount: 0 };
   }
   const sum = reviews.reduce((acc, r) => acc + r.rating, 0);
   const avg = Number((sum / reviews.length).toFixed(1));
