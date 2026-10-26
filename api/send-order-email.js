@@ -15,8 +15,7 @@ const BOOK_PDF_MAP = {
   "analytics-in-the-ai-era": "analytics-in-the-ai-era.pdf",
   "it-in-the-energy-sector": "it-in-the-energy-sector.pdf",
   "secure-cloud-ai-ml-for-financial-and-pension-systems": "secure-cloud-ai-ml-for-financial-and-pension-systems.pdf",
-  "predictive-analytics-for-meteorological-data-using-ai": "predictive-analytics-for-meteorological-data-using-ai.pdf",
-  "mastering-cloud-computing-fundamentals-to-enterprise-scale": "mastering-cloud-computing-fundamentals-to-enterprise-scale.pdf",
+    "mastering-cloud-computing-fundamentals-to-enterprise-scale": "mastering-cloud-computing-fundamentals-to-enterprise-scale.pdf",
   "artificial-intelligence-for-scalable-distributed-systems": "artificial-intelligence-for-scalable-distributed-systems.pdf",
   "mechai-nexus-convergence-of-ai-robotics": "mechai-nexus-convergence-of-ai-robotics.pdf",
 };

@@ -364,22 +364,6 @@ export const publishedBooks: Book[] = [
   }
 ,
   {
-    id: "predictive-analytics-for-meteorological-data-using-ai",
-    title: "Predictive Analytics for Meteorological Data Using Artificial Intelligence",
-    subtitle: "Machine Learning & Deep Learning Forecasting Architectures",
-    authors: "Dr. Rahul Azmeera, Dr. Deepak K. Sharma",
-    isbn: "978-8118045694",
-    date: "March 2026",
-    link: "https://www.eminsphere.com/books",
-    image: bookImg1,
-    description: "Publisher: Eminsphere™\n\nAbout the Authors:\nDr. Rahul Azmeera is an accomplished researcher and academician specializing in Artificial Intelligence, predictive data science, and meteorological data processing.\n\nDr. Deepak K. Sharma is a globally recognized expert in Artificial Intelligence and Data Science, Head of E&TC Engineering at NESGI, India, and an author of multiple peer-reviewed volumes.\n\nAbout the Book:\nPredictive Analytics for Meteorological Data Using Artificial Intelligence presents a comprehensive investigation into how computational intelligence, statistical learning, and deep neural architectures revolutionize atmospheric analysis and weather forecasting. The work bridges theoretical meteorological models with real-world hybrid neural architectures, feature engineering pipelines, and real-time sensor telemetry integration.\n\nKey topics covered:\n• Numerical Weather Prediction vs Data-Driven AI Forecasting\n• Meteorological Feature Engineering, Atmospheric Sensor Telemetry & Preprocessing\n• Deep Recurrent Architectures (LSTM, GRU, BiLSTM) for Microclimate Timeseries\n• Hybrid Neural Models & Ensemble Predictive Pipelines\n• Extreme Climate Event Early Warning Systems & Disaster Mitigation Architecture",
-    pricePaperbackINR: 899,
-    priceEbookINR: 99,
-    priceINR: 899,
-    pdfFile: "/books/pdf/predictive-analytics-for-meteorological-data-using-ai.pdf",
-    pdfFileName: "Predictive Analytics for Meteorological Data Using Artificial Intelligence.pdf"
-  },
-  {
     id: "mastering-cloud-computing-fundamentals-to-enterprise-scale",
     title: "Mastering Cloud Computing: Fundamentals to Enterprise Scale",
     subtitle: "A Complete Enterprise-Focused Guide to Cloud Principles, Architecture, Operations, and Reliability",

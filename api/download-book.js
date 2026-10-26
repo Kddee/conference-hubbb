@@ -59,10 +59,6 @@ const BOOK_PDF_MAP = {
     file: "secure-cloud-ai-ml-for-financial-and-pension-systems.pdf",
     title: "Secure-Cloud-AI-ML-for-Financial-and-Pension-Systems.pdf",
   },
-  "predictive-analytics-for-meteorological-data-using-ai": {
-    file: "predictive-analytics-for-meteorological-data-using-ai.pdf",
-    title: "Predictive-Analytics-for-Meteorological-Data-Using-AI.pdf",
-  },
   "mastering-cloud-computing-fundamentals-to-enterprise-scale": {
     file: "mastering-cloud-computing-fundamentals-to-enterprise-scale.pdf",
     title: "Mastering-Cloud-Computing-Fundamentals-to-Enterprise-Scale.pdf",
