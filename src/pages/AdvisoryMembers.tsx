@@ -4,6 +4,7 @@ import { Globe } from "lucide-react";
 
 // Removing duplicates from the provided data
 const advisoryMembers = [
+  { name: "Damodhara Reddy Palavali", role: "IEEE Senior Member | Zero Trust & Identity Security Specialist | Sbase Technologies USA", location: "USA", image: "/speakers/damodhara-reddy-palavali.jpg" },
   { name: "Nino Devidze", role: "Tourism Educator & Program Manager, The University of Georgia", location: "Georgia", image: "/speakers/nino-devidze.jpg" },
   { name: "Mayank Atreya", role: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", location: "USA", image: "/speakers/mayank-atreya.jpg" },
   { name: "Roksolana Trach", role: "Independent Crypto Analyst & International Financial Market Analyst", location: "USA", image: "/icaits26/roksolana-trach.png" },

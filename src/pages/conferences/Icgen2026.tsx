@@ -273,6 +273,14 @@ const conferenceData = {
 
   advisoryMembers: [
     {
+      name: "Damodhara Reddy Palavali",
+      designation: "IEEE Senior Member | Zero Trust & Identity Security Specialist",
+      organization: "Sbase Technologies USA",
+      country: "USA 🇺🇸",
+      image: "/speakers/damodhara-reddy-palavali.jpg",
+      category: "Advisory Member"
+    },
+    {
       name: "Heinz Dollberg",
       designation: "Executive Vice President (ret.), Allianz",
       organization: "Allianz",
@@ -353,14 +361,6 @@ const conferenceData = {
       organization: "M. L. Dahanukar College of Commerce (Autonomous), Mumbai",
       country: "India 🇮🇳",
       image: "/speakers/dr-pallavi-omkar-sawant.jpg",
-      category: "Keynote Speaker"
-    },
-    {
-      name: "Damodhara Reddy Palavali",
-      designation: "Zero Trust & Identity Security Specialist",
-      organization: "IEEE Senior Member | Sbase Technologies",
-      country: "USA 🇺🇸",
-      image: "/speakers/damodhara-reddy-palavali.jpg",
       category: "Keynote Speaker"
     },
     {
