@@ -23,6 +23,7 @@ export interface ConferenceData {
   speakers?: { name: string; designation: string; university: string; image: string; category?: string; }[];
   patron?: { name: string; role: string; description: string; organization: string; location: string; image: string; };
   advisoryBoard?: { name: string; designation?: string; role?: string; university?: string; location?: string; image: string; category?: string; }[];
+  glimpses?: string[];
 }
 
 export interface ProceedingData {
@@ -120,6 +121,22 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Suresh Srinivasan", designation: "Enterprise Software & Big Data Engineering Expert", university: "USA", image: "/speakers/suresh-srinivasan.jpg", category: "Keynote Speaker" },
       { name: "Abhishek Sutar", designation: "Deep Learning & AI Optimization Expert", university: "USA", image: "/speakers/abhishek-sutar.png", category: "Keynote Speaker" },
       { name: "Dr. Ruth Abiola Adimula, Esq. fspsp", designation: "Associate Professor, Centre for Peace and Strategic Studies, University of Ilorin", university: "Nigeria", image: "/speakers/dr-ruth-abiola-adimula.png", category: "Keynote Speaker" }
+    ],
+    glimpses: [
+      "/conferences/icgen-glimpse-1.png",
+      "/conferences/icgen-glimpse-2.png",
+      "/conferences/icgen-glimpse-3.png",
+      "/conferences/icgen-glimpse-4.png",
+      "/conferences/icgen-glimpse-5.png",
+      "/conferences/icgen-glimpse-6.png",
+      "/conferences/icgen-glimpse-7.png",
+      "/conferences/icgen-glimpse-8.png",
+      "/conferences/icgen-glimpse-9.png",
+      "/conferences/icgen-glimpse-10.png",
+      "/conferences/icgen-glimpse-11.png",
+      "/conferences/icgen-glimpse-12.png",
+      "/conferences/icgen-glimpse-13.png",
+      "/conferences/icgen-glimpse-14.png"
     ]
   },
   "icpai-2026": {

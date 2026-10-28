@@ -36,8 +36,30 @@ import {
   Book,
   Video,
   PlayCircle,
-  FileText
+  FileText,
+  Camera,
+  ZoomIn,
+  Image as ImageIcon,
+  ChevronLeft,
+  ChevronRight,
+  Maximize2
 } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+
+import glimpse1 from "@/assets/Screenshot 2026-10-25 170721.png";
+import glimpse2 from "@/assets/Screenshot 2026-10-25 174240.png";
+import glimpse3 from "@/assets/Screenshot 2026-10-25 175854.png";
+import glimpse4 from "@/assets/Screenshot 2026-10-25 181342.png";
+import glimpse5 from "@/assets/Screenshot 2026-10-25 182055.png";
+import glimpse6 from "@/assets/Screenshot 2026-10-25 184242.png";
+import glimpse7 from "@/assets/Screenshot 2026-10-25 192527.png";
+import glimpse8 from "@/assets/Screenshot 2026-10-25 194120.png";
+import glimpse9 from "@/assets/Screenshot 2026-10-25 202356.png";
+import glimpse10 from "@/assets/Screenshot 2026-10-25 203938.png";
+import glimpse11 from "@/assets/Screenshot 2026-10-25 213538.png";
+import glimpse12 from "@/assets/Screenshot 2026-10-25 220138.png";
+import glimpse13 from "@/assets/Screenshot 2026-10-25 221557.png";
+import glimpse14 from "@/assets/Screenshot 2026-10-25 221605.png";
 
 
 
@@ -247,6 +269,23 @@ const conferenceData = {
     { id: "9kttwXlZAl4", url: "https://youtu.be/9kttwXlZAl4", speaker: "Dr Montsheng Letsoalo", role: "Founder & Social Neuroscientist", title: "Keynote Presentation | ICGEN-2026", org: "Trauma Neuro Institute • South Africa" },
     { id: "-xUL5rcEOiE", url: "https://youtu.be/-xUL5rcEOiE", speaker: "Suresh Srinivasan", role: "Enterprise Software & Big Data Engineering Expert", title: "Keynote Presentation | ICGEN-2026", org: "Enterprise Software & Big Data Systems • USA" },
     { id: "EF0-zz0ETwY", url: "https://youtu.be/EF0-zz0ETwY", speaker: "Dr. Marek Wasiluk", role: "Clinical Research Expert", title: "Keynote Presentation | ICGEN-2026", org: "Clinical Research • Poland" }
+  ],
+
+  glimpses: [
+    { src: glimpse1, title: "Plenary Keynote Session", speaker: "Carolina Barandiaran", topic: "Distance Education AI Evaluation" },
+    { src: glimpse2, title: "Clinical AI Keynote Address", speaker: "Dr. Marek Wasiluk", topic: "AI in Medical Science: Between Excitement & Caution" },
+    { src: glimpse3, title: "Technical Paper Presentation", speaker: "Dr. Ruth Abiola Adimula", topic: "Strategic AI Applications" },
+    { src: glimpse4, title: "Frontier Foundation Session", speaker: "Damodhara Reddy Palavali", topic: "Zero Trust & Identity Security Specialist" },
+    { src: glimpse5, title: "International Delegate Defense", speaker: "Prof. Rehab Hegazy", topic: "Pharmacology & Bio-AI Systems" },
+    { src: glimpse6, title: "Enterprise Generative AI Track", speaker: "Richard Afoakwah-Nti", topic: "IT Architecture & Cloud Infrastructure" },
+    { src: glimpse7, title: "Global Technical Session", speaker: "Abhishek Sutar", topic: "Deep Learning Optimization" },
+    { src: glimpse8, title: "Intelligent Autonomous Systems", speaker: "Vipin Das", topic: "DevOps & Cloud Architecture" },
+    { src: glimpse9, title: "Frontier LLM Presentation", speaker: "Prathap Raghavan", topic: "Enterprise AI Products" },
+    { src: glimpse10, title: "Agentic AI Orchestration", speaker: "FNU Lovleen Kaur", topic: "Multi-Agent Systems & Software Engineering" },
+    { src: glimpse11, title: "Global Virtual Assembly", speaker: "Harshini Gadam", topic: "Generative AI Enterprise Scale" },
+    { src: glimpse12, title: "International Research Forum", speaker: "Dr. Pallavi Omkar Sawant", topic: "Higher Education AI Impact" },
+    { src: glimpse13, title: "Neuroscience & AI Dialogue", speaker: "Dr Montsheng Letsoalo", topic: "Social Neuroscience & AI" },
+    { src: glimpse14, title: "Valedictory & Closing Plenary", speaker: "Suresh Srinivasan & Delegates", topic: "Global Research Confluence" }
   ],
 
   publication: [
@@ -510,6 +549,7 @@ const conferenceData = {
 
 const Icgen2026 = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [selectedGlimpse, setSelectedGlimpse] = useState<number | null>(null);
   const regCountdown = useCountdown(REGISTRATION_DEADLINE_DATE);
 
   return (
@@ -644,6 +684,11 @@ const Icgen2026 = () => {
               <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-primary/10 hover:bg-primary/20 border-primary/30 text-primary font-bold h-12 sm:h-14 px-7 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-sm sm:text-base">
                 <a href="#proceedings" className="flex items-center justify-center gap-2">
                   <PlayCircle className="h-4 w-4 text-accent" /> Watch Proceedings (15)
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-accent/10 hover:bg-accent/20 border-accent/30 text-accent font-bold h-12 sm:h-14 px-7 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-sm sm:text-base">
+                <a href="#glimpses" className="flex items-center justify-center gap-2">
+                  <Camera className="h-4 w-4 text-accent" /> View Glimpses (14)
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold h-12 sm:h-14 px-7 rounded-full transition-all text-sm sm:text-base">
@@ -1261,6 +1306,133 @@ const Icgen2026 = () => {
               <Link to="/upcoming-conferences">View All Upcoming Conferences</Link>
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* GLIMPSES OF ICGEN-2026 CONFERENCE */}
+      <section id="glimpses" className="py-20 sm:py-28 bg-[#000d14] border-t border-border/40 relative overflow-hidden scroll-mt-16">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-primary/5 rounded-full blur-[180px] pointer-events-none" />
+
+        <div className="container max-w-7xl px-4 relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16 pb-6 border-b border-white/10">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/15 text-accent border border-accent/25 text-xs font-bold uppercase tracking-widest mb-4">
+                <Camera className="h-4 w-4" /> Official Event Gallery • 14 Live Glimpses
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-3">
+                Glimpses of ICGEN-2026 Conference
+              </h2>
+              <p className="text-muted-foreground text-sm sm:text-base max-w-2xl leading-relaxed">
+                Highlights, keynote presentations, plenary sessions, and live interactive moments captured on 25 October 2026 during the International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-xs font-mono text-white/60 bg-white/5 border border-white/10 px-4 py-2 rounded-full flex items-center gap-1.5">
+                <ZoomIn className="h-3.5 w-3.5 text-accent" /> Click any photo to enlarge in HD
+              </span>
+            </div>
+          </div>
+
+          {/* Glimpses Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            {conferenceData.glimpses.map((glimpse, idx) => (
+              <Card
+                key={idx}
+                onClick={() => setSelectedGlimpse(idx)}
+                className="group cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-card/40 hover:bg-card/80 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1.5 shadow-lg flex flex-col relative"
+              >
+                <div className="relative aspect-video w-full bg-black/60 overflow-hidden">
+                  <img
+                    src={glimpse.src}
+                    alt={glimpse.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="text-white text-xs font-bold px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 flex items-center gap-1.5 shadow-lg">
+                      <ZoomIn className="h-3.5 w-3.5 text-accent" /> Click to Expand
+                    </span>
+                  </div>
+                  <div className="absolute top-2.5 left-2.5">
+                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-black/75 backdrop-blur-md text-white/90 border border-white/15">
+                      #{String(idx + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between border-t border-white/5">
+                  <div>
+                    <h4 className="font-serif font-bold text-sm text-white group-hover:text-primary transition-colors leading-snug line-clamp-1 mb-1">
+                      {glimpse.speaker}
+                    </h4>
+                    <p className="text-[11px] font-medium text-accent truncate">
+                      {glimpse.title}
+                    </p>
+                  </div>
+                  <div className="pt-2 mt-2 border-t border-white/5 flex items-center justify-between text-[10px] text-muted-foreground">
+                    <span>25 Oct 2026</span>
+                    <span className="font-mono text-white/50">Live Zoom</span>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          {/* Lightbox Dialog */}
+          <Dialog open={selectedGlimpse !== null} onOpenChange={(open) => !open && setSelectedGlimpse(null)}>
+            <DialogContent className="max-w-5xl p-3 sm:p-5 bg-card/95 backdrop-blur-xl border-white/15 text-white">
+              {selectedGlimpse !== null && conferenceData.glimpses[selectedGlimpse] && (
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between px-2 pt-1 pb-2 border-b border-white/10">
+                    <div>
+                      <DialogTitle className="text-base sm:text-lg font-serif font-bold text-white">
+                        {conferenceData.glimpses[selectedGlimpse].speaker} — {conferenceData.glimpses[selectedGlimpse].title}
+                      </DialogTitle>
+                      <DialogDescription className="text-xs text-muted-foreground mt-0.5">
+                        {conferenceData.glimpses[selectedGlimpse].topic} • Glimpse {selectedGlimpse + 1} of {conferenceData.glimpses.length}
+                      </DialogDescription>
+                    </div>
+                  </div>
+
+                  <div className="relative rounded-xl overflow-hidden bg-black/80 flex items-center justify-center max-h-[75vh]">
+                    <img
+                      src={conferenceData.glimpses[selectedGlimpse].src}
+                      alt={conferenceData.glimpses[selectedGlimpse].title}
+                      className="w-full h-auto max-h-[75vh] object-contain"
+                    />
+
+                    {/* Prev button */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedGlimpse((prev) => (prev !== null ? (prev - 1 + conferenceData.glimpses.length) % conferenceData.glimpses.length : 0));
+                      }}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/20 transition-all hover:scale-110"
+                      aria-label="Previous glimpse"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+
+                    {/* Next button */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedGlimpse((prev) => (prev !== null ? (prev + 1) % conferenceData.glimpses.length : 0));
+                      }}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/20 transition-all hover:scale-110"
+                      aria-label="Next glimpse"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </div>
+
+                  <div className="flex items-center justify-between px-2 text-xs text-muted-foreground">
+                    <span>ICGEN-2026 Virtual Stage • 25 October 2026</span>
+                    <span className="font-mono">Use arrows to navigate • ESC to close</span>
+                  </div>
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
     </main>
