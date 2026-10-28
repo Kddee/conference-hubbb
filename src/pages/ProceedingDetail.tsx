@@ -42,8 +42,10 @@ const ProceedingDetail = () => {
   const location = useLocation();
   const pathId = location.pathname.split('/').pop() || "";
   const finalId = id || pathId;
+  const normalizedId = finalId ? finalId.toLowerCase().trim() : "";
+  const lookupKey = (normalizedId === "icgen" || normalizedId === "icgen2026") ? "icgen-2026" : normalizedId;
 
-  const data = finalId ? proceedings[finalId] : undefined;
+  const data = lookupKey ? (proceedings[lookupKey] || proceedings[finalId]) : undefined;
 
   if (!data) {
     return (

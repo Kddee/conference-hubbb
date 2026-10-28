@@ -269,6 +269,29 @@ export const upcomingConferences: Record<string, ConferenceData> = {
 upcomingConferences["wsgen-2026"] = upcomingConferences["icgen-2026"];
 
 export const proceedings: Record<string, ProceedingData> = {
+  "icgen-2026": {
+    id: "icgen-2026",
+    title: "Proceeding ICGEN-2026",
+    date: "2026",
+    description: "Official proceedings, keynote sessions, and research presentations from the International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026). Published with ISBN: 978-81-182375-1-8.",
+    videos: [
+      { url: "https://youtu.be/ckWvuXaJAUk", speaker: "Damodhara Reddy Palavali", title: "Keynote Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/8y9xq7DZBLs", speaker: "Richard Afoakwah-Nti", title: "Keynote Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/xHgU2vD_Wuw", speaker: "Antara", title: "Paper Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/FR3dRc0EDzA", speaker: "Prof. Rehab Hegazy", title: "Keynote Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/Fq1N7pN3IWc", speaker: "FNU Lovleen Kaur", title: "Paper Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/-uwHeIxUhcU", speaker: "Vipin Das", title: "Keynote Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/7etKfsfmem4", speaker: "Abhishek Sutar", title: "Paper Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/P00PEPsDa3s", speaker: "Prathap Raghavan", title: "Keynote Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/GMSHTjueJYI", speaker: "Harshini Gadam", title: "Paper Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/tTCaw84jbwc", speaker: "Dr. Pallavi Omkar Sawant", title: "Keynote Address | ICGEN-2026" },
+      { url: "https://youtu.be/03Nk4tn9qhk", speaker: "Dr. Ruth Abiola Adimula", title: "Keynote Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/WoBsAzssphg", speaker: "Sanjay Kumar", title: "Keynote Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/9kttwXlZAl4", speaker: "Dr. Montsheng Letsoalo", title: "Keynote Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/-xUL5rcEOiE", speaker: "Suresh Srinivasan", title: "Keynote Presentation | ICGEN-2026" },
+      { url: "https://youtu.be/EF0-zz0ETwY", speaker: "Dr. Marek Wasiluk", title: "Keynote Presentation | ICGEN-2026" }
+    ]
+  },
   "aiforge-26": {
     id: "aiforge-26",
     title: "Proceeding AIFORGE 2026",

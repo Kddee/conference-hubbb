@@ -33,7 +33,10 @@ import {
   Building2,
   AlertTriangle,
   Bot,
-  Book
+  Book,
+  Video,
+  PlayCircle,
+  FileText
 } from "lucide-react";
 
 
@@ -228,7 +231,23 @@ const conferenceData = {
     }
   ],
 
-
+  videos: [
+    { id: "ckWvuXaJAUk", url: "https://youtu.be/ckWvuXaJAUk", speaker: "Damodhara Reddy Palavali", role: "IEEE Senior Member | Zero Trust & Security Specialist", title: "Keynote Presentation | ICGEN-2026", org: "Sbase Technologies USA" },
+    { id: "8y9xq7DZBLs", url: "https://youtu.be/8y9xq7DZBLs", speaker: "Richard Afoakwah-Nti", role: "Founder & CEO | IT Expert & Entrepreneur", title: "Keynote Presentation | ICGEN-2026", org: "Rich Dream Consult (RDC) • Ghana" },
+    { id: "xHgU2vD_Wuw", url: "https://youtu.be/xHgU2vD_Wuw", speaker: "Antara", role: "Cloud & Data Architecture Expert", title: "Paper Presentation | ICGEN-2026", org: "Enterprise Cloud Architecture • USA" },
+    { id: "FR3dRc0EDzA", url: "https://youtu.be/FR3dRc0EDzA", speaker: "Prof. Rehab Hegazy, PhD", role: "Professor of Pharmacology & Secretary-General", title: "Keynote Presentation | ICGEN-2026", org: "National Research Centre (NRC) • Egypt" },
+    { id: "Fq1N7pN3IWc", url: "https://youtu.be/Fq1N7pN3IWc", speaker: "FNU Lovleen Kaur", role: "Generative AI & Agentic AI Expert", title: "Paper Presentation | ICGEN-2026", org: "Enterprise AI Solutions • USA" },
+    { id: "-uwHeIxUhcU", url: "https://youtu.be/-uwHeIxUhcU", speaker: "Vipin Das", role: "Cloud Solution Architect | Platform, DevOps & Security", title: "Keynote Presentation | ICGEN-2026", org: "Enterprise Cloud Architecture • USA" },
+    { id: "7etKfsfmem4", url: "https://youtu.be/7etKfsfmem4", speaker: "Abhishek Sutar", role: "Deep Learning & AI Optimization Expert", title: "Paper Presentation | ICGEN-2026", org: "Deep Learning & AI Optimization • USA" },
+    { id: "P00PEPsDa3s", url: "https://youtu.be/P00PEPsDa3s", speaker: "Prathap Raghavan", role: "Director of Product Management & Technology Leader", title: "Keynote Presentation | ICGEN-2026", org: "Santander • USA" },
+    { id: "GMSHTjueJYI", url: "https://youtu.be/GMSHTjueJYI", speaker: "Harshini Gadam", role: "Enterprise Generative AI & Autonomous Systems Expert", title: "Paper Presentation | ICGEN-2026", org: "Enterprise AI Systems • USA" },
+    { id: "tTCaw84jbwc", url: "https://youtu.be/tTCaw84jbwc", speaker: "Dr. Pallavi Omkar Sawant", role: "Assistant Professor", title: "Keynote Address | ICGEN-2026", org: "M. L. Dahanukar College of Commerce • India" },
+    { id: "03Nk4tn9qhk", url: "https://youtu.be/03Nk4tn9qhk", speaker: "Dr. Ruth Abiola Adimula, Esq. fspsp", role: "Associate Professor", title: "Keynote Presentation | ICGEN-2026", org: "University of Ilorin • Nigeria" },
+    { id: "WoBsAzssphg", url: "https://youtu.be/WoBsAzssphg", speaker: "Sanjay Kumar", role: "IT Operations & Digital Transformation Expert", title: "Keynote Presentation | ICGEN-2026", org: "Enterprise IT Systems • USA" },
+    { id: "9kttwXlZAl4", url: "https://youtu.be/9kttwXlZAl4", speaker: "Dr Montsheng Letsoalo", role: "Founder & Social Neuroscientist", title: "Keynote Presentation | ICGEN-2026", org: "Trauma Neuro Institute • South Africa" },
+    { id: "-xUL5rcEOiE", url: "https://youtu.be/-xUL5rcEOiE", speaker: "Suresh Srinivasan", role: "Enterprise Software & Big Data Engineering Expert", title: "Keynote Presentation | ICGEN-2026", org: "Enterprise Software & Big Data Systems • USA" },
+    { id: "EF0-zz0ETwY", url: "https://youtu.be/EF0-zz0ETwY", speaker: "Dr. Marek Wasiluk", role: "Clinical Research Expert", title: "Keynote Presentation | ICGEN-2026", org: "Clinical Research • Poland" }
+  ],
 
   publication: [
     {
@@ -620,6 +639,11 @@ const Icgen2026 = () => {
               <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-accent/15 hover:bg-accent/25 border-accent/40 text-accent font-bold h-12 sm:h-14 px-8 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-sm sm:text-base">
                 <a href={conferenceData.cmtLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                   Submit via CMT <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-primary/10 hover:bg-primary/20 border-primary/30 text-primary font-bold h-12 sm:h-14 px-7 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-sm sm:text-base">
+                <a href="#proceedings" className="flex items-center justify-center gap-2">
+                  <PlayCircle className="h-4 w-4 text-accent" /> Watch Proceedings (15)
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold h-12 sm:h-14 px-7 rounded-full transition-all text-sm sm:text-base">
@@ -1028,6 +1052,113 @@ const Icgen2026 = () => {
                 Submit via CMT <ExternalLink className="h-4 w-4" />
               </a>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* DIGITAL PROCEEDINGS & RECORDED SESSIONS */}
+      <section id="proceedings" className="py-20 sm:py-28 bg-gradient-to-b from-card/40 via-background to-card/20 border-b border-border/40 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[160px] pointer-events-none" />
+
+        <div className="container max-w-6xl px-4 relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16 pb-6 border-b border-white/10">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/15 text-accent border border-accent/25 text-xs font-bold uppercase tracking-widest mb-4">
+                <Video className="h-4 w-4" /> Official Digital Proceedings • 15 Presentations
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-3">
+                Keynote Sessions & Research Presentations
+              </h2>
+              <p className="text-muted-foreground text-sm sm:text-base max-w-2xl leading-relaxed">
+                Watch official keynote addresses, technical paper defenses, and visionary talks delivered at ICGEN-2026 by distinguished international researchers and Silicon Valley practitioners.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-black px-6 shadow-gold transition-all text-sm">
+                <Link to="/recent-proceedings/icgen-2026" className="flex items-center gap-2">
+                  <BookOpen className="h-4 w-4" /> View Digital Library <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+
+          {/* Videos Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {conferenceData.videos.map((video, idx) => (
+              <Card
+                key={idx}
+                className="overflow-hidden border border-white/10 bg-card/60 hover:bg-card/90 hover:border-primary/50 transition-all duration-300 rounded-2xl sm:rounded-3xl shadow-xl flex flex-col group hover:-translate-y-1"
+              >
+                <div className="relative aspect-video w-full bg-black/60 overflow-hidden">
+                  <iframe
+                    className="absolute inset-0 w-full h-full border-0"
+                    src={`https://www.youtube.com/embed/${video.id}?rel=0`}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-accent/15 text-accent border border-accent/25">
+                        Session {String(idx + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-[11px] font-medium text-white/60 truncate max-w-[160px]">
+                        {video.org}
+                      </span>
+                    </div>
+                    <h3 className="font-serif font-bold text-lg text-white group-hover:text-primary transition-colors leading-snug mb-1.5">
+                      {video.speaker}
+                    </h3>
+                    <p className="text-xs font-medium text-accent/90 mb-2 leading-relaxed">
+                      {video.role}
+                    </p>
+                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                      {video.title}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs">
+                    <span className="text-muted-foreground font-mono">ICGEN-2026 Archive</span>
+                    <a
+                      href={video.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-white font-bold inline-flex items-center gap-1 transition-colors"
+                    >
+                      Watch on YouTube <ExternalLink className="h-3 w-3" />
+                    </a>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          {/* Proceedings Banner Callout */}
+          <div className="mt-14 sm:mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-primary/10 via-card/70 to-accent/10 border border-primary/20 backdrop-blur-md shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-3">
+                <FileText className="h-4 w-4" /> Official ISBN Proceedings Volume
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-2">
+                Explore Full Manuscripts & Citations in the Digital Library
+              </h3>
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                All ICGEN-2026 presentations correspond to registered peer-reviewed papers cataloged under ISBN 978-81-182375-1-8. Access publication records, author citations, and technical abstracts in our dedicated proceedings portal.
+              </p>
+            </div>
+            <div className="shrink-0 flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+              <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 h-12 shadow-gold transition-all text-sm sm:text-base w-full sm:w-auto">
+                <Link to="/recent-proceedings/icgen-2026" className="flex items-center justify-center gap-2">
+                  Open Digital Proceedings <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full border-white/20 hover:bg-white/10 text-white font-semibold h-12 px-6 transition-all text-sm sm:text-base w-full sm:w-auto">
+                <Link to="/recent-proceedings">All Conference Proceedings</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
