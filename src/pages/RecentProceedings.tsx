@@ -2,13 +2,13 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import { ArrowRight, FileText, Video, Search, BookOpen, ExternalLink, Filter, Star } from "lucide-react";
+import { ArrowRight, FileText, Video, Search, BookOpen, ExternalLink, Filter, Star, Award } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { proceedings } from "@/data/eminsphereData";
 
 const RecentProceedings = () => {
-  const proceedingsList = Object.values(proceedings);
+  const proceedingsList = Object.values(proceedings).filter((p, index, self) => index === self.findIndex((t) => t.id === p.id));
 
   return (
     <main className="min-h-screen bg-background">
@@ -92,6 +92,16 @@ const RecentProceedings = () => {
                         {hasVideos && (
                           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-white/5 border border-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl group-hover:bg-accent/10 group-hover:border-accent/30 transition-colors">
                             <Video className="h-4 w-4 text-accent" /> {p.videos?.length} Videos
+                          </div>
+                        )}
+                        {p.award && (
+                          <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-amber-300 bg-amber-500/10 border border-amber-500/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl group-hover:bg-amber-500/20 transition-colors">
+                            <Award className="h-4 w-4 text-amber-400" /> {p.award.title}: {p.award.recipient}
+                          </div>
+                        )}
+                        {p.isbn && (
+                          <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-primary/90 bg-primary/10 border border-primary/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl">
+                            ISBN: {p.isbn}
                           </div>
                         )}
                       </div>

@@ -26,11 +26,38 @@ export interface ConferenceData {
   glimpses?: string[];
 }
 
+export interface ProceedingAward {
+  title: string;
+  subtitle?: string;
+  recipient: string;
+  designation: string;
+  organization: string;
+  image: string;
+  description?: string;
+  highlights?: string[];
+}
+
+export interface ProceedingThematicTrack {
+  title: string;
+  description: string;
+}
+
+export interface ProceedingDetailedContent {
+  overview?: string[];
+  thematicTracks?: ProceedingThematicTrack[];
+  editorialHighlights?: string[];
+}
+
 export interface ProceedingData {
   id: string;
   title: string;
   date: string;
   description: string;
+  location?: string;
+  isbn?: string;
+  hidePapersAndIndexingStats?: boolean;
+  award?: ProceedingAward;
+  detailedContent?: ProceedingDetailedContent;
   downloadLink?: string;
   abstractLink?: string;
   videos?: (string | { url: string; speaker?: string; title?: string })[];
@@ -290,7 +317,64 @@ export const proceedings: Record<string, ProceedingData> = {
     id: "icgen-2026",
     title: "Proceeding ICGEN-2026",
     date: "2026",
-    description: "Official proceedings, keynote sessions, and research presentations from the International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026). Published with ISBN: 978-81-182375-1-8.",
+location: "Hybrid Mode / New Delhi & Global Virtual Access",
+    isbn: "978-81-182375-1-8",
+    description: "Official proceedings of the International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026). Presenting groundbreaking research in Generative AI, Autonomous Agentic Orchestration, Sovereign Foundation Models, and Physical Deep-Tech, alongside executive recognition for leadership in enterprise digital transformation.",
+    hidePapersAndIndexingStats: true,
+    award: {
+      title: "Leadership Excellence Award",
+      subtitle: "Presented in Recognition of Outstanding Leadership",
+      recipient: "Sanjay Kumar",
+      designation: "IT Operations & Digital Transformation Expert",
+      organization: "Enterprise IT & Digital Transformation, USA",
+      image: "/conferences/icgen-2026-leadership-award-sanjay-kumar.jpg",
+      description: "In recognition of distinguished enterprise leadership, pioneering advancements in large-scale IT operations, cloud architectures, and transformative contributions to modern digital ecosystems, the ICGEN-2026 International Conference proudly presents the Leadership Excellence Award to Sanjay Kumar.",
+      highlights: [
+        "Architecting resilient multi-cloud infrastructures and mission-critical enterprise platforms.",
+        "Spearheading strategic IT operations and intelligent automation workflows across distributed global organizations.",
+        "Guiding digital transformation initiatives that bridge traditional infrastructure with cutting-edge AI and data analytics.",
+        "Demonstrating exceptional global leadership and mentorship across international technology communities."
+      ]
+    },
+    detailedContent: {
+      overview: [
+        "The International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
+        "Held in Hybrid Mode with interactive physical sessions and global virtual access, ICGEN-2026 convenes an elite international assembly of AI research scientists, Silicon Valley architects, European academic chairs, and prominent Non-Resident Indian (NRI) technology leaders from over 50 nations.",
+        "The proceedings represent a curated body of academic and industrial research, addressing critical frontiers from foundation model architectures and multi-agent coordination to physical embodied intelligence, high-performance cloud operations, and trustworthy governance frameworks."
+      ],
+      thematicTracks: [
+        {
+          title: "Generative AI & Foundation Models",
+          description: "Sovereign foundation models, multi-modal reasoning benchmarks, parameter-efficient fine-tuning, retrieval-augmented generation (RAG), and next-generation neural architectures."
+        },
+        {
+          title: "Autonomous Agentic Systems & Orchestration",
+          description: "Multi-agent collaboration, goal-directed autonomy, agentic workflows, deterministic execution guardrails, and self-improving cognitive systems."
+        },
+        {
+          title: "Enterprise IT Operations & Digital Transformation",
+          description: "Mission-critical cloud infrastructure, site reliability engineering, AIOps, high-availability distributed systems, and scalable enterprise modernization."
+        },
+        {
+          title: "Physical AI, Robotics & Embodied Intelligence",
+          description: "Vision-Language-Action (VLA) models, humanoid robotics, spatial computing, autonomous navigation, and cyber-physical digital twins."
+        },
+        {
+          title: "Post-Quantum Security & Trustworthy Systems",
+          description: "Quantum-safe cryptography, zero-trust enterprise security, privacy-preserving AI, and resilient cyber-defense mechanisms."
+        },
+        {
+          title: "AI Governance, Ethics & Policy",
+          description: "Algorithmic transparency, global compliance standards, AI safety red-teaming, and institutional governance frameworks."
+        }
+      ],
+      editorialHighlights: [
+        "Official ISBN Registration: Assigned ISBN 978-81-182375-1-8 ensuring permanent library cataloging and international bibliographic reference.",
+        "Rigorous Double-Blind Peer Review: Each submission is evaluated by an international Technical Program Committee of distinguished domain experts.",
+        "Permanent Digital Object Identifiers (DOI): Guaranteed permanent digital archiving and seamless citation tracking across global scientific repositories.",
+        "Partner Journal Recommendations: Top-tier submissions fast-tracked for publication consideration in Scopus and Web of Science (WoS) indexed special issues."
+      ]
+    },
     videos: [
       { url: "https://youtu.be/ckWvuXaJAUk", speaker: "Damodhara Reddy Palavali", title: "Keynote Presentation | ICGEN-2026" },
       { url: "https://youtu.be/8y9xq7DZBLs", speaker: "Richard Afoakwah-Nti", title: "Keynote Presentation | ICGEN-2026" },
