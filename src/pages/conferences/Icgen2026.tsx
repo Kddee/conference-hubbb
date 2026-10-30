@@ -637,8 +637,8 @@ const Icgen2026 = () => {
                   <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Nations Reached</div>
                 </div>
                 <div className="p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="text-xl sm:text-2xl font-serif font-bold text-amber-300">Award</div>
-                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Leadership Honor</div>
+                  <div className="text-xl sm:text-2xl font-serif font-bold text-primary font-mono text-base sm:text-lg">ISBN</div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Official Volume</div>
                 </div>
               </div>
             </div>

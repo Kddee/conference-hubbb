@@ -144,10 +144,15 @@ const data = (lookupKey && proceedings[lookupKey])
                     <div className="text-primary font-mono text-base sm:text-lg font-bold">{data.isbn}</div>
                   </div>
                 )}
-                {data.award && (
+                {data.award ? (
                   <div>
                     <div className="text-muted-foreground text-xs sm:text-sm font-bold uppercase tracking-wider mb-1 sm:mb-2 flex items-center gap-2"><Award className="h-4 w-4 text-amber-400" /> Special Honor</div>
                     <div className="text-primary font-serif text-base sm:text-lg text-amber-300 font-bold truncate">{data.award.title}</div>
+                  </div>
+                ) : (
+                  <div>
+                    <div className="text-muted-foreground text-xs sm:text-sm font-bold uppercase tracking-wider mb-1 sm:mb-2 flex items-center gap-2"><Video className="h-4 w-4 text-accent" /> Keynote Sessions</div>
+                    <div className="text-primary font-serif text-lg sm:text-xl font-bold">{data.videos?.length || 0} Recorded</div>
                   </div>
                 )}
               </>
