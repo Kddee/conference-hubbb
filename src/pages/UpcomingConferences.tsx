@@ -7,17 +7,6 @@ import { Link } from "react-router-dom";
 
 const conferences = [
   {
-    title: "ICGEN-2026: International Conference on Generative AI, Frontier Tech & Autonomous Systems",
-    city: "Hybrid Mode",
-    country: "Worldwide Virtual",
-    date: "25 October 2026",
-    deadline: "25 October 2026",
-    topic: "Generative AI & Autonomous Agents",
-    link: "/icgen-2026",
-    isbn: "978-81-182375-1-8",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
     title: "ICPAI-2026: International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence",
     city: "Hybrid Mode",
     country: "Worldwide Virtual",

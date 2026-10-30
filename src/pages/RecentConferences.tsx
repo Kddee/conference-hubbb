@@ -8,7 +8,7 @@ import ConferenceSections from "@/components/layout/ConferenceSections";
 import { Link } from "react-router-dom";
 
 const recent2026 = [
-  { id: "icgen-2026", title: "ICGEN-2026", date: "25 October 2026", type: "Hybrid Mode", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
+  { id: "icgen-2026", title: "ICGEN-2026", date: "25 October 2026", type: "Hybrid Mode", image: "/conferences/icgen-glimpse-1.png" },
   { id: "aiforge-26", title: "AIFORGE 2026", date: "06 September 2026", type: "Hybrid Mode", image: "/conferences/aiforge-glimpse-7.png" },
   { id: "icaits-26", title: "ICAITS-26", date: "26 July 2026", type: "Virtual Mode", image: "/conferences/Screenshot 2026-07-26 174930-Blw6y4EK.png" },
   { id: "iccemb-26", title: "ICCEMB-26", date: "31 May 2026", type: "Online Mode", image: "/conferences/30814e_09571674cb8b483fa4476eccf53d73d8~mv2.png" },
@@ -124,7 +124,7 @@ const ConferenceGrid = ({ title, data }: { title: string, data: any[] }) => (
             </div>
             
             <Button asChild variant="outline" className="w-full relative z-10 glass border-white/10 hover:bg-primary/10 hover:border-primary/30 hover:text-white group/btn h-12 sm:h-14 rounded-xl font-bold text-xs sm:text-sm">
-              <Link to={["icaids-2024", "iccemb-26", "icaits-26", "aiforge-26"].includes(c.id) ? `/${c.id}` : `/recent-conferences/${c.id}`}>
+              <Link to={["icgen-2026", "icaids-2024", "iccemb-26", "icaits-26", "aiforge-26"].includes(c.id) ? `/${c.id}` : `/recent-conferences/${c.id}`}>
                 View Memories & Photos <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </Button>

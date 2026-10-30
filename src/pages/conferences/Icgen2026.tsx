@@ -566,7 +566,7 @@ const Icgen2026 = () => {
           "startDate": "2026-10-25T09:00:00+08:00",
           "endDate": "2026-10-25T18:00:00+08:00",
           "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-          "eventStatus": "https://schema.org/EventScheduled",
+          "eventStatus": "https://schema.org/EventCompleted",
           "location": {
             "@type": "VirtualLocation",
             "name": "Worldwide Virtual Presentation & Global Broadcast",
@@ -591,12 +591,9 @@ const Icgen2026 = () => {
           <div className="max-w-5xl mx-auto text-center">
             
             {/* Live Flagship Conference Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 text-primary border border-primary/30 text-xs sm:text-sm font-bold mb-6 shadow-sm backdrop-blur-md">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
-              </span>
-              <span>{conferenceData.shortTitle} • International Conference on Generative AI & Autonomous Systems</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-xs sm:text-sm font-bold mb-6 shadow-sm backdrop-blur-md">
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+              <span>{conferenceData.shortTitle} • Successfully Concluded • Proceedings & Memories Live</span>
             </div>
 
             {/* Main Conference Title */}
@@ -614,37 +611,34 @@ const Icgen2026 = () => {
               {conferenceData.tagline}
             </p>
 
-            {/* URGENT REGISTRATION DEADLINE & COUNTDOWN BANNER */}
-            <div className="mb-10 max-w-2xl mx-auto bg-gradient-to-r from-accent/10 via-card to-primary/10 backdrop-blur-md border border-accent/30 p-5 sm:p-6 rounded-2xl sm:rounded-3xl shadow-[0_0_50px_rgba(28,231,212,0.15)]">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
-                <div className="flex items-center gap-2 text-accent font-black text-xs sm:text-sm uppercase tracking-wider">
-                  <AlertTriangle className="h-4 w-4" /> Registration Closes: 23 October 2026
-                </div>
-                <div className="text-[11px] font-bold text-white/80 bg-accent/15 px-3 py-1 rounded-full border border-accent/30">
-                  Conference: 25 Oct 2026
-                </div>
+            {/* CONFERENCE CONCLUDED CELEBRATORY BANNER */}
+            <div className="mb-10 max-w-3xl mx-auto bg-gradient-to-r from-emerald-500/10 via-card to-primary/10 backdrop-blur-md border border-emerald-500/30 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-[0_0_50px_rgba(16,185,129,0.15)] text-center">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
+                <CheckCircle2 className="h-4 w-4 text-emerald-400" /> Conference Successfully Concluded • 25 October 2026
               </div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-white mb-3">
+                ICGEN-2026 Concluded with Global Acclaim
+              </h2>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-6">
+                Thank you to our distinguished plenary chairs, keynote speakers, research presenters, and global delegates across 50+ nations. Official proceedings, recorded presentations, and photo memories are published below.
+              </p>
 
-              <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary mb-3 flex items-center justify-center gap-2">
-                <Clock className="h-3.5 w-3.5" /> Registration Portal Closes In
-              </div>
-
-              <div className="grid grid-cols-4 gap-2 sm:gap-4 text-center">
-                <div className="p-2 sm:p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="text-2xl sm:text-4xl font-serif font-black text-white">{regCountdown.days}</div>
-                  <div className="text-[9px] sm:text-xs uppercase tracking-wider text-muted-foreground font-bold">Days</div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                <div className="p-3 rounded-xl bg-white/5 border border-white/5">
+                  <div className="text-xl sm:text-2xl font-serif font-bold text-emerald-400">15</div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Video Sessions</div>
                 </div>
-                <div className="p-2 sm:p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="text-2xl sm:text-4xl font-serif font-black text-white">{regCountdown.hours}</div>
-                  <div className="text-[9px] sm:text-xs uppercase tracking-wider text-muted-foreground font-bold">Hours</div>
+                <div className="p-3 rounded-xl bg-white/5 border border-white/5">
+                  <div className="text-xl sm:text-2xl font-serif font-bold text-primary">14</div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Live Glimpses</div>
                 </div>
-                <div className="p-2 sm:p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="text-2xl sm:text-4xl font-serif font-black text-white">{regCountdown.minutes}</div>
-                  <div className="text-[9px] sm:text-xs uppercase tracking-wider text-muted-foreground font-bold">Mins</div>
+                <div className="p-3 rounded-xl bg-white/5 border border-white/5">
+                  <div className="text-xl sm:text-2xl font-serif font-bold text-accent">50+</div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Nations Reached</div>
                 </div>
-                <div className="p-2 sm:p-3 rounded-xl bg-white/5 border border-white/5">
-                  <div className="text-2xl sm:text-4xl font-serif font-black text-accent">{regCountdown.seconds}</div>
-                  <div className="text-[9px] sm:text-xs uppercase tracking-wider text-muted-foreground font-bold">Secs</div>
+                <div className="p-3 rounded-xl bg-white/5 border border-white/5">
+                  <div className="text-xl sm:text-2xl font-serif font-bold text-amber-300">Award</div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Leadership Honor</div>
                 </div>
               </div>
             </div>
@@ -672,27 +666,24 @@ const Icgen2026 = () => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
               <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black h-12 sm:h-14 px-8 rounded-full shadow-gold hover:-translate-y-0.5 transition-all text-sm sm:text-base">
-                <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer">
-                  Register Online (Before 25 Oct) <ArrowRight className="ml-2 h-4 w-4" />
+                <a href="#glimpses" className="flex items-center justify-center gap-2">
+                  <Camera className="h-4 w-4" /> View Glimpses (14)
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-accent/15 hover:bg-accent/25 border-accent/40 text-accent font-bold h-12 sm:h-14 px-8 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-sm sm:text-base">
-                <a href={conferenceData.cmtLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                  Submit via CMT <ExternalLink className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-primary/10 hover:bg-primary/20 border-primary/30 text-primary font-bold h-12 sm:h-14 px-7 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-sm sm:text-base">
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-primary/10 hover:bg-primary/20 border-primary/30 text-primary font-bold h-12 sm:h-14 px-8 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-sm sm:text-base">
                 <a href="#proceedings" className="flex items-center justify-center gap-2">
                   <PlayCircle className="h-4 w-4 text-accent" /> Watch Proceedings (15)
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-accent/10 hover:bg-accent/20 border-accent/30 text-accent font-bold h-12 sm:h-14 px-7 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-sm sm:text-base">
-                <a href="#glimpses" className="flex items-center justify-center gap-2">
-                  <Camera className="h-4 w-4 text-accent" /> View Glimpses (14)
-                </a>
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-accent/15 hover:bg-accent/25 border-accent/40 text-accent font-bold h-12 sm:h-14 px-8 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-sm sm:text-base">
+                <Link to="/recent-proceedings/icgen-2026" className="flex items-center justify-center gap-2">
+                  <BookOpen className="h-4 w-4" /> Digital Proceedings
+                </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold h-12 sm:h-14 px-7 rounded-full transition-all text-sm sm:text-base">
-                <a href="#tracks">Explore GenAI Tracks</a>
+                <a href="https://cmt3.research.microsoft.com/ICGEN2026" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                  CMT Portal <ExternalLink className="h-4 w-4" />
+                </a>
               </Button>
             </div>
           </div>
