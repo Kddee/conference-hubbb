@@ -319,8 +319,23 @@ export const proceedings: Record<string, ProceedingData> = {
     date: "2026",
 location: "Hybrid Mode / New Delhi & Global Virtual Access",
     isbn: "978-81-182375-1-8",
-    description: "Official proceedings of the International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026). Presenting groundbreaking research in Generative AI, Autonomous Agentic Orchestration, Sovereign Foundation Models, and Physical Deep-Tech.",
+    description: "Official proceedings of the International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026). Presenting groundbreaking research in Generative AI, Autonomous Agentic Orchestration, Sovereign Foundation Models, and Physical Deep-Tech, alongside executive recognition for leadership in enterprise digital transformation.",
     hidePapersAndIndexingStats: true,
+    award: {
+      title: "Leadership Excellence Award",
+      subtitle: "Presented in Recognition of Outstanding Leadership",
+      recipient: "Sanjay Kumar",
+      designation: "IT Operations & Digital Transformation Expert",
+      organization: "Enterprise IT & Digital Transformation, USA",
+      image: "/conferences/icgen-2026-leadership-award-sanjay-kumar.jpg",
+      description: "In recognition of distinguished enterprise leadership, pioneering advancements in large-scale IT operations, cloud architectures, and transformative contributions to modern digital ecosystems, the ICGEN-2026 International Conference proudly presents the Leadership Excellence Award to Sanjay Kumar.",
+      highlights: [
+        "Architecting resilient multi-cloud infrastructures and mission-critical enterprise platforms.",
+        "Spearheading strategic IT operations and intelligent automation workflows across distributed global organizations.",
+        "Guiding digital transformation initiatives that bridge traditional infrastructure with cutting-edge AI and data analytics.",
+        "Demonstrating exceptional global leadership and mentorship across international technology communities."
+      ]
+    },
     detailedContent: {
       overview: [
         "The International Conference on Generative AI, Frontier Technologies & Intelligent Autonomous Systems (ICGEN-2026) is the premier global scientific and industry confluence dedicated to the most transformative technological shift of our generation: the rise of Generative AI, Autonomous Agentic Systems, Foundation Models, and Frontier Deep-Tech.",
