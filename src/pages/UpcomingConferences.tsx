@@ -10,8 +10,8 @@ const conferences = [
     title: "ICPAI-2026: International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence",
     city: "Hybrid Mode",
     country: "Worldwide Virtual",
-    date: "22 November 2026",
-    deadline: "20 November 2026",
+    date: "29 November 2026",
+    deadline: "27 November 2026",
     topic: "Physical AI & Humanoid Robotics",
     link: "/icpai-2026",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200&auto=format&fit=crop"

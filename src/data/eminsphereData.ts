@@ -169,7 +169,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   "icpai-2026": {
     id: "icpai-2026",
     title: "International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence (ICPAI-2026)",
-    date: "22 November 2026",
+    date: "29 November 2026",
     location: "Hybrid Mode | Worldwide Virtual",
     registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
     cmtLink: "https://cmt3.research.microsoft.com",
@@ -183,10 +183,10 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Sim-to-Real Transfer, Industrial Twins & Safety Certification (Domain randomization, factory robotics, fail-safe AI)"
     ],
     milestones: [
-      { name: "Paper / Abstract Submission Deadline", date: "15 November 2026" },
-      { name: "Acceptance Notification", date: "18 November 2026" },
-      { name: "Final Registration & Camera-Ready", date: "20 November 2026" },
-      { name: "Main Conference Sessions", date: "22 November 2026" }
+      { name: "Paper / Abstract Submission Deadline", date: "22 November 2026" },
+      { name: "Acceptance Notification", date: "25 November 2026" },
+      { name: "Final Registration & Camera-Ready", date: "27 November 2026" },
+      { name: "Main Conference Sessions", date: "29 November 2026" }
     ]
   },
   "icmedai-2026": {
