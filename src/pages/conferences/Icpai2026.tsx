@@ -76,7 +76,7 @@ const conferenceData = {
   highlights: [
     { stat: "50+", label: "Nations Represented", desc: "Global robotics & AI delegates" },
     { stat: "6", label: "Specialized Tracks", desc: "VLA models, Humanoids & Spatial AI" },
-    { stat: "29 Nov", label: "Conference Date", desc: "One-day high-impact global summit" },
+    { stat: "29 Nov", label: "Conference Date", desc: "One-day high-impact international conference" },
     { stat: "ISBN", label: "Official Proceedings", desc: "Global Cataloging & DOI assigned" }
   ],
 
@@ -322,7 +322,7 @@ const Icpai2026 = () => {
           {/* Top Category Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 animate-pulse">
             <Sparkles className="h-4 w-4" />
-            <span>Upcoming Hybrid Global Summit • November 2026</span>
+            <span>International Conference • November 2026</span>
           </div>
 
           {/* Main Title */}

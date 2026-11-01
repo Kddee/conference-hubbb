@@ -300,7 +300,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FEATURED UPCOMING SUMMIT BANNER - ICPAI-2026 */}
+      {/* FEATURED UPCOMING CONFERENCE BANNER - ICPAI-2026 */}
       <div className="relative z-30 container px-4 mx-auto max-w-5xl mt-12 sm:mt-16 mb-8">
         <div className="relative group rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-r from-accent via-primary to-secondary p-1 shadow-[0_20px_50px_rgba(16,185,129,0.15)] hover:shadow-[0_30px_60px_rgba(16,185,129,0.3)] transition-all duration-500 transform hover:-translate-y-2">
           
@@ -327,7 +327,7 @@ const Index = () => {
             {/* Right - Content */}
             <div className="md:w-3/5 p-5 sm:p-8 md:p-12 relative z-10 flex flex-col justify-center pt-10 sm:pt-12 md:pt-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold tracking-widest uppercase mb-4 self-start">
-                <Sparkles className="w-3 h-3" /> Featured Upcoming International Summit
+                <Sparkles className="w-3 h-3" /> Featured Upcoming International Conference
               </div>
               
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white mb-2 tracking-tight">
