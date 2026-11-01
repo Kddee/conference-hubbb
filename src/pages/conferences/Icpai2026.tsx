@@ -64,7 +64,7 @@ const conferenceData = {
   date: "29 November 2026",
   registrationDeadline: "27 November 2026",
   mode: "Hybrid Mode • Worldwide Virtual",
-  registrationLink: "https://forms.gle/M6GiaTdkpqH8DWWe6",
+  registrationLink: "https://forms.gle/JEAh1X5JwAdPn4zT6",
   cmtLink: "https://cmt3.research.microsoft.com",
   
   about: [
