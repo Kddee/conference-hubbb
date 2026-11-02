@@ -2,8 +2,6 @@ import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-import createOrderHandler from "./api/create-order.js";
-import verifyPaymentHandler from "./api/verify-payment.js";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -41,6 +39,7 @@ export default defineConfig(({ mode }) => {
             const pathname = req.url ? req.url.split("?")[0] : "";
             if (pathname === "/api/create-order") {
               try {
+                const { default: createOrderHandler } = await import("./api/create-order.js");
                 await createOrderHandler(req, res);
               } catch (err: any) {
                 res.statusCode = 500;
@@ -51,6 +50,7 @@ export default defineConfig(({ mode }) => {
             }
             if (pathname === "/api/verify-payment") {
               try {
+                const { default: verifyPaymentHandler } = await import("./api/verify-payment.js");
                 await verifyPaymentHandler(req, res);
               } catch (err: any) {
                 res.statusCode = 500;

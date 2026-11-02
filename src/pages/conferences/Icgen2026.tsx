@@ -1213,7 +1213,7 @@ const Icgen2026 = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 mb-6">
           {conferenceData.awards.map((award, i) => (
             <Card key={i} className="p-6 rounded-2xl bg-card/40 border-white/10 flex flex-col justify-between hover:border-primary/40 transition-colors">
               <div>
@@ -1225,6 +1225,30 @@ const Icgen2026 = () => {
               </div>
             </Card>
           ))}
+        </div>
+
+        {/* Industry Leadership Award — Featured Card */}
+        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-amber-400/10 via-card/70 to-primary/10 border border-amber-400/30 shadow-[0_0_60px_rgba(251,191,36,0.10)] p-7 sm:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-400/8 rounded-full blur-3xl pointer-events-none" />
+          {/* Icon */}
+          <div className="shrink-0 flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-400/15 border-2 border-amber-400/40 shadow-[0_0_24px_rgba(251,191,36,0.2)]">
+            <Award className="h-8 w-8 text-amber-400" />
+          </div>
+          {/* Text */}
+          <div className="flex-1 text-center sm:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/35 text-amber-300 text-[10px] font-black uppercase tracking-widest mb-3">
+              <Sparkles className="h-3 w-3" /> Special Announcement • ICGEN-2026
+            </div>
+            <h3 className="font-serif font-bold text-xl sm:text-2xl text-white mb-2">Industry Leadership Award</h3>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl">
+              ICGEN-2026 proudly announces the conferral of the <strong className="text-white">Industry Leadership Award</strong> — presented in recognition of distinguished enterprise leadership, pioneering contributions to large-scale digital transformation, and exceptional impact across global technology communities.
+            </p>
+          </div>
+          {/* Badge */}
+          <div className="shrink-0 flex flex-col items-center gap-1 text-center">
+            <span className="px-4 py-1.5 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-black uppercase tracking-wider">Leadership Honor</span>
+            <span className="text-[10px] text-muted-foreground mt-1">25 Oct 2026</span>
+          </div>
         </div>
       </section>
 
