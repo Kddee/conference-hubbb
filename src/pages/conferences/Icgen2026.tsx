@@ -1202,52 +1202,125 @@ const Icgen2026 = () => {
       {/* AWARDS & HONORS */}
       <section className="py-16 sm:py-24 container max-w-6xl px-4">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3">
-            <Award className="h-4 w-4" /> Global Honors
+          <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-400 mb-3">
+            <Award className="h-4 w-4" /> Global Honors • ICGEN-2026
           </div>
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
-            Conference Awards & Citations
+            Conference Award
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base">
-            Recognizing pioneering academic contributions, presentation excellence, and green engineering impact.
+            Recognizing distinguished enterprise leadership and pioneering contributions to global digital transformation.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-6">
-          {conferenceData.awards.map((award, i) => (
-            <Card key={i} className="p-6 rounded-2xl bg-card/40 border-white/10 flex flex-col justify-between hover:border-primary/40 transition-colors">
-              <div>
-                <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">
-                  {award.badge}
-                </span>
-                <h3 className="font-serif font-bold text-lg text-white mb-2">{award.title}</h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{award.desc}</p>
-              </div>
-            </Card>
-          ))}
-        </div>
+        {/* Industry Leadership Award — Rich Layout */}
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-amber-400/10 via-card/80 to-primary/10 border border-amber-400/30 shadow-[0_0_80px_rgba(251,191,36,0.12)]">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/6 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/8 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Industry Leadership Award — Featured Card */}
-        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-amber-400/10 via-card/70 to-primary/10 border border-amber-400/30 shadow-[0_0_60px_rgba(251,191,36,0.10)] p-7 sm:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-400/8 rounded-full blur-3xl pointer-events-none" />
-          {/* Icon */}
-          <div className="shrink-0 flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-400/15 border-2 border-amber-400/40 shadow-[0_0_24px_rgba(251,191,36,0.2)]">
-            <Award className="h-8 w-8 text-amber-400" />
-          </div>
-          {/* Text */}
-          <div className="flex-1 text-center sm:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/35 text-amber-300 text-[10px] font-black uppercase tracking-widest mb-3">
-              <Sparkles className="h-3 w-3" /> Special Announcement • ICGEN-2026
+          <div className="relative z-10 grid lg:grid-cols-2 gap-0 divide-y lg:divide-y-0 lg:divide-x divide-amber-400/15">
+
+            {/* LEFT — Award Info */}
+            <div className="p-8 sm:p-12 flex flex-col gap-6">
+              {/* Header */}
+              <div>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/35 text-amber-300 text-[10px] font-black uppercase tracking-widest mb-5">
+                  <Sparkles className="h-3.5 w-3.5" /> Special Announcement • ICGEN-2026
+                </div>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-400/15 border-2 border-amber-400/40 shadow-[0_0_20px_rgba(251,191,36,0.2)] shrink-0">
+                    <Award className="h-7 w-7 text-amber-400" />
+                  </div>
+                  <h3 className="font-serif font-black text-2xl sm:text-3xl text-white leading-tight">
+                    Industry Leadership Award
+                  </h3>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  ICGEN-2026 proudly announces the conferral of the <strong className="text-white">Industry Leadership Award</strong> — the highest honor bestowed at this international conference, presented to an individual whose career exemplifies transformative enterprise leadership, visionary technology adoption, and lasting global impact.
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-amber-400/15" />
+
+              {/* Criteria grid */}
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-amber-400/70 mb-4">Award Selection Criteria</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { icon: BadgeCheck, label: "Exceptional Enterprise Leadership", desc: "Visionary leadership across large-scale global organizations." },
+                    { icon: Globe, label: "Global Digital Transformation", desc: "Bridging traditional infrastructure with next-generation AI." },
+                    { icon: Zap, label: "Technology Innovation Impact", desc: "Architecting mission-critical cloud & intelligent platforms." },
+                    { icon: Users, label: "International Mentorship", desc: "Inspiring and elevating global technology communities." },
+                  ].map((item, i) => {
+                    const Icon = item.icon;
+                    return (
+                      <div key={i} className="flex items-start gap-3 p-3.5 rounded-xl bg-white/4 border border-amber-400/12">
+                        <div className="h-7 w-7 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center shrink-0 mt-0.5">
+                          <Icon className="h-3.5 w-3.5 text-amber-400" />
+                        </div>
+                        <div>
+                          <div className="text-[11px] font-bold text-white mb-0.5">{item.label}</div>
+                          <div className="text-[10px] text-muted-foreground leading-relaxed">{item.desc}</div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
-            <h3 className="font-serif font-bold text-xl sm:text-2xl text-white mb-2">Industry Leadership Award</h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl">
-              ICGEN-2026 proudly announces the conferral of the <strong className="text-white">Industry Leadership Award</strong> — presented in recognition of distinguished enterprise leadership, pioneering contributions to large-scale digital transformation, and exceptional impact across global technology communities.
-            </p>
-          </div>
-          {/* Badge */}
-          <div className="shrink-0 flex flex-col items-center gap-1 text-center">
-            <span className="px-4 py-1.5 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-black uppercase tracking-wider">Leadership Honor</span>
-            <span className="text-[10px] text-muted-foreground mt-1">25 Oct 2026</span>
+
+            {/* RIGHT — Metadata & Significance */}
+            <div className="p-8 sm:p-12 flex flex-col gap-6">
+              {/* Award Plaque Visual */}
+              <div className="rounded-2xl bg-gradient-to-br from-amber-400/15 to-amber-400/5 border border-amber-400/25 p-6 text-center">
+                <div className="text-5xl mb-3">🏆</div>
+                <div className="text-xs font-black uppercase tracking-widest text-amber-300 mb-1">Leadership Excellence Award</div>
+                <div className="text-white font-serif font-bold text-lg mb-1">ICGEN-2026</div>
+                <div className="text-[11px] text-muted-foreground">International Conference on Generative AI,<br />Frontier Technologies &amp; Intelligent Autonomous Systems</div>
+              </div>
+
+              {/* Event Metadata */}
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-amber-400/70 mb-4">Award Details</p>
+                <div className="space-y-3">
+                  {[
+                    { icon: Calendar, label: "Conferred On", value: "25 October 2026" },
+                    { icon: Globe, label: "Conference Mode", value: "Hybrid Mode • Worldwide Virtual" },
+                    { icon: MapPin, label: "Scope", value: "International • 50+ Nations" },
+                    { icon: BadgeCheck, label: "Status", value: "Officially Announced" },
+                    { icon: ShieldCheck, label: "Category", value: "Industry & Leadership Excellence" },
+                  ].map((meta, i) => {
+                    const Icon = meta.icon;
+                    return (
+                      <div key={i} className="flex items-center gap-3 py-2.5 border-b border-white/6 last:border-0">
+                        <div className="h-7 w-7 rounded-lg bg-amber-400/10 flex items-center justify-center shrink-0">
+                          <Icon className="h-3.5 w-3.5 text-amber-400" />
+                        </div>
+                        <div className="flex-1 flex items-center justify-between gap-2">
+                          <span className="text-[11px] text-muted-foreground">{meta.label}</span>
+                          <span className="text-[11px] font-semibold text-white text-right">{meta.value}</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Significance note */}
+              <div className="mt-auto p-4 rounded-xl bg-amber-400/8 border border-amber-400/20">
+                <p className="text-[11px] text-amber-200/80 leading-relaxed">
+                  <strong className="text-amber-300">About this honor:</strong> The Industry Leadership Award at ICGEN-2026 is conferred upon an individual who has made measurable, long-standing contributions to enterprise technology, digital strategy, and global innovation ecosystems — as recognized by the international program committee.
+                </p>
+              </div>
+
+              {/* Digital Proceedings CTA */}
+              <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black rounded-xl h-12 shadow-gold hover:-translate-y-0.5 transition-all text-sm flex items-center justify-center gap-2">
+                <Link to="/recent-proceedings/icgen-2026">
+                  <BookOpen className="h-4 w-4" /> View Digital Conference Proceedings <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
