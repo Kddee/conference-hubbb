@@ -1093,107 +1093,69 @@ const Icgen2026 = () => {
       </section>
 
       {/* DIGITAL PROCEEDINGS & RECORDED SESSIONS */}
-      <section id="proceedings" className="py-20 sm:py-28 bg-gradient-to-b from-card/40 via-background to-card/20 border-b border-border/40 relative overflow-hidden">
+      <section id="proceedings" className="py-20 sm:py-28 bg-gradient-to-b from-card/40 via-background to-card/20 border-b border-border/40 relative overflow-hidden scroll-mt-16">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[160px] pointer-events-none" />
 
         <div className="container max-w-6xl px-4 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16 pb-6 border-b border-white/10">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/15 text-accent border border-accent/25 text-xs font-bold uppercase tracking-widest mb-4">
-                <Video className="h-4 w-4" /> Official Digital Proceedings • 15 Presentations
-              </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-3">
-                Keynote Sessions & Research Presentations
-              </h2>
-              <p className="text-muted-foreground text-sm sm:text-base max-w-2xl leading-relaxed">
-                Watch official keynote addresses, technical paper defenses, and visionary talks delivered at ICGEN-2026 by distinguished international researchers and Silicon Valley practitioners.
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-black px-6 shadow-gold transition-all text-sm">
-                <Link to="/recent-proceedings/icgen-2026" className="flex items-center gap-2">
-                  <BookOpen className="h-4 w-4" /> View Digital Library <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
+          <div className="relative rounded-3xl p-8 sm:p-14 bg-gradient-to-br from-primary/10 via-card/80 to-accent/10 border border-primary/30 backdrop-blur-md shadow-2xl overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Videos Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {conferenceData.videos.map((video, idx) => (
-              <Card
-                key={idx}
-                className="overflow-hidden border border-white/10 bg-card/60 hover:bg-card/90 hover:border-primary/50 transition-all duration-300 rounded-2xl sm:rounded-3xl shadow-xl flex flex-col group hover:-translate-y-1"
-              >
-                <div className="relative aspect-video w-full bg-black/60 overflow-hidden">
-                  <iframe
-                    className="absolute inset-0 w-full h-full border-0"
-                    src={`https://www.youtube.com/embed/${video.id}?rel=0`}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  />
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/15 text-accent border border-accent/25 text-xs font-bold uppercase tracking-widest mb-4">
+                  <Video className="h-4 w-4" /> Official Digital Proceedings • 15 Presentations
                 </div>
-                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-2.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-accent/15 text-accent border border-accent/25">
-                        Session {String(idx + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-[11px] font-medium text-white/60 truncate max-w-[160px]">
-                        {video.org}
-                      </span>
-                    </div>
-                    <h3 className="font-serif font-bold text-lg text-white group-hover:text-primary transition-colors leading-snug mb-1.5">
-                      {video.speaker}
-                    </h3>
-                    <p className="text-xs font-medium text-accent/90 mb-2 leading-relaxed">
-                      {video.role}
-                    </p>
-                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
-                      {video.title}
-                    </p>
-                  </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4 leading-tight">
+                  Keynote Sessions, Presentations & Digital Proceedings
+                </h2>
+                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6">
+                  All 15 official keynote addresses, technical paper defense presentations, research manuscripts, and citations delivered at ICGEN-2026 are published in our Digital Proceedings portal under assigned ISBN 978-81-182375-1-8. Access the complete video sessions, full research papers, and leadership honors directly in the Proceeding section.
+                </p>
 
-                  <div className="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs">
-                    <span className="text-muted-foreground font-mono">ICGEN-2026 Archive</span>
-                    <a
-                      href={video.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-white font-bold inline-flex items-center gap-1 transition-colors"
-                    >
-                      Watch on YouTube <ExternalLink className="h-3 w-3" />
-                    </a>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div className="text-xl sm:text-2xl font-serif font-bold text-accent">15</div>
+                    <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">Keynote Videos</div>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div className="text-xl sm:text-2xl font-serif font-bold text-primary font-mono text-base sm:text-lg">978-81-182375-1-8</div>
+                    <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">Official ISBN</div>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm col-span-2 sm:col-span-1">
+                    <div className="text-xl sm:text-2xl font-serif font-bold text-amber-300">Award & Citations</div>
+                    <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">Leadership Honor</div>
                   </div>
                 </div>
-              </Card>
-            ))}
-          </div>
 
-          {/* Proceedings Banner Callout */}
-          <div className="mt-14 sm:mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-primary/10 via-card/70 to-accent/10 border border-primary/20 backdrop-blur-md shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-3">
-                <FileText className="h-4 w-4" /> Official ISBN Proceedings Volume
+                <div className="flex flex-wrap items-center gap-4">
+                  <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 h-12 sm:h-14 shadow-gold hover:-translate-y-0.5 transition-all text-sm sm:text-base">
+                    <Link to="/recent-proceedings/icgen-2026" className="flex items-center gap-2">
+                      <BookOpen className="h-4 w-4" /> Go to Proceeding Section <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="rounded-full border-white/20 hover:bg-white/10 text-white font-semibold h-12 sm:h-14 px-6 transition-all text-sm sm:text-base">
+                    <Link to="/recent-proceedings">
+                      All Conference Proceedings
+                    </Link>
+                  </Button>
+                </div>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-2">
-                Explore Full Manuscripts & Citations in the Digital Library
-              </h3>
-              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                All ICGEN-2026 presentations correspond to registered peer-reviewed papers cataloged under ISBN 978-81-182375-1-8. Access publication records, author citations, and technical abstracts in our dedicated proceedings portal.
-              </p>
-            </div>
-            <div className="shrink-0 flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-              <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 h-12 shadow-gold transition-all text-sm sm:text-base w-full sm:w-auto">
-                <Link to="/recent-proceedings/icgen-2026" className="flex items-center justify-center gap-2">
-                  Open Digital Proceedings <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full border-white/20 hover:bg-white/10 text-white font-semibold h-12 px-6 transition-all text-sm sm:text-base w-full sm:w-auto">
-                <Link to="/recent-proceedings">All Conference Proceedings</Link>
-              </Button>
+
+              <div className="hidden lg:flex flex-col items-center justify-center p-8 rounded-2xl bg-black/40 border border-white/10 text-center shrink-0 w-72 backdrop-blur-md">
+                <div className="w-16 h-16 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center mb-4">
+                  <BookOpen className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="font-serif font-bold text-lg text-white mb-2">Digital Library</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-5">
+                  Full proceedings archive with keynote videos, research tracks & publication records.
+                </p>
+                <Button asChild size="sm" className="w-full rounded-full bg-accent hover:bg-accent/90 text-black font-bold text-xs">
+                  <Link to="/recent-proceedings/icgen-2026">
+                    Open Proceedings <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
