@@ -550,6 +550,7 @@ const conferenceData = {
 const Icgen2026 = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [selectedGlimpse, setSelectedGlimpse] = useState<number | null>(null);
+  const [isAwardModalOpen, setIsAwardModalOpen] = useState(false);
   const regCountdown = useCountdown(REGISTRATION_DEADLINE_DATE);
 
   return (
@@ -1092,7 +1093,165 @@ const Icgen2026 = () => {
         </div>
       </section>
 
-      {/* KEYNOTE CONTRIBUTION & AWARD EVALUATION FRAMEWORK */}
+            {/* CONFERENCE HONORS & LEADERSHIP AWARDS */}
+      <section className="py-16 sm:py-24 container max-w-6xl px-4" id="conference-award">
+        <div className="flex items-center gap-3 mb-6 sm:mb-8 pb-4 border-b border-border/50">
+          <Award className="h-6 w-6 text-amber-400" />
+          <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary">
+            Conference Honors &amp; Leadership Awards
+          </h2>
+        </div>
+
+        <div className="relative overflow-hidden rounded-3xl border border-amber-500/30 bg-gradient-to-br from-card/95 via-card/75 to-amber-950/25 shadow-2xl p-6 sm:p-10 md:p-12">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-[130px] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/10 rounded-full blur-[110px] pointer-events-none" />
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+            
+            {/* Poster / Certificate Preview */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <div 
+                onClick={() => setIsAwardModalOpen(true)}
+                className="cursor-pointer group relative rounded-2xl overflow-hidden border-2 border-amber-500/40 shadow-[0_12px_45px_-10px_rgba(245,158,11,0.35)] bg-black/70 max-w-sm sm:max-w-md w-full transition-all duration-500 hover:scale-[1.02] hover:border-amber-400 hover:shadow-[0_18px_60px_rgba(245,158,11,0.45)]"
+              >
+                <img 
+                  src="/conferences/icgen-2026-leadership-award-sanjay-kumar.jpg" 
+                  alt="Leadership Excellence Award - Sanjay Kumar" 
+                  className="w-full h-auto object-cover block"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm bg-gradient-to-t from-black/85 via-black/40 to-transparent">
+                  <ExternalLink className="h-5 w-5 text-amber-400" />
+                  <span>Click to Enlarge Official Award Poster</span>
+                </div>
+              </div>
+              <div className="mt-3 text-center">
+                <span className="text-[11px] sm:text-xs text-muted-foreground font-mono">
+                  Official Citation Award Certificate • ICGEN 2026
+                </span>
+              </div>
+            </div>
+
+            {/* Award Details */}
+            <div className="lg:col-span-7 flex flex-col">
+              {/* Trademark / Conferral Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-4 w-fit shadow-sm">
+                <Sparkles className="h-4 w-4 text-amber-400" />
+                EMINSPHERE® Registered Trademark (No. 13012880)
+              </div>
+
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-2 leading-tight">
+                Leadership Excellence Award
+              </h3>
+
+              <p className="text-sm sm:text-base font-semibold text-amber-400 uppercase tracking-wider mb-6">
+                Presented in Recognition of Outstanding Leadership
+              </p>
+
+              {/* Recipient Profile Card */}
+              <div className="bg-black/50 border border-amber-500/20 rounded-2xl p-5 sm:p-6 mb-6 backdrop-blur-md shadow-inner">
+                <div className="text-[11px] sm:text-xs uppercase tracking-widest text-muted-foreground font-bold mb-1">
+                  Distinguished Honoree
+                </div>
+                <div className="text-2xl sm:text-3xl font-serif font-bold text-white mb-1.5 text-gradient">
+                  Sanjay Kumar
+                </div>
+                <div className="text-sm sm:text-base font-semibold text-amber-300/90 mb-1">
+                  IT Operations &amp; Digital Transformation Expert
+                </div>
+                <div className="text-xs sm:text-sm text-muted-foreground flex items-center gap-1.5">
+                  <MapPin className="h-3.5 w-3.5 text-accent shrink-0" />
+                  <span>Enterprise IT &amp; Digital Transformation, USA</span>
+                </div>
+              </div>
+
+              {/* Citation Statement */}
+              <p className="text-sm sm:text-base text-white/85 leading-relaxed mb-6">
+                In recognition of distinguished enterprise leadership, pioneering advancements in large-scale IT operations, cloud architectures, and transformative contributions to modern digital ecosystems, the ICGEN-2026 International Conference proudly presents the Leadership Excellence Award to Sanjay Kumar.
+              </p>
+
+              {/* Highlights Bullet List */}
+              <div className="space-y-2.5 mb-8">
+                <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                  Leadership &amp; Contribution Citations:
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {[
+                    "Architecting resilient multi-cloud infrastructures and mission-critical enterprise platforms.",
+                    "Spearheading strategic IT operations and intelligent automation workflows across distributed global organizations.",
+                    "Guiding digital transformation initiatives that bridge traditional infrastructure with cutting-edge AI and data analytics.",
+                    "Demonstrating exceptional global leadership and mentorship across international technology communities."
+                  ].map((h, i) => (
+                    <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-white/90 bg-white/5 border border-white/5 p-3 rounded-xl hover:border-amber-500/20 transition-colors">
+                      <span className="text-amber-400 font-bold text-sm shrink-0">✦</span>
+                      <span>{h}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Actions */}
+              <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10">
+                <a
+                  href="/conferences/icgen-2026-leadership-award-sanjay-kumar.jpg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs sm:text-sm transition-all shadow-lg hover:shadow-amber-500/30"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  View High-Res Award Poster
+                </a>
+                <Link
+                  to="/recent-proceedings/icgen-2026"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs sm:text-sm border border-white/10 transition-colors"
+                >
+                  <BookOpen className="h-4 w-4 text-primary" />
+                  View Digital Proceedings
+                </Link>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* MODAL LIGHTBOX FOR AWARD POSTER */}
+      {isAwardModalOpen && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-300"
+          onClick={() => setIsAwardModalOpen(false)}
+        >
+          <div 
+            className="relative max-w-3xl w-full max-h-[92vh] flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setIsAwardModalOpen(false)}
+              className="absolute -top-12 right-0 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors flex items-center gap-1.5 text-sm font-semibold"
+            >
+              <X className="h-5 w-5" /> Close
+            </button>
+            <img 
+              src="/conferences/icgen-2026-leadership-award-sanjay-kumar.jpg" 
+              alt="Leadership Excellence Award - Sanjay Kumar" 
+              className="max-h-[85vh] w-auto rounded-2xl shadow-2xl border-2 border-amber-500/50 object-contain"
+            />
+            <div className="mt-3 flex items-center justify-between w-full text-xs text-muted-foreground px-2">
+              <span>Leadership Excellence Award • Sanjay Kumar</span>
+              <a 
+                href="/conferences/icgen-2026-leadership-award-sanjay-kumar.jpg" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-amber-400 hover:underline inline-flex items-center gap-1"
+              >
+                Open in New Tab <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+{/* KEYNOTE CONTRIBUTION & AWARD EVALUATION FRAMEWORK */}
       <section className="py-16 sm:py-24 container max-w-6xl px-4" id="award-framework">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/25 text-amber-300 text-xs font-bold uppercase tracking-widest mb-3">
