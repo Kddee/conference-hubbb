@@ -638,7 +638,7 @@ const Icgen2026 = () => {
                 </div>
                 <div className="p-3 rounded-xl bg-white/5 border border-white/5">
                   <div className="text-xl sm:text-2xl font-serif font-bold text-amber-300">Award</div>
-                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Leadership Honor</div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Evaluation Criteria</div>
                 </div>
               </div>
             </div>
@@ -1123,8 +1123,8 @@ const Icgen2026 = () => {
                     <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">Official ISBN</div>
                   </div>
                   <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm col-span-2 sm:col-span-1">
-                    <div className="text-xl sm:text-2xl font-serif font-bold text-amber-300">Award & Citations</div>
-                    <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">Leadership Honor</div>
+                    <div className="text-xl sm:text-2xl font-serif font-bold text-amber-300">Award Framework</div>
+                    <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">Recognition Criteria</div>
                   </div>
                 </div>
 
@@ -1161,125 +1161,177 @@ const Icgen2026 = () => {
         </div>
       </section>
 
-      {/* AWARDS & HONORS */}
-      <section className="py-16 sm:py-24 container max-w-6xl px-4">
+      {/* KEYNOTE CONTRIBUTION & AWARD EVALUATION FRAMEWORK */}
+      <section className="py-16 sm:py-24 container max-w-6xl px-4" id="award-framework">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-400 mb-3">
-            <Award className="h-4 w-4" /> Global Honors • ICGEN-2026
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/25 text-amber-300 text-xs font-bold uppercase tracking-widest mb-3">
+            <Award className="h-4 w-4 text-amber-400" /> EMINSPHERE™ • OFFICIAL RECOGNITION
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
-            Conference Award
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-3 tracking-tight">
+            Keynote Contribution &amp; Award Evaluation Framework
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base">
-            Recognizing distinguished enterprise leadership and pioneering contributions to global digital transformation.
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-amber-400">
+            OFFICIAL CONFERENCE RECOGNITION CRITERIA
           </p>
         </div>
 
-        {/* Industry Leadership Award — Rich Layout */}
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-amber-400/10 via-card/80 to-primary/10 border border-amber-400/30 shadow-[0_0_80px_rgba(251,191,36,0.12)]">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/6 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/8 rounded-full blur-3xl pointer-events-none" />
+        {/* Evaluation Framework Card Container */}
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-amber-400/10 via-card/90 to-primary/10 border border-amber-400/30 shadow-[0_0_80px_rgba(251,191,36,0.12)] p-6 sm:p-10 md:p-12">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/8 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 grid lg:grid-cols-2 gap-0 divide-y lg:divide-y-0 lg:divide-x divide-amber-400/15">
-
-            {/* LEFT — Award Info */}
-            <div className="p-8 sm:p-12 flex flex-col gap-6">
-              {/* Header */}
-              <div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/35 text-amber-300 text-[10px] font-black uppercase tracking-widest mb-5">
-                  <Sparkles className="h-3.5 w-3.5" /> Special Announcement • ICGEN-2026
-                </div>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-400/15 border-2 border-amber-400/40 shadow-[0_0_20px_rgba(251,191,36,0.2)] shrink-0">
-                    <Award className="h-7 w-7 text-amber-400" />
+          <div className="relative z-10 space-y-10">
+            {/* Basis of Evaluation */}
+            <div className="rounded-2xl bg-black/40 border border-amber-400/20 p-6 sm:p-8 backdrop-blur-md">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10 mb-5">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-400/15 border border-amber-400/30 shrink-0">
+                    <Sparkles className="h-6 w-6 text-amber-400" />
                   </div>
-                  <h3 className="font-serif font-black text-2xl sm:text-3xl text-white leading-tight">
-                    Industry Leadership Award
-                  </h3>
+                  <div>
+                    <div className="text-xs font-mono font-bold tracking-widest text-amber-300 uppercase">
+                      EMINSPHERE™
+                    </div>
+                    <div className="text-xl sm:text-2xl font-serif font-bold text-white">
+                      Basis of Evaluation
+                    </div>
+                  </div>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  ICGEN-2026 proudly announces the conferral of the <strong className="text-white">Industry Leadership Award</strong> — the highest honor bestowed at this international conference, presented to an individual whose career exemplifies transformative enterprise leadership, visionary technology adoption, and lasting global impact.
-                </p>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-muted-foreground text-xs font-mono">
+                  <ShieldCheck className="h-3.5 w-3.5 text-accent" /> Official Evaluation Standard
+                </div>
+              </div>
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed">
+                EminSphere™ Awards recognize outstanding keynote contributions based on the technical depth, professional relevance, innovation and practical significance demonstrated through the speaker&apos;s keynote presentation.
+              </p>
+            </div>
+
+            {/* Key Evaluation Parameters */}
+            <div>
+              <div className="flex items-center gap-2 mb-6">
+                <BadgeCheck className="h-5 w-5 text-amber-400" />
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
+                  Key Evaluation Parameters
+                </h3>
               </div>
 
-              {/* Divider */}
-              <div className="w-full h-px bg-amber-400/15" />
-
-              {/* Criteria grid */}
-              <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest text-amber-400/70 mb-4">Award Selection Criteria</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {[
-                    { icon: BadgeCheck, label: "Exceptional Enterprise Leadership", desc: "Visionary leadership across large-scale global organizations." },
-                    { icon: Globe, label: "Global Digital Transformation", desc: "Bridging traditional infrastructure with next-generation AI." },
-                    { icon: Zap, label: "Technology Innovation Impact", desc: "Architecting mission-critical cloud & intelligent platforms." },
-                    { icon: Users, label: "International Mentorship", desc: "Inspiring and elevating global technology communities." },
-                  ].map((item, i) => {
-                    const Icon = item.icon;
-                    return (
-                      <div key={i} className="flex items-start gap-3 p-3.5 rounded-xl bg-white/4 border border-amber-400/12">
-                        <div className="h-7 w-7 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center shrink-0 mt-0.5">
-                          <Icon className="h-3.5 w-3.5 text-amber-400" />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                {[
+                  {
+                    num: "01",
+                    title: "Technical Significance",
+                    desc: "Depth, relevance and importance of the subject addressed in the keynote.",
+                    icon: Cpu,
+                  },
+                  {
+                    num: "02",
+                    title: "Innovation & Emerging Technologies",
+                    desc: "Coverage of innovative approaches, technological advancements and emerging technology trends.",
+                    icon: Zap,
+                  },
+                  {
+                    num: "03",
+                    title: "Industry Relevance",
+                    desc: "Addressing contemporary industry, enterprise and real-world technological challenges.",
+                    icon: Globe,
+                  },
+                  {
+                    num: "04",
+                    title: "Practical Applicability",
+                    desc: "Engineering implementation, deployment potential, scalability and operational relevance.",
+                    icon: Network,
+                  },
+                  {
+                    num: "05",
+                    title: "Professional & Technical Expertise",
+                    desc: "Demonstration of specialized knowledge and subject-matter expertise through the presentation.",
+                    icon: BadgeCheck,
+                  },
+                  {
+                    num: "06",
+                    title: "Conference Alignment",
+                    desc: "Contribution to the central themes and technical objectives of the conference.",
+                    icon: Award,
+                  },
+                ].map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={idx}
+                      className="group relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl bg-white/[0.04] hover:bg-white/[0.07] border border-amber-400/15 hover:border-amber-400/40 transition-all duration-300"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/25 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                            <Icon className="h-5 w-5" />
+                          </div>
+                          <span className="text-xs font-mono font-bold text-amber-400/60">
+                            {item.num}
+                          </span>
                         </div>
-                        <div>
-                          <div className="text-[11px] font-bold text-white mb-0.5">{item.label}</div>
-                          <div className="text-[10px] text-muted-foreground leading-relaxed">{item.desc}</div>
-                        </div>
+                        <h4 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                          {item.desc}
+                        </p>
                       </div>
-                    );
-                  })}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Selection Process & Recognition Principle */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+              {/* Selection Process */}
+              <div className="p-6 sm:p-7 rounded-2xl bg-black/35 border border-white/10 backdrop-blur-sm flex flex-col justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent mb-3">
+                    <FileCheck2 className="h-4 w-4" /> Advisory Committee Review
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-serif font-bold text-white mb-3">
+                    Selection Process
+                  </h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    Keynote contributions presented during the official conference programme are considered by the designated Advisory and Organizing Committee through a merit-based evaluation against the above parameters.
+                  </p>
+                </div>
+              </div>
+
+              {/* Recognition Principle */}
+              <div className="p-6 sm:p-7 rounded-2xl bg-amber-400/[0.06] border border-amber-400/25 backdrop-blur-sm flex flex-col justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-300 mb-3">
+                    <ShieldCheck className="h-4 w-4" /> Merit-Based Conferral
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-serif font-bold text-white mb-3">
+                    Recognition Principle
+                  </h4>
+                  <p className="text-xs sm:text-sm text-amber-100/90 leading-relaxed">
+                    Awards are conferred based on the merit and significance of the keynote contribution. Keynote participation or attendance alone does not guarantee award selection.
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* RIGHT — Metadata & Significance */}
-            <div className="p-8 sm:p-12 flex flex-col gap-6">
-              {/* Award Plaque Visual */}
-              <div className="rounded-2xl bg-gradient-to-br from-amber-400/15 to-amber-400/5 border border-amber-400/25 p-6 text-center">
-                <div className="text-5xl mb-3">🏆</div>
-                <div className="text-xs font-black uppercase tracking-widest text-amber-300 mb-1">Leadership Excellence Award</div>
-                <div className="text-white font-serif font-bold text-lg mb-1">ICGEN-2026</div>
-                <div className="text-[11px] text-muted-foreground">International Conference on Generative AI,<br />Frontier Technologies &amp; Intelligent Autonomous Systems</div>
-              </div>
-
-              {/* Event Metadata */}
+            {/* Bottom Footer Banner & Proceedings CTA */}
+            <div className="rounded-2xl bg-gradient-to-r from-amber-400/15 via-primary/20 to-accent/15 border border-amber-400/30 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest text-amber-400/70 mb-4">Award Details</p>
-                <div className="space-y-3">
-                  {[
-                    { icon: Calendar, label: "Conferred On", value: "25 October 2026" },
-                    { icon: Globe, label: "Conference Mode", value: "Hybrid Mode • Worldwide Virtual" },
-                    { icon: MapPin, label: "Scope", value: "International • 50+ Nations" },
-                    { icon: BadgeCheck, label: "Status", value: "Officially Announced" },
-                    { icon: ShieldCheck, label: "Category", value: "Industry & Leadership Excellence" },
-                  ].map((meta, i) => {
-                    const Icon = meta.icon;
-                    return (
-                      <div key={i} className="flex items-center gap-3 py-2.5 border-b border-white/6 last:border-0">
-                        <div className="h-7 w-7 rounded-lg bg-amber-400/10 flex items-center justify-center shrink-0">
-                          <Icon className="h-3.5 w-3.5 text-amber-400" />
-                        </div>
-                        <div className="flex-1 flex items-center justify-between gap-2">
-                          <span className="text-[11px] text-muted-foreground">{meta.label}</span>
-                          <span className="text-[11px] font-semibold text-white text-right">{meta.value}</span>
-                        </div>
-                      </div>
-                    );
-                  })}
+                <div className="text-xs sm:text-sm font-black tracking-widest uppercase text-amber-300 mb-1">
+                  RECOGNIZING TECHNICAL EXCELLENCE | INNOVATION | INDUSTRY IMPACT
+                </div>
+                <div className="text-xs sm:text-sm text-white/80 font-medium">
+                  EminSphere™ | Advancing Knowledge, Research &amp; Global Collaboration
                 </div>
               </div>
-
-              {/* Significance note */}
-              <div className="mt-auto p-4 rounded-xl bg-amber-400/8 border border-amber-400/20">
-                <p className="text-[11px] text-amber-200/80 leading-relaxed">
-                  <strong className="text-amber-300">About this honor:</strong> The Industry Leadership Award at ICGEN-2026 is conferred upon an individual who has made measurable, long-standing contributions to enterprise technology, digital strategy, and global innovation ecosystems — as recognized by the international program committee.
-                </p>
-              </div>
-
-              {/* Digital Proceedings CTA */}
-              <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black rounded-xl h-12 shadow-gold hover:-translate-y-0.5 transition-all text-sm flex items-center justify-center gap-2">
+              <Button
+                asChild
+                size="lg"
+                className="shrink-0 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-black px-6 h-12 shadow-gold hover:-translate-y-0.5 transition-all text-xs sm:text-sm flex items-center gap-2"
+              >
                 <Link to="/recent-proceedings/icgen-2026">
-                  <BookOpen className="h-4 w-4" /> View Digital Conference Proceedings <ArrowRight className="h-4 w-4" />
+                  <BookOpen className="h-4 w-4" /> View Digital Proceedings <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
             </div>
