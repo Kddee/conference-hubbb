@@ -71,6 +71,10 @@ const BOOK_PDF_MAP = {
     file: "mechai-nexus-convergence-of-ai-robotics.pdf",
     title: "MechAI-Nexus-Convergence-of-AI-Robotics.pdf",
   },
+  "enterprise-generative-ai-and-autonomous-agents": {
+    file: "enterprise-generative-ai-and-autonomous-agents.pdf",
+    title: "Enterprise-Generative-AI-and-Autonomous-Agents.pdf",
+  },
 };
 
 function getSecret() {
