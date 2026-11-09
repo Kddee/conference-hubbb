@@ -196,7 +196,7 @@ const recentConferencesData = [
 const rotations = [-3, 2, -1.5, 3, -2, 1, -2.5, 2.5, -1, 3, -3, 1.5, -2, 2];
 
 const upcoming = [
-  { title: "ICPAI-2026: International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence", city: "Hybrid / Worldwide Virtual", date: "29 November 2026", topic: "Physical AI & Humanoid Robotics", link: "/icpai-2026", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200&auto=format&fit=crop" },
+  { title: "ICPAI-2026: International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence", city: "Hybrid / Worldwide Virtual", date: "6 December 2026", topic: "Physical AI & Humanoid Robotics", link: "/icpai-2026", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200&auto=format&fit=crop" },
   { title: "ICMEDAI-2026: International Conference on Generative AI in Healthcare, Precision Medicine & Digital Biology", city: "Hybrid / Worldwide Virtual", date: "20 December 2026", topic: "Bio-AI & Precision Medicine", link: "/icmedai-2026", img: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1200&auto=format&fit=crop" },
   { title: "Eminsphere Manila Nexus 2027 (EMN 2027)", city: "Manila, Philippines", date: "20–21 March 2027", topic: "Intelligent Computing & Digital Futures", link: "/manila-nexus-2027", img: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop" },
 ];
@@ -308,8 +308,8 @@ const Index = () => {
             
             {/* Top Tape overlay */}
             <div className="absolute top-0 left-0 w-full bg-accent/10 border-b border-accent/20 flex justify-between px-4 sm:px-8 py-2 z-20 backdrop-blur-md">
-              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Registration Closes: 27 November 2026</span>
-              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Conference: 29 Nov 2026</span>
+              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Registration Closes: 4 December 2026</span>
+              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Conference: 6 Dec 2026</span>
             </div>
 
             {/* Left - Image Context */}
@@ -342,10 +342,10 @@ const Index = () => {
               
               <div className="flex flex-wrap gap-3 sm:gap-4 mb-8">
                 <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium bg-white/5 px-3 sm:px-4 py-2 rounded-lg border border-white/10">
-                  <Calendar className="w-4 h-4 text-accent" /> 29 November 2026
+                  <Calendar className="w-4 h-4 text-accent" /> 6 December 2026
                 </div>
                 <div className="flex items-center gap-2 text-accent text-xs sm:text-sm font-bold bg-accent/10 px-3 sm:px-4 py-2 rounded-lg border border-accent/20">
-                  <Clock className="w-4 h-4 text-accent" /> Reg Closes: 27 November 2026
+                  <Clock className="w-4 h-4 text-accent" /> Reg Closes: 4 December 2026
                 </div>
                 <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium bg-white/5 px-3 sm:px-4 py-2 rounded-lg border border-white/10">
                   <Globe className="w-4 h-4 text-accent" /> Hybrid / Worldwide Virtual
@@ -366,7 +366,7 @@ const Index = () => {
                 </Button>
                 <div className="hidden lg:flex flex-col ml-2">
                   <span className="text-white font-bold text-sm flex items-center gap-1"><Zap className="w-3 h-3 text-accent" /> Call For Papers Open</span>
-                  <span className="text-white/50 text-xs">Closes: 27 November 2026</span>
+                  <span className="text-white/50 text-xs">Closes: 4 December 2026</span>
                 </div>
               </div>
             </div>

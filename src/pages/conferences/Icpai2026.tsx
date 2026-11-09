@@ -32,8 +32,8 @@ import {
   Bot
 } from "lucide-react";
 
-const REGISTRATION_DEADLINE_DATE = new Date("2026-11-27T23:59:59+08:00");
-const CONFERENCE_TARGET_DATE = new Date("2026-11-29T09:00:00+08:00");
+const REGISTRATION_DEADLINE_DATE = new Date("2026-12-04T23:59:59+08:00");
+const CONFERENCE_TARGET_DATE = new Date("2026-12-06T09:00:00+08:00");
 
 function useCountdown(target: Date) {
   const calc = () => {
@@ -61,22 +61,22 @@ const conferenceData = {
   fullForm: "International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence (ICPAI-2026)",
   theme: "From Foundation Models to Embodied Action: Humanoids, Spatial Intelligence & Autonomous World Models",
   tagline: "The Premier Global Scientific Forum Connecting Silicon Valley Robotics Architects, Global Researchers & Technology Leaders",
-  date: "29 November 2026",
-  registrationDeadline: "27 November 2026",
+  date: "6 December 2026",
+  registrationDeadline: "4 December 2026",
   mode: "Hybrid Mode • Worldwide Virtual",
   registrationLink: "https://forms.gle/JEAh1X5JwAdPn4zT6",
   cmtLink: "https://cmt3.research.microsoft.com",
   
   about: [
     "The International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence (ICPAI-2026) is the premier global scientific forum dedicated to bridging digital foundation models with physical execution in the real world: the emergence of Embodied AI, Humanoid Robotics, Spatial Computing, and Autonomous Cyber-Physical Systems.",
-    "Held in Hybrid Mode on 29 November 2026, ICPAI-2026 brings together an elite international assembly of robotics engineers, AI researchers, Silicon Valley architects, and leading academic chairs across more than 50 countries. The conference delivers an expedited, high-impact double-blind peer-reviewed platform examining sensorimotor learning, whole-body dynamics, 3D world models, and industrial-scale physical autonomy.",
+    "Held in Hybrid Mode on 6 December 2026, ICPAI-2026 brings together an elite international assembly of robotics engineers, AI researchers, Silicon Valley architects, and leading academic chairs across more than 50 countries. The conference delivers an expedited, high-impact double-blind peer-reviewed platform examining sensorimotor learning, whole-body dynamics, 3D world models, and industrial-scale physical autonomy.",
     "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN registration, submitted for global indexing across Google Scholar, with select high-caliber contributions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
   ],
 
   highlights: [
     { stat: "50+", label: "Nations Represented", desc: "Global robotics & AI delegates" },
     { stat: "6", label: "Specialized Tracks", desc: "VLA models, Humanoids & Spatial AI" },
-    { stat: "29 Nov", label: "Conference Date", desc: "One-day high-impact international conference" },
+    { stat: "6 Dec", label: "Conference Date", desc: "One-day high-impact international conference" },
     { stat: "ISBN", label: "Official Proceedings", desc: "Global Cataloging & DOI assigned" }
   ],
 
@@ -204,19 +204,19 @@ const conferenceData = {
     {
       step: "02",
       title: "Paper / Abstract Submission Deadline",
-      date: "22 November 2026",
+      date: "29 November 2026",
       desc: "Final date to submit manuscripts for double-blind peer evaluation."
     },
     {
       step: "03",
       title: "Final Registration & Camera-Ready",
-      date: "27 November 2026",
+      date: "4 December 2026",
       desc: "Deadline for author registration and final publication-ready manuscript upload."
     },
     {
       step: "04",
       title: "International Conference Sessions",
-      date: "29 November 2026",
+      date: "6 December 2026",
       desc: "Keynote addresses, technical presentation tracks, live robotics demonstrations & global awards."
     }
   ],
@@ -290,15 +290,15 @@ const Icpai2026 = () => {
     <main className="min-h-screen bg-[#050B14] text-foreground selection:bg-primary selection:text-primary-foreground font-sans relative overflow-hidden">
       <SEOHead
         title="ICPAI-2026 | International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence"
-        description="Join ICPAI-2026 on 29 November 2026. A premier international conference exploring Physical AI, Humanoids, VLA models, and Autonomous Robotics. ISBN Proceedings & Scopus Fast-Track."
+        description="Join ICPAI-2026 on 6 December 2026. A premier international conference exploring Physical AI, Humanoids, VLA models, and Autonomous Robotics. ISBN Proceedings & Scopus Fast-Track."
         canonical="https://www.eminsphere.com/icpai-2026"
         schema={{
           "@context": "https://schema.org",
           "@type": "Event",
           name: conferenceData.fullTitle,
           description: conferenceData.theme,
-          startDate: "2026-11-29T09:00:00+08:00",
-          endDate: "2026-11-29T19:00:00+08:00",
+          startDate: "2026-12-06T09:00:00+08:00",
+          endDate: "2026-12-06T19:00:00+08:00",
           eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
           eventStatus: "https://schema.org/EventScheduled",
           organizer: {
@@ -322,7 +322,7 @@ const Icpai2026 = () => {
           {/* Top Category Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 animate-pulse">
             <Sparkles className="h-4 w-4" />
-            <span>International Conference • November 2026</span>
+            <span>International Conference • December 2026</span>
           </div>
 
           {/* Main Title */}
@@ -387,7 +387,7 @@ const Icpai2026 = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
             <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black h-12 sm:h-14 px-8 rounded-full shadow-gold hover:-translate-y-0.5 transition-all text-sm sm:text-base">
               <a href={conferenceData.registrationLink} target="_blank" rel="noopener noreferrer">
-                Register Online (Before 27 Nov) <ArrowRight className="ml-2 h-4 w-4" />
+                Register Online (Before 4 Dec) <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="w-full sm:w-auto bg-accent/15 hover:bg-accent/25 border-accent/40 text-accent font-bold h-12 sm:h-14 px-8 rounded-full shadow-md hover:-translate-y-0.5 transition-all text-sm sm:text-base">
@@ -681,7 +681,7 @@ const Icpai2026 = () => {
             Ready to Present Your Physical AI Research?
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto mb-8">
-            Join international researchers, Silicon Valley architects, and robotics leaders on 29 November 2026.
+            Join international researchers, Silicon Valley architects, and robotics leaders on 6 December 2026.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black px-8 h-12 sm:h-14 rounded-full shadow-gold hover:-translate-y-0.5 transition-all">

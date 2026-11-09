@@ -20,6 +20,7 @@ const BOOK_PDF_MAP = {
   "mastering-cloud-computing-fundamentals-to-enterprise-scale": "mastering-cloud-computing-fundamentals-to-enterprise-scale.pdf",
   "artificial-intelligence-for-scalable-distributed-systems": "artificial-intelligence-for-scalable-distributed-systems.pdf",
   "mechai-nexus-convergence-of-ai-robotics": "mechai-nexus-convergence-of-ai-robotics.pdf",
+  "enterprise-generative-ai-and-autonomous-agents": "enterprise-generative-ai-and-autonomous-agents.pdf",
 };
 
 async function parseBody(req) {
