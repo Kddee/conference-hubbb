@@ -3,6 +3,8 @@ import fs from "fs";
 import path from "path";
 
 const BOOK_PDF_MAP = {
+  "generative-ai-student-work-authenticity": "generative-ai-student-work-authenticity.pdf",
+  "ai-distributed-systems-future-digital-technology": "ai-distributed-systems-future-digital-technology.pdf",
   "artificial-intelligence-new-horizons": "artificial-intelligence-new-horizons.pdf",
   "emerging-digital-technologies": "emerging-digital-technologies.pdf",
   "ai-driven-supply-chains": "ai-driven-supply-chains.pdf",
@@ -15,7 +17,7 @@ const BOOK_PDF_MAP = {
   "analytics-in-the-ai-era": "analytics-in-the-ai-era.pdf",
   "it-in-the-energy-sector": "it-in-the-energy-sector.pdf",
   "secure-cloud-ai-ml-for-financial-and-pension-systems": "secure-cloud-ai-ml-for-financial-and-pension-systems.pdf",
-    "mastering-cloud-computing-fundamentals-to-enterprise-scale": "mastering-cloud-computing-fundamentals-to-enterprise-scale.pdf",
+  "mastering-cloud-computing-fundamentals-to-enterprise-scale": "mastering-cloud-computing-fundamentals-to-enterprise-scale.pdf",
   "artificial-intelligence-for-scalable-distributed-systems": "artificial-intelligence-for-scalable-distributed-systems.pdf",
   "mechai-nexus-convergence-of-ai-robotics": "mechai-nexus-convergence-of-ai-robotics.pdf",
 };
@@ -338,8 +340,7 @@ export default async function handler(req, res) {
     if (!isPaperback && bookId) {
       const matchedFileName = BOOK_PDF_MAP[bookId] || `${bookId}.pdf`;
       const possibleFilePaths = [
-        path.join(process.cwd(), "public", "books", "pdf", matchedFileName),
-        path.join(process.cwd(), "dist", "books", "pdf", matchedFileName),
+        path.join(process.cwd(), "private", "books", matchedFileName),
         path.join(process.cwd(), "books", matchedFileName),
       ];
 

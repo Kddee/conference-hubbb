@@ -19,7 +19,6 @@ export interface Book {
   pricePaperbackINR: number;
   priceEbookINR: number;
   priceINR?: number;
-  pdfFile?: string;
   pdfFileName?: string;
 }
 
@@ -49,7 +48,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 1059,
     priceEbookINR: 96,
     priceINR: 1059,
-    pdfFile: "/books/pdf/generative-ai-student-work-authenticity.pdf",
     pdfFileName: "Generative AI and Student Work Authenticity.pdf"
   },
   {
@@ -66,7 +64,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 1059,
     priceEbookINR: 96,
     priceINR: 1059,
-    pdfFile: "/books/pdf/ai-distributed-systems-future-digital-technology.pdf",
     pdfFileName: "AI, Distributed Systems and the Future of Digital Technology.pdf"
   },
   {
@@ -83,7 +80,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 963,
     priceEbookINR: 96,
     priceINR: 963,
-    pdfFile: "/books/pdf/artificial-intelligence-new-horizons.pdf",
     pdfFileName: "Artificial Intelligence - New Horizons and Applications.pdf"
   },
   {
@@ -100,7 +96,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 1252,
     priceEbookINR: 193,
     priceINR: 1252,
-    pdfFile: "/books/pdf/emerging-digital-technologies.pdf",
     pdfFileName: "Emerging Digital Technologies - Applications in Supply Chain and Beyond.pdf"
   },
   {
@@ -117,7 +112,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 1059,
     priceEbookINR: 193,
     priceINR: 1059,
-    pdfFile: "/books/pdf/ai-driven-supply-chains.pdf",
     pdfFileName: "AI-Driven Supply Chains and Intelligent Logistics.pdf"
   },
   {
@@ -133,7 +127,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 770,
     priceEbookINR: 96,
     priceINR: 770,
-    pdfFile: "/books/pdf/next-generation-ai-native-iam.pdf",
     pdfFileName: "Next-Generation AI-Native IAM.pdf"
   },
   {
@@ -177,7 +170,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 867,
     priceEbookINR: 96,
     priceINR: 867,
-    pdfFile: "/books/pdf/building-public-health-data-systems.pdf",
     pdfFileName: "Building Public Health Data Systems.pdf"
   },
   {
@@ -193,7 +185,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 573,
     priceEbookINR: 99,
     priceINR: 573,
-    pdfFile: "/books/pdf/cloud-scale-systems.pdf",
     pdfFileName: "Cloud-Scale Systems - Data Ingestion, Events, and Storage.pdf"
   },
   {
@@ -223,7 +214,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 674,
     priceEbookINR: 193,
     priceINR: 674,
-    pdfFile: "/books/pdf/designing-scalable-event-driven-data-platforms.pdf",
     pdfFileName: "Designing Scalable Event-Driven Data Platforms.pdf"
   },
   {
@@ -239,7 +229,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 1059,
     priceEbookINR: 96,
     priceINR: 1059,
-    pdfFile: "/books/pdf/healthcare-cloud-compliance.pdf",
     pdfFileName: "Healthcare Cloud Compliance - Architecture and Implementation.pdf"
   },
   {
@@ -311,7 +300,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 770,
     priceEbookINR: 96,
     priceINR: 770,
-    pdfFile: "/books/pdf/modernization-of-legacy-systems-over-cloud.pdf",
     pdfFileName: "Modernization of Legacy Systems Over Cloud.pdf"
   },
   {
@@ -327,7 +315,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 867,
     priceEbookINR: 96,
     priceINR: 867,
-    pdfFile: "/books/pdf/analytics-in-the-ai-era.pdf",
     pdfFileName: "Analytics in the AI Era.pdf"
   },
   {
@@ -343,7 +330,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 1156,
     priceEbookINR: 96,
     priceINR: 1156,
-    pdfFile: "/books/pdf/it-in-the-energy-sector.pdf",
     pdfFileName: "IT in the Energy Sector.pdf"
   },
   {
@@ -359,7 +345,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 1541,
     priceEbookINR: 96,
     priceINR: 1541,
-    pdfFile: "/books/pdf/secure-cloud-ai-ml-for-financial-and-pension-systems.pdf",
     pdfFileName: "Secure Cloud AI and ML for Financial and Pension Systems.pdf"
   }
 ,
@@ -377,7 +362,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 1199,
     priceEbookINR: 149,
     priceINR: 1199,
-    pdfFile: "/books/pdf/mastering-cloud-computing-fundamentals-to-enterprise-scale.pdf",
     pdfFileName: "Mastering Cloud Computing - Fundamentals to Enterprise Scale.pdf"
   },
   {
@@ -393,7 +377,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 1099,
     priceEbookINR: 129,
     priceINR: 1099,
-    pdfFile: "/books/pdf/artificial-intelligence-for-scalable-distributed-systems.pdf",
     pdfFileName: "Artificial Intelligence for Scalable Distributed Systems.pdf"
   },
   {
@@ -410,7 +393,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 1299,
     priceEbookINR: 159,
     priceINR: 1299,
-    pdfFile: "/books/pdf/mechai-nexus-convergence-of-ai-robotics.pdf",
     pdfFileName: "MechAI Nexus - The Convergence of AI, Robotics, and Mechatronics.pdf"
   }
 ];

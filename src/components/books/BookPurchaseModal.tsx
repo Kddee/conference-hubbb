@@ -229,8 +229,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
               bookId: book.id,
             });
 
-            const finalDownloadUrl =
-              verifyRes.downloadUrl || book.pdfFile || `/books/pdf/${book.id}.pdf`;
+            const finalDownloadUrl = verifyRes.downloadUrl || "";
 
             // Set state to show success screen with book download access
             setPaymentSuccess({
@@ -243,7 +242,7 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
 
             // 5. Send order notification email to info@eminsphere.com and receipt to customer
             const absoluteDownloadUrl =
-              typeof window !== "undefined" && finalDownloadUrl.startsWith("/")
+              typeof window !== "undefined" && finalDownloadUrl && finalDownloadUrl.startsWith("/")
                 ? `${window.location.origin}${finalDownloadUrl}`
                 : finalDownloadUrl;
 
@@ -464,14 +463,10 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
               )}
             </div>
 
-            {paymentSuccess.edition === "ebook" && (
+            {paymentSuccess.edition === "ebook" && paymentSuccess.downloadUrl ? (
               <div className="pt-2 space-y-2">
                 <a
-                  href={
-                    paymentSuccess.downloadUrl ||
-                    book.pdfFile ||
-                    `/books/pdf/${book.id}.pdf`
-                  }
+                  href={paymentSuccess.downloadUrl}
                   download={book.pdfFileName || `${book.title}.pdf`}
                   onClick={() => recordBookDownload(book.id)}
                   className="inline-flex items-center justify-center gap-2.5 w-full py-4 px-4 rounded-2xl font-bold text-sm bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white transition-all shadow-lg hover:shadow-emerald-500/25 cursor-pointer text-center"
@@ -483,7 +478,11 @@ export const BookPurchaseModal: React.FC<BookPurchaseModalProps> = ({
                   🔒 Authenticated DRM-Licensed Copy • Payment Reference: {paymentSuccess.paymentId}
                 </p>
               </div>
-            )}
+            ) : paymentSuccess.edition === "ebook" ? (
+              <div className="pt-2 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-3 text-xs text-emerald-700 dark:text-emerald-300 text-center">
+                ✓ Order confirmed! Digital edition download instructions and receipt have been dispatched to <strong>{formData.email}</strong>.
+              </div>
+            ) : null}
 
             {paymentSuccess.edition === "paperback" && (
               <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-3.5 text-xs text-blue-700 dark:text-blue-300 text-left flex items-start gap-2.5">

@@ -60,7 +60,7 @@ const conferenceData = {
   fullTitle: "International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence",
   fullForm: "International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence (ICPAI-2026)",
   theme: "From Foundation Models to Embodied Action: Humanoids, Spatial Intelligence & Autonomous World Models",
-  tagline: "The Premier Global Scientific Forum Connecting Silicon Valley Robotics Architects, Global Researchers & NRI Technology Leaders",
+  tagline: "The Premier Global Scientific Forum Connecting Silicon Valley Robotics Architects, Global Researchers & Technology Leaders",
   date: "29 November 2026",
   registrationDeadline: "27 November 2026",
   mode: "Hybrid Mode • Worldwide Virtual",
@@ -88,7 +88,7 @@ const conferenceData = {
     },
     {
       icon: Users,
-      title: "Global Diaspora & Industry Convergence",
+      title: "Global Research & Industry Convergence",
       desc: "Connect directly with prominent robotics pioneers, Silicon Valley hardware/software architects, and leading European and Asian research laboratories."
     },
     {

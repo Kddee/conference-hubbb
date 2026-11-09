@@ -1,4 +1,19 @@
 {
+  "functions": {
+    "api/download-book.js": {
+      "includeFiles": "private/books/**"
+    },
+    "api/send-order-email.js": {
+      "includeFiles": "private/books/**"
+    }
+  },
+  "redirects": [
+    {
+      "source": "/books/pdf/:match*",
+      "destination": "/books",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/).*)",
@@ -6,6 +21,23 @@
     }
   ],
   "headers": [
+    {
+      "source": "/api/download-book",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate, max-age=0"
+        },
+        {
+          "key": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "key": "Expires",
+          "value": "0"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [

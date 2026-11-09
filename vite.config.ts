@@ -59,6 +59,28 @@ export default defineConfig(({ mode }) => {
               }
               return;
             }
+            if (pathname === "/api/download-book") {
+              try {
+                const { default: downloadBookHandler } = await import("./api/download-book.js");
+                await downloadBookHandler(req, res);
+              } catch (err: any) {
+                res.statusCode = 500;
+                res.setHeader("Content-Type", "application/json");
+                res.end(JSON.stringify({ error: err?.message || "Internal server error" }));
+              }
+              return;
+            }
+            if (pathname === "/api/send-order-email") {
+              try {
+                const { default: sendEmailHandler } = await import("./api/send-order-email.js");
+                await sendEmailHandler(req, res);
+              } catch (err: any) {
+                res.statusCode = 500;
+                res.setHeader("Content-Type", "application/json");
+                res.end(JSON.stringify({ error: err?.message || "Internal server error" }));
+              }
+              return;
+            }
             next();
           });
         },

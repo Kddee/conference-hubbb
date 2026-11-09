@@ -1,5 +1,3 @@
-import Razorpay from "razorpay";
-
 async function parseBody(req) {
   if (req.body) {
     if (typeof req.body === "string") {
@@ -35,6 +33,9 @@ function sendJson(res, statusCode, data) {
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(data));
 }
+
+// Minimum legitimate eBook price in paise (₹96.00 INR = 9600 paise)
+const MINIMUM_ORDER_AMOUNT_PAISE = 9600;
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -94,13 +95,21 @@ export default async function handler(req, res) {
     const { amount, currency = "INR", receipt, notes = {} } = body;
 
     const numericAmount = Number(amount);
-    if (!numericAmount || isNaN(numericAmount) || numericAmount < 100) {
+    if (!numericAmount || isNaN(numericAmount) || numericAmount < MINIMUM_ORDER_AMOUNT_PAISE) {
       return sendJson(res, 400, {
-        error: "Amount is invalid or below minimum. Must be at least 100 paise (₹1 INR).",
+        error: `Order amount is invalid or below catalog price threshold. Minimum amount is ₹${(MINIMUM_ORDER_AMOUNT_PAISE / 100).toFixed(2)} INR.`,
       });
     }
 
-    const razorpay = new Razorpay({
+    let RazorpayClass;
+    try {
+      const mod = await import("razorpay");
+      RazorpayClass = mod.default || mod;
+    } catch (e) {
+      throw new Error("Razorpay SDK module is not installed");
+    }
+
+    const razorpay = new RazorpayClass({
       key_id,
       key_secret,
     });
@@ -109,7 +118,10 @@ export default async function handler(req, res) {
       amount: Math.round(numericAmount),
       currency: currency || "INR",
       receipt: receipt || `rcpt_${Date.now()}`,
-      notes: notes,
+      notes: {
+        ...notes,
+        bookId: (notes.bookId || "").trim(),
+      },
     };
 
     const order = await razorpay.orders.create(orderOptions);

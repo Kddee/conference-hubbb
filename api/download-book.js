@@ -1,6 +1,10 @@
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const BOOK_PDF_MAP = {
   "generative-ai-student-work-authenticity": {
@@ -73,6 +77,25 @@ const BOOK_PDF_MAP = {
   },
 };
 
+// Rate limiting state: max 15 downloads per 5 minutes per token / IP
+const rateLimitMap = new Map();
+const RATE_LIMIT_WINDOW_MS = 5 * 60 * 1000;
+const MAX_DOWNLOADS_PER_WINDOW = 15;
+
+function checkRateLimit(key) {
+  const now = Date.now();
+  const entry = rateLimitMap.get(key) || { count: 0, resetAt: now + RATE_LIMIT_WINDOW_MS };
+  if (now > entry.resetAt) {
+    entry.count = 1;
+    entry.resetAt = now + RATE_LIMIT_WINDOW_MS;
+    rateLimitMap.set(key, entry);
+    return true;
+  }
+  entry.count += 1;
+  rateLimitMap.set(key, entry);
+  return entry.count <= MAX_DOWNLOADS_PER_WINDOW;
+}
+
 function getSecret() {
   let key_secret = "";
   for (const [k, v] of Object.entries(process.env)) {
@@ -88,11 +111,16 @@ function getSecret() {
   return key_secret || DEFAULT_SECRET;
 }
 
+function sendJson(res, statusCode, data) {
+  res.statusCode = statusCode;
+  res.setHeader("Content-Type", "application/json");
+  return res.end(JSON.stringify(data));
+}
+
 export default async function handler(req, res) {
   if (req.method !== "GET" && req.method !== "HEAD") {
     res.setHeader("Allow", "GET, HEAD");
-    res.statusCode = 405;
-    return res.end(JSON.stringify({ error: "Method not allowed. Use GET." }));
+    return sendJson(res, 405, { error: "Method not allowed. Use GET." });
   }
 
   // Attempt to load .env in local dev
@@ -103,49 +131,86 @@ export default async function handler(req, res) {
   } catch {}
 
   const url = new URL(req.url, `https://${req.headers.host || "localhost"}`);
-  const bookId = url.searchParams.get("bookId") || "";
-  const paymentId = url.searchParams.get("paymentId") || "";
-  const expires = url.searchParams.get("expires") || "";
-  const token = url.searchParams.get("token") || "";
+  const bookId = (url.searchParams.get("bookId") || "").trim();
+  const paymentId = (url.searchParams.get("paymentId") || "").trim();
+  const expires = (url.searchParams.get("expires") || "").trim();
+  const token = (url.searchParams.get("token") || "").trim();
 
-  if (!bookId) {
-    res.statusCode = 400;
-    res.setHeader("Content-Type", "application/json");
-    return res.end(JSON.stringify({ error: "Missing required parameter: bookId" }));
+  // 1. Mandatory access control validation: ALL parameters are strictly required
+  if (!bookId || !paymentId || !expires || !token) {
+    return sendJson(res, 401, {
+      error: "Access denied. Valid purchase authorization, payment reference, and cryptographic signature token are required.",
+    });
   }
 
+  // 2. Validate book entry in catalog
   const bookEntry = BOOK_PDF_MAP[bookId];
   if (!bookEntry) {
-    res.statusCode = 404;
-    res.setHeader("Content-Type", "application/json");
-    return res.end(JSON.stringify({ error: "Book edition PDF not found for given bookId" }));
+    return sendJson(res, 404, {
+      error: "Book edition PDF not found for given bookId",
+    });
   }
 
-  // If a secure token is provided, verify signature & expiry
-  if (token) {
-    const secret = getSecret();
-    const expected = crypto
-      .createHmac("sha256", secret)
-      .update(`${bookId}:${paymentId}:${expires}`)
-      .digest("hex");
-
-    if (expected !== token) {
-      res.statusCode = 403;
-      res.setHeader("Content-Type", "application/json");
-      return res.end(JSON.stringify({ error: "Invalid or tampered download token" }));
-    }
-
-    if (expires && Number(expires) < Date.now()) {
-      res.statusCode = 410;
-      res.setHeader("Content-Type", "application/json");
-      return res.end(JSON.stringify({ error: "Download token has expired. Please contact support." }));
-    }
+  // 3. Validate payment reference structure
+  if (paymentId.length < 8 || paymentId.length > 50) {
+    return sendJson(res, 400, {
+      error: "Invalid payment reference identifier format.",
+    });
   }
 
-  // Resolve file path safely across local dev & Vercel deployment
+  // 4. Rate limiting check (prevent mass automated downloads)
+  const clientIp = (req.headers["x-forwarded-for"] || req.headers["x-real-ip"] || "ip").toString().split(",")[0].trim();
+  const rateLimitKey = `${paymentId}:${clientIp}`;
+  if (!checkRateLimit(rateLimitKey)) {
+    return sendJson(res, 429, {
+      error: "Download rate limit exceeded. Too many requests for this authorization token. Please wait a few minutes.",
+    });
+  }
+
+  // 5. Validate expiration timestamp
+  const expiresNum = Number(expires);
+  if (!Number.isFinite(expiresNum) || expiresNum <= 0) {
+    return sendJson(res, 400, {
+      error: "Invalid expiration timestamp format",
+    });
+  }
+
+  if (expiresNum < Date.now()) {
+    return sendJson(res, 410, {
+      error: "Download authorization token has expired. Please contact support at info@eminsphere.com with your payment reference.",
+    });
+  }
+
+  // Reject excessively distant expiration timestamps (> 90 days)
+  if (expiresNum > Date.now() + 90 * 24 * 60 * 60 * 1000) {
+    return sendJson(res, 400, {
+      error: "Invalid token expiration duration.",
+    });
+  }
+
+  // 6. Verify cryptographic HMAC SHA256 signature (constant-time comparison)
+  const secret = getSecret();
+  const expectedToken = crypto
+    .createHmac("sha256", secret)
+    .update(`${bookId}:${paymentId}:${expires}`)
+    .digest("hex");
+
+  const tokenBuffer = Buffer.from(token, "utf8");
+  const expectedBuffer = Buffer.from(expectedToken, "utf8");
+
+  if (
+    tokenBuffer.length !== expectedBuffer.length ||
+    !crypto.timingSafeEqual(tokenBuffer, expectedBuffer)
+  ) {
+    return sendJson(res, 403, {
+      error: "Access denied. Invalid or forged download authorization token.",
+    });
+  }
+
+  // 7. Resolve file path from protected non-public storage
   const possiblePaths = [
-    path.join(process.cwd(), "public", "books", "pdf", bookEntry.file),
-    path.join(process.cwd(), "dist", "books", "pdf", bookEntry.file),
+    path.join(process.cwd(), "private", "books", bookEntry.file),
+    path.join(__dirname, "..", "private", "books", bookEntry.file),
     path.join(process.cwd(), "books", bookEntry.file),
   ];
 
@@ -157,37 +222,42 @@ export default async function handler(req, res) {
     }
   }
 
-  // If found on filesystem, stream directly with attachment headers
-  if (resolvedPath) {
-    const stat = fs.statSync(resolvedPath);
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/pdf");
-    res.setHeader("Content-Length", stat.size);
-    res.setHeader(
-      "Content-Disposition",
-      `attachment; filename="${bookEntry.title}"`
-    );
-    res.setHeader("Cache-Control", "private, no-transform, max-age=86400");
-
-    if (req.method === "HEAD") {
-      return res.end();
-    }
-
-    const stream = fs.createReadStream(resolvedPath);
-    if (typeof stream.pipe === "function" && typeof res.on === "function") {
-      return stream.pipe(res);
-    }
-
-    const buffer = fs.readFileSync(resolvedPath);
-    if (typeof res.send === "function") {
-      return res.send(buffer);
-    }
-    return res.end(buffer);
+  if (!resolvedPath) {
+    return sendJson(res, 404, {
+      error: "Digital publication file is currently unavailable in secure storage. Please contact info@eminsphere.com.",
+    });
   }
 
-  // Fallback: Redirect to CDN static route in public folder
-  res.writeHead(302, {
-    Location: `/books/pdf/${encodeURIComponent(bookEntry.file)}`,
-  });
-  return res.end();
+  // 8. Stream the authenticated PDF with strict DRM and security headers
+  const stat = fs.statSync(resolvedPath);
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "application/pdf");
+  res.setHeader("Content-Length", stat.size);
+  res.setHeader(
+    "Content-Disposition",
+    `attachment; filename="${bookEntry.title}"`
+  );
+  // Prevent CDN / browser caching of copyrighted material
+  res.setHeader(
+    "Cache-Control",
+    "private, no-cache, no-store, must-revalidate, max-age=0"
+  );
+  res.setHeader("Pragma", "no-cache");
+  res.setHeader("Expires", "0");
+  res.setHeader("X-Content-Type-Options", "nosniff");
+
+  if (req.method === "HEAD") {
+    return res.end();
+  }
+
+  const stream = fs.createReadStream(resolvedPath);
+  if (typeof stream.pipe === "function" && typeof res.on === "function") {
+    return stream.pipe(res);
+  }
+
+  const buffer = fs.readFileSync(resolvedPath);
+  if (typeof res.send === "function") {
+    return res.send(buffer);
+  }
+  return res.end(buffer);
 }
