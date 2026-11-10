@@ -182,6 +182,36 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Edge Neuromorphic Hardware & Real-Time Sensorimotor Actuation (Low-latency inference, embedded robotics compute)",
       "Sim-to-Real Transfer, Industrial Twins & Safety Certification (Domain randomization, factory robotics, fail-safe AI)"
     ],
+    speakers: [
+      {
+        name: "Chayma HOUMAMI",
+        designation: "Directorate General of Taxes",
+        university: "Directorate General of Taxes, Morocco",
+        image: "/speakers/chayma-houmami.jpg",
+        category: "Keynote Speaker"
+      },
+      {
+        name: "Dr. Karl Sieg",
+        designation: "Professor, College of Medicine & Board-Certified Medical Review Officer",
+        university: "University of Central Florida, USA",
+        image: "/speakers/dr-karl-sieg.jpg",
+        category: "Keynote Speaker"
+      },
+      {
+        name: "Dr. Madeleine Pickles",
+        designation: "Associate Professor",
+        university: "Liverpool Business School, Liverpool John Moores University (LJMU), England",
+        image: "/speakers/dr-madeleine-pickles.jpg",
+        category: "Keynote Speaker"
+      },
+      {
+        name: "Rowan Elselmy",
+        designation: "Assistant Professor in Architecture",
+        university: "De Montfort University Dubai, UAE",
+        image: "/speakers/rowan-elselmy.jpg",
+        category: "Keynote Speaker"
+      }
+    ],
     milestones: [
       { name: "Paper / Abstract Submission Deadline", date: "29 November 2026" },
       { name: "Acceptance Notification", date: "2 December 2026" },

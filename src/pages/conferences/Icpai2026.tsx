@@ -279,7 +279,42 @@ const conferenceData = {
       q: "How does the peer-review process work?",
       a: "All submissions undergo double-blind peer review by qualified domain experts. Authors receive constructive review feedback within 3 to 5 business days from submission."
     }
-  ]
+  ],
+
+  speakers: [
+    {
+      name: "Chayma HOUMAMI",
+      designation: "Directorate General of Taxes",
+      organization: "Directorate General of Taxes, Morocco",
+      country: "Morocco 🇲🇦",
+      image: "/speakers/chayma-houmami.jpg",
+      category: "Keynote Speaker"
+    },
+    {
+      name: "Dr. Karl Sieg",
+      designation: "Professor, College of Medicine & Board-Certified Medical Review Officer",
+      organization: "University of Central Florida",
+      country: "USA 🇺🇸",
+      image: "/speakers/dr-karl-sieg.jpg",
+      category: "Keynote Speaker"
+    },
+    {
+      name: "Dr. Madeleine Pickles",
+      designation: "Associate Professor",
+      organization: "Liverpool Business School, Liverpool John Moores University (LJMU)",
+      country: "England, UK 🇬🇧",
+      image: "/speakers/dr-madeleine-pickles.jpg",
+      category: "Keynote Speaker"
+    },
+    {
+      name: "Rowan Elselmy",
+      designation: "Assistant Professor in Architecture",
+      organization: "De Montfort University Dubai",
+      country: "UAE 🇦🇪",
+      image: "/speakers/rowan-elselmy.jpg",
+      category: "Keynote Speaker"
+    }
+  ],
 };
 
 const Icpai2026 = () => {
@@ -396,7 +431,10 @@ const Icpai2026 = () => {
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold h-12 sm:h-14 px-7 rounded-full transition-all text-sm sm:text-base">
-              <a href="#tracks">Explore Robotics Tracks</a>
+              <a href="#speakers">Keynote Speakers</a>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border-white/20 text-white font-bold h-12 sm:h-14 px-7 rounded-full transition-all text-sm sm:text-base">
+              <a href="#tracks">Robotics Tracks</a>
             </Button>
           </div>
         </div>
@@ -533,6 +571,71 @@ const Icpai2026 = () => {
               </Card>
             );
           })}
+        </div>
+      </section>
+
+      {/* DISTINGUISHED KEYNOTE SPEAKERS */}
+      <section id="speakers" className="py-16 sm:py-24 container max-w-6xl px-4 mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3">
+            <Users className="h-4 w-4" /> Global Keynote Faculty
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Distinguished Keynote Speakers
+          </h2>
+          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+            World-renowned scholars, university professors, and international domain leaders delivering visionary keynote addresses at ICPAI-2026.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {conferenceData.speakers.map((s, idx) => (
+            <Card
+              key={idx}
+              className="group relative overflow-hidden rounded-3xl bg-card/60 border border-white/10 hover:border-primary/50 backdrop-blur-md p-6 flex flex-col items-center text-center shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300"
+            >
+              {/* Subtle Ambient Glow */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none group-hover:bg-primary/20 transition-all" />
+
+              {/* Category Badge */}
+              <div className="inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full bg-primary/15 text-primary border border-primary/30 mb-4 shadow-sm uppercase tracking-wider">
+                <Sparkles className="h-3 w-3" />
+                <span>{s.category}</span>
+              </div>
+
+              {/* Headshot Portrait Frame */}
+              <div className="relative w-40 h-48 sm:w-44 sm:h-52 mb-4 overflow-hidden rounded-2xl border-2 border-primary/30 bg-[#030914] shadow-md group-hover:border-primary group-hover:shadow-primary/20 transition-all">
+                <img
+                  src={s.image}
+                  alt={s.name}
+                  className="h-full w-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Country Badge */}
+              <div className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3 py-1 rounded-full bg-accent/10 text-accent border border-accent/25 mb-3 shadow-sm">
+                <span>{s.country}</span>
+              </div>
+
+              {/* Speaker Name */}
+              <h3 className="font-serif font-bold text-xl text-white mb-2 group-hover:text-primary transition-colors leading-snug">
+                {s.name}
+              </h3>
+
+              {/* Designation */}
+              <p className="text-xs sm:text-sm font-semibold text-accent mb-1.5 leading-relaxed">
+                {s.designation}
+              </p>
+
+              {/* Organization */}
+              {s.organization && (
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {s.organization}
+                </p>
+              )}
+            </Card>
+          ))}
         </div>
       </section>
 
