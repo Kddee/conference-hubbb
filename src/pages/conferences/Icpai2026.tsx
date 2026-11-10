@@ -65,7 +65,7 @@ const conferenceData = {
   registrationDeadline: "4 December 2026",
   mode: "Hybrid Mode • Worldwide Virtual",
   registrationLink: "https://forms.gle/JEAh1X5JwAdPn4zT6",
-  cmtLink: "https://cmt3.research.microsoft.com",
+  cmtLink: "https://cmt3.research.microsoft.com/ICPAI2026",
   
   about: [
     "The International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence (ICPAI-2026) is the premier global scientific forum dedicated to bridging digital foundation models with physical execution in the real world: the emergence of Embodied AI, Humanoid Robotics, Spatial Computing, and Autonomous Cyber-Physical Systems.",
