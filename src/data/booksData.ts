@@ -48,7 +48,6 @@ export const publishedBooks: Book[] = [
     pricePaperbackINR: 1199,
     priceEbookINR: 149,
     priceINR: 1199,
-    pdfFile: "/books/pdf/enterprise-generative-ai-and-autonomous-agents.pdf",
     pdfFileName: "Enterprise Generative AI and Autonomous Agents - Technologies and Applications in Finance.pdf"
   },
   {

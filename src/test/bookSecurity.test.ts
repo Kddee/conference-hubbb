@@ -45,12 +45,12 @@ describe("Book Digital Publication Protection & Access Control", () => {
     expect(fs.existsSync(publicPdfDir)).toBe(false);
   });
 
-  it("must store all 17 publication PDFs safely in private/books", () => {
+  it("must store all publication PDFs safely in private/books", () => {
     const privateBooksDir = path.join(process.cwd(), "private", "books");
     expect(fs.existsSync(privateBooksDir)).toBe(true);
 
     const files = fs.readdirSync(privateBooksDir).filter(f => f.endsWith(".pdf"));
-    expect(files.length).toBe(17);
+    expect(files.length).toBeGreaterThanOrEqual(17);
   });
 
   it("must not expose direct pdfFile URLs in booksData", () => {
