@@ -287,7 +287,7 @@ export const AwardsAdmin: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground py-24 sm:py-32">
+    <div className="min-h-screen bg-background text-foreground py-8 sm:py-12">
       <SEOHead title="Administrative Dashboard | EminSphere Awards" />
 
       <div className="container max-w-7xl px-4 sm:px-6 space-y-8">

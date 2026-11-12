@@ -48,15 +48,7 @@ const moreDropdownNav = [
 export const Header = () => {
   const [open, setOpen] = useState(false);
   const [awardsMobileOpen, setAwardsMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -65,14 +57,12 @@ export const Header = () => {
 
   const isHome = location.pathname === "/";
   const isAwardsSection = location.pathname.startsWith("/awards-recognition") || location.pathname.startsWith("/verify-certificate");
-  const textColor = isHome && !scrolled ? "text-white/90" : "text-foreground/90";
-  const iconColor = isHome && !scrolled ? "text-white" : "text-foreground";
+  const textColor = "text-foreground/90";
+  const iconColor = "text-foreground";
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/85 backdrop-blur-xl border-b border-border/50 shadow-elegant" : "bg-transparent py-2"
-      }`}
+      className="fixed top-0 inset-x-0 z-50 h-20 bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-sm"
     >
       <div className="container flex h-20 items-center justify-between gap-4">
         {/* Brand Logo & Title */}

@@ -233,14 +233,14 @@ const Index = () => {
   };
 
   return (
-    <main className="bg-background noise">
+    <div className="bg-background noise">
       <SEOHead
         title="Eminsphere | Global Academic Conferences 2026"
         description="Discover premier international academic conferences in engineering, AI, and science. Connect, present, and publish research worldwide with Eminsphere."
         canonical="https://www.eminsphere.com/"
       />
       {/* HERO SECTION - AI4 STYLE */}
-      <section className="relative min-h-screen flex flex-col justify-center pt-24 sm:pt-28 pb-16 sm:pb-32 overflow-hidden">
+      <section className="relative min-h-[calc(100vh-5rem)] flex flex-col justify-center pt-8 sm:pt-12 pb-16 sm:pb-28 overflow-hidden">
         {/* Background Image with Dark Cyan Tint Overlay */}
         <div className="absolute inset-0 z-0">
           <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2000&auto=format&fit=crop" alt="High Tech Background" className="w-full h-full object-cover" />
@@ -944,7 +944,7 @@ const Index = () => {
           </Card>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

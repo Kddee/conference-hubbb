@@ -103,11 +103,11 @@ interface GlobalBackgroundProps {
 
 export const GlobalBackground: React.FC<GlobalBackgroundProps> = () => {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-[10]">
-      {/* Background Animated Gradient Mesh & Glowing Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/25 rounded-full blur-[140px] mix-blend-screen animate-pulse" style={{ animation: 'float-orb-1 18s ease-in-out infinite' }} />
-      <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-secondary/25 rounded-full blur-[130px] mix-blend-screen" style={{ animation: 'float-orb-2 22s ease-in-out infinite' }} />
-      <div className="absolute bottom-10 left-1/3 w-[450px] h-[450px] bg-accent/20 rounded-full blur-[120px] mix-blend-screen" style={{ animation: 'float-orb-3 16s ease-in-out infinite' }} />
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-1] bg-background">
+      {/* Background Stable Ambient Gradient Mesh & Glowing Accents */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-secondary/10 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-10 left-1/3 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Particle Canvas Network in Emerald & Teal */}
       <CanvasNetwork />

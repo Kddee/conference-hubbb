@@ -336,7 +336,7 @@ export const AwardsApply: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground py-28 sm:py-36">
+    <div className="min-h-screen bg-background text-foreground py-10 sm:py-16">
       <SEOHead 
         title="Apply for Global Excellence Awards | EminSphere"
         description="Submit your nomination for EminSphere's Global Innovation & Excellence Awards through the official nomination portal."

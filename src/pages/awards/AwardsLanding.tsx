@@ -100,7 +100,7 @@ export const AwardsLanding: React.FC = () => {
       />
 
       {/* SECTION 1: HERO BANNER */}
-      <section className="relative pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-28 overflow-hidden bg-gradient-to-b from-[#060a17] via-[#091124] to-background border-b border-border/50">
+      <section className="relative pt-10 sm:pt-14 md:pt-16 pb-16 sm:pb-24 overflow-hidden bg-gradient-to-b from-[#060a17] via-[#091124] to-background border-b border-border/50">
         {/* Visual Backdrops & Stage Lighting Accents */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none overflow-hidden opacity-30">
           <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[140px]" />

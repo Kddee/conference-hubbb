@@ -67,7 +67,17 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(() => {
+    try {
+      if (typeof window === "undefined" || !window.sessionStorage) return false;
+      const seen = window.sessionStorage.getItem("eminsphere_splash_seen");
+      if (seen) return false;
+      window.sessionStorage.setItem("eminsphere_splash_seen", "true");
+      return true;
+    } catch {
+      return false;
+    }
+  });
 
   return (
     <QueryClientProvider client={queryClient}>
