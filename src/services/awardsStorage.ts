@@ -211,9 +211,31 @@ export class AwardsStorageService {
       recipientEmail: newApp.email,
       recipientName: `${newApp.firstName} ${newApp.lastName}`,
       type: 'Nomination Received',
-      subject: 'Nomination Received – EminSphere Global Innovation & Excellence Awards',
-      bodyText: `Dear ${newApp.firstName} ${newApp.lastName},\n\nThank you for submitting your nomination for the EminSphere Global Innovation & Excellence Awards.\n\nYour application has been successfully received.\n\nNomination Reference: ${newApp.id}\nAward Category: ${newApp.awardCategoryTitle}\n\nOur nominations team will review your application according to the applicable eligibility and evaluation procedures.\n\nPlease retain your reference number for future communication.\n\nRegards,\nAwards & Recognition Team\nEminSphere™`
+      subject: `Nomination Received – EminSphere Global Innovation & Excellence Awards (${newApp.id})`,
+      bodyText: `Dear ${newApp.firstName} ${newApp.lastName},\n\nThank you for submitting your nomination for the EminSphere Global Innovation & Excellence Awards.\n\nYour application has been successfully received.\n\nNomination Reference: ${newApp.id}\nAward Category: ${newApp.awardCategoryTitle}\n\nOur nominations team will review your application according to the applicable eligibility and evaluation procedures.\n\nPlease retain your reference number for future communication.\n\nRegards,\nAwards & Recognition Team\nEminSphere™\ninfo@eminsphere.com`
     });
+
+    // Explicitly dispatch full nomination dossier to backend API for admin notification at info@eminsphere.com
+    if (typeof window !== 'undefined' && window.fetch) {
+      try {
+        fetch('/api/nominate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'new_nomination',
+            applicationId: newApp.id,
+            nomination: newApp,
+            recipientEmail: newApp.email,
+            recipientName: `${newApp.firstName} ${newApp.lastName}`,
+            subject: `[New Award Nomination] ${newApp.firstName} ${newApp.lastName} – ${newApp.awardCategoryTitle} (${newApp.id})`
+          })
+        }).catch(err => {
+          console.warn('Backend email dispatch notification:', err?.message || err);
+        });
+      } catch (e) {
+        // Safe fallback in node/SSR environments
+      }
+    }
 
     this.addAuditLog('Applicant', 'SUBMIT_NOMINATION', id, `Nomination received for category ${newApp.awardCategoryTitle}`);
 
