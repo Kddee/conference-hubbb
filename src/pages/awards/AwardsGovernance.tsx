@@ -26,15 +26,15 @@ export const AwardsGovernance: React.FC = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead 
-        title="Governing Council & Award Committee | EminSphere Awards"
-        description="Meet the distinguished leadership, International Advisory Board, Governing Council, and evaluation specialists overseeing the EminSphere Awards."
+        title="Awards Committee & Governing Council | EminSphere Awards"
+        description="Meet the distinguished educators, researchers, and global industry executives serving on the EminSphere Awards Committee and Governing Council."
         canonical="https://www.eminsphere.com/awards-recognition/governance"
       />
 
       <PageHero
-        eyebrow="Leadership & Oversight"
-        title="Governing Council & Awards Committee"
-        description="A multi-disciplinary council of senior academicians, research directors, and industrial innovators safeguarding meritocracy and academic rigor."
+        eyebrow="Leadership & Selection Oversight"
+        title="Awards Committee & Governing Council"
+        description="An esteemed body of international academicians, researchers, senior corporate executives, and technology leaders overseeing merit evaluation, neutrality, and recognition standards."
         variant="particles"
       >
         <div className="flex flex-wrap items-center justify-center gap-3">
@@ -60,20 +60,18 @@ export const AwardsGovernance: React.FC = () => {
               Programme Governance Hierarchy
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground">
-              Structured separation of operational screening, strategic advisory, and final conferment authorities.
+              Structured separation of operational screening, expert evaluation, and final conferment authorities.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { level: "01", title: "Programme Director", role: "Oversees overall programme administration, integrity, and operational execution." },
-              { level: "02", title: "Governing Council", role: "Establishes policy frameworks, review standards, and annual cycles." },
-              { level: "03", title: "International Advisory Board", role: "Provides strategic global guidance and interdisciplinary recommendations." },
-              { level: "04", title: "Award Selection Committee", role: "Considers expert evaluation reports and makes documented final decisions." },
-              { level: "05", title: "Evaluation Experts", role: "Conduct independent blind peer scoring within designated specializations." },
-              { level: "06", title: "Nomination & Verification Team", role: "Manages administrative eligibility screening and evidence authenticity." },
-              { level: "07", title: "Awards Administration Team", role: "Manages recipient registries, ceremony logistics, and public records." },
-              { level: "08", title: "Verification & Audit Registry", role: "Maintains tamper-proof certificate database and public verification portal." }
+              { level: "01", title: "Programme Directorate", role: "Oversees overall programme administration, integrity, and operational execution." },
+              { level: "02", title: "Governing Council", role: "Establishes policy frameworks, review standards, and annual recognition cycles." },
+              { level: "03", title: "Award Selection Committee", role: "Considers expert evaluation reports and makes documented final conferment decisions." },
+              { level: "04", title: "Evaluation & Peer Review Experts", role: "Conduct independent blind peer scoring within designated disciplinary specializations." },
+              { level: "05", title: "Nomination & Verification Team", role: "Manages administrative eligibility screening and evidence authenticity." },
+              { level: "06", title: "Verification & Audit Registry", role: "Maintains tamper-proof certificate records and public online verification portal." }
             ].map((node) => (
               <div key={node.level} className="p-4 rounded-xl bg-card border border-border/60 space-y-1">
                 <span className="text-xs font-mono font-bold text-accent">{node.level}</span>
@@ -90,17 +88,15 @@ export const AwardsGovernance: React.FC = () => {
             <div>
               <div className="text-xs uppercase tracking-widest text-accent font-bold">Confirmed Appointments</div>
               <h3 className="text-2xl font-serif font-bold text-foreground">
-                Council & Board Members
+                Awards Committee & Council Members
               </h3>
             </div>
 
             <div className="flex flex-wrap gap-1.5">
               {[
-                { key: "all", label: "All Members" },
-                { key: "Programme Director", label: "Director" },
-                { key: "Governing Council", label: "Governing Council" },
-                { key: "International Advisory Board", label: "Advisory Board" },
-                { key: "Award Selection Committee", label: "Selection Committee" }
+                { key: "all", label: "All Members (13)" },
+                { key: "Award Selection Committee", label: "Selection Committee" },
+                { key: "Governing Council", label: "Governing Council" }
               ].map(tab => (
                 <button
                   key={tab.key}
@@ -128,7 +124,7 @@ export const AwardsGovernance: React.FC = () => {
                     <img 
                       src={member.photoUrl} 
                       alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                     <span className="absolute bottom-3 left-3 text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-card/90 backdrop-blur-md text-[#c5a059] border border-[#c5a059]/30">

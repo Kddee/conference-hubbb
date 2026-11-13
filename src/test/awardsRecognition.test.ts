@@ -9,7 +9,8 @@ import {
   EVALUATION_BANDS,
   SEED_CERTIFICATES,
   POLICIES,
-  FAQS
+  FAQS,
+  GOVERNANCE_MEMBERS
 } from "@/data/awardsData";
 import { AwardsStorageService, generateReferenceId, generateCertificateId } from "@/services/awardsStorage";
 
@@ -69,6 +70,30 @@ describe("Awards & Recognition Data & Business Logic", () => {
     expect(disclaimer).toBeDefined();
     expect(disclaimer?.content).toContain("non-academic recognitions");
     expect(disclaimer?.content).toContain("not constitute university degrees");
+  });
+
+  it("should have all 13 confirmed committee members from main advisory members section", () => {
+    expect(GOVERNANCE_MEMBERS.length).toBe(13);
+    const names = GOVERNANCE_MEMBERS.map(m => m.name);
+    const expected = [
+      "Nino Devidze",
+      "Roksolana Trach",
+      "Wiktoria Gromowa-Cieślik",
+      "Mouhssin Ait El Mouden",
+      "Dr. Nadia Adnan",
+      "Katarzyna Antosz",
+      "Nadine Zeinoun",
+      "Dr. Mehwish (Mishy) Rashid",
+      "Prof. Dr. Alexander Bull",
+      "Heinz Dollberg",
+      "Peter Kasahara",
+      "Ms. Fadwa Saad AlBawardi",
+      "Pam Didner"
+    ];
+
+    for (const person of expected) {
+      expect(names).toContain(person);
+    }
   });
 
   it("should generate reference ID and certificate ID with valid format", () => {

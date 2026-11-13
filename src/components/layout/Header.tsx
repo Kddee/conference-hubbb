@@ -26,8 +26,7 @@ const awardsDropdownNav = [
   { label: "Nomination Process", to: "/awards-recognition/nomination-process" },
   { label: "Apply for Recognition", to: "/awards-recognition/apply" },
   { label: "Selection & Evaluation", to: "/awards-recognition/selection-process" },
-  { label: "Awards Committee & Governance", to: "/awards-recognition/governance" },
-  { label: "Advisory Board", to: "/awards-recognition/advisory-board" },
+  { label: "Awards Committee", to: "/awards-recognition/governance" },
   { label: "Award Recipients Directory", to: "/awards-recognition/awardees" },
   { label: "Certificate Verification Portal", to: "/verify-certificate" },
   { label: "FAQs", to: "/awards-recognition/faqs" },
@@ -95,7 +94,6 @@ export const Header = () => {
                 ? "text-[#c5a059] bg-[#c5a059]/10 border border-[#c5a059]/30" 
                 : `hover:text-[#c5a059] ${textColor}`
             }`}>
-              <Award className="h-3.5 w-3.5 text-[#c5a059]" />
               <span>Awards & Recognition</span>
               <ChevronDown className="h-3 w-3" />
             </DropdownMenuTrigger>
@@ -182,8 +180,8 @@ export const Header = () => {
                 onClick={() => setAwardsMobileOpen(!awardsMobileOpen)}
                 className="w-full flex items-center justify-between p-2 text-sm font-bold text-[#c5a059]"
               >
-                <span className="flex items-center gap-2">
-                  <Award className="h-4 w-4" /> Awards & Recognition
+                <span>
+                  Awards & Recognition
                 </span>
                 <ChevronDown className={`h-4 w-4 transition-transform ${awardsMobileOpen ? "rotate-180" : ""}`} />
               </button>

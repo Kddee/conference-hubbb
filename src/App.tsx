@@ -119,7 +119,8 @@ const App = () => {
               <Route path="/awards-recognition/nomination-process" element={<AwardsNominationProcess />} />
               <Route path="/awards-recognition/selection-process" element={<AwardsSelectionProcess />} />
               <Route path="/awards-recognition/governance" element={<AwardsGovernance />} />
-              <Route path="/awards-recognition/advisory-board" element={<AwardsGovernance />} />
+              <Route path="/awards-recognition/committee" element={<AwardsGovernance />} />
+              <Route path="/awards-recognition/advisory-board" element={<Navigate to="/awards-recognition/governance" replace />} />
               <Route path="/awards-recognition/awardees" element={<AwardsAwardees />} />
               <Route path="/awards-recognition/awardees/:id" element={<AwardsAwardees />} />
               <Route path="/awards-recognition/apply" element={<AwardsApply />} />

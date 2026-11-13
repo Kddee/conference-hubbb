@@ -57,8 +57,8 @@ export const Footer = () => {
 
         {/* Column 3: Awards & Recognition (New Dedicated Column) */}
         <div>
-          <h4 className="font-sans font-bold text-base mb-4 text-[#c5a059] flex items-center gap-1.5">
-            <Award className="h-4 w-4" /> Awards & Recognition
+          <h4 className="font-sans font-bold text-base mb-4 text-[#c5a059]">
+            Awards & Recognition
           </h4>
           <ul className="space-y-2.5 text-sm text-muted-foreground">
             <li><Link to="/awards-recognition" className="hover:text-[#c5a059] transition-colors">Awards Overview</Link></li>
@@ -66,6 +66,7 @@ export const Footer = () => {
             <li><Link to="/awards-recognition/categories" className="hover:text-[#c5a059] transition-colors">18 Award Categories</Link></li>
             <li><Link to="/awards-recognition/eligibility" className="hover:text-[#c5a059] transition-colors">Eligibility & Criteria</Link></li>
             <li><Link to="/awards-recognition/nomination-process" className="hover:text-[#c5a059] transition-colors">Nomination Process</Link></li>
+            <li><Link to="/awards-recognition/governance" className="hover:text-[#c5a059] transition-colors">Awards Committee</Link></li>
             <li><Link to="/awards-recognition/apply" className="hover:text-[#c5a059] transition-colors font-semibold text-primary">Apply for Recognition</Link></li>
             <li><Link to="/awards-recognition/awardees" className="hover:text-[#c5a059] transition-colors">Recipient Directory</Link></li>
             <li><Link to="/verify-certificate" className="hover:text-[#c5a059] transition-colors">Verify Certificate</Link></li>
