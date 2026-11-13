@@ -117,46 +117,68 @@ export const AwardsGovernance: React.FC = () => {
             {filteredMembers.map((member) => (
               <Card 
                 key={member.id} 
-                className="overflow-hidden bg-card border-border/60 rounded-2xl hover:border-primary/40 transition-smooth flex flex-col justify-between group shadow-sm hover:shadow-elegant"
+                className="overflow-hidden bg-card/90 border border-border/60 rounded-2xl p-6 hover:border-primary/40 transition-smooth flex flex-col justify-between items-center text-center group shadow-sm hover:shadow-elegant relative"
               >
-                <div>
-                  <div className="aspect-[4/3] w-full overflow-hidden bg-muted relative">
-                    <img 
-                      src={member.photoUrl} 
-                      alt={member.name}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                    <span className="absolute bottom-3 left-3 text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-card/90 backdrop-blur-md text-[#c5a059] border border-[#c5a059]/30">
-                      {member.roleCategory}
+                {/* Role Category Badge */}
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#c5a059]/10 text-[#c5a059] text-[10px] font-bold uppercase tracking-wider mb-4 border border-[#c5a059]/25 self-center">
+                  <ShieldCheck className="h-3 w-3" /> {member.roleCategory}
+                </div>
+
+                {/* Portrait Frame: Centered, portrait 3:3.8 ratio, object-contain with ambient backdrop */}
+                <div className="relative aspect-[3/3.8] w-full max-w-[210px] mx-auto mb-5 rounded-2xl overflow-hidden bg-muted/40 border-2 border-primary/20 shadow-md group-hover:border-accent/50 group-hover:shadow-xl transition-all flex items-center justify-center shrink-0">
+                  {/* Soft ambient blurred backdrop */}
+                  <img 
+                    src={member.photoUrl} 
+                    alt="" 
+                    aria-hidden="true" 
+                    className="absolute inset-0 w-full h-full object-cover blur-md opacity-30 scale-125 pointer-events-none" 
+                  />
+                  {/* Clean uncropped contained portrait */}
+                  <img 
+                    src={member.photoUrl} 
+                    alt={member.name}
+                    className="relative z-10 h-full w-full object-contain p-1.5 transition-transform duration-500 group-hover:scale-105" 
+                    loading="lazy" 
+                  />
+                </div>
+
+                {/* Member Details */}
+                <div className="space-y-2.5 w-full">
+                  <h4 className="text-lg sm:text-xl font-serif font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                    {member.name}
+                  </h4>
+                  <div className="text-xs font-semibold text-accent leading-relaxed line-clamp-2 px-1">
+                    {member.designation}
+                  </div>
+                  
+                  <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground pt-1">
+                    <span className="inline-flex items-center gap-1">
+                      <Building2 className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
+                      <span className="line-clamp-1">{member.organization}</span>
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                      <Globe className="h-3.5 w-3.5 shrink-0 text-emerald-400" />
+                      <span>{member.country}</span>
                     </span>
                   </div>
 
-                  <div className="p-5 space-y-2">
-                    <h4 className="text-lg font-serif font-bold text-foreground">{member.name}</h4>
-                    <div className="text-xs font-medium text-accent">{member.designation}</div>
-                    <div className="text-xs text-muted-foreground flex items-center gap-1.5">
-                      <Building2 className="h-3.5 w-3.5 shrink-0" /> {member.organization}
-                    </div>
-                    <div className="text-xs text-muted-foreground flex items-center gap-1.5">
-                      <Globe className="h-3.5 w-3.5 shrink-0 text-emerald-400" /> {member.country}
-                    </div>
-
-                    <div className="pt-2 border-t border-border/40 text-[11px] text-muted-foreground leading-relaxed line-clamp-3">
-                      {member.biography}
-                    </div>
+                  <div className="pt-3 border-t border-border/40 text-[11.5px] text-muted-foreground leading-relaxed line-clamp-3">
+                    {member.biography}
                   </div>
                 </div>
 
-                <div className="p-5 pt-0 border-t border-border/30 mt-2 flex items-center justify-between text-xs">
-                  <span className="text-[11px] text-[#c5a059] font-medium truncate max-w-[180px]">
+                {/* Card Footer: Expertise & LinkedIn */}
+                <div className="w-full pt-4 mt-5 border-t border-border/40 flex items-center justify-between text-xs gap-2">
+                  <span className="text-[11px] text-[#c5a059] font-medium truncate text-left" title={member.expertise}>
+                    <Award className="h-3.5 w-3.5 inline mr-1 text-[#c5a059] shrink-0" />
                     {member.expertise}
                   </span>
                   <a 
                     href="https://www.linkedin.com/company/106142250" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="h-7 w-7 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-muted/80 transition-colors"
+                    aria-label={`Connect with ${member.name} on LinkedIn`}
+                    className="h-7 w-7 rounded-full bg-muted/60 flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-muted transition-colors shrink-0"
                   >
                     <Linkedin className="h-3.5 w-3.5" />
                   </a>

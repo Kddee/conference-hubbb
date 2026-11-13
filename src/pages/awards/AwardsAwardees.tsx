@@ -109,18 +109,26 @@ export const AwardsAwardees: React.FC = () => {
               className="overflow-hidden bg-card border-border/60 rounded-2xl hover:border-primary/40 transition-smooth flex flex-col justify-between group shadow-sm hover:shadow-elegant"
             >
               <div>
-                <div className="aspect-[4/3] w-full overflow-hidden bg-muted relative">
-                  <img 
-                    src={awardee.photoUrl} 
-                    alt={awardee.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5">
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-card/90 backdrop-blur-md text-[#c5a059] border border-[#c5a059]/30">
+                <div className="p-5 pb-0 flex flex-col items-center">
+                  <div className="relative aspect-[3/3.8] w-full max-w-[210px] mx-auto rounded-2xl overflow-hidden bg-muted/40 border-2 border-primary/20 shadow-md group-hover:border-accent/50 transition-all flex items-center justify-center shrink-0">
+                    <img 
+                      src={awardee.photoUrl} 
+                      alt="" 
+                      aria-hidden="true" 
+                      className="absolute inset-0 w-full h-full object-cover blur-md opacity-30 scale-125 pointer-events-none" 
+                    />
+                    <img 
+                      src={awardee.photoUrl} 
+                      alt={awardee.name}
+                      className="relative z-10 h-full w-full object-contain p-1.5 transition-transform duration-500 group-hover:scale-105" 
+                      loading="lazy" 
+                    />
+                  </div>
+                  <div className="flex items-center justify-center gap-1.5 mt-3">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-card border border-[#c5a059]/30 text-[#c5a059]">
                       Cycle {awardee.awardYear}
                     </span>
-                    <span className="text-[10px] font-mono text-white/80 bg-black/60 px-2 py-0.5 rounded backdrop-blur-md">
+                    <span className="text-[10px] font-mono text-muted-foreground bg-muted/50 px-2 py-0.5 rounded border border-border/50">
                       {awardee.country}
                     </span>
                   </div>
