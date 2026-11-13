@@ -450,8 +450,8 @@ export const AwardsLanding: React.FC = () => {
             </p>
           </div>
 
-          {/* Desktop Timeline */}
-          <div className="grid grid-cols-1 md:grid-cols-7 gap-3">
+          {/* Responsive Timeline */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-3">
             {NOMINATION_PROCESS_STEPS.map((s, idx) => (
               <div 
                 key={s.step} 
@@ -460,7 +460,7 @@ export const AwardsLanding: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-[#c5a059] font-mono">Step {s.step}</span>
                   {idx < NOMINATION_PROCESS_STEPS.length - 1 && (
-                    <ChevronRight className="h-4 w-4 text-muted-foreground hidden md:block" />
+                    <ChevronRight className="h-4 w-4 text-muted-foreground hidden xl:block" />
                   )}
                 </div>
                 <h4 className="text-xs font-bold text-foreground leading-snug">{s.title}</h4>

@@ -133,8 +133,8 @@ const ResearchFunding = () => {
           <p className="text-sm sm:text-lg text-muted-foreground">Applications are invited from professionally compliant, recognized, and innovation-driven institutions globally.</p>
         </div>
 
-        <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
-          <table className="w-full min-w-[650px] text-left border-collapse bg-card rounded-2xl overflow-hidden shadow-elegant border border-border">
+        <div className="w-full max-w-full overflow-x-auto rounded-2xl shadow-elegant border border-border">
+          <table className="w-full min-w-[600px] text-left border-collapse bg-card">
             <thead>
               <tr className="bg-primary text-primary-foreground">
                 <th className="p-4 sm:p-6 font-bold text-base sm:text-lg border-b border-primary/20">Applicant Category</th>

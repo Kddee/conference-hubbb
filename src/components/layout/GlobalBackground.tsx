@@ -16,10 +16,18 @@ const CanvasNetwork = () => {
     let particles: { x: number, y: number, vx: number, vy: number, radius: number, color: string }[] = [];
     let animationFrameId: number;
 
+    let lastWidth = window.innerWidth;
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initParticles();
+      // Avoid re-initialization on mobile address bar show/hide (only re-init when width changes meaningfully)
+      if (Math.abs(window.innerWidth - lastWidth) > 20 || !particles.length) {
+        lastWidth = window.innerWidth;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+      } else {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
     };
 
     const colors = [
@@ -30,15 +38,18 @@ const CanvasNetwork = () => {
 
     const initParticles = () => {
       particles = [];
-      const numParticles = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 9000), 150); 
+      const isMobile = window.innerWidth < 768;
+      const divisor = isMobile ? 22000 : 9000;
+      const maxCount = isMobile ? 45 : 150;
+      const numParticles = Math.min(Math.floor((window.innerWidth * window.innerHeight) / divisor), maxCount); 
       
       for (let i = 0; i < numParticles; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.9,
-          vy: (Math.random() - 0.5) * 0.9,
-          radius: Math.random() * 2 + 0.8,
+          vx: (Math.random() - 0.5) * (isMobile ? 0.5 : 0.9),
+          vy: (Math.random() - 0.5) * (isMobile ? 0.5 : 0.9),
+          radius: Math.random() * (isMobile ? 1.5 : 2) + 0.8,
           color: colors[Math.floor(Math.random() * colors.length)]
         });
       }

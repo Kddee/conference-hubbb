@@ -307,9 +307,9 @@ const Index = () => {
           <div className="relative h-full w-full bg-[#050B14] rounded-[1.4rem] sm:rounded-[2.4rem] overflow-hidden flex flex-col md:flex-row">
             
             {/* Top Tape overlay */}
-            <div className="absolute top-0 left-0 w-full bg-accent/10 border-b border-accent/20 flex justify-between px-4 sm:px-8 py-2 z-20 backdrop-blur-md">
-              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Registration Closes: 4 December 2026</span>
-              <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">Conference: 6 Dec 2026</span>
+            <div className="absolute top-0 left-0 w-full bg-accent/10 border-b border-accent/20 flex flex-col sm:flex-row justify-between items-center text-center px-4 sm:px-8 py-1.5 sm:py-2 z-20 backdrop-blur-md gap-0.5 sm:gap-0">
+              <span className="text-accent text-[9px] sm:text-[10px] font-bold tracking-[0.1em] sm:tracking-[0.2em] uppercase">Registration Closes: 4 December 2026</span>
+              <span className="text-accent text-[9px] sm:text-[10px] font-bold tracking-[0.1em] sm:tracking-[0.2em] uppercase">Conference: 6 Dec 2026</span>
             </div>
 
             {/* Left - Image Context */}
@@ -809,7 +809,7 @@ const Index = () => {
                         {s.tag}
                       </span>
                     </div>
-                    <p className="text-white/50 text-xs sm:text-sm leading-relaxed max-w-2xl max-h-0 overflow-hidden group-hover:max-h-24 group-hover:text-white/70 transition-all duration-700">
+                    <p className="text-white/60 text-xs sm:text-sm leading-relaxed max-w-2xl max-h-none sm:max-h-0 sm:overflow-hidden sm:group-hover:max-h-24 group-hover:text-white/80 transition-all duration-700">
                       {s.description}
                     </p>
                   </div>
