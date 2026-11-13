@@ -259,7 +259,7 @@ function buildAdminEmailHtml(nomination) {
 
 function buildApplicantEmailHtml(nomination) {
   const app = nomination || {};
-  const fullName = `${app.firstName || ""} ${app.lastName || ""}`.trim() || "Applicant";
+  const fullName = `${app.firstName || ""} ${app.middleName || ""} ${app.lastName || ""}`.trim() || "Applicant";
   const submissionDateFormatted = app.submissionDate 
     ? new Date(app.submissionDate).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
     : new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
@@ -269,70 +269,119 @@ function buildApplicantEmailHtml(nomination) {
     <html>
     <head>
       <meta charset="utf-8">
-      <title>EminSphere Nomination Acknowledgment</title>
+      <title>Thank You for Your Nomination – EminSphere Awards</title>
     </head>
-    <body style="margin: 0; padding: 24px; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #1e293b;">
-      <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+    <body style="margin: 0; padding: 24px; background-color: #0b1120; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #1e293b;">
+      <div style="max-width: 640px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
         
         <!-- Header Banner -->
-        <div style="background: linear-gradient(135deg, #060a17 0%, #0f172a 100%); padding: 28px 32px; border-bottom: 3px solid #c5a059;">
+        <div style="background: linear-gradient(135deg, #060a17 0%, #0f172a 100%); padding: 32px 36px; border-bottom: 3px solid #c5a059;">
           <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #c5a059; font-weight: 700; margin-bottom: 6px;">
             EminSphere™ Global Innovation & Excellence Awards
           </div>
-          <h1 style="color: #ffffff; margin: 0; font-size: 20px; font-weight: 700;">
-            Nomination Successfully Received
+          <h1 style="color: #ffffff; margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.5px;">
+            Thank You for Your Nomination!
           </h1>
+          <p style="color: #94a3b8; margin: 6px 0 0 0; font-size: 13px;">
+            Official Submission Acknowledgment & Registration Receipt
+          </p>
         </div>
 
-        <div style="padding: 28px 32px;">
+        <div style="padding: 32px 36px;">
           <p style="font-size: 15px; line-height: 1.6; color: #0f172a; margin-top: 0;">
             Dear <strong>${fullName}</strong>,
           </p>
           <p style="font-size: 14px; line-height: 1.6; color: #334155;">
-            Thank you for submitting your nomination for the <strong>EminSphere Global Innovation & Excellence Awards</strong>.
+            Thank you for submitting your nomination for the prestigious <strong>EminSphere Global Innovation & Excellence Awards</strong>.
           </p>
           <p style="font-size: 14px; line-height: 1.6; color: #334155;">
-            Your application has been logged into our recognition registry and assigned the following official reference number:
+            We have successfully received your nomination application along with your professional credentials and supporting documentation. Your submission has been officially logged in our international recognition registry under the details below:
           </p>
 
-          <!-- Reference Card -->
-          <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin: 20px 0;">
-            <div style="margin-bottom: 8px;">
-              <span style="font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 600; display: block;">Nomination Reference Number</span>
-              <span style="font-size: 18px; font-family: monospace; font-weight: 700; color: #0284c7;">${app.id || "N/A"}</span>
+          <!-- Nomination Summary Card -->
+          <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px 24px; margin: 24px 0;">
+            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #c5a059; font-weight: 700; margin-bottom: 14px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">
+              Nomination Summary Record
             </div>
-            <div style="margin-bottom: 8px;">
-              <span style="font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 600; display: block;">Award Category</span>
-              <span style="font-size: 14px; font-weight: 600; color: #0f172a;">${app.awardCategoryTitle || "N/A"}</span>
-            </div>
-            <div>
-              <span style="font-size: 11px; text-transform: uppercase; color: #64748b; font-weight: 600; display: block;">Submission Date</span>
-              <span style="font-size: 13px; color: #475569;">${submissionDateFormatted}</span>
-            </div>
+            <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+              <tbody>
+                <tr>
+                  <td style="padding: 6px 0; font-weight: 600; color: #64748b; width: 40%;">Nomination Reference ID:</td>
+                  <td style="padding: 6px 0; font-family: monospace; font-weight: 700; color: #0284c7; font-size: 14px;">${app.id || "N/A"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; font-weight: 600; color: #64748b;">Award Category:</td>
+                  <td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${app.awardCategoryTitle || "N/A"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; font-weight: 600; color: #64748b;">Nominee Name:</td>
+                  <td style="padding: 6px 0; color: #0f172a;">${fullName}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; font-weight: 600; color: #64748b;">Organization / University:</td>
+                  <td style="padding: 6px 0; color: #0f172a;">${app.organization || "N/A"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; font-weight: 600; color: #64748b;">Current Designation:</td>
+                  <td style="padding: 6px 0; color: #0f172a;">${app.designation || "N/A"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; font-weight: 600; color: #64748b;">Submission Date:</td>
+                  <td style="padding: 6px 0; color: #0f172a;">${submissionDateFormatted}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; font-weight: 600; color: #64748b;">Nomination Type:</td>
+                  <td style="padding: 6px 0; color: #059669; font-weight: 600;">${app.nominationType || "Self-Nomination"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; font-weight: 600; color: #64748b;">Current Status:</td>
+                  <td style="padding: 6px 0; color: #0284c7; font-weight: 600;">Submitted — In Queue for Initial Screening</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <h3 style="font-size: 14px; color: #0f172a; margin-top: 24px; margin-bottom: 10px;">What Happens Next?</h3>
+          <!-- What Happens Next Roadmap -->
+          <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a; margin-top: 28px; margin-bottom: 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">
+            What Happens Next?
+          </h3>
           <ol style="font-size: 13px; line-height: 1.7; color: #475569; padding-left: 20px; margin: 0 0 24px 0;">
-            <li><strong>Application Screening:</strong> The nominations secretariat reviews your submission for eligibility, completeness, and documentation validity.</li>
-            <li><strong>Expert Disciplinary Evaluation:</strong> Eligible applications are evaluated against our published assessment parameters by designated review specialists.</li>
-            <li><strong>Committee Decision:</strong> The Awards Selection Committee reviews final scores and formulates conferment outcomes.</li>
+            <li style="margin-bottom: 8px;">
+              <strong>Phase 1 — Administrative Screening:</strong> Our secretariat verifies application completeness, category eligibility, and documentation authenticity. If further documentation is needed, we will reach out to you directly.
+            </li>
+            <li style="margin-bottom: 8px;">
+              <strong>Phase 2 — Independent Expert Committee Scoring:</strong> Eligible nominations are reviewed and scored by our designated <strong>Awards Committee & Governing Council</strong> across 6 published merit-based parameters.
+            </li>
+            <li style="margin-bottom: 8px;">
+              <strong>Phase 3 — Selection & Announcement:</strong> The committee finalizes award outcomes and notifications are communicated directly to your email address.
+            </li>
           </ol>
 
+          <!-- Support & Assistance Card -->
+          <div style="background-color: #f1f5f9; border-left: 3px solid #0284c7; padding: 14px 18px; border-radius: 6px; font-size: 12px; line-height: 1.6; color: #475569; margin-bottom: 24px;">
+            <strong style="color: #0f172a; display: block; margin-bottom: 2px;">Need to update details or submit additional evidence?</strong>
+            Please retain your Reference Number (<strong>${app.id || 'N/A'}</strong>) and reply directly to this email or contact our secretariat at <a href="mailto:info@eminsphere.com" style="color: #0284c7; text-decoration: none; font-weight: 600;">info@eminsphere.com</a>.
+          </div>
+
           <p style="font-size: 13px; line-height: 1.6; color: #475569;">
-            Please retain your reference number (<strong>${app.id || 'N/A'}</strong>) for all future communications. If additional documentation is required, our secretariat will contact you at this email address.
+            Thank you once again for your dedication to professional excellence and innovation. We wish you the very best in the evaluation process.
           </p>
 
           <p style="font-size: 14px; line-height: 1.6; color: #0f172a; margin-top: 24px; margin-bottom: 0;">
             Warm regards,<br>
             <strong>Awards & Recognition Secretariat</strong><br>
-            EminSphere™ Global Research & Innovation<br>
+            <strong>EminSphere™ Global Research & Innovation</strong><br>
+            <em>Independent Global Academic & Professional Recognition Platform</em><br>
             <a href="mailto:info@eminsphere.com" style="color: #0284c7; text-decoration: none;">info@eminsphere.com</a> • <a href="https://www.eminsphere.com" style="color: #0284c7; text-decoration: none;">www.eminsphere.com</a>
           </p>
         </div>
 
         <!-- Footer -->
-        <div style="background-color: #f1f5f9; border-top: 1px solid #e2e8f0; padding: 16px 32px; font-size: 11px; color: #94a3b8; text-align: center;">
+        <div style="background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 20px 36px; font-size: 11px; color: #94a3b8; text-align: center; line-height: 1.5;">
           <p style="margin: 0;">© ${new Date().getFullYear()} EminSphere™. All rights reserved.</p>
+          <p style="margin: 4px 0 0 0; font-size: 10px; color: #94a3b8;">
+            Statutory Notice: EminSphere Awards represent independent professional and academic recognitions celebrating research, innovation, and industry leadership. They do not constitute statutory degrees, government accreditations, or university diplomas.
+          </p>
         </div>
 
       </div>
@@ -405,8 +454,8 @@ export default async function handler(req, res) {
             from: `"${fromName}" <${fromEmail}>`,
             to: nomineeEmail,
             replyTo: fromEmail,
-            subject: `Nomination Received – EminSphere Global Innovation & Excellence Awards (${appId})`,
-            text: `Dear ${nomineeName},\n\nThank you for submitting your nomination for the EminSphere Global Innovation & Excellence Awards.\n\nYour nomination reference number is: ${appId}\nAward Category: ${catTitle}\n\nOur nominations team will review your application according to published eligibility and evaluation procedures.\n\nRegards,\nAwards & Recognition Team\nEminSphere™\ninfo@eminsphere.com`,
+            subject: `Thank You for Your Nomination – EminSphere Global Innovation & Excellence Awards (${appId})`,
+            text: `Dear ${nomineeName},\n\nThank you for submitting your nomination for the prestigious EminSphere Global Innovation & Excellence Awards.\n\nYour nomination application has been successfully received and logged into our official recognition registry.\n\nNomination Reference ID: ${appId}\nAward Category: ${catTitle}\nNominee: ${nomineeName}\nOrganization: ${nom.organization || 'N/A'}\nStatus: Submitted — In Queue for Initial Screening\n\nWhat Happens Next:\n1. Administrative Screening: We verify documentation and eligibility compliance.\n2. Committee Scoring: Our Awards Committee & Governing Council evaluate applications against published merit parameters.\n3. Committee Decision: Final results will be communicated to your email.\n\nFor any updates, please retain reference ID ${appId} and email us at info@eminsphere.com.\n\nWarm regards,\nAwards & Recognition Secretariat\nEminSphere™ Global Research & Innovation\ninfo@eminsphere.com • www.eminsphere.com`,
             html: buildApplicantEmailHtml(nom)
           });
           applicantEmailSent = true;
