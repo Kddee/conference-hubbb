@@ -105,7 +105,7 @@ const CanvasNetwork = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-80 mix-blend-screen" />;
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-70 pointer-events-none" />;
 };
 
 interface GlobalBackgroundProps {
@@ -115,6 +115,9 @@ interface GlobalBackgroundProps {
 export const GlobalBackground: React.FC<GlobalBackgroundProps> = () => {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-1] bg-background">
+      {/* Subtle stationary Mesh pattern */}
+      <div className="absolute inset-0 grid-pattern opacity-15 pointer-events-none" />
+
       {/* Background Stable Ambient Gradient Mesh & Glowing Accents */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-secondary/10 rounded-full blur-[130px] pointer-events-none" />
@@ -122,6 +125,9 @@ export const GlobalBackground: React.FC<GlobalBackgroundProps> = () => {
 
       {/* Particle Canvas Network in Emerald & Teal */}
       <CanvasNetwork />
+
+      {/* Noise Texture for premium tactile feel */}
+      <div className="absolute inset-0 noise opacity-25 pointer-events-none" />
     </div>
   );
 };
