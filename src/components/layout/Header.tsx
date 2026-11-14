@@ -189,14 +189,8 @@ export const Header = () => {
         <div className="hidden xl:flex items-center gap-2.5 shrink-0">
           <Button asChild className="bg-primary text-white hover:bg-primary/90 rounded-full font-black px-6 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-xs h-10">
             <Link to="/awards-recognition/apply">
-              <Award className="h-3.5 w-3.5 mr-1 text-[#f3e5c8]" /> Nominate Now
+              Nominate Now
             </Link>
-          </Button>
-
-          <Button asChild variant="outline" className="border-border text-foreground hover:bg-muted rounded-full font-bold px-4 text-xs h-10">
-            <a href="https://forms.gle/M6GiaTdkpqH8DWWe6" target="_blank" rel="noopener noreferrer">
-              Register
-            </a>
           </Button>
         </div>
 
@@ -220,16 +214,11 @@ export const Header = () => {
         >
           <div className="flex-1 overflow-y-auto px-4 py-5 space-y-6 overscroll-contain pb-28">
             
-            {/* 1. TOP QUICK ACTION BUTTONS */}
-            <div className="grid grid-cols-2 gap-2.5">
-              <Button asChild className="bg-primary hover:bg-primary/90 text-white rounded-xl h-11 font-black uppercase tracking-wider text-xs shadow-gold flex items-center justify-center gap-1.5">
-                <a href="https://forms.gle/M6GiaTdkpqH8DWWe6" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
-                  <Globe className="h-3.5 w-3.5" /> Register Now
-                </a>
-              </Button>
-              <Button asChild className="bg-gradient-to-r from-[#c5a059] to-[#dfc488] hover:opacity-90 text-[#060a17] rounded-xl h-11 font-black uppercase tracking-wider text-xs shadow-md flex items-center justify-center gap-1.5">
+            {/* 1. TOP QUICK ACTION BUTTON */}
+            <div>
+              <Button asChild className="w-full bg-gradient-to-r from-[#c5a059] to-[#dfc488] hover:opacity-90 text-[#060a17] rounded-xl h-11 font-black uppercase tracking-wider text-xs shadow-md flex items-center justify-center">
                 <Link to="/awards-recognition/apply" onClick={() => setOpen(false)}>
-                  <Award className="h-3.5 w-3.5" /> Nominate Now
+                  Nominate Now
                 </Link>
               </Button>
             </div>
