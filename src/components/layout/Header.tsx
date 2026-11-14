@@ -44,7 +44,6 @@ const awardsDropdownNav = [
   { label: "Apply for Recognition", to: "/awards-recognition/apply", highlight: true },
   { label: "Selection & Evaluation", to: "/awards-recognition/selection-process" },
   { label: "Awards Committee", to: "/awards-recognition/governance" },
-  { label: "Advisory Board", to: "/awards-recognition/governance" },
   { label: "Award Recipients Directory", to: "/awards-recognition/awardees" },
   { label: "Certificate Verification Portal", to: "/verify-certificate" },
   { label: "FAQs", to: "/awards-recognition/faqs" },
@@ -224,7 +223,7 @@ export const Header = () => {
                       </span>
                     </div>
                     <div className="text-[11px] text-[#c5a059]/90 font-medium">
-                      {awardsMobileOpen ? "Tap to close awards directory" : "Tap to open all 13 award sections & categories"}
+                      {awardsMobileOpen ? "Tap to close awards directory" : "Tap to open all 12 award sections & categories"}
                     </div>
                   </div>
                 </div>
@@ -233,12 +232,12 @@ export const Header = () => {
                 </div>
               </button>
 
-              {/* When opened, ALL 13 award sections show with clean, mobile-compatible styling */}
+              {/* When opened, ALL 12 award sections show with clean, mobile-compatible styling */}
               {awardsMobileOpen && (
                 <div className="p-2 space-y-1 bg-[#060a17]/95 border-t border-[#c5a059]/30 animate-fade-in">
                   <div className="px-3 py-1.5 text-[10px] uppercase tracking-wider font-bold text-[#c5a059] flex items-center justify-between">
                     <span>EminSphere Global Honours Directory</span>
-                    <span className="text-[9px] font-normal text-white/50">13 Sections</span>
+                    <span className="text-[9px] font-normal text-white/50">12 Sections</span>
                   </div>
                   {awardsDropdownNav.map((m, idx) => {
                     const isItemActive = location.pathname === m.to;
