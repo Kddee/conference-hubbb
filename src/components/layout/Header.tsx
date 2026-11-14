@@ -9,7 +9,14 @@ import {
   ShieldCheck, 
   Globe, 
   Users, 
-  ExternalLink 
+  BookOpen,
+  Calendar,
+  GraduationCap,
+  Landmark,
+  ExternalLink,
+  Briefcase,
+  HelpCircle,
+  FileText
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,11 +28,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const mainNav = [
-  { label: "Upcoming Conferences", to: "/upcoming-conferences" },
-  { label: "Recent Conferences", to: "/recent-conferences" },
-  { label: "Past Speakers", to: "/past-speakers" },
-  { label: "Digital Proceedings", to: "/recent-proceedings" },
-  { label: "Innovation Challenge", to: "/innovation-challenge-2026" },
+  { label: "Upcoming Conferences", to: "/upcoming-conferences", icon: Calendar },
+  { label: "Recent Conferences", to: "/recent-conferences", icon: Landmark },
+  { label: "Past Speakers", to: "/past-speakers", icon: Users },
+  { label: "Digital Proceedings", to: "/recent-proceedings", icon: BookOpen },
+  { label: "Innovation Challenge", to: "/innovation-challenge-2026", icon: Sparkles },
 ];
 
 const awardsDropdownNav = [
@@ -34,7 +41,7 @@ const awardsDropdownNav = [
   { label: "Award Categories (18 Disciplines)", to: "/awards-recognition/categories" },
   { label: "Eligibility Criteria", to: "/awards-recognition/eligibility" },
   { label: "Nomination Process", to: "/awards-recognition/nomination-process" },
-  { label: "Apply for Recognition", to: "/awards-recognition/apply" },
+  { label: "Apply for Recognition", to: "/awards-recognition/apply", highlight: true },
   { label: "Selection & Evaluation", to: "/awards-recognition/selection-process" },
   { label: "Awards Committee", to: "/awards-recognition/governance" },
   { label: "Award Recipients Directory", to: "/awards-recognition/awardees" },
@@ -44,21 +51,20 @@ const awardsDropdownNav = [
 ];
 
 const moreDropdownNav = [
-  { label: "Advisory Members", to: "/advisory-members" },
-  { label: "Apply as Reviewer", to: "/apply-reviewer" },
-  { label: "Join Advisory Team", to: "/apply-advisory" },
-  { label: "Research Funding", to: "/research-funding" },
-  { label: "Books", to: "/books" },
-  { label: "Blog", to: "/blog" },
-  { label: "Careers", to: "/careers" },
-  { label: "Awards Admin Portal", to: "/awards-recognition/admin" },
+  { label: "Advisory Members", to: "/advisory-members", icon: Users },
+  { label: "Apply as Reviewer", to: "/apply-reviewer", icon: GraduationCap },
+  { label: "Join Advisory Team", to: "/apply-advisory", icon: Users },
+  { label: "Research Funding", to: "/research-funding", icon: Sparkles, badge: "May 31" },
+  { label: "Books", to: "/books", icon: BookOpen },
+  { label: "Blog", to: "/blog", icon: FileText },
+  { label: "Careers", to: "/careers", icon: Briefcase },
+  { label: "Awards Admin Portal", to: "/awards-recognition/admin", icon: ShieldCheck },
 ];
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
-  const [awardsMobileOpen, setAwardsMobileOpen] = useState(true);
-  const [conferencesMobileOpen, setConferencesMobileOpen] = useState(false);
-  const [moreMobileOpen, setMoreMobileOpen] = useState(false);
+  // Default awards closed so conference & advisory sections are immediately visible to mobile visitors!
+  const [awardsMobileOpen, setAwardsMobileOpen] = useState(false);
   const location = useLocation();
 
   // Scroll lock background when mobile menu is open
@@ -136,7 +142,7 @@ export const Header = () => {
             </RouterNavLink>
           ))}
 
-          {/* New AWARDS & RECOGNITION Menu with Rich Dropdown */}
+          {/* AWARDS & RECOGNITION Menu with Rich Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger className={`flex items-center gap-1.5 text-[13px] font-bold tracking-wide transition-smooth outline-none whitespace-nowrap px-2.5 py-1 rounded-lg ${
               isAwardsSection 
@@ -155,7 +161,7 @@ export const Header = () => {
                 <DropdownMenuItem key={m.to} asChild className="focus:bg-muted focus:text-[#c5a059] cursor-pointer rounded-lg px-2.5 py-1.5 my-0.5">
                   <Link to={m.to} className="text-foreground text-xs font-medium w-full flex items-center justify-between">
                     <span>{m.label}</span>
-                    {m.to.includes("apply") && (
+                    {m.highlight && (
                       <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-primary/20 text-primary">Open</span>
                     )}
                   </Link>
@@ -179,7 +185,7 @@ export const Header = () => {
           </DropdownMenu>
         </nav>
 
-        {/* CTA Buttons Header Right */}
+        {/* CTA Buttons Header Right (Desktop) */}
         <div className="hidden xl:flex items-center gap-2.5 shrink-0">
           <Button asChild className="bg-primary text-white hover:bg-primary/90 rounded-full font-black px-6 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-xs h-10">
             <Link to="/awards-recognition/apply">
@@ -206,201 +212,212 @@ export const Header = () => {
         </button>
       </div>
 
-      {/* FULL VIEWPORT MOBILE MENU DRAWER (NEVER OVERLAPS UNDERLYING PAGE) */}
+      {/* FULL VIEWPORT MOBILE MENU DRAWER — SHOWCASES ALL SECTIONS EQUALLY */}
       {open && (
         <div 
           className="xl:hidden fixed top-20 inset-x-0 bottom-0 z-50 bg-[#060a17] text-foreground border-t border-border/60 flex flex-col shadow-2xl overscroll-contain animate-fade-in"
           style={{ height: 'calc(100dvh - 5rem)' }}
         >
-          <div className="flex-1 overflow-y-auto px-4 py-5 space-y-4 overscroll-contain pb-28">
+          <div className="flex-1 overflow-y-auto px-4 py-5 space-y-5 overscroll-contain pb-28">
             
-            {/* Quick Action Header Cards */}
-            <div className="grid grid-cols-2 gap-2.5 pb-2">
-              <Button asChild className="bg-primary hover:bg-primary/90 text-white rounded-xl h-12 font-black uppercase tracking-wider text-xs shadow-gold flex items-center justify-center gap-1.5">
-                <Link to="/awards-recognition/apply" onClick={() => setOpen(false)}>
-                  <Award className="h-4 w-4 text-[#f3e5c8]" /> Nominate Now
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="border-[#c5a059]/40 bg-[#c5a059]/10 text-foreground hover:bg-[#c5a059]/20 rounded-xl h-12 font-bold text-xs flex items-center justify-center gap-1.5">
-                <Link to="/verify-certificate" onClick={() => setOpen(false)}>
-                  <ShieldCheck className="h-4 w-4 text-[#c5a059]" /> Verify Award
-                </Link>
-              </Button>
-            </div>
-
-            {/* SECTION 1: AWARDS & RECOGNITION (ACCORDION) */}
-            <div className="rounded-2xl border border-[#c5a059]/35 bg-[#c5a059]/5 overflow-hidden transition-all shadow-sm">
-              <button 
-                type="button"
-                onClick={() => setAwardsMobileOpen(!awardsMobileOpen)}
-                className="w-full flex items-center justify-between p-3.5 text-left bg-gradient-to-r from-[#c5a059]/15 to-transparent hover:bg-[#c5a059]/20 transition-colors"
-                aria-expanded={awardsMobileOpen}
-              >
-                <div className="flex items-center gap-2.5">
-                  <div className="h-8 w-8 rounded-lg bg-[#c5a059]/20 flex items-center justify-center text-[#c5a059] shrink-0 border border-[#c5a059]/30">
-                    <Award className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-white flex items-center gap-2">
-                      Awards & Recognition
-                      <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded font-black bg-[#c5a059] text-[#060a17]">
-                        2026-27
-                      </span>
-                    </div>
-                    <div className="text-[10px] text-white/60">EminSphere Honours Programme</div>
-                  </div>
-                </div>
-                <ChevronDown className={`h-4 w-4 text-[#c5a059] transition-transform duration-300 ${awardsMobileOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {awardsMobileOpen && (
-                <div className="p-2 space-y-1 bg-[#060a17]/90 border-t border-[#c5a059]/20">
-                  {awardsDropdownNav.map((m) => {
-                    const isItemActive = location.pathname === m.to;
-                    return (
-                      <Link
-                        key={m.to}
-                        to={m.to}
-                        className={`flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-medium transition-all ${
-                          isItemActive 
-                            ? "bg-[#c5a059]/20 text-[#c5a059] font-bold border border-[#c5a059]/40" 
-                            : "text-foreground/90 hover:bg-white/5 hover:text-white"
-                        }`}
-                        onClick={() => setOpen(false)}
-                      >
-                        <span className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-[#c5a059]" />
-                          {m.label}
-                        </span>
-                        {m.to.includes("apply") && (
-                          <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-primary/20 text-primary border border-primary/30">
-                            Open
-                          </span>
-                        )}
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-
-            {/* SECTION 2: ACADEMIC CONFERENCES (ACCORDION) */}
-            <div className="rounded-2xl border border-primary/30 bg-primary/5 overflow-hidden transition-all shadow-sm">
-              <button 
-                type="button"
-                onClick={() => setConferencesMobileOpen(!conferencesMobileOpen)}
-                className="w-full flex items-center justify-between p-3.5 text-left bg-gradient-to-r from-primary/15 to-transparent hover:bg-primary/20 transition-colors"
-                aria-expanded={conferencesMobileOpen}
-              >
-                <div className="flex items-center gap-2.5">
-                  <div className="h-8 w-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary shrink-0 border border-primary/30">
-                    <Globe className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-white flex items-center gap-2">
-                      Conferences & Summits
-                    </div>
-                    <div className="text-[10px] text-white/60">International Scientific Gatherings</div>
-                  </div>
-                </div>
-                <ChevronDown className={`h-4 w-4 text-primary transition-transform duration-300 ${conferencesMobileOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {conferencesMobileOpen && (
-                <div className="p-2 space-y-1 bg-[#060a17]/90 border-t border-primary/20">
-                  {mainNav.map((l) => {
-                    const isItemActive = location.pathname === l.to;
-                    return (
-                      <Link
-                        key={l.to}
-                        to={l.to}
-                        className={`flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-medium transition-all ${
-                          isItemActive 
-                            ? "bg-primary/20 text-primary font-bold border border-primary/40" 
-                            : "text-foreground/90 hover:bg-white/5 hover:text-white"
-                        }`}
-                        onClick={() => setOpen(false)}
-                      >
-                        <span className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                          {l.label}
-                        </span>
-                      </Link>
-                    );
-                  })}
-                  <a
-                    href="https://forms.gle/M6GiaTdkpqH8DWWe6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-bold text-accent hover:bg-accent/10 transition-all border border-accent/20"
-                    onClick={() => setOpen(false)}
-                  >
-                    <span>Register for Upcoming Conference</span>
-                    <ExternalLink className="h-3.5 w-3.5" />
+            {/* 1. TOP QUICK ACTION BUTTONS (Conference + Awards + Verify) */}
+            <div className="space-y-2">
+              <div className="grid grid-cols-2 gap-2">
+                <Button asChild className="bg-primary hover:bg-primary/90 text-white rounded-xl h-11 font-black uppercase tracking-wider text-xs shadow-gold flex items-center justify-center gap-1.5">
+                  <a href="https://forms.gle/M6GiaTdkpqH8DWWe6" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+                    <Globe className="h-3.5 w-3.5" /> Register Now
                   </a>
-                </div>
-              )}
+                </Button>
+                <Button asChild className="bg-gradient-to-r from-[#c5a059] to-[#dfc488] hover:opacity-90 text-[#060a17] rounded-xl h-11 font-black uppercase tracking-wider text-xs shadow-md flex items-center justify-center gap-1.5">
+                  <Link to="/awards-recognition/apply" onClick={() => setOpen(false)}>
+                    <Award className="h-3.5 w-3.5" /> Nominate Now
+                  </Link>
+                </Button>
+              </div>
+              <Button asChild variant="outline" className="w-full border-border/80 bg-card/60 text-foreground hover:bg-muted rounded-xl h-9 font-semibold text-xs flex items-center justify-center gap-1.5">
+                <Link to="/verify-certificate" onClick={() => setOpen(false)}>
+                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" /> Verify Award / Certificate
+                </Link>
+              </Button>
             </div>
 
-            {/* SECTION 3: ADVISORY, RESEARCH & COMMUNITY (ACCORDION) */}
-            <div className="rounded-2xl border border-border/80 bg-card/60 overflow-hidden transition-all shadow-sm">
-              <button 
-                type="button"
-                onClick={() => setMoreMobileOpen(!moreMobileOpen)}
-                className="w-full flex items-center justify-between p-3.5 text-left hover:bg-muted/40 transition-colors"
-                aria-expanded={moreMobileOpen}
-              >
-                <div className="flex items-center gap-2.5">
-                  <div className="h-8 w-8 rounded-lg bg-white/5 flex items-center justify-center text-accent shrink-0 border border-white/10">
-                    <Users className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-white flex items-center gap-2">
-                      Advisory & Academic Network
-                    </div>
-                    <div className="text-[10px] text-white/60">Community, Grants & Publishing</div>
-                  </div>
-                </div>
-                <ChevronDown className={`h-4 w-4 text-muted-foreground transition-transform duration-300 ${moreMobileOpen ? "rotate-180" : ""}`} />
-              </button>
+            {/* 2. ACADEMIC CONFERENCES & SUMMITS (DIRECTLY VISIBLE, PROMINENT FIRST) */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between px-1">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
+                  <Globe className="h-3.5 w-3.5 text-primary" /> Conferences & Summits
+                </span>
+                <span className="text-[10px] text-muted-foreground font-medium">Main Navigation</span>
+              </div>
 
-              {moreMobileOpen && (
-                <div className="p-2 space-y-1 bg-[#060a17]/90 border-t border-border/50">
-                  {moreDropdownNav.map((m) => {
-                    const isItemActive = location.pathname === m.to;
-                    return (
-                      <Link
-                        key={m.to}
-                        to={m.to}
-                        className={`flex items-center justify-between py-2.5 px-3 rounded-xl text-xs font-medium transition-all ${
-                          isItemActive 
-                            ? "bg-accent/20 text-accent font-bold border border-accent/40" 
-                            : "text-foreground/90 hover:bg-white/5 hover:text-white"
-                        }`}
-                        onClick={() => setOpen(false)}
-                      >
-                        <span className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-accent/60" />
-                          {m.label}
-                        </span>
-                        {m.to.includes("funding") && (
-                          <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-accent/20 text-accent">
-                            May 31
+              <div className="grid grid-cols-1 gap-1.5">
+                {mainNav.map((item) => {
+                  const Icon = item.icon;
+                  const isItemActive = location.pathname === item.to;
+                  return (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      onClick={() => setOpen(false)}
+                      className={`flex items-center justify-between p-3 rounded-xl text-xs font-semibold transition-all border ${
+                        isItemActive
+                          ? "bg-primary/20 text-primary border-primary/50 shadow-sm"
+                          : "bg-card/70 text-foreground hover:bg-muted/60 border-border/60 hover:text-white"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="h-7 w-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 border border-primary/20">
+                          <Icon className="h-3.5 w-3.5" />
+                        </div>
+                        <span>{item.label}</span>
+                      </div>
+                      <span className="text-muted-foreground text-[10px]">→</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* 3. AWARDS & RECOGNITION (COLLAPSIBLE, WITH CLEAR PREVIEW & EXPAND OPTION) */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between px-1">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#c5a059] flex items-center gap-1.5">
+                  <Award className="h-3.5 w-3.5 text-[#c5a059]" /> Awards & Recognition
+                </span>
+                <span className="text-[10px] font-black uppercase px-1.5 py-0.2 rounded bg-[#c5a059]/20 text-[#c5a059] border border-[#c5a059]/30">
+                  2026-27 Honours
+                </span>
+              </div>
+
+              <div className="rounded-2xl border border-[#c5a059]/35 bg-[#c5a059]/5 overflow-hidden">
+                {/* Header Toggle */}
+                <button
+                  type="button"
+                  onClick={() => setAwardsMobileOpen(!awardsMobileOpen)}
+                  className="w-full flex items-center justify-between p-3.5 text-left bg-gradient-to-r from-[#c5a059]/15 to-transparent hover:bg-[#c5a059]/20 transition-colors"
+                  aria-expanded={awardsMobileOpen}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="h-8 w-8 rounded-lg bg-[#c5a059]/20 flex items-center justify-center text-[#c5a059] shrink-0 border border-[#c5a059]/30">
+                      <Sparkles className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-white">
+                        Global Innovation & Excellence Awards
+                      </div>
+                      <div className="text-[10px] text-white/60">
+                        {awardsMobileOpen ? "Tap to collapse 12 programmes" : "Tap to view 12 award categories & guides"}
+                      </div>
+                    </div>
+                  </div>
+                  <ChevronDown className={`h-4 w-4 text-[#c5a059] transition-transform duration-300 ${awardsMobileOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                {/* Direct quick links when collapsed */}
+                {!awardsMobileOpen && (
+                  <div className="p-2.5 pt-0 grid grid-cols-2 gap-1.5 text-center">
+                    <Link
+                      to="/awards-recognition"
+                      onClick={() => setOpen(false)}
+                      className="py-1.5 px-2 rounded-lg bg-card/60 hover:bg-card border border-border/50 text-[11px] font-medium text-foreground/90 block truncate"
+                    >
+                      🏆 Overview
+                    </Link>
+                    <Link
+                      to="/awards-recognition/categories"
+                      onClick={() => setOpen(false)}
+                      className="py-1.5 px-2 rounded-lg bg-card/60 hover:bg-card border border-border/50 text-[11px] font-medium text-foreground/90 block truncate"
+                    >
+                      🎯 18 Categories
+                    </Link>
+                    <Link
+                      to="/awards-recognition/apply"
+                      onClick={() => setOpen(false)}
+                      className="py-1.5 px-2 rounded-lg bg-primary/20 hover:bg-primary/30 border border-primary/40 text-[11px] font-bold text-primary block truncate col-span-2"
+                    >
+                      ✍️ Apply for Recognition (Open)
+                    </Link>
+                  </div>
+                )}
+
+                {/* Expanded full list of 12 award sub-pages */}
+                {awardsMobileOpen && (
+                  <div className="p-2 space-y-1 bg-[#060a17]/90 border-t border-[#c5a059]/20">
+                    {awardsDropdownNav.map((m) => {
+                      const isItemActive = location.pathname === m.to;
+                      return (
+                        <Link
+                          key={m.to}
+                          to={m.to}
+                          onClick={() => setOpen(false)}
+                          className={`flex items-center justify-between py-2 px-3 rounded-xl text-xs font-medium transition-all ${
+                            isItemActive 
+                              ? "bg-[#c5a059]/20 text-[#c5a059] font-bold border border-[#c5a059]/40" 
+                              : "text-foreground/90 hover:bg-white/5 hover:text-white"
+                          }`}
+                        >
+                          <span className="flex items-center gap-2">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#c5a059]" />
+                            {m.label}
+                          </span>
+                          {m.highlight && (
+                            <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-primary/20 text-primary border border-primary/30">
+                              Open
+                            </span>
+                          )}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* 4. ADVISORY, GRANTS & COMMUNITY (DIRECTLY ACCESSIBLE) */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between px-1">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-accent flex items-center gap-1.5">
+                  <Users className="h-3.5 w-3.5 text-accent" /> Advisory & Academic Programs
+                </span>
+                <span className="text-[10px] text-muted-foreground font-medium">Resources</span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-1.5">
+                {moreDropdownNav.map((item) => {
+                  const Icon = item.icon;
+                  const isItemActive = location.pathname === item.to;
+                  return (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      onClick={() => setOpen(false)}
+                      className={`flex flex-col justify-between p-2.5 rounded-xl text-xs font-semibold transition-all border ${
+                        isItemActive
+                          ? "bg-accent/20 text-accent border-accent/50 shadow-sm"
+                          : "bg-card/70 text-foreground hover:bg-muted/60 border-border/60 hover:text-white"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between w-full mb-1">
+                        <Icon className="h-3.5 w-3.5 text-accent shrink-0" />
+                        {item.badge && (
+                          <span className="text-[9px] font-bold uppercase px-1.5 py-0.2 rounded bg-accent/20 text-accent">
+                            {item.badge}
                           </span>
                         )}
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
+                      </div>
+                      <span className="truncate text-[11px]">{item.label}</span>
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* Direct Support & Secretariat Footer */}
-            <div className="pt-4 border-t border-border/50 text-xs text-muted-foreground space-y-2">
+            {/* 5. SECRETARIAT & DIRECT CONTACT CARD */}
+            <div className="pt-2 text-xs text-muted-foreground space-y-2">
               <div className="p-3.5 rounded-xl bg-card/60 border border-border/60">
-                <div className="font-bold text-foreground text-xs mb-1">Awards & Conference Secretariat</div>
+                <div className="font-bold text-foreground text-xs mb-1">EminSphere™ Secretariat & Support</div>
                 <div className="text-[11px] text-muted-foreground">
-                  Official Inquiries & Nominations Support:
+                  Official Conference & Award Inquiries:
                 </div>
                 <a 
                   href="mailto:info@eminsphere.com" 
@@ -410,7 +427,7 @@ export const Header = () => {
                 </a>
               </div>
               <div className="text-[10px] text-muted-foreground/60 text-center px-2 leading-relaxed">
-                © {new Date().getFullYear()} EminSphere™. Independent Global Academic & Corporate Recognition Platform.
+                © {new Date().getFullYear()} EminSphere™. Global Academic, Research & Corporate Recognition Platform.
               </div>
             </div>
 
