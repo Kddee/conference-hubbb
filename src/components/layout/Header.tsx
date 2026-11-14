@@ -185,15 +185,6 @@ export const Header = () => {
           </DropdownMenu>
         </nav>
 
-        {/* CTA Buttons Header Right (Desktop) */}
-        <div className="hidden xl:flex items-center gap-2.5 shrink-0">
-          <Button asChild className="bg-primary text-white hover:bg-primary/90 rounded-full font-black px-6 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-105 uppercase tracking-wider text-xs h-10">
-            <Link to="/awards-recognition/apply">
-              Nominate Now
-            </Link>
-          </Button>
-        </div>
-
         {/* Mobile Hamburger Toggle Button */}
         <button
           type="button"
@@ -210,20 +201,10 @@ export const Header = () => {
       {open && (
         <div 
           className="xl:hidden fixed top-20 inset-x-0 bottom-0 z-50 bg-[#060a17] text-foreground border-t border-border/60 flex flex-col shadow-2xl overscroll-contain animate-fade-in"
-          style={{ height: 'calc(100dvh - 5rem)' }}
         >
           <div className="flex-1 overflow-y-auto px-4 py-5 space-y-6 overscroll-contain pb-28">
             
-            {/* 1. TOP QUICK ACTION BUTTON */}
-            <div>
-              <Button asChild className="w-full bg-gradient-to-r from-[#c5a059] to-[#dfc488] hover:opacity-90 text-[#060a17] rounded-xl h-11 font-black uppercase tracking-wider text-xs shadow-md flex items-center justify-center">
-                <Link to="/awards-recognition/apply" onClick={() => setOpen(false)}>
-                  Nominate Now
-                </Link>
-              </Button>
-            </div>
-
-            {/* 2. AWARDS & RECOGNITION (OPENS WHEN CLICKED — SHOWS ALL 13 SECTIONS) */}
+            {/* 1. AWARDS & RECOGNITION (OPENS WHEN CLICKED — SHOWS ALL 13 SECTIONS) */}
             <div className="rounded-2xl border-2 border-[#c5a059]/40 bg-[#c5a059]/5 overflow-hidden transition-all shadow-md">
               <button
                 type="button"
@@ -290,7 +271,7 @@ export const Header = () => {
               )}
             </div>
 
-            {/* 3. CONFERENCES & SUMMITS (ALL 5 SECTIONS VISIBLE) */}
+            {/* 2. CONFERENCES & SUMMITS (ALL 5 SECTIONS VISIBLE) */}
             <div className="space-y-2">
               <div className="flex items-center justify-between px-1">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
@@ -327,7 +308,7 @@ export const Header = () => {
               </div>
             </div>
 
-            {/* 4. ADVISORY & ACADEMIC NETWORK */}
+            {/* 3. ADVISORY & ACADEMIC NETWORK */}
             <div className="space-y-2">
               <div className="flex items-center justify-between px-1">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-accent flex items-center gap-1.5">
@@ -368,7 +349,7 @@ export const Header = () => {
               </div>
             </div>
 
-            {/* 5. RESEARCH, PUBLICATIONS & CAREERS */}
+            {/* 4. RESEARCH, PUBLICATIONS & CAREERS */}
             <div className="space-y-2">
               <div className="flex items-center justify-between px-1">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
@@ -417,7 +398,7 @@ export const Header = () => {
               </div>
             </div>
 
-            {/* 6. CREDENTIAL VERIFICATION & ADMIN */}
+            {/* 5. CREDENTIAL VERIFICATION & ADMIN */}
             <div className="space-y-2">
               <div className="grid grid-cols-2 gap-2">
                 <Button asChild variant="outline" className="border-border/80 bg-card/60 text-foreground hover:bg-muted rounded-xl h-10 font-semibold text-xs flex items-center justify-center gap-1.5">
@@ -433,7 +414,7 @@ export const Header = () => {
               </div>
             </div>
 
-            {/* 7. SECRETARIAT & DIRECT CONTACT CARD */}
+            {/* 6. SECRETARIAT & DIRECT CONTACT CARD */}
             <div className="pt-2 text-xs text-muted-foreground space-y-2">
               <div className="p-3.5 rounded-xl bg-card/60 border border-border/60">
                 <div className="font-bold text-foreground text-xs mb-1">EminSphere™ Secretariat & Support</div>

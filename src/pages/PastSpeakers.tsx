@@ -185,7 +185,7 @@ const PastSpeakers = () => {
       </section>
 
       {/* SINGLE UNIFIED SECTION: ALL FEATURED SPEAKERS */}
-      <section className="container py-8 sm:py-16 relative z-10 max-w-7xl px-4">
+      <section className="container py-8 sm:py-16 relative z-10 max-w-7xl px-4 overflow-hidden">
         <div className="flex flex-col items-center text-center mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-accent mb-3 sm:mb-4">
             <Sparkles className="h-4 w-4" /> Distinguished Scholars & Keynotes

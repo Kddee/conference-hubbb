@@ -51,7 +51,7 @@ const RecentProceedings = () => {
       </section>
 
       {/* PROCEEDINGS LISTING */}
-      <section className="container py-12 sm:py-16 max-w-5xl relative z-10 px-4">
+      <section className="container py-12 sm:py-16 max-w-5xl relative z-10 px-4 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
         
         <div className="flex items-center gap-4 sm:gap-6 mb-8 sm:mb-12">

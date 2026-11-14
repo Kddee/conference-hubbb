@@ -171,7 +171,7 @@ const RecentConferences = () => {
       />
 
       {/* ARCHIVES GRID */}
-      <section className="container py-16 relative z-10">
+      <section className="container py-16 relative z-10 overflow-hidden">
         <div className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] mix-blend-screen pointer-events-none" />
       <div className="absolute bottom-1/4 -right-1/4 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px] mix-blend-screen pointer-events-none" />
       

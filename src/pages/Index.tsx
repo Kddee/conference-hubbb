@@ -261,7 +261,7 @@ const Index = () => {
           
           {/* MASSIVE TYPOGRAPHY */}
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-sans font-extrabold text-white leading-[1.1] tracking-tight mb-6 drop-shadow-2xl">
-            Join Us at The Forefront <br/> of Global Innovation
+            Join Us at The Forefront <br className="hidden sm:inline" /> of Global Innovation
           </h1>
           
           {/* SUBHEADING */}
@@ -507,7 +507,7 @@ const Index = () => {
                 <Globe2 className="h-4 w-4" /> Worldwide Reach
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-black text-foreground mb-4 sm:mb-6 leading-[1.15] tracking-tight">
-                Global Conferences <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">That Drive Impact</span>
+                Global Conferences <br className="hidden sm:inline" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">That Drive Impact</span>
               </h2>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 sm:mb-10 max-w-xl">
                 Join a dynamic global network of researchers and industry leaders. Our hybrid conferences blend virtual accessibility with unparalleled in-person networking opportunities.
