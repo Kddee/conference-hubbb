@@ -240,7 +240,7 @@ const Index = () => {
         canonical="https://www.eminsphere.com/"
       />
       {/* HERO SECTION - AI4 STYLE */}
-      <section className="relative min-h-[calc(100vh-5rem)] flex flex-col justify-center pt-8 sm:pt-12 pb-16 sm:pb-28 overflow-hidden">
+      <section className="relative min-h-[calc(100vh-5rem)] flex flex-col justify-between pt-8 sm:pt-12 overflow-hidden">
         {/* Background Image with Dark Cyan Tint Overlay */}
         <div className="absolute inset-0 z-0">
           <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2000&auto=format&fit=crop" alt="High Tech Background" className="w-full h-full object-cover" />
@@ -252,12 +252,12 @@ const Index = () => {
         <div className="hidden xl:block absolute left-8 top-1/2 -translate-y-1/2 -rotate-90 origin-left text-white/50 text-sm font-bold tracking-[0.5em] uppercase whitespace-nowrap z-10 pointer-events-none">
           Eminsphere Global
         </div>
-        <div className="hidden xl:block absolute right-8 top-[60%] text-white/50 text-sm font-bold tracking-[0.5em] uppercase whitespace-nowrap z-10 pointer-events-none">
+        <div className="hidden xl:block absolute right-8 top-1/2 -translate-y-1/2 text-white/50 text-sm font-bold tracking-[0.5em] uppercase whitespace-nowrap z-10 pointer-events-none">
           <span className="block mb-1">Global</span>
           <span className="text-primary text-lg">2026</span>
         </div>
 
-        <div className="relative container z-10 max-w-5xl mx-auto px-4 flex flex-col items-center text-center mt-6 sm:mt-10">
+        <div className="relative container z-10 max-w-5xl mx-auto px-4 flex flex-col items-center text-center my-auto py-8 sm:py-12">
           
           {/* MASSIVE TYPOGRAPHY */}
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-sans font-extrabold text-white leading-[1.1] tracking-tight mb-6 drop-shadow-2xl">
@@ -283,7 +283,7 @@ const Index = () => {
         </div>
 
         {/* BOTTOM STATS BAR */}
-        <div className="relative md:absolute md:bottom-0 inset-x-0 bg-[#0a0a0a]/90 border-t border-white/5 py-6 sm:py-8 backdrop-blur-md z-20 mt-12 md:mt-0">
+        <div className="relative w-full bg-[#0a0a0a]/90 border-t border-white/5 py-6 sm:py-8 backdrop-blur-md z-20 mt-auto">
           <div className="container max-w-6xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-6 sm:gap-y-8">
               {stats.map((s, i) => (
