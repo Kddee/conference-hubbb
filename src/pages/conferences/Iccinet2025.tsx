@@ -22,6 +22,7 @@ const conferenceData = {
   ],
   speakers: [
     { name: "Dr. Joe Perez", org: "NC Department of Health & Human Services", country: "United States", img: "/speakers/dr-joe-perez.jpg" },
+    { name: "Dr. Blerat Cenaj", org: "General Practitioner, PRIME CLINIC", country: "Kosovo", img: "/speakers/dr-blerat-cenaj.jpg" },
     { name: "Mr. Satish Kabade", org: "Product Technical Expert", country: "USA", img: "https://static.wixstatic.com/media/30814e_a31d532fb603465e846aceccb082827c~mv2.jpeg" },
     { name: "Gregg Clunis", org: "Founder, Kojo", country: "United States", img: "/speakers/gregg-clunis.jpg" },
     { name: "Nomi Khedawala", org: "Reddit", country: "USA", img: "/speakers/nomi-khedawala.png" },

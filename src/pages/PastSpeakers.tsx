@@ -16,6 +16,7 @@ interface Speaker {
 }
 
 const speakers: Speaker[] = [
+  { name: "Dr. Blerat Cenaj", role: "General Practitioner, PRIME CLINIC", location: "Kosovo", image: "/speakers/dr-blerat-cenaj.jpg" },
   { name: "Prof. Dr. Alexander Bull", role: "IU International University", location: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg", objectPosition: "center 20%" },
   { name: "Dr. Madeleine Pickles", role: "Associate Professor, Liverpool John Moores University", location: "United Kingdom", image: "/icaits26/dr.madeline-pickles.jpeg" },
   { name: "Dr. Aleksandra Gardasevic-Slavuljica", role: "Expert", location: "Montenegro", image: "https://static.wixstatic.com/media/30814e_bf1d23feb75d44208e57fb12c007e7ac~mv2.jpeg" },
