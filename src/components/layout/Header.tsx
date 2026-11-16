@@ -1,5 +1,6 @@
 import { Link, NavLink as RouterNavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { 
   Menu, 
   X, 
@@ -13,10 +14,10 @@ import {
   Calendar,
   GraduationCap,
   Landmark,
-  ExternalLink,
   Briefcase,
   FileText,
-  Lock
+  Lock,
+  Mail
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -64,31 +65,25 @@ const moreDropdownNav = [
 export const Header = () => {
   const [open, setOpen] = useState(false);
   const [awardsMobileOpen, setAwardsMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const location = useLocation();
 
-  // Scroll lock background when mobile menu is open
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Lock background scroll when mobile menu is open without breaking touch scroll
   useEffect(() => {
     if (open) {
-      const scrollY = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = "100%";
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
-      const scrollY = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
       document.body.style.overflow = "";
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
-      }
+      document.documentElement.style.overflow = "";
     }
     return () => {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
   }, [open]);
 
@@ -110,100 +105,143 @@ export const Header = () => {
   const textColor = "text-foreground/90";
 
   return (
-    <header
-      className="fixed top-0 inset-x-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-sm"
-    >
-      <div className="container flex h-20 items-center justify-between gap-4">
-        {/* Brand Logo & Title */}
-        <Link 
-          to="/" 
-          className="flex items-center gap-3 group shrink-0"
-          onClick={() => setOpen(false)}
-        >
-          <div className="h-11 w-11 sm:h-12 sm:w-12 rounded-full overflow-hidden flex items-center justify-center bg-white shadow-gold transition-transform group-hover:scale-105 shrink-0 border border-white/10 p-0.5">
-            <img src="/eminsphere-logo.png" alt="Eminsphere Logo" className="h-full w-full object-contain rounded-full" />
-          </div>
-          <div className="leading-tight">
-            <div className={`font-serif font-black text-lg sm:text-xl tracking-tight ${textColor.replace('/90', '')}`}>Eminsphere™</div>
-            <div className="text-[8.5px] sm:text-[9px] uppercase tracking-widest text-accent font-bold">Research & Innovation</div>
-          </div>
-        </Link>
+    <>
+      <header
+        className="fixed top-0 inset-x-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-sm"
+      >
+        <div className="container flex h-20 items-center justify-between gap-4">
+          {/* Brand Logo & Title */}
+          <Link 
+            to="/" 
+            className="flex items-center gap-3 group shrink-0"
+            onClick={() => setOpen(false)}
+          >
+            <div className="h-11 w-11 sm:h-12 sm:w-12 rounded-full overflow-hidden flex items-center justify-center bg-white shadow-gold transition-transform group-hover:scale-105 shrink-0 border border-white/10 p-0.5">
+              <img src="/eminsphere-logo.png" alt="Eminsphere Logo" className="h-full w-full object-contain rounded-full" />
+            </div>
+            <div className="leading-tight">
+              <div className={`font-serif font-black text-lg sm:text-xl tracking-tight ${textColor.replace('/90', '')}`}>Eminsphere™</div>
+              <div className="text-[8.5px] sm:text-[9px] uppercase tracking-widest text-accent font-bold">Research & Innovation</div>
+            </div>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-4 2xl:gap-6">
-          {mainNav.map((l) => (
-            <RouterNavLink 
-              key={l.to} 
-              to={l.to} 
-              className={({ isActive }) => `text-[13px] font-bold tracking-wide transition-smooth hover:text-accent whitespace-nowrap ${isActive ? "text-accent" : textColor}`}
-            >
-              {l.label}
-            </RouterNavLink>
-          ))}
+          {/* Desktop Navigation */}
+          <nav className="hidden xl:flex items-center gap-4 2xl:gap-6">
+            {mainNav.map((l) => (
+              <RouterNavLink 
+                key={l.to} 
+                to={l.to} 
+                className={({ isActive }) => `text-[13px] font-bold tracking-wide transition-smooth hover:text-accent whitespace-nowrap ${isActive ? "text-accent" : textColor}`}
+              >
+                {l.label}
+              </RouterNavLink>
+            ))}
 
-          {/* AWARDS & RECOGNITION Menu with Rich Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger className={`flex items-center gap-1.5 text-[13px] font-bold tracking-wide transition-smooth outline-none whitespace-nowrap px-2.5 py-1 rounded-lg ${
-              isAwardsSection 
-                ? "text-[#c5a059] bg-[#c5a059]/10 border border-[#c5a059]/30" 
-                : `hover:text-[#c5a059] ${textColor}`
-            }`}>
-              <span>Awards & Recognition</span>
-              <ChevronDown className="h-3 w-3" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="center" className="w-64 bg-card/95 backdrop-blur-xl border-border/60 shadow-2xl rounded-xl p-1.5 max-h-[85vh] overflow-y-auto">
-              <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#c5a059]">
-                Global Innovation & Excellence Awards
-              </div>
-              <DropdownMenuSeparator className="bg-border/50" />
-              {awardsDropdownNav.map((m, idx) => (
-                <DropdownMenuItem key={`${m.to}-${idx}`} asChild className="focus:bg-muted focus:text-[#c5a059] cursor-pointer rounded-lg px-2.5 py-1.5 my-0.5">
-                  <Link to={m.to} className="text-foreground text-xs font-medium w-full flex items-center justify-between">
-                    <span>{m.label}</span>
-                    {m.highlight && (
-                      <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-primary/20 text-primary">Open</span>
-                    )}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+            {/* AWARDS & RECOGNITION Menu with Rich Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`flex items-center gap-1.5 text-[13px] font-bold tracking-wide transition-smooth outline-none whitespace-nowrap px-2.5 py-1 rounded-lg ${
+                isAwardsSection 
+                  ? "text-[#c5a059] bg-[#c5a059]/10 border border-[#c5a059]/30" 
+                  : `hover:text-[#c5a059] ${textColor}`
+              }`}>
+                <span>Awards & Recognition</span>
+                <ChevronDown className="h-3 w-3" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-64 bg-card/95 backdrop-blur-xl border-border/60 shadow-2xl rounded-xl p-1.5 max-h-[85vh] overflow-y-auto">
+                <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#c5a059]">
+                  Global Innovation & Excellence Awards
+                </div>
+                <DropdownMenuSeparator className="bg-border/50" />
+                {awardsDropdownNav.map((m, idx) => (
+                  <DropdownMenuItem key={`${m.to}-${idx}`} asChild className="focus:bg-muted focus:text-[#c5a059] cursor-pointer rounded-lg px-2.5 py-1.5 my-0.5">
+                    <Link to={m.to} className="text-foreground text-xs font-medium w-full flex items-center justify-between">
+                      <span>{m.label}</span>
+                      {m.highlight && (
+                        <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-primary/20 text-primary">Open</span>
+                      )}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
-          {/* More Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger className={`flex items-center gap-1 text-[13px] font-bold tracking-wide hover:text-accent transition-smooth outline-none whitespace-nowrap ${textColor}`}>
-              More <ChevronDown className="h-3 w-3" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56 bg-card/95 backdrop-blur-xl border-border/60 shadow-elegant rounded-xl p-1.5">
-              {moreDropdownNav.map((m) => (
-                <DropdownMenuItem key={m.to} asChild className="focus:bg-muted focus:text-accent cursor-pointer rounded-lg px-2.5 py-1.5 my-0.5">
-                  <Link to={m.to} className="text-foreground text-xs font-medium">{m.label}</Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </nav>
+            {/* More Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`flex items-center gap-1 text-[13px] font-bold tracking-wide hover:text-accent transition-smooth outline-none whitespace-nowrap ${textColor}`}>
+                More <ChevronDown className="h-3 w-3" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56 bg-card/95 backdrop-blur-xl border-border/60 shadow-elegant rounded-xl p-1.5">
+                {moreDropdownNav.map((m) => (
+                  <DropdownMenuItem key={m.to} asChild className="focus:bg-muted focus:text-accent cursor-pointer rounded-lg px-2.5 py-1.5 my-0.5">
+                    <Link to={m.to} className="text-foreground text-xs font-medium">{m.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </nav>
 
-        {/* Mobile Hamburger Toggle Button */}
-        <button
-          type="button"
-          className="xl:hidden p-2 rounded-xl text-foreground hover:bg-white/10 active:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/40 shrink-0"
-          onClick={() => setOpen(!open)}
-          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={open}
-        >
-          {open ? <X className="h-6 w-6 text-foreground" /> : <Menu className="h-6 w-6 text-foreground" />}
-        </button>
-      </div>
+          {/* Mobile Hamburger Toggle Button */}
+          <button
+            type="button"
+            className="xl:hidden p-2 rounded-xl text-foreground hover:bg-white/10 active:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/40 shrink-0"
+            onClick={() => setOpen(!open)}
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={open}
+          >
+            {open ? <X className="h-6 w-6 text-foreground" /> : <Menu className="h-6 w-6 text-foreground" />}
+          </button>
+        </div>
+      </header>
 
-      {/* FULL VIEWPORT MOBILE MENU DRAWER — SHOWS ALL SECTIONS OF THE WEBSITE */}
-      {open && (
+      {/* FULL VIEWPORT MOBILE MENU DRAWER VIA PORTAL — NO CONTAINING BLOCK CONFLICT */}
+      {mounted && open && createPortal(
         <div 
-          className="xl:hidden fixed top-20 inset-x-0 bottom-0 z-50 bg-[#060a17] text-foreground border-t border-border/60 flex flex-col shadow-2xl overscroll-contain animate-fade-in"
+          id="mobile-nav-portal"
+          className="xl:hidden fixed inset-x-0 bottom-0 z-[9999] bg-[#050914] text-foreground border-t border-border/60 flex flex-col shadow-2xl animate-fade-in"
+          style={{ top: "5rem", height: "calc(100dvh - 5rem)" }}
         >
-          <div className="flex-1 overflow-y-auto px-4 py-5 space-y-6 overscroll-contain pb-28">
-            
-            {/* 1. AWARDS & RECOGNITION (OPENS WHEN CLICKED — SHOWS ALL 13 SECTIONS) */}
+          <div 
+            className="flex-1 overflow-y-auto px-4 py-5 space-y-6 pb-36 overscroll-contain"
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
+            {/* 1. CONFERENCES & SUMMITS (PRIMARY CORE SECTIONS FIRST) */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between px-1">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
+                  <Globe className="h-3.5 w-3.5 text-primary" /> Conferences & Summits
+                </span>
+                <span className="text-[10px] text-muted-foreground font-medium">5 Programs</span>
+              </div>
+
+              <div className="grid grid-cols-1 gap-2">
+                {mainNav.map((item) => {
+                  const Icon = item.icon;
+                  const isItemActive = location.pathname === item.to;
+                  return (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      onClick={() => setOpen(false)}
+                      className={`flex items-center justify-between p-3.5 rounded-xl text-xs font-semibold transition-all border ${
+                        isItemActive
+                          ? "bg-primary/20 text-primary border-primary/50 shadow-sm"
+                          : "bg-card/70 text-foreground hover:bg-muted/60 border-border/60 hover:text-white"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 border border-primary/20">
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <span className="text-sm font-medium">{item.label}</span>
+                      </div>
+                      <span className="text-muted-foreground text-xs">→</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* 2. AWARDS & RECOGNITION (CLEAN ACCORDION - OPENS ALL 12 SECTIONS SMOOTHLY) */}
             <div className="rounded-2xl border-2 border-[#c5a059]/40 bg-[#c5a059]/5 overflow-hidden transition-all shadow-md">
               <button
                 type="button"
@@ -212,7 +250,7 @@ export const Header = () => {
                 aria-expanded={awardsMobileOpen}
               >
                 <div className="flex items-center gap-3">
-                  <div className="h-9 w-9 rounded-xl bg-[#c5a059]/25 flex items-center justify-center text-[#c5a059] shrink-0 border border-[#c5a059]/40 shadow-sm">
+                  <div className="h-10 w-10 rounded-xl bg-[#c5a059]/25 flex items-center justify-center text-[#c5a059] shrink-0 border border-[#c5a059]/40 shadow-sm">
                     <Award className="h-5 w-5" />
                   </div>
                   <div>
@@ -223,7 +261,7 @@ export const Header = () => {
                       </span>
                     </div>
                     <div className="text-[11px] text-[#c5a059]/90 font-medium">
-                      {awardsMobileOpen ? "Tap to close awards directory" : "Tap to open all 12 award sections & categories"}
+                      {awardsMobileOpen ? "Tap to collapse awards directory" : "Tap to open all 12 award sections & categories"}
                     </div>
                   </div>
                 </div>
@@ -234,7 +272,7 @@ export const Header = () => {
 
               {/* When opened, ALL 12 award sections show with clean, mobile-compatible styling */}
               {awardsMobileOpen && (
-                <div className="p-2 space-y-1 bg-[#060a17]/95 border-t border-[#c5a059]/30 animate-fade-in">
+                <div className="p-2 space-y-1.5 bg-[#060a17]/95 border-t border-[#c5a059]/30 animate-fade-in">
                   <div className="px-3 py-1.5 text-[10px] uppercase tracking-wider font-bold text-[#c5a059] flex items-center justify-between">
                     <span>EminSphere Global Honours Directory</span>
                     <span className="text-[9px] font-normal text-white/50">12 Sections</span>
@@ -270,44 +308,7 @@ export const Header = () => {
               )}
             </div>
 
-            {/* 2. CONFERENCES & SUMMITS (ALL 5 SECTIONS VISIBLE) */}
-            <div className="space-y-2">
-              <div className="flex items-center justify-between px-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
-                  <Globe className="h-3.5 w-3.5 text-primary" /> Conferences & Summits
-                </span>
-                <span className="text-[10px] text-muted-foreground font-medium">5 Programs</span>
-              </div>
-
-              <div className="grid grid-cols-1 gap-1.5">
-                {mainNav.map((item) => {
-                  const Icon = item.icon;
-                  const isItemActive = location.pathname === item.to;
-                  return (
-                    <Link
-                      key={item.to}
-                      to={item.to}
-                      onClick={() => setOpen(false)}
-                      className={`flex items-center justify-between p-3 rounded-xl text-xs font-semibold transition-all border ${
-                        isItemActive
-                          ? "bg-primary/20 text-primary border-primary/50 shadow-sm"
-                          : "bg-card/70 text-foreground hover:bg-muted/60 border-border/60 hover:text-white"
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="h-7 w-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 border border-primary/20">
-                          <Icon className="h-3.5 w-3.5" />
-                        </div>
-                        <span>{item.label}</span>
-                      </div>
-                      <span className="text-muted-foreground text-[10px]">→</span>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* 3. ADVISORY & ACADEMIC NETWORK */}
+            {/* 3. ADVISORY & COMMUNITY */}
             <div className="space-y-2">
               <div className="flex items-center justify-between px-1">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-accent flex items-center gap-1.5">
@@ -316,7 +317,7 @@ export const Header = () => {
                 <span className="text-[10px] text-muted-foreground font-medium">Network</span>
               </div>
 
-              <div className="grid grid-cols-1 gap-1.5">
+              <div className="grid grid-cols-1 gap-2">
                 {[
                   { label: "International Advisory Board", to: "/advisory-members", icon: Users },
                   { label: "Apply as Peer Reviewer", to: "/apply-reviewer", icon: GraduationCap },
@@ -329,19 +330,19 @@ export const Header = () => {
                       key={item.to}
                       to={item.to}
                       onClick={() => setOpen(false)}
-                      className={`flex items-center justify-between p-3 rounded-xl text-xs font-semibold transition-all border ${
+                      className={`flex items-center justify-between p-3.5 rounded-xl text-xs font-semibold transition-all border ${
                         isItemActive
                           ? "bg-accent/20 text-accent border-accent/50 shadow-sm"
                           : "bg-card/70 text-foreground hover:bg-muted/60 border-border/60 hover:text-white"
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <div className="h-7 w-7 rounded-lg bg-accent/10 text-accent flex items-center justify-center shrink-0 border border-accent/20">
-                          <Icon className="h-3.5 w-3.5" />
+                        <div className="h-8 w-8 rounded-lg bg-accent/10 text-accent flex items-center justify-center shrink-0 border border-accent/20">
+                          <Icon className="h-4 w-4" />
                         </div>
-                        <span>{item.label}</span>
+                        <span className="text-sm font-medium">{item.label}</span>
                       </div>
-                      <span className="text-muted-foreground text-[10px]">→</span>
+                      <span className="text-muted-foreground text-xs">→</span>
                     </Link>
                   );
                 })}
@@ -357,7 +358,7 @@ export const Header = () => {
                 <span className="text-[10px] text-muted-foreground font-medium">Resources</span>
               </div>
 
-              <div className="grid grid-cols-1 gap-1.5">
+              <div className="grid grid-cols-1 gap-2">
                 {[
                   { label: "Research Funding Grant", to: "/research-funding", icon: Sparkles, badge: "May 31" },
                   { label: "Scopus & Academic Books", to: "/books", icon: BookOpen },
@@ -371,25 +372,25 @@ export const Header = () => {
                       key={item.to}
                       to={item.to}
                       onClick={() => setOpen(false)}
-                      className={`flex items-center justify-between p-3 rounded-xl text-xs font-semibold transition-all border ${
+                      className={`flex items-center justify-between p-3.5 rounded-xl text-xs font-semibold transition-all border ${
                         isItemActive
                           ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/50 shadow-sm"
                           : "bg-card/70 text-foreground hover:bg-muted/60 border-border/60 hover:text-white"
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <div className="h-7 w-7 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20">
-                          <Icon className="h-3.5 w-3.5" />
+                        <div className="h-8 w-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20">
+                          <Icon className="h-4 w-4" />
                         </div>
-                        <span>{item.label}</span>
+                        <span className="text-sm font-medium">{item.label}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         {item.badge && (
-                          <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-accent/20 text-accent border border-accent/30">
+                          <span className="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-accent/20 text-accent border border-accent/30">
                             {item.badge}
                           </span>
                         )}
-                        <span className="text-muted-foreground text-[10px]">→</span>
+                        <span className="text-muted-foreground text-xs">→</span>
                       </div>
                     </Link>
                   );
@@ -399,30 +400,32 @@ export const Header = () => {
 
             {/* 5. CREDENTIAL VERIFICATION & ADMIN */}
             <div className="space-y-2">
-              <div className="grid grid-cols-2 gap-2">
-                <Button asChild variant="outline" className="border-border/80 bg-card/60 text-foreground hover:bg-muted rounded-xl h-10 font-semibold text-xs flex items-center justify-center gap-1.5">
+              <div className="grid grid-cols-2 gap-2.5">
+                <Button asChild variant="outline" className="border-border/80 bg-card/60 text-foreground hover:bg-muted rounded-xl h-11 font-semibold text-xs flex items-center justify-center gap-1.5">
                   <Link to="/verify-certificate" onClick={() => setOpen(false)}>
-                    <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" /> Verify Award
+                    <ShieldCheck className="h-4 w-4 text-emerald-400" /> Verify Award
                   </Link>
                 </Button>
-                <Button asChild variant="outline" className="border-border/80 bg-card/60 text-muted-foreground hover:text-foreground hover:bg-muted rounded-xl h-10 font-semibold text-xs flex items-center justify-center gap-1.5">
+                <Button asChild variant="outline" className="border-border/80 bg-card/60 text-muted-foreground hover:text-foreground hover:bg-muted rounded-xl h-11 font-semibold text-xs flex items-center justify-center gap-1.5">
                   <Link to="/awards-recognition/admin" onClick={() => setOpen(false)}>
-                    <Lock className="h-3.5 w-3.5" /> Staff Admin
+                    <Lock className="h-4 w-4" /> Staff Admin
                   </Link>
                 </Button>
               </div>
             </div>
 
-            {/* 6. SECRETARIAT & DIRECT CONTACT CARD */}
-            <div className="pt-2 text-xs text-muted-foreground space-y-2">
-              <div className="p-3.5 rounded-xl bg-card/60 border border-border/60">
-                <div className="font-bold text-foreground text-xs mb-1">EminSphere™ Secretariat & Support</div>
+            {/* 6. SECRETARIAT & DIRECT CONTACT */}
+            <div className="pt-2 text-xs text-muted-foreground space-y-3">
+              <div className="p-4 rounded-xl bg-card/60 border border-border/60 space-y-1.5">
+                <div className="font-bold text-foreground text-xs flex items-center gap-1.5">
+                  <Mail className="h-3.5 w-3.5 text-accent" /> EminSphere™ Secretariat & Inquiries
+                </div>
                 <div className="text-[11px] text-muted-foreground">
-                  Official Conference & Award Inquiries:
+                  Official Conference, Publishing & Honours Desk:
                 </div>
                 <a 
                   href="mailto:info@eminsphere.com" 
-                  className="text-primary hover:underline font-semibold text-xs block mt-1"
+                  className="text-primary hover:underline font-bold text-xs inline-block"
                 >
                   info@eminsphere.com
                 </a>
@@ -431,10 +434,10 @@ export const Header = () => {
                 © {new Date().getFullYear()} EminSphere™. Global Academic, Research & Corporate Recognition Platform.
               </div>
             </div>
-
           </div>
-        </div>
+        </div>,
+        document.body
       )}
-    </header>
+    </>
   );
 };
