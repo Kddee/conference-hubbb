@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Linkedin, Youtube, MapPin, Landmark } from "lucide-react";
+import { GlobalBankingInfrastructure } from "../common/GlobalBankingInfrastructure";
 
 export const Footer = () => {
   return (
@@ -89,59 +90,9 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* HORIZONTAL SECTIONS DIRECTLY BELOW FOLLOW US / TOP SECTION */}
-        <div className="border-t border-border/50 pt-8 space-y-8">
-          {/* Conferences - Horizontal Links */}
-          <div>
-            <div className="flex items-center gap-3 mb-3">
-              <h4 className="font-sans font-bold text-sm uppercase tracking-wider text-foreground">Conferences</h4>
-              <div className="h-px flex-1 bg-border/40"></div>
-            </div>
-            <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 text-xs sm:text-sm text-muted-foreground">
-              <Link to="/upcoming-conferences" className="hover:text-accent transition-colors font-medium">Upcoming Conferences</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/recent-conferences" className="hover:text-accent transition-colors font-medium">Recent Conferences</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/recent-proceedings" className="hover:text-accent transition-colors font-medium">Digital Proceedings</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/past-speakers" className="hover:text-accent transition-colors font-medium">Past Speakers</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/innovation-challenge-2026" className="hover:text-accent transition-colors font-medium">Innovation Challenge</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/apply-reviewer" className="hover:text-accent transition-colors font-medium">Reviewer Panel</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/apply-advisory" className="hover:text-accent transition-colors font-medium">Join Advisory</Link>
-            </div>
-          </div>
-
-          {/* Awards & Recognition - Horizontal Links */}
-          <div>
-            <div className="flex items-center gap-3 mb-3">
-              <h4 className="font-sans font-bold text-sm uppercase tracking-wider text-[#c5a059]">Awards & Recognition</h4>
-              <div className="h-px flex-1 bg-[#c5a059]/20"></div>
-            </div>
-            <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 text-xs sm:text-sm text-muted-foreground">
-              <Link to="/awards-recognition" className="hover:text-[#c5a059] transition-colors font-medium">Awards Overview</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/awards-recognition/about" className="hover:text-[#c5a059] transition-colors font-medium">About the Awards</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/awards-recognition/categories" className="hover:text-[#c5a059] transition-colors font-medium">18 Award Categories</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/awards-recognition/eligibility" className="hover:text-[#c5a059] transition-colors font-medium">Eligibility & Criteria</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/awards-recognition/nomination-process" className="hover:text-[#c5a059] transition-colors font-medium">Nomination Process</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/awards-recognition/governance" className="hover:text-[#c5a059] transition-colors font-medium">Awards Committee</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/awards-recognition/apply" className="hover:text-[#c5a059] transition-colors font-semibold text-primary">Apply for Recognition</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/awards-recognition/awardees" className="hover:text-[#c5a059] transition-colors font-medium">Recipient Directory</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/verify-certificate" className="hover:text-[#c5a059] transition-colors font-medium">Verify Certificate</Link>
-              <span className="text-border/60 select-none">•</span>
-              <Link to="/awards-recognition/policies" className="hover:text-[#c5a059] transition-colors font-medium">Policies & Disclaimer</Link>
-            </div>
-          </div>
+        {/* GLOBAL OPERATIONS & BANKING INFRASTRUCTURE */}
+        <div className="border-t border-border/50 pt-10 sm:pt-14">
+          <GlobalBankingInfrastructure />
         </div>
       </div>
 
