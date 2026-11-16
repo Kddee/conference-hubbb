@@ -4,9 +4,9 @@ import { Mail, Linkedin, Youtube, MapPin, Landmark, Award, ShieldCheck } from "l
 export const Footer = () => {
   return (
     <footer className="bg-card border-t border-border/50 text-foreground mt-16 sm:mt-24">
-      <div className="container py-12 sm:py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+      <div className="container py-12 sm:py-16 grid gap-8 sm:gap-10 md:grid-cols-12">
         {/* Column 1: About */}
-        <div className="space-y-5 sm:space-y-6 lg:col-span-2">
+        <div className="space-y-5 sm:space-y-6 md:col-span-4 lg:col-span-4">
           <div>
             <h2 className="font-serif font-black text-2xl text-foreground tracking-tight flex items-center gap-2">
               Eminsphere™
@@ -31,53 +31,56 @@ export const Footer = () => {
           <div className="pt-2">
             <div className="text-[10px] font-bold uppercase tracking-wider text-accent mb-2">Follow Us</div>
             <div className="flex gap-3">
-              <a href="https://www.linkedin.com/company/106142250/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="h-8 w-8 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-smooth shadow-sm hover:shadow-gold">
+              <a href="https://www.linkedin.com/company/106142250/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="h-8 w-8 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-smooth shadow-sm hover:shadow-gold" aria-label="LinkedIn">
                 <Linkedin className="h-3.5 w-3.5" />
               </a>
-              <a href="https://www.youtube.com/@Eminsphere" target="_blank" rel="noopener noreferrer" className="h-8 w-8 rounded-full bg-muted hover:bg-primary hover:text-white flex items-center justify-center transition-smooth shadow-sm hover:shadow-gold">
+              <a href="https://www.youtube.com/@Eminsphere" target="_blank" rel="noopener noreferrer" className="h-8 w-8 rounded-full bg-muted hover:bg-primary hover:text-white flex items-center justify-center transition-smooth shadow-sm hover:shadow-gold" aria-label="YouTube">
                 <Youtube className="h-3.5 w-3.5" />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Column 2: Conferences & Programs */}
-        <div>
-          <h4 className="font-sans font-bold text-base mb-4 text-foreground">Conferences</h4>
-          <ul className="space-y-2.5 text-sm text-muted-foreground">
-            <li><Link to="/upcoming-conferences" className="hover:text-accent transition-colors">Upcoming Conferences</Link></li>
-            <li><Link to="/recent-conferences" className="hover:text-accent transition-colors">Recent Conferences</Link></li>
-            <li><Link to="/recent-proceedings" className="hover:text-accent transition-colors">Digital Proceedings</Link></li>
-            <li><Link to="/past-speakers" className="hover:text-accent transition-colors">Past Speakers</Link></li>
-            <li><Link to="/innovation-challenge-2026" className="hover:text-accent transition-colors">Innovation Challenge</Link></li>
-            <li><Link to="/apply-reviewer" className="hover:text-accent transition-colors">Reviewer Panel</Link></li>
-            <li><Link to="/apply-advisory" className="hover:text-accent transition-colors">Join Advisory</Link></li>
-          </ul>
-        </div>
+        {/* Column 2 & 3: Conferences and Awards & Recognition - Horizontal side-by-side */}
+        <div className="md:col-span-5 lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+          {/* Conferences */}
+          <div>
+            <h4 className="font-sans font-bold text-sm sm:text-base mb-3 sm:mb-4 text-foreground">Conferences</h4>
+            <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm text-muted-foreground">
+              <li><Link to="/upcoming-conferences" className="hover:text-accent transition-colors block">Upcoming Conferences</Link></li>
+              <li><Link to="/recent-conferences" className="hover:text-accent transition-colors block">Recent Conferences</Link></li>
+              <li><Link to="/recent-proceedings" className="hover:text-accent transition-colors block">Digital Proceedings</Link></li>
+              <li><Link to="/past-speakers" className="hover:text-accent transition-colors block">Past Speakers</Link></li>
+              <li><Link to="/innovation-challenge-2026" className="hover:text-accent transition-colors block">Innovation Challenge</Link></li>
+              <li><Link to="/apply-reviewer" className="hover:text-accent transition-colors block">Reviewer Panel</Link></li>
+              <li><Link to="/apply-advisory" className="hover:text-accent transition-colors block">Join Advisory</Link></li>
+            </ul>
+          </div>
 
-        {/* Column 3: Awards & Recognition (New Dedicated Column) */}
-        <div>
-          <h4 className="font-sans font-bold text-base mb-4 text-[#c5a059]">
-            Awards & Recognition
-          </h4>
-          <ul className="space-y-2.5 text-sm text-muted-foreground">
-            <li><Link to="/awards-recognition" className="hover:text-[#c5a059] transition-colors">Awards Overview</Link></li>
-            <li><Link to="/awards-recognition/about" className="hover:text-[#c5a059] transition-colors">About the Awards</Link></li>
-            <li><Link to="/awards-recognition/categories" className="hover:text-[#c5a059] transition-colors">18 Award Categories</Link></li>
-            <li><Link to="/awards-recognition/eligibility" className="hover:text-[#c5a059] transition-colors">Eligibility & Criteria</Link></li>
-            <li><Link to="/awards-recognition/nomination-process" className="hover:text-[#c5a059] transition-colors">Nomination Process</Link></li>
-            <li><Link to="/awards-recognition/governance" className="hover:text-[#c5a059] transition-colors">Awards Committee</Link></li>
-            <li><Link to="/awards-recognition/apply" className="hover:text-[#c5a059] transition-colors font-semibold text-primary">Apply for Recognition</Link></li>
-            <li><Link to="/awards-recognition/awardees" className="hover:text-[#c5a059] transition-colors">Recipient Directory</Link></li>
-            <li><Link to="/verify-certificate" className="hover:text-[#c5a059] transition-colors">Verify Certificate</Link></li>
-            <li><Link to="/awards-recognition/policies" className="hover:text-[#c5a059] transition-colors">Policies & Disclaimer</Link></li>
-          </ul>
+          {/* Awards & Recognition */}
+          <div>
+            <h4 className="font-sans font-bold text-sm sm:text-base mb-3 sm:mb-4 text-[#c5a059]">
+              Awards & Recognition
+            </h4>
+            <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm text-muted-foreground">
+              <li><Link to="/awards-recognition" className="hover:text-[#c5a059] transition-colors block">Awards Overview</Link></li>
+              <li><Link to="/awards-recognition/about" className="hover:text-[#c5a059] transition-colors block">About the Awards</Link></li>
+              <li><Link to="/awards-recognition/categories" className="hover:text-[#c5a059] transition-colors block">18 Award Categories</Link></li>
+              <li><Link to="/awards-recognition/eligibility" className="hover:text-[#c5a059] transition-colors block">Eligibility & Criteria</Link></li>
+              <li><Link to="/awards-recognition/nomination-process" className="hover:text-[#c5a059] transition-colors block">Nomination Process</Link></li>
+              <li><Link to="/awards-recognition/governance" className="hover:text-[#c5a059] transition-colors block">Awards Committee</Link></li>
+              <li><Link to="/awards-recognition/apply" className="hover:text-[#c5a059] transition-colors font-semibold text-primary block">Apply for Recognition</Link></li>
+              <li><Link to="/awards-recognition/awardees" className="hover:text-[#c5a059] transition-colors block">Recipient Directory</Link></li>
+              <li><Link to="/verify-certificate" className="hover:text-[#c5a059] transition-colors block">Verify Certificate</Link></li>
+              <li><Link to="/awards-recognition/policies" className="hover:text-[#c5a059] transition-colors block">Policies & Disclaimer</Link></li>
+            </ul>
+          </div>
         </div>
 
         {/* Column 4: Contact & Office */}
-        <div>
-          <h4 className="font-sans font-bold text-base mb-4 text-foreground">Contact & Office</h4>
-          <ul className="space-y-4 text-sm text-muted-foreground">
+        <div className="md:col-span-3 lg:col-span-3">
+          <h4 className="font-sans font-bold text-sm sm:text-base mb-3 sm:mb-4 text-foreground">Contact & Office</h4>
+          <ul className="space-y-3.5 sm:space-y-4 text-xs sm:text-sm text-muted-foreground">
             <li className="flex gap-3 items-center">
               <Mail className="h-4 w-4 shrink-0 text-muted-foreground" />
               <a href="mailto:info@eminsphere.com" className="hover:text-accent transition-colors">info@eminsphere.com</a>
