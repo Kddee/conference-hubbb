@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import SEOHead from "@/components/SEOHead";
+import { GlobalBankingInfrastructure } from "@/components/common/GlobalBankingInfrastructure";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -942,6 +943,13 @@ const Index = () => {
               </Button>
             </div>
           </Card>
+        </div>
+      </section>
+
+      {/* GLOBAL PRESENCE & BANKING INFRASTRUCTURE */}
+      <section className="relative py-16 sm:py-24 bg-[#020813] border-t border-white/5 overflow-hidden">
+        <div className="container relative z-10 max-w-7xl px-4 mx-auto">
+          <GlobalBankingInfrastructure />
         </div>
       </section>
     </div>

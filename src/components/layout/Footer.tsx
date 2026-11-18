@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Mail, Linkedin, Youtube, MapPin, Landmark } from "lucide-react";
-import { GlobalBankingInfrastructure } from "../common/GlobalBankingInfrastructure";
 
 export const Footer = () => {
   return (
@@ -88,11 +87,6 @@ export const Footer = () => {
               <Link to="/awards-recognition/admin" className="text-muted-foreground/60 hover:text-muted-foreground transition-colors">Staff Admin Portal</Link>
             </div>
           </div>
-        </div>
-
-        {/* GLOBAL OPERATIONS & BANKING INFRASTRUCTURE */}
-        <div className="border-t border-border/50 pt-10 sm:pt-14">
-          <GlobalBankingInfrastructure />
         </div>
       </div>
 
