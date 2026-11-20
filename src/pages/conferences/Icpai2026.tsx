@@ -307,6 +307,14 @@ const conferenceData = {
       category: "Keynote Speaker"
     },
     {
+      name: "Dr. Vanessa Mothilal (DBM, MBA)",
+      designation: "Head, Customer Experience (CX) and Training",
+      organization: "Digicall Group, Johannesburg, Gauteng",
+      country: "South Africa 🇿🇦",
+      image: "/speakers/dr-vanessa-mothilal.png",
+      category: "Keynote Speaker"
+    },
+    {
       name: "Rowan Elselmy",
       designation: "Assistant Professor in Architecture",
       organization: "De Montfort University Dubai",
@@ -588,11 +596,11 @@ const Icpai2026 = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
           {conferenceData.speakers.map((s, idx) => (
             <Card
               key={idx}
-              className="group relative overflow-hidden rounded-3xl bg-card/60 border border-white/10 hover:border-primary/50 backdrop-blur-md p-6 flex flex-col items-center text-center shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300"
+              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm group relative overflow-hidden rounded-3xl bg-card/60 border border-white/10 hover:border-primary/50 backdrop-blur-md p-6 flex flex-col items-center text-center shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300"
             >
               {/* Subtle Ambient Glow */}
               <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none group-hover:bg-primary/20 transition-all" />

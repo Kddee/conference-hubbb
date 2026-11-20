@@ -205,6 +205,13 @@ export const upcomingConferences: Record<string, ConferenceData> = {
         category: "Keynote Speaker"
       },
       {
+        name: "Dr. Vanessa Mothilal (DBM, MBA)",
+        designation: "Head, Customer Experience (CX) and Training",
+        university: "Digicall Group, Johannesburg, South Africa",
+        image: "/speakers/dr-vanessa-mothilal.png",
+        category: "Keynote Speaker"
+      },
+      {
         name: "Rowan Elselmy",
         designation: "Assistant Professor in Architecture",
         university: "De Montfort University Dubai, UAE",
