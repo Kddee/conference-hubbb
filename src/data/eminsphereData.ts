@@ -171,9 +171,10 @@ export const upcomingConferences: Record<string, ConferenceData> = {
     title: "International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence (ICPAI-2026)",
     date: "6 December 2026",
     location: "Hybrid Mode | Worldwide Virtual",
+    isbn: "978-81-183524-5-7",
     registrationLink: "https://forms.gle/JEAh1X5JwAdPn4zT6",
     cmtLink: "https://cmt3.research.microsoft.com/ICPAI2026",
-    description: "ICPAI-2026 (International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence) is a world-class scientific forum dedicated to groundbreaking advances in Embodied AI, Humanoid Robotics, Vision-Language-Action (VLA) architectures, and Autonomous Spatial Systems. Bringing together robotics researchers, AI scientists, and deep-tech pioneers across 50+ nations, all accepted submissions undergo double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers and indexing across Google Scholar, with recommendations for Scopus/WoS indexed special issues.",
+    description: "ICPAI-2026 (International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence) is a world-class scientific forum dedicated to groundbreaking advances in Embodied AI, Humanoid Robotics, Vision-Language-Action (VLA) architectures, and Autonomous Spatial Systems. Bringing together robotics researchers, AI scientists, and deep-tech pioneers across 50+ nations, all accepted submissions undergo double-blind peer review and are published in official Conference Proceedings with assigned ISBN Numbers (ISBN: 978-81-183524-5-7) and indexing across Google Scholar, with recommendations for Scopus/WoS indexed special issues.",
     thematicTracks: [
       "Embodied AI & Vision-Language-Action (VLA) Architectures (Sensorimotor policies, multimodal spatial reasoning)",
       "Humanoid Robotics, Dexterous Manipulation & Locomotion (Bipedal dynamics, whole-body control, tactile feedback)",

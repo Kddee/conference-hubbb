@@ -59,6 +59,7 @@ const conferenceData = {
   shortTitle: "ICPAI-2026",
   fullTitle: "International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence",
   fullForm: "International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence (ICPAI-2026)",
+  isbn: "978-81-183524-5-7",
   theme: "From Foundation Models to Embodied Action: Humanoids, Spatial Intelligence & Autonomous World Models",
   tagline: "The Premier Global Scientific Forum Connecting Silicon Valley Robotics Architects, Global Researchers & Technology Leaders",
   date: "6 December 2026",
@@ -70,14 +71,14 @@ const conferenceData = {
   about: [
     "The International Conference on Physical AI, Humanoid Robotics & Embodied Intelligence (ICPAI-2026) is the premier global scientific forum dedicated to bridging digital foundation models with physical execution in the real world: the emergence of Embodied AI, Humanoid Robotics, Spatial Computing, and Autonomous Cyber-Physical Systems.",
     "Held in Hybrid Mode on 6 December 2026, ICPAI-2026 brings together an elite international assembly of robotics engineers, AI researchers, Silicon Valley architects, and leading academic chairs across more than 50 countries. The conference delivers an expedited, high-impact double-blind peer-reviewed platform examining sensorimotor learning, whole-body dynamics, 3D world models, and industrial-scale physical autonomy.",
-    "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN registration, submitted for global indexing across Google Scholar, with select high-caliber contributions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
+    "All accepted and registered papers will be published in official Conference Proceedings with assigned ISBN registration (ISBN: 978-81-183524-5-7), submitted for global indexing across Google Scholar, with select high-caliber contributions fast-tracked for publication in partner Scopus and Web of Science (WoS) indexed special issues."
   ],
 
   highlights: [
     { stat: "50+", label: "Nations Represented", desc: "Global robotics & AI delegates" },
     { stat: "6", label: "Specialized Tracks", desc: "VLA models, Humanoids & Spatial AI" },
     { stat: "6 Dec", label: "Conference Date", desc: "One-day high-impact international conference" },
-    { stat: "ISBN", label: "Official Proceedings", desc: "Global Cataloging & DOI assigned" }
+    { stat: "ISBN", label: "Official Proceedings", desc: "978-81-183524-5-7 assigned" }
   ],
 
   pillars: [
@@ -225,7 +226,7 @@ const conferenceData = {
     {
       title: "ISBN Conference Proceedings",
       img: "https://i.postimg.cc/VvnzKNKj/image.png",
-      desc: "All accepted and registered papers will be published in official conference proceedings with an assigned ISBN Number, ensuring global visibility, citation, and academic recognition."
+      desc: "All accepted and registered papers will be published in official conference proceedings with an assigned ISBN Number (ISBN: 978-81-183524-5-7), ensuring global visibility, citation, and academic recognition."
     },
     {
       title: "Google Scholar Indexing",
@@ -273,7 +274,7 @@ const conferenceData = {
     },
     {
       q: "How are the conference proceedings published and indexed?",
-      a: "All accepted and registered papers are published in the official Conference Proceedings with assigned ISBN registration, submitted for indexing in Google Scholar, and assigned permanent DOIs. High-quality papers are considered for Scopus and Web of Science special issues."
+      a: "All accepted and registered papers are published in the official Conference Proceedings with assigned ISBN registration (ISBN: 978-81-183524-5-7), submitted for indexing in Google Scholar, and assigned permanent DOIs. High-quality papers are considered for Scopus and Web of Science special issues."
     },
     {
       q: "How does the peer-review process work?",
@@ -348,6 +349,11 @@ const Icpai2026 = () => {
             "@type": "Organization",
             name: "Eminsphere International",
             url: "https://www.eminsphere.com"
+          },
+          workFeatured: {
+            "@type": "PublicationEvent",
+            name: "ICPAI-2026 Official Conference Proceedings",
+            isbn: conferenceData.isbn
           }
         }}
       />
@@ -369,9 +375,20 @@ const Icpai2026 = () => {
           </div>
 
           {/* Main Title */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-black tracking-tight text-white mb-6 leading-tight max-w-5xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-black tracking-tight text-white mb-4 sm:mb-6 leading-tight max-w-5xl mx-auto">
             {conferenceData.fullTitle}
           </h1>
+
+          {/* ISBN for Conference Proceedings */}
+          <div className="inline-flex items-center justify-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-accent/10 border border-accent/30 text-slate-200 text-xs sm:text-sm md:text-base font-medium mb-6 backdrop-blur-sm shadow-sm">
+            <BookOpen className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0" />
+            <span>
+              ISBN No. for conference proceedings :{" "}
+              <span className="font-mono font-bold text-accent tracking-wider">
+                {conferenceData.isbn}
+              </span>
+            </span>
+          </div>
 
           {/* Subtitle / Theme */}
           <p className="text-lg sm:text-2xl font-serif text-accent font-semibold mb-4 max-w-4xl mx-auto">
@@ -418,7 +435,7 @@ const Icpai2026 = () => {
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-sm">
               <BookOpen className="h-4 w-4 text-primary" />
-              <span>Official ISBN Proceedings</span>
+              <span>ISBN: {conferenceData.isbn}</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-sm">
               <Award className="h-4 w-4 text-accent" />
