@@ -137,7 +137,6 @@ const speakers: Speaker[] = [
   { name: "Taleb Hammad", role: "DBA / Executive Director", location: "USA", image: talebHammadImg },
   { name: "Dr. Tintin Flores", role: "Advisory Board Member, Biomedical & Healthcare Technology, Valenzuela", location: "Philippines", image: "/speakers/dr-tintin-flores.jpg" },
   { name: "Assoc. Prof. Ts. Dr. Noor Suhana Binti Sulaiman", role: "Dean, Research & Postgraduate Management (JPPS), University College TATI (UC TATI)", location: "Malaysia", image: "/speakers/dr-noor-suhana.jpg" },
-  { name: "Dr. Uma A. Alkhudary", role: "Middle East University", location: "Jordan", image: "/speakers/dr-uma-alkhudary.jpg" },
   { name: "Wiktoria Gromowa-Cieślik", role: "CEO & Chief Metrics Officer, Human-Tech Fusion (HTFusion)", location: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg" },
 ];
 

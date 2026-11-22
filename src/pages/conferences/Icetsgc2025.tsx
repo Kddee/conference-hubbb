@@ -23,7 +23,7 @@ const conferenceData = {
   ],
   speakers: [
     { name: "Dr. Zoha Rahman", org: "Centre for Big Data & Machine Learning", country: "USA", img: "/speakers/dr-zoha-rahman.jpg" },
-    { name: "Dr. Uma A. Alkhudary", org: "Middle East University", country: "Jordan", img: "/speakers/dr-uma-alkhudary.jpg" },
+    { name: "Dr. Dina Alkhodary", org: "Middle East University", country: "Jordan", img: "/speakers/dr-dina-alkhodary.jpg" },
     { name: "Mr. Akshay Sharma", org: "Pension Systems Expert", country: "USA", img: "/speakers/akshay-sharma.jpg" },
     { name: "Dr. Firas Zeidan", org: "Higher Education & Research", country: "Lebanon", img: "https://static.wixstatic.com/media/30814e_d725b17d6d374b3abf1081771e55f53f~mv2.jpeg" },
     { name: "Dr. Rana El Khawand", org: "UN-Habitat", country: "UN HABITAT", img: "/speakers/dr-rana-el-khawand.jpg" },
