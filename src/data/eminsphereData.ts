@@ -218,6 +218,13 @@ export const upcomingConferences: Record<string, ConferenceData> = {
         university: "De Montfort University Dubai, UAE",
         image: "/speakers/rowan-elselmy.jpg",
         category: "Keynote Speaker"
+      },
+      {
+        name: "Amos Osikpemhi Onoshoze Ozemoya (PhD)",
+        designation: "Researcher & Corporate Consultant",
+        university: "YASFAB GLOBAL EMPIRE LIMITED / Ahmadu Bello University, Zaria, Nigeria",
+        image: "/speakers/dr-amos-ozemoya.jpg",
+        category: "Keynote Speaker"
       }
     ],
     milestones: [

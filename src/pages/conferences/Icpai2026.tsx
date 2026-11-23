@@ -322,6 +322,14 @@ const conferenceData = {
       country: "UAE 🇦🇪",
       image: "/speakers/rowan-elselmy.jpg",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Amos Osikpemhi Onoshoze Ozemoya (PhD)",
+      designation: "Researcher & Corporate Consultant",
+      organization: "YASFAB GLOBAL EMPIRE LIMITED / Ahmadu Bello University, Zaria",
+      country: "Nigeria 🇳🇬",
+      image: "/speakers/dr-amos-ozemoya.jpg",
+      category: "Keynote Speaker"
     }
   ],
 };
