@@ -330,6 +330,14 @@ const conferenceData = {
       country: "Nigeria 🇳🇬",
       image: "/speakers/dr-amos-ozemoya.jpg",
       category: "Keynote Speaker"
+    },
+    {
+      name: "Dr. Maigari Haruna Bello",
+      designation: "Academic Scholar & Researcher",
+      organization: "Federal College of Education Yola",
+      country: "Nigeria 🇳🇬",
+      image: "/speakers/dr-maigari-haruna-bello.jpg",
+      category: "Keynote Speaker"
     }
   ],
 };

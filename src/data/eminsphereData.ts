@@ -225,6 +225,13 @@ export const upcomingConferences: Record<string, ConferenceData> = {
         university: "YASFAB GLOBAL EMPIRE LIMITED / Ahmadu Bello University, Zaria, Nigeria",
         image: "/speakers/dr-amos-ozemoya.jpg",
         category: "Keynote Speaker"
+      },
+      {
+        name: "Dr. Maigari Haruna Bello",
+        designation: "Academic Scholar & Researcher",
+        university: "Federal College of Education Yola, Nigeria",
+        image: "/speakers/dr-maigari-haruna-bello.jpg",
+        category: "Keynote Speaker"
       }
     ],
     milestones: [
