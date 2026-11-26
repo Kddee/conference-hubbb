@@ -4,14 +4,19 @@ import { Globe } from "lucide-react";
 
 // Removing duplicates from the provided data
 const advisoryMembers = [
-  { name: "Damodhara Reddy Palavali", role: "IEEE Senior Member | Zero Trust & Identity Security Specialist | Sbase Technologies USA", location: "USA", image: "/speakers/damodhara-reddy-palavali.jpg" },
-  { name: "Nino Devidze", role: "Tourism Educator & Program Manager, The University of Georgia", location: "Georgia", image: "/speakers/nino-devidze.jpg" },
-  { name: "Mayank Atreya", role: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", location: "USA", image: "/speakers/mayank-atreya.jpg" },
-  { name: "Roksolana Trach", role: "Independent Crypto Analyst & International Financial Market Analyst", location: "USA", image: "/icaits26/roksolana-trach.png" },
+  { name: "Hemang Upadhyay", role: "Independent Researcher, AI, E-commerce & Analytics", location: "USA", image: "https://static.wixstatic.com/media/30814e_d8f3f76a4383421eb967c779a89ac17f~mv2.jpeg" },
+  { name: "Heinz Dollberg", role: "Executive Vice President (ret.), Allianz", location: "Germany", image: "/speakers/heinz-dollberg.jpg" },
+  { name: "Peter Kasahara", role: "CXO for AI & Data Leadership and Innovation / Fortune 200 Group Chief Data Officer", location: "Zurich, Switzerland", image: "/speakers/peter-kasahara.jpg" },
+  { name: "Prof. Dr. Alexander Bull", role: "Faculty of Business Administration, IU International University of Applied Sciences", location: "Germany", image: "/speakers/prof-alexander-bull.jpeg" },
   { name: "Wiktoria Gromowa-Cieślik", role: "CEO & Chief Metrics Officer, Human-Tech Fusion (HTFusion)", location: "Poland", image: "/speakers/wiktoria-gromowa-cieslik.jpg" },
+  { name: "Katarzyna Antosz", role: "Associate Professor, Rzeszow University of Technology", location: "Poland", image: "/speakers/katarzyna-antosz.jpg" },
+  { name: "Dr. Yulia Kryvenko", role: "Assistant Professor, Istanbul Sabahattin Zaim University", location: "France", image: "https://static.wixstatic.com/media/30814e_1cc9e627ca8342d59e4122b9240e638d~mv2.png" },
+  { name: "Roksolana Trach", role: "Independent Crypto Analyst & International Financial Market Analyst", location: "USA", image: "/icaits26/roksolana-trach.png" },
+  { name: "Nino Devidze", role: "Tourism Educator & Program Manager, The University of Georgia", location: "Georgia", image: "/speakers/nino-devidze.jpg" },
+  { name: "Damodhara Reddy Palavali", role: "IEEE Senior Member | Zero Trust & Identity Security Specialist | Sbase Technologies USA", location: "USA", image: "/speakers/damodhara-reddy-palavali.jpg" },
+  { name: "Mayank Atreya", role: "Technology & Engineering Leader, Enterprise Architecture & AI/ML", location: "USA", image: "/speakers/mayank-atreya.jpg" },
   { name: "Mouhssin Ait El Mouden", role: "Researcher, Faculty of Letters, Ibn Tofail University, Kenitra", location: "Morocco", image: "/speakers/mouhssin-ait-el-mouden.jpg" },
   { name: "Dr. Nadia Adnan", role: "Assistant Professor & Research Scientist, Prince Mohammad Bin Fahd University", location: "Saudi Arabia", image: "/speakers/dr-nadia-adnan.jpg" },
-  { name: "Katarzyna Antosz", role: "Associate Professor, Rzeszow University of Technology", location: "Poland", image: "/speakers/katarzyna-antosz.jpg" },
   // Temporarily removed: Dr. Walida Ounruean (Director & Senior Research Fellow, Innovora Mind LLC, Thailand)
   // { name: "Dr. Walida Ounruean", role: "Head Advisory Board Member, Curriculum and Instruction, Faculty of Education, Uttaradit Rajabhat University", location: "Thailand", image: "https://static.wixstatic.com/media/30814e_ac6c40d612254293a4f1f4479dfd7b61~mv2.avif" },
   { name: "Prof. Deepak K. Sharma", role: "Head Advisory Board Member, Head EnTC, NESGI", location: "India", image: "https://static.wixstatic.com/media/30814e_3b46f80d696f49b2b7fd6ebc4a1e9ee3~mv2.jpeg" },
@@ -31,7 +36,6 @@ const advisoryMembers = [
   { name: "Dr. Ayoub Regragui", role: "Doctorate in Applied Linguistics, Mohammed V University, Rabat", location: "Morocco", image: "https://static.wixstatic.com/media/30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif" },
   { name: "Nilesh Charankar", role: "AI Technology Leader and Independent Researcher", location: "USA", image: "https://static.wixstatic.com/media/30814e_70debe4180c34f9f83be4d5219c41358~mv2.jpeg" },
   { name: "Lawrence Mazaki Mashati", role: "Community Development Professional, IMFC", location: "Nairobi, Kenya", image: "https://static.wixstatic.com/media/30814e_86a164138da142578e674588143e3af3~mv2.jpeg" },
-  { name: "Dr. Yulia Kryvenko", role: "Assistant Professor, Istanbul Sabahattin Zaim University", location: "France", image: "https://static.wixstatic.com/media/30814e_1cc9e627ca8342d59e4122b9240e638d~mv2.png" },
   { name: "Emem Akpabio", role: "Invited Delegate, International Conference Participant", location: "South Africa", image: "https://static.wixstatic.com/media/30814e_2dad2d939abb4236bcb405093be55872~mv2.jpg" },
   { name: "Dr. Dina A. Alkhodary", role: "Associate Professor", location: "Jordan", image: "https://static.wixstatic.com/media/30814e_1feb45bda81f4dcdb4b55439a6f8d65a~mv2.jpg" },
   { name: "Prajakta Talathi", role: "Data Strategy and Performance Measurement Expert", location: "USA", image: "https://static.wixstatic.com/media/30814e_bf9d3d9fb4974bc0ba217b4bb03ea14d~mv2.jpg" },
@@ -45,10 +49,6 @@ const advisoryMembers = [
   { name: "Dr. Ruth Abiola Adimula", role: "Associate Professor, Centre for Peace and Strategic Studies", location: "Nigeria", image: "/speakers/dr-ruth-abiola-adimula.png" },
   { name: "Anup Gupta", role: "Associate Director – Digital Transformation Leader", location: "North Carolina, USA", image: "https://static.wixstatic.com/media/30814e_916aabc5c238468882d8066892ff6a27~mv2.jpg" },
   { name: "Nandan Sharma", role: "Information Security Leader, BC Public Service", location: "Canada / USA", image: "https://static.wixstatic.com/media/30814e_3cdb660543a146ab81e18da144efabad~mv2.jpg" },
-  { name: "Prof. Dr. Alexander Bull", role: "Faculty of Business Administration, IU International University of Applied Sciences", location: "Germany", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
-  { name: "Hemang Upadhyay", role: "Independent Researcher, AI, E-commerce & Analytics", location: "USA", image: "https://static.wixstatic.com/media/30814e_d8f3f76a4383421eb967c779a89ac17f~mv2.jpeg" },
-  { name: "Heinz Dollberg", role: "Executive Vice President (ret.), Allianz", location: "Germany", image: "/speakers/heinz-dollberg.jpg" },
-  { name: "Peter Kasahara", role: "CXO for AI & Data Leadership and Innovation / Fortune 200 Group Chief Data Officer", location: "Zurich, Switzerland", image: "/speakers/peter-kasahara.jpg" },
   { name: "Ms. Fadwa Saad AlBawardi", role: "Saudi Arabian Entrepreneur & Founder, FSAB Consultancy | Senior Consultant in Digital Transformation, AI & Data Strategies", location: "Saudi Arabia", image: "/speakers/fadwa-saad-albawardi.jpg" },
   { name: "Pam Didner", role: "AI Keynote Speaker | Making AI Make Sense for Business Professionals | 5x Author & Consultant | Inc Magazine Columnist", location: "Raleigh-Durham, Carolina, USA", image: "/speakers/pam-didner.jpg" },
   // Temporarily removed: Dr. Ratna Raja Kumar Jambi (Director, Innovora Mind LLC, USA)
